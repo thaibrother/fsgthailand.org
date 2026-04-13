@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSG Thailand — Foundation of the Brothers of Saint Gabriel in Thailand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; height: 68px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--navy);
+  }
+  .nav-logo {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--navy); color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; font-family: 'Inter', sans-serif;
+  }
+  .nav-brand-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; }
+  .nav-brand-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-muted); display: block; font-weight: 400; }
+  nav ul { list-style: none; display: flex; gap: 2px; }
+  nav ul li a {
+    color: var(--text-light); text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-size: 13px;
+    font-weight: 500; transition: all 0.2s;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--navy); background: var(--gray-100);
+  }
+  .hamburger { display: none; background: none; border: none; font-size: 24px; cursor: pointer; padding: 8px; color: var(--navy); }
+  @media (max-width: 960px) {
+    .hamburger { display: block; }
+    nav ul {
+      display: none; position: absolute; top: 68px; left: 0; right: 0;
+      background: var(--white); flex-direction: column; padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg);
+    }
+    nav ul.open { display: flex; }
+    nav ul li a { padding: 12px 16px; display: block; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    margin-top: 68px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    padding: 100px 20px 80px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
+  }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+  .hero-cross { font-size: 44px; color: var(--gold); margin-bottom: 20px; }
+  .hero h1 { font-size: 40px; margin-bottom: 12px; color: var(--white); }
+  .hero .subtitle { font-size: 16px; opacity: 0.8; font-style: italic; margin-bottom: 40px; }
+  .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+  .hero-stat .num { font-size: 36px; font-weight: 700; color: var(--gold); display: block; font-family: 'Playfair Display', serif; }
+  .hero-stat .label { font-size: 12px; opacity: 0.65; text-transform: uppercase; letter-spacing: 1.5px; }
+
+  /* ── ECOSYSTEM BANNER ── */
+  .ecosystem {
+    background: var(--white); border-bottom: 1px solid var(--gray-200);
+    padding: 20px; text-align: center;
+  }
+  .eco-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .eco-site {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 16px; border-radius: 24px; font-size: 13px;
+    text-decoration: none; color: var(--text-light);
+    border: 1px solid var(--gray-200); transition: all 0.2s;
+  }
+  .eco-site:hover { border-color: var(--navy); color: var(--navy); }
+  .eco-site.current { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .eco-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── SECTION ── */
+  .section { padding: 80px 20px; max-width: 1140px; margin: 0 auto; }
+  .section.full { max-width: none; }
+  .section.alt { background: var(--white); max-width: none; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .section.alt > .sec-inner { max-width: 1140px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 48px; }
+  .eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px; }
+  .sec-head h2 { font-size: 32px; margin-bottom: 8px; }
+  .sec-head .divider { width: 50px; height: 3px; background: var(--gold); margin: 12px auto; border-radius: 2px; }
+  .sec-head p { color: var(--text-light); font-size: 15px; max-width: 600px; margin: 0 auto; }
+
+  /* ── ABOUT GRID ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 28px; box-shadow: var(--shadow);
+    border-left: 4px solid var(--gold);
+  }
+  .about-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .about-card p { color: var(--text-light); font-size: 14px; }
+
+  /* ── STRATEGY ── */
+  .strat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+  .strat-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 28px 20px; box-shadow: var(--shadow);
+    border-top: 4px solid var(--navy); transition: transform 0.2s;
+    position: relative;
+  }
+  .strat-card:hover { transform: translateY(-4px); }
+  .strat-num {
+    position: absolute; top: -16px; right: 16px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--gold); color: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .strat-card h4 { font-size: 15px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .strat-card p { color: var(--text-light); font-size: 13px; }
+  .strat-card .kpi-tag {
+    display: inline-block; margin-top: 12px;
+    background: var(--gray-100); padding: 4px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 600; color: var(--navy);
+  }
+
+  /* ── VISION/MISSION ── */
+  .vm-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+  @media (max-width: 700px) { .vm-row { grid-template-columns: 1fr; } }
+  .vm-card {
+    text-align: center; padding: 28px 20px;
+    background: var(--cream); border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+  }
+  .vm-card h4 { font-size: 16px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .vm-card p { color: var(--text-light); font-size: 13px; }
+  .vm-card .vm-icon { font-size: 32px; margin-bottom: 10px; }
+
+  /* ── SCHOOLS ── */
+  .school-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 400px) { .school-grid { grid-template-columns: 1fr; } }
+  .school-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 24px; box-shadow: var(--shadow);
+    display: flex; gap: 16px; transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none; color: var(--text);
+    border-left: 4px solid transparent;
+  }
+  .school-card:hover {
+    transform: translateY(-2px); box-shadow: var(--shadow-lg);
+    border-left-color: var(--gold);
+  }
+  .school-badge {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--navy); color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .school-info h4 { font-size: 15px; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--navy); }
+  .school-info .sch-loc { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .school-info .sch-year { font-size: 11px; color: var(--gold-dark); font-weight: 600; }
+  .school-info .sch-desc { font-size: 12px; color: var(--text-light); margin-top: 6px; line-height: 1.5; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; max-width: 700px; margin: 40px auto 0; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px; background: var(--gold);
+  }
+  .tl-item { position: relative; margin-bottom: 28px; padding-left: 24px; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -28px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .tl-year { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .tl-text { color: var(--text-light); font-size: 14px; }
+
+  /* ── NETWORK ── */
+  .net-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .net-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 28px; box-shadow: var(--shadow);
+    text-align: center; border-top: 4px solid var(--gold);
+  }
+  .net-card .net-icon { font-size: 36px; margin-bottom: 12px; }
+  .net-card h4 { font-size: 16px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .net-card p { color: var(--text-light); font-size: 13px; margin-bottom: 16px; }
+  .net-card a { color: var(--navy-light); text-decoration: none; font-size: 13px; font-weight: 600; }
+  .net-card a:hover { color: var(--gold-dark); }
+
+  .province-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 28px; }
+  .prov-tag {
+    background: var(--cream); padding: 6px 14px; border-radius: 16px;
+    font-size: 12px; color: var(--navy); border: 1px solid var(--gray-200);
+  }
+
+  /* ── INNOVATION ── */
+  .inno-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 700px) { .inno-split { grid-template-columns: 1fr; } }
+  .inno-text h3 { font-size: 24px; margin-bottom: 16px; }
+  .inno-text p { color: var(--text-light); font-size: 14px; margin-bottom: 12px; }
+  .inno-visual {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    border-radius: var(--radius); padding: 40px;
+    color: var(--white); text-align: center;
+  }
+  .swis-title { font-size: 36px; font-weight: 700; letter-spacing: 2px; color: var(--gold); font-family: 'Inter', sans-serif; }
+  .swis-sub { font-size: 13px; opacity: 0.7; margin-top: 6px; }
+  .swis-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; text-align: left; }
+  .swis-feat {
+    background: rgba(255,255,255,0.08); padding: 10px 12px; border-radius: 6px;
+    font-size: 12px;
+  }
+  .btn-gold {
+    display: inline-block; margin-top: 20px;
+    background: var(--gold); color: var(--navy-dark);
+    padding: 10px 24px; border-radius: 24px;
+    text-decoration: none; font-weight: 600; font-size: 13px;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info h3 { font-size: 20px; margin-bottom: 20px; }
+  .ci { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+  .ci-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--cream); display: flex; align-items: center;
+    justify-content: center; font-size: 16px; flex-shrink: 0;
+    border: 1px solid var(--gray-200);
+  }
+  .ci-text { font-size: 14px; color: var(--text-light); }
+  .ci-text strong { color: var(--text); display: block; margin-bottom: 2px; }
+  .contact-form { background: var(--white); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .contact-form h3 { font-size: 18px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  .fg { margin-bottom: 14px; }
+  .fg label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500; }
+  .fg input, .fg textarea {
+    width: 100%; padding: 10px 14px; border: 1px solid var(--gray-200);
+    border-radius: 6px; font-size: 14px; font-family: inherit;
+  }
+  .fg textarea { height: 90px; resize: vertical; }
+  .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--navy-light); }
+  .btn-submit {
+    background: var(--navy); color: var(--white);
+    border: none; padding: 12px 32px; border-radius: 6px;
+    font-size: 14px; cursor: pointer; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: var(--navy-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark); color: rgba(255,255,255,0.6);
+    padding: 48px 20px 24px; font-size: 13px;
+  }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px;
+  }
+  @media (max-width: 700px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+  footer h4 { color: var(--gold); margin-bottom: 12px; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Inter', sans-serif; font-weight: 600; }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 6px; }
+  .footer-bottom {
+    max-width: 1140px; margin: 32px auto 0;
+    padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center; font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">
+      <div class="nav-logo">FSG</div>
+      <div>
+        <span class="nav-brand-text">FSG Thailand</span>
+        <span class="nav-brand-sub">Foundation of the Brothers of Saint Gabriel</span>
+      </div>
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#strategy">Strategy</a></li>
+      <li><a href="#schools">Schools</a></li>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#innovation">Innovation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-cross">&#10013;</div>
+    <h1>Foundation of the Brothers<br>of Saint Gabriel in Thailand</h1>
+    <p class="subtitle">
+      Wisdom and Virtue, Connected by Innovation<br>
+      A Legacy of Montfortian Excellence Since 1901
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">14</span><span class="label">Schools</span></div>
+      <div class="hero-stat"><span class="num">30,000+</span><span class="label">Students</span></div>
+      <div class="hero-stat"><span class="num">5,000+</span><span class="label">Educators</span></div>
+      <div class="hero-stat"><span class="num">1901</span><span class="label">Est. in Thailand</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ECOSYSTEM BANNER ═══ -->
+<div class="ecosystem">
+  <div class="eco-inner">
+    <a href="https://montfortian.net" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#8b5cf6"></span>
+      montfortian.net &mdash; Our Roots &amp; Three Congregations
+    </a>
+    <a href="#" class="eco-site current">
+      <span class="eco-dot" style="background:var(--gold)"></span>
+      fsgthailand.org &mdash; Our Mission in Thailand
+    </a>
+    <a href="https://thaibrothers.net" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#3b82f6"></span>
+      thaibrothers.net &mdash; School Activities via SWIS
+    </a>
+    <a href="https://swisplus.com" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#10b981"></span>
+      swisplus.com &mdash; SWIS Plus Company
+    </a>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<div class="section" id="about">
+  <div class="sec-head">
+    <div class="eyebrow">About the Foundation</div>
+    <h2>Who We Are</h2>
+    <div class="divider"></div>
+    <p>A Catholic educational foundation operating under Thai law, rooted in 120 years of Montfortian tradition</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>The Foundation</h3>
+      <p>The Foundation of the Brothers of Saint Gabriel in Thailand is a legally registered educational foundation under Thai law. It oversees 14 schools across the nation, serving tens of thousands of students from kindergarten through secondary and technical education. The Foundation operates under the spiritual and educational guidance of the Congregation of the Brothers of Saint Gabriel, headquartered in Rome.</p>
+    </div>
+    <div class="about-card">
+      <h3>Our Heritage</h3>
+      <p>The Congregation was founded in 1711 by Saint Louis-Marie Grignion de Montfort in France. His vision of holistic education &mdash; forming the whole person in mind, body, and spirit &mdash; has been carried by the Brothers of Saint Gabriel across more than 40 countries. In 1901, the first Brothers arrived in Siam and established what would become Assumption College, the oldest school in our network.</p>
+    </div>
+    <div class="about-card">
+      <h3>Governance</h3>
+      <p>The Foundation Board of Directors is chaired by the Provincial Superior of the Thai Province, with Provincial Councilors serving as ex-officio board members. The Provincial Council, based at Soi Thonglor in Bangkok, provides strategic direction for all 14 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
+    </div>
+    <div class="about-card">
+      <h3>Core Values</h3>
+      <p><strong>Truth (<em>Veritas</em>)</strong> &mdash; A relentless pursuit of integrity and knowledge.<br>
+      <strong>Service (<em>Servitium</em>)</strong> &mdash; The selfless dedication to the common good, inspired by the spirit of Saint Louis-Marie de Montfort.<br>
+      <strong>Excellence (<em>Prestantia</em>)</strong> &mdash; Upholding the standard of &ldquo;Labor Omnia Vincit&rdquo; in every dimension of life.</p>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="tl-item"><span class="tl-year">1711</span><br><span class="tl-text">Congregation of the Brothers of Saint Gabriel founded in France by Saint Louis-Marie de Montfort</span></div>
+    <div class="tl-item"><span class="tl-year">1901</span><br><span class="tl-text">First Brothers arrive in Siam (Thailand)</span></div>
+    <div class="tl-item"><span class="tl-year">1885</span><br><span class="tl-text">Assumption College (AC) established in Bangkok &mdash; the first Gabrielite school in Thailand</span></div>
+    <div class="tl-item"><span class="tl-year">1920&ndash;1967</span><br><span class="tl-text">Rapid expansion: 12 schools founded across Bangkok, Chiang Mai, Chonburi, Lampang, Rayong, and the Northeast</span></div>
+    <div class="tl-item"><span class="tl-year">1978</span><br><span class="tl-text">Assumption College Samutprakarn (ACSP) established</span></div>
+    <div class="tl-item"><span class="tl-year">2002&ndash;2012</span><br><span class="tl-text">ACEP English Program launched, later expanding to a dedicated campus in Samut Sakhon</span></div>
+    <div class="tl-item"><span class="tl-year">2022&ndash;2027</span><br><span class="tl-text">Current 6-Year Strategic Plan: 5 strategies, 47 KPIs, vision as an international-standard education leader</span></div>
+  </div>
+</div>
+
+<!-- ═══ STRATEGIC PLAN ═══ -->
+<div class="section alt" id="strategy">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Strategic Plan 2022&ndash;2027</div>
+      <h2>Five Strategic Pillars</h2>
+      <div class="divider"></div>
+      <p>Empowering Minds, Transforming Lives &mdash; driving 14 schools toward international excellence</p>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div class="vm-row">
+      <div class="vm-card">
+        <div class="vm-icon">&#127919;</div>
+        <h4>Vision</h4>
+        <p>To be an organization driving our schools to become leaders in Digital-age education, guided by Montfortian principles with Sufficiency Economy Philosophy, achieving international standards.</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">&#128218;</div>
+        <h4>Montfortian Education</h4>
+        <p>Child-centered holistic formation across 5 dimensions &mdash; Intellectual, Physical, Emotional, Social, and Spiritual &mdash; grounded in the Montfortian Education Charter (MEC).</p>
+      </div>
+      <div class="vm-card">
+        <div class="vm-icon">&#127760;</div>
+        <h4>International Frameworks</h4>
+        <p>Aligned with MEC, UN SDGs, Global Compact on Education, Laudato Si', TQA, ISO standards, and Thai national education plans.</p>
+      </div>
+    </div>
+
+    <!-- 5 Strategies -->
+    <div class="strat-grid">
+      <div class="strat-card">
+        <div class="strat-num">1</div>
+        <h4>Spiritual Leadership &amp; Montfortian Identity</h4>
+        <p>Cultivating the &ldquo;Heart of a Servant&rdquo; in every student, ensuring our spiritual heritage remains the cornerstone of all educational pursuits.</p>
+        <span class="kpi-tag">14 KPIs</span>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">2</div>
+        <h4>Future-Ready Academic Excellence</h4>
+        <p>Empowering learners with global competencies through an integrated curriculum that balances intellectual rigor with creative innovation.</p>
+        <span class="kpi-tag">18 KPIs</span>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">3</div>
+        <h4>Digital Empowerment &amp; Infrastructure</h4>
+        <p>Leveraging the School Web-based Information System (SWIS) to create a seamless, transparent, and high-efficiency management culture across all 14 institutions.</p>
+        <span class="kpi-tag">10 KPIs</span>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">4</div>
+        <h4>Human Capital Transformation</h4>
+        <p>Nurturing our 5,000+ educators as &ldquo;Spiritual Mentors&rdquo; through professional growth, well-being, and a shared commitment to the Montfortian mission.</p>
+        <span class="kpi-tag">KPI integrated</span>
+      </div>
+      <div class="strat-card">
+        <div class="strat-num">5</div>
+        <h4>Social Impact &amp; Sustainable Stewardship</h4>
+        <p>Inspiring students to dedicate their talents to the marginalized and the betterment of society, ensuring the foundation&rsquo;s mission thrives for generations to come.</p>
+        <span class="kpi-tag">KPI integrated</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OUR 14 SCHOOLS ═══ -->
+<div class="section" id="schools">
+  <div class="sec-head">
+    <div class="eyebrow">Our Schools</div>
+    <h2>14 Schools Across Thailand</h2>
+    <div class="divider"></div>
+    <p>From the heart of Bangkok to the provinces &mdash; a nationwide Gabrielite education network</p>
+  </div>
+
+  <div class="school-grid">
+    <a class="school-card" href="#">
+      <div class="school-badge">AC</div>
+      <div class="school-info">
+        <h4>Assumption College</h4>
+        <div class="sch-loc">Bangkok (Bangrak)</div>
+        <div class="sch-year">Est. 1885 &middot; Secondary</div>
+        <div class="sch-desc">The first Gabrielite school in Thailand. Nearly 140 years of shaping Thai leaders, including 4 former Prime Ministers. Approx. 2,500 students.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACP</div>
+      <div class="school-info">
+        <h4>Assumption College Primary</h4>
+        <div class="sch-loc">Bangkok (Saint Louis / Sathorn)</div>
+        <div class="sch-year">Est. 1965 &middot; Primary</div>
+        <div class="sch-desc">Quality elementary education in central Bangkok. 2,641 students building their foundation for lifelong learning.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">SG</div>
+      <div class="school-info">
+        <h4>Saint Gabriel's College</h4>
+        <div class="sch-loc">Bangkok (Samsen)</div>
+        <div class="sch-year">Est. 1920 &middot; Primary &amp; Secondary</div>
+        <div class="sch-desc">Named after the patron saint of the Congregation. Approx. 5,000 students across primary and secondary levels.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">MC</div>
+      <div class="school-info">
+        <h4>Montfort College</h4>
+        <div class="sch-loc">Chiang Mai</div>
+        <div class="sch-year">Est. 1932 &middot; Primary &amp; Secondary</div>
+        <div class="sch-desc">The Foundation's flagship in Northern Thailand. A leading educational institution serving the greater Chiang Mai region.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACS</div>
+      <div class="school-info">
+        <h4>Assumption College Sriracha</h4>
+        <div class="sch-loc">Chonburi</div>
+        <div class="sch-year">Est. 1944 &middot; Primary &amp; Secondary</div>
+        <div class="sch-desc">Founded during WWII. A vital educational resource for Chonburi and the Eastern Seaboard region.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">SLC</div>
+      <div class="school-info">
+        <h4>Saint Louis College</h4>
+        <div class="sch-loc">Chachoengsao</div>
+        <div class="sch-year">Est. 1948</div>
+        <div class="sch-desc">Serving the eastern coastal community. Named after the Congregation's founder, Saint Louis-Marie de Montfort.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACL</div>
+      <div class="school-info">
+        <h4>Assumption College Lampang</h4>
+        <div class="sch-loc">Lampang</div>
+        <div class="sch-year">Est. 1958</div>
+        <div class="sch-desc">Extending Montfortian education to the lower Northern region of Thailand.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACT</div>
+      <div class="school-info">
+        <h4>Assumption College Thonburi</h4>
+        <div class="sch-loc">Bangkok (Bangkhae)</div>
+        <div class="sch-year">Est. 1961</div>
+        <div class="sch-desc">Serving the western Bangkok community with quality Gabrielite education.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACR</div>
+      <div class="school-info">
+        <h4>Assumption College Rayong</h4>
+        <div class="sch-loc">Rayong</div>
+        <div class="sch-year">Est. 1963</div>
+        <div class="sch-desc">Meeting the educational needs of Rayong Province and the Eastern region.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACU</div>
+      <div class="school-info">
+        <h4>Assumption College Ubon Ratchathani</h4>
+        <div class="sch-loc">Ubon Ratchathani</div>
+        <div class="sch-year">Est. 1965</div>
+        <div class="sch-desc">Bringing quality education to the lower Isan region, one of the Foundation's Northeastern pillars.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACN</div>
+      <div class="school-info">
+        <h4>Assumption College Nakhon Ratchasima</h4>
+        <div class="sch-loc">Nakhon Ratchasima</div>
+        <div class="sch-year">Est. 1967</div>
+        <div class="sch-desc">Serving the central Isan gateway city with Gabrielite educational standards.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACSP</div>
+      <div class="school-info">
+        <h4>Assumption College Samutprakarn</h4>
+        <div class="sch-loc">Samut Prakan</div>
+        <div class="sch-year">Est. 1978</div>
+        <div class="sch-desc">Located in the greater Bangkok metropolitan area, bridging urban and suburban communities.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ATN</div>
+      <div class="school-info">
+        <h4>Assumption Technical Nakhon Phanom</h4>
+        <div class="sch-loc">Nakhon Phanom</div>
+        <div class="sch-year">Technical Education</div>
+        <div class="sch-desc">The Foundation's technical education institution, preparing skilled professionals for the Mekong region.</div>
+      </div>
+    </a>
+    <a class="school-card" href="#">
+      <div class="school-badge">ACEP</div>
+      <div class="school-info">
+        <h4>Assumption College English Program</h4>
+        <div class="sch-loc">Samut Sakhon (Rama 2)</div>
+        <div class="sch-year">Est. 2002 / Campus 2012</div>
+        <div class="sch-desc">Full English-program education. Originally within AC, now on a dedicated campus pursuing international-standard bilingual education.</div>
+      </div>
+    </a>
+  </div>
+
+  <div style="text-align:center; margin-top:32px;">
+    <a href="https://thaibrothers.net" target="_blank" class="btn-gold">See live school activities at thaibrothers.net &#8594;</a>
+  </div>
+</div>
+
+<!-- ═══ GLOBAL NETWORK ═══ -->
+<div class="section alt" id="network">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Global Network</div>
+      <h2>The Gabrielite Family Worldwide</h2>
+      <div class="divider"></div>
+      <p>Part of a worldwide Congregation present in over 40 countries across 5 continents</p>
+    </div>
+
+    <div class="net-grid">
+      <div class="net-card">
+        <div class="net-icon">&#127963;</div>
+        <h4>Generalate &mdash; Rome</h4>
+        <p>The worldwide headquarters of the Congregation, led by the Superior General and General Council. All Provinces report to Rome.</p>
+        <a href="https://www.brothersofsaintgabriel.org" target="_blank">Visit Generalate &#8594;</a>
+      </div>
+      <div class="net-card">
+        <div class="net-icon">&#9968;</div>
+        <h4>The Montfortian Family</h4>
+        <p>Together with the Company of Mary (Montfort Missionaries), the Daughters of Wisdom, and lay associates, we form the global Montfortian spiritual family.</p>
+        <a href="https://www.montfortian.info" target="_blank">Montfortian Family &#8594;</a>
+      </div>
+      <div class="net-card">
+        <div class="net-icon">&#128591;</div>
+        <h4>Congregation &amp; Religious Life</h4>
+        <p>Learn about the Brothers' charism, vocation, formation, and the three vows of Chastity, Poverty, and Obedience that guide our mission.</p>
+        <a href="https://montfortian.net" target="_blank">montfortian.net &#8594;</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <h4 style="color:var(--navy); margin-bottom:12px; font-family:'Inter',sans-serif; font-weight:600; font-size:14px;">PROVINCES &amp; DISTRICTS WORLDWIDE</h4>
+      <div class="province-tags">
+        <span class="prov-tag">&#127470;&#127475; India (4 Provinces)</span>
+        <span class="prov-tag">&#127481;&#127469; Thailand</span>
+        <span class="prov-tag">&#127467;&#127479; France</span>
+        <span class="prov-tag">&#127464;&#127462; Canada</span>
+        <span class="prov-tag">&#127480;&#127468; Singapore / Malaysia</span>
+        <span class="prov-tag">&#127468;&#127463; United Kingdom</span>
+        <span class="prov-tag">&#127480;&#127472; South Korea</span>
+        <span class="prov-tag">&#127470;&#127465; Indonesia</span>
+        <span class="prov-tag">&#127472;&#127466; Kenya / East Africa</span>
+        <span class="prov-tag">&#127474;&#127468; Madagascar</span>
+        <span class="prov-tag">&#127464;&#127465; DR Congo</span>
+        <span class="prov-tag">&#127477;&#127469; Philippines</span>
+        <span class="prov-tag">&#127463;&#127465; Bangladesh</span>
+        <span class="prov-tag">&#127475;&#127477; Nepal</span>
+        <span class="prov-tag">&#127473;&#127472; Sri Lanka</span>
+        <span class="prov-tag">&#127462;&#127482; Australia</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INNOVATION ═══ -->
+<div class="section" id="innovation">
+  <div class="sec-head">
+    <div class="eyebrow">Innovation &amp; Technology</div>
+    <h2>SWIS &mdash; The Digital Pulse of Montfortian Education</h2>
+    <div class="divider"></div>
+    <p>School Web-based Information System &mdash; our cloud-native ecosystem for data-driven education management</p>
+  </div>
+
+  <div class="inno-split">
+    <div class="inno-text">
+      <h3>The Foundation&rsquo;s Central Intelligence</h3>
+      <p>SWIS is our proprietary, cloud-native ecosystem developed by SWIS Plus Co. It serves as the foundation&rsquo;s central intelligence, seamlessly integrating school management, academic tracking, and administrative workflows into a unified, web-based platform. Designed for the 21st-century educator, it ensures that data-driven decision-making is accessible anytime, anywhere.</p>
+      <p>With over 220 functional modules serving all 14 schools, SWIS connects job specifications to real performance, tracks staff competencies and workload, and powers everything from quality assurance (PDCA) to executive dashboards &mdash; aligned with Pillar 4: Digital Empowerment &amp; Infrastructure.</p>
+      <a href="https://swisplus.com" target="_blank" class="btn-gold">Visit swisplus.com &#8594;</a>
+    </div>
+    <div class="inno-visual">
+      <div class="swis-title">SWIS</div>
+      <div class="swis-sub">School Web-based Information System<br><span style="font-size:11px;opacity:0.6">The Digital Pulse of Montfortian Education</span></div>
+      <div class="swis-feats">
+        <div class="swis-feat">&#128100; Student Records</div>
+        <div class="swis-feat">&#128188; HR &amp; Job Spec</div>
+        <div class="swis-feat">&#128202; Quality / PDCA</div>
+        <div class="swis-feat">&#128176; Budget Tracking</div>
+        <div class="swis-feat">&#128221; Academic Plans</div>
+        <div class="swis-feat">&#128233; E-Office</div>
+        <div class="swis-feat">&#128101; Parent Portal</div>
+        <div class="swis-feat">&#128200; Executive Dashboard</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="section alt" id="contact">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Contact Us</h2>
+      <div class="divider"></div>
+      <p>We welcome inquiries from educators, partners, and the global Gabrielite family</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Foundation Office</h3>
+        <div class="ci">
+          <div class="ci-icon">&#128205;</div>
+          <div class="ci-text">
+            <strong>Address</strong>
+            Foundation of the Brothers of Saint Gabriel in Thailand<br>
+            Soi Thonglor, Sukhumvit 55, Bangkok 10110, Thailand
+          </div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">&#128231;</div>
+          <div class="ci-text"><strong>Email</strong> info@fsgthailand.org</div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">&#128222;</div>
+          <div class="ci-text"><strong>Phone</strong> +66 (0)2-xxx-xxxx</div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">&#127760;</div>
+          <div class="ci-text">
+            <strong>Our Websites</strong>
+            <a href="https://fsgthailand.org" style="color:var(--navy-light)">fsgthailand.org</a> &middot;
+            <a href="https://thaibrothers.net" style="color:var(--navy-light)">thaibrothers.net</a> &middot;
+            <a href="https://swisplus.com" style="color:var(--navy-light)">swisplus.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <div class="fg"><label>Name</label><input type="text" placeholder="Your full name"></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label>Subject</label><input type="text" placeholder="What is this about?"></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
+        <button class="btn-submit">Send Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>FSG Thailand</h4>
+      <p style="margin-bottom:8px">Foundation of the Brothers of Saint Gabriel in Thailand</p>
+      <p style="font-size:12px; opacity:0.5">Wisdom and Virtue, Connected by Innovation</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#strategy">Strategic Plan</a></li>
+        <li><a href="#schools">Our 14 Schools</a></li>
+        <li><a href="#innovation">Innovation / SWIS</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our Websites</h4>
+      <ul>
+        <li><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
+        <li><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
+        <li><a href="https://swisplus.com" target="_blank">swisplus.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Global Network</h4>
+      <ul>
+        <li><a href="https://www.brothersofsaintgabriel.org" target="_blank">Generalate (Rome)</a></li>
+        <li><a href="https://www.montfortian.info" target="_blank">Montfortian Family</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Foundation of the Brothers of Saint Gabriel in Thailand. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // Active nav on scroll
+  const secs = document.querySelectorAll('[id]');
+  const links = document.querySelectorAll('nav ul li a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+    });
+  });
+  document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
