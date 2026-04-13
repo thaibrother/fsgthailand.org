@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notable Alumni — FSG Thailand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; height: 68px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--navy);
+  }
+  .nav-logo {
+    width: 42px; height: 42px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .nav-logo img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .nav-brand-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; }
+  .nav-brand-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-muted); display: block; font-weight: 400; }
+  nav ul { list-style: none; display: flex; gap: 2px; }
+  nav ul li a {
+    color: var(--text-light); text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-size: 13px;
+    font-weight: 500; transition: all 0.2s;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--navy); background: var(--gray-100);
+  }
+  .hamburger { display: none; background: none; border: none; font-size: 24px; cursor: pointer; padding: 8px; color: var(--navy); }
+  @media (max-width: 960px) {
+    .hamburger { display: block; }
+    nav ul {
+      display: none; position: absolute; top: 68px; left: 0; right: 0;
+      background: var(--white); flex-direction: column; padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg);
+    }
+    nav ul.open { display: flex; }
+    nav ul li a { padding: 12px 16px; display: block; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    margin-top: 68px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    padding: 80px 20px 60px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
+  }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+  .hero h1 { font-size: 38px; margin-bottom: 12px; color: var(--white); }
+  .hero .subtitle { font-size: 16px; opacity: 0.8; font-style: italic; margin-bottom: 16px; }
+  .hero .intro { font-size: 14px; opacity: 0.65; max-width: 600px; margin: 0 auto; }
+
+  /* ── SECTION ── */
+  .section { padding: 72px 20px; max-width: 1140px; margin: 0 auto; }
+  .section.alt { background: var(--white); max-width: none; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .section.alt > .sec-inner { max-width: 1140px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 48px; }
+  .eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 10px; }
+  .sec-head h2 { font-size: 30px; margin-bottom: 8px; }
+  .sec-head .divider { width: 50px; height: 3px; background: var(--gold); margin: 12px auto; border-radius: 2px; }
+  .sec-head p { color: var(--text-light); font-size: 15px; max-width: 650px; margin: 0 auto; }
+
+  /* ── SCHOOL SECTION ── */
+  .school-section { margin-bottom: 56px; }
+  .school-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 28px; padding-bottom: 14px;
+    border-bottom: 2px solid var(--gold-light);
+  }
+  .school-badge {
+    width: 52px; height: 52px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+    border: 2px solid var(--gray-200);
+    background: var(--white);
+  }
+  .school-badge img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .school-header h3 { font-size: 22px; }
+  .school-header .school-sub { font-size: 13px; color: var(--text-muted); font-family: 'Inter', sans-serif; font-weight: 400; }
+
+  /* ── ALUMNI GRID ── */
+  .alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .alumni-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--gray-200);
+  }
+  .alumni-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  .alumni-photo {
+    width: 100%; aspect-ratio: 1/1;
+    background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .alumni-photo img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .alumni-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 700;
+    color: var(--navy-light); opacity: 0.3;
+  }
+  .alumni-info {
+    padding: 18px;
+  }
+  .alumni-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--navy); margin-bottom: 2px;
+  }
+  .alumni-name-th {
+    font-size: 13px; color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .alumni-role {
+    font-size: 13px; color: var(--text-light);
+    margin-bottom: 12px; line-height: 1.5;
+  }
+  .alumni-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 12px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-right: 4px; margin-bottom: 4px;
+  }
+  .tag-pm { background: #fef3c7; color: #92400e; }
+  .tag-govt { background: #dbeafe; color: #1e40af; }
+  .tag-religion { background: #ede9fe; color: #5b21b6; }
+  .tag-business { background: #d1fae5; color: #065f46; }
+  .tag-culture { background: #fce7f3; color: #9d174d; }
+  .tag-sport { background: #ffedd5; color: #9a3412; }
+  .tag-intl { background: #e0f2fe; color: #075985; }
+  .tag-finance { background: #f0fdf4; color: #166534; }
+
+  .alumni-links {
+    display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .alumni-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; color: var(--navy-light);
+    text-decoration: none; padding: 4px 10px;
+    border: 1px solid var(--gray-200); border-radius: 14px;
+    transition: all 0.2s;
+  }
+  .alumni-link:hover {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+  .alumni-link svg { width: 13px; height: 13px; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    padding: 36px 20px;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700; color: var(--gold);
+  }
+  .stat-label {
+    font-size: 12px; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1.5px;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    text-align: center; padding: 32px 20px;
+    font-size: 13px; color: var(--text-muted);
+    max-width: 700px; margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark); color: rgba(255,255,255,0.5);
+    padding: 40px 20px; text-align: center; font-size: 13px;
+  }
+  footer a { color: var(--gold-light); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  .footer-eco { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+
+  /* ── ECOSYSTEM BAR ── */
+  .eco-bar { background: var(--navy-dark); padding: 10px 20px; }
+  .eco-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .eco-site { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 12px; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+  .eco-site:hover, .eco-site.current { color: rgba(255,255,255,0.95); }
+  .eco-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .stats-bar { gap: 24px; }
+    .stat-num { font-size: 24px; }
+    .alumni-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .alumni-name { font-size: 14px; }
+    .alumni-role { font-size: 12px; }
+  }
+  /* ── PLACEHOLDER CARD ── */
+  .alumni-placeholder {
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    border: 2px dashed var(--gray-200);
+    padding: 36px 24px;
+    text-align: center;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 200px;
+  }
+  .placeholder-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--gray-200); color: var(--text-muted);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 12px;
+  }
+  .placeholder-text {
+    font-size: 14px; color: var(--text-muted); font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .placeholder-sub {
+    font-size: 12px; color: var(--text-muted); opacity: 0.7;
+  }
+
+  @media (max-width: 400px) {
+    .alumni-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo"><img src="images.jpeg" alt="FSG Logo"></div>
+      <div>
+        <span class="nav-brand-text">FSG Thailand</span>
+        <span class="nav-brand-sub">Brothers of Saint Gabriel</span>
+      </div>
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#strategy">Strategy</a></li>
+      <li><a href="index.html#governance">Governance</a></li>
+      <li><a href="index.html#schools">Schools</a></li>
+      <li><a href="alumni.html" class="active">Alumni</a></li>
+      <li><a href="index.html#network">Network</a></li>
+      <li><a href="index.html#innovation">Innovation</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Notable Alumni</h1>
+    <p class="subtitle">"One good school, a lifetime of leaders"</p>
+    <p class="intro">For over 120 years, schools under the Brothers of Saint Gabriel in Thailand have nurtured generations of leaders across government, religion, business, sports and the arts.</p>
+  </div>
+</section>
+
+<!-- ── ECOSYSTEM BAR ── -->
+<div class="eco-bar">
+  <div class="eco-inner">
+    <a href="https://montfortian.net" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#8b5cf6"></span>
+      montfortian.net — Our Roots &amp; Three Congregations
+    </a>
+    <a href="index.html" class="eco-site current">
+      <span class="eco-dot" style="background:var(--gold)"></span>
+      fsgthailand.org — Our Mission in Thailand
+    </a>
+    <a href="https://thaibrothers.net" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#3b82f6"></span>
+      thaibrothers.net — School Activities via SWIS
+    </a>
+    <a href="https://swisplus.com" class="eco-site" target="_blank">
+      <span class="eco-dot" style="background:#10b981"></span>
+      swisplus.com — SWIS Plus Company
+    </a>
+  </div>
+</div>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Prime Ministers</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Cardinals</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">15</div>
+    <div class="stat-label">Privy Counselors</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1</div>
+    <div class="stat-label">WTO Director-General</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ASSUMPTION COLLEGE (AC)                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="ac.png" alt="AC Logo"></div>
+      <div>
+        <h3>Assumption College</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญ — Bangkok (Bang Rak) · est. 1885</span>
+      </div>
+    </div>
+
+    <div class="alumni-grid">
+
+      <!-- Phraya Manopakorn Nitithada -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Kon_Hutasing.jpg/400px-Kon_Hutasing.jpg" alt="Phraya Manopakorn Nitithada"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Phraya Manopakorn Nitithada</div>
+          <div class="alumni-name-th">พระยามโนปกรณ์นิติธาดา (กอน หุตะสิงห์)</div>
+          <div class="alumni-role">1st Prime Minister of Siam (1932–1933). Led the first constitutional government after the 1932 revolution.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Phraya_Manopakorn_Nitithada" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Khuang Aphaiwong -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_khuang.jpg" alt="Khuang Aphaiwong"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Khuang Aphaiwong</div>
+          <div class="alumni-name-th">ควง อภัยวงศ์</div>
+          <div class="alumni-role">4th Prime Minister of Thailand. Served three terms (1944–1948). Founder of the Democrat Party.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Khuang_Aphaiwong" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- M.R. Seni Pramoj -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_seni.jpg" alt="M.R. Seni Pramoj"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">M.R. Seni Pramoj</div>
+          <div class="alumni-name-th">หม่อมราชวงศ์เสนีย์ ปราโมช</div>
+          <div class="alumni-role">6th Prime Minister of Thailand (three terms: 1945, 1975, 1976). Wartime Thai Ambassador to the United States.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Seni_Pramoj" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sanya Dharmasakti -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_sanya.jpg" alt="Prof. Sanya Dharmasakti"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Prof. Sanya Dharmasakti</div>
+          <div class="alumni-name-th">ศ. สัญญา ธรรมศักดิ์</div>
+          <div class="alumni-role">12th Prime Minister of Thailand (1973–1975). President of the Supreme Court. Chancellor of Thammasat University.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Sanya_Dharmasakti" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anutin Charnvirakul -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_anutin.webp" alt="Anutin Charnvirakul"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Anutin Charnvirakul</div>
+          <div class="alumni-name-th">อนุทิน ชาญวีรกูล</div>
+          <div class="alumni-role">32nd Prime Minister of Thailand (since 2025). Leader of the Bhumjaithai Party. Former Deputy Prime Minister and Minister of Public Health.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Anutin_Charnvirakul" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Puey Ungphakorn -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_puey.jpg" alt="Dr. Puey Ungphakorn"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Dr. Puey Ungphakorn</div>
+          <div class="alumni-name-th">ดร. ป๋วย อึ๊งภากรณ์</div>
+          <div class="alumni-role">Governor of the Bank of Thailand (1959–1971). Founding father of the modern Thai economy. UNESCO Person of the Year.</div>
+          <span class="alumni-tag tag-finance">Finance</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Puey_Ungphakorn" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Michael Michai Kitbunchu -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_kitbunchu.jpg" alt="Cardinal Michael Michai Kitbunchu"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Cardinal Michael Michai Kitbunchu</div>
+          <div class="alumni-name-th">พระคาร์ดินัล มีชัย กิจบุญชู</div>
+          <div class="alumni-role">First Cardinal of Thailand (1983). Archbishop of Bangkok (1973–2009). Longest-serving cardinal as of 2025.</div>
+          <span class="alumni-tag tag-religion">Religion</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Michael_Michai_Kitbunchu" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phraya Anuman Rajadhon -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_anuman.jpg" alt="Phraya Anuman Rajadhon"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Phraya Anuman Rajadhon</div>
+          <div class="alumni-name-th">พระยาอนุมานราชธน (ยง เสฐียรโกเศศ)</div>
+          <div class="alumni-role">Thailand's foremost linguist, anthropologist and ethnographer. Authority on Thai culture and traditions.</div>
+          <span class="alumni-tag tag-culture">Culture</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Phraya_Anuman_Rajadhon" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jakkaphong Jakrajutatip -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_jakkaphong.jpg" alt="Jakkaphong Jakrajutatip"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Jakkaphong Jakrajutatip</div>
+          <div class="alumni-name-th">จักรพงษ์ จักราจุฑาธิบดิ์ (แอน)</div>
+          <div class="alumni-role">CEO of JKN Global Group. Owner of the Miss Universe Organization. Media entrepreneur and television host.</div>
+          <span class="alumni-tag tag-business">Business</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Jakkaphong_Jakrajutatip" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /alumni-grid -->
+  </div><!-- /school-section -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SAINT GABRIEL'S COLLEGE (SG)                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="sg.png" alt="SG Logo"></div>
+      <div>
+        <h3>Saint Gabriel's College</h3>
+        <span class="school-sub">โรงเรียนเซนต์คาเบรียล — Bangkok (Samsen) · est. 1920</span>
+      </div>
+    </div>
+
+    <div class="alumni-grid">
+
+      <!-- Samak Sundaravej -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_samak.jpeg" alt="Samak Sundaravej"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Samak Sundaravej</div>
+          <div class="alumni-name-th">สมัคร สุนทรเวช</div>
+          <div class="alumni-role">25th Prime Minister of Thailand (2008). Former Governor of Bangkok. Political figure for over four decades.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Samak_Sundaravej" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Surayud Chulanont -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_surayud.jpg" alt="Gen. Surayud Chulanont"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Gen. Surayud Chulanont</div>
+          <div class="alumni-name-th">พล.อ. สุรยุทธ์ จุลานนท์</div>
+          <div class="alumni-role">24th Prime Minister of Thailand (2006–2008). Former Commander-in-Chief of the Royal Thai Army. Privy Councillor.</div>
+          <span class="alumni-tag tag-pm">Prime Minister</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Surayud_Chulanont" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prawit Wongsuwon -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_prawit.jpg" alt="Gen. Prawit Wongsuwon"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Gen. Prawit Wongsuwon</div>
+          <div class="alumni-name-th">พล.อ. ประวิตร วงษ์สุวรรณ</div>
+          <div class="alumni-role">Deputy Prime Minister. Former Commander-in-Chief of the Royal Thai Army. Former Minister of Defence.</div>
+          <span class="alumni-tag tag-govt">Government</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Prawit_Wongsuwon" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supachai Panitchpakdi -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_supachai.jpg" alt="Dr. Supachai Panitchpakdi"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Dr. Supachai Panitchpakdi</div>
+          <div class="alumni-name-th">ดร. ศุภชัย พานิชภักดิ์</div>
+          <div class="alumni-role">Director-General of the World Trade Organization (2002–2005). Secretary-General of UNCTAD. Former Deputy Prime Minister.</div>
+          <span class="alumni-tag tag-intl">International</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Supachai_Panitchpakdi" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- M.R. Pridiyathorn Devakula -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_pridiyathorn.jpg" alt="M.R. Pridiyathorn Devakula"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">M.R. Pridiyathorn Devakula</div>
+          <div class="alumni-name-th">ม.ร.ว. ปรีดิยาธร เทวกุล</div>
+          <div class="alumni-role">Governor of the Bank of Thailand. Former Deputy Prime Minister. Former Minister of Finance. Wharton School alumnus.</div>
+          <span class="alumni-tag tag-finance">Finance</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Pridiyathorn_Devakula" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Korn Dabbaransi -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_korn.jpeg" alt="Korn Dabbaransi"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Korn Dabbaransi</div>
+          <div class="alumni-name-th">กร ทัพพะรังสี</div>
+          <div class="alumni-role">Former Deputy Prime Minister. Former Minister of Science and Technology. Former Minister of Public Health.</div>
+          <span class="alumni-tag tag-govt">Government</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Korn_Dabbaransi" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kosit Panpiemras -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_kosit.jpg" alt="Kosit Panpiemras"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Kosit Panpiemras</div>
+          <div class="alumni-name-th">โกศล ปั้นเปี่ยมรัษฎ์</div>
+          <div class="alumni-role">Executive Chairman of Bangkok Bank. Former Minister of Industry. Former Deputy Prime Minister.</div>
+          <span class="alumni-tag tag-business">Business</span> <span class="alumni-tag tag-govt">Government</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Kosit_Panpiemras" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /alumni-grid -->
+  </div><!-- /school-section -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE THONBURI (ACT)           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="act.jpg" alt="ACT Logo"></div>
+      <div>
+        <h3>Assumption College Thonburi</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญธนบุรี — Bangkok (Bang Khae) · est. 1961</span>
+      </div>
+    </div>
+
+    <div class="alumni-grid">
+
+      <!-- Teerasil Dangda -->
+      <div class="alumni-card">
+        <div class="alumni-photo"><img src="alumni_teerasil.jpg" alt="Teerasil Dangda"></div>
+        <div class="alumni-info">
+          <div class="alumni-name">Teerasil Dangda</div>
+          <div class="alumni-name-th">ธีรศิลป์ แดงดา</div>
+          <div class="alumni-role">Thailand's legendary striker. All-time top scorer of the AFF Championship (25 goals). Three-time AFF champion. Thai League top scorer.</div>
+          <span class="alumni-tag tag-sport">Sport</span>
+          <div class="alumni-links">
+            <a href="https://en.wikipedia.org/wiki/Teerasil_Dangda" target="_blank" rel="noopener" class="alumni-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+              Wikipedia
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /alumni-grid -->
+  </div><!-- /school-section -->
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE PRIMARY (ACP)            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acp.jpg" alt="ACP Logo"></div>
+      <div>
+        <h3>Assumption College Primary</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญแผนกประถม — Bangkok (Sathorn) · est. 1965</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MONTFORT COLLEGE (MC)                       -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="mcs.jpg" alt="MC Logo"></div>
+      <div>
+        <h3>Montfort College</h3>
+        <span class="school-sub">โรงเรียนมงฟอร์ตวิทยาลัย — Chiang Mai · est. 1932</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE SRIRACHA (ACS)           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acs.gif" alt="ACS Logo"></div>
+      <div>
+        <h3>Assumption College Sriracha</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญศรีราชา — Chonburi · est. 1944</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SAINT LOUIS COLLEGE (SLC)                   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="sl.jpg" alt="SLC Logo"></div>
+      <div>
+        <h3>Saint Louis College Chachoengsao</h3>
+        <span class="school-sub">โรงเรียนเซนต์หลุยส์ ฉะเชิงเทรา — Chachoengsao · est. 1948</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE LAMPANG (ACL)            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acl.jpg" alt="ACL Logo"></div>
+      <div>
+        <h3>Assumption College Lampang</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญลำปาง — Lampang · est. 1958</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE RAYONG (ACR)             -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acr.png" alt="ACR Logo"></div>
+      <div>
+        <h3>Assumption College Rayong</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญระยอง — Rayong · est. 1963</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE UBON RATCHATHANI (ACU)   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acu.png" alt="ACU Logo"></div>
+      <div>
+        <h3>Assumption College Ubon Ratchathani</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญอุบลราชธานี — Ubon Ratchathani · est. 1965</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE NAKHON RATCHASIMA (ACN)  -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acn.jpg" alt="ACN Logo"></div>
+      <div>
+        <h3>Assumption College Nakhon Ratchasima</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญนครราชสีมา — Nakhon Ratchasima · est. 1967</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE SAMUTPRAKARN (ACSP)      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acsp.jpg" alt="ACSP Logo"></div>
+      <div>
+        <h3>Assumption College Samutprakarn</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญสมุทรปราการ — Samut Prakan · est. 1978</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION TECHNICAL NAKHON PHANOM (ATN)    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="atsn.png" alt="ATN Logo"></div>
+      <div>
+        <h3>Assumption Technical Nakhon Phanom</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญเทคนิคนครพนม — Nakhon Phanom</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ASSUMPTION COLLEGE ENGLISH PROGRAM (ACEP)   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="school-section">
+    <div class="school-header">
+      <div class="school-badge"><img src="acep.jpg" alt="ACEP Logo"></div>
+      <div>
+        <h3>Assumption College English Program</h3>
+        <span class="school-sub">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ — Samut Sakhon (Rama 2) · est. 2002</span>
+      </div>
+    </div>
+    <div class="alumni-grid">
+      <div class="alumni-placeholder">
+        <div class="placeholder-icon">+</div>
+        <div class="placeholder-text">Notable alumni to be added</div>
+        <div class="placeholder-sub">ข้อมูลศิษย์เก่าที่มีชื่อเสียงกำลังรวบรวม</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── DISCLAIMER ── -->
+<div class="disclaimer">
+  <p>This page lists selected notable alumni whose education at Gabrielite schools has been verified through publicly available sources such as Wikipedia and official biographies. The list is not exhaustive. Photos will be added as rights-cleared images become available. If you are an alumnus or have information to contribute, please <a href="index.html#contact" style="color:var(--navy-light);">contact us</a>.</p>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div style="max-width:1140px; margin:0 auto; padding:40px 20px 20px; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;">
+    <div>
+      <h4 style="color:var(--gold); margin-bottom:12px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; font-family:'Inter',sans-serif; font-weight:600;">FSG Thailand</h4>
+      <p style="margin-bottom:8px; color:rgba(255,255,255,0.7);">Foundation of the Brothers of Saint Gabriel in Thailand</p>
+      <p style="font-size:12px; opacity:0.5;">Wisdom and Virtue, Connected by Innovation</p>
+    </div>
+    <div>
+      <h4 style="color:var(--gold); margin-bottom:12px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; font-family:'Inter',sans-serif; font-weight:600;">Quick Links</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:6px;"><a href="index.html#about">About</a></li>
+        <li style="margin-bottom:6px;"><a href="index.html#strategy">Strategic Plan</a></li>
+        <li style="margin-bottom:6px;"><a href="index.html#governance">Governance</a></li>
+        <li style="margin-bottom:6px;"><a href="index.html#schools">Our 14 Schools</a></li>
+        <li style="margin-bottom:6px;"><a href="alumni.html">Notable Alumni</a></li>
+        <li style="margin-bottom:6px;"><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:var(--gold); margin-bottom:12px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; font-family:'Inter',sans-serif; font-weight:600;">Our Websites</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:6px;"><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
+        <li style="margin-bottom:6px;"><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
+        <li style="margin-bottom:6px;"><a href="https://swisplus.com" target="_blank">swisplus.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="color:var(--gold); margin-bottom:12px; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; font-family:'Inter',sans-serif; font-weight:600;">Global Network</h4>
+      <ul style="list-style:none;">
+        <li style="margin-bottom:6px;"><a href="https://www.brothersofsaintgabriel.org" target="_blank">Generalate (Rome)</a></li>
+        <li style="margin-bottom:6px;"><a href="https://www.montfortian.info" target="_blank">Montfortian Family</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center; padding:20px; border-top:1px solid rgba(255,255,255,0.1); font-size:13px; opacity:0.5;">
+    &copy; 2026 Foundation of the Brothers of Saint Gabriel in Thailand. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

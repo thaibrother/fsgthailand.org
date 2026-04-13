@@ -59,9 +59,10 @@
   }
   .nav-logo {
     width: 42px; height: 42px; border-radius: 50%;
-    background: var(--navy); color: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 14px; font-family: 'Inter', sans-serif;
+    overflow: hidden; flex-shrink: 0;
+  }
+  .nav-logo img {
+    width: 100%; height: 100%; object-fit: cover;
   }
   .nav-brand-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; }
   .nav-brand-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-muted); display: block; font-weight: 400; }
@@ -100,7 +101,62 @@
     height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
   }
   .hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
-  .hero-cross { font-size: 44px; color: var(--gold); margin-bottom: 20px; }
+  .hero-cross { margin-bottom: 20px; }
+  .hero-cross img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--gold); }
+
+  /* ── PRESIDENT BANNER ── */
+  .president-banner {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-dark) 100%);
+    padding: 40px 20px;
+    text-align: center; color: var(--white);
+    border-bottom: 4px solid var(--gold);
+  }
+  .president-banner-inner {
+    max-width: 800px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap;
+  }
+  .president-photo {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 4px solid var(--gold); object-fit: cover;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .president-info { text-align: left; }
+  .president-info .pres-role {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .president-info .pres-name {
+    font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .president-info .pres-name-th {
+    font-size: 16px; opacity: 0.85; margin-bottom: 8px;
+  }
+  .president-info .pres-title {
+    font-size: 13px; opacity: 0.7; line-height: 1.5;
+  }
+  @media (max-width: 600px) {
+    .president-banner-inner { flex-direction: column; }
+    .president-info { text-align: center; }
+  }
+
+  /* ── COMMISSION CHAIRMAN ── */
+  .gov-chair {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0; margin-bottom: 8px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .gov-chair img {
+    width: 48px; height: 48px; border-radius: 50%;
+    object-fit: cover; border: 2px solid var(--gold); flex-shrink: 0;
+  }
+  .gov-chair-info { font-size: 11px; line-height: 1.4; }
+  .gov-chair-info .chair-label {
+    font-size: 9px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--gold-dark); margin-bottom: 2px;
+  }
+  .gov-chair-info .chair-name { font-weight: 600; color: var(--navy); }
+  .gov-chair-info .chair-name-th { color: var(--text-muted); font-size: 10px; }
   .hero h1 { font-size: 40px; margin-bottom: 12px; color: var(--white); }
   .hero .subtitle { font-size: 16px; opacity: 0.8; font-style: italic; margin-bottom: 40px; }
   .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
@@ -181,6 +237,65 @@
   .vm-card p { color: var(--text-light); font-size: 13px; }
   .vm-card .vm-icon { font-size: 32px; margin-bottom: 10px; }
 
+  /* ── GOVERNANCE ── */
+  .gov-org {
+    display: flex; flex-direction: column; align-items: center; gap: 24px;
+  }
+  .gov-top {
+    text-align: center; padding: 20px 28px;
+    background: var(--navy-dark); color: var(--white);
+    border-radius: var(--radius); font-weight: 600; font-size: 15px;
+    border: 2px solid var(--gold);
+  }
+  .gov-top small { display: block; font-weight: 400; font-size: 12px; opacity: 0.7; margin-top: 4px; }
+  .gov-row {
+    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+  }
+  .gov-advisory {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 24px;
+    border: 1px dashed var(--gold); font-size: 12px;
+    color: var(--text-light); background: var(--white);
+  }
+  .gov-line {
+    width: 2px; height: 28px; background: var(--gold); margin: 0 auto;
+  }
+  .gov-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; width: 100%;
+  }
+  .gov-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 20px; box-shadow: var(--shadow);
+    border-top: 3px solid var(--navy);
+    font-size: 13px;
+  }
+  .gov-card.ict { border-top-color: #0ea5e9; }
+  .gov-card.hrm { border-top-color: #10b981; }
+  .gov-card h4 {
+    font-size: 14px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-weight: 600;
+    color: var(--navy);
+  }
+  .gov-card ul { list-style: none; padding: 0; }
+  .gov-card ul li {
+    padding: 3px 0; color: var(--text-light); font-size: 12px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .gov-card ul li:last-child { border-bottom: none; }
+  .gov-card .gov-badge {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    padding: 2px 8px; border-radius: 10px; margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .gov-badge.ict-b { background: #e0f2fe; color: #0369a1; }
+  .gov-badge.hrm-b { background: #d1fae5; color: #065f46; }
+  .gov-bottom {
+    text-align: center; padding: 14px 24px;
+    background: var(--gray-100); border-radius: var(--radius);
+    font-size: 13px; color: var(--text-light); width: 100%;
+    border: 1px solid var(--gray-200);
+  }
+
   /* ── SCHOOLS ── */
   .school-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -200,10 +315,12 @@
   }
   .school-badge {
     width: 52px; height: 52px; border-radius: 50%;
-    background: var(--navy); color: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 13px; flex-shrink: 0;
-    letter-spacing: 0.5px;
+    overflow: hidden; flex-shrink: 0;
+    border: 2px solid var(--gray-200);
+    background: var(--white);
+  }
+  .school-badge img {
+    width: 100%; height: 100%; object-fit: cover;
   }
   .school-info h4 { font-size: 15px; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-weight: 600; color: var(--navy); }
   .school-info .sch-loc { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
@@ -330,7 +447,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#home" class="nav-brand">
-      <div class="nav-logo">FSG</div>
+      <div class="nav-logo"><img src="images.jpeg" alt="FSG Logo"></div>
       <div>
         <span class="nav-brand-text">FSG Thailand</span>
         <span class="nav-brand-sub">Foundation of the Brothers of Saint Gabriel</span>
@@ -341,7 +458,9 @@
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#strategy">Strategy</a></li>
+      <li><a href="#governance">Governance</a></li>
       <li><a href="#schools">Schools</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
       <li><a href="#network">Network</a></li>
       <li><a href="#innovation">Innovation</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -352,7 +471,7 @@
 <!-- ═══ HERO ═══ -->
 <div class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-cross">&#10013;</div>
+    <div class="hero-cross"><img src="images.jpeg" alt="FSG Thailand"></div>
     <h1>Foundation of the Brothers<br>of Saint Gabriel in Thailand</h1>
     <p class="subtitle">
       Wisdom and Virtue, Connected by Innovation<br>
@@ -363,6 +482,19 @@
       <div class="hero-stat"><span class="num">30,000+</span><span class="label">Students</span></div>
       <div class="hero-stat"><span class="num">5,000+</span><span class="label">Educators</span></div>
       <div class="hero-stat"><span class="num">1901</span><span class="label">Est. in Thailand</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRESIDENT BANNER ═══ -->
+<div class="president-banner">
+  <div class="president-banner-inner">
+    <img src="surakit.JPG" alt="Bro. Surakit Srisrankulwong" class="president-photo">
+    <div class="president-info">
+      <div class="pres-role">President of the Foundation</div>
+      <div class="pres-name">Bro. Surakit Srisrankulwong</div>
+      <div class="pres-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
+      <div class="pres-title">ประธานมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
     </div>
   </div>
 </div>
@@ -409,7 +541,7 @@
     </div>
     <div class="about-card">
       <h3>Governance</h3>
-      <p>The Foundation Board of Directors is chaired by the Provincial Superior of the Thai Province, with Provincial Councilors serving as ex-officio board members. The Provincial Council, based at Soi Thonglor in Bangkok, provides strategic direction for all 14 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
+      <p>The Foundation Board of Directors is led by the President, with board members overseeing 7 commissions. Based at Soi Thonglor in Bangkok, the Board provides strategic direction for all 14 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
     </div>
     <div class="about-card">
       <h3>Core Values</h3>
@@ -496,6 +628,195 @@
   </div>
 </div>
 
+<!-- ═══ GOVERNANCE ═══ -->
+<div class="section alt" id="governance">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Governance</div>
+      <h2>Foundation Administration</h2>
+      <div class="divider"></div>
+      <p>The organizational structure of St. Gabriel's Foundation of Thailand — 6 Commissions serving 14 schools</p>
+    </div>
+
+    <div class="gov-org">
+
+      <!-- Top: Foundation -->
+      <div class="gov-top">
+        <img src="images.jpeg" alt="FSG" style="width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);margin-bottom:8px;">
+        <div>St. Gabriel's Foundation of Thailand</div>
+        <small>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</small>
+      </div>
+
+      <!-- Advisory bodies -->
+      <div class="gov-row">
+        <div class="gov-advisory">Parents &amp; Teachers Alliance · สมาพันธ์สมาคมผู้ปกครองและครูฯ</div>
+        <div class="gov-advisory">Alumni Alliance · สมาพันธ์สมาคมศิษย์เก่าฯ</div>
+      </div>
+
+      <!-- President + Board -->
+      <div class="gov-line"></div>
+      <div class="gov-row">
+        <div class="gov-top" style="background:var(--navy);font-size:14px;padding:14px 24px;flex-direction:column;align-items:center;gap:8px;">
+          <img src="bro_surakit.jpg" alt="Bro. Surakit Srisrankulwong" style="width:80px;height:80px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;">
+          <div style="text-align:center;">
+            President of the Foundation · ประธานมูลนิธิฯ
+            <small style="display:block;font-weight:400;font-size:12px;opacity:0.8;margin-top:4px;">Bro. Surakit Srisrankulwong<br>ภราดาสุรกิต ศรีสรณ์กุลวงศ์</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Commissions -->
+      <div class="gov-line"></div>
+
+      <div class="gov-grid">
+        <!-- 1. Administration -->
+        <div class="gov-card">
+          <div class="gov-chair">
+            <img src="surakit.JPG" alt="Bro. Surakit">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Surakit Srisrankulwong</div>
+              <div class="chair-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
+            </div>
+          </div>
+          <h4>Commission on Administration</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">สำนักงานบริหารมูลนิธิฯ</p>
+          <ul>
+            <li>Policy &amp; Planning · งานนโยบายและแผน</li>
+            <li>General Affairs · งานธุรการ</li>
+            <li>Registry · งานทะเบียน</li>
+            <li>Personnel Dev. Co. · บริษัทพัฒนาบุคลากร</li>
+          </ul>
+          <a href="administration.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+
+        <!-- 2. Finance & Assets -->
+        <div class="gov-card">
+          <div class="gov-chair">
+            <img src="chamnan.JPG" alt="Bro. Chamnan">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Chamnan Laoruckphon</div>
+              <div class="chair-name-th">ภราดาชำนาญ เหล่ารักผล</div>
+            </div>
+          </div>
+          <h4>Commission on Finance &amp; Assets</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">ฝ่ายการเงินและทรัพย์สิน</p>
+          <ul>
+            <li>Finance · งานการเงิน</li>
+            <li>Accounting · งานบัญชี</li>
+            <li>Budgeting · งานงบประมาณ</li>
+            <li>Fund Management · งานกองทุน</li>
+            <li>Property &amp; IP · งานทรัพย์สิน / ลิขสิทธิ์</li>
+            <li>Master Plan · งานแผนแม่บทอาคารสถานที่</li>
+          </ul>
+          <a href="finance.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+
+        <!-- 3. Education -->
+        <div class="gov-card">
+          <div class="gov-chair">
+            <img src="witaya.JPG" alt="Bro. Witthaya">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Witthaya Thepkom</div>
+              <div class="chair-name-th">ภราดาวิทยา เทพกมล</div>
+            </div>
+          </div>
+          <h4>Commission on Education</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">ฝ่ายการศึกษา</p>
+          <ul>
+            <li>Office · งานสำนักงานฝ่าย</li>
+            <li>Quality Development · งานพัฒนาคุณภาพการศึกษา</li>
+            <li>Education Standards · งานมาตรฐานคุณภาพการศึกษา</li>
+            <li>EdTech · งานเทคโนโลยีสารสนเทศเพื่อการศึกษา</li>
+          </ul>
+          <a href="education.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+
+        <!-- 4. ICT and HRM (merged) -->
+        <div class="gov-card ict" style="border-top:3px solid;border-image:linear-gradient(90deg,#0ea5e9,#10b981) 1;">
+          <div class="gov-chair">
+            <img src="supanun.jpg" alt="Bro. Supanun">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Supanun Khantapreecha</div>
+              <div class="chair-name-th">ภราดาศุภนันท์ ขันธปรีชา</div>
+            </div>
+          </div>
+          <span class="gov-badge ict-b">ICT</span>
+          <span class="gov-badge hrm-b">HRM</span>
+          <h4>Commission on ICT and HRM</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">ฝ่ายเทคโนโลยีสารสนเทศและทรัพยากรมนุษย์</p>
+          <ul>
+            <li><strong style="font-size:10px;color:#0369a1;">ICT</strong> Information Systems · งานสารสนเทศ</li>
+            <li><strong style="font-size:10px;color:#0369a1;">ICT</strong> Software Dev. &amp; SWIS · งานพัฒนาซอฟต์แวร์</li>
+            <li><strong style="font-size:10px;color:#0369a1;">ICT</strong> Media &amp; PR · งานสื่อและประชาสัมพันธ์</li>
+            <li><strong style="font-size:10px;color:#0369a1;">ICT</strong> Network &amp; Engineering · งานเครือข่าย</li>
+            <li><strong style="font-size:10px;color:#0369a1;">ICT</strong> ICT Personnel Dev. · งานพัฒนาบุคลากร ICT</li>
+            <li style="border-top:1px dashed var(--gray-200);margin-top:4px;padding-top:6px;"><strong style="font-size:10px;color:#065f46;">HRM</strong> HR Administration · งานบริหารทรัพยากรมนุษย์</li>
+            <li><strong style="font-size:10px;color:#065f46;">HRM</strong> Workforce Planning · งานวางแผนกำลังคน</li>
+            <li><strong style="font-size:10px;color:#065f46;">HRM</strong> Job Spec &amp; Quality Manuals · คู่มือคุณภาพหน่วยงาน</li>
+            <li><strong style="font-size:10px;color:#065f46;">HRM</strong> Supervision · งานนิเทศ 14 โรงเรียน</li>
+            <li><strong style="font-size:10px;color:#065f46;">HRM</strong> HR Development · งานพัฒนาบุคลากร</li>
+          </ul>
+          <a href="ict-hrm.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+
+        <!-- 5. Activities & JPIC -->
+        <div class="gov-card">
+          <div class="gov-chair">
+            <img src="verayut.png" alt="Bro. Verayuth">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Verayuth Boonpram</div>
+              <div class="chair-name-th">ภราดาวีรยุทธ บุญพราหมณ์</div>
+            </div>
+          </div>
+          <h4>Commission on Activities &amp; JPIC</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">ฝ่ายกิจกรรม ยุติธรรม และสันติ</p>
+          <ul>
+            <li>Personnel Activities · งานกิจกรรมบุคลากร</li>
+            <li>Foundation Events · งานกิจกรรมมูลนิธิฯ</li>
+            <li>Recreation &amp; Sports · งานนันทนาการและกีฬา</li>
+            <li>Justice &amp; Peace · งานเสริมสร้างความยุติธรรม</li>
+            <li>Integrity of Creation · งานบูรณภาพของสิ่งสร้าง</li>
+            <li>Pastoral Care · งานอภิบาล</li>
+          </ul>
+          <a href="activities-jpic.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+
+        <!-- 6. Formation & Vocation -->
+        <div class="gov-card">
+          <div class="gov-chair">
+            <img src="pisut.JPG" alt="Bro. Pisutr">
+            <div class="gov-chair-info">
+              <div class="chair-label">Chairman</div>
+              <div class="chair-name">Bro. Pisutr Vapiso</div>
+              <div class="chair-name-th">ภราดาพิสูตร วาปีโส</div>
+            </div>
+          </div>
+          <h4>Commission on Formation &amp; Vocation</h4>
+          <p style="font-size:11px;color:var(--text-muted);margin-bottom:8px;">ฝ่ายการฝึกอบรมและส่งเสริมกระแสเรียก</p>
+          <ul>
+            <li>St. Louis Marie Juvenate · ยุวลัยเซนต์หลุยส์แมรี่</li>
+            <li>St. Gabriel Scholasticate · บ้านนักศึกษา</li>
+            <li>Montfort Novitiate · บ้านนวกรรม</li>
+            <li>Vocation Promotion · งานส่งเสริมกระแสเรียก</li>
+            <li>Montfort Studies · สำนักงานมงฟอร์ตศึกษา</li>
+          </ul>
+          <a href="formation.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="gov-bottom">
+        <strong>14 Schools Nationwide</strong> · สถาบันในเครือมูลนิธิฯ 14 แห่ง
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ OUR 14 SCHOOLS ═══ -->
 <div class="section" id="schools">
   <div class="sec-head">
@@ -507,7 +828,7 @@
 
   <div class="school-grid">
     <a class="school-card" href="#">
-      <div class="school-badge">AC</div>
+      <div class="school-badge"><img src="ac.png" alt="AC"></div>
       <div class="school-info">
         <h4>Assumption College</h4>
         <div class="sch-loc">Bangkok (Bangrak)</div>
@@ -516,7 +837,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACP</div>
+      <div class="school-badge"><img src="acp.jpg" alt="ACP"></div>
       <div class="school-info">
         <h4>Assumption College Primary</h4>
         <div class="sch-loc">Bangkok (Saint Louis / Sathorn)</div>
@@ -525,7 +846,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">SG</div>
+      <div class="school-badge"><img src="sg.png" alt="SG"></div>
       <div class="school-info">
         <h4>Saint Gabriel's College</h4>
         <div class="sch-loc">Bangkok (Samsen)</div>
@@ -534,7 +855,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">MC</div>
+      <div class="school-badge"><img src="mcs.jpg" alt="MC"></div>
       <div class="school-info">
         <h4>Montfort College</h4>
         <div class="sch-loc">Chiang Mai</div>
@@ -543,7 +864,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACS</div>
+      <div class="school-badge"><img src="acs.gif" alt="ACS"></div>
       <div class="school-info">
         <h4>Assumption College Sriracha</h4>
         <div class="sch-loc">Chonburi</div>
@@ -552,7 +873,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">SLC</div>
+      <div class="school-badge"><img src="sl.jpg" alt="SLC"></div>
       <div class="school-info">
         <h4>Saint Louis College</h4>
         <div class="sch-loc">Chachoengsao</div>
@@ -561,7 +882,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACL</div>
+      <div class="school-badge"><img src="acl.jpg" alt="ACL"></div>
       <div class="school-info">
         <h4>Assumption College Lampang</h4>
         <div class="sch-loc">Lampang</div>
@@ -570,7 +891,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACT</div>
+      <div class="school-badge"><img src="act.jpg" alt="ACT"></div>
       <div class="school-info">
         <h4>Assumption College Thonburi</h4>
         <div class="sch-loc">Bangkok (Bangkhae)</div>
@@ -579,7 +900,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACR</div>
+      <div class="school-badge"><img src="acr.png" alt="ACR"></div>
       <div class="school-info">
         <h4>Assumption College Rayong</h4>
         <div class="sch-loc">Rayong</div>
@@ -588,7 +909,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACU</div>
+      <div class="school-badge"><img src="acu.png" alt="ACU"></div>
       <div class="school-info">
         <h4>Assumption College Ubon Ratchathani</h4>
         <div class="sch-loc">Ubon Ratchathani</div>
@@ -597,7 +918,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACN</div>
+      <div class="school-badge"><img src="acn.jpg" alt="ACN"></div>
       <div class="school-info">
         <h4>Assumption College Nakhon Ratchasima</h4>
         <div class="sch-loc">Nakhon Ratchasima</div>
@@ -606,7 +927,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACSP</div>
+      <div class="school-badge"><img src="acsp.jpg" alt="ACSP"></div>
       <div class="school-info">
         <h4>Assumption College Samutprakarn</h4>
         <div class="sch-loc">Samut Prakan</div>
@@ -615,7 +936,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ATN</div>
+      <div class="school-badge"><img src="atsn.png" alt="ATN"></div>
       <div class="school-info">
         <h4>Assumption Technical Nakhon Phanom</h4>
         <div class="sch-loc">Nakhon Phanom</div>
@@ -624,7 +945,7 @@
       </div>
     </a>
     <a class="school-card" href="#">
-      <div class="school-badge">ACEP</div>
+      <div class="school-badge"><img src="acep.jpg" alt="ACEP"></div>
       <div class="school-info">
         <h4>Assumption College English Program</h4>
         <div class="sch-loc">Samut Sakhon (Rama 2)</div>
@@ -791,7 +1112,9 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#strategy">Strategic Plan</a></li>
+        <li><a href="#governance">Governance</a></li>
         <li><a href="#schools">Our 14 Schools</a></li>
+        <li><a href="alumni.html">Notable Alumni</a></li>
         <li><a href="#innovation">Innovation / SWIS</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
