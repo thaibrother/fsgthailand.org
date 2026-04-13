@@ -401,24 +401,6 @@
   }
   .ci-text { font-size: 14px; color: var(--text-light); }
   .ci-text strong { color: var(--text); display: block; margin-bottom: 2px; }
-  .contact-form { background: var(--white); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
-  .contact-form h3 { font-size: 18px; margin-bottom: 20px; font-family: 'Inter', sans-serif; font-weight: 600; }
-  .fg { margin-bottom: 14px; }
-  .fg label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500; }
-  .fg input, .fg textarea {
-    width: 100%; padding: 10px 14px; border: 1px solid var(--gray-200);
-    border-radius: 6px; font-size: 14px; font-family: inherit;
-  }
-  .fg textarea { height: 90px; resize: vertical; }
-  .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--navy-light); }
-  .btn-submit {
-    background: var(--navy); color: var(--white);
-    border: none; padding: 12px 32px; border-radius: 6px;
-    font-size: 14px; cursor: pointer; font-weight: 500;
-    transition: background 0.2s;
-  }
-  .btn-submit:hover { background: var(--navy-light); }
-
   /* ── FOOTER ── */
   footer {
     background: var(--navy-dark); color: rgba(255,255,255,0.6);
@@ -1071,11 +1053,7 @@
         </div>
         <div class="ci">
           <div class="ci-icon">&#128231;</div>
-          <div class="ci-text"><strong>Email</strong> info@fsgthailand.org</div>
-        </div>
-        <div class="ci">
-          <div class="ci-icon">&#128222;</div>
-          <div class="ci-text"><strong>Phone</strong> +66 (0)2-xxx-xxxx</div>
+          <div class="ci-text"><strong>Email</strong> <a href="mailto:thaibrother@gmail.com" style="color:var(--navy-light)">thaibrother@gmail.com</a></div>
         </div>
         <div class="ci">
           <div class="ci-icon">&#127760;</div>
@@ -1087,13 +1065,11 @@
           </div>
         </div>
       </div>
-      <div class="contact-form">
-        <h3>Send a Message</h3>
-        <div class="fg"><label>Name</label><input type="text" placeholder="Your full name"></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        <div class="fg"><label>Subject</label><input type="text" placeholder="What is this about?"></div>
-        <div class="fg"><label>Message</label><textarea placeholder="Your message..."></textarea></div>
-        <button class="btn-submit">Send Message</button>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);">
+        <div style="font-size:48px;margin-bottom:16px;">&#9993;</div>
+        <h3 style="margin-bottom:8px;">Get in Touch</h3>
+        <p style="color:var(--text-light);font-size:14px;margin-bottom:20px;">For inquiries about the Foundation and its schools</p>
+        <a href="mailto:thaibrother@gmail.com" style="display:inline-block;padding:12px 32px;background:var(--navy);color:var(--white);border-radius:24px;font-size:14px;text-decoration:none;font-weight:600;">thaibrother@gmail.com</a>
       </div>
     </div>
   </div>
