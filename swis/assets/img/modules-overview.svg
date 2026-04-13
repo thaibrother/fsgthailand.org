@@ -1,0 +1,88 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="ds">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="ob"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58220"/><stop offset="100%" stop-color="#d96b1f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="520" fill="#fafbfc" rx="16"/>
+
+  <!-- Connection lines (behind everything) -->
+  <line x1="450" y1="270" x2="450" y2="100" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+  <line x1="450" y1="270" x2="700" y2="140" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+  <line x1="450" y1="270" x2="760" y2="340" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+  <line x1="450" y1="270" x2="600" y2="440" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+  <line x1="450" y1="270" x2="300" y2="440" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+  <line x1="450" y1="270" x2="140" y2="340" stroke="#f5a95e" stroke-width="2.5" opacity="0.5"/>
+
+  <!-- CENTER: SWIS Plus -->
+  <g filter="url(#ds)">
+    <circle cx="450" cy="270" r="82" fill="url(#cg)"/>
+    <text x="450" y="258" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">SWIS Plus</text>
+    <text x="450" y="290" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#fff" text-anchor="middle" opacity="0.95">28 modules · 265 functions</text>
+  </g>
+
+  <!-- Module 1: Top -->
+  <g filter="url(#ds)">
+    <rect x="385" y="30" width="130" height="70" rx="14" fill="#fff" stroke="#0e1e3a" stroke-width="2"/>
+    <rect x="385" y="30" width="130" height="24" rx="14" fill="#0e1e3a"/>
+    <rect x="385" y="44" width="130" height="10" fill="#0e1e3a"/>
+    <text x="450" y="48" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">BASIC DATA</text>
+    <text x="450" y="78" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#0e1e3a" text-anchor="middle">1 module</text>
+  </g>
+
+  <!-- Module 2: Top Right — Academic -->
+  <g filter="url(#ds)">
+    <rect x="635" y="80" width="130" height="70" rx="14" fill="#fff" stroke="#2980b9" stroke-width="2"/>
+    <rect x="635" y="80" width="130" height="24" rx="14" fill="#2980b9"/>
+    <rect x="635" y="94" width="130" height="10" fill="#2980b9"/>
+    <text x="700" y="98" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">ACADEMIC</text>
+    <text x="700" y="128" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#2980b9" text-anchor="middle">4 modules</text>
+  </g>
+
+  <!-- Module 3: Right — Admin -->
+  <g filter="url(#ds)">
+    <rect x="695" y="295" width="130" height="70" rx="14" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+    <rect x="695" y="295" width="130" height="24" rx="14" fill="#8e44ad"/>
+    <rect x="695" y="309" width="130" height="10" fill="#8e44ad"/>
+    <text x="760" y="313" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">ADMIN / SERVICE</text>
+    <text x="760" y="343" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#8e44ad" text-anchor="middle">10 modules</text>
+  </g>
+
+  <!-- Module 4: Bottom Right — Finance -->
+  <g filter="url(#ds)">
+    <rect x="535" y="400" width="130" height="70" rx="14" fill="#fff" stroke="#27ae60" stroke-width="2"/>
+    <rect x="535" y="400" width="130" height="24" rx="14" fill="#27ae60"/>
+    <rect x="535" y="414" width="130" height="10" fill="#27ae60"/>
+    <text x="600" y="418" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">FINANCE</text>
+    <text x="600" y="448" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#27ae60" text-anchor="middle">5 modules</text>
+  </g>
+
+  <!-- Module 5: Bottom Left — Student -->
+  <g filter="url(#ds)">
+    <rect x="235" y="400" width="130" height="70" rx="14" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+    <rect x="235" y="400" width="130" height="24" rx="14" fill="#e67e22"/>
+    <rect x="235" y="414" width="130" height="10" fill="#e67e22"/>
+    <text x="300" y="418" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">STUDENT</text>
+    <text x="300" y="448" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#e67e22" text-anchor="middle">7 modules</text>
+  </g>
+
+  <!-- Module 6: Left — Mobile App -->
+  <g filter="url(#ds)">
+    <rect x="75" y="295" width="130" height="70" rx="14" fill="#fff" stroke="#c0392b" stroke-width="2"/>
+    <rect x="75" y="295" width="130" height="24" rx="14" fill="#c0392b"/>
+    <rect x="75" y="309" width="130" height="10" fill="#c0392b"/>
+    <text x="140" y="313" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">MOBILE APP</text>
+    <text x="140" y="343" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#c0392b" text-anchor="middle">1 module</text>
+  </g>
+
+  <!-- Bottom label -->
+  <rect x="250" y="490" width="400" height="24" rx="6" fill="#f0f2f5"/>
+  <text x="450" y="507" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666" text-anchor="middle">Covers all school management — academics, HR, finance, student affairs</text>
+</svg>
