@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58220"/><stop offset="100%" stop-color="#d96a0a"/>
+    </linearGradient>
+    <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2980b9"/><stop offset="100%" stop-color="#1a5276"/>
+    </linearGradient>
+    <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27ae60"/><stop offset="100%" stop-color="#1e8449"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
+    <filter id="shadowSm"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <rect width="900" height="620" fill="#f8f9fa" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">SWIS Plus — Unified Database Architecture</text>
+  <text x="450" y="66" text-anchor="middle" font-size="13" fill="#6b6b6b">All modules, all departments — one database</text>
+
+  <!-- Central Database -->
+  <ellipse cx="450" cy="330" rx="95" ry="55" fill="url(#gOrange)" filter="url(#shadow)"/>
+  <ellipse cx="450" cy="318" rx="95" ry="55" fill="url(#gOrange)"/>
+  <ellipse cx="450" cy="318" rx="95" ry="28" fill="#f9a04d"/>
+  <text x="450" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">UNIFIED</text>
+  <text x="450" y="350" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">DATABASE</text>
+
+  <!-- Connection lines -->
+  <line x1="450" y1="265" x2="130" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="265" x2="290" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="265" x2="450" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="265" x2="610" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="265" x2="770" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="385" x2="90" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="385" x2="250" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="385" x2="410" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="385" x2="570" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <line x1="450" y1="385" x2="730" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+
+  <!-- Top row modules -->
+  <!-- 1. Base Data -->
+  <rect x="65" y="95" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="93" cy="123" r="14" fill="url(#gBlue)"/>
+  <text x="93" y="128" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">BD</text>
+  <text x="145" y="118" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Base Data</text>
+  <text x="145" y="134" text-anchor="middle" font-size="10" fill="#6b6b6b">Registration</text>
+
+  <!-- 2. Academic -->
+  <rect x="225" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="253" cy="116" r="14" fill="url(#gBlue)"/>
+  <text x="253" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AC</text>
+  <text x="305" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Academic</text>
+  <text x="305" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Curriculum</text>
+
+  <!-- 3. HR -->
+  <rect x="385" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="413" cy="116" r="14" fill="url(#gBlue)"/>
+  <text x="413" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">HR</text>
+  <text x="465" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">HR</text>
+  <text x="465" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Personnel</text>
+
+  <!-- 4. Finance -->
+  <rect x="545" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="573" cy="116" r="14" fill="url(#gBlue)"/>
+  <text x="573" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">FN</text>
+  <text x="625" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Finance</text>
+  <text x="625" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Budget</text>
+
+  <!-- 5. Admin -->
+  <rect x="705" y="95" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="733" cy="123" r="14" fill="url(#gBlue)"/>
+  <text x="733" y="128" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AD</text>
+  <text x="785" y="118" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Admin</text>
+  <text x="785" y="134" text-anchor="middle" font-size="10" fill="#6b6b6b">Services</text>
+
+  <!-- Bottom row modules -->
+  <!-- 6. Behavior -->
+  <rect x="25" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="53" cy="516" r="14" fill="url(#gGreen)"/>
+  <text x="53" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">BH</text>
+  <text x="105" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Behavior</text>
+  <text x="105" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Tracking</text>
+
+  <!-- 7. Activities -->
+  <rect x="185" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="213" cy="516" r="14" fill="url(#gGreen)"/>
+  <text x="213" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AT</text>
+  <text x="265" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Activities</text>
+  <text x="265" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Events</text>
+
+  <!-- 8. Digital PDCA -->
+  <rect x="345" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="373" cy="516" r="14" fill="url(#gGreen)"/>
+  <path d="M367,516 A6,6 0 1,1 367,515.99" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M373,510 L376,513 L373,516" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="425" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">PDCA</text>
+  <text x="425" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Plan-Do-Check-Act</text>
+
+  <!-- 9. Digital ID -->
+  <rect x="505" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="533" cy="516" r="14" fill="url(#gGreen)"/>
+  <text x="533" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">ID</text>
+  <text x="585" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Digital ID</text>
+  <text x="585" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">RFID · Face ID</text>
+
+  <!-- 10. Mobile App -->
+  <rect x="665" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <circle cx="693" cy="516" r="14" fill="url(#gGreen)"/>
+  <rect x="688" y="508" width="10" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <text x="745" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Mobile</text>
+  <text x="745" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">iOS · Android</text>
+
+  <!-- Users at sides -->
+  <!-- Left: Executive -->
+  <rect x="15" y="280" width="120" height="90" rx="14" fill="url(#gOrange)" filter="url(#shadowSm)"/>
+  <circle cx="75" cy="310" r="12" fill="rgba(255,255,255,0.3)"/>
+  <rect x="67" y="300" width="16" height="12" rx="2" fill="rgba(255,255,255,0.6)"/>
+  <text x="75" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Executive</text>
+  <text x="75" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Dashboard</text>
+  <line x1="135" y1="325" x2="355" y2="325" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
+
+  <!-- Right: Teacher -->
+  <rect x="765" y="280" width="120" height="90" rx="14" fill="url(#gOrange)" filter="url(#shadowSm)"/>
+  <circle cx="825" cy="310" r="12" fill="rgba(255,255,255,0.3)"/>
+  <rect x="817" y="300" width="16" height="12" rx="2" fill="rgba(255,255,255,0.6)"/>
+  <text x="825" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Teacher</text>
+  <text x="825" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Record / Search</text>
+  <line x1="765" y1="325" x2="545" y2="325" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
+
+  <!-- Bottom labels -->
+  <text x="450" y="590" text-anchor="middle" font-size="13" fill="#6b6b6b">28 modules · 265 functions · One database · Cross-dimensional analysis</text>
+  <text x="450" y="610" text-anchor="middle" font-size="11" fill="#999">SWIS Plus — swisplus.com</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <linearGradient id="sOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58220"/><stop offset="100%" stop-color="#d96a0a"/>
+    </linearGradient>
+    <linearGradient id="sBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50"/><stop offset="100%" stop-color="#1a252f"/>
+    </linearGradient>
+    <linearGradient id="sTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1abc9c"/><stop offset="100%" stop-color="#16a085"/>
+    </linearGradient>
+    <linearGradient id="sPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e44ad"/><stop offset="100%" stop-color="#6c3483"/>
+    </linearGradient>
+    <filter id="sShadow"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.12"/></filter>
+  </defs>
+
+  <rect width="900" height="380" fill="#f8f9fa" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a1a">Designed for everyone in school</text>
+  <text x="450" y="62" text-anchor="middle" font-size="13" fill="#6b6b6b">3 user groups — each sees data relevant to their role</text>
+
+  <!-- Card 1: Executive -->
+  <rect x="40" y="90" width="260" height="260" rx="18" fill="#fff" filter="url(#sShadow)"/>
+  <rect x="40" y="90" width="260" height="70" rx="18" fill="url(#sBlue)"/>
+  <rect x="40" y="142" width="260" height="18" fill="url(#sBlue)"/>
+  <circle cx="170" cy="130" r="32" fill="#fff" stroke="url(#sBlue)" stroke-width="3"/>
+  <!-- Executive icon: briefcase -->
+  <rect x="157" y="122" width="26" height="18" rx="3" fill="none" stroke="#2c3e50" stroke-width="2.5"/>
+  <path d="M163,122 L163,118 Q163,115 166,115 L174,115 Q177,115 177,118 L177,122" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <text x="170" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">EXECUTIVE</text>
+  <text x="170" y="188" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a1a">Executive</text>
+  <text x="170" y="214" text-anchor="middle" font-size="12" fill="#6b6b6b">School overview dashboard</text>
+  <text x="170" y="234" text-anchor="middle" font-size="12" fill="#6b6b6b">Real-time notification</text>
+  <text x="170" y="254" text-anchor="middle" font-size="12" fill="#6b6b6b">Strategic reports</text>
+  <text x="170" y="274" text-anchor="middle" font-size="12" fill="#6b6b6b">Data-driven decisions</text>
+  <rect x="95" y="295" width="150" height="32" rx="16" fill="url(#sBlue)"/>
+  <text x="170" y="316" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">View details</text>
+
+  <!-- Card 2: Teacher -->
+  <rect x="320" y="90" width="260" height="260" rx="18" fill="#fff" filter="url(#sShadow)"/>
+  <rect x="320" y="90" width="260" height="70" rx="18" fill="url(#sTeal)"/>
+  <rect x="320" y="142" width="260" height="18" fill="url(#sTeal)"/>
+  <circle cx="450" cy="130" r="32" fill="#fff" stroke="url(#sTeal)" stroke-width="3"/>
+  <!-- Teacher icon: person with board -->
+  <circle cx="445" cy="122" r="7" fill="none" stroke="#16a085" stroke-width="2.5"/>
+  <path d="M435,134 Q445,140 455,134" fill="none" stroke="#16a085" stroke-width="2.5"/>
+  <rect x="458" y="118" width="8" height="12" rx="1" fill="none" stroke="#16a085" stroke-width="1.5"/>
+  <text x="450" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">TEACHER</text>
+  <text x="450" y="188" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a1a">Teacher &amp; Staff</text>
+  <text x="450" y="214" text-anchor="middle" font-size="12" fill="#6b6b6b">Schedule / Attendance / Grades</text>
+  <text x="450" y="234" text-anchor="middle" font-size="12" fill="#6b6b6b">Digital PDCA plans</text>
+  <text x="450" y="254" text-anchor="middle" font-size="12" fill="#6b6b6b">Student behavior reports</text>
+  <text x="450" y="274" text-anchor="middle" font-size="12" fill="#6b6b6b">Parent communication</text>
+  <rect x="375" y="295" width="150" height="32" rx="16" fill="url(#sTeal)"/>
+  <text x="450" y="316" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">View details</text>
+
+  <!-- Card 3: Student/Parent -->
+  <rect x="600" y="90" width="260" height="260" rx="18" fill="#fff" filter="url(#sShadow)"/>
+  <rect x="600" y="90" width="260" height="70" rx="18" fill="url(#sPurple)"/>
+  <rect x="600" y="142" width="260" height="18" fill="url(#sPurple)"/>
+  <circle cx="730" cy="130" r="32" fill="#fff" stroke="url(#sPurple)" stroke-width="3"/>
+  <!-- Student icon: person + small person -->
+  <circle cx="723" cy="122" r="7" fill="none" stroke="#6c3483" stroke-width="2.5"/>
+  <path d="M713,134 Q723,140 733,134" fill="none" stroke="#6c3483" stroke-width="2.5"/>
+  <circle cx="740" cy="126" r="5" fill="none" stroke="#6c3483" stroke-width="2"/>
+  <path d="M733,136 Q740,140 747,136" fill="none" stroke="#6c3483" stroke-width="1.5"/>
+  <text x="730" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">STUDENT</text>
+  <text x="730" y="188" text-anchor="middle" font-size="17" font-weight="bold" fill="#1a1a1a">Student &amp; Parent</text>
+  <text x="730" y="214" text-anchor="middle" font-size="12" fill="#6b6b6b">Timetable / Grades / Homework</text>
+  <text x="730" y="234" text-anchor="middle" font-size="12" fill="#6b6b6b">School news &amp; announcements</text>
+  <text x="730" y="254" text-anchor="middle" font-size="12" fill="#6b6b6b">Behavior tracking for parents</text>
+  <text x="730" y="274" text-anchor="middle" font-size="12" fill="#6b6b6b">Instant notifications</text>
+  <rect x="655" y="295" width="150" height="32" rx="16" fill="url(#sPurple)"/>
+  <text x="730" y="316" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">View details</text>
+
+  <!-- Bottom -->
+  <text x="450" y="372" text-anchor="middle" font-size="12" fill="#999">All users work on the same database — data flows automatically</text>
+</svg>

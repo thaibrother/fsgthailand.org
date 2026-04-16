@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>โมดูลทั้งหมด — SWIS Plus</title>
+<meta name="description" content="สำรวจ 28 โมดูลของ SWIS Plus ครอบคลุม 265 ฟังก์ชัน พร้อมวัตถุประสงค์ หลักการทำงาน เสียงสะท้อนจากผู้ใช้งานจริง วีดีโอสอน และคู่มือ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="modules.html" class="active">โมดูลทั้งหมด</a>
+    <a href="applications.html">SWIS Applications</a>
+    <a href="executive.html">โมดุลผู้บริหาร</a>
+    <a href="teacher.html">โมดุลครูและบุคลากร</a>
+    <a href="student.html">โมดุลนักเรียนและผู้ปกครอง</a>
+  </div>
+</nav>
+
+<section class="page-head">
+  <h1>โมดูลทั้งหมดของ SWIS Plus</h1>
+  <p>28 โมดูลหลัก ครอบคลุม 265 ฟังก์ชัน ทุกงานของโรงเรียน ตั้งแต่ข้อมูลพื้นฐาน งานวิชาการ พฤติกรรมนักเรียน การเงิน บริหารบุคคล ไปจนถึง Mobile Application</p>
+  <div class="stats">
+    <div class="stat"><b>28</b><span>โมดูลหลัก</span></div>
+    <div class="stat"><b>265</b><span>ฟังก์ชัน</span></div>
+    <div class="stat"><b>14</b><span>โรงเรียนใช้จริง</span></div>
+    <div class="stat"><b>25+</b><span>ปีในสนามจริง</span></div>
+  </div>
+</section>
+
+<div class="cat-tabs">
+  <div class="cat-tabs-inner">
+    <button class="cat-tab active" data-cat="all"><i class="fa-solid fa-grip"></i> ทั้งหมด (28)</button>
+    <button class="cat-tab" data-cat="base"><i class="fa-solid fa-database"></i> ข้อมูลพื้นฐาน (1)</button>
+    <button class="cat-tab" data-cat="academic"><i class="fa-solid fa-graduation-cap"></i> วิชาการ/พฤติกรรม (4)</button>
+    <button class="cat-tab" data-cat="admin"><i class="fa-solid fa-building-columns"></i> บริหาร/บริการ (10)</button>
+    <button class="cat-tab" data-cat="finance"><i class="fa-solid fa-coins"></i> การเงิน/งบประมาณ (3)</button>
+    <button class="cat-tab" data-cat="ops"><i class="fa-solid fa-bell-concierge"></i> บริการนักเรียน (9)</button>
+    <button class="cat-tab" data-cat="mobile"><i class="fa-solid fa-mobile-screen"></i> Mobile/อื่นๆ (1)</button>
+  </div>
+</div>
+
+<section class="modules-wrap">
+  <div class="modules-grid" id="modulesGrid">
+    
+      <div class="module-card" data-cat="base">
+        <div class="module-head">
+          <div class="module-num">01</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-database"></i></div>
+            <div>
+              <span class="module-tag">ข้อมูลพื้นฐาน</span>
+              <h3 class="module-title">ข้อมูลพื้นฐาน (นักเรียน · ครู · โรงเรียน)</h3>
+              <div class="module-count"><b>20 ฟังก์ชั่น</b> · เริ่มต้นของทุกโมดูล</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">เก็บฐานข้อมูลหลักของโรงเรียน ได้แก่ ข้อมูลนักเรียน ครูและบุคลากร โครงสร้างฝ่าย-หน่วยงาน นโยบาย-มาตรฐาน-ตำแหน่งผู้อำนวยการ ให้ระบบอื่นทั้งหมดสามารถดึงไปใช้ได้จากแหล่งเดียว</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">Single Source of Truth — บันทึกครั้งเดียวใช้ได้ทุกระบบ รองรับการนำเข้าข้อมูลแบบ bulk และจัดโครงสร้างฝ่าย-หน่วยงานตามโครงสร้างจริงของโรงเรียน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ยุติข้อมูลซ้ำซ้อน-ไม่ตรงกันระหว่างฝ่าย ลดงานบันทึกซ้ำ เป็นรากฐานของการออกรายงาน สช. และมาตรฐานประกันคุณภาพ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="academic">
+        <div class="module-head">
+          <div class="module-num">02</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <div>
+              <span class="module-tag">วิชาการ/พฤติกรรม</span>
+              <h3 class="module-title">ระบบวิชาการ วัดและประเมินผล</h3>
+              <div class="module-count"><b>28 ฟังก์ชั่น</b> · หัวใจงานวิชาการ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บริหารหลักสูตร จัดการคะแนน ประเมินผลสัมฤทธิ์ คุณลักษณะอันพึงประสงค์ สมรรถนะสำคัญผู้เรียน ออกใบคะแนน-ใบ ปพ. ตามมาตรฐาน กระทรวงฯ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ผูกโครงสร้างหลักสูตรกับรายวิชา-ตัวชี้วัด-เกณฑ์การประเมิน ครูผู้สอนลงคะแนนออนไลน์ ระบบประมวลผลอัตโนมัติตามเกณฑ์ของแต่ละโรง</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ครูประจำชั้นและหัวหน้าสายสามารถเห็นภาพรวมคะแนนทั้งห้อง-ทั้งระดับชั้นได้ทันที ลดเวลาการประมวลผลจากสัปดาห์เหลือเป็นวินาที</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="academic">
+        <div class="module-head">
+          <div class="module-num">03</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div>
+              <span class="module-tag">วิชาการ/พฤติกรรม</span>
+              <h3 class="module-title">ระบบจัดการเรียนการสอน</h3>
+              <div class="module-count"><b>19 ฟังก์ชั่น</b> · ชั้นเรียน · แผนการสอน</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดการชั้นเรียน แผนการเรียน รายวิชา ครูผู้สอนประจำวิชา เช็กชื่อเข้าเรียนรายวัน/รายคาบ บันทึกการบ้านและเนื้อหาการเรียนออนไลน์</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">เชื่อมโครงสร้างหลักสูตร → แผนการเรียน → ห้องเรียน → ครูผู้สอน → นักเรียน แบบ cascading; ข้อมูลไหลเข้าหากันโดยอัตโนมัติ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ครูลดภาระเอกสารที่ต้องทำซ้ำในแต่ละเทอม ระบบสามารถคัดลอกแผนการสอนไปเทอมใหม่ได้ในคลิกเดียว และสรุปสถิติการเข้าเรียนแบบ real-time</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="academic">
+        <div class="module-head">
+          <div class="module-num">04</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <div>
+              <span class="module-tag">วิชาการ/พฤติกรรม</span>
+              <h3 class="module-title">Pushing Knowledge</h3>
+              <div class="module-count"><b>3 ฟังก์ชั่น</b> · ส่งความรู้ถึงผู้เรียน</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ครูสามารถส่ง "ความรู้" — บทความ คลิป แบบฝึกหัด — ถึงนักเรียนเป็นรายบุคคลหรือกลุ่ม ตามความถนัดหรือจุดอ่อนที่ระบบตรวจพบ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">วิเคราะห์จากผลการประเมิน → จัดกลุ่มนักเรียนตามความต้องการ → ครูเลือก content ที่เหมาะและ push ผ่าน Mobile App / Portal</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">เปลี่ยนห้องเรียนจาก one-size-fits-all สู่การเรียนรู้เฉพาะบุคคล (Personalized Learning) ซึ่งเป็นทิศทางของการศึกษาในยุค AI</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="academic">
+        <div class="module-head">
+          <div class="module-num">05</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <div>
+              <span class="module-tag">วิชาการ/พฤติกรรม</span>
+              <h3 class="module-title">ระบบพฤติกรรมนักเรียน</h3>
+              <div class="module-count"><b>5 ฟังก์ชั่น</b> · ปกครอง · คุณลักษณะ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บันทึกพฤติกรรมเชิงบวกและเชิงลบของนักเรียน ระบบคะแนนความประพฤติ การเข้าแถว กิจกรรมจิตอาสา เชื่อมกับงานปกครอง</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ครูและนักเรียนบันทึกเหตุการณ์ออนไลน์ ระบบสะสมคะแนนในโปรไฟล์นักเรียน แจ้งเตือนผู้ปกครองผ่าน Mobile App</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ข้อมูลพฤติกรรมกลายเป็นสิ่งที่ตรวจสอบได้ ไม่ใช่ความรู้สึกของครู → โรงเรียนสามารถวางแผนดูแลนักเรียนรายบุคคลได้อย่างเป็นระบบ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">06</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-award"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">ประกันคุณภาพมาตรฐาน + นิเทศติดตาม</h3>
+              <div class="module-count"><b>10 ฟังก์ชั่น</b> · QA · นิเทศ · KPI</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดการประเมินคุณภาพภายใน รองรับการตรวจจาก สมศ./สช. ผูกนโยบาย → ยุทธศาสตร์ → แผนงาน → KPI → ผลการดำเนินงาน เป็นสายโซ่เดียว</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">อ้างอิง "คู่มือคุณภาพหน่วยงาน" ของโรงเรียน กำหนดเกณฑ์ประเมินในระบบ หน่วยงานลงผลงาน ผู้บริหารนิเทศผ่านระบบ ออกรายงานอัตโนมัติ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">การประกันคุณภาพไม่ใช่ "ทำเพราะถูกตรวจ" แต่เป็น daily operation ที่ตรวจสอบได้ตลอดปี ลดเวลาเตรียมเอกสารตรวจจากเดือนเหลือวัน</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">07</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">ระบบบริการหน่วยงาน</h3>
+              <div class="module-count"><b>13 ฟังก์ชั่น</b> · อาคาร · ยานพาหนะ · จัดเลี้ยง</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ขอใช้อาคาร-สถานที่ จองยานพาหนะ จัดงานเลี้ยง ขอบริการจากหน่วยงานสนับสนุนภายในโรงเรียน ผ่านระบบออนไลน์ที่ผูกกับแผนงาน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ผู้ขอใช้บริการกรอกคำขอออนไลน์ → ระบบเช็กความว่าง → หัวหน้างานอนุมัติ → หน่วยงานบริการจัดเตรียม → ปิดงานและประเมิน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ยุติการขอใช้บริการด้วยกระดาษ/LINE ที่สูญหายบ่อย มีประวัติการใช้งานย้อนหลัง ใช้วางแผนบำรุงรักษาอุปกรณ์ได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">08</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">สินทรัพย์และครุภัณฑ์</h3>
+              <div class="module-count"><b>15 ฟังก์ชั่น</b> · ทะเบียน · ค่าเสื่อม · บำรุง</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ลงทะเบียนพัสดุ-ครุภัณฑ์ แบ่งกลุ่มหลัก-กลุ่มย่อย ติดตามการเคลื่อนย้าย ค่าเสื่อมราคา ซ่อมบำรุง และการจำหน่ายออก</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ครุภัณฑ์แต่ละชิ้นมี QR Code เชื่อมกับประวัติในระบบ สามารถสแกนเพื่อตรวจนับประจำปีและบันทึกการซ่อม</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ตรวจนับครุภัณฑ์ประจำปีเสร็จภายในวันเดียว แทนที่จะใช้สัปดาห์ สามารถวางแผนจัดซื้อใหม่จากสถิติอายุใช้งานจริง</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">09</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-file-signature"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">E-Office / งานสารบรรณ</h3>
+              <div class="module-count"><b>12 ฟังก์ชั่น</b> · บันทึก · คำสั่ง · ลงนาม</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บันทึกเสนอ ขออนุมัติ ลงนามอิเล็กทรอนิกส์ ออกคำสั่งแต่งตั้งคณะกรรมการ ติดตามสถานะเอกสารของหน่วยงาน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">เอกสารวิ่งผ่าน workflow ที่กำหนดได้ → แจ้งเตือนผู้อนุมัติตามลำดับ → ผู้บริหารลงนามในระบบ → จัดเก็บในคลังเอกสารกลาง</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ลดการใช้กระดาษและเวลาเดินเอกสาร ผู้บริหารสามารถอนุมัติผ่านมือถือจากที่ไหนก็ได้ ไม่ต้องรอกลับเข้าออฟฟิศ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">10</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">สื่อสารมวลชน และประชาสัมพันธ์</h3>
+              <div class="module-count"><b>18 ฟังก์ชั่น</b> · ข่าว · อัลบั้ม · PR</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดการข่าวสาร โพสต์ภาพกิจกรรม สร้างอัลบั้มภาพเชื่อมกับแผนงาน ส่งต่อสู่ Website ของโรงเรียน และช่องทางโซเชียลมีเดีย</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ลงข้อมูลครั้งเดียวในระบบ → เผยแพร่อัตโนมัติหลายช่องทาง → เก็บสถิติการเข้าถึงเพื่อวัดประสิทธิผลการสื่อสาร</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">สร้างภาพลักษณ์เชิงรุกของโรงเรียน ผู้ปกครองเห็นกิจกรรมที่ลูกทำจริง ผู้บริหารวัดผลการประชาสัมพันธ์ได้ด้วยตัวเลข</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="finance">
+        <div class="module-head">
+          <div class="module-num">11</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-coins"></i></div>
+            <div>
+              <span class="module-tag">การเงิน/งบประมาณ</span>
+              <h3 class="module-title">การเงินและการบัญชี</h3>
+              <div class="module-count"><b>27 ฟังก์ชั่น</b> · ค่าเทอม · บัญชี · K-Payment</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">รับชำระค่าเทอม-ค่าธรรมเนียม ออกใบเสร็จอิเล็กทรอนิกส์ บันทึกรายรับ-รายจ่าย งบทดลอง งบดุล รายงานส่งผู้ตรวจสอบบัญชี</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">เชื่อม K-PAYMENT Gateway ของ KBANK และ KTB API ผู้ปกครองจ่ายผ่านมือถือ ระบบออกใบเสร็จและบันทึกบัญชีอัตโนมัติ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ลดเวลาการกระทบยอดเงินจากสัปดาห์เหลือ real-time รู้ยอดค้างชำระรายห้อง-รายคนได้ทันที โปร่งใส ตรวจสอบได้ทุกเส้นทางเงิน</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="finance">
+        <div class="module-head">
+          <div class="module-num">12</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+            <div>
+              <span class="module-tag">การเงิน/งบประมาณ</span>
+              <h3 class="module-title">ระบบเงินเดือน (Payroll)</h3>
+              <div class="module-count"><b>3 ฟังก์ชั่น</b> · Payroll · ภาษี · ประกันสังคม</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">คำนวณเงินเดือน ค่าล่วงเวลา หัก กบข./ประกันสังคม/ภาษี ออกสลิปเงินเดือน ส่งข้อมูลกรมสรรพากรและธนาคาร</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ดึงข้อมูลจากโมดูลขาดลามาสายและโครงสร้างบุคคลอัตโนมัติ ครูเห็นสลิปผ่าน Mobile App ฝ่ายบัญชีอนุมัติรอบเงินเดือนในคลิกเดียว</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ลดความผิดพลาดในการคำนวณเงินเดือน ครูไม่ต้องไปขอสลิปที่ฝ่ายบัญชี ข้อมูลภาษีส่งกรมสรรพากรได้ตรงเวลาเสมอ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="finance">
+        <div class="module-head">
+          <div class="module-num">13</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div>
+              <span class="module-tag">การเงิน/งบประมาณ</span>
+              <h3 class="module-title">ระบบงบประมาณ</h3>
+              <div class="module-count"><b>7 ฟังก์ชั่น</b> · งบฯ · แผนงาน · ควบคุม</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดทำงบประมาณประจำปี ผูกกับแผนงาน-โครงการ-กิจกรรม ควบคุมการเบิกจ่าย เทียบแผน vs ผลจริง ออกรายงานสถานะงบประมาณ real-time</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">งบประมาณถูกผูกกับแผนงานเดียวกันกับที่บันทึกในระบบ เบิกจ่ายต้องอ้างอิงแผน ระบบจะเตือนเมื่องบเหลือน้อย</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ยุติปัญหา "งบลอย" ที่ตั้งไว้แต่ไม่มีฐานคำนวณ ผู้บริหารเห็นสถานะงบประมาณของทุกฝ่ายในหน้าเดียว</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">14</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">ระบบแผนงาน (Strategic Plan)</h3>
+              <div class="module-count"><b>7+ ฟังก์ชั่น</b> · ยุทธศาสตร์ · PDCA</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดทำแผนยุทธศาสตร์โรงเรียน → แตกเป็นแผนปฏิบัติการรายหน่วยงาน → ผูกกับงบประมาณ → ผูกกับ KPI → ติดตามผลจริง</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ใช้ PDCA 9 ขั้นตอน เจ้าของแผนรายงานความก้าวหน้าตามเวลาจริง คำสั่งแต่งตั้งคณะกรรมการผูกกับแผนงานอัตโนมัติ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">แผนไม่ใช่แค่เอกสารต้นปี แต่เป็นเครื่องมือบริหารจริงที่ติดตามได้ทุกสัปดาห์ เชื่อมยุทธศาสตร์ → โรงเรียน → หน่วยงาน → คน เป็นสายเดียวกัน</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">15</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-user-plus"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">ระบบรับสมัครนักเรียน</h3>
+              <div class="module-count"><b>15 ฟังก์ชั่น</b> · ออนไลน์ · สอบ · มอบตัว</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">รับสมัครนักเรียนออนไลน์ ผู้ปกครองกรอกข้อมูลผ่านเว็บ อัปโหลดเอกสาร ชำระค่าสมัคร นัดสอบสัมภาษณ์ จนถึงมอบตัว</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ผู้ปกครองไม่ต้องเดินทางมาโรงเรียน — ข้อมูลวิ่งตรงเข้าฐานข้อมูลนักเรียนใหม่ ระบบจัดคิวสอบ จัดห้อง แจ้งผลอัตโนมัติ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">เพิ่มประสบการณ์ที่ดีให้ผู้ปกครองตั้งแต่วันแรก ลดงานเอกสารของฝ่ายทะเบียน เก็บสถิติการสมัคร-การมอบตัวได้แบบรายปี</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">16</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-book"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">ระบบห้องสมุด</h3>
+              <div class="module-count"><b>3 ฟังก์ชั่น</b> · ยืม-คืน · สถิติ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดการหนังสือ สื่อการเรียนรู้ การยืม-คืน ค่าปรับ สถิติการอ่านของนักเรียน เชื่อมกับโครงการส่งเสริมการอ่าน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ใช้ RFID หรือ Barcode ในการยืม-คืน บัตรนักเรียนใบเดียวใช้ได้ทั้งห้องสมุดและร้านค้าในโรงเรียน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ครูบรรณารักษ์รู้จักนักเรียนเป็นรายบุคคลจากสถิติการอ่าน วางแผนจัดกิจกรรมส่งเสริมได้ตรงกลุ่มเป้าหมาย</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">17</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-user-nurse"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">ระบบห้องพยาบาล</h3>
+              <div class="module-count"><b>5 ฟังก์ชั่น</b> · 43 ไฟล์คู่มือ · ATK · วัคซีน</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บันทึกการใช้บริการห้องพยาบาล ประวัติโรค อาการ การรักษา ยาที่ให้ ตรวจสุขภาพประจำปี สมรรถภาพ วัคซีน ผล ATK</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">พยาบาลบันทึกเหตุการณ์ทันทีเมื่อนักเรียนมาใช้บริการ ระบบเก็บประวัติสะสมรายบุคคล แจ้งเตือนผู้ปกครองผ่าน Mobile App</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">เห็นแพทเทิร์นสุขภาพของนักเรียนตลอดปี ครูประจำชั้นดูแลได้ทันเหตุการณ์ ช่วงโรคระบาดสามารถออกรายงาน ATK ส่งสาธารณสุขได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">18</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">ระบบ Face Scan</h3>
+              <div class="module-count"><b>5 ฟังก์ชั่น</b> · ใบหน้า · ประตู · เช็คชื่อ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บันทึกเวลาเข้า-ออกครูและบุคลากรด้วยระบบจดจำใบหน้า เช็คชื่อนักเรียนหน้าประตูห้องเรียน ไม่ต้องสแกนบัตรหรือพิมพ์รหัส</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">กล้องจับใบหน้า → AI เปรียบเทียบกับฐานข้อมูล → บันทึกเวลาเข้า-ออกอัตโนมัติ → ส่งข้อมูลเข้าระบบเงินเดือน/ขาดลามาสาย</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ลดการทุจริตเช็คชื่อแทนกัน ข้อมูลเข้า-ออกแม่นยำถึงระดับวินาที ใช้เป็นฐานของการคำนวณ OT และประเมินการทำงาน</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">19</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">ขาด ลา มาสาย ครู บุคลากร</h3>
+              <div class="module-count"><b>6 ฟังก์ชั่น</b> · ลาออนไลน์ · สถิติ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ครูและบุคลากรยื่นลาออนไลน์ ระบบเช็กสิทธิ์การลาคงเหลือ ส่งต่อผู้บังคับบัญชาอนุมัติ บันทึกเข้าโปรไฟล์บุคคล</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">เชื่อมกับระบบ Face Scan และโครงสร้างบุคคล คำนวณสิทธิ์การลาอัตโนมัติตามประเภทการจ้าง ไม่ต้องกรอกใบลากระดาษ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ฝ่ายบุคคลออกรายงานสถิติการลาของทุกฝ่ายได้ทันที ผู้บริหารนำข้อมูลไปประเมินผลการปฏิบัติงานและแผนพัฒนาบุคลากรได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">20</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">SWIS Logistic Assistant</h3>
+              <div class="module-count"><b>5 ฟังก์ชั่น</b> · ขนส่ง · เอกสาร · พัสดุ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ช่วยจัดการงาน logistics ภายในโรงเรียน — รับ-ส่งเอกสารระหว่างฝ่าย จัดส่งพัสดุ-ครุภัณฑ์ ติดตามสถานะงาน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ระบบสร้างคิวงานให้เจ้าหน้าที่ logistics สแกนยืนยันการรับ-ส่ง ณ จุดปลายทาง ผู้ส่งเห็นสถานะ real-time</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ยุติปัญหา "เอกสารหาย" ระหว่างทาง ทุกเส้นทางเดินเอกสารและพัสดุตรวจสอบย้อนหลังได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">21</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-id-card"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">บัตร RFID</h3>
+              <div class="module-count"><b>3 ฟังก์ชั่น</b> · ลงทะเบียน · เติมเงิน</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">บัตร RFID ใบเดียวของนักเรียนใช้ได้ทุกบริการในโรงเรียน — เข้า-ออกประตู ยืม-คืนห้องสมุด ซื้ออาหาร ซื้อของในมินิมาร์ท</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ผู้ปกครองเติมเงินในบัตรผ่าน Mobile App หรือเคาน์เตอร์การเงิน ระบบหักเงินอัตโนมัติเมื่อใช้บริการ แจ้งเตือนยอดคงเหลือ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">นักเรียนไม่ต้องพกเงินสด ผู้ปกครองควบคุมค่าใช้จ่ายและเห็นรายการใช้จ่ายของลูกทุกรายการ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">22</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-store"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">SWIS Mart (มินิมาร์ท)</h3>
+              <div class="module-count"><b>5 ฟังก์ชั่น</b> · สต็อก · POS</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ระบบ POS สำหรับมินิมาร์ทในโรงเรียน รับบัตร RFID เป็นการชำระเงิน จัดการสต็อกสินค้า ออกรายงานยอดขายประจำวัน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">สแกนบัตรนักเรียน → ระบบตัดเงินจากบัตร → หักสต็อกอัตโนมัติ → ข้อมูลเข้าระบบบัญชีโรงเรียน → แจ้งผู้ปกครอง</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">โรงเรียนมีรายได้เพิ่มจากมินิมาร์ท ขณะเดียวกันควบคุมสต็อกและความโปร่งใสของเงินหมุนเวียนได้ทุกบาท</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">23</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">อาหารจัดเลี้ยง (ครูและนักเรียน)</h3>
+              <div class="module-count"><b>3 ฟังก์ชั่น</b> · เมนู · โภชนาการ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดการเมนูอาหารกลางวัน โภชนาการ แพ้อาหาร แจ้งผู้ปกครองล่วงหน้า บันทึกการรับประทานของแต่ละคน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">โภชนากรวางแผนเมนูรายสัปดาห์ในระบบ ครูประจำชั้นเช็กนักเรียนที่แพ้อาหาร แม่ครัวดูยอดที่ต้องเตรียม</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ผู้ปกครองรู้ว่าลูกทานอะไรในแต่ละวัน ลดปัญหาอาหารไม่พอ/เหลือทิ้ง ข้อมูลโภชนาการตรวจสอบได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">24</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-burger"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">สั่งอาหารออนไลน์ล่วงหน้า</h3>
+              <div class="module-count"><b>4 ฟังก์ชั่น</b> · Pre-order · คิว</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">นักเรียนและครูสามารถสั่งอาหารจากร้านในโรงอาหารล่วงหน้าผ่าน Mobile App ลดเวลารอคิวในช่วงพักกลางวัน</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">เลือกเมนู → จ่ายด้วยบัตร RFID → ร้านรับออร์เดอร์และเตรียม → นักเรียนมารับตามเวลาที่กำหนด</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ลดความแออัดในโรงอาหาร ร้านอาหารวางแผนการผลิตได้แม่นยำ ลดของเสีย</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">25</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-plate-wheat"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">SWIS Canteen (ระบบขายอาหาร)</h3>
+              <div class="module-count"><b>4 ฟังก์ชั่น</b> · 20 วีดีโอสอน · 57 ภาพประกอบ</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ระบบ POS สำหรับร้านอาหารในโรงเรียน — รับบัตร RFID ออกใบเสร็จ จัดการเมนู รายงานยอดขายรายวัน-รายเดือน-รายปี</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">แคชเชียร์สแกนเมนู → สแกนบัตรนักเรียน → ระบบหักเงินและออกใบเสร็จ → ข้อมูลเข้าระบบบัญชี real-time</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">โรงอาหารโปร่งใส 100% ไม่มีเงินหายระหว่างทาง โรงเรียนเก็บค่าเช่าแผงตามยอดขายจริง ผู้ปกครองตรวจสอบรายจ่ายลูกได้</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="ops">
+        <div class="module-head">
+          <div class="module-num">26</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-mug-hot"></i></div>
+            <div>
+              <span class="module-tag">บริการนักเรียน</span>
+              <h3 class="module-title">SWIS Cafe</h3>
+              <div class="module-count"><b>4 ฟังก์ชั่น</b> · เครื่องดื่ม · สะสมแต้ม</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">ระบบ POS สำหรับร้านเครื่องดื่ม-ของหวานในโรงเรียน รองรับเมนูหลากหลาย ออกใบเสร็จ จัดการโปรโมชั่น</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">ทำงานคล้าย SWIS Canteen แต่มีเมนูที่ยืดหยุ่นกว่าและระบบสะสมแต้ม-โปรโมชั่นสำหรับลูกค้าประจำ</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ครูและนักเรียนได้เครื่องดื่มคุณภาพในราคาย่อมเยา โรงเรียนสร้างรายได้เสริมสู่กิจการเพื่อสังคม</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="admin">
+        <div class="module-head">
+          <div class="module-num">27</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-flask"></i></div>
+            <div>
+              <span class="module-tag">บริหาร/บริการ</span>
+              <h3 class="module-title">วิจัย สำรวจ และบันทึกการอบรม</h3>
+              <div class="module-count"><b>12 ฟังก์ชั่น</b> · แบบสอบถาม · อบรม</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">จัดทำแบบสอบถามออนไลน์ เก็บข้อมูลวิจัย บันทึกสถิติการอบรมครู-บุคลากร เชื่อมกับโปรไฟล์เพื่อติดตามการพัฒนา</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">สร้างแบบสอบถามด้วยตัวเอง → แจกจ่ายผ่าน Mobile App → ประมวลผลอัตโนมัติเป็นกราฟ → Export เป็นรายงานพร้อมใช้</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">งานวิจัยและแบบประเมินภายในไม่ต้องใช้ Google Forms ข้อมูลอยู่ในระบบของโรงเรียนเอง ปลอดภัยตาม PDPA</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+      <div class="module-card" data-cat="mobile">
+        <div class="module-head">
+          <div class="module-num">28</div>
+          <div class="module-head-top">
+            <div class="module-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <div>
+              <span class="module-tag">Mobile/อื่นๆ</span>
+              <h3 class="module-title">SWIS Mobile Application</h3>
+              <div class="module-count"><b>4 ฟังก์ชั่น</b> · iOS + Android native</div>
+            </div>
+          </div>
+        </div>
+        <div class="module-body">
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-bullseye"></i> วัตถุประสงค์</div>
+            <div class="module-text">แอปพลิเคชันสำหรับนักเรียน ผู้ปกครอง ครู และผู้บริหาร เข้าถึงข้อมูลและทำงานได้ทุกที่ทุกเวลา รองรับทั้ง iOS และ Android</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gears"></i> หลักการทำงาน</div>
+            <div class="module-text">Native App ที่เชื่อมกับ SWIS Backend — เห็นเฉพาะข้อมูลและฟังก์ชั่นที่ได้รับสิทธิ์ แจ้งเตือน Push Notification เมื่อมีเหตุการณ์</div>
+          </div>
+          <div class="module-section">
+            <div class="module-label"><i class="fa-solid fa-gem"></i> เสียงสะท้อนจากผู้ใช้งานจริง</div>
+            <div class="module-text">ผู้ปกครองเข้าถึงข้อมูลลูกจากมือถือ ผู้บริหารอนุมัติงานจากที่ไหนก็ได้ ครูเช็กชื่อเข้าเรียนด้วยมือถือ ไม่ต้องพกกระดาษ</div>
+          </div>
+        </div>
+        <div class="module-actions">
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-play"></i> วีดีโอสอน</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-file-pdf"></i> คู่มือ</button>
+          <button class="mod-btn disabled" title="เร็ว ๆ นี้"><i class="fa-solid fa-comments"></i> เสียงสะท้อน</button>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>อยากทดลองใช้งานจริง?</h2>
+  <p>ติดต่อทีม SWIS Plus เพื่อขอสาธิตโมดูลที่สนใจ</p>
+  <a href="applications.html" class="btn">ดูแอปพลิเคชัน</a>
+</section>
+
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div>School Web-based Information System · Since 2001</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="modules.html">Modules</a>
+    <a href="applications.html">Applications</a>
+    <a href="executive.html">Executive</a>
+    <a href="teacher.html">Teacher</a>
+    <a href="student.html">Student</a>
+  </div>
+  <div class="copy">© 2001–2026 SWIS Plus · swisplus.com</div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script>
+document.querySelectorAll('.cat-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.module-card').forEach(c => {
+      if (cat === 'all' || c.dataset.cat === cat) c.classList.remove('hidden');
+      else c.classList.add('hidden');
+    });
+  });
+});
+</script>
+</body>
+</html>

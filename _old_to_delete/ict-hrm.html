@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission on ICT and HRM — FSG Thailand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  }
+  .nav-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; height: 68px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--navy);
+  }
+  .nav-logo { width: 42px; height: 42px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+  .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+  .nav-brand-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; }
+  .nav-brand-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-muted); display: block; font-weight: 400; }
+  nav ul { list-style: none; display: flex; gap: 2px; }
+  nav ul li a {
+    color: var(--text-light); text-decoration: none;
+    padding: 8px 14px; border-radius: 6px; font-size: 13px;
+    font-weight: 500; transition: all 0.2s;
+  }
+  nav ul li a:hover, nav ul li a.active { color: var(--navy); background: var(--gray-100); }
+  .hamburger { display: none; background: none; border: none; font-size: 24px; cursor: pointer; padding: 8px; color: var(--navy); }
+  @media (max-width: 960px) {
+    .hamburger { display: block; }
+    nav ul {
+      display: none; position: absolute; top: 68px; left: 0; right: 0;
+      background: var(--white); flex-direction: column; padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg);
+    }
+    nav ul.open { display: flex; }
+    nav ul li a { padding: 12px 16px; display: block; }
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    margin-top: 68px;
+    background: var(--white); border-bottom: 1px solid var(--gray-200);
+    padding: 12px 20px; font-size: 13px; color: var(--text-muted);
+  }
+  .breadcrumb-inner { max-width: 1140px; margin: 0 auto; }
+  .breadcrumb a { color: var(--navy-light); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--navy); text-decoration: underline; }
+
+  /* ── HERO ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white); padding: 60px 20px; text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  .page-hero-inner { max-width: 800px; margin: 0 auto; }
+  .page-hero .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .page-hero h1 { font-size: 32px; color: var(--white); margin-bottom: 8px; }
+  .page-hero p { font-size: 15px; opacity: 0.8; }
+
+  /* ── CHAIRMAN ── */
+  .chairman-bar {
+    max-width: 1140px; margin: -32px auto 0; padding: 0 20px; position: relative; z-index: 10;
+  }
+  .chairman-card {
+    display: flex; align-items: center; gap: 20px;
+    padding: 20px 28px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    border: 2px solid var(--gold);
+  }
+  .chairman-card img {
+    width: 72px; height: 72px; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--gold); flex-shrink: 0;
+  }
+  .chairman-card .ch-label {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--gold-dark); margin-bottom: 2px;
+  }
+  .chairman-card .ch-name { font-weight: 700; color: var(--navy); font-size: 18px; }
+  .chairman-card .ch-name-th { font-size: 13px; color: var(--text-muted); }
+
+  /* ── SECTION ── */
+  .section { padding: 60px 20px; max-width: 1140px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 40px; }
+  .eyebrow {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 10px;
+  }
+  .sec-head h2 { font-size: 28px; margin-bottom: 8px; }
+  .sec-head .divider { width: 50px; height: 3px; background: var(--gold); margin: 12px auto; border-radius: 2px; }
+  .sec-head p { color: var(--text-light); font-size: 14px; max-width: 600px; margin: 0 auto; }
+
+  /* ── DETAIL GRID ── */
+  .detail-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  @media (max-width: 700px) { .detail-grid { grid-template-columns: 1fr; } }
+  .detail-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 20px; font-size: 13px; box-shadow: var(--shadow);
+  }
+  .detail-card h4 {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .detail-card p { color: var(--text-light); font-size: 13px; line-height: 1.6; }
+  .detail-card.header-ict { border-left: 4px solid #0ea5e9; }
+  .detail-card.header-hrm { border-left: 4px solid #10b981; }
+
+  /* ── SWIS BANNER ── */
+  .swis-banner {
+    text-align: center; padding: 40px 24px;
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    border-radius: var(--radius); color: var(--white); margin-top: 40px;
+  }
+  .swis-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 8px; }
+  .swis-banner p { font-size: 13px; opacity: 0.75; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn-gold {
+    display: inline-block; padding: 10px 28px;
+    background: var(--gold); color: var(--navy-dark);
+    border-radius: 24px; font-size: 13px; text-decoration: none; font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark); color: var(--white); padding: 48px 20px 24px;
+    font-size: 13px; line-height: 1.8;
+  }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px;
+  }
+  @media (max-width: 700px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+  footer h4 { font-size: 14px; margin-bottom: 12px; color: var(--gold); font-family: 'Inter', sans-serif; font-weight: 600; }
+  footer ul { list-style: none; }
+  footer ul li a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  footer ul li a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1140px; margin: 32px auto 0;
+    padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center; font-size: 12px; opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo"><img src="images/alumni/images.jpeg" alt="FSG"></div>
+      <div>
+        <span class="nav-brand-text">FSG Thailand</span>
+        <span class="nav-brand-sub">St. Gabriel's Foundation</span>
+      </div>
+    </a>
+    <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#strategy">Strategy</a></li>
+      <li><a href="index.html#governance" class="active">Governance</a></li>
+      <li><a href="index.html#schools">Schools</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="index.html#network">Network</a></li>
+      <li><a href="index.html#innovation">Innovation</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ BREADCRUMB ═══ -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a> &rsaquo; <a href="index.html#governance">Governance</a> &rsaquo; <strong>Commission on ICT and HRM</strong>
+  </div>
+</div>
+
+<!-- ═══ PAGE HERO ═══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Commission on ICT and HRM</div>
+    <h1>Information Technology &amp; Human Resources</h1>
+    <p>Merged commission driving quality across all 14 schools — powered by SWIS Platform</p>
+  </div>
+</div>
+
+<!-- ═══ CHAIRMAN ═══ -->
+<div class="chairman-bar">
+  <div class="chairman-card">
+    <img src="images/brothers/supanun.jpg" alt="Bro. Supanun Khantapreecha">
+    <div>
+      <div class="ch-label">Chairman</div>
+      <div class="ch-name">Bro. Supanun Khantapreecha</div>
+      <div class="ch-name-th">ภราดาศุภนันท์ ขันธปรีชา</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ICT SECTION ═══ -->
+<div class="section" id="ict">
+  <div class="sec-head">
+    <div class="eyebrow">ICT</div>
+    <h2>Information &amp; Communications Technology</h2>
+    <div class="divider"></div>
+    <p>5 Work Groups — Aligned with Strategic Plan 3.3</p>
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-card header-ict" style="grid-column:1/-1;">
+      <h4>Overview</h4>
+      <p>Developing IT systems for administration and learning across all 14 schools. Policy, infrastructure, software development, media communications, and personnel upskilling under one unified commission.</p>
+    </div>
+    <div class="detail-card">
+      <h4>1. ICT Administration</h4>
+      <p>Overall ICT governance across the Foundation. Policy, coordination, and reporting.</p>
+    </div>
+    <div class="detail-card">
+      <h4>2. Software Development</h4>
+      <p><strong>2.1 Foundation Level</strong> — central information systems.<br>
+      <strong>2.2 School Level (SWIS Plus)</strong> — the <a href="swis/index.html" target="_blank" style="color:#0369a1;">SWIS platform</a> with 220 functions deployed across 14 schools.</p>
+    </div>
+    <div class="detail-card">
+      <h4>3. Media Communications</h4>
+      <p>Digital media production and non-digital media. Brand, PR, and content across the Foundation network.</p>
+    </div>
+    <div class="detail-card">
+      <h4>4. Network &amp; Engineering</h4>
+      <p>IT infrastructure, networking, hardware, and technical support for all schools.</p>
+    </div>
+    <div class="detail-card">
+      <h4>5. ICT Personnel Development</h4>
+      <p>Training ICT staff and upskilling all school personnel on technology tools including SWIS.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HRM SECTION ═══ -->
+<div class="section" id="hrm" style="padding-top:0;">
+  <div class="sec-head">
+    <div class="eyebrow">HRM</div>
+    <h2>Human Resource Management</h2>
+    <div class="divider"></div>
+    <p>7 Sub-committees — Job Specification system (C/K/Cp) with 137 competency items tracked via SWIS</p>
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-card header-hrm" style="grid-column:1/-1;">
+      <h4>Overview</h4>
+      <p>Unified HR standards across all 14 schools. Workforce planning, quality manuals, supervision visits, and succession planning — all integrated with the SWIS platform for data-driven decisions.</p>
+    </div>
+    <div class="detail-card">
+      <h4>1. HR Administration</h4>
+      <p>Foundation-wide HR policies, standards alignment, and SWIS-based information management.</p>
+    </div>
+    <div class="detail-card">
+      <h4>2. Workforce Planning &amp; Recruitment</h4>
+      <p>Manpower analysis, recruitment standards, and strategic workforce allocation across 14 schools.</p>
+    </div>
+    <div class="detail-card">
+      <h4>3. Onboarding Process</h4>
+      <p>Preparing new hires with competency readiness aligned to their Job Specification before deployment.</p>
+    </div>
+    <div class="detail-card">
+      <h4>4. Supervision &amp; Monitoring</h4>
+      <p>Annual school visits (14 schools monitored in 2568). Quality manuals, PDCA tracking, and KRA assessment.</p>
+    </div>
+    <div class="detail-card">
+      <h4>5. HR Development (HRD)</h4>
+      <p>Continuous professional development — 15 training programs in 2568 (online + onsite). 7-year HRD roadmap since 2562.</p>
+    </div>
+    <div class="detail-card">
+      <h4>6. HR Retention</h4>
+      <p>Employee welfare, engagement, and retention strategies to maintain quality educators.</p>
+    </div>
+    <div class="detail-card">
+      <h4>7. Succession Planning</h4>
+      <p>Identifying and developing future leaders for school administration and Foundation roles.</p>
+    </div>
+  </div>
+
+  <!-- SWIS Connection -->
+  <div class="swis-banner">
+    <h3>SWIS Platform</h3>
+    <p>The digital backbone connecting ICT and HRM — 220 functions across 14 schools, Job Spec tracking, PDCA workflow, quality manuals, and school monitoring</p>
+    <a href="swis/index.html" target="_blank" class="btn-gold">Visit swisplus.com &rarr;</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>FSG Thailand</h4>
+      <p style="margin-bottom:8px">Foundation of the Brothers of Saint Gabriel in Thailand</p>
+      <p style="font-size:12px; opacity:0.5">Wisdom and Virtue, Connected by Innovation</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#schools">Schools</a></li>
+        <li><a href="index.html#governance">Governance</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Our Websites</h4>
+      <ul>
+        <li><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
+        <li><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
+        <li><a href="swis/index.html" target="_blank">swisplus.com</a></li>
+        <li><a href="montfortian-stream.html">สายธารพันธกิจ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Global Network</h4>
+      <ul>
+        <li><a href="https://www.brothersofsaintgabriel.org" target="_blank">Generalate (Rome)</a></li>
+        <li><a href="https://www.montfortian.info" target="_blank">Montfortian Family</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Foundation of the Brothers of Saint Gabriel in Thailand. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
