@@ -225,8 +225,9 @@
       เมื่อภาระงานบริหารจัดการถูกทำให้ง่ายขึ้น ครูจึงมีเวลาคิด วางแผน
       และพัฒนาผู้เรียนได้อย่างเต็มที่
     </p>
-    <div style="text-align:center;margin-top:24px">
+    <div style="text-align:center;margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <a href="teacher.html" class="btn" style="background:var(--orange);color:#fff;border-color:var(--orange);font-size:15px;padding:12px 30px">ดูรายละเอียดสำหรับครู →</a>
+      <a href="https://demo.swisplus.net/admin" target="_blank" rel="noopener" class="btn" style="background:#fff;color:var(--orange);border:2px solid var(--orange);font-size:15px;padding:10px 28px">🔗 ทดลองใช้ Demo ครู</a>
     </div>
   </div>
 </section>
@@ -239,7 +240,10 @@
       ผู้บริหารเรียกดูรายงานได้เองทันทีจากมือถือ — ข้อมูล Real-time จากฐานจริง
       ไม่ต้องสั่งการให้ทีมงานประมวลผลอีกต่อไป
     </p>
-    <a href="executive.html" class="btn" style="font-size:15px;padding:12px 30px">ดูรายละเอียดสำหรับผู้บริหาร →</a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="executive.html" class="btn" style="font-size:15px;padding:12px 30px">ดูรายละเอียดสำหรับผู้บริหาร →</a>
+      <a href="https://demo.swisplus.net/executive" target="_blank" rel="noopener" class="btn" style="background:#f58220;color:#fff;border:2px solid #f58220;font-size:15px;padding:10px 28px">🔗 ทดลองใช้ Demo ผู้บริหาร</a>
+    </div>
   </div>
 </section>
 
@@ -258,16 +262,19 @@
         <div class="icon" style="background:#f58220;color:#fff;font-size:32px;font-weight:700">E</div>
         <h3>โมดุลผู้บริหาร</h3>
         <p>SWIS Application for Executive — Real Time Notification สำหรับผู้บริหารโรงเรียน</p>
+        <span onclick="event.preventDefault();event.stopPropagation();window.open('https://demo.swisplus.net/executive','_blank','noopener')" style="display:inline-block;margin-top:10px;padding:6px 14px;background:#0a3a66;color:#fff;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer">🔗 ทดลอง Demo</span>
       </a>
       <a href="teacher.html" class="app-card">
         <div class="icon" style="background:#f58220;color:#fff;font-size:32px;font-weight:700">T</div>
         <h3>โมดุลครูและบุคลากร</h3>
         <p>SWIS Application for Teacher — จัดการงานสอน แจ้งเตือน ตารางเรียน พฤติกรรมนักเรียน</p>
+        <span onclick="event.preventDefault();event.stopPropagation();window.open('https://demo.swisplus.net/admin','_blank','noopener')" style="display:inline-block;margin-top:10px;padding:6px 14px;background:#0a3a66;color:#fff;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer">🔗 ทดลอง Demo</span>
       </a>
       <a href="student.html" class="app-card">
         <div class="icon" style="background:#f58220;color:#fff;font-size:32px;font-weight:700">S</div>
         <h3>โมดุลนักเรียนและผู้ปกครอง</h3>
         <p>SWIS Application for Student — ตารางเรียน คะแนน การบ้าน ข่าวสาร เชื่อมถึงผู้ปกครอง</p>
+        <span onclick="event.preventDefault();event.stopPropagation();window.open('https://demo.swisplus.net/student','_blank','noopener')" style="display:inline-block;margin-top:10px;padding:6px 14px;background:#0a3a66;color:#fff;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer">🔗 ทดลอง Demo</span>
       </a>
     </div>
   </div>
@@ -380,6 +387,61 @@
   </div>
 </section>
 
+<!-- ============================================
+     LIVE DEMO — สัมผัสของจริง 3 มุมมอง
+     ============================================ -->
+<section class="section" style="background:#0a3a66;color:#fff">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:8px">
+      <span style="display:inline-block;padding:6px 16px;background:#f58220;color:#fff;border-radius:20px;font-size:13px;font-weight:600;letter-spacing:0.5px">สัมผัสของจริง — Live Interface</span>
+    </div>
+    <h2 style="text-align:center;color:#fff;margin-top:12px">ระบบเดียว &mdash; สามมุมมอง</h2>
+    <p style="text-align:center;max-width:760px;margin:16px auto 44px;font-size:17px;line-height:1.9;color:rgba(255,255,255,0.88)">
+      เห็นภาพการทำงานจริงของแต่ละกลุ่มผู้ใช้ — ข้อมูลทุกอย่างเชื่อมอยู่บน <strong style="color:#f58220">ฐานข้อมูลเดียว</strong> แต่ถูกจัดวางให้เหมาะกับหน้าที่ของผู้ใช้แต่ละระดับ
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:1000px;margin:0 auto">
+
+      <!-- Executive -->
+      <a href="https://demo.swisplus.net/executive" target="_blank" rel="noopener" style="display:block;padding:32px 28px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:14px;text-align:center;text-decoration:none;color:#fff;transition:all 0.2s">
+        <div style="font-size:44px;line-height:1;margin-bottom:14px">&#128188;</div>
+        <h3 style="color:#fff;font-size:19px;margin:0 0 6px">ผู้บริหาร &middot; Executive</h3>
+        <div style="color:#f58220;font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:14px">FOR DIRECTORS</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.82);margin:0 0 18px">
+          ภาพรวม KPI ข้อมูลการเงิน จำนวนนักเรียน สถานะภาพรวมของสถาบัน
+        </p>
+        <span style="display:inline-block;padding:10px 22px;background:#f58220;color:#fff;border-radius:22px;font-size:13px;font-weight:600">เข้าชมเดโม &rarr;</span>
+      </a>
+
+      <!-- Teacher -->
+      <a href="https://demo.swisplus.net/admin" target="_blank" rel="noopener" style="display:block;padding:32px 28px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:14px;text-align:center;text-decoration:none;color:#fff;transition:all 0.2s">
+        <div style="font-size:44px;line-height:1;margin-bottom:14px">&#128218;</div>
+        <h3 style="color:#fff;font-size:19px;margin:0 0 6px">ครู &middot; Teacher</h3>
+        <div style="color:#f58220;font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:14px">FOR TEACHERS &amp; ADMIN</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.82);margin:0 0 18px">
+          เช็คชื่อ บันทึกคะแนน ดูตารางสอน สื่อสารกับผู้ปกครอง งานประจำวัน
+        </p>
+        <span style="display:inline-block;padding:10px 22px;background:#f58220;color:#fff;border-radius:22px;font-size:13px;font-weight:600">เข้าชมเดโม &rarr;</span>
+      </a>
+
+      <!-- Student -->
+      <a href="https://demo.swisplus.net/student" target="_blank" rel="noopener" style="display:block;padding:32px 28px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:14px;text-align:center;text-decoration:none;color:#fff;transition:all 0.2s">
+        <div style="font-size:44px;line-height:1;margin-bottom:14px">&#127891;</div>
+        <h3 style="color:#fff;font-size:19px;margin:0 0 6px">นักเรียน &middot; Student</h3>
+        <div style="color:#f58220;font-size:12px;font-weight:600;letter-spacing:0.5px;margin-bottom:14px">FOR STUDENTS &amp; PARENTS</div>
+        <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.82);margin:0 0 18px">
+          ตารางเรียน คะแนน กิจกรรม ข่าวสาร ใบแจ้งหนี้ สื่อสารกับโรงเรียน
+        </p>
+        <span style="display:inline-block;padding:10px 22px;background:#f58220;color:#fff;border-radius:22px;font-size:13px;font-weight:600">เข้าชมเดโม &rarr;</span>
+      </a>
+
+    </div>
+    <p style="text-align:center;margin-top:36px;font-size:13px;color:rgba(255,255,255,0.6);font-style:italic">
+      &#128274; ระบบเดโมแสดงเฉพาะหน้าจอการทำงาน &mdash; ข้อมูลภายในเป็นตัวอย่างจำลอง<br>
+      การเข้าใช้จริงต้องมีรหัสผ่านจากเจ้าหน้าที่ SWIS Plus
+    </p>
+  </div>
+</section>
+
 <!-- Team -->
 <section class="section">
   <div class="wrap">
@@ -480,6 +542,9 @@
     <a href="executive.html">Executive</a>
     <a href="teacher.html">Teacher</a>
     <a href="student.html">Student</a>
+    <a href="https://demo.swisplus.net/executive" target="_blank" rel="noopener" style="color:#f58220">🔗 Demo Exec</a>
+    <a href="https://demo.swisplus.net/admin" target="_blank" rel="noopener" style="color:#f58220">🔗 Demo Teacher</a>
+    <a href="https://demo.swisplus.net/student" target="_blank" rel="noopener" style="color:#f58220">🔗 Demo Student</a>
   </div>
   <div class="copy">© 2001–2026 SWIS Plus · swisplus.com</div>
 </footer>
