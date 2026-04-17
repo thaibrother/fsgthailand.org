@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แผนยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ปีการศึกษา 2565–2570</title>
+<meta name="description" content="สรุปแผนยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย — วิสัยทัศน์ พันธกิจ 5 ยุทธศาสตร์ กลยุทธ์ มาตรการ ตัวชี้วัด">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== HERO ===== */
+.str-hero {
+  position: relative;
+  min-height: 45vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  overflow: hidden;
+}
+.str-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(245,130,32,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.str-hero .inner { position: relative; max-width: 800px; }
+.str-hero h1 {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 800; line-height: 1.2;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.str-hero .sub {
+  font-size: clamp(15px, 2vw, 20px);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+.str-hero .edition {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 18px;
+  border-radius: 99px;
+  background: rgba(245,130,32,0.2);
+  border: 1px solid rgba(245,130,32,0.4);
+  color: #f5c77e;
+  font-size: 14px; font-weight: 500;
+}
+
+/* ===== CONTENT ===== */
+.str-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* Vision box */
+.vision-box {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fff 100%);
+  border: 1.5px solid #c5d5f0;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+.vision-box h2 {
+  font-size: 22px; font-weight: 700;
+  color: #1a3a6e;
+  margin-bottom: 16px;
+}
+.vision-box p {
+  font-size: 17px; line-height: 1.9;
+  color: #333;
+}
+
+/* Mission/Values grid */
+.mv-box {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 40px;
+}
+.mv-box h2 {
+  font-size: 20px; font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.mv-list {
+  list-style: none;
+  padding: 0; margin: 0;
+}
+.mv-list li {
+  display: flex; align-items: baseline; gap: 12px;
+  font-size: 15px; line-height: 1.8;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.mv-list li:last-child { border-bottom: none; }
+.mv-num {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
+  color: #fff;
+}
+
+/* Values */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.value-card {
+  background: #fefcf8;
+  border: 1.5px solid #e8d5b8;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+}
+.value-card .emoji { font-size: 32px; margin-bottom: 8px; }
+.value-card h4 { font-size: 15px; font-weight: 600; color: #8B4513; margin-bottom: 4px; }
+
+/* Strategy sections */
+.str-block {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.str-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 24px 28px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.str-header:hover { background: #fafafa; }
+.str-header .num {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800;
+  color: #fff;
+}
+.str-header h3 {
+  flex: 1;
+  font-size: 18px; font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+}
+.str-header .toggle {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: var(--muted);
+  transition: transform .3s;
+}
+.str-block.open .str-header .toggle { transform: rotate(180deg); }
+
+.str-body {
+  display: none;
+  padding: 0 28px 28px;
+}
+.str-block.open .str-body { display: block; }
+
+.str-aim {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+.str-aim strong { color: var(--text); }
+
+/* กลยุทธ์ */
+.tactic {
+  margin-bottom: 24px;
+  border-left: 3px solid #ddd;
+  padding-left: 20px;
+}
+.tactic h4 {
+  font-size: 16px; font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+.measure {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  padding: 6px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.measure:last-child { border-bottom: none; }
+.measure .code {
+  display: inline-block;
+  background: #f0f4f8;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  margin-right: 6px;
+}
+
+/* KPI summary */
+.kpi-count {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Strategy colors */
+.s1 { background: linear-gradient(135deg, #f58220, #e06b10); }
+.s2 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.s3 { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.s4 { background: linear-gradient(135deg, #0d9488, #0f766e); }
+.s5 { background: linear-gradient(135deg, #059669, #047857); }
+
+.tactic.t1 { border-left-color: #f58220; }
+.tactic.t2 { border-left-color: #2563eb; }
+.tactic.t3 { border-left-color: #7c3aed; }
+.tactic.t4 { border-left-color: #0d9488; }
+.tactic.t5 { border-left-color: #059669; }
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 32px;
+  font-size: 14px;
+  color: var(--orange);
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* Summary stats */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.stat-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 16px;
+  text-align: center;
+}
+.stat-card .big {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--orange);
+}
+.stat-card .label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Footnote */
+.footnote {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .str-header { flex-wrap: wrap; gap: 12px; padding: 20px; }
+  .str-body { padding: 0 20px 20px; }
+  .tactic { padding-left: 14px; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="str-hero">
+  <div class="inner">
+    <h1>แผนยุทธศาสตร์มูลนิธิฯ</h1>
+    <p class="sub">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>ปีการศึกษา 2565–2570</p>
+    <span class="edition">อนุมัติ 20 ตุลาคม 2564</span>
+  </div>
+</section>
+
+<!-- ==================== CONTENT ==================== -->
+<div class="str-content">
+
+  <a href="present.html" class="back-link">← กลับสารบัญนำเสนอ</a>
+
+  <!-- Summary Stats -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="big">5</div>
+      <div class="label">ยุทธศาสตร์</div>
+    </div>
+    <div class="stat-card">
+      <div class="big">19</div>
+      <div class="label">กลยุทธ์</div>
+    </div>
+    <div class="stat-card">
+      <div class="big">47</div>
+      <div class="label">ตัวชี้วัด (KPI)*</div>
+    </div>
+    <div class="stat-card">
+      <div class="big">6</div>
+      <div class="label">ปีการศึกษา</div>
+    </div>
+    <div class="stat-card">
+      <div class="big">14</div>
+      <div class="label">โรงเรียนในเครือ</div>
+    </div>
+  </div>
+
+  <!-- ==================== วิสัยทัศน์ ==================== -->
+  <div class="vision-box">
+    <h2>วิสัยทัศน์</h2>
+    <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย เป็นองค์กรขับเคลื่อนโรงเรียนในเครือมูลนิธิฯ ให้เป็นผู้นำการจัดการศึกษาในยุค Digital ตามทิศทางการศึกษาในแนวมงฟอร์ต ร่วมกับหลักปรัชญาของเศรษฐกิจพอเพียง และมีมาตรฐานสากล</p>
+  </div>
+
+  <!-- ==================== พันธกิจ ==================== -->
+  <div class="mv-box">
+    <h2>พันธกิจ</h2>
+    <ul class="mv-list">
+      <li>
+        <span class="mv-num" style="background:#2563eb">1</span>
+        ขับเคลื่อนโรงเรียนในเครือฯ เพื่อสร้างความโดดเด่นในการจัดการศึกษาในแนวมงฟอร์ต ร่วมกับหลักปรัชญาของเศรษฐกิจพอเพียง
+      </li>
+      <li>
+        <span class="mv-num" style="background:#7c3aed">2</span>
+        พัฒนาและเสริมสร้างคุณภาพการจัดการศึกษาโรงเรียนในเครือฯ ในยุค Digital
+      </li>
+      <li>
+        <span class="mv-num" style="background:#0d9488">3</span>
+        ยกระดับโรงเรียนในเครือฯ ให้มีกระบวนการบริหารจัดการองค์กรตามมาตรฐานสากล
+      </li>
+      <li>
+        <span class="mv-num" style="background:#d97706">4</span>
+        เพิ่มประสิทธิภาพการบริหารงานทรัพยากรมนุษย์ของโรงเรียนในเครือฯ
+      </li>
+      <li>
+        <span class="mv-num" style="background:#059669">5</span>
+        ส่งเสริมให้โรงเรียนในเครือฯ ขยายเครือข่ายความร่วมมือในการพัฒนาการจัดการศึกษาของโรงเรียนและชุมชน
+      </li>
+    </ul>
+  </div>
+
+  <!-- ==================== คุณค่าหลัก ==================== -->
+  <div class="mv-box">
+    <h2>คุณค่าหลัก</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="emoji">✝️</div>
+        <h4>ยึดมั่นในสัจธรรม</h4>
+        <p style="font-size:13px;color:#888">ตามคุณค่าพระวรสาร</p>
+      </div>
+      <div class="value-card">
+        <div class="emoji">💪</div>
+        <h4>มีวิริยะ อุตสาหะ</h4>
+        <p style="font-size:13px;color:#888">ทุ่มเทเพื่อพันธกิจ</p>
+      </div>
+      <div class="value-card">
+        <div class="emoji">🤝</div>
+        <h4>รับผิดชอบต่อสังคม</h4>
+        <p style="font-size:13px;color:#888">เพื่อประโยชน์ส่วนรวม</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== เป้าหมาย ==================== -->
+  <div class="mv-box">
+    <h2>เป้าหมาย</h2>
+    <ul class="mv-list">
+      <li>
+        <span class="mv-num s1">1</span>
+        โรงเรียนในเครือฯ มีความโดดเด่นในการจัดการศึกษาตามทิศทางการศึกษาในแนวมงฟอร์ต ครอบคลุมทุกมิติอย่างมีคุณภาพร่วมกับหลักปรัชญาของเศรษฐกิจพอเพียง
+      </li>
+      <li>
+        <span class="mv-num s2">2</span>
+        โรงเรียนในเครือฯ เป็นผู้นำการจัดการศึกษาในยุค Digital อย่างมีประสิทธิภาพ
+      </li>
+      <li>
+        <span class="mv-num s3">3</span>
+        โรงเรียนในเครือฯ มีการบริหารจัดการองค์กรตามมาตรฐานสากล
+      </li>
+      <li>
+        <span class="mv-num s4">4</span>
+        โรงเรียนในเครือฯ มีการบริหารงานทรัพยากรมนุษย์อย่างมีประสิทธิภาพ
+      </li>
+      <li>
+        <span class="mv-num s5">5</span>
+        โรงเรียนในเครือฯ ขยายเครือข่ายความร่วมมือเพื่อพัฒนาการจัดการศึกษาของโรงเรียนและชุมชน
+      </li>
+    </ul>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- ==================== 5 ยุทธศาสตร์ (DETAIL) ==================== -->
+  <!-- ================================================================ -->
+
+  <!-- ==================== 8 แนวคิด Framework ==================== -->
+  <div class="mv-box" style="border-color:#c5d5f0; background:linear-gradient(135deg,#f0f4ff 0%,#fff 100%);">
+    <h2 style="color:#1a3a6e;">8 แนวคิดพื้นฐานของแผนยุทธศาสตร์</h2>
+    <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">แผนยุทธศาสตร์มูลนิธิฯ จัดทำขึ้นจากกรอบแนวคิด 8 ด้าน ดังแผนภาพด้านล่าง — แต่ละกลยุทธ์สามารถสอบย้อนกลับไปยังแนวคิดต้นทางได้ทุกข้อ *</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">1</span>
+        <div><strong style="font-size:14px;">รัฐธรรมนูญแห่งราชอาณาจักรไทย</strong><br><span style="font-size:12px;color:#888;">พ.ศ. 2560</span></div>
+      </div>
+
+      <a href="https://montfortian.net/writings/mec.html" target="_blank" style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff7ef;border-radius:12px;border:2px solid #f58220;text-decoration:none;color:inherit;transition:transform .2s;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#f58220;">2</span>
+        <div><strong style="font-size:14px;color:#e06b10;">ทิศทางการจัดการศึกษาในแนวมงฟอร์ต (MEC)</strong><br><span style="font-size:12px;color:#888;">8 มิติ · อ่านฉบับเต็มที่ montfortian.net →</span></div>
+      </a>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">3</span>
+        <div><strong style="font-size:14px;">มาตรฐานวิชาชีพครู</strong><br><span style="font-size:12px;color:#888;">คุรุสภา</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">4</span>
+        <div><strong style="font-size:14px;">พ.ร.บ. การศึกษาแห่งชาติ</strong><br><span style="font-size:12px;color:#888;">พ.ศ. 2564</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">5</span>
+        <div><strong style="font-size:14px;">แผนการศึกษาแห่งชาติ</strong><br><span style="font-size:12px;color:#888;">พ.ศ. 2560–2579 · หลักปรัชญาเศรษฐกิจพอเพียง · Digital Citizenship</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">6</span>
+        <div><strong style="font-size:14px;">มาตรฐานสากล</strong><br><span style="font-size:12px;color:#888;">International Standard</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">7</span>
+        <div><strong style="font-size:14px;">เป้าหมายการพัฒนาที่ยั่งยืน</strong><br><span style="font-size:12px;color:#888;">UNESCO</span></div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#fff;border-radius:12px;border:1px solid #e0e8f0;">
+        <span style="flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#64748b;">8</span>
+        <div><strong style="font-size:14px;">พระศาสนจักรและคณะเซนต์คาเบรียล</strong><br><span style="font-size:12px;color:#888;">Global Compact on Education · Laudato Si · มติสมัชชาโลก ครั้งที่ 32 · คู่มือธรรมาภิบาล · คุณค่าพระวรสาร 12 ประการ</span></div>
+      </div>
+
+    </div>
+
+    <!-- Arrow down -->
+    <div style="text-align:center;margin:28px 0 20px;font-size:32px;color:var(--orange);">▼</div>
+
+    <!-- MEC 8 มิติ -->
+    <div style="background:#fff7ef;border:1.5px solid #e8d5b8;border-radius:14px;padding:24px 28px;">
+      <h3 style="font-size:17px;font-weight:700;color:#8B4513;margin-bottom:14px;">8 มิติของ MEC — Montfortian Education Charter</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;">
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">1.</strong> วิสัยทัศน์ฝ่ายจิต (A Spiritual Vision)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">2.</strong> การจัดการศึกษาเพื่อทุกระดับ (Inclusive Education)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">3.</strong> วิธีการสอนที่จุ่มตัวกับผู้เรียน (Incarnational Methodology)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">4.</strong> นวัตกรรมและความคิดสร้างสรรค์ (Innovation and Creativity)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">5.</strong> ผลประโยชน์สูงสุดต่อเด็ก (Best Interests of the Child)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">6.</strong> ความร่วมมือและเครือข่าย (Partnership and Networking)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">7.</strong> ห่วงโซ่ชีวิต (Community of Life)</div>
+        <div style="font-size:14px;padding:6px 10px;background:rgba(255,255,255,0.7);border-radius:8px;"><strong style="color:#8B4513;">8.</strong> แสวงหาความเป็นเลิศ (Quest for Excellence)</div>
+      </div>
+      <p style="font-size:12px;color:#999;margin-top:12px;">อ้างอิง: <a href="https://montfortian.net/writings/mec.html" target="_blank" style="color:#f58220;">montfortian.net/writings/mec.html</a> · ฉบับเต็ม 116 หน้า</p>
+    </div>
+
+    <!-- Arrow down -->
+    <div style="text-align:center;margin:20px 0;font-size:32px;color:var(--orange);">▼</div>
+
+    <p style="text-align:center;font-size:15px;font-weight:600;color:var(--text);">นำไปสู่ 5 ยุทธศาสตร์ — โดยทุกกลยุทธ์อ้างอิงกลับไปยังมิติ MEC ที่เกี่ยวข้อง</p>
+
+    <p style="font-size:12px;color:#999;margin-top:16px;">* ตาราง "การวิเคราะห์ประเด็นสำคัญสำหรับการจัดทำแผนยุทธศาสตร์" หน้า 18–20 ในแผนยุทธศาสตร์ฉบับเต็ม</p>
+  </div>
+
+  <h2 style="font-size:24px;font-weight:800;margin:48px 0 8px;color:var(--text)">5 ยุทธศาสตร์</h2>
+  <p style="font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.7">คลิกแต่ละยุทธศาสตร์เพื่อดูรายละเอียด กลยุทธ์ มาตรการ และตัวชี้วัดความสำเร็จ</p>
+
+  <!-- ==================== ยุทธศาสตร์ที่ 1 ==================== -->
+  <div class="str-block open" id="s1">
+    <div class="str-header" onclick="toggleStr('s1')">
+      <div class="num s1">1</div>
+      <h3>สร้างความโดดเด่นในการจัดการศึกษาในแนวมงฟอร์ต</h3>
+      <span class="toggle">▾</span>
+    </div>
+    <div class="str-body">
+      <div class="str-aim">
+        <strong>จุดมุ่งหมาย:</strong> โรงเรียนมีการดูแล คุ้มครอง และป้องกันภัยคุกคามในชีวิตรูปแบบใหม่ เคารพสิทธิ์ของความเป็นมนุษย์ ส่งเสริมสิทธิมนุษยชน สิทธิเด็ก ความยุติธรรมและสันติ มีระบบดูแลช่วยเหลือนักเรียน ยกระดับการจัดการศึกษาเพื่อผู้ด้อยโอกาส — พัฒนาอัตลักษณ์ของโรงเรียนในเครือฯ ให้เป็นจุดเด่น
+        <br><span class="kpi-count">14 ตัวชี้วัด · 6 กลยุทธ์</span>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.1 — โรงเรียนมีระบบการดูแล คุ้มครอง และป้องกันภัยคุกคามในชีวิตรูปแบบใหม่</h4>
+        <div class="measure"><span class="code">1.1.1</span> จัดทำคู่มือระบบงานทรัพยากรมนุษย์ พัฒนาระบบงาน และฝึกอบรมตามคู่มือ (รูปแบบใหม่ มิติที่ 2)</div>
+        <div class="measure"><span class="code">1.1.2</span> มีระบบดำเนินการที่เน้นผู้เรียนเป็นศูนย์กลาง — ดูแล ความปลอดภัย สวัสดิภาพ (เป้าหมาย 85→95%)</div>
+        <div class="measure"><span class="code">1.1.3</span> อบรมศึกษาเพิ่มเติม เรื่องพฤติกรรมและการเสริมสร้างสภาพแวดล้อมที่ปลอดภัย</div>
+        <div class="measure"><span class="code">1.1.4</span> การอบรมเจ้าหน้าที่ เสริมทักษะ ส่งเสริมสิทธิเด็กและความปลอดภัย (รูปแบบใหม่ มิติที่ 2)</div>
+        <div class="measure"><span class="code">1.1.5</span> จัดกิจกรรมอบรมการเรียนรู้ตลอดชีวิต ความจัดเจนทางการเงิน เสริมสร้างการป้องกันภัยคุกคามทางสังคม</div>
+        <div class="measure"><span class="code">1.1.6</span> ส่งเสริมจริยธรรมและมาตรการป้องกันการทุจริต (Anti-Corruption)</div>
+        <div class="measure"><span class="code">1.1.7</span> จัดกิจกรรมส่งเสริมสิทธิมนุษยชน (Human Rights)</div>
+        <div class="measure"><span class="code">1.1.8</span> อบรมนักเรียน ในเรื่อง Incarnational Methodology ตามหลักทางการจัดการศึกษา (MEC) มิติที่ 3</div>
+        <div class="measure"><span class="code">1.1.9</span> สร้างเครือข่ายครอบครัว ผู้ปกครอง ชุมชน จากภาคีเครือข่ายสู่วิชาการ (เป้าหมาย 3→13 เครือข่าย)</div>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.2 — โรงเรียนมีระบบพัฒนานักเรียนเต็มศักยภาพ</h4>
+        <div class="measure"><span class="code">1.2.1</span> จัดเตรียมแผนงานสำหรับนักเรียนกลุ่มเปราะบาง ช่วยเหลือด้วยระบบดูแล</div>
+        <div class="measure"><span class="code">1.2.2</span> นำการศึกษาพัฒนาเยียวยา รายวิชาจัดสรร อัจฉริยภาพ ในเครือฯ (เป้าหมาย 10.6)</div>
+        <div class="measure"><span class="code">1.2.3</span> จัดสอบทดสอบ ข้อมูลสู่แนวทางพัฒนาคุณภาพผู้เรียน เข้าใจตัวตนความถนัด</div>
+        <div class="measure"><span class="code">1.2.4</span> จัดให้มีระบบนักเรียนเต็มสื่อ การเรียนพลเอกสมรรถนะ ส่งเสริมในบริบทโรงเรียน</div>
+        <div class="measure"><span class="code">1.2.5</span> สร้างระบบบริการนักเรียนเลือก เลือกโดยใช้ข้อมูลสนับสนุน ในการเรียนรู้ (เป้าหมาย 100%)</div>
+        <div class="measure"><span class="code">1.2.6</span> ใช้เทคโนโลยีเพื่อสร้างคลังความรู้ เพื่อจัดบทเรียนอิเล็กทรอนิกส์ สนับสนุนการเรียนรู้</div>
+        <div class="measure"><span class="code">1.2.7</span> สร้างเครือข่ายผู้ปกครอง ศิษย์เก่า ชุมชน ความเชี่ยวชาญด้านวิชาชีพ มีส่วนร่วมในการพัฒนา (เป้าหมาย 3→5)</div>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.3 — จัดการศึกษาเพื่อสร้างพลเมือง</h4>
+        <div class="measure"><span class="code">1.3.1</span> ส่งเสริมกิจกรรมจิตสาธารณะ บำเพ็ญประโยชน์ ดูแลเสียสละ สาธารณ สังคม (เป้าหมาย 1 แห่ง/โรงเรียน)</div>
+        <div class="measure"><span class="code">1.3.2</span> สัมมนา ค่ายกิจกรรมในการสร้างทรัพยากรเพื่อประชาชน</div>
+        <div class="measure"><span class="code">1.3.3</span> ส่งบริการ ให้หน่วยงานในโรงเรียนส่งเสริม ให้เกิดสาธารณประโยชน์</div>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.4 — ยกระดับการศึกษาเพื่อชุมชนของชีวิต (Community of Life/Our Common Home)</h4>
+        <div class="measure"><span class="code">1.4.1</span> ส่งเสริมบุคลากรให้จัดกิจกรรม สร้างความเป็นพลเมืองดี แบ่งปัน ส่งเสริมความเป็นเอกภาพ (เป้าหมาย 3→5)</div>
+        <div class="measure"><span class="code">1.4.2</span> นำหลักปรัชญาของเศรษฐกิจพอเพียง (Sufficiency Economy Philosophy) มาบูรณาการในการจัดการเรียนรู้ (เป้าหมาย 10→20 กิจกรรม)</div>
+        <div class="measure"><span class="code">1.4.3</span> จัดทำหลักปรัชญาของเศรษฐกิจพอเพียงในโรงเรียน</div>
+        <div class="measure"><span class="code">1.4.4</span> มีวิจัยและกิจกรรมส่งเสริมด้านสังคมและสิ่งแวดล้อม (เริ่ม 2567–2568)</div>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.5 — พัฒนาอัตลักษณ์โรงเรียน</h4>
+        <div class="measure"><span class="code">1.5.1</span> จัดตั้งพัฒนาหลักสูตร ส่งเสริมอัตลักษณ์การศึกษาในเครือฯ ในประเทศไทย</div>
+        <div class="measure"><span class="code">1.5.2</span> นักเรียนมีตัวตน การดูแล กิจกรรมส่งเสริม อัตลักษณ์ (เป้าหมาย 70→80%)</div>
+        <div class="measure"><span class="code">1.5.3</span> จัดตั้ง Active Citizen ส่งเสริมการเรียนรู้ วารสาร แบบประเมินคุณภาพ (เป้าหมาย 70→80%)</div>
+        <div class="measure"><span class="code">1.5.4</span> มีเครื่องมือผลงานนักเรียน ประเมินอัตลักษณ์</div>
+        <div class="measure"><span class="code">1.5.5</span> มีความรู้บุคลากรเพื่อสร้างอัตลักษณ์นักเรียนในการจัดการศึกษา</div>
+      </div>
+
+      <div class="tactic t1">
+        <h4>กลยุทธ์ 1.6 — โรงเรียนเสริมสร้างวัฒนธรรม สังคม ประชาสัมพันธ์</h4>
+        <div class="measure"><span class="code">1.6.1</span> จัดโครงสร้างและหลักสูตรส่งเสริม วัฒนธรรม จัดสดุดีการศึกษาด้านอาหาร ประชาสัมพันธ์ (เป้าหมาย 45→70%)</div>
+        <div class="measure"><span class="code">1.6.2</span> นักเรียนประถมศึกษาในเครือฯ จัดกิจกรรม ไม่ต่ำกว่า 20 ชั่วโมง</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ยุทธศาสตร์ที่ 2 ==================== -->
+  <div class="str-block" id="s2">
+    <div class="str-header" onclick="toggleStr('s2')">
+      <div class="num s2">2</div>
+      <h3>พัฒนาและเสริมสร้างคุณภาพการจัดการศึกษายุค Digital</h3>
+      <span class="toggle">▾</span>
+    </div>
+    <div class="str-body">
+      <div class="str-aim">
+        <strong>จุดมุ่งหมาย:</strong> โรงเรียนส่งเสริมการจัดการศึกษาที่มีทักษะการเป็นผู้ประกอบการ (Entrepreneur Skill) หรือความเชี่ยวชาญเฉพาะด้าน ให้กับผู้มีความสนใจ เพิ่มโอกาสทางการศึกษาผ่าน Digital เพื่อการศึกษาสำหรับนักเรียน ยกระดับคุณภาพนักเรียนให้มีทักษะสำคัญจำเป็นในโลกศตวรรษที่ 21 (3Rs 8Cs)
+        <br><span class="kpi-count">18 ตัวชี้วัด · 5 กลยุทธ์</span>
+      </div>
+
+      <div class="tactic t2">
+        <h4>กลยุทธ์ 2.1 — โรงเรียนจัดส่งเสริมทักษะการเป็นผู้ประกอบการ (Entrepreneur Skill)</h4>
+        <div class="measure"><span class="code">2.1.1</span> หลักสูตรการเรียนเพื่อส่งเสริม Stakeholders ความต้องการ เฉพาะทักษะ (เป้าหมาย 0→5)</div>
+        <div class="measure"><span class="code">2.1.2</span> จัดทำหลักสูตร ส่งเสริมทักษะ Entrepreneur Skill ให้กับนักเรียน ผู้มีความสนใจ</div>
+      </div>
+
+      <div class="tactic t2">
+        <h4>กลยุทธ์ 2.2 — พัฒนาโปรแกรมทาง Digital เพื่อการศึกษา</h4>
+        <div class="measure"><span class="code">2.2.1</span> จัดครูผู้เรียนแบบผสมผสาน On-site และ Online (เป้าหมาย 2→8 รายวิชา)</div>
+        <div class="measure"><span class="code">2.2.2</span> จัดทำบทเรียน On-demand ของแต่ละกลุ่มสาระ (เริ่ม 2565)</div>
+      </div>
+
+      <div class="tactic t2">
+        <h4>กลยุทธ์ 2.3 — ยกระดับคุณภาพนักเรียนสำคัญในโลกศตวรรษที่ 21 (3Rs 8Cs) / Digital Citizenship</h4>
+        <div class="measure"><span class="code">2.3.1</span> มีภาพพัฒนาผลสัมฤทธิ์ ฐานสำคัญ 3Rs 8Cs นักเรียน (เป้าหมาย 1→4)</div>
+        <div class="measure"><span class="code">2.3.2</span> จัดทำ Digital Intelligence Quotient ในกลุ่มสาระการเรียนรู้ (เป้าหมาย 50→70%)</div>
+        <div class="measure"><span class="code">2.3.3</span> ส่งเสริมมีภาพพัฒนาสื่อรายวิชา คณิตศาสตร์และวิทยาศาสตร์ สมรรถนะในวิชาภาษา ค่า T-Score เพิ่มขึ้นร้อยละ 2 ต่อปีการศึกษา</div>
+        <div class="measure"><span class="code">2.3.4</span> ส่งเสริมผลทดสอบ V-NET ระดับชาติ สะสาขาและแต่ละวิชาเป็นไปตามเป้าหมายของโรงเรียน</div>
+        <div class="measure"><span class="code">2.3.5</span> ได้รับการทดสอบทางภาษาต่างประเทศ CEFR พร้อมเทียบมาตรฐานแต่ละระดับชั้น (เริ่ม 2566)</div>
+      </div>
+
+      <div class="tactic t2">
+        <h4>กลยุทธ์ 2.4 — พัฒนานวัตกรรม สื่อ เครื่องมือ Digital</h4>
+        <div class="measure"><span class="code">2.4.1</span> มีภาพพัฒนาสื่อ เครื่องมือ Digital ในการเรียนรู้ ประเมินผลและประกันคุณภาพ</div>
+        <div class="measure"><span class="code">2.4.2</span> จัดทำวิชา Montfort Studies ในระดับชั้นปฐมศึกษาปีที่ 1 ถึง มัธยมศึกษาปีที่ 6</div>
+        <div class="measure"><span class="code">2.4.3</span> ใช้หนังสือ ตำราเรียนในระดับชั้นปฐมวัย ถึง ประถมศึกษาปีที่ 4 (แบบบิลิกทิด)</div>
+        <div class="measure"><span class="code">2.4.4</span> อบรมพัฒนาครูภาษาไทยหรือผู้รับผิดชอบทดสอบหนังสือ ครุศึกษา ระดับชั้นปฐมวัย ถึง ประถมศึกษาปีที่ 4</div>
+        <div class="measure"><span class="code">2.4.5</span> ใช้แบบฝึกหัดตัวอักษรไทยและแบบ Handwriting อังกฤษ ในระดับชั้นประถมศึกษาปีที่ 1 ถึง ปีที่ 6</div>
+        <div class="measure"><span class="code">2.4.6</span> โรงเรียนมีบริการ หนังสือหรือสื่อในรูปแบบอิเล็กทรอนิกส์ E-Library</div>
+        <div class="measure"><span class="code">2.4.7</span> จำนวนสื่อ นวัตกรรมในรูปแบบอิเล็กทรอนิกส์ของนักเรียนที่ผ่านการวิจารณ์คุณภาพ (เป้าหมาย 3→12)</div>
+      </div>
+
+      <div class="tactic t2">
+        <h4>กลยุทธ์ 2.5 — ศึกษานอกระบบ การศึกษาตามอัธยาศัย Home-school</h4>
+        <div class="measure"><span class="code">2.5.1</span> เปิดหลักสูตรในการจัดการศึกษานอกระบบ Home-school</div>
+        <div class="measure"><span class="code">2.5.2</span> เตรียมแนวทางและวิธีการสอดคล้อง การศึกษา ตามอัธยาศัย Home-school</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ยุทธศาสตร์ที่ 3 ==================== -->
+  <div class="str-block" id="s3">
+    <div class="str-header" onclick="toggleStr('s3')">
+      <div class="num s3">3</div>
+      <h3>พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล</h3>
+      <span class="toggle">▾</span>
+    </div>
+    <div class="str-body">
+      <div class="str-aim">
+        <strong>จุดมุ่งหมาย:</strong> พัฒนากระบวนการบริหารโรงเรียนสู่มาตรฐานสากล ยกระดับการบริหารจัดการตามคู่มือหลักธรรมาภิบาลของมูลนิธิฯ พัฒนาการกำกับ ติดตามโรงเรียนในเครือฯ ให้มีประสิทธิภาพและประสิทธิผล และการบริหารความเสี่ยง (Risk Management)
+        <br><span class="kpi-count">7 ตัวชี้วัด · 4 กลยุทธ์</span>
+      </div>
+
+      <div class="tactic t3">
+        <h4>กลยุทธ์ 3.1 — พัฒนากระบวนการบริหารมาตรฐาน</h4>
+        <div class="measure"><span class="code">3.1.1</span> โรงเรียนกำหนดมาตรฐานในแผนพัฒนาคุณภาพการจัดการศึกษา — การจัดทำแผนตามมาตรฐานของโรงเรียน</div>
+        <div class="measure"><span class="code">3.1.2</span> โรงเรียนจัดรับการประเมินมาตรฐาน กำหนดคุณภาพของโรงเรียน มาตรฐานสากล</div>
+      </div>
+
+      <div class="tactic t3">
+        <h4>กลยุทธ์ 3.2 — ยกระดับการเงิน ประสิทธิภาพงบประมาณ (ธรรมาภิบาล)</h4>
+        <div class="measure"><span class="code">3.2.1</span> ผลประเมินด้านการเงิน หลักธรรมาภิบาล บริหารด้วยการจัดเก็บข้อมูลเชิงพิสูจน์ (เริ่ม 2565)</div>
+        <div class="measure"><span class="code">3.2.2</span> ยุทธ์จริง ประเมิน คุณภาพด้านต่างๆ ข้อมูลนิเวศ เครือฯ 2 ปี</div>
+      </div>
+
+      <div class="tactic t3">
+        <h4>กลยุทธ์ 3.3 — พัฒนาเครื่องมือสารสนเทศ SWIS</h4>
+        <div class="measure"><span class="code">3.3.1</span> สารสนเทศเพื่อการศึกษา จัดวาระติดตามการบริหารจัดการข้อมูลโรงเรียน ฝ่ายต่างๆ ในยุค Digital — SWIS: School Web-based Information System (เป้าหมาย 75→85%)</div>
+        <div class="measure"><span class="code">3.3.2</span> จัดทำเครื่องมือข้อมูลนิเวศ สารสนเทศพัฒนาเครือข่ายข้อมูลสนับสนุนให้มีประสิทธิผลมากขึ้น</div>
+        <div class="measure"><span class="code">3.3.3</span> ปรับปรุง รับตรวจสอบ สารสนเทศ เพื่อการศึกษาพัฒนาระบบ บริหารจัดการสารสนเทศระบบให้มีประสิทธิผล</div>
+        <div class="measure"><span class="code">3.3.4</span> จัดทำวิจัยสถาบัน ประยุกต์ (Applied Research) ประสิทธิผล (เป้าหมาย 0→1)</div>
+      </div>
+
+      <div class="tactic t3">
+        <h4>กลยุทธ์ 3.4 — การบริหารความเสี่ยง (Risk Management)</h4>
+        <div class="measure"><span class="code">3.4.1</span> จัดทำแผนบริหารความเสี่ยง (Risk Management) — (1) มีการระบุและจัดลำดับสิ่งเสี่ยง (2) มีการกำหนดมูลค่าที่เสี่ยง จำนวนบุคลากร (3) มีรายงานเป็นข้อมูลรับผิดชอบ (4) มีการทำรายงานกลุ่มความเสี่ยง (5) มีการกำกับ ติดตาม ประเมินผลองค์กรเสี่ยง</div>
+        <div class="measure"><span class="code">3.4.2</span> จัดทำแผนจัดการวิกฤต (Crisis Management) — (1) กำหนดพื้นที่เสี่ยง (2) ความพร้อม (Readiness) (3) การตอบสนอง (Response) (4) การฟื้นฟู (Recovery)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ยุทธศาสตร์ที่ 4 ==================== -->
+  <div class="str-block" id="s4">
+    <div class="str-header" onclick="toggleStr('s4')">
+      <div class="num s4">4</div>
+      <h3>เพิ่มประสิทธิภาพการบริหารงานทรัพยากรมนุษย์</h3>
+      <span class="toggle">▾</span>
+    </div>
+    <div class="str-body">
+      <div class="str-aim">
+        <strong>จุดมุ่งหมาย:</strong> สร้างความเข้มแข็งของระบบการบริหารงานทรัพยากรมนุษย์ให้มีประสิทธิภาพ พัฒนาบุคลากรตาม มาตรฐานวิชาชีพ และพัฒนาบุคลากรที่ดำรงตำแหน่งหัวหน้าตามโครงสร้างการบริหารงานโรงเรียน
+        <br><span class="kpi-count">7 ตัวชี้วัด · 3 กลยุทธ์</span>
+      </div>
+
+      <div class="tactic t4">
+        <h4>กลยุทธ์ 4.1 — สร้างระบบการบริหารทรัพยากรมนุษย์ที่มีประสิทธิภาพ</h4>
+        <div class="measure"><span class="code">4.1.1</span> จัดทำคู่มือ พนักงาน กิจกรรม จัดสรร ทรัพยากรมนุษย์ของโรงเรียน ตรวจตามมาตรฐาน ยุทธิ์</div>
+        <div class="measure"><span class="code">4.1.2</span> ระบบบริหารงานทรัพยากรมนุษย์ มาตรฐาน จัดสรรทรัพยากร หัวหน้าดำเนินการ จัดส่ง ยุทธิ์</div>
+        <div class="measure"><span class="code">4.1.3</span> กำกับ ติดตาม แผนงานทรัพยากรมนุษย์ ดำเนินงานตามมาตรฐาน บุคลากร ด้านจัดการ</div>
+        <div class="measure"><span class="code">4.1.4</span> สร้างเครือข่ายความร่วมมือที่หลากหลาย ผู้สนใจ ส่งเสริมบุคลากร ยุทธิ์ (เริ่ม 2569)</div>
+      </div>
+
+      <div class="tactic t4">
+        <h4>กลยุทธ์ 4.2 — พัฒนาบุคลากร ตามมาตรฐานตำแหน่ง (Job Spec)</h4>
+        <div class="measure"><span class="code">4.2.1</span> สถานศึกษาจัดอบรม พัฒนาบุคลากรประจำตำแหน่ง อบรม พัฒนาความเชี่ยวชาญ ของบุคลากร ในโรงเรียน — ทั้งพื้นฐาน (Basic) และเฉพาะทาง (Technical, Specific Skill) รับผิดชอบในโครงสร้างการบริหารงานโรงเรียน</div>
+      </div>
+
+      <div class="tactic t4">
+        <h4>กลยุทธ์ 4.3 — พัฒนาโครงสร้างตำแหน่งในองค์กร</h4>
+        <div class="measure"><span class="code">4.3.1</span> จัดทำหลักเกณฑ์อบรมบุคลากร ตำแหน่งหัวหน้า ตามโครงสร้างการบริหารงานโรงเรียน</div>
+        <div class="measure"><span class="code">4.3.2</span> จัดให้มีทิศ โครงสร้างองค์กร ตำแหน่ง หัวหน้า ตามโครงสร้างการบริหารงานโรงเรียน</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ยุทธศาสตร์ที่ 5 ==================== -->
+  <div class="str-block" id="s5">
+    <div class="str-header" onclick="toggleStr('s5')">
+      <div class="num s5">5</div>
+      <h3>ขยายเครือข่ายความร่วมมือเพื่อพัฒนาการจัดการศึกษา</h3>
+      <span class="toggle">▾</span>
+    </div>
+    <div class="str-body">
+      <div class="str-aim">
+        <strong>จุดมุ่งหมาย:</strong> ยกระดับการแลกเปลี่ยนองค์ความรู้ทางการศึกษาระหว่างโรงเรียนในเครือฯ และทุกภาคส่วนของสังคมมีส่วนร่วมในการจัดการศึกษาที่ตอบสนองความต้องการของโรงเรียนและชุมชน
+        <br><span class="kpi-count">5 ตัวชี้วัด · 1 กลยุทธ์</span>
+      </div>
+
+      <div class="tactic t5">
+        <h4>กลยุทธ์ 5.1 — ยกระดับเครือข่ายผลงาน Best Practice</h4>
+        <div class="measure"><span class="code">5.1.1</span> ส่งเสริมการแลกเปลี่ยนเรียนรู้ผลงาน Best Practice ระหว่างโรงเรียนในเครือฯ (เป้าหมาย 3→8 กลุ่มสาระ)</div>
+        <div class="measure"><span class="code">5.1.2</span> มีนวัตกรรม Best Practice จัดส่ง รวมพลังเรียนรู้ จัดส่งอย่างน้อย 1 ครั้ง (เป้าหมาย 2→5)</div>
+        <div class="measure"><span class="code">5.1.3</span> จัดเก็บ Best Practice ของบุคลากรโรงเรียนในเครือฯ เชื่อมโยงผ่านเครื่องมือในระบบ SWIS (School Web-based Information System)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTNOTE ==================== -->
+  <div class="footnote">
+    * ตัวเลข 47 KPI อ้างอิงจากแผนยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ปีการศึกษา 2565–2570 อนุมัติ 20 ตุลาคม 2564 หน้า 36–40 (ส่วนที่ 3 ตัวชี้วัดความสำเร็จ)
+    <br>** รายละเอียดกลยุทธ์ มาตรการ และตัวชี้วัดข้างต้น สกัดจากส่วน 3.5 แผนผังของแผนยุทธศาสตร์ หน้า 41–77
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">&copy; 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script>
+function toggleStr(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+</script>
+</body>
+</html>

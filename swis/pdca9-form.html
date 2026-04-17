@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แบบฟอร์มแผนงาน PDCA 9 ขั้นตอน — SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== FORM PAGE ===== */
+.form-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 50px) 24px 50px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  text-align: center; color: #fff;
+}
+.form-hero h1 {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 800; margin-bottom: 12px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.form-hero .sub {
+  font-size: 18px; color: rgba(255,255,255,0.65); font-weight: 300;
+}
+
+.form-wrap {
+  max-width: 1000px; margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--orange); font-weight: 600; font-size: 15px;
+  text-decoration: none; margin-bottom: 24px;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* Chain of Alignment */
+.chain-box {
+  background: var(--soft); border-radius: 16px;
+  border: 1.5px solid var(--border);
+  padding: 28px; margin-bottom: 36px;
+}
+.chain-box h3 {
+  font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--text);
+}
+.chain-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+}
+.chain-item {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 16px;
+  font-size: 14px; color: var(--muted); line-height: 1.5;
+  flex: 1; min-width: 180px;
+}
+.chain-item strong { color: var(--text); display: block; font-size: 13px; margin-bottom: 4px; }
+.chain-arrow { font-size: 20px; color: var(--orange); font-weight: 700; flex-shrink: 0; }
+
+/* Form table */
+.form-table {
+  width: 100%; border-collapse: collapse;
+  margin-bottom: 36px; border-radius: 12px;
+  overflow: hidden; border: 1.5px solid var(--border);
+}
+.form-table th, .form-table td {
+  padding: 14px 16px; text-align: left;
+  border: 1px solid #e8e8e8; font-size: 14px;
+  vertical-align: top;
+}
+.form-table th {
+  background: #1e3a5f; color: #fff;
+  font-weight: 600; font-size: 13px;
+  text-align: center;
+}
+.form-table .phase-row td {
+  background: #f0f4f8; font-weight: 700;
+  color: #1e3a5f; font-size: 15px;
+}
+.form-table .do-row td { background: #fff7ed; }
+.form-table .check-row td { background: #f0fdfa; }
+.form-table .act-row td { background: #f5f3ff; }
+
+.form-table .step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-size: 13px; font-weight: 700;
+  margin-right: 8px; flex-shrink: 0;
+  vertical-align: middle;
+}
+.form-table .revised {
+  display: inline-block;
+  background: #fff3e0; color: #e65100;
+  font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 99px;
+  margin-left: 8px;
+}
+.form-table .auto-note {
+  display: block; margin-top: 6px;
+  font-size: 12px; color: var(--orange); font-weight: 500;
+}
+.form-table .sub-step {
+  padding-left: 44px; font-size: 13px; color: var(--muted);
+}
+.form-table .mini-pdca {
+  font-size: 12px; color: #d96a0a; font-weight: 500;
+}
+
+/* Budget section */
+.budget-box {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 24px; margin-bottom: 36px;
+}
+.budget-box h3 { font-size: 17px; font-weight: 700; margin-bottom: 16px; }
+.budget-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.budget-item {
+  background: var(--soft); border-radius: 10px;
+  padding: 16px; font-size: 14px; color: var(--muted);
+}
+.budget-item strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+/* Signature */
+.sig-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 48px;
+  text-align: center;
+}
+.sig-block {
+  border-top: 2px solid #ccc; padding-top: 14px;
+  font-size: 14px; color: var(--muted);
+}
+.sig-block strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+@media (max-width: 700px) {
+  .form-wrap { padding: 24px 12px 60px; }
+  .form-table { font-size: 13px; display: block; overflow-x: auto; }
+  .budget-grid { grid-template-columns: 1fr; }
+  .sig-row { grid-template-columns: 1fr; }
+  .chain-row { flex-direction: column; }
+  .chain-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<section class="form-hero">
+  <h1>แบบฟอร์มแผนงาน PDCA 9 ขั้นตอน</h1>
+  <p class="sub">ตัวอย่างแบบฟอร์มที่ใช้จริงในระบบ SWIS — ปรับปรุงตามการออกแบบใหม่</p>
+</section>
+
+<div class="form-wrap">
+  <a href="pdca9.html" class="back-link">← กลับหน้า PDCA 9 ขั้นตอน</a>
+
+  <!-- Chain of Alignment -->
+  <div class="chain-box">
+    <h3>Chain of Alignment</h3>
+    <div class="chain-row">
+      <div class="chain-item">
+        <strong>แผนยุทธศาสตร์มูลนิธิฯ</strong>
+        ยุทธศาสตร์ที่ ___<br>เป้าประสงค์ที่ ___
+      </div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-item">
+        <strong>แผนพัฒนาโรงเรียน</strong>
+        มาตรฐานที่ ___<br>ตัวชี้วัดที่ ___
+      </div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-item">
+        <strong>คู่มือคุณภาพหน่วยงาน</strong>
+        เป้าหมายคุณภาพที่ ___<br>หน้าที่หลักที่ ___
+      </div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-item">
+        <strong>แผนงาน PDCA นี้</strong>
+        งานหลักที่ ___
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Form Table -->
+  <table class="form-table">
+    <thead>
+      <tr>
+        <th style="width:45%">งาน / กิจกรรม / ขั้นตอน</th>
+        <th style="width:15%">ระยะเวลา</th>
+        <th style="width:20%">งบประมาณจัดหา</th>
+        <th style="width:20%">งบประมาณโรงเรียน</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- PLAN header -->
+      <tr class="phase-row"><td colspan="4" style="background:#1e3a5f;color:#f5a623">PLAN — วางแผน (ขั้นที่ 1-5)</td></tr>
+
+      <tr>
+        <td><span class="step-num" style="background:#1e3a5f">1</span> <strong>แต่งตั้งคณะกรรมการ/ทีมงาน/ผู้รับผิดชอบ</strong></td>
+        <td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td><span class="step-num" style="background:#1e3a5f">2</span> <strong>ศึกษาข้อมูล สรุปสภาพปัจจุบัน</strong>
+          <br><span class="sub-step">วิเคราะห์ที่มาที่ไป ทรัพยากรที่มีอยู่</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td><span class="step-num" style="background:#1e3a5f">3</span> <strong>ศึกษาเป้าหมายคุณภาพจากคู่มือคุณภาพหน่วยงาน</strong> <span class="revised">🔄 ปรับใหม่</span>
+          <span class="auto-note">ยึดเป้าหมายคุณภาพจากคู่มือฯ เป็นฐาน</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>
+          <span class="step-num" style="background:#1e3a5f">4</span> <strong>วางแนวทางปฏิบัติ กำหนดกิจกรรม/โครงการ</strong>
+          <div class="sub-step" style="margin-top:10px">
+            <strong>4.1</strong> กำหนดงานตามหน้าที่หลักของหน่วยงาน <span class="revised">🔄 ปรับใหม่</span>
+            <span class="auto-note">SWIS ดึงจากคู่มือคุณภาพอัตโนมัติ</span>
+            <div style="padding-left:24px;margin-top:6px;color:#888">
+              4.1.1 งานหลักที่ 1 ………<br>
+              4.1.2 งานหลักที่ 2 ………<br>
+              4.1.3 งานหลักที่ 3 ………
+            </div>
+          </div>
+          <div class="sub-step" style="margin-top:8px">
+            <strong>4.2</strong> เตรียมเครื่องมือวัดประเมินผลตามรายการงานในข้อ 4.1
+          </div>
+          <div class="sub-step" style="margin-top:8px">
+            <strong>4.3</strong> ศึกษาวิเคราะห์แนวทาง ป้องกันแก้ไขพัฒนาคุณภาพงาน (ภาพรวม)
+          </div>
+        </td>
+        <td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td><span class="step-num" style="background:#1e3a5f">5</span> <strong>ประชุมวางแผนและมอบหมายงาน</strong>
+          <br><span class="sub-step">ตามเป้าหมายคุณภาพข้อ 3</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+
+      <!-- DO header -->
+      <tr class="phase-row"><td colspan="4" style="background:#d96a0a;color:#fff">DO — ปฏิบัติ (ขั้นที่ 6) ดำเนินการตลอดทั้งปี</td></tr>
+
+      <tr class="do-row">
+        <td>
+          <span class="step-num" style="background:#d96a0a">6</span> <strong>ดำเนินงานตามแผนปฏิบัติการประจำปี</strong>
+          <div class="sub-step" style="margin-top:10px">
+            <strong>6.1</strong> กิจกรรม/โครงการ <span class="mini-pdca">(สอดรับกับ 4.1.1)</span>
+            <div style="padding-left:24px;margin-top:4px;color:#888;font-size:12px">
+              P: วางแผน… → D: ดำเนินการ… → C: ตรวจสอบ… → A: ปรับปรุง…
+            </div>
+          </div>
+          <div class="sub-step" style="margin-top:8px">
+            <strong>6.2</strong> กิจกรรม/โครงการ <span class="mini-pdca">(สอดรับกับ 4.1.2)</span>
+            <div style="padding-left:24px;margin-top:4px;color:#888;font-size:12px">
+              P: วางแผน… → D: ดำเนินการ… → C: ตรวจสอบ… → A: ปรับปรุง…
+            </div>
+          </div>
+          <div class="sub-step" style="margin-top:8px">
+            <strong>6.3</strong> กิจกรรม/โครงการ <span class="mini-pdca">(สอดรับกับ 4.1.3)</span>
+            <div style="padding-left:24px;margin-top:4px;color:#888;font-size:12px">
+              P: วางแผน… → D: ดำเนินการ… → C: ตรวจสอบ… → A: ปรับปรุง…
+            </div>
+          </div>
+        </td>
+        <td>ตลอดปี<br>การศึกษา</td><td></td><td></td>
+      </tr>
+
+      <!-- CHECK header -->
+      <tr class="phase-row"><td colspan="4" style="background:#0d9488;color:#fff">CHECK — ตรวจสอบ (ขั้นที่ 7-8)</td></tr>
+
+      <tr class="check-row">
+        <td><span class="step-num" style="background:#0d9488">7</span> <strong>กำกับ ติดตามและนิเทศการดำเนินงาน</strong> <span class="revised">🔄 ปรับใหม่</span>
+          <span class="auto-note">เดิม: "รับการนิเทศ" → ใหม่: กำกับติดตามเชิงรุก</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+      <tr class="check-row">
+        <td><span class="step-num" style="background:#0d9488">8</span> <strong>ประเมินผลการดำเนินงาน</strong>
+          <br><span class="sub-step">ครอบคลุมทั้งแผนปฏิบัติการและแผนพัฒนาฯ</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+
+      <!-- ACT header -->
+      <tr class="phase-row"><td colspan="4" style="background:#7c3aed;color:#fff">ACT — ปรับปรุง (ขั้นที่ 9)</td></tr>
+
+      <tr class="act-row">
+        <td><span class="step-num" style="background:#7c3aed">9</span> <strong>นำผลประเมินพัฒนาแผนปฏิบัติการปีต่อไป</strong>
+          <br><span class="sub-step">→ วนรอบใหม่กลับขั้นที่ 1</span></td>
+        <td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Budget -->
+  <div class="budget-box">
+    <h3>สรุปงบประมาณ</h3>
+    <div class="budget-grid">
+      <div class="budget-item">
+        <strong>งบประมาณจัดหา (คณะฯ/มูลนิธิฯ)</strong>
+        จำนวน _________ บาท
+      </div>
+      <div class="budget-item">
+        <strong>งบประมาณโรงเรียน</strong>
+        จำนวน _________ บาท
+      </div>
+    </div>
+  </div>
+
+  <!-- Signatures -->
+  <div class="sig-row">
+    <div class="sig-block">
+      <strong>ผู้เสนอแผนงาน</strong>
+      ลงชื่อ ________________________<br>
+      (________________________)<br>
+      ตำแหน่ง ________________________<br>
+      วันที่ ____/____/____
+    </div>
+    <div class="sig-block">
+      <strong>ผู้ตรวจสอบ</strong>
+      ลงชื่อ ________________________<br>
+      (________________________)<br>
+      ตำแหน่ง ________________________<br>
+      วันที่ ____/____/____
+    </div>
+    <div class="sig-block">
+      <strong>ผู้อนุมัติ</strong>
+      ลงชื่อ ________________________<br>
+      (________________________)<br>
+      ตำแหน่ง ________________________<br>
+      วันที่ ____/____/____
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <div style="text-align:center;margin-top:48px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <a href="pdca9.html" class="back-link">← PDCA 9 ขั้นตอน</a>
+    <a href="present.html" class="back-link">← สารบัญนำเสนอ</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">© 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

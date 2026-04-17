@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SWIS Plus — ภาพรวมระบบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== PRESENTATION MODE OVERRIDES ===== */
+.pres-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  overflow: hidden;
+}
+.pres-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(245,130,32,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.pres-hero .inner { position: relative; max-width: 900px; }
+.pres-hero h1 {
+  font-size: clamp(36px, 5.5vw, 62px);
+  font-weight: 800; line-height: 1.15;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pres-hero .sub {
+  font-size: clamp(18px, 2.4vw, 26px);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 36px; font-weight: 300;
+}
+.pres-hero .tagline {
+  font-size: 16px; color: rgba(255,255,255,0.5);
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 14px; font-weight: 600;
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,0.4); font-size: 14px;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ===== STORY SECTIONS ===== */
+.story {
+  padding: 100px 24px;
+  position: relative;
+}
+.story .wrap { max-width: 900px; margin: 0 auto; }
+.story-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff; font-size: 22px; font-weight: 800;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(245,130,32,0.3);
+}
+.story h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700; line-height: 1.25;
+  margin-bottom: 20px; text-align: left;
+  color: var(--text);
+}
+.story .desc {
+  font-size: clamp(17px, 2vw, 21px);
+  color: var(--muted); line-height: 1.8;
+  text-align: left; max-width: 800px;
+}
+.story .desc strong { color: var(--text); font-weight: 600; }
+
+/* Alternating backgrounds */
+.story.soft { background: var(--soft); }
+.story.dark {
+  background: linear-gradient(135deg, #0e1e3a 0%, #1a1a2e 100%);
+  color: #fff;
+}
+.story.dark h2 { color: #fff; }
+.story.dark .desc { color: rgba(255,255,255,0.75); }
+.story.dark .desc strong { color: #fff; }
+.story.dark .story-num {
+  background: linear-gradient(135deg, #f5a623, #f58220);
+}
+
+/* Visual cards */
+.vis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; margin-top: 36px;
+}
+.vis-card {
+  background: #fff; border-radius: 16px;
+  padding: 28px 22px; text-align: center;
+  border: 1px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.vis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.story.dark .vis-card {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.vis-card .icon {
+  font-size: 36px; margin-bottom: 12px;
+  display: block;
+}
+.vis-card h4 {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 6px;
+}
+.vis-card p {
+  font-size: 14px; color: var(--muted); line-height: 1.5;
+}
+.story.dark .vis-card p { color: rgba(255,255,255,0.6); }
+
+/* Big number highlight */
+.highlight-row {
+  display: flex; gap: 36px; justify-content: center;
+  flex-wrap: wrap; margin-top: 36px; padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+.story.dark .highlight-row { border-top-color: rgba(255,255,255,0.12); }
+.highlight-item { text-align: center; }
+.highlight-item .num {
+  font-size: 48px; font-weight: 800;
+  color: var(--orange); line-height: 1;
+}
+.highlight-item .label {
+  font-size: 14px; color: var(--muted); margin-top: 6px;
+}
+.story.dark .highlight-item .label { color: rgba(255,255,255,0.5); }
+
+/* Resource pills */
+.resource-pills {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  margin-top: 30px;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; border: 1.5px solid var(--border);
+  padding: 14px 22px; border-radius: 14px;
+  font-size: 16px; font-weight: 500;
+  transition: all .2s;
+}
+.pill:hover {
+  border-color: var(--orange);
+  box-shadow: 0 6px 18px rgba(245,130,32,0.12);
+}
+.pill .emoji { font-size: 22px; }
+
+/* Image showcase */
+.story-img {
+  margin-top: 36px; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+.story-img img { width: 100%; display: block; }
+
+/* Demo link button */
+.demo-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 30px;
+  padding: 16px 32px; border-radius: 999px;
+  background: var(--orange); color: #fff;
+  font-weight: 600; font-size: 17px;
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.demo-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245,130,32,0.35);
+}
+.demo-link.outline {
+  background: transparent;
+  border: 2px solid var(--orange);
+  color: var(--orange);
+}
+.demo-link.outline:hover { background: var(--orange); color: #fff; }
+.story.dark .demo-link.outline {
+  border-color: rgba(255,255,255,0.4);
+  color: #fff;
+}
+.story.dark .demo-link.outline:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* CTA final */
+.pres-cta {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+  text-align: center; color: #fff;
+}
+.pres-cta h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700; margin-bottom: 16px;
+}
+.pres-cta p {
+  font-size: 19px; opacity: .9;
+  max-width: 700px; margin: 0 auto 36px;
+}
+.pres-cta .btn-row {
+  display: flex; gap: 16px;
+  justify-content: center; flex-wrap: wrap;
+}
+.pres-cta .btn { font-size: 16px; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Print/Projection tweaks */
+@media (min-width: 1200px) {
+  .story { padding: 120px 48px; }
+  .story h2 { font-size: 44px; }
+  .story .desc { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="pres-hero">
+  <div class="inner">
+    <div class="tagline">School Web-based Information System</div>
+    <h1>ลองนึกภาพ...<br>ถ้าทุกมิติของโรงเรียน<br>อยู่ในที่เดียวกัน</h1>
+    <p class="sub">ฐานข้อมูลเดียว — ค้นหาแล้วเห็นทุกอย่าง<br>ตั้งแต่บุคลากร นักเรียน ผู้ปกครอง จนถึงผลงานและงบประมาณ</p>
+  </div>
+  <div class="scroll-hint">▼ เลื่อนเพื่อดูเรื่องราว</div>
+</section>
+
+<!-- ==================== 1. UNIFIED DATABASE ==================== -->
+<section class="story" id="s1">
+  <div class="wrap">
+    <div class="story-num">1</div>
+    <h2>ค้นหาจาก AI — เจอทุกมิติในที่เดียว</h2>
+    <p class="desc">
+      ลองนึกภาพว่าพิมพ์ชื่อคนหนึ่งคน แล้วระบบแสดงให้เห็นทุกอย่าง —
+      <strong>ประวัติบุคลากร, ตำแหน่งงาน, งานที่รับผิดชอบ, วุฒิการศึกษา, การอบรม,
+      ผลงาน, เงินเดือน</strong> — ทุกมิติจากฐานข้อมูลเดียวกัน
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ถ้าค้นหานักเรียน ก็เห็น <strong>ผลการเรียน, พฤติกรรม, กิจกรรม, สุขภาพ,
+      ข้อมูลผู้ปกครอง</strong> — ครบถ้วนในหน้าจอเดียว
+    </p>
+    <div class="story-img">
+      <img src="assets/img/unified-database.svg" alt="Unified Database Concept">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 2. ONE PLAN PER UNIT ==================== -->
+<section class="story soft" id="s2">
+  <div class="wrap">
+    <div class="story-num">2</div>
+    <h2>ไม่ซับซ้อน — แต่ละหน่วยงานมีแค่แผนเดียว</h2>
+    <p class="desc">
+      ทุกอย่างเริ่มจาก <strong>"คู่มือบริหารคุณภาพโรงเรียน"</strong> ซึ่งถูกออกแบบให้สอดคล้องกับ
+      <strong>แผนยุทธศาสตร์ขององค์กรต้นสังกัด</strong> — ไม่ว่าจะเป็นมูลนิธิ คณะ หรือหน่วยงานแม่
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ทั้ง <strong>"คู่มือบริหารคุณภาพโรงเรียน"</strong> และ <strong>"คู่มือคุณภาพหน่วยงาน"</strong>
+      มีสูตรการจัดทำที่ออกแบบมาให้ง่าย — <strong>บุคลากรทุกคนมีส่วนร่วมและเข้าใจ</strong>
+      ไม่ใช่เอกสารที่ผู้บริหารเขียนคนเดียวแล้วส่งลงมา
+    </p>
+    <p class="desc" style="margin-top:16px">
+      จากคู่มือบริหารคุณภาพฯ แต่ละหน่วยงานจะมี <strong>"คู่มือคุณภาพหน่วยงาน"</strong>
+      เป็นตัวกำหนดทิศทาง และมี <strong>"แผนงาน PDCA"</strong>
+      เพียงหนึ่งเดียวที่แปลงคู่มือออกมาเป็นการกระทำจริง
+    </p>
+    <p class="desc" style="margin-top:16px">
+      เปลี่ยนหัวหน้าหน่วยงาน — แผนยังอยู่ เป้าหมายไม่หาย
+      เพราะ <strong>คู่มือคือ "คำสั่งงาน" ที่ไม่เปลี่ยนตามตัวคน</strong>
+    </p>
+    <div style="background:#fff3e0;border-left:4px solid #f58220;border-radius:0 12px 12px 0;padding:20px 24px;margin-top:20px;max-width:820px">
+      <p style="margin:0;font-weight:700;color:#d96a0a;font-size:1.05em">❓ แล้วถ้าอยากมีหลายแผน หรือมีโครงการ?</p>
+      <p style="margin:10px 0 0;color:#333">
+        ระบบรองรับการสร้างแผนงานได้ไม่จำกัด — แต่ด้วย <strong>สูตร PDCA 9 ขั้นตอน</strong>
+        ที่ออกแบบมาให้ครอบคลุมทุกมิติในแผนเดียว ทำให้ <strong>ไม่จำเป็นต้องแตกแผนออกหลายฉบับ</strong>
+        ลดงานซ้ำซ้อน ลดเอกสาร แต่ได้ผลลัพธ์ที่ละเอียดและครบถ้วนกว่า
+      </p>
+    </div>
+    <div class="vis-grid" style="grid-template-columns:repeat(3,1fr);max-width:820px">
+      <div class="vis-card">
+        <span class="icon">🏛️</span>
+        <h4>แผนยุทธศาสตร์</h4>
+        <p>องค์กรต้นสังกัด<br>= ทิศทางใหญ่</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📘</span>
+        <h4>คู่มือคุณภาพ</h4>
+        <p>= Prompt<br>บอกว่า "ต้องเป็นอะไร"</p>
+        <p style="font-size:0.85em;color:#888;margin-top:6px">(คู่มือคุณภาพหน่วยงาน<br>+ คู่มือบริหารคุณภาพโรงเรียน)</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">⚙️</span>
+        <h4>แผนงาน PDCA</h4>
+        <p>= Execute<br>แปลงเป็น "การกระทำจริง"</p>
+      </div>
+    </div>
+    <div class="story-img" style="margin-top:30px">
+      <img src="assets/img/diagram-alignment-chain.svg" alt="Chain of Alignment — สายการเชื่อมโยง">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 3. ALIGNED TO GOALS ==================== -->
+<section class="story" id="s3">
+  <div class="wrap">
+    <div class="story-num">3</div>
+    <h2>ทุกแผนเชื่อมโยงกลับสู่เป้าหมายองค์กร</h2>
+    <p class="desc">
+      แผนงานทุกชิ้นไม่ได้ลอยอยู่เดี่ยว ๆ — ทุกแผน <strong>ผูกกับเป้าหมายคุณภาพหน่วยงาน</strong>
+      ซึ่งยึดโยงกับ <strong>มาตรฐานคุณภาพ, นโยบาย, แผนยุทธศาสตร์</strong> ขึ้นไปถึงระดับองค์กร
+    </p>
+    <p class="desc" style="margin-top:16px">
+      เคล็ดลับอยู่ที่ <strong>โมดูล PDCA 9 ขั้นตอน</strong> ที่ถูกฝังไว้เป็นฟีเจอร์ในระบบ SWIS —
+      ออกแบบให้ <strong>ง่ายและกลมกลืนกับธรรมชาติการทำงานตามปกติ</strong>
+      ไม่ใช่ขั้นตอนที่เพิ่มภาระ แต่เป็นสิ่งที่บุคลากรทำอยู่แล้วทุกวัน
+      เพียงแต่ระบบช่วยจัดระเบียบและเก็บผลลัพธ์ให้อัตโนมัติ —
+      ตั้งแต่วิเคราะห์สภาพปัจจุบัน กำหนดเป้าหมาย วางแผนปฏิบัติ ดำเนินการ
+      ติดตามผล ประเมิน สรุป ปรับปรุง จนถึงรายงาน —
+      <strong>ครบวงจรในโมดูลเดียว</strong>
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ผลลัพธ์สุดท้ายรวมเข้าเป็น <strong>SAR (Self-Assessment Report)</strong>
+      และ <strong>รายงานประจำปี</strong> ได้โดยอัตโนมัติ — ไม่ต้องรวบรวมทีหลัง
+    </p>
+    <div class="vis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="vis-card">
+        <span class="icon">🎯</span>
+        <h4>เป้าหมาย</h4>
+        <p>ผูกกับมาตรฐาน<br>และแผนยุทธศาสตร์</p>
+      </div>
+      <div class="vis-card" style="border-color:var(--orange);box-shadow:0 6px 20px rgba(245,130,32,0.15)">
+        <span class="icon">🔄</span>
+        <h4>PDCA 9 ขั้นตอน</h4>
+        <p>เคล็ดลับขับเคลื่อนแผน<br>ครบวงจรในโมดูลเดียว</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📊</span>
+        <h4>KPI</h4>
+        <p>ผูกกับเป้าหมาย<br>วัดผลได้จริง</p>
+      </div>
+    </div>
+    <div class="vis-grid" style="grid-template-columns:repeat(2,1fr);max-width:500px;margin:20px auto 0">
+      <div class="vis-card">
+        <span class="icon">📋</span>
+        <h4>SAR</h4>
+        <p>รวบรวมอัตโนมัติ</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📈</span>
+        <h4>รายงานประจำปี</h4>
+        <p>จากข้อมูลจริง</p>
+      </div>
+    </div>
+    <div class="story-img" style="margin-top:30px">
+      <img src="assets/img/diagram-pdca9.svg" alt="PDCA 9 ขั้นตอน">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 4. TOOLS & DETAILS READY ==================== -->
+<section class="story soft" id="s4">
+  <div class="wrap">
+    <div class="story-num">4</div>
+    <h2>เมื่อถึงเวลาลงมือ — เครื่องมือและรายละเอียดพร้อม</h2>
+    <p class="desc">
+      ทุกแผนงานมีรายละเอียดครบถ้วน: <strong>ขั้นตอนการทำงาน, ผู้รับผิดชอบ,
+      ระยะเวลา, เครื่องมือที่ต้องใช้</strong> — และที่สำคัญ
+      <strong>งบประมาณที่มีฐานคำนวณจากสิ่งที่ต้องทำจริง</strong> ไม่ใช่ตั้งลอย
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ทุกบาททุกสตางค์มีที่มาที่ไป ตรวจสอบได้ ไม่ต้องเดา
+    </p>
+    <p class="desc" style="margin-top:16px">
+      และเมื่อจัดซื้อจัดจ้างเสร็จ ระบบ <strong>เชื่อมโยงกับโมดูลพัสดุครุภัณฑ์และจัดซื้อจัดจ้าง</strong>
+      โดยอัตโนมัติ — สิ่งที่ซื้อมาจากแผนงานจะไหลลงสู่
+      <strong>ทะเบียนทรัพย์สินของหน่วยงาน</strong> ทันที
+      ไม่ต้องบันทึกซ้ำ ไม่ตกหล่น ครบวงจรตั้งแต่แผนจนถึงทรัพย์สิน
+    </p>
+    <div class="story-img" style="margin-top:30px">
+      <img src="assets/img/diagram-procurement-flow.svg" alt="วงจร แผนงาน → จัดซื้อ → ทะเบียนทรัพย์สิน">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 5. RESOURCES: 5M ==================== -->
+<section class="story dark" id="s5">
+  <div class="wrap">
+    <div class="story-num">5</div>
+    <h2>ทรัพยากร 5 มิติ — เห็นครบในระบบเดียว</h2>
+    <p class="desc">
+      การบริหารจริงต้องเห็น <strong>ทรัพยากรทั้ง 5 มิติ</strong> พร้อมกัน —
+      ไม่ใช่แค่เงิน แต่รวมถึงคน วัสดุ สถานที่ และเวลา
+    </p>
+    <div class="resource-pills" style="justify-content:center">
+      <div class="pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">
+        <span class="emoji">👥</span> คน (Man)
+      </div>
+      <div class="pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">
+        <span class="emoji">💰</span> เงิน (Money)
+      </div>
+      <div class="pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">
+        <span class="emoji">📦</span> วัสดุ (Material)
+      </div>
+      <div class="pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">
+        <span class="emoji">🏫</span> สถานที่ (Facility)
+      </div>
+      <div class="pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff">
+        <span class="emoji">⏰</span> เวลา (Time)
+      </div>
+    </div>
+    <p class="desc" style="margin-top:28px;text-align:center">
+      งบประมาณเป็น <strong>ตัวเลขจริง</strong> ที่คำนวณจากแผน — ไม่ใช่ตัวเลขลอย
+    </p>
+    <p class="desc" style="margin-top:20px">
+      โดยหลักการแล้ว ทรัพยากรไม่ได้จำกัดอยู่แค่ 4M (Man, Money, Material, Management)
+      ตามทฤษฎีดั้งเดิม — SWIS Plus ขยายมิติออกไปให้ครอบคลุม <strong>สถานที่ (Facility)
+      และเวลา (Time)</strong> ซึ่งเป็นทรัพยากรที่มักถูกมองข้ามแต่มีผลต่อประสิทธิภาพอย่างมาก
+      และยังสามารถ <strong>เพิ่มมิติอื่น ๆ</strong> ตามบริบทของแต่ละสถาบันได้
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ที่สำคัญ — ระบบมี <strong>สารสนเทศวิเคราะห์ประสิทธิภาพงานในแต่ละด้าน</strong>
+      ทำให้ผู้บริหารเห็นว่าทรัพยากรที่ลงทุนไปได้ผลลัพธ์คุ้มค่าหรือไม่
+      เปรียบเทียบข้ามหน่วยงาน ข้ามปีการศึกษา และตัดสินใจจากข้อมูลจริง
+    </p>
+  </div>
+</section>
+
+<!-- ==================== 6. EVERYONE KNOWS THEIR ROLE ==================== -->
+<section class="story" id="s6">
+  <div class="wrap">
+    <div class="story-num">6</div>
+    <h2>ทุกคนรู้บทบาทของตัวเอง</h2>
+    <p class="desc">
+      บุคลากรทุกคนเห็น <strong>ตำแหน่ง, หน้าที่, เป้าหมาย, งานรายวัน-รายเดือน-รายปี</strong>
+      ของตัวเองในระบบ — ระบบแจ้งเตือนเมื่อถึงเวลา สื่อสารได้ทันที
+      และเห็นว่า <strong>ตัวเองถูกมอบหมายอะไรบ้าง</strong>
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ทุกคนรู้งานเพราะมี <strong>P (Plan)</strong> ที่ถูกวางแผนไว้ตั้งแต่ต้นในระบบ PDCA —
+      ไม่ต้องรอให้ใครมาตาม แต่ <strong>เดินนำหน้าเป็นเชิงรุก</strong>
+      จึงมักไม่มีคำถามว่า "เสร็จหรือยัง?" แต่กลายเป็น
+      <strong>"ประสบความสำเร็จสูงแค่ไหน?"</strong> มากกว่า
+    </p>
+    <div class="vis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="vis-card">
+        <span class="icon">📌</span>
+        <h4>Job Description</h4>
+        <p>หน้าที่ชัดเจน<br>ตาม Job Spec</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">🔔</span>
+        <h4>แจ้งเตือน</h4>
+        <p>ถึงเวลา — ระบบบอก<br>ไม่ต้องรอคนตาม</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">👁️</span>
+        <h4>เห็นงานทั้งหมด</h4>
+        <p>Workload ของตัวเอง<br>โปร่งใส ตรวจสอบได้</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="teacher.html" class="demo-link outline">ดูโมดูลครูและบุคลากร →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 7. SUPERVISION ==================== -->
+<section class="story soft" id="s7">
+  <div class="wrap">
+    <div class="story-num">7</div>
+    <h2>นิเทศติดตาม — ฝ่ายที่เห็นทุกอย่างรายวัน</h2>
+    <p class="desc">
+      SWIS Plus มี <strong>ฟีเจอร์เฉพาะสำหรับฝ่ายนิเทศติดตามของโรงเรียน</strong> —
+      เปิดดูได้ทันทีว่าวันนี้ <strong>ใคร แผนไหน ของหน่วยไหน
+      ต้องทำอะไร ที่ไหน อย่างไร</strong>
+    </p>
+    <p class="desc" style="margin-top:16px">
+      หากไม่ทำตามกำหนด ระบบทำหน้าที่ <strong>เตือนและติดตามวันต่อวัน</strong>
+      โดยอัตโนมัติ — เสมือนมีคนคอยตามงานให้ตลอดเวลา
+    </p>
+    <p class="desc" style="margin-top:16px">
+      และทั้งหมดนี้ส่งผลตรงไปยัง <strong>Today's Events</strong> —
+      หน้าจอที่แสดงกิจกรรมที่เกิดขึ้นจริงในโรงเรียนวันนั้น ๆ
+      ถูกต้องแม่นยำ ครบทุกคนทุกระดับ
+      ตั้งแต่ผู้บริหารจนถึงบุคลากรทุกหน่วยงาน
+    </p>
+    <div class="vis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="vis-card">
+        <span class="icon">📅</span>
+        <h4>วันนี้ใครทำอะไร</h4>
+        <p>เปิดดูได้ทันที<br>ใคร แผนไหน หน่วยไหน</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">⚠️</span>
+        <h4>เตือนอัตโนมัติ</h4>
+        <p>ไม่ทำตามกำหนด<br>ระบบติดตามวันต่อวัน</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📢</span>
+        <h4>Today's Events</h4>
+        <p>กิจกรรมจริงวันนี้<br>ครบทุกคนทุกระดับ</p>
+      </div>
+    </div>
+    <div class="story-img" style="margin-top:30px">
+      <img src="assets/img/diagram-supervision.svg" alt="กระบวนการนิเทศติดตามรายวัน">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 8. PROGRESS & TRAINING ==================== -->
+<section class="story" id="s8">
+  <div class="wrap">
+    <div class="story-num">8</div>
+    <h2>บุคลากร — รู้ว่าขาดอะไร พัฒนาตรงจุด ไม่อบรมเหมารวม</h2>
+    <p class="desc">
+      ทุกคนที่ทำงานในหน่วยงานของตัวเอง <strong>รู้ว่าตนเองต้องมีสเปคอะไร</strong>
+      และ <strong>รู้ว่าสิ่งที่ยังไม่สำเร็จเป็นเพราะขาดสเปคอะไร</strong> —
+      ข้อมูลนี้ไม่ได้หยุดอยู่แค่ตัวบุคลากร
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ระบบ <strong>ส่งข้อมูลย้อนกลับไปยังโมดูลงานบุคลากร</strong> โดยอัตโนมัติ
+      เพื่อนำไปจัดทำ <strong>หลักสูตรและแผนการอบรมพัฒนาบุคลากร</strong>
+      ของแต่ละหน่วยงาน ตรงตามคุณสมบัติที่หน่วยงานนั้นต้องการจริง ๆ
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ผลลัพธ์คือ <strong>ตัดระบบการอบรมแบบเหมารวม</strong>
+      ที่เน้นเอาชั่วโมงแต่ไม่ได้สาระหรือคุณสมบัติที่สอดคล้องกับความต้องการจริง —
+      เปลี่ยนเป็นการพัฒนาที่ตรงจุด ตรงคน ตรงหน่วยงาน
+      ตาม <strong>ความรู้ (Knowledge), ทักษะ (Competency),
+      และคุณลักษณะ (Capability)</strong> ที่แต่ละตำแหน่งต้องการ
+    </p>
+    <div class="story-img" style="margin-top:30px">
+      <img src="assets/img/diagram-jobspec-loop.svg" alt="วงจร Job Spec → ผลงาน → พัฒนาตรงจุด">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 9. EXECUTIVE OVERVIEW ==================== -->
+<section class="story dark" id="s9">
+  <div class="wrap">
+    <div class="story-num">9</div>
+    <h2>ผู้บริหาร — มองภาพรวมทุกด้านในจอเดียว</h2>
+    <p class="desc">
+      ผู้บริหารสามารถมองภาพรวมทุกมิติของโรงเรียนได้พร้อมกัน —
+      <strong>เป้าหมายและแผนงาน</strong> ในกระบวนการบริหารคุณภาพ,
+      <strong>คน</strong> และประสิทธิภาพการทำงาน,
+      <strong>เงินและทรัพยากร</strong> ว่าใช้ไปคุ้มค่าหรือไม่
+    </p>
+    <p class="desc" style="margin-top:16px">
+      เห็นได้ทันทีว่า <strong>มีอะไรขาด มีอะไรเกิน</strong> —
+      หน่วยไหนคนไม่พอ หน่วยไหนงบเหลือ หน่วยไหนแผนล่าช้า
+      และยังรู้ว่า <strong>มีอะไรเด่น มีอะไรด้อย</strong> —
+      ตั้งแต่ระดับ <strong>ตัวบุคคล</strong> รวมขึ้นมาเป็นภาพ <strong>ระดับหน่วยงาน</strong>
+      ขึ้นมาเป็น <strong>ระดับฝ่าย</strong> และขึ้นมาเป็น <strong>ระดับโรงเรียน</strong>
+      ทำให้ตัดสินใจได้จากข้อมูลจริง ไม่ต้องรอรายงานสิ้นปี
+    </p>
+    <p class="desc" style="margin-top:16px">
+      ทั้งหมดนี้เน้น <strong>P (Plan) ใน PDCA 9 ขั้นตอน เป็นเชิงรุก</strong> —
+      รู้ล่วงหน้า แก้ไขได้ทันที ไม่ใช่รอผลลัพธ์ปลายปีแล้วค่อยมาพบว่าผิดพลาด
+      ซึ่งย้อนกลับไปแก้ไขไม่ได้ ต้องรอปีการศึกษาถัดไป
+    </p>
+    <div class="vis-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="vis-card">
+        <span class="icon">🎯</span>
+        <h4>เป้าหมาย + แผนงาน</h4>
+        <p>คุณภาพตามมาตรฐาน<br>ถึงไหนแล้ว</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">👥</span>
+        <h4>คน</h4>
+        <p>ประสิทธิภาพ สเปค<br>ใครขาดอะไร</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">💰</span>
+        <h4>เงิน</h4>
+        <p>ใช้ไปเท่าไร<br>คุ้มค่าหรือไม่</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📦</span>
+        <h4>ทรัพยากร</h4>
+        <p>ขาดอะไร เกินอะไร<br>จัดสรรใหม่ได้</p>
+      </div>
+    </div>
+    <div class="story-img" style="margin-top:30px;background:#fff;border-radius:14px;padding:16px">
+      <img src="assets/img/diagram-executive-pyramid.svg" alt="ปิรามิด — บุคคล → หน่วยงาน → ฝ่าย → โรงเรียน">
+    </div>
+    <div style="text-align:center;margin-top:28px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="https://mcpswis.mcp.ac.th/executive/v2/index.php" target="_blank" class="demo-link">ดูตัวอย่าง Dashboard ผอ. →</a>
+      <a href="executive.html" class="demo-link outline" style="border-color:rgba(255,255,255,0.4);color:#fff">ดูโมดูลผู้บริหาร →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 10. IMAGINE THE OUTCOME ==================== -->
+<section class="story" id="s10">
+  <div class="wrap">
+    <div class="story-num">10</div>
+    <h2>ผลลัพธ์ — โฟกัสกลับมาที่นักเรียนและหลักสูตร</h2>
+    <p class="desc">
+      เมื่อการบริหารจัดการมีประสิทธิภาพ ผ่านระบบแผนงานที่ <strong>ยึดโยงเป้าหมาย
+      และสาระที่บรรจุไว้ในหลักสูตร</strong> เช่นนี้ —
+      จึงไม่ยากที่จะคาดเดา <strong>ความสำเร็จที่เกิดขึ้นบนตัวผู้เรียน</strong>
+      และ <strong>ความพึงพอใจของผู้ปกครองหรือผู้รับบริการ</strong>
+    </p>
+    <p class="desc" style="margin-top:16px">
+      เสมือนการ <strong>รักษาสัจจะและสร้างความเชื่อมั่น</strong>
+      ที่โรงเรียนมีต่อผู้ปกครอง — ว่าเราจัดการเรียนการสอนให้นักเรียน
+      ได้เติบโตตามเป้าหมายของหลักสูตรจริง ๆ
+    </p>
+    <p class="desc" style="margin-top:16px">
+      แต่โรงเรียนหลายแห่ง <strong>หลงทิศผิดทาง</strong> —
+      เพราะต้องสาละวนอยู่กับระบบงานและการถูกตรวจสอบติดตาม
+      จากเบื้องบนทั้งภายในและภายนอก จน <strong>สูญเสียโฟกัส
+      ที่ตัวนักเรียนและหลักสูตร</strong> ซึ่งเป็นหัวใจสำคัญที่สุด
+    </p>
+    <div class="vis-grid" style="grid-template-columns:1fr 1fr;max-width:600px;margin:36px auto 0">
+      <div class="vis-card">
+        <span class="icon">🎓</span>
+        <h4>นักเรียน</h4>
+        <p>เติบโตตามเป้าหมาย<br>ของหลักสูตรจริง ๆ</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">💚</span>
+        <h4>ผู้ปกครอง</h4>
+        <p>เชื่อมั่นในสัจจะ<br>ของโรงเรียน</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="student.html" class="demo-link outline">ดูโมดูลนักเรียนและผู้ปกครอง →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 11. IMPLEMENTATION EXPERTISE ==================== -->
+<section class="story soft" id="s11">
+  <div class="wrap">
+    <div class="story-num">11</div>
+    <h2>ทำไมต้อง SWIS Plus</h2>
+    <p class="desc">
+      SWIS Plus ดำเนินงานในรูปแบบบริษัทเพื่อความถูกต้องตามกฎหมาย
+      แต่ <strong>ไม่ได้เน้นสร้างผลกำไรเกินกว่าการนำไปพัฒนา ให้บริการอย่างต่อเนื่อง
+      และดูแลสมาชิกได้อย่างทั่วถึงตลอด 24 ชั่วโมง</strong>
+      ตามจำนวนโรงเรียนที่เพิ่มขึ้น —
+      จึงไม่มีต้นทุนซอฟต์แวร์ที่สูงเกินจริง
+    </p>
+    <p class="desc" style="margin-top:16px">
+      จาก 25+ ปีในสนามจริง เรามี <strong>ประสบการณ์ในการ Implement
+      และอบรมบุคลากร</strong> ที่อยู่ในบริบทของโรงเรียนทุกรูปแบบ —
+      รู้ว่าผู้ใช้แต่ละแบบต้องการการดูแลต่างกัน
+    </p>
+    <div class="vis-grid" style="grid-template-columns:repeat(3,1fr);margin-top:30px">
+      <div class="vis-card">
+        <span class="icon">🧓</span>
+        <h4>คนก่อนยุคดิจิทัล</h4>
+        <p>ใช้ UI ที่เรียบง่าย<br>พร้อมการฝึกอบรม<br>แบบจับมือทำ</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">📱</span>
+        <h4>คนยุคดิจิทัล<br>แต่ไม่ถนัดระบบ</h4>
+        <p>มี App มือถือ<br>ที่ทำงานได้ทันที<br>ไม่ต้องเรียนรู้นาน</p>
+      </div>
+      <div class="vis-card">
+        <span class="icon">🛡️</span>
+        <h4>คนที่ปฏิเสธ<br>การเปลี่ยนแปลง</h4>
+        <p>เคยถูกเปลี่ยนซอฟต์แวร์บ่อย<br>ถูกบริษัททิ้งงาน<br>กลัวเสียบทบาทในงาน</p>
+      </div>
+    </div>
+    <p class="desc" style="margin-top:24px;text-align:center">
+      เราเข้าใจทุกสาเหตุของการต่อต้าน — และมีวิธีค่อย ๆ เปิดใช้ทีละโมดูล
+      <strong>ไม่บังคับทีเดียว</strong> จนบุคลากรเห็นคุณค่าด้วยตัวเอง
+    </p>
+  </div>
+</section>
+
+<!-- ==================== 12. EASY BUT SYSTEMATIC ==================== -->
+<section class="story" id="s12">
+  <div class="wrap">
+    <div class="story-num">12</div>
+    <h2>เรียนรู้ง่าย — แต่เป็นระบบ</h2>
+    <p class="desc">
+      เครื่องมือที่ดีไม่จำเป็นต้องซับซ้อน — SWIS Plus ออกแบบมาให้
+      <strong>ใช้งานง่ายสำหรับทุกคน</strong> แต่ <strong>เบื้องหลังมีระบบรองรับ</strong>
+      ที่ยึดโยงทุกอย่างเข้าด้วยกัน
+    </p>
+    <div class="highlight-row" style="border-top:none;padding-top:0;margin-top:40px">
+      <div class="highlight-item">
+        <div class="num">28</div>
+        <div class="label">โมดูลหลัก</div>
+      </div>
+      <div class="highlight-item">
+        <div class="num">265</div>
+        <div class="label">ฟังก์ชัน</div>
+      </div>
+      <div class="highlight-item">
+        <div class="num">14+</div>
+        <div class="label">โรงเรียนในเครือ</div>
+      </div>
+      <div class="highlight-item">
+        <div class="num">25+</div>
+        <div class="label">ปีในสนามจริง</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="modules.html" class="demo-link outline">ดูโมดูลทั้ง 28 โมดูล →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="pres-cta">
+  <h2>พร้อมเปลี่ยนการบริหารโรงเรียน</h2>
+  <p>ระบบที่พิสูจน์แล้วกว่า 25 ปี กับสถาบันการศึกษาชั้นนำ</p>
+  <div class="btn-row">
+    <a href="modules.html" class="btn">ดูโมดูลทั้งหมด</a>
+    <a href="index.html" class="btn ghost">กลับหน้าหลัก</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">© 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

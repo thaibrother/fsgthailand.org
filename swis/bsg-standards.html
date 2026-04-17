@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>มาตรฐานคุณภาพการศึกษา มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== STANDARDS PAGE ===== */
+.std-hero {
+  position: relative;
+  min-height: 45vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  overflow: hidden;
+}
+.std-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(245,130,32,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.std-hero .inner { position: relative; max-width: 800px; }
+.std-hero h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800; line-height: 1.2;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.std-hero .sub {
+  font-size: clamp(15px, 2vw, 20px);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+.std-hero .edition {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 18px;
+  border-radius: 99px;
+  background: rgba(245,130,32,0.2);
+  border: 1px solid rgba(245,130,32,0.4);
+  color: #f5c77e;
+  font-size: 14px; font-weight: 500;
+}
+
+/* ===== CONTENT ===== */
+.std-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* MEC Dimensions */
+.mec-box {
+  background: linear-gradient(135deg, #f8f4ef 0%, #fff 100%);
+  border: 1.5px solid #e8d5b8;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+.mec-box h2 {
+  font-size: 22px; font-weight: 700;
+  color: #8B4513;
+  margin-bottom: 16px;
+}
+.mec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.mec-item {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 15px; color: #555;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+}
+.mec-item .num {
+  font-weight: 700; color: #8B4513;
+  min-width: 18px;
+}
+
+/* Quality Level */
+.quality-box {
+  background: #f0f4ff;
+  border: 1.5px solid #c8d6f0;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 48px;
+}
+.quality-box h3 {
+  font-size: 18px; font-weight: 700;
+  color: #1a3a6e; margin-bottom: 16px;
+}
+.quality-levels {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.qlevel {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+}
+.qlevel.q5 { background: #e8f5e9; color: #2e7d32; }
+.qlevel.q4 { background: #e3f2fd; color: #1565c0; }
+.qlevel.q3 { background: #fff8e1; color: #f57f17; }
+.qlevel.q2 { background: #fff3e0; color: #e65100; }
+.qlevel.q1 { background: #fce4ec; color: #c62828; }
+
+/* Standard Block */
+.std-block {
+  margin-bottom: 56px;
+}
+.std-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 24px 28px;
+  border-radius: 16px 16px 0 0;
+  color: #fff;
+}
+.std-header.s1 { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.std-header.s2 { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
+.std-header.s3 { background: linear-gradient(135deg, #00695c, #004d40); }
+.std-header.s4 { background: linear-gradient(135deg, #e65100, #bf360c); }
+
+.std-num {
+  font-size: 36px; font-weight: 800;
+  opacity: 0.3;
+  line-height: 1;
+}
+.std-header h2 {
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+.std-header .mec-ref {
+  font-size: 13px;
+  opacity: 0.7;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.std-body {
+  border: 1.5px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+
+/* Indicator */
+.indicator {
+  border-bottom: 1px solid #eee;
+}
+.indicator:last-child { border-bottom: none; }
+
+.ind-title {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 20px 28px 8px;
+  cursor: default;
+}
+.ind-code {
+  font-size: 13px; font-weight: 700;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.s1 .ind-code, .ind-code.c1 { background: #1565c0; }
+.s2 .ind-code, .ind-code.c2 { background: #6a1b9a; }
+.s3 .ind-code, .ind-code.c3 { background: #00695c; }
+.s4 .ind-code, .ind-code.c4 { background: #e65100; }
+
+.ind-name {
+  font-size: 16px; font-weight: 600;
+  color: #222;
+  line-height: 1.5;
+}
+.ind-mec {
+  font-size: 12px; color: #999;
+  font-weight: 400;
+}
+
+/* Criteria list */
+.criteria-list {
+  padding: 8px 28px 20px 56px;
+}
+.criteria-list ol {
+  margin: 0; padding: 0;
+  list-style: none;
+  counter-reset: crit;
+}
+.criteria-list li {
+  counter-increment: crit;
+  position: relative;
+  padding: 6px 0 6px 28px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+}
+.criteria-list li::before {
+  content: counter(crit) ".";
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: #888;
+}
+
+/* Sub-criteria (for 1.3 with sub-items like 3.1, 3.2, 3.3) */
+.sub-crit {
+  padding-left: 24px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Governance component */
+.gov-component {
+  background: #fafafa;
+  border-top: 1px dashed #ddd;
+  padding: 16px 28px;
+}
+.gov-component h4 {
+  font-size: 14px; font-weight: 700;
+  color: #555;
+  margin-bottom: 8px;
+}
+.gov-indicators {
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+.gov-indicators li {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  padding: 3px 0;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .std-content { padding: 40px 16px; }
+  .std-header { flex-direction: column; gap: 8px; padding: 20px; }
+  .std-num { font-size: 28px; }
+  .ind-title { flex-direction: column; gap: 4px; padding: 16px 20px 6px; }
+  .criteria-list { padding: 8px 20px 16px 36px; }
+  .mec-grid { grid-template-columns: 1fr; }
+}
+
+/* Nav link */
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-bottom: 32px;
+  font-size: 15px; font-weight: 500;
+  color: var(--orange);
+  text-decoration: none;
+}
+.back-link:hover { gap: 10px; }
+
+/* Summary stats */
+.summary-stats {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  margin-bottom: 40px;
+}
+.stat-card {
+  flex: 1; min-width: 140px;
+  text-align: center;
+  padding: 20px 16px;
+  border-radius: 14px;
+  border: 1.5px solid #e0e0e0;
+}
+.stat-card .num { font-size: 36px; font-weight: 800; }
+.stat-card .label { font-size: 13px; color: #888; margin-top: 4px; }
+.stat-card.sc1 .num { color: #1565c0; }
+.stat-card.sc2 .num { color: #6a1b9a; }
+.stat-card.sc3 .num { color: #00695c; }
+.stat-card.sc4 .num { color: #e65100; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="std-hero">
+  <div class="inner">
+    <h1>มาตรฐานคุณภาพการศึกษา</h1>
+    <p class="sub">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>สรุปเกณฑ์และตัวบ่งชี้ทั้งหมด</p>
+    <span class="edition">ฉบับปรับปรุงครั้งที่ 5 · ปีการศึกษา 2561</span>
+  </div>
+</section>
+
+<!-- ==================== CONTENT ==================== -->
+<div class="std-content">
+
+  <a href="present.html" class="back-link">← กลับสารบัญนำเสนอ</a>
+
+  <!-- Summary -->
+  <div class="summary-stats">
+    <div class="stat-card sc1">
+      <div class="num">4</div>
+      <div class="label">มาตรฐาน</div>
+    </div>
+    <div class="stat-card sc2">
+      <div class="num">17</div>
+      <div class="label">ตัวบ่งชี้</div>
+    </div>
+    <div class="stat-card sc3">
+      <div class="num">82</div>
+      <div class="label">ประเด็นการพิจารณา</div>
+    </div>
+    <div class="stat-card sc4">
+      <div class="num">8</div>
+      <div class="label">มิติ MEC</div>
+    </div>
+  </div>
+
+  <!-- Summary Table -->
+  <div style="margin-bottom:48px; overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse; font-size:15px;">
+      <thead>
+        <tr style="background:#1a1a2e; color:#fff;">
+          <th style="padding:14px 16px; text-align:left; border-radius:12px 0 0 0;">มาตรฐาน</th>
+          <th style="padding:14px 16px; text-align:center; width:100px;">ตัวบ่งชี้</th>
+          <th style="padding:14px 16px; text-align:center; width:140px;">ประเด็นการพิจารณา</th>
+          <th style="padding:14px 16px; text-align:left; border-radius:0 12px 0 0;">มิติ MEC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#f0f4ff;">
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;"><strong style="color:#1565c0;">1.</strong> คุณภาพผู้เรียนตามอัตลักษณ์การศึกษา</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0; font-weight:700; color:#1565c0;">3</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0;">12</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0; font-size:13px; color:#666;">1, 2, 4, 7</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;"><strong style="color:#6a1b9a;">2.</strong> ผู้เรียนแสวงหาความเป็นเลิศ</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0; font-weight:700; color:#6a1b9a;">6</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0;">16</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0; font-size:13px; color:#666;">2, 3, 4, 7, 8</td>
+        </tr>
+        <tr style="background:#f0f4ff;">
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;"><strong style="color:#00695c;">3.</strong> คุณภาพบุคลากรตามทิศทาง MEC</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0; font-weight:700; color:#00695c;">2</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0;">7</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0; font-size:13px; color:#666;">1, 5, 8</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0;"><strong style="color:#e65100;">4.</strong> คุณภาพการบริหารจัดการศึกษา</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0; font-weight:700; color:#e65100;">6</td>
+          <td style="padding:12px 16px; text-align:center; border-bottom:1px solid #e0e0e0;">18 + ธรรมาภิบาล 34</td>
+          <td style="padding:12px 16px; border-bottom:1px solid #e0e0e0; font-size:13px; color:#666;">2, 3, 4, 5, 6, 8</td>
+        </tr>
+        <tr style="background:#1a1a2e; color:#fff; font-weight:700;">
+          <td style="padding:14px 16px; border-radius:0 0 0 12px;">รวมทั้งหมด</td>
+          <td style="padding:14px 16px; text-align:center;">17</td>
+          <td style="padding:14px 16px; text-align:center;">87</td>
+          <td style="padding:14px 16px; border-radius:0 0 12px 0;">8 มิติ</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px; color:#999; margin-top:8px;">* ตัวบ่งชี้ 4.1 (ธรรมาภิบาล) มี 4 องค์ประกอบ รวม 34 ตัวชี้วัดย่อย: Participation (8) + Transparency (9) + Accountability (9) + Equity (8)</p>
+  </div>
+
+  <!-- MEC 8 Dimensions -->
+  <div class="mec-box">
+    <h2>8 มิติของการจัดการศึกษาในแนวมงฟอร์ต (MEC)</h2>
+    <div class="mec-grid">
+      <div class="mec-item"><span class="num">1.</span> วิสัยทัศน์ฝ่ายจิต (A Spiritual Vision)</div>
+      <div class="mec-item"><span class="num">2.</span> การจัดการศึกษาเพื่อทุกระดับชั้น (Inclusive Education)</div>
+      <div class="mec-item"><span class="num">3.</span> วิธีการสอนที่จุ่มตัวกับผู้เรียน ร่วมงานและสังคม (Incarnational Methodology)</div>
+      <div class="mec-item"><span class="num">4.</span> นวัตกรรมใหม่ๆ และการคิดสร้างสรรค์ (Innovation and Creativity)</div>
+      <div class="mec-item"><span class="num">5.</span> ผลประโยชน์สูงสุดต่อเด็ก (The Best Interests of the Child)</div>
+      <div class="mec-item"><span class="num">6.</span> ความร่วมมือและเครือข่าย (Partnership and Networking)</div>
+      <div class="mec-item"><span class="num">7.</span> เการพห่วงโซ่ชีวิตทั้งหมด (Respect for the Community of Life)</div>
+      <div class="mec-item"><span class="num">8.</span> แสวงหาความเป็นเลิศ (Quest for Excellence)</div>
+    </div>
+  </div>
+
+  <!-- Quality Level -->
+  <div class="quality-box">
+    <h3>การแปลความหมายระดับคุณภาพ</h3>
+    <div class="quality-levels">
+      <span class="qlevel q5">5 = ดีเยี่ยม</span>
+      <span class="qlevel q4">4 = ดีมาก</span>
+      <span class="qlevel q3">3 = ดี</span>
+      <span class="qlevel q2">2 = พอใช้</span>
+      <span class="qlevel q1">1 = ปรับปรุง</span>
+    </div>
+  </div>
+
+  <!-- ==================== มาตรฐานที่ 1 ==================== -->
+  <div class="std-block">
+    <div class="std-header s1">
+      <span class="std-num">1</span>
+      <div>
+        <h2>คุณภาพผู้เรียนตามอัตลักษณ์การศึกษามูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</h2>
+        <div class="mec-ref">ตัวบ่งชี้ 6 ข้อ</div>
+      </div>
+    </div>
+    <div class="std-body">
+
+      <!-- 1.1 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c1">1.1</span>
+          <span class="ind-name">ผู้เรียนยึดมั่นในสัจธรรม <span class="ind-mec">(มิติที่ 1)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนแสวงหาความเป็นจริงตามหลักธรรมของศาสนาที่ตนนับถือหรือตามคุณค่าพระวรสาร 12 ประการ</li>
+          <li>ผู้เรียนเข้าถึงและปฏิบัติตามสัจธรรมตามหลักธรรมของศาสนาที่ตนนับถือหรือตามคุณค่าพระวรสาร 12 ประการ อย่างต่อเนื่อง</li>
+          <li>ผู้เรียนเห็นคุณค่าสัจธรรมตามหลักธรรมของศาสนาที่ตนนับถือหรือตามคุณค่าพระวรสาร 12 ประการ และนำไปประยุกต์ใช้ในชีวิตประจำวันและเพื่อผู้อื่น</li>
+        </ol></div>
+      </div>
+
+      <!-- 1.2 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c1">1.2</span>
+          <span class="ind-name">ผู้เรียนมีความวิริยะ อุตสาหะ <span class="ind-mec">(มิติที่ 4)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนตั้งใจและรับผิดชอบในหน้าที่การเรียน/การทำงาน/กิจกรรม จนบรรลุตามเป้าหมายที่กำหนด</li>
+          <li>ผู้เรียนกล้าเผชิญปัญหา อุปสรรคและหาวิธีแก้ปัญหาในการเรียน/การทำงาน/กิจกรรม โดยไม่หลีกเลี่ยง จนสำเร็จ/บรรลุตามเป้าหมาย</li>
+          <li>ผู้เรียนเรียน/ทำงาน/ทำกิจกรรม ด้วยความเพียรพยายาม อดทน เพื่อให้สำเร็จตามเป้าหมาย</li>
+        </ol></div>
+      </div>
+
+      <!-- 1.3 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c1">1.3</span>
+          <span class="ind-name">ผู้เรียนมีความรับผิดชอบต่อสังคม <span class="ind-mec">(มิติที่ 2, 7)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนรู้ เข้าใจ และมีความตระหนักในการรับผิดชอบการกระทำของตนเองที่มีผลต่อตนเอง ต่อบุคคลอื่นทั้งในระดับส่วนตัวและระดับกลุ่ม/องค์กรตามแนวทางที่ถูกต้อง ไม่มิติศีลธรรม ได้แก่ ความรับผิดชอบต่อตนเอง ต่อครอบครัว ต่อเพื่อน ต่อโรงเรียน ต่อบุคคลหรือสถาบันที่เกี่ยวข้องในฐานะพลเมืองไทยและพลเมืองโลก</li>
+          <li>ผู้เรียนมีส่วนร่วมในงาน/โครงการ/กิจกรรมหรือการกระทำใดๆ ที่สร้างสรรค์ต่อโลกในมิติต่างๆ ได้แก่ มิติทางสังคม (นโยบาย/เศรษฐกิจ) มิติทางธรรมชาติ (สิ่งแวดล้อม) และมิติทางวิทยาศาสตร์ (เทคโนโลยี) ให้เกิดสันติสุขและดีงาม</li>
+          <li>ผู้เรียนรู้คุณค่าของพลังงาน สิ่งแวดล้อม ทรัพยากรธรรมชาติ เช่น
+            <div class="sub-crit">
+              3.1 ผู้เรียนนำทรัพยากรต่างๆ มา Reuse (ใช้ซ้ำ) หรือ Reduce (ลดการใช้) หรือ Recycle (นำกลับไปแปรรูป) หรือ Repair (ซ่อมแซม) หรือ Reject (หลีกเลี่ยงการใช้)<br>
+              3.2 ผู้เรียนรู้จักเลือกใช้พลังงาน สิ่งแวดล้อมและทรัพยากรธรรมชาติอย่างระมัดระวังและมีประสิทธิผล<br>
+              3.3 ผู้เรียนมีส่วนรับผิดชอบในการเลือกใช้ ฟื้นฟู เพิ่มเติม อนุรักษ์ ดูแล ช่วยเหลือ สนับสนุนและพัฒนา เกี่ยวกับพลังงาน สิ่งแวดล้อมและทรัพยากรธรรมชาติ
+            </div>
+          </li>
+          <li>ผู้เรียนใช้สิทธิ เสรีภาพให้เกิดประโยชน์ต่อตนเอง ผู้อื่น ชุมชนและสังคม โดยคำนึงถึงสิทธิมนุษยชน สิทธิเด็ก ความยุติธรรมและสันติ</li>
+          <li>ผู้เรียนกล้าแสดงความคิดเห็นอย่างมีเหตุผล เพื่อรักษาสิทธิ เสรีภาพของตนเองและส่วนรวม</li>
+          <li>ผู้เรียนมีความรับผิดชอบในการใช้สื่อเทคโนโลยีในรูปแบบต่างๆ อย่างสร้างสรรค์ มีคุณธรรมและตามกฎหมาย</li>
+        </ol></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== มาตรฐานที่ 2 ==================== -->
+  <div class="std-block">
+    <div class="std-header s2">
+      <span class="std-num">2</span>
+      <div>
+        <h2>ผู้เรียนแสวงหาความเป็นเลิศ</h2>
+        <div class="mec-ref">มิติที่ 2, 4, 7, 8 · ตัวบ่งชี้ 6 ข้อ</div>
+      </div>
+    </div>
+    <div class="std-body">
+
+      <!-- 2.1 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.1</span>
+          <span class="ind-name">ผู้เรียนใฝ่รู้ แสวงหาความเชื่อ ค่านิยม วิถีชีวิตและนำไปประยุกต์ใช้ในชีวิตประจำวัน <span class="ind-mec">(มิติที่ 2, 4)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนมีการแสวงหาและสร้างความเข้าใจในค่านิยม/ภูมิปัญญาท้องถิ่น/ภูมิปัญญาไทย และปรัชญาของเศรษฐกิจพอเพียง</li>
+          <li>ผู้เรียนเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เกี่ยวกับค่านิยม/ภูมิปัญญาท้องถิ่น/ภูมิปัญญาไทย และปรัชญาของเศรษฐกิจพอเพียงกับชุมชน องค์กรต่างๆ ทั้งภายในหรือต่างประเทศ</li>
+          <li>ผู้เรียนนำค่านิยม/ภูมิปัญญาท้องถิ่น/ภูมิปัญญาไทย และปรัชญาของเศรษฐกิจพอเพียง มาประยุกต์ใช้กับชีวิตประจำวันของตนได้อย่างเหมาะสม</li>
+        </ol></div>
+      </div>
+
+      <!-- 2.2 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.2</span>
+          <span class="ind-name">ผู้เรียนมีวิจารณญาณในการแลกเปลี่ยนวัฒนธรรมอย่างฉันท์มิตร <span class="ind-mec">(มิติที่ 2, 3, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนรู้และเข้าใจความแตกต่างของแต่ละวัฒนธรรม</li>
+          <li>ผู้เรียนแลกเปลี่ยน เรียนรู้วัฒนธรรมที่หลากหลายอย่างสร้างสรรค์ ให้เหมาะสมกับบริบทนั้นๆ</li>
+        </ol></div>
+      </div>
+
+      <!-- 2.3 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.3</span>
+          <span class="ind-name">ผู้เรียนรู้ทัน ฉลาดเลือก และสามารถประยุกต์ใช้สื่อและสาร รวมทั้งเทคโนโลยีและเครือข่ายทางสังคม <span class="ind-mec">(มิติที่ 4, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนรู้ทัน ฉลาดเลือกและสามารถวิจารณ์สิ่งที่ได้เรียนรู้ โดยผ่านการไตร่ตรองอย่างมีเหตุผล</li>
+          <li>ผู้เรียนสามารถประยุกต์ใช้สื่อและสาร เชื่อมโยงความสัมพันธ์ระหว่างข้อมูล ความคิดต่างๆ ได้และนำไปใช้ประโยชน์ได้อย่างถูกต้องและมีเหตุผล</li>
+          <li>ผู้เรียนสามารถใช้เทคโนโลยีสารสนเทศและเครือข่ายทางสังคม เพื่อพัฒนาการเรียนรู้ร่วมกับบุคคลในสังคมในบริบทต่างๆ ได้อย่างเหมาะสม</li>
+        </ol></div>
+      </div>
+
+      <!-- 2.4 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.4</span>
+          <span class="ind-name">ผู้เรียนสามารถใช้ภาษาเพื่อการสื่อสารได้ทั้งภาษาไทยและภาษาต่างประเทศ <span class="ind-mec">(มิติที่ 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนสามารถใช้ภาษาไทยในการฟัง การพูด การอ่าน การเขียน และในการสื่อสารได้อย่างมีประสิทธิภาพและเหมาะสมตามเกณฑ์ของโรงเรียน</li>
+          <li>ผู้เรียนสามารถใช้ภาษาต่างประเทศโดยเฉพาะภาษาอังกฤษ ในการฟัง การพูด การอ่าน การเขียน และในการสื่อสารได้อย่างมีประสิทธิภาพตามเกณฑ์โรงเรียน</li>
+          <li>ผู้เรียนสามารถใช้ภาษาต่างประเทศอื่นๆ เช่น ภาษาจีน/ภาษาญี่ปุ่น/ภาษาฝรั่งเศส ฯลฯ ในการฟัง การพูด การอ่าน และการเขียน ได้อย่างมีประสิทธิภาพตามเกณฑ์โรงเรียน</li>
+        </ol></div>
+      </div>
+
+      <!-- 2.5 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.5</span>
+          <span class="ind-name">ผู้เรียนสามารถเชื่อมประสานการทำงานร่วมกันของบุคคลและ/หรือหน่วยงานต่างๆ จนบรรลุผลสำเร็จตามวัตถุประสงค์ <span class="ind-mec">(มิติที่ 2, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนสามารถเชื่อมประสานการทำงานร่วมกันของบุคคลและ/หรือหน่วยงานต่างๆ ได้ตามบริบท</li>
+          <li>ผู้เรียนมีผลการดำเนินงานร่วมกันของบุคคลและ/หรือหน่วยงานต่างๆ บรรลุผลสำเร็จตามวัตถุประสงค์</li>
+        </ol></div>
+      </div>
+
+      <!-- 2.6 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c2">2.6</span>
+          <span class="ind-name">ผู้เรียนพัฒนาค่านิยมตามแนววิถีจิตของนักบุญหลุยส์ มารีย์ กรีญอง เดอ มงฟอร์ต และการมีส่วนร่วมในการกระทำเพื่อการเปลี่ยนแปลงในสังคม <span class="ind-mec">(มิติที่ 2, 4, 7, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ผู้เรียนปฏิบัติตนตามค่านิยมตามแนววิถีจิตนักบุญหลุยส์ มารีย์ กรีญอง เดอ มงฟอร์ต ในมิติทางสังคม ได้แก่ ความยุติธรรม มีสันติภาพ และเสรีภาพ</li>
+          <li>ผู้เรียนปฏิบัติตนตามค่านิยมตามแนววิถีจิตนักบุญหลุยส์ มารีย์ กรีญอง เดอ มงฟอร์ต ในมิติของบุคคล ได้แก่ การเคารพศักดิ์ศรีของความเป็นมนุษย์ มีอิสรภาพ มีธรรมสิทธิ</li>
+          <li>ผู้เรียนจัด/เข้าร่วมกิจกรรมต่างๆ กับชุมชน องค์กรต่างๆ ทั้งภายในประเทศหรือต่างประเทศ จนเกิดผลดี/เป็นแบบอย่างในองค์กร/ชุมชน</li>
+        </ol></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== มาตรฐานที่ 3 ==================== -->
+  <div class="std-block">
+    <div class="std-header s3">
+      <span class="std-num">3</span>
+      <div>
+        <h2>คุณภาพบุคลากรตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต</h2>
+        <div class="mec-ref">มิติที่ 1, 5, 8 · ตัวบ่งชี้ 2 ข้อ</div>
+      </div>
+    </div>
+    <div class="std-body">
+
+      <!-- 3.1 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c3">3.1</span>
+          <span class="ind-name">บุคลากรปฏิบัติตนเป็นแบบอย่างธรรมาชนที่ดีปฏิบัติตนตามหลักธรรมของศาสนาที่ตนนับถือ <span class="ind-mec">(มิติ 1, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>บุคลากรรู้และเข้าใจหลักธรรมของศาสนาที่ตนนับถือ</li>
+          <li>บุคลากรปฏิบัติ/นำหลักธรรมของศาสนาที่ตนนับถือมาประยุกต์ใช้ในชีวิตประจำวัน</li>
+          <li>บุคลากรเป็นแบบอย่างที่ดีต่อผู้เรียนในการปฏิบัติตามหลักธรรมของศาสนาที่ตนนับถือ</li>
+          <li>บุคลากรเข้าร่วม/มีส่วนร่วมในกิจกรรมที่ส่งเสริมในการปฏิบัติตามหลักธรรมของศาสนาที่ตนนับถือ</li>
+        </ol></div>
+      </div>
+
+      <!-- 3.2 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c3">3.2</span>
+          <span class="ind-name">ครูผู้สอนจัดกระบวนการเรียนที่ยึดผู้เรียนเป็นศูนย์กลางให้เกิดประโยชน์สูงสุดแก่ผู้เรียน <span class="ind-mec">(มิติที่ 5, MEC หน้า 30–31)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>ครูผู้สอนจัดการเรียนรู้โดยเปิดโอกาสให้ผู้เรียนมีส่วนร่วมในการจัดกิจกรรมการเรียนรู้ โดยบทบาทครูเป็นผู้อำนวยความสะดวก ผู้นำการเรียนรู้และผู้ให้การปรึกษา</li>
+          <li>ครูผู้สอนใช้และประยุกต์ทิศทางการศึกษาในแนวนักบุญมงฟอร์ตมาปรับให้เข้ากับวัฒนธรรมและบริบทให้เกิดประโยชน์สูงสุดแก่ผู้เรียน</li>
+          <li>ครูผู้สอนวัดผลประเมินผลด้วยความโปร่งใส มีคุณภาพและยุติธรรมต่อผู้เรียน</li>
+        </ol></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== มาตรฐานที่ 4 ==================== -->
+  <div class="std-block">
+    <div class="std-header s4">
+      <span class="std-num">4</span>
+      <div>
+        <h2>คุณภาพการบริหารการจัดการศึกษาตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต</h2>
+        <div class="mec-ref">มิติที่ 2, 3, 4, 5, 6, 8 · ตัวบ่งชี้ 5 ข้อ (รวมหลักธรรมาภิบาล 4 องค์ประกอบ)</div>
+      </div>
+    </div>
+    <div class="std-body">
+
+      <!-- 4.1 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c4">4.1</span>
+          <span class="ind-name">โรงเรียนบริหารจัดการตามหลักธรรมาภิบาลของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย <span class="ind-mec">(มิติที่ 3, 6, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li><strong>องค์ประกอบที่ 1: หลักการมีส่วนร่วม (Participation)</strong> — ตัวชี้วัด 8 ข้อ</li>
+        </ol></div>
+        <div class="gov-component">
+          <h4>ตัวชี้วัด — Participation</h4>
+          <ol class="gov-indicators">
+            <li>โรงเรียน/สถาบัน มีการเปิดเผยข้อมูล ข่าวสาร ได้แก่ รายงานทางการเงิน ผลสัมฤทธิ์ทางการเรียน แผนปฏิบัติงานประจำปี รายงานประจำปี (SAR) และรายงานการประชุมผู้มีส่วนเกี่ยวข้อง</li>
+            <li>โรงเรียน/สถาบัน มีการรับฟังและบริหารจัดการข้อคิดเห็นของผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องกับการจัดการศึกษาของคณะภราดาเซนต์คาเบรียลแห่งประเทศไทย</li>
+            <li>ผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องมีส่วนร่วมในการกำหนดนโยบายและการวางแผนในเรื่องวิชาการ การเงินของโรงเรียน</li>
+            <li>ผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องมีส่วนร่วมในกระบวนการตัดสินใจในด้านวิชาการและการเงิน</li>
+            <li>ผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องมีส่วนร่วมในการบริหารโรงเรียนและกำกับติดตามและประเมินผลการดำเนินงานของโรงเรียน</li>
+            <li>ผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องมีส่วนร่วมในการให้คำแนะนำและปรับปรุงคุณภาพการจัดการศึกษาของโรงเรียน</li>
+            <li>มีกลไกสนับสนุนและเสริมสร้างศักยภาพการมีส่วนร่วมผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้องให้รู้บทบาทหน้าที่และความรับผิดชอบ</li>
+            <li>มีการเสริมพลังกลุ่มเพื่อนมงฟอร์ต (Montfort Associates) ให้มีส่วนร่วมในการจัดการศึกษาในแนวมงฟอร์ตในทุกระดับ รวมไปถึงการวางแผน การนำไปปฏิบัติ การกำกับติดตามและการประเมินผล</li>
+          </ol>
+        </div>
+
+        <div class="criteria-list"><ol start="2">
+          <li><strong>องค์ประกอบที่ 2: หลักความโปร่งใส (Transparency)</strong> — ตัวชี้วัด 9 ข้อ</li>
+        </ol></div>
+        <div class="gov-component">
+          <h4>ตัวชี้วัด — Transparency</h4>
+          <ol class="gov-indicators">
+            <li>โรงเรียน/สถาบัน มีการประเมินทรัพย์สิน</li>
+            <li>โรงเรียน/สถาบัน มีการนำเสนอนโยบายที่เกี่ยวข้องกับการลงทุนและอนุมัติงบประมาณประจำปีของโรงเรียนให้แก่ผู้ที่เกี่ยวข้องได้ทราบ</li>
+            <li>โรงเรียน/สถาบันมีระบบบัญชีที่มุ่งเพื่อให้ข้อมูลที่ถูกต้อง ชัดเจน และมีการตรวจสอบบัญชีที่ได้มาตรฐาน</li>
+            <li>โรงเรียน/สถาบัน มีการสร้างระบบการตรวจสอบภายในและภายนอกเกี่ยวกับงบประมาณ</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการในการเก็บค่าธรรมเนียมการเรียน และการรวบรวมรายได้</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการในการพิจารณาค่าตอบแทน ประกอบด้วย เงินเดือน ขั้นเงินเดือน เงินประจำตำแหน่ง และสิทธิประโยชน์อื่นๆ เป็นไปอย่างชัดเจนและเปิดเผย</li>
+            <li>โรงเรียน/สถาบัน มีการรายงานผลการใช้จ่ายงบประมาณต่อกรรมการบริหารโรงเรียน ประธานมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทยและคณะกรรมการ</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการที่ชัดเจนในการคัดเลือกนักเรียน</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการที่ชัดเจนในการคัดเลือกครู และบุคลากรที่สอดคล้องกับความต้องการของโรงเรียน</li>
+          </ol>
+        </div>
+
+        <div class="criteria-list"><ol start="3">
+          <li><strong>องค์ประกอบที่ 3: หลักความรับผิดชอบ (Accountability)</strong> — ตัวชี้วัด 9 ข้อ</li>
+        </ol></div>
+        <div class="gov-component">
+          <h4>ตัวชี้วัด — Accountability</h4>
+          <ol class="gov-indicators">
+            <li>โรงเรียน/สถาบัน มีความสำนึกรับผิดชอบต่อสังคมและส่งเสริมให้การมีส่วนร่วมกิจกรรมที่เป็นประโยชน์ต่อสังคม</li>
+            <li>โรงเรียน/สถาบัน มีการพัฒนาครูที่สอดรับกับความต้องการ และการเปลี่ยนแปลงของสังคม</li>
+            <li>โรงเรียน/สถาบันมีการจัดประชุมเชิงปฏิบัติการอย่างต่อเนื่องและสอดคล้องกับการพัฒนาด้านวิชาชีพของครูให้ครูมีความรับผิดชอบ</li>
+            <li>โรงเรียน/สถาบัน มีการประเมิน ครู บุคลากร ประกอบด้วย การมาทำงาน การจัดชั้นเรียน การใช้เทคโนโลยีในการเรียนการสอน การจัดกระบวนการเรียนการสอนที่หลากหลาย การมีส่วนร่วมของนักเรียน ความร่วมมือระหว่างนักเรียนและผู้ปกครอง การดูแล ความสะอาดของห้องเรียนอย่างเป็นกระบวนการที่เหมาะสม</li>
+            <li>โรงเรียน/สถาบัน มีการบำรุงรักษาอาคารเรียน ห้องน้ำ ที่ดื่มน้ำ ห้องสมุดและอาคารประกอบ</li>
+            <li>โรงเรียน/สถาบัน มีการกำกับ ติดตาม การจัดห้องเรียน สภาพแวดล้อมของห้องเรียน ห้องน้ำ ที่ดื่มน้ำ ห้องสมุดและอาคารประกอบ</li>
+            <li>โรงเรียน/สถาบัน มีการกำกับ ติดตาม การมาโรงเรียนของนักเรียน</li>
+            <li>โรงเรียน/สถาบัน มีการกำกับ ติดตาม การมาโรงเรียนของครูและการใช้เวลาในการสอนและการจัดกิจกรรมการเรียนการสอนของครู</li>
+            <li>โรงเรียน/สถาบัน มีแนวทางปฏิบัติที่ชัดเจนเมื่อผู้รับบริการได้รับผลกระทบจากระบบการให้บริการ</li>
+          </ol>
+        </div>
+
+        <div class="criteria-list"><ol start="4">
+          <li><strong>องค์ประกอบที่ 4: หลักความเสมอภาค สิทธิและการไม่เลือกปฏิบัติ (Equity)</strong> — ตัวชี้วัด 8 ข้อ</li>
+        </ol></div>
+        <div class="gov-component">
+          <h4>ตัวชี้วัด — Equity</h4>
+          <ol class="gov-indicators">
+            <li>โรงเรียน/สถาบัน มีการออกกฎเกณฑ์ ระเบียบ ข้อบังคับ ข้อปฏิบัติที่ไม่ขัดกฎหมาย เป็นไปได้ในการปฏิบัติจริง และผ่านการเห็นชอบจากผู้มีส่วนได้ส่วนเสียและผู้เกี่ยวข้อง</li>
+            <li>โรงเรียน/สถาบัน เผยแพร่กฎเกณฑ์ ระเบียบ ข้อบังคับ ข้อปฏิบัติที่ไม่ขัดกฎหมาย ให้นักเรียน ครูและบุคลากรได้รับรู้ถึงสิทธิหน้าที่ เสรีภาพของตน</li>
+            <li>ผู้บริหารใช้กฎ ระเบียบ ข้อบังคับ ข้อปฏิบัติที่ไม่ขัดกฎหมายอย่างเท่าเทียมกัน ไม่มีการเลือกปฏิบัติ</li>
+            <li>โรงเรียน/สถาบัน มีขั้นตอน กระบวนการพิจารณาความผิด และการกำหนดโทษ การลงโทษนักเรียน ครูและบุคลากรอย่างชัดเจน และเป็นธรรม</li>
+            <li>โรงเรียน/สถาบัน มีมาตรการที่ตอบสนองต่อข้อเสนอ ข้อร้องเรียน เป็นลายลักษณ์อักษร</li>
+            <li>โรงเรียน/สถาบัน มีการกำหนดเปอร์เซ็นต์ของการรับนักเรียนที่มาจากส่วนของสังคมที่ด้อยโอกาสทางร่างกาย สังคม เศรษฐกิจ</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการในการดูแลป้องกันไม่ให้ผู้เยาว์ถูกละเมิด</li>
+            <li>โรงเรียน/สถาบัน มีกระบวนการดูแลครูและบุคลากรเพศหญิงป้องกันไม่ให้ถูกกฎหมายในที่ทำงาน</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 4.2 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c4">4.2</span>
+          <span class="ind-name">โรงเรียนส่งเสริมการจัดการศึกษาตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต <span class="ind-mec">(มิติที่ 2, 3, 4, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>โรงเรียนจัดให้มีการให้ความรู้ ความเข้าใจเกี่ยวกับการจัดการศึกษาตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต เช่น การอบรม/การประชุม/การฝึกปฏิบัติ</li>
+          <li>โรงเรียนดำเนินการจัดให้มีหลักสูตร/เอกสารประกอบการเรียน และการจัดการเรียนการสอน ส่งเสริมตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต</li>
+          <li>โรงเรียนจัดให้มีแผนงาน/โครงการ/กิจกรรม ที่ส่งเสริมตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต</li>
+          <li>โรงเรียนกำกับ ติดตาม ประเมินและรายงานผลการส่งเสริมตามทิศทางการศึกษาในแนวนักบุญมงฟอร์ต</li>
+        </ol></div>
+      </div>
+
+      <!-- 4.3 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c4">4.3</span>
+          <span class="ind-name">โรงเรียนมีการจัดการศึกษาสำหรับผู้ด้อยโอกาสต่างๆ <span class="ind-mec">(มิติที่ 2, 5)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>โรงเรียนเปิดรับผู้เรียนด้อยโอกาสทางร่างกาย สังคม เศรษฐกิจ (ชนเผ่า อพยพ พิการหลายประเภท LGBT ฯลฯ) เยาวชนกลุ่มเสี่ยง ปีการศึกษาละไม่น้อยกว่า 10 คน</li>
+          <li>โรงเรียนส่งเสริมโดยการจัดให้มีกิจกรรมที่ให้ผู้เรียนและผู้ร่วมงานได้สัมผัสสภาพความยากจน ความยุติธรรมและการละเมิดสิทธิในสังคม วิเคราะห์ ไตร่ตรองเพื่อการเรียนรู้แก่ตนเองเพื่ออุทิศตนนำไปสู่การเปลี่ยนแปลงสังคม</li>
+          <li>โรงเรียนมีการประเมินผลและสรุปรายงานการจัดการศึกษาสำหรับผู้ด้อยโอกาสต่างๆ</li>
+          <li>โรงเรียนนำสรุปรายงานผลการจัดการศึกษาสำหรับผู้ด้อยโอกาสต่างๆ ไปวางแผนพัฒนาในปีการศึกษาต่อไป</li>
+        </ol></div>
+      </div>
+
+      <!-- 4.4 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c4">4.4</span>
+          <span class="ind-name">โรงเรียนส่งเสริมและจัดบรรยากาศสภาพแวดล้อมตามการศึกษาตามแนวนักบุญมงฟอร์ต <span class="ind-mec">(มิติที่ 8, MEC หน้า 26–27)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>โรงเรียนมีแผนงานและผู้รับผิดชอบในการจัดสภาพแวดล้อม บรรยากาศที่เอื้อต่อการจัดการศึกษาแนวนักบุญมงฟอร์ตที่เอื้อต่อการเรียนรู้ของผู้เรียน</li>
+          <li>โรงเรียนมีการจัดสภาพแวดล้อม อาคาร สถานที่ที่เหมาะสมกับการใช้งานที่สะท้อนบรรยากาศในโรงเรียนคาทอลิก เช่น แหล่งเรียนรู้เกี่ยวกับนักบุญหลุยส์ มารีย์ฯ รูปปั้น ป้ายนิเทศ เป็นต้น</li>
+          <li>ผู้เรียน/บุคลากรมีส่วนร่วมในการตัดสินใจในการจัดสภาพแวดล้อมและบรรยากาศ</li>
+          <li>ผู้เรียนและบุคลากรเกิดความเคารพ สำนึกในความเป็นเจ้าของร่วมกัน</li>
+          <li>โรงเรียนมีการกำกับ ติดตาม ประเมินและสรุปรายงานผลการส่งเสริมและจัดสภาพแวดล้อม บรรยากาศที่เอื้อต่อการจัดการศึกษาแนวนักบุญมงฟอร์ตที่เอื้อต่อการเรียนรู้ของผู้เรียน</li>
+          <li>โรงเรียนนำสรุปรายงานผลไปวางแผนพัฒนาในปีการศึกษาต่อไป</li>
+        </ol></div>
+      </div>
+
+      <!-- 4.5 -->
+      <div class="indicator">
+        <div class="ind-title">
+          <span class="ind-code c4">4.5</span>
+          <span class="ind-name">โรงเรียนมีความร่วมมือและเครือข่ายกับบุคคล องค์กร สถาบันต่างๆ ในการพัฒนาคุณภาพการศึกษาตามแนวนักบุญมงฟอร์ต <span class="ind-mec">(มิติที่ 2, 6, 8)</span></span>
+        </div>
+        <div class="criteria-list"><ol>
+          <li>โรงเรียนมีการสร้างกลไก/วิธีการและประสานสัมพันธ์ระหว่าง บุคคล (คณะกรรมการที่ปรึกษา ผู้อำนวยการ ผู้ปกครอง ชุมชน ศิษย์เก่า) และองค์กรอื่นๆ อย่างเหมาะสมและทั่วถึงในการผนึกพลังเพื่อร่วมกันพัฒนาการศึกษา</li>
+          <li>โรงเรียนสนับสนุนให้เกิดการดำเนินงาน พัฒนาและแลกเปลี่ยนเรียนรู้ร่วมกันระหว่างแหล่งเรียนรู้ ภูมิปัญญาของบุคคล องค์กรในท้องถิ่นและชุมชนกับโรงเรียน</li>
+          <li>โรงเรียนเสริมสร้างขีดความสามารถ การแลกเปลี่ยนองค์ความรู้ทางการศึกษาระหว่างโรงเรียนในเครือมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย โดยผ่านเครือข่ายสารสนเทศ</li>
+          <li>โรงเรียนขยายเครือข่ายความร่วมมือระหว่างโรงเรียนกับองค์กร/หน่วยงานต่างๆ</li>
+        </ol></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Source note -->
+  <div style="text-align:center; padding:24px 0; color:#999; font-size:13px;">
+    ข้อมูลจาก: คู่มือมาตรฐานคุณภาพการศึกษา มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ฉบับปรับปรุงครั้งที่ 5 ปีการศึกษา 2561<br>
+    พิมพ์ครั้งที่ 1 มีนาคม 2563 · เจ้าของลิขสิทธิ์: มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">© 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

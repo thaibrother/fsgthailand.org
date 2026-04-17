@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDCA 9 ขั้นตอน — SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== PDCA9 PAGE ===== */
+.pdca-hero {
+  position: relative;
+  min-height: 55vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  overflow: hidden;
+}
+.pdca-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(245,130,32,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.pdca-hero .inner { position: relative; max-width: 850px; }
+.pdca-hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800; line-height: 1.2;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pdca-hero .sub {
+  font-size: clamp(16px, 2vw, 22px);
+  color: rgba(255,255,255,0.7); font-weight: 300;
+}
+
+/* Sections */
+.pdca-section {
+  padding: 80px 24px;
+  max-width: 1000px; margin: 0 auto;
+}
+.pdca-section.soft { background: var(--soft); max-width: 100%; }
+.pdca-section.soft .wrap { max-width: 1000px; margin: 0 auto; }
+.pdca-section.dark {
+  background: linear-gradient(135deg, #0e1e3a 0%, #1a1a2e 100%);
+  color: #fff; max-width: 100%;
+}
+.pdca-section.dark .wrap { max-width: 1000px; margin: 0 auto; }
+.pdca-section.dark h2 { color: #fff; }
+
+.pdca-section h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700; margin-bottom: 16px; color: var(--text);
+}
+.pdca-section .intro {
+  font-size: 18px; color: var(--muted); line-height: 1.8;
+  margin-bottom: 40px; max-width: 800px;
+}
+
+/* Three pillars */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px; margin: 40px 0;
+}
+.pillar-card {
+  background: #fff; border-radius: 18px;
+  padding: 32px 24px; text-align: center;
+  border: 1.5px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.pillar-card .icon { font-size: 44px; margin-bottom: 14px; display: block; }
+.pillar-card h4 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.pillar-card .role { font-size: 13px; color: var(--orange); font-weight: 600; margin-bottom: 10px; }
+.pillar-card p { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+/* Step cards */
+.step-group { margin-bottom: 48px; }
+.step-group-title {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.step-group-title .dot {
+  width: 14px; height: 14px; border-radius: 4px; display: inline-block;
+}
+
+.step-card {
+  background: #fff; border-radius: 16px;
+  border: 1.5px solid var(--border);
+  padding: 28px 24px; margin-bottom: 16px;
+  transition: border-color .2s;
+}
+.step-card:hover { border-color: var(--orange); }
+.step-card .step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 16px; font-weight: 800; color: #fff;
+  margin-right: 12px; flex-shrink: 0;
+}
+.step-card .step-head {
+  display: flex; align-items: center; margin-bottom: 10px;
+}
+.step-card h4 { font-size: 18px; font-weight: 700; color: var(--text); }
+.step-card .step-desc {
+  font-size: 15px; color: var(--muted); line-height: 1.7;
+  padding-left: 48px;
+}
+.step-card .step-desc em { color: var(--orange); font-style: normal; font-weight: 500; }
+.step-card .sub-items {
+  list-style: none; padding-left: 48px; margin-top: 10px;
+}
+.step-card .sub-items li {
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+  padding: 6px 0; border-bottom: 1px solid #f0f0f0;
+}
+.step-card .sub-items li:last-child { border-bottom: none; }
+.step-card .sub-items strong { color: var(--text); }
+.step-card .note {
+  display: block; margin-top: 12px; padding-left: 48px;
+  font-size: 13px; color: var(--orange); font-weight: 500;
+}
+
+/* Color coding */
+.c-plan { background: #1e3a5f; }
+.c-do { background: #d96a0a; }
+.c-check { background: #0d9488; }
+.c-act { background: #7c3aed; }
+
+/* Diagram container */
+.diagram-wrap {
+  background: #fff; border-radius: 18px;
+  border: 1.5px solid var(--border);
+  padding: 24px; margin-top: 40px;
+  overflow-x: auto;
+}
+.diagram-wrap svg { width: 100%; height: auto; }
+
+/* Evolution table */
+.evo-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; margin-top: 30px; border-radius: 16px; overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.15);
+}
+.evo-cell {
+  padding: 20px 24px; font-size: 15px; line-height: 1.7;
+}
+.evo-cell.head {
+  font-weight: 700; font-size: 16px;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.evo-cell.old { border-right: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+.evo-cell.new { color: #f5c77e; }
+.evo-cell.old.head { color: rgba(255,255,255,0.8); }
+.evo-cell.new.head { color: #f5c77e; }
+
+/* Back link */
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--orange); font-weight: 600; font-size: 15px;
+  text-decoration: none; margin-bottom: 30px;
+}
+.back-link:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .pdca-section { padding: 50px 16px; }
+  .evo-grid { grid-template-columns: 1fr; }
+  .evo-cell.old { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="pdca-hero">
+  <div class="inner">
+    <h1>PDCA 9 ขั้นตอน</h1>
+    <p class="sub">กระบวนการเขียนแผนงาน/โครงการ<br>ใช้ตั้งแต่ปีการศึกษา 2555 — ปรับปรุงใหม่ให้สอดคล้องกับคู่มือคุณภาพหน่วยงาน</p>
+  </div>
+</section>
+
+<!-- ==================== 1. THREE PILLARS ==================== -->
+<div class="pdca-section">
+  <a href="present.html" class="back-link">← สารบัญนำเสนอ</a>
+  <h2>เสาหลัก 3 ชิ้นที่ขับเคลื่อนคุณภาพ</h2>
+  <p class="intro">ระบบคุณภาพสถานศึกษาประกอบด้วยเครื่องมือ 3 ชิ้นที่ทำงานร่วมกัน — คู่มือคุณภาพบอกว่า "ต้องทำอะไร" แผนงาน PDCA บอกว่า "ทำอย่างไร" และ SWIS เป็นแพลตฟอร์มที่เชื่อมทุกอย่างเข้าด้วยกัน</p>
+
+  <div class="pillars">
+    <div class="pillar-card">
+      <span class="icon">📖</span>
+      <h4>คู่มือคุณภาพหน่วยงาน</h4>
+      <div class="role">Prompt — บอกว่าต้องทำอะไร</div>
+      <p>เป้าหมายคุณภาพ, หน้าที่หลัก, KRA, เครื่องมือตรวจสอบ — ต้นทางของทุกแผนงาน</p>
+    </div>
+    <div class="pillar-card">
+      <span class="icon">🔄</span>
+      <h4>แผนงาน PDCA 9 ขั้นตอน</h4>
+      <div class="role">Execute — ทำอย่างไร</div>
+      <p>กระบวนการเขียนแผน วางแผน ลงมือทำ ติดตาม ประเมิน และปรับปรุง — ครบวงจร</p>
+    </div>
+    <div class="pillar-card">
+      <span class="icon">💻</span>
+      <h4>SWIS Platform</h4>
+      <div class="role">Platform — เชื่อมทุกอย่าง</div>
+      <p>ฐานข้อมูลเดียว ดึงข้อมูลจากคู่มือคุณภาพอัตโนมัติ ติดตามผลแบบ real-time</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 2. NINE STEPS ==================== -->
+<div class="pdca-section soft">
+  <div class="wrap">
+    <h2>9 ขั้นตอน — รายละเอียด</h2>
+    <p class="intro">แต่ละขั้นตอนออกแบบให้เชื่อมโยงกัน โดยมีหัวใจอยู่ที่ข้อ 4 ↔ ข้อ 6 (mini-PDCA 1:1)</p>
+
+    <!-- PLAN 1-5 -->
+    <div class="step-group">
+      <div class="step-group-title"><span class="dot" style="background:#1e3a5f"></span> PLAN — วางแผน (ขั้นที่ 1-5)</div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-plan">1</span>
+          <h4>แต่งตั้งคณะกรรมการ/ทีมงาน/ผู้รับผิดชอบ</h4>
+        </div>
+        <p class="step-desc">กำหนดตัวบุคคลที่จะรับผิดชอบแผนงานของหน่วยงาน</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-plan">2</span>
+          <h4>ศึกษาข้อมูล สรุปสภาพปัจจุบัน</h4>
+        </div>
+        <p class="step-desc">ศึกษาข้อมูล วิธีการ ความต้องการ ด้านทรัพยากรที่มีอยู่ วิเคราะห์ที่มาที่ไปของการวางแผน</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-plan">3</span>
+          <h4>ศึกษาเป้าหมายคุณภาพจากคู่มือคุณภาพหน่วยงาน</h4>
+        </div>
+        <p class="step-desc">ยึดเป้าหมายคุณภาพที่กำหนดไว้ในคู่มือคุณภาพหน่วยงานเป็นหลัก เพื่อเป็นฐานในการกำหนดวิธีการที่จะไปให้ถึง</p>
+        <span class="note">🔄 ปรับใหม่ — เดิมใช้ "กำหนดคุณภาพที่คาดหวัง" → ปัจจุบันทุกหน่วยงานมีคู่มือคุณภาพแล้ว จึงศึกษาจากคู่มือโดยตรง</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-plan">4</span>
+          <h4>วางแนวทางปฏิบัติ กำหนดกิจกรรม/โครงการ</h4>
+        </div>
+        <ul class="sub-items">
+          <li><strong>4.1</strong> กำหนดงานตามหน้าที่หลักของหน่วยงาน <em>(SWIS ดึงจากคู่มือคุณภาพหน่วยงานโดยอัตโนมัติ)</em>
+            <br>→ 4.1.1 งานหลักที่ 1 … / 4.1.2 งานหลักที่ 2 … / 4.1.3 …</li>
+          <li><strong>4.2</strong> เตรียมเครื่องมือวัดประเมินผลตามรายการงานในข้อ 4.1</li>
+          <li><strong>4.3</strong> ศึกษาวิเคราะห์แนวทาง ป้องกันแก้ไขพัฒนาคุณภาพงาน <em>(ภาพรวม)</em></li>
+        </ul>
+        <span class="note">📌 4.1 ผูกแน่นกับคู่มือคุณภาพ · 4.2 ล้อตาม 4.1 · 4.3 เปิดกว้างให้ทีมวางแผนร่วมกัน</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-plan">5</span>
+          <h4>ประชุมวางแผนและมอบหมายงาน</h4>
+        </div>
+        <p class="step-desc">ประชุมคณะกรรมการเพื่อวางแผนและมอบหมายงานตามข้อ 3</p>
+      </div>
+    </div>
+
+    <!-- DO 6 -->
+    <div class="step-group">
+      <div class="step-group-title"><span class="dot" style="background:#d96a0a"></span> DO — ปฏิบัติ (ขั้นที่ 6)</div>
+
+      <div class="step-card" style="border-color:#d96a0a">
+        <div class="step-head">
+          <span class="step-num c-do">6</span>
+          <h4>ดำเนินงานตามแผนปฏิบัติการประจำปี</h4>
+        </div>
+        <ul class="sub-items">
+          <li><strong>6.1</strong> กิจกรรม/โครงการ <em>(สอดรับกับ 4.1.1)</em> → อธิบายขั้นตอนตามกระบวนการ PDCA</li>
+          <li><strong>6.2</strong> กิจกรรม/โครงการ <em>(สอดรับกับ 4.1.2)</em> → อธิบายขั้นตอนตามกระบวนการ PDCA</li>
+          <li><strong>6.3</strong> กิจกรรม/โครงการ <em>(สอดรับกับ 4.1.3)</em> → …</li>
+        </ul>
+        <span class="note">⭐ หัวใจของระบบ — แต่ละ 6.x เป็น mini-PDCA ที่สอดรับ 1:1 กับ 4.1.x ดำเนินการตลอดทั้งปี</span>
+      </div>
+    </div>
+
+    <!-- CHECK 7-8 -->
+    <div class="step-group">
+      <div class="step-group-title"><span class="dot" style="background:#0d9488"></span> CHECK — ตรวจสอบ (ขั้นที่ 7-8)</div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-check">7</span>
+          <h4>กำกับ ติดตามและนิเทศการดำเนินงาน</h4>
+        </div>
+        <p class="step-desc">ผู้บริหารและฝ่ายนิเทศกำกับติดตามการดำเนินงานอย่างต่อเนื่อง</p>
+        <span class="note">🔄 ปรับใหม่ — เดิมใช้ "รับการนิเทศ" (passive) → เปลี่ยนเป็น "กำกับ ติดตามและนิเทศ" (active)</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-check">8</span>
+          <h4>ประเมินผลการดำเนินงาน</h4>
+        </div>
+        <p class="step-desc">ประเมินผลให้ครอบคลุมทั้งแผนปฏิบัติการประจำปีและแผนพัฒนาฯ</p>
+      </div>
+    </div>
+
+    <!-- ACT 9 -->
+    <div class="step-group">
+      <div class="step-group-title"><span class="dot" style="background:#7c3aed"></span> ACT — ปรับปรุง (ขั้นที่ 9)</div>
+
+      <div class="step-card">
+        <div class="step-head">
+          <span class="step-num c-act">9</span>
+          <h4>นำผลประเมินพัฒนาแผนปฏิบัติการปีต่อไป</h4>
+        </div>
+        <p class="step-desc">นำผลการประเมินไปพัฒนาการวางแผนปฏิบัติการประจำปีในปีการศึกษาต่อไป → วนรอบใหม่กลับขั้นที่ 1</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 3. DIAGRAM ==================== -->
+<div class="pdca-section">
+  <h2>แผนภาพกระบวนการ</h2>
+  <p class="intro">ภาพรวมความสัมพันธ์ 9 ขั้นตอน — เส้นประแสดงการเชื่อมโยง 4.x → 6.x (mini-PDCA 1:1)</p>
+
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 700" font-family="Kanit, sans-serif">
+  <defs>
+    <filter id="ds"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.12"/></filter>
+    <linearGradient id="pOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58220"/><stop offset="100%" stop-color="#d96a0a"/>
+    </linearGradient>
+    <marker id="aN" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#1e3a5f"/>
+    </marker>
+    <marker id="aO" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#d96a0a"/>
+    </marker>
+    <marker id="aT" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#0d9488"/>
+    </marker>
+    <marker id="aP" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#7c3aed"/>
+    </marker>
+    <marker id="aL" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="aM" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0,7 2.5,0 5" fill="#f58220"/>
+    </marker>
+  </defs>
+  <rect width="940" height="700" fill="#f8f9fa" rx="12"/>
+  <circle cx="470" cy="310" r="68" fill="url(#pOrange)" filter="url(#ds)"/>
+  <text x="470" y="300" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">PDCA</text>
+  <text x="470" y="324" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="13" font-weight="500">9 ขั้นตอน</text>
+  <rect x="360" y="16" width="220" height="50" rx="14" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="470" y="36" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="700">1 — แต่งตั้ง</text>
+  <text x="470" y="54" text-anchor="middle" fill="#fff" font-size="11">คณะกรรมการ/ทีมงาน/ผู้รับผิดชอบ</text>
+  <rect x="640" y="55" width="220" height="50" rx="14" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="750" y="75" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="700">2 — ศึกษาข้อมูล</text>
+  <text x="750" y="93" text-anchor="middle" fill="#fff" font-size="11">สรุปสภาพปัจจุบัน</text>
+  <rect x="700" y="140" width="220" height="50" rx="14" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="810" y="160" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="700">3 — ศึกษาเป้าหมายคุณภาพ</text>
+  <text x="810" y="178" text-anchor="middle" fill="#fff" font-size="11">จากคู่มือคุณภาพหน่วยงาน</text>
+  <rect x="700" y="235" width="230" height="78" rx="14" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="815" y="255" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="700">4 — วางแนวทางปฏิบัติ</text>
+  <text x="815" y="273" text-anchor="middle" fill="#fff" font-size="11">กำหนดกิจกรรม/โครงการ</text>
+  <text x="815" y="291" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10">4.1 กิจกรรม · 4.2 เครื่องมือประเมิน</text>
+  <text x="815" y="305" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10">4.3 แนวทางป้องกันแก้ไข (ตั้งต้นปี)</text>
+  <rect x="680" y="370" width="230" height="50" rx="14" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="795" y="390" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="700">5 — ประชุมวางแผน</text>
+  <text x="795" y="408" text-anchor="middle" fill="#fff" font-size="11">มอบหมายงานตามข้อ 3</text>
+  <path d="M580 42 Q610 44,640 66" stroke="#1e3a5f" stroke-width="2" fill="none" marker-end="url(#aN)"/>
+  <path d="M820 105 Q825 122,820 140" stroke="#1e3a5f" stroke-width="2" fill="none" marker-end="url(#aN)"/>
+  <path d="M825 190 Q822 212,822 235" stroke="#1e3a5f" stroke-width="2" fill="none" marker-end="url(#aN)"/>
+  <path d="M815 313 Q810 340,808 370" stroke="#1e3a5f" stroke-width="2" fill="none" marker-end="url(#aN)"/>
+  <rect x="380" y="490" width="310" height="90" rx="14" fill="#d96a0a" filter="url(#ds)"/>
+  <text x="535" y="516" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">6 — ดำเนินการ (ตลอดทั้งปี)</text>
+  <text x="535" y="538" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">mini-PDCA ของแต่ละข้อในข้อ 4</text>
+  <text x="535" y="564" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10">6.1 ← 4.1 · 6.2 ← 4.2 · 6.3 ← 4.3 ···</text>
+  <path d="M740 420 Q670 460,630 490" stroke="#d96a0a" stroke-width="2.5" fill="none" marker-end="url(#aO)"/>
+  <path d="M700 290 C600 300, 520 380, 450 490" stroke="#f58220" stroke-width="2.5" fill="none" stroke-dasharray="7,4" opacity="0.5" marker-end="url(#aM)"/>
+  <path d="M700 270 C610 270, 500 350, 420 490" stroke="#f58220" stroke-width="2.5" fill="none" stroke-dasharray="7,4" opacity="0.5"/>
+  <rect x="530" y="405" width="108" height="46" rx="10" fill="#fff3e0" stroke="#f58220" stroke-width="1.5"/>
+  <text x="584" y="423" text-anchor="middle" fill="#d96a0a" font-size="10" font-weight="700">4.x → 6.x</text>
+  <text x="584" y="439" text-anchor="middle" fill="#d96a0a" font-size="9">mini-PDCA 1:1</text>
+  <rect x="80" y="500" width="220" height="54" rx="14" fill="#0d9488" filter="url(#ds)"/>
+  <text x="190" y="522" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">7 — กำกับ ติดตาม</text>
+  <text x="190" y="542" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">นิเทศการดำเนินงาน</text>
+  <rect x="20" y="385" width="230" height="54" rx="14" fill="#0d9488" filter="url(#ds)"/>
+  <text x="135" y="407" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">8 — ประเมินผล</text>
+  <text x="135" y="427" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">การดำเนินงาน</text>
+  <path d="M380 540 Q310 540,300 530" stroke="#0d9488" stroke-width="2" fill="none" marker-end="url(#aT)"/>
+  <path d="M160 500 Q150 460,148 439" stroke="#0d9488" stroke-width="2" fill="none" marker-end="url(#aT)"/>
+  <rect x="20" y="235" width="250" height="70" rx="14" fill="#7c3aed" filter="url(#ds)"/>
+  <text x="145" y="262" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">9 — นำผลประเมิน</text>
+  <text x="145" y="284" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11">พัฒนาแผนปฏิบัติการปีต่อไป</text>
+  <path d="M125 385 Q120 345,130 305" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#aP)"/>
+  <path d="M210 235 C230 150,320 40,360 36" stroke="#7c3aed" stroke-width="2.5" fill="none" stroke-dasharray="6,4" marker-end="url(#aL)"/>
+  <text x="265" y="108" text-anchor="middle" fill="#7c3aed" font-size="10" font-weight="500" opacity="0.8">วนรอบใหม่</text>
+  <rect x="38" y="38" width="14" height="14" rx="3" fill="#1e3a5f"/>
+  <text x="58" y="50" fill="#1e3a5f" font-size="10" font-weight="600">PLAN — วางแผน (1-5)</text>
+  <rect x="38" y="58" width="14" height="14" rx="3" fill="#d96a0a"/>
+  <text x="58" y="70" fill="#d96a0a" font-size="10" font-weight="600">DO — ปฏิบัติ (6)</text>
+  <rect x="38" y="78" width="14" height="14" rx="3" fill="#0d9488"/>
+  <text x="58" y="90" fill="#0d9488" font-size="10" font-weight="600">CHECK — ตรวจสอบ (7-8)</text>
+  <rect x="38" y="98" width="14" height="14" rx="3" fill="#7c3aed"/>
+  <text x="58" y="110" fill="#7c3aed" font-size="10" font-weight="600">ACT — ปรับปรุง (9)</text>
+  <text x="470" y="645" text-anchor="middle" fill="#999" font-size="11">ข้อ 4 วางแนวทาง+กำหนดกิจกรรม (ต้นปี) → ข้อ 5 ประชุมมอบหมายงาน → ข้อ 6 ดำเนินการเป็น mini-PDCA ตลอดปี (4.x → 6.x)</text>
+  <text x="470" y="668" text-anchor="middle" fill="#bbb" font-size="11">กระบวนการเขียนแผนงาน/โครงการ PDCA 9 ขั้นตอน — ใช้ตั้งแต่ปีการศึกษา 2555</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ==================== 4. EVOLUTION ==================== -->
+<div class="pdca-section dark">
+  <div class="wrap">
+    <h2>วิวัฒนาการ — เดิม vs ปรับปรุงใหม่</h2>
+    <p style="color:rgba(255,255,255,0.6);font-size:17px;margin-bottom:30px">สิ่งที่เปลี่ยนจากสูตรเดิม (2555) เมื่อมีคู่มือคุณภาพหน่วยงานและ SWIS เข้ามา</p>
+
+    <div class="evo-grid">
+      <div class="evo-cell old head">เดิม (2555–2563)</div>
+      <div class="evo-cell new head">ปรับปรุงใหม่</div>
+
+      <div class="evo-cell old"><strong>ขั้นที่ 3</strong> — กำหนดคุณภาพที่คาดหวังและเป้าหมายเอง</div>
+      <div class="evo-cell new"><strong>ขั้นที่ 3</strong> — ศึกษาเป้าหมายคุณภาพจากคู่มือคุณภาพหน่วยงาน</div>
+
+      <div class="evo-cell old"><strong>ขั้นที่ 4.1</strong> — วางแนวทาง กำหนดกิจกรรม/โครงการเอง</div>
+      <div class="evo-cell new"><strong>ขั้นที่ 4.1</strong> — กำหนดงานตามหน้าที่หลัก (SWIS ดึงจากคู่มืออัตโนมัติ)</div>
+
+      <div class="evo-cell old"><strong>ขั้นที่ 4.2</strong> — เตรียมเครื่องมือประเมินตอบกลับคุณภาพที่คาดหวัง</div>
+      <div class="evo-cell new"><strong>ขั้นที่ 4.2</strong> — เตรียมเครื่องมือวัดประเมินผลตามรายการงานในข้อ 4.1</div>
+
+      <div class="evo-cell old"><strong>ขั้นที่ 7</strong> — รับการนิเทศ (passive)</div>
+      <div class="evo-cell new"><strong>ขั้นที่ 7</strong> — กำกับ ติดตามและนิเทศ (active)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CTA ==================== -->
+<div style="padding:60px 24px;text-align:center">
+  <a href="pdca9-form.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;background:var(--orange);color:#fff;font-weight:600;font-size:17px;text-decoration:none;transition:transform .2s,box-shadow .2s">ดูแบบฟอร์มแผนงาน PDCA →</a>
+  <div style="margin-top:16px">
+    <a href="present.html" style="color:var(--muted);font-size:15px;text-decoration:none">← กลับสารบัญ</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">© 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

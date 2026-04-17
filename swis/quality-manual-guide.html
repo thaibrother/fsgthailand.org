@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>คู่มือคุณภาพหน่วยงาน — SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== HERO ===== */
+.qm-hero {
+  position: relative;
+  min-height: 50vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1e293b 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff; overflow: hidden;
+}
+.qm-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(124,58,237,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.qm-hero .inner { position: relative; max-width: 850px; }
+.qm-hero h1 {
+  font-size: clamp(28px, 4.5vw, 50px);
+  font-weight: 800; line-height: 1.2; margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.qm-hero .sub {
+  font-size: clamp(15px, 2vw, 20px);
+  color: rgba(255,255,255,0.7); font-weight: 300;
+}
+.qm-hero .badge {
+  display: inline-block; margin-top: 16px;
+  padding: 6px 18px; border-radius: 99px;
+  background: rgba(124,58,237,0.2); border: 1px solid rgba(124,58,237,0.4);
+  color: #c4b5fd; font-size: 14px; font-weight: 500;
+}
+
+/* ===== SECTIONS ===== */
+.qm-section {
+  padding: 70px 24px; max-width: 960px; margin: 0 auto;
+}
+.qm-section.alt { background: #f8fafc; max-width: 100%; }
+.qm-section.alt .wrap { max-width: 960px; margin: 0 auto; }
+.qm-section.dark {
+  background: linear-gradient(135deg, #0e1e3a 0%, #1a1a2e 100%);
+  color: #fff; max-width: 100%;
+}
+.qm-section.dark .wrap { max-width: 960px; margin: 0 auto; }
+.qm-section.dark h2 { color: #fff; }
+.qm-section h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700; margin-bottom: 12px; color: var(--text);
+}
+.qm-section .intro {
+  font-size: 17px; color: var(--muted); line-height: 1.8;
+  margin-bottom: 36px; max-width: 800px;
+}
+
+/* ===== OVERVIEW STATS ===== */
+.qm-stats {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+  margin: 30px 0 50px;
+}
+.qm-stat {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 20px 24px; text-align: center;
+  min-width: 120px; flex: 1; max-width: 180px;
+}
+.qm-stat .big {
+  font-size: 32px; font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.qm-stat .label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* ===== PART CARDS ===== */
+.part-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: 18px; padding: 0; margin-bottom: 24px;
+  overflow: hidden; transition: box-shadow .25s;
+}
+.part-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.part-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 24px 28px; cursor: pointer;
+  transition: background .2s;
+}
+.part-header:hover { background: #f8fafc; }
+.part-num {
+  flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 800; color: #fff;
+}
+.pn0 { background: linear-gradient(135deg, #64748b, #475569); }
+.pn1 { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.pn2 { background: linear-gradient(135deg, #f58220, #e06b10); }
+.pn3 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.pn4 { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.pn5 { background: linear-gradient(135deg, #0d9488, #0f766e); }
+.pn6 { background: linear-gradient(135deg, #059669, #047857); }
+.part-title { flex: 1; }
+.part-title h3 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.part-title .short { font-size: 14px; color: var(--muted); }
+.part-toggle { font-size: 22px; color: var(--orange); transition: transform .3s; }
+.part-card.open .part-toggle { transform: rotate(180deg); }
+.part-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+}
+.part-card.open .part-body { max-height: 5000px; }
+.part-content {
+  padding: 0 28px 28px;
+  border-top: 1px solid var(--border);
+}
+.part-content h4 {
+  font-size: 16px; font-weight: 700; color: var(--text);
+  margin: 20px 0 8px; padding-bottom: 4px;
+  border-bottom: 2px solid var(--orange);
+  display: inline-block;
+}
+.part-content p, .part-content li {
+  font-size: 14.5px; color: var(--muted); line-height: 1.8;
+}
+.part-content ul { padding-left: 20px; margin: 8px 0; }
+.part-content li { margin-bottom: 4px; }
+.part-content .highlight {
+  background: #fef3c7; border-left: 4px solid #f59e0b;
+  padding: 12px 16px; border-radius: 8px; margin: 14px 0;
+  font-size: 14px; color: #92400e; line-height: 1.7;
+}
+.part-content .highlight.purple {
+  background: #ede9fe; border-color: #7c3aed; color: #5b21b6;
+}
+.part-content .highlight.green {
+  background: #ecfdf5; border-color: #059669; color: #065f46;
+}
+.part-content .highlight.blue {
+  background: #eff6ff; border-color: #2563eb; color: #1e40af;
+}
+
+/* Standard tags */
+.std-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 14px; }
+.std-tag {
+  display: inline-block; padding: 4px 12px;
+  border-radius: 8px; font-size: 12px; font-weight: 600;
+}
+.std-tag.mandatory { background: #fee2e2; color: #991b1b; }
+.std-tag.optional { background: #dbeafe; color: #1e40af; }
+
+/* PDCA mini-table */
+.pdca-mini {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 0; margin: 12px 0; border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.pdca-mini .ph {
+  padding: 8px 14px; font-size: 13px; font-weight: 700; color: #fff;
+  display: flex; align-items: center;
+}
+.pdca-mini .pd {
+  padding: 8px 14px; font-size: 13px; color: var(--text);
+  border-bottom: 1px solid #f0f0f0; line-height: 1.6;
+}
+.pdca-mini .pd:last-child { border-bottom: none; }
+.bg-p { background: #1e3a5f; }
+.bg-d { background: #d96a0a; }
+.bg-c { background: #0d9488; }
+.bg-a { background: #7c3aed; }
+
+/* SWIS connect badge */
+.swis-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #f58220, #e06b10);
+  color: #fff; border-radius: 8px; padding: 4px 12px;
+  font-size: 12px; font-weight: 700; margin: 6px 0;
+}
+
+/* Checklist table */
+.check-table {
+  width: 100%; border-collapse: collapse; margin: 14px 0;
+  font-size: 13.5px;
+}
+.check-table th {
+  background: #f1f5f9; padding: 10px 14px;
+  text-align: left; font-weight: 700; color: var(--text);
+  border-bottom: 2px solid var(--border);
+}
+.check-table td {
+  padding: 10px 14px; border-bottom: 1px solid #f0f0f0;
+  color: var(--muted); line-height: 1.6;
+}
+.check-table tr:hover td { background: #fafbfc; }
+.check-table .row-num {
+  font-weight: 700; color: var(--text); width: 40px; text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .qm-stats { flex-direction: column; align-items: center; }
+  .qm-stat { max-width: 100%; }
+  .part-header { flex-direction: column; text-align: center; gap: 10px; }
+  .pdca-mini { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="qm-hero">
+  <div class="inner">
+    <h1>คู่มือคุณภาพหน่วยงาน</h1>
+    <p class="sub">คู่มือการเขียนและเครื่องมือการตรวจคู่มือคุณภาพหน่วยงาน<br>โรงเรียนในเครือมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <span class="badge">ออกแบบร่วมกัน — เวอร์ชันปรับปรุง 2569</span>
+  </div>
+</section>
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="qm-section">
+  <h2>ภาพรวม: สูตร 6 ส่วน</h2>
+  <p class="intro">คู่มือคุณภาพหน่วยงานทุกเล่มมีโครงสร้างเดียวกัน 6 ส่วน ไม่ว่าจะเป็นหน่วยงานใด โรงเรียนใด — เพราะทุกหน่วยงานต้องตอบคำถามเดียวกัน: เรามาจากไหน ต้องทำอะไร วัดผลอย่างไร ใครทำ ใช้อะไรทำ และอ้างอิงจากอะไร</p>
+
+  <div class="qm-stats">
+    <div class="qm-stat"><div class="big">6</div><div class="label">ส่วนหลัก</div></div>
+    <div class="qm-stat"><div class="big">9</div><div class="label">ขั้นตอน PDCA</div></div>
+    <div class="qm-stat"><div class="big">C/K/Cp</div><div class="label">Job Spec</div></div>
+    <div class="qm-stat"><div class="big">∞</div><div class="label">มาตรฐานอ้างอิง</div></div>
+  </div>
+
+  <!-- ===== ส่วนเบื้องต้น ===== -->
+  <div class="part-card open">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn0">☰</div>
+      <div class="part-title">
+        <h3>ส่วนเบื้องต้น</h3>
+        <div class="short">หน้าปก · คำนำ · สารบัญ · ภาพประกอบ</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <table class="check-table">
+          <tr><th class="row-num">#</th><th>รายการ</th><th>ตรวจ</th></tr>
+          <tr><td class="row-num">1</td><td>หน้าปก — ชื่อหน่วยงาน, ฝ่าย, โรงเรียน, ปีการศึกษา</td><td>☐ มี / ☐ ไม่มี</td></tr>
+          <tr><td class="row-num">2</td><td>คำนำ</td><td>☐ มี / ☐ ไม่มี</td></tr>
+          <tr><td class="row-num">3</td><td>สารบัญ</td><td>☐ มี / ☐ ไม่มี</td></tr>
+          <tr><td class="row-num">4</td><td>ภาพประกอบและองค์ประกอบในเล่ม</td><td>☐ มี / ☐ ไม่มี</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 1 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn1">1</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 1 — การเชื่อมโยง (Chain of Alignment)</h3>
+        <div class="short">เรามาจากไหน? — แผนยุทธศาสตร์ → แผนพัฒนาโรงเรียน → โครงสร้างบริหาร → หน้าที่หลัก (KRA)</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <p>แสดงภาพการเชื่อมโยงจาก <strong>แผนยุทธศาสตร์มูลนิธิฯ</strong> → <strong>แผนพัฒนาโรงเรียน</strong> → <strong>โครงสร้างการบริหาร</strong> → <strong>หน้าที่หลักของฝ่าย (KRA)</strong></p>
+        <div class="highlight">
+          <strong>ทำไมต้องมี?</strong> เพื่อพิสูจน์ว่างานของหน่วยงานนี้ "มาจากไหน" — ไม่ได้ลอยมาเอง แต่สืบสายมาจากยุทธศาสตร์มูลนิธิฯ ผ่านแผนพัฒนาโรงเรียน ลงมาถึงโครงสร้างการบริหาร
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 2 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn2">2</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 2 — ขอบข่ายงานและเป้าหมายคุณภาพ (KRA)</h3>
+        <div class="short">เราต้องทำอะไร? วัดกับมาตรฐานอะไรบ้าง?</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>ข้อ 1 — KRA ของหน่วยงาน</h4>
+        <p>ระบุขอบเขตหน้าที่หลักของหน่วยงาน — จัดทำแผนพัฒนาเพื่อยกระดับคุณภาพงาน...ให้สอดคล้องกับนโยบายแผนยุทธศาสตร์ของมูลนิธิฯ แผนพัฒนาการจัดการศึกษาของโรงเรียน และดำเนินการให้บรรลุเป้าหมายคุณภาพตามแผนที่วางไว้</p>
+
+        <h4>ข้อ 2 — เป้าหมายคุณภาพ</h4>
+
+        <p><strong>2.1</strong> — มีแผนพัฒนางานที่มีคุณภาพเป็นไปตามมาตรฐานการปฏิบัติงาน <strong>PDCA 9 ขั้นตอน</strong> ให้บรรลุตามแผนยุทธศาสตร์มูลนิธิฯ + แผนพัฒนาการจัดการศึกษาของโรงเรียน</p>
+
+        <p><strong>2.2</strong> — มีแผนงานพัฒนาให้บรรลุเป้าหมายคุณภาพ ตาม<strong>มาตรฐานที่อ้างอิง</strong>ทั้งหมด</p>
+
+        <div class="highlight purple">
+          <strong>หลักการข้อ 2.2 — มาตรฐานที่อ้างอิง:</strong><br>
+          มาตรฐานบางชุด<strong>บังคับต้องมี</strong>เพราะหน่วยงานเจ้าของมาตรฐานมีอำนาจเข้าตรวจโรงเรียนโดยตรง จึงต้องนำมาบรรจุไว้ในคู่มือ ส่วนมาตรฐานอื่นสามารถ<strong>เพิ่มเติมได้</strong>ตามบริบท — แต่ทั้งหมดต้องเป็นมาตรฐาน<strong>ระดับสากล</strong> สอดคล้องกับแผนยุทธศาสตร์มูลนิธิฯ ที่ระบุชัดเจนให้ยกระดับสู่มาตรฐานสากล
+        </div>
+
+        <p style="font-weight:600; margin-top:16px;">มาตรฐานบังคับ (มีอำนาจตรวจ)</p>
+        <div class="std-tags">
+          <span class="std-tag mandatory">สพฐ. (3 มาตรฐาน)</span>
+          <span class="std-tag mandatory">สมศ. รอบ 5</span>
+          <span class="std-tag mandatory">มาตรฐาน FSG มูลนิธิฯ</span>
+          <span class="std-tag mandatory">มาตรฐานโรงเรียน (15 มาตรฐาน)</span>
+        </div>
+
+        <p style="font-weight:600;">มาตรฐานจากแผน (สอดคล้องยุทธศาสตร์)</p>
+        <div class="std-tags">
+          <span class="std-tag mandatory">แผนยุทธศาสตร์มูลนิธิฯ (SP-FSG)</span>
+          <span class="std-tag mandatory">แผนพัฒนาโรงเรียน (DP)</span>
+        </div>
+
+        <p style="font-weight:600;">มาตรฐานเพิ่มเติมได้ (ระดับสากล)</p>
+        <div class="std-tags">
+          <span class="std-tag optional">ระเบียบบริหารงานบุคคลของโรงเรียน</span>
+          <span class="std-tag optional">มาตรฐานสากล (Cambridge, IB ฯลฯ)</span>
+          <span class="std-tag optional">กฎกระทรวง / หลักเกณฑ์ประกันคุณภาพ</span>
+          <span class="std-tag optional">มาตรฐานอื่นๆ ที่สอดคล้อง</span>
+        </div>
+
+        <div class="highlight green">
+          <strong>หมายเหตุ:</strong> มาตรฐานที่อ้างอิงในข้อ 2.2 หลายตัวชี้วัดสอดคล้องกับมาตรฐานสากลอยู่แล้ว เพราะแผนยุทธศาสตร์มูลนิธิฯ มีตัวชี้วัดกำหนดชัดเจนให้ยกระดับสู่มาตรฐานสากล — ดังนั้นการอิงมาตรฐานบังคับไม่ได้หมายความว่าต่ำกว่าสากล
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 3 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn3">3</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 3 — ตัวชี้วัดความสำเร็จ (KPI)</h3>
+        <div class="short">วัดผลอย่างไร? — แบ่ง 2 ก้อน: กระบวนการ PDCA 9 + ผลลัพธ์ตามมาตรฐาน</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+
+        <h4>ก้อนที่ 1: ข้อ 3.1 — KPI กระบวนการบริหารแผนงาน (PDCA 9 ขั้นตอน)</h4>
+        <p>ตรวจว่าหน่วยงานมีแผนงานบริหารคุณภาพที่สอดคล้องกับ PDCA 9 ขั้นตอนของมูลนิธิฯ ครบถ้วนหรือไม่</p>
+
+        <div class="highlight blue">
+          <strong>PDCA 9 ขั้นตอน:</strong> P = ขั้นที่ 1–5 (วางแผน), D = ขั้นที่ 6 (ดำเนินการ), C = ขั้นที่ 7–8 (ตรวจสอบ), A = ขั้นที่ 9 (ปรับปรุง)
+        </div>
+
+        <div class="pdca-mini">
+          <div class="ph bg-p">P-1</div>
+          <div class="pd"><strong>แต่งตั้งคณะกรรมการ/ทีมงาน/ผู้รับผิดชอบ</strong> ของหน่วยงาน</div>
+
+          <div class="ph bg-p">P-2</div>
+          <div class="pd"><strong>ศึกษาข้อมูล สรุปสภาพปัจจุบัน</strong> — วิเคราะห์ที่มาที่ไป ทรัพยากรที่มีอยู่</div>
+
+          <div class="ph bg-p">P-3</div>
+          <div class="pd"><strong>ศึกษาเป้าหมายคุณภาพจากคู่มือคุณภาพหน่วยงาน</strong> — ยึดเป้าหมายคุณภาพที่กำหนดไว้ในคู่มือฯ เป็นฐาน เพื่อกำหนดวิธีการที่จะไปให้ถึง<br>
+          <em style="color:#7c3aed;">🔄 ปรับใหม่ — เดิม "กำหนดคุณภาพที่คาดหวัง" → ปัจจุบันทุกหน่วยงานมีคู่มือคุณภาพแล้ว จึงศึกษาจากคู่มือโดยตรง</em></div>
+
+          <div class="ph bg-p">P-4</div>
+          <div class="pd"><strong>วางแนวทางปฏิบัติ กำหนดกิจกรรม/โครงการ</strong><br>
+          <strong>4.1</strong> กำหนดงานตามหน้าที่หลักของหน่วยงาน <em style="color:#d96a0a;">(SWIS ดึงจากคู่มือคุณภาพอัตโนมัติ)</em> → 4.1.1 งานหลักที่ 1 / 4.1.2 งานหลักที่ 2 / 4.1.3 …<br>
+          <strong>4.2</strong> เตรียมเครื่องมือวัดประเมินผลตามรายการงานในข้อ 4.1<br>
+          <strong>4.3</strong> ศึกษาวิเคราะห์แนวทาง ป้องกันแก้ไขพัฒนาคุณภาพงาน (ภาพรวม)</div>
+
+          <div class="ph bg-p">P-5</div>
+          <div class="pd"><strong>ประชุมวางแผนและมอบหมายงาน</strong> ตามเป้าหมายคุณภาพข้อ 3</div>
+
+          <div class="ph bg-d">D-6</div>
+          <div class="pd"><strong>ดำเนินงานตามแผนปฏิบัติการประจำปี</strong> — ดำเนินการตลอดทั้งปี<br>
+          <strong>6.1</strong> กิจกรรม/โครงการ <em style="color:#d96a0a;">(สอดรับกับ 4.1.1)</em> → อธิบายขั้นตอนตาม PDCA<br>
+          <strong>6.2</strong> กิจกรรม/โครงการ <em style="color:#d96a0a;">(สอดรับกับ 4.1.2)</em> → อธิบายขั้นตอนตาม PDCA<br>
+          <strong>6.3</strong> กิจกรรม/โครงการ <em style="color:#d96a0a;">(สอดรับกับ 4.1.3)</em> → …<br>
+          <em style="color:#d96a0a;">⭐ หัวใจ — แต่ละ 6.x เป็น mini-PDCA สอดรับ 1:1 กับ 4.1.x</em></div>
+
+          <div class="ph bg-c">C-7</div>
+          <div class="pd"><strong>กำกับ ติดตามและนิเทศการดำเนินงาน</strong><br>
+          <em style="color:#7c3aed;">🔄 ปรับใหม่ — เดิม "รับการนิเทศ" (passive) → เปลี่ยนเป็น "กำกับ ติดตามและนิเทศ" (active)</em></div>
+
+          <div class="ph bg-c">C-8</div>
+          <div class="pd"><strong>ประเมินผลการดำเนินงาน</strong> — ครอบคลุมทั้งแผนปฏิบัติการประจำปีและแผนพัฒนาฯ</div>
+
+          <div class="ph bg-a">A-9</div>
+          <div class="pd"><strong>นำผลประเมินพัฒนาแผนปฏิบัติการปีต่อไป</strong> — วนรอบใหม่กลับขั้นที่ 1</div>
+        </div>
+
+        <h4>ก้อนที่ 2: ข้อ 3.2 — KPI ผลการดำเนินงานตามมาตรฐาน</h4>
+        <p>ตรวจว่าหน่วยงานดำเนินงานตามแผนพัฒนางานจริง โดยแยก KPI ตามแต่ละมาตรฐานที่อ้างอิงไว้ในข้อ 2.2</p>
+
+        <ul>
+          <li><strong>3.2.1</strong> — ดำเนินงานตาม PDCA 9 ขั้นตอน สอดคล้องยุทธศาสตร์มูลนิธิฯ + แผนพัฒนาโรงเรียน</li>
+          <li><strong>3.2.2</strong> — ดำเนินงานให้บรรลุเป้าหมายคุณภาพตามมาตรฐานที่อ้างอิง (ข้อ 2.2)</li>
+          <li><strong>3.2.3 เป็นต้นไป</strong> — เรียง KPI แยกตามแต่ละมาตรฐานที่อ้างอิงใน ข้อ 2.2, 3.1.3, 3.2.2</li>
+        </ul>
+
+        <div class="highlight">
+          <strong>ตัวอย่าง:</strong> งาน HR ของ ACP อ้างอิง 7 มาตรฐาน → ได้ KPI จาก SP-FSG 8 ข้อ, DP-ACP 8 ข้อ, สพฐ 2 ข้อ, ACP 1 ข้อ, FSG 1 ข้อ, สมศ 2 ข้อ, ACP-HR 1 ข้อ — รวมเป็น KPI ทั้งหมดที่หน่วยงานต้องบรรลุ
+        </div>
+
+        <p>จากนั้นตรวจรายละเอียด KPI ตามมาตรฐานแต่ละค่าย:</p>
+        <ul>
+          <li><strong>มาตรฐาน สพฐ.</strong> 3 มาตรฐาน (คุณภาพผู้เรียน, กระบวนการบริหาร, กระบวนการเรียนการสอน)</li>
+          <li><strong>มาตรฐานโรงเรียน</strong> 15 มาตรฐาน (ม.1–ม.15)</li>
+          <li><strong>มาตรฐาน FSG</strong>, <strong>สมศ.</strong>, <strong>แผนพัฒนาโรงเรียน</strong>, <strong>แผนยุทธศาสตร์มูลนิธิฯ</strong> ฯลฯ — เลือกเฉพาะที่มีในคู่มือ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 4 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn4">4</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 4 — คุณสมบัติผู้ปฏิบัติงาน (Job Spec C/K/Cp)</h3>
+        <div class="short">ใครทำ? ต้องมีสเปคอะไร? ประเมินอย่างไร?</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>4.1 คุณสมบัติผู้ปฏิบัติหน้าที่ + แผนอบรมพัฒนา</h4>
+        <p>ระบุคุณสมบัติแยกเป็น 2 ชุด:</p>
+
+        <p><strong>ขั้นพื้นฐาน (Basic):</strong></p>
+        <ul>
+          <li><strong>C(B)</strong> — คุณลักษณะพื้นฐาน (Character) เช่น C(B)01–C(B)03</li>
+          <li><strong>K(B)</strong> — ความรู้พื้นฐาน (Knowledge) เช่น K(B)01–K(B)08</li>
+          <li><strong>Cp(B)</strong> — ทักษะพื้นฐาน (Competency) เช่น Cp(B)01–Cp(B)03</li>
+        </ul>
+
+        <p><strong>เฉพาะทาง (Technical):</strong></p>
+        <ul>
+          <li><strong>K(T)</strong> — ความรู้เฉพาะทาง เช่น K(T)247</li>
+          <li><strong>Cp(T)</strong> — ทักษะเฉพาะทาง เช่น Cp(T)247</li>
+        </ul>
+
+        <div class="highlight purple">
+          <strong>จุดเชื่อม HRM + จิตตารมณ์:</strong> รหัส C/K/Cp ไม่ได้มีแค่ทักษะวิชาชีพ — ตัว C (Character) คือช่องทางที่ HRM ฉีดจิตตารมณ์ตาม MEC เข้าสู่ตัวคน เช่น จิตวิญญาณมงฟอร์ต, Inclusive Education, Quest for Excellence
+        </div>
+
+        <h4>4.2 แนวทางการประเมินบุคลากร + "หน้าที่ของฉัน"</h4>
+        <p>ใช้รหัส C/K/Cp ชุดเดียวกันเป็นเกณฑ์ประเมิน — ทำให้คนที่ทำงานรู้ว่าจะถูกวัดที่อะไร</p>
+
+        <h4>อัตรากำลัง</h4>
+        <ul>
+          <li>จำนวนบุคลากรที่<strong>ควรมี</strong> (จากวิเคราะห์ภาระงาน)</li>
+          <li>จำนวนบุคลากรที่<strong>มีจริง</strong>ในปัจจุบัน</li>
+        </ul>
+
+        <div class="swis-badge">SWIS</div>
+        <p style="font-size:13.5px; color:var(--muted);">ระบบ SWIS เก็บข้อมูล Job Spec, Workload, และผลประเมิน — ทำให้เห็นว่าสเปคคนตรงกับภาระงานหรือไม่</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 5 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn5">5</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 5 — เครื่องมือสนับสนุน (Facilities)</h3>
+        <div class="short">ใช้อะไรทำ? — Hardware / Software ที่หน่วยงานต้องมี</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <p>ระบุรายการและจำนวนเครื่องมือด้านกายภาพที่สนับสนุนการปฏิบัติหน้าที่ของหน่วยงาน ทั้ง Hardware และ Software</p>
+
+        <div class="highlight green">
+          <strong>เชื่อมกับ SWIS อัตโนมัติ:</strong> ทุกแผนงาน ทุกหน่วยงานมีการเบิกขออุปกรณ์ต่างๆ มาใช้เป็นทรัพย์สินของหน่วยงาน — ในระบบ SWIS มี<strong>ระบบบัญชีทรัพย์สิน</strong>ที่บันทึกทุกรายการเบิก-จ่าย เราจะเชื่อมโยงข้อมูลจากระบบนี้มาแสดงผลในส่วนที่ 5 โดยอัตโนมัติ ไม่ต้องกรอกซ้ำ
+        </div>
+
+        <div class="swis-badge">SWIS — ระบบบัญชีทรัพย์สิน</div>
+        <p style="font-size:13.5px; color:var(--muted);">ดึงข้อมูลทรัพย์สินที่จัดสรรให้หน่วยงานจากระบบ SWIS มาแสดงอัตโนมัติ — ลดงานซ้ำซ้อน ข้อมูลตรงกับความเป็นจริง</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ส่วนที่ 6 ===== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn6">6</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 6 — ภาคผนวก</h3>
+        <div class="short">อ้างอิงจากอะไร? — เอกสารหลัก 5 หมวด</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <table class="check-table">
+          <tr><th>หมวด</th><th>รายละเอียด</th><th>ตรวจ</th></tr>
+          <tr><td><strong>ก.</strong></td><td>ข้อมูลบริหารของฝ่าย — ทิศทาง เป้าหมาย นโยบาย แผนงาน ผังงาน กำหนดการ ตารางเวลา แบบฟอร์ม คู่มือ ขั้นตอน ระเบียบการ</td><td>☐ วาง Link แล้ว</td></tr>
+          <tr><td><strong>ข.</strong></td><td>แผนพัฒนาการจัดการศึกษาของโรงเรียน</td><td>☐ วาง Link แล้ว</td></tr>
+          <tr><td><strong>ค.</strong></td><td>แผนยุทธศาสตร์ของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td><td>☐ วาง Link แล้ว</td></tr>
+          <tr><td><strong>ง.</strong></td><td><strong>การศึกษามงฟอร์ต (Montfortian Education Charter — MEC)</strong></td><td>☐ วาง Link แล้ว</td></tr>
+          <tr><td><strong>จ.</strong></td><td>เอกสารอ้างอิงทั้งหมด (ระเบียบ คู่มือ แผนผัง ฯลฯ ของหน่วยงาน)</td><td>☐ วาง Link แล้ว</td></tr>
+        </table>
+
+        <div class="highlight">
+          <strong>สังเกต:</strong> ภาคผนวก ง. คือ MEC — ปรัชญาการศึกษามงฟอร์ต ถูกบรรจุไว้ในทุกเล่มคู่มือคุณภาพหน่วยงาน เป็นการตอกย้ำว่า MEC เป็นทั้งจุดกำเนิดและสายเลือดของทั้งระบบ
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== SUMMARY ==================== -->
+<section class="qm-section dark">
+  <div class="wrap">
+    <h2>สรุป: คู่มือคุณภาพหน่วยงาน = ตัวเชื่อมทุกอย่าง</h2>
+    <p class="intro" style="color:rgba(255,255,255,0.7);">
+      คู่มือคุณภาพหน่วยงาน 1 เล่ม ตอบครบทุกคำถามที่ระบบคุณภาพต้องการ — และเป็นเหตุผลว่าทำไมคู่มือนี้เป็น<strong style="color:#c4b5fd;"> งาน HRM</strong> เพราะบรรจุทั้งเนื้องาน สเปคคน และกระบวนการไว้ในเล่มเดียว
+    </p>
+    <table class="check-table" style="color:#fff;">
+      <tr style="background:rgba(255,255,255,0.05);">
+        <th style="color:#fff; background:rgba(255,255,255,0.1);">ส่วน</th>
+        <th style="color:#fff; background:rgba(255,255,255,0.1);">ตอบคำถาม</th>
+        <th style="color:#fff; background:rgba(255,255,255,0.1);">เชื่อมกับ</th>
+      </tr>
+      <tr><td style="color:#f87171;">1. Chain of Alignment</td><td style="color:rgba(255,255,255,0.7);">เรามาจากไหน?</td><td style="color:rgba(255,255,255,0.7);">แผนยุทธศาสตร์ → แผนพัฒนา รร.</td></tr>
+      <tr><td style="color:#fb923c;">2. KRA + เป้าหมาย</td><td style="color:rgba(255,255,255,0.7);">เราต้องทำอะไร?</td><td style="color:rgba(255,255,255,0.7);">มาตรฐานทุกค่ายที่อ้างอิง</td></tr>
+      <tr><td style="color:#60a5fa;">3. KPI (PDCA 9 + มาตรฐาน)</td><td style="color:rgba(255,255,255,0.7);">วัดผลอย่างไร?</td><td style="color:rgba(255,255,255,0.7);">PDCA 9 ขั้นตอน + ตัวชี้วัดทุกมาตรฐาน</td></tr>
+      <tr><td style="color:#c084fc;">4. Job Spec C/K/Cp</td><td style="color:rgba(255,255,255,0.7);">ใครทำ? สเปคอะไร?</td><td style="color:rgba(255,255,255,0.7);">HRM + จิตตารมณ์ MEC</td></tr>
+      <tr><td style="color:#2dd4bf;">5. Facilities</td><td style="color:rgba(255,255,255,0.7);">ใช้อะไรทำ?</td><td style="color:rgba(255,255,255,0.7);">SWIS ระบบบัญชีทรัพย์สิน (อัตโนมัติ)</td></tr>
+      <tr><td style="color:#34d399;">6. ภาคผนวก</td><td style="color:rgba(255,255,255,0.7);">อ้างอิงจากอะไร?</td><td style="color:rgba(255,255,255,0.7);">แผนยุทธศาสตร์ + MEC + เอกสารทั้งหมด</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="foot-logo" src="assets/img/logo-swisplus.png" alt="SWIS Plus">
+  <div class="brand">SWIS Plus</div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+  <p class="copy">&copy; 2025 SWIS Plus Co., Ltd. — School Web-based Information System since 2001</p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script>
+function togglePart(el) {
+  el.closest('.part-card').classList.toggle('open');
+}
+</script>
+</body>
+</html>
