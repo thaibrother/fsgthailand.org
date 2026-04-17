@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" font-family="Kanit, sans-serif">
+  <defs>
+    <filter id="es"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.1"/></filter>
+    <marker id="eArr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d96a0a"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow on left: data aggregation -->
+  <path d="M65 330 L65 60" stroke="#d96a0a" stroke-width="2.5" fill="none" marker-end="url(#eArr)"/>
+  <text x="52" y="200" text-anchor="middle" fill="#d96a0a" font-size="11" font-weight="500" transform="rotate(-90,52,200)">ข้อมูลรวมขึ้นมาอัตโนมัติ</text>
+
+  <!-- Pyramid layers (bottom to top) -->
+  <!-- Layer 1: บุคคล (widest) -->
+  <polygon points="100,330 520,330 465,255 155,255" fill="#e8f5e9" stroke="#4caf50" stroke-width="1.5" filter="url(#es)"/>
+  <text x="310" y="298" text-anchor="middle" fill="#2e7d32" font-size="16" font-weight="600">ตัวบุคคล</text>
+  <text x="310" y="318" text-anchor="middle" fill="#4caf50" font-size="11">สเปค ผลงาน จุดเด่น จุดด้อย ของแต่ละคน</text>
+
+  <!-- Layer 2: หน่วยงาน -->
+  <polygon points="155,255 465,255 410,180 210,180" fill="#e3f2fd" stroke="#2196f3" stroke-width="1.5" filter="url(#es)"/>
+  <text x="310" y="223" text-anchor="middle" fill="#1565c0" font-size="16" font-weight="600">หน่วยงาน</text>
+  <text x="310" y="243" text-anchor="middle" fill="#2196f3" font-size="11">รวมภาพ: คน + แผน + ทรัพยากร</text>
+
+  <!-- Layer 3: ฝ่าย -->
+  <polygon points="210,180 410,180 365,110 255,110" fill="#fff3e0" stroke="#f58220" stroke-width="1.5" filter="url(#es)"/>
+  <text x="310" y="152" text-anchor="middle" fill="#d96a0a" font-size="16" font-weight="600">ฝ่าย</text>
+  <text x="310" y="172" text-anchor="middle" fill="#f58220" font-size="11">เปรียบเทียบข้ามหน่วยงาน</text>
+
+  <!-- Layer 4: โรงเรียน (top) -->
+  <polygon points="255,110 365,110 340,50 280,50" fill="#1e3a5f" stroke="#1e3a5f" stroke-width="1.5" filter="url(#es)"/>
+  <text x="310" y="77" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">โรงเรียน</text>
+  <text x="310" y="97" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="11">ภาพรวมทั้งหมด</text>
+
+  <!-- Right side labels with proper spacing -->
+  <line x1="520" y1="295" x2="580" y2="295" stroke="#4caf50" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="590" y="292" fill="#2e7d32" font-size="11" font-weight="500">ขาด/เกิน</text>
+  <text x="590" y="306" fill="#4caf50" font-size="10">เด่น/ด้อย</text>
+
+  <line x1="465" y1="220" x2="580" y2="245" stroke="#2196f3" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="590" y="242" fill="#1565c0" font-size="11" font-weight="500">ขาด/เกิน</text>
+  <text x="590" y="256" fill="#2196f3" font-size="10">เด่น/ด้อย</text>
+
+  <line x1="410" y1="148" x2="580" y2="190" stroke="#f58220" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="590" y="187" fill="#d96a0a" font-size="11" font-weight="500">ขาด/เกิน</text>
+  <text x="590" y="201" fill="#f58220" font-size="10">เด่น/ด้อย</text>
+
+  <line x1="365" y1="80" x2="580" y2="135" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="590" y="132" fill="#1e3a5f" font-size="11" font-weight="500">ขาด/เกิน</text>
+  <text x="590" y="146" fill="#1e3a5f" font-size="10" opacity="0.7">เด่น/ด้อย</text>
+
+  <!-- Bottom label -->
+  <text x="310" y="375" text-anchor="middle" fill="#999" font-size="12">ผู้บริหารเห็นทุกระดับ — ตัดสินใจจากข้อมูลจริง ไม่ต้องรอรายงานสิ้นปี</text>
+
+  <!-- P-Plan badge -->
+  <rect x="170" y="395" width="280" height="32" rx="16" fill="#fff3e6" stroke="#f58220" stroke-width="1.5"/>
+  <text x="310" y="416" text-anchor="middle" fill="#d96a0a" font-size="12" font-weight="600">เน้น P (Plan) เชิงรุก — แก้ไขได้ทันที</text>
+</svg>

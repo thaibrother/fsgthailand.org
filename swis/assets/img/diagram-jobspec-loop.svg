@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 350" font-family="Kanit, sans-serif">
+  <defs>
+    <filter id="ls"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.1"/></filter>
+    <marker id="lArr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f58220"/>
+    </marker>
+    <marker id="lArrG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d9488"/>
+    </marker>
+  </defs>
+  <!-- Left: บุคลากรทำงาน -->
+  <rect x="20" y="30" width="200" height="90" rx="16" fill="#1e3a5f" filter="url(#ls)"/>
+  <text x="120" y="62" text-anchor="middle" fill="#f5a623" font-size="12" font-weight="600">บุคลากร</text>
+  <text x="120" y="85" text-anchor="middle" fill="#fff" font-size="13" font-weight="500">รู้สเปคที่ต้องมี</text>
+  <text x="120" y="106" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-size="11">ตาม Job Spec ของหน่วยงาน</text>
+  <!-- Arrow down: ผลงาน -->
+  <path d="M120 120 L120 165" stroke="#f58220" stroke-width="2.5" fill="none" marker-end="url(#lArr)"/>
+  <text x="150" y="148" fill="#f58220" font-size="10" font-weight="500">ผลงาน</text>
+  <!-- Middle: สิ่งที่ไม่สำเร็จ = ขาดสเปค -->
+  <rect x="20" y="170" width="200" height="80" rx="16" fill="#fff" stroke="#f58220" stroke-width="2" filter="url(#ls)"/>
+  <text x="120" y="200" text-anchor="middle" fill="#d96a0a" font-size="13" font-weight="600">สิ่งที่ยังไม่สำเร็จ</text>
+  <text x="120" y="222" text-anchor="middle" fill="#6b6b6b" font-size="12">= รู้ว่ายังขาดสเปคอะไร</text>
+  <!-- Arrow right: ข้อมูลไหลไป -->
+  <path d="M220 210 L310 210" stroke="#0d9488" stroke-width="2.5" fill="none" marker-end="url(#lArrG)"/>
+  <text x="265" y="200" text-anchor="middle" fill="#0d9488" font-size="10" font-weight="500">ข้อมูลไหลย้อน</text>
+  <!-- Right-top: โมดูลงานบุคลากร -->
+  <rect x="315" y="160" width="200" height="100" rx="16" fill="#0d9488" filter="url(#ls)"/>
+  <text x="415" y="192" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">โมดูลงานบุคลากร</text>
+  <text x="415" y="214" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">วิเคราะห์สเปคที่ขาด</text>
+  <text x="415" y="234" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">รายบุคคล + รายหน่วยงาน</text>
+  <!-- Arrow right: จัดทำหลักสูตร -->
+  <path d="M515 210 L570 210" stroke="#0d9488" stroke-width="2.5" fill="none" marker-end="url(#lArrG)"/>
+  <!-- Right-bottom: แผนอบรม -->
+  <rect x="575" y="155" width="160" height="110" rx="16" fill="#7c3aed" filter="url(#ls)"/>
+  <text x="655" y="185" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">หลักสูตร +</text>
+  <text x="655" y="207" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">แผนอบรม</text>
+  <text x="655" y="232" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11">ตรงจุด ตรงคน</text>
+  <text x="655" y="250" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11">ตรงหน่วยงาน</text>
+  <!-- Arrow loop back up -->
+  <path d="M655 155 L655 50 L220 50" stroke="#7c3aed" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#lArrP)"/>
+  <defs><marker id="lArrP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/></marker></defs>
+  <text x="440" y="40" text-anchor="middle" fill="#7c3aed" font-size="10" font-weight="500">พัฒนาสเปคที่ขาด → กลับไปทำงานได้ดีขึ้น</text>
+  <!-- Bottom: ตัดอบรมเหมารวม -->
+  <rect x="200" y="295" width="350" height="45" rx="12" fill="#fff3e6" stroke="#f58220" stroke-width="1.5"/>
+  <text x="375" y="323" text-anchor="middle" fill="#d96a0a" font-size="13" font-weight="600">✕ ตัดระบบอบรมแบบเหมารวมที่เน้นเอาชั่วโมง</text>
+</svg>

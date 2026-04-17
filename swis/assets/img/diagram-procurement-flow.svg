@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" font-family="Kanit, sans-serif">
+  <defs>
+    <linearGradient id="fOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f58220"/>
+      <stop offset="100%" stop-color="#d96a0a"/>
+    </linearGradient>
+    <filter id="fs"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.1"/></filter>
+    <marker id="fArr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f58220"/>
+    </marker>
+  </defs>
+  <!-- Box 1: แผนงาน -->
+  <rect x="10" y="35" width="140" height="80" rx="14" fill="#1e3a5f" filter="url(#fs)"/>
+  <text x="80" y="68" text-anchor="middle" fill="#f5a623" font-size="11" font-weight="600">PDCA</text>
+  <text x="80" y="90" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">แผนงาน</text>
+  <!-- Arrow -->
+  <path d="M155 75 L185 75" stroke="#f58220" stroke-width="2.5" fill="none" marker-end="url(#fArr)"/>
+  <!-- Box 2: งบประมาณ -->
+  <rect x="190" y="35" width="140" height="80" rx="14" fill="url(#fOrange)" filter="url(#fs)"/>
+  <text x="260" y="68" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">มีฐานคำนวณ</text>
+  <text x="260" y="90" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">งบประมาณ</text>
+  <!-- Arrow -->
+  <path d="M335 75 L365 75" stroke="#f58220" stroke-width="2.5" fill="none" marker-end="url(#fArr)"/>
+  <!-- Box 3: จัดซื้อจัดจ้าง -->
+  <rect x="370" y="35" width="140" height="80" rx="14" fill="#0d9488" filter="url(#fs)"/>
+  <text x="440" y="68" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">โมดูลจัดซื้อ</text>
+  <text x="440" y="90" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">จัดซื้อจัดจ้าง</text>
+  <!-- Arrow -->
+  <path d="M515 75 L545 75" stroke="#f58220" stroke-width="2.5" fill="none" marker-end="url(#fArr)"/>
+  <!-- Box 4: พัสดุครุภัณฑ์ -->
+  <rect x="550" y="35" width="140" height="80" rx="14" fill="#0d9488" filter="url(#fs)"/>
+  <text x="620" y="68" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">โมดูลพัสดุ</text>
+  <text x="620" y="90" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">พัสดุครุภัณฑ์</text>
+  <!-- Arrow -->
+  <path d="M695 75 L725 75" stroke="#f58220" stroke-width="2.5" fill="none" marker-end="url(#fArr)"/>
+  <!-- Box 5: ทะเบียนทรัพย์สิน -->
+  <rect x="730" y="35" width="150" height="80" rx="14" fill="#7c3aed" filter="url(#fs)"/>
+  <text x="805" y="65" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">อัตโนมัติ</text>
+  <text x="805" y="85" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">ทะเบียน</text>
+  <text x="805" y="103" text-anchor="middle" fill="#fff" font-size="13" font-weight="600">ทรัพย์สิน</text>
+  <!-- Bottom label -->
+  <text x="450" y="148" text-anchor="middle" fill="#999" font-size="11">ครบวงจร — ไม่ต้องบันทึกซ้ำ ไม่ตกหล่น</text>
+</svg>
