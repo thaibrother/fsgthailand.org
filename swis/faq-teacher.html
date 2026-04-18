@@ -554,7 +554,7 @@ document.addEventListener('click', e => {
 
 function doSearch() {
   const raw = searchBox.value.trim();
-  if (!raw) {
+  if (!raw && activeDept === 'all') {
     results.style.display = 'none';
     stage.classList.remove('has-results');
     hintChips.style.display = 'flex';
@@ -562,11 +562,16 @@ function doSearch() {
   }
   hintChips.style.display = 'none';
   stage.classList.add('has-results');
-  const terms = norm(raw).split(/\s+/).filter(t=>t);
-  let matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+  let matches;
+  if (raw) {
+    const terms = norm(raw).split(/\s+/).filter(t=>t);
+    matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+  } else {
+    matches = faqNorm.slice();
+  }
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
   if (matches.length === 0) {
-    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์สำหรับ "' + raw + '"</p><p style="font-size:13px;margin-top:8px">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่</p></div>';
+    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์' + (raw ? 'สำหรับ "' + raw + '"' : '') + '</p><p style="font-size:13px;margin-top:8px">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่</p></div>';
     results.style.display = 'block';
     return;
   }
