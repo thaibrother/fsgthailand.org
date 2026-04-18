@@ -69,16 +69,16 @@ body{font-family:'Kanit',sans-serif;background:var(--bg);color:var(--text);min-h
     <a href="faq-admin.html" class="other-link">ผู้บริหาร</a>
     <a href="faq-teacher.html" class="other-link">ครู</a>
   </div>
-  <span class="stat">36 รายงาน | 15 หมวด</span>
+  <span class="stat">54 รายงาน | 25 หมวด</span>
 </div>
 <div class="center-stage" id="stage">
   <div class="search-brand">
     <div class="icon">👨‍👩‍👧</div>
     <h1>ศูนย์ข้อมูลสำหรับผู้ปกครอง</h1>
-    <p>ข้อมูลโรงเรียนทุกด้าน — สมัครเรียน ค่าเทอม หลักสูตร กิจกรรม ปฏิทิน — 36 รายการ</p>
+    <p>ข้อมูลโรงเรียนทุกด้าน — สมัครเรียน ค่าเทอม หลักสูตร กิจกรรม ปฏิทิน กลุ่มสาระ — 54 รายการ</p>
   </div>
   <div class="search-wrap">
-    <input type="text" class="search-box" id="searchBox" placeholder="ค้นหา เช่น ค่าเทอม, สมัครเรียน, ปฏิทิน, กิจกรรม, SWIS ดูเกรด..." autocomplete="off">
+    <input type="text" class="search-box" id="searchBox" placeholder="ค้นหา เช่น ค่าเทอม, สมัครเรียน, คณิตศาสตร์, วิทยาศาสตร์, ดนตรี..." autocomplete="off">
     <div class="autocomplete" id="autocomplete"></div>
   </div>
   <div class="dept-filter" id="deptFilter">
@@ -91,33 +91,46 @@ body{font-family:'Kanit',sans-serif;background:var(--bg);color:var(--text);min-h
     <button class="dept-btn" data-dept="กิจการนักเรียน">🎭 กิจการนักเรียน (4)</button>
     <button class="dept-btn" data-dept="กีฬา">⚽ กีฬา (2)</button>
     <button class="dept-btn" data-dept="แนะแนว">🧭 แนะแนว (2)</button>
-    <button class="dept-btn" data-dept="ปกครอง">📏 ปกครอง (2)</button>
+    <button class="dept-btn" data-dept="ปกครอง">📋 ปกครอง (2)</button>
     <button class="dept-btn" data-dept="สุขภาพ">❤️ สุขภาพ (2)</button>
-    <button class="dept-btn" data-dept="ทะเบียน">📋 ทะเบียน (2)</button>
+    <button class="dept-btn" data-dept="ทะเบียน">📄 ทะเบียน (2)</button>
     <button class="dept-btn" data-dept="ระบบ SWIS">💻 ระบบ SWIS (3)</button>
     <button class="dept-btn" data-dept="การสื่อสาร">📢 การสื่อสาร (2)</button>
     <button class="dept-btn" data-dept="สถานที่">🏫 สถานที่ (2)</button>
-    <button class="dept-btn" data-dept="After School">🌅 After School (1)</button>
+    <button class="dept-btn" data-dept="After School">🎒 After School (1)</button>
+    <button class="dept-btn" data-dept="กลุ่มสาระการเรียนรู้">📖 กลุ่มสาระการเรียนรู้ (8)</button>
+    <button class="dept-btn" data-dept="ดนตรีและศิลปะการแสดง">🎵 ดนตรีและศิลปะการแสดง (2)</button>
+    <button class="dept-btn" data-dept="ห้องสมุด">📚 ห้องสมุด (1)</button>
+    <button class="dept-btn" data-dept="ปฐมวัย">👶 ปฐมวัย (1)</button>
+    <button class="dept-btn" data-dept="นักเรียนประจำ">🏠 นักเรียนประจำ (1)</button>
+    <button class="dept-btn" data-dept="สภานักเรียน">🗳️ สภานักเรียน (1)</button>
+    <button class="dept-btn" data-dept="ความปลอดภัย">🛡️ ความปลอดภัย (1)</button>
+    <button class="dept-btn" data-dept="อภิบาล">✝️ อภิบาล (1)</button>
+    <button class="dept-btn" data-dept="ร้านค้าโรงเรียน">🛒 ร้านค้าโรงเรียน (1)</button>
+    <button class="dept-btn" data-dept="โครงการพิเศษ">⭐ โครงการพิเศษ (1)</button>
   </div>
   <div class="hint-chips" id="hintChips">
-    <button class="hint-chip">สมัครเรียน เอกสาร</button>
-    <button class="hint-chip">ค่าเทอม ช่องทาง</button>
-    <button class="hint-chip">หลักสูตร EP MEP</button>
-    <button class="hint-chip">ปฏิทิน เปิดเทอม</button>
-    <button class="hint-chip">ตารางสอบ</button>
-    <button class="hint-chip">กิจกรรมวิชาการ</button>
-    <button class="hint-chip">วันเด็ก วันแม่ วันพ่อ</button>
-    <button class="hint-chip">กีฬาสี</button>
-    <button class="hint-chip">แนะแนว ทุน</button>
-    <button class="hint-chip">ระเบียบ เครื่องแบบ</button>
-    <button class="hint-chip">ห้องพยาบาล</button>
-    <button class="hint-chip">SWIS ดูเกรด</button>
-    <button class="hint-chip">ติดต่อโรงเรียน</button>
-    <button class="hint-chip">รถรับส่ง</button>
-    <button class="hint-chip">After School</button>
-    <button class="hint-chip">Transcript ใบรับรอง</button>
-    <button class="hint-chip">ซัมเมอร์</button>
-    <button class="hint-chip">มงฟอร์ตศึกษา</button>
+    <span class="hint-chip">สมัครเรียน เอกสาร</span>
+    <span class="hint-chip">ค่าเทอม ช่องทาง</span>
+    <span class="hint-chip">หลักสูตร EP MEP</span>
+    <span class="hint-chip">ปฏิทิน เปิดเทอม</span>
+    <span class="hint-chip">ตารางสอบ</span>
+    <span class="hint-chip">กิจกรรมวิชาการ</span>
+    <span class="hint-chip">วันเด็ก วันแม่ วันพ่อ</span>
+    <span class="hint-chip">กีฬาสี</span>
+    <span class="hint-chip">แนะแนว ทุน</span>
+    <span class="hint-chip">ระเบียบ เครื่องแบบ</span>
+    <span class="hint-chip">ห้องพยาบาล</span>
+    <span class="hint-chip">ระบบ SWIS ดูเกรด</span>
+    <span class="hint-chip">ติดต่อโรงเรียน</span>
+    <span class="hint-chip">After School</span>
+    <span class="hint-chip">Transcript ใบรับรอง</span>
+    <span class="hint-chip">ภาษาไทย คณิต วิทย์</span>
+    <span class="hint-chip">ดนตรี วงโยฯ</span>
+    <span class="hint-chip">อนุบาล ปฐมวัย</span>
+    <span class="hint-chip">หอพัก นักเรียนประจำ</span>
+    <span class="hint-chip">มงฟอร์ต ศึกษา</span>
+    <span class="hint-chip">ซัมเมอร์</span>
   </div>
   <div class="results" id="results"></div>
 </div>
@@ -230,17 +243,67 @@ const FAQ = [
     tags:"สถานที่ รถรับส่ง bus school bus เส้นทาง สาย ค่ารถ จุดรับ จุดส่ง" },
   { cat:"After School", q:"โครงการ After School กำหนดการรับสมัคร และค่าใช้จ่ายมีรายละเอียดอย่างไร?",
     a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดโครงการ_After_School_ทั้งหมด_กำหนดการ_และค่าใช้จ่าย\">📊 รายละเอียดโครงการ After School ทั้งหมด กำหนดการ และค่าใช้จ่าย</a>",
-    tags:"After School หลังเลิกเรียน เสริม กิจกรรม club ชมรม เรียนเสริม สมัคร เปิดรับ กำหนด deadline ลงชื่อ เทอม 1 เทอม 2 มิ.ย. ค่าใช้จ่าย ค่าเรียน ราคา fee" }
+    tags:"After School หลังเลิกเรียน เสริม กิจกรรม club ชมรม เรียนเสริม สมัคร เปิดรับ กำหนด deadline ลงชื่อ เทอม 1 เทอม 2 มิ.ย. ค่าใช้จ่าย ค่าเรียน ราคา fee" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้ภาษาไทย สอนอะไรบ้าง มีกิจกรรมและการแข่งขันอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้ภาษาไทย\">📊 รายละเอียดกลุ่มสาระการเรียนรู้ภาษาไทย</a>",
+    tags:"กลุ่มสาระ ภาษาไทย Thai วิชาไทย อ่าน เขียน หลักภาษา วรรณคดี สุนทรภู่ กลอน ร้อยกรอง เรียงความ คัดลายมือ แข่งขัน ทักษะภาษา" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้คณิตศาสตร์ สอนอะไรบ้าง มีกิจกรรมและการแข่งขันอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้คณิตศาสตร์\">📊 รายละเอียดกลุ่มสาระการเรียนรู้คณิตศาสตร์</a>",
+    tags:"กลุ่มสาระ คณิตศาสตร์ math เลข คำนวณ พีชคณิต เรขาคณิต สถิติ แข่งขัน โอลิมปิก olympiad STEM" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี สอนอะไรบ้าง มีกิจกรรมและการแข่งขันอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี\">📊 รายละเอียดกลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</a>",
+    tags:"กลุ่มสาระ วิทยาศาสตร์ เทคโนโลยี science technology ฟิสิกส์ เคมี ชีววิทยา ห้องแล็บ ทดลอง โครงงาน STEM robot coding แข่งขัน" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้สังคมศึกษา ศาสนาและวัฒนธรรม สอนอะไรบ้าง มีกิจกรรมอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้สังคมศึกษา_ศาสนาและวัฒนธรรม\">📊 รายละเอียดกลุ่มสาระการเรียนรู้สังคมศึกษา ศาสนาและวัฒนธรรม</a>",
+    tags:"กลุ่มสาระ สังคม ศาสนา วัฒนธรรม social studies ประวัติศาสตร์ ภูมิศาสตร์ เศรษฐศาสตร์ หน้าที่พลเมือง พุทธ คริสต์" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้ภาษาต่างประเทศ สอนอะไรบ้าง มีกิจกรรมและการแข่งขันอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้ภาษาต่างประเทศ\">📊 รายละเอียดกลุ่มสาระการเรียนรู้ภาษาต่างประเทศ</a>",
+    tags:"กลุ่มสาระ ภาษาต่างประเทศ อังกฤษ English foreign language ฝรั่งเศส จีน ญี่ปุ่น สนทนา grammar spelling bee แข่งขัน" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้ศิลปะ สอนอะไรบ้าง มีกิจกรรมและการแข่งขันอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้ศิลปะ\">📊 รายละเอียดกลุ่มสาระการเรียนรู้ศิลปะ</a>",
+    tags:"กลุ่มสาระ ศิลปะ art วาดรูป ปั้น ทัศนศิลป์ ออกแบบ นิทรรศการ แข่งขัน ประกวด" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้สุขศึกษาและพลศึกษา สอนอะไรบ้าง มีกิจกรรมกีฬาอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้สุขศึกษาและพลศึกษา\">📊 รายละเอียดกลุ่มสาระการเรียนรู้สุขศึกษาและพลศึกษา</a>",
+    tags:"กลุ่มสาระ สุขศึกษา พลศึกษา health PE physical education กีฬา ออกกำลังกาย สุขภาพ สมรรถภาพ ว่ายน้ำ" },
+  { cat:"กลุ่มสาระการเรียนรู้", q:"กลุ่มสาระการเรียนรู้การงานอาชีพ สอนอะไรบ้าง มีกิจกรรมอะไร มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดกลุ่มสาระการเรียนรู้การงานอาชีพ\">📊 รายละเอียดกลุ่มสาระการเรียนรู้การงานอาชีพ</a>",
+    tags:"กลุ่มสาระ การงานอาชีพ vocational คอมพิวเตอร์ งานบ้าน งานช่าง เกษตร คหกรรม ทักษะชีวิต อาชีพ" },
+  { cat:"ดนตรีและศิลปะการแสดง", q:"วงดนตรีสากล วงดนตรีไทย และวงโยธวาฑิตมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดวงดนตรีสากล_ดนตรีไทย_และวงโยธวาฑิต\">📊 รายละเอียดวงดนตรีสากล ดนตรีไทย และวงโยธวาฑิต</a>",
+    tags:"ดนตรี สากล ไทย โยธวาฑิต band orchestra marching วงดนตรี เครื่องดนตรี ฝึกซ้อม คอนเสิร์ต แข่งขัน" },
+  { cat:"ดนตรีและศิลปะการแสดง", q:"วงประสานเสียง นาฏศิลป์ (รำไทย) และศูนย์ดนตรี มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดวงประสานเสียง_นาฏศิลป์_และศูนย์ดนตรี\">📊 รายละเอียดวงประสานเสียง นาฏศิลป์ และศูนย์ดนตรี</a>",
+    tags:"ประสานเสียง choir รำไทย นาฏศิลป์ dance ศูนย์ดนตรี music center เรียนดนตรี สมัคร ค่าเรียน" },
+  { cat:"ห้องสมุด", q:"ห้องสมุดโรงเรียน บริการยืม-คืน และกิจกรรมส่งเสริมการอ่านมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดห้องสมุด_บริการยืม-คืน_และกิจกรรมส่งเสริมการอ่าน\">📊 รายละเอียดห้องสมุด บริการยืม-คืน และกิจกรรมส่งเสริมการอ่าน</a>",
+    tags:"ห้องสมุด library หนังสือ ยืม คืน อ่าน สัปดาห์หนังสือ book บริการ เปิด ปิด เวลา" },
+  { cat:"ปฐมวัย", q:"หลักสูตรปฐมวัย (อนุบาล) การจัดการเรียนการสอน และกิจกรรมพัฒนาผู้เรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดหลักสูตรปฐมวัย_การจัดการเรียนการสอน_และกิจกรรม\">📊 รายละเอียดหลักสูตรปฐมวัย การจัดการเรียนการสอน และกิจกรรม</a>",
+    tags:"ปฐมวัย อนุบาล kindergarten เตรียมอนุบาล nursery เล็ก กลาง ใหญ่ พัฒนาการ เรียนรู้ เล่น" },
+  { cat:"นักเรียนประจำ", q:"ระบบนักเรียนประจำ หอพัก ค่าใช้จ่าย และกฎระเบียบมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดระบบนักเรียนประจำ_หอพัก_และกฎระเบียบ\">📊 รายละเอียดระบบนักเรียนประจำ หอพัก และกฎระเบียบ</a>",
+    tags:"นักเรียนประจำ หอพัก boarding dormitory ค่าหอ ค่าประจำ สมัครประจำ กฎ ระเบียบ หอพักชาย ACS ACN" },
+  { cat:"สภานักเรียน", q:"สภานักเรียนและกิจกรรมส่งเสริมประชาธิปไตยในโรงเรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดสภานักเรียนและกิจกรรมส่งเสริมประชาธิปไตย\">📊 รายละเอียดสภานักเรียนและกิจกรรมส่งเสริมประชาธิปไตย</a>",
+    tags:"สภานักเรียน ประชาธิปไตย student council เลือกตั้ง ประธาน กรรมการ ผู้นำ democracy" },
+  { cat:"ความปลอดภัย", q:"ระบบดูแลความปลอดภัย การเฝ้าระวังภัยคุกคาม และการป้องกันอุบัติเหตุมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดระบบความปลอดภัย_การเฝ้าระวัง_และการป้องกันภัยคุกคาม\">📊 รายละเอียดระบบความปลอดภัย การเฝ้าระวัง และการป้องกันภัยคุกคาม</a>",
+    tags:"ความปลอดภัย เฝ้าระวัง ป้องกัน ภัยคุกคาม safety security CCTV กล้องวงจรปิด อุบัติเหตุ บูลลี่ bully ยาเสพติด" },
+  { cat:"อภิบาล", q:"งานอภิบาล จิตตารมณ์นักบุญมงฟอร์ต และกิจกรรมคุณธรรมจริยธรรมมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดงานอภิบาล_จิตตารมณ์มงฟอร์ต_และกิจกรรมคุณธรรม\">📊 รายละเอียดงานอภิบาล จิตตารมณ์มงฟอร์ต และกิจกรรมคุณธรรม</a>",
+    tags:"อภิบาล pastoral จิตตารมณ์ มงฟอร์ต Montfort คุณธรรม จริยธรรม ศาสนา มิสซา สวดมนต์ จิตวิญญาณ" },
+  { cat:"ร้านค้าโรงเรียน", q:"ร้านค้าโรงเรียน การจำหน่ายเครื่องแบบ อุปกรณ์การเรียน และหนังสือเรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดร้านค้า_เครื่องแบบ_อุปกรณ์_และหนังสือเรียน\">📊 รายละเอียดร้านค้า เครื่องแบบ อุปกรณ์ และหนังสือเรียน</a>",
+    tags:"ร้านค้า ขาย เครื่องแบบ ชุดนักเรียน หนังสือ อุปกรณ์ สมุด ปากกา school shop uniform" },
+  { cat:"โครงการพิเศษ", q:"โครงการพิเศษ (CEP/SMART TECH/MTE/ภาษาจีน) มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดโครงการพิเศษ_CEP_SMART_TECH_MTE_และภาษาจีน\">📊 รายละเอียดโครงการพิเศษ CEP SMART TECH MTE และภาษาจีน</a>",
+    tags:"โครงการพิเศษ CEP SMART TECH MTE ภาษาจีน Chinese special program เสริม enrichment" }
 ];
 
 function norm(s) {
-  return s.replace(/ฯ/g,'').replace(/\./g,'').toLowerCase().trim();
+  return s.replace(/[ฯ.]/g,'').toLowerCase();
 }
-
-const faqNorm = FAQ.map(f => ({
-  ...f,
-  _s: norm(f.q + ' ' + f.tags)
-}));
+const faqNorm = FAQ.map(f => ({ ...f, _s: norm(f.cat + ' ' + f.q + ' ' + f.tags) }));
 
 const searchBox = document.getElementById('searchBox');
 const ac = document.getElementById('autocomplete');
@@ -270,9 +333,13 @@ searchBox.addEventListener('input', () => {
   const raw = searchBox.value.trim();
   if (!raw) {
     ac.style.display = 'none';
-    results.style.display = 'none';
-    stage.classList.remove('has-results');
-    hintChips.style.display = 'flex';
+    if (activeDept === 'all') {
+      results.style.display = 'none';
+      stage.classList.remove('has-results');
+      hintChips.style.display = 'flex';
+    } else {
+      doSearch();
+    }
     return;
   }
   const terms = norm(raw).split(/\s+/).filter(t=>t);
