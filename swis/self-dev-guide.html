@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แนะนำการเขียนคู่มือพัฒนาตนเอง — SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* ===== SELF-DEV GUIDE ===== */
+.sdg-hero {
+  position: relative;
+  min-height: 45vh;
+  padding: calc(var(--nav-h) + 60px) 24px 60px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0e1e3a 50%, #16213e 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff;
+  overflow: hidden;
+}
+.sdg-hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(230,81,0,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(230,81,0,0.08) 0%, transparent 50%);
+}
+.sdg-hero .inner { position: relative; max-width: 800px; }
+.sdg-hero h1 {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 800; line-height: 1.2;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #ffcc80 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sdg-hero .sub {
+  font-size: clamp(14px, 2vw, 18px);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300; line-height: 1.6;
+}
+
+/* Content */
+.sdg-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* Back link */
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-bottom: 32px;
+  font-size: 15px; font-weight: 500;
+  color: var(--orange);
+  text-decoration: none;
+}
+.back-link:hover { gap: 10px; }
+
+/* Intro */
+.sdg-intro {
+  font-size: 16px; color: #555;
+  line-height: 1.9;
+  margin-bottom: 48px;
+  padding: 28px 32px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  border-left: 4px solid #e65100;
+}
+
+/* Chain position indicator */
+.chain-position {
+  display: flex; align-items: center;
+  gap: 0; margin: 24px 0 40px;
+  flex-wrap: wrap;
+}
+.cp-item {
+  padding: 10px 18px;
+  font-size: 13px; font-weight: 500;
+  color: #fff;
+  border-radius: 8px;
+  position: relative;
+  white-space: nowrap;
+}
+.cp-item::after {
+  content: "→";
+  margin-left: 12px; margin-right: 4px;
+  font-size: 14px; opacity: 0.6;
+}
+.cp-item:last-child::after { display: none; }
+.cp-item.dim { background: #90a4ae; }
+.cp-item.here { background: #e65100; font-weight: 700; box-shadow: 0 4px 16px rgba(230,81,0,0.3); }
+.cp-item.after { background: #37474f; }
+
+/* Part cards */
+.part-card {
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid #e0e0e0;
+  transition: border-color 0.2s;
+}
+.part-card:hover { border-color: #ccc; }
+
+.part-header {
+  display: flex; align-items: center; gap: 20px;
+  padding: 24px 28px;
+  cursor: pointer;
+  user-select: none;
+  background: #fff;
+  transition: background 0.2s;
+}
+.part-header:hover { background: #fafafa; }
+
+.part-num {
+  width: 48px; height: 48px; min-width: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800; color: #fff;
+}
+.pn1 { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.pn2 { background: linear-gradient(135deg, #00695c, #004d40); }
+.pn3 { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
+.pn4 { background: linear-gradient(135deg, #e65100, #bf360c); }
+.pn5 { background: linear-gradient(135deg, #c62828, #b71c1c); }
+.pn6 { background: linear-gradient(135deg, #37474f, #263238); }
+.pnA { background: linear-gradient(135deg, #546e7a, #455a64); }
+
+.part-title { flex: 1; }
+.part-title h3 {
+  font-size: 18px; font-weight: 700;
+  color: #222; margin: 0 0 4px;
+}
+.part-title .short {
+  font-size: 14px; color: #888;
+  font-weight: 400;
+}
+
+.part-toggle {
+  font-size: 18px; color: #aaa;
+  transition: transform 0.3s;
+}
+.part-card.open .part-toggle { transform: rotate(180deg); }
+
+.part-body {
+  display: none;
+  border-top: 1px solid #eee;
+}
+.part-card.open .part-body { display: block; }
+
+.part-content {
+  padding: 28px 32px;
+  font-size: 15px; color: #444;
+  line-height: 1.9;
+}
+.part-content h4 {
+  font-size: 16px; font-weight: 700;
+  color: #222;
+  margin: 24px 0 8px;
+}
+.part-content h4:first-child { margin-top: 0; }
+.part-content p { margin: 0 0 12px; }
+
+/* Highlight boxes */
+.highlight {
+  padding: 20px 24px;
+  border-radius: 12px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.highlight.blue { background: #f0f4ff; border-left: 4px solid #1565c0; }
+.highlight.green { background: #f0faf4; border-left: 4px solid #00695c; }
+.highlight.purple { background: #f5f0ff; border-left: 4px solid #6a1b9a; }
+.highlight.orange { background: #fff8f0; border-left: 4px solid #e65100; }
+.highlight.red { background: #fff5f5; border-left: 4px solid #c62828; }
+.highlight.gray { background: #f5f5f5; border-left: 4px solid #546e7a; }
+
+/* Spec layers */
+.spec-layers {
+  display: flex; flex-direction: column;
+  gap: 10px; margin: 20px 0;
+}
+.spec-layer {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: #fff;
+}
+.spec-layer .sl-codes {
+  font-weight: 700; font-size: 14px;
+  min-width: 140px;
+}
+.spec-layer .sl-desc {
+  font-size: 14px; font-weight: 400;
+  opacity: 0.9;
+}
+.sl-base { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.sl-head { background: linear-gradient(135deg, #00695c, #004d40); }
+.sl-teach { background: linear-gradient(135deg, #6a1b9a, #4a148c); }
+.sl-spec { background: linear-gradient(135deg, #e65100, #bf360c); }
+
+/* CKCp example table */
+.ckcp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.ckcp-table th {
+  padding: 10px 14px;
+  background: #6a1b9a;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+}
+.ckcp-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+.ckcp-table tr:last-child td { border-bottom: none; }
+.ckcp-table .code { font-weight: 700; color: #6a1b9a; white-space: nowrap; }
+
+/* Training channels */
+.train-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.train-ch {
+  padding: 24px;
+  border-radius: 14px;
+  border: 1.5px solid #e0e0e0;
+}
+.train-ch .ch-icon { font-size: 28px; margin-bottom: 8px; }
+.train-ch h5 {
+  font-size: 15px; font-weight: 700;
+  margin: 0 0 8px; color: #222;
+}
+.train-ch p {
+  font-size: 14px; color: #666;
+  line-height: 1.7; margin: 0;
+}
+.ch-central { border-color: #bbdefb; background: #f5f9ff; }
+.ch-central h5 { color: #1565c0; }
+.ch-group { border-color: #c8e6c9; background: #f5fff7; }
+.ch-group h5 { color: #00695c; }
+.ch-self { border-color: #ffe0b2; background: #fffaf0; }
+.ch-self h5 { color: #e65100; }
+
+/* Eval framework */
+.eval-bars {
+  margin: 16px 0;
+}
+.eval-bar {
+  display: flex; align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.eval-bar .bar-label {
+  min-width: 160px;
+  font-weight: 500; color: #333;
+}
+.eval-bar .bar-fill {
+  height: 28px;
+  border-radius: 6px;
+  display: flex; align-items: center;
+  padding: 0 14px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Numbered guide list */
+.guide-list {
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: gl;
+}
+.guide-list li {
+  counter-increment: gl;
+  position: relative;
+  padding: 14px 16px 14px 52px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+.guide-list li::before {
+  content: counter(gl);
+  position: absolute;
+  left: 14px; top: 14px;
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  background: #e65100;
+  color: #fff;
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.guide-list li strong { color: #222; }
+
+/* Appendix list */
+.appendix-list {
+  margin: 16px 0; padding: 0; list-style: none;
+}
+.appendix-list li {
+  padding: 12px 16px;
+  margin-bottom: 6px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 14px; color: #555;
+  border-left: 3px solid #546e7a;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .sdg-content { padding: 40px 16px; }
+  .part-header { gap: 14px; padding: 18px 20px; }
+  .part-num { width: 40px; height: 40px; min-width: 40px; font-size: 18px; }
+  .part-title h3 { font-size: 16px; }
+  .part-content { padding: 20px; }
+  .chain-position { gap: 4px; }
+  .cp-item { font-size: 11px; padding: 8px 10px; }
+  .train-channels { grid-template-columns: 1fr; }
+  .spec-layer { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .spec-layer .sl-codes { min-width: auto; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <span class="logo"><img src="assets/img/logo-swisplus.png" alt="SWIS Plus logo"></span>
+    <span>SWIS Plus</span>
+  </a>
+  <span class="burger">☰</span>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="present.html">สารบัญนำเสนอ</a>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="sdg-hero">
+  <div class="inner">
+    <h1>แนะนำการเขียน<br>คู่มือพัฒนาตนเอง</h1>
+    <p class="sub">หลักการและแนวทางการจัดทำคู่มือพัฒนาตนเองสำหรับครูและบุคลากรทุกตำแหน่ง<br>— จิ๊กซอว์ตัวสุดท้ายก่อนระบบ SWIS</p>
+  </div>
+</section>
+
+<!-- ==================== CONTENT ==================== -->
+<div class="sdg-content">
+
+  <a href="present.html" class="back-link">← กลับสารบัญนำเสนอ</a>
+
+  <div class="sdg-intro">
+    คู่มือพัฒนาตนเอง <strong>ไม่ใช่เอกสารที่ต้องนั่งพิมพ์ขึ้นมาใหม่ทั้งหมด</strong> เพราะข้อมูลส่วนใหญ่ถูกกำหนดไว้แล้วในระบบ — คู่มือคุณภาพหน่วยงานอยู่ในระบบ SWIS ของแต่ละหน่วย รหัสสเปค C/K/Cp ถูกรวบรวมไว้ที่ส่วนกลางงาน HRD มูลนิธิฯ ระบบ SWIS สามารถดึงข้อมูลเหล่านี้มาแสดงในแดชบอร์ดของแต่ละคนได้โดยอัตโนมัติ สิ่งที่ต้องทำคือ <strong>เข้าใจหลักการ</strong> ของแต่ละส่วน เพื่อให้รู้ว่าข้อมูลที่เห็นมาจากไหนและเชื่อมโยงกันอย่างไร
+  </div>
+
+  <!-- ตำแหน่งใน Chain -->
+  <div class="chain-position">
+    <div class="cp-item dim">แผนยุทธศาสตร์มูลนิธิฯ</div>
+    <div class="cp-item dim">คู่มือบริหารคุณภาพโรงเรียน</div>
+    <div class="cp-item dim">คู่มือคุณภาพหน่วยงาน</div>
+    <div class="cp-item here">คู่มือพัฒนาตนเอง</div>
+    <div class="cp-item after">SWIS</div>
+  </div>
+
+  <!-- ========== ส่วนที่ 1 ========== -->
+  <div class="part-card open">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn1">1</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 1 — ความเข้าใจบริบท</h3>
+        <div class="short">ฉันอยู่ตรงไหนในภาพรวม</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนเข้าใจว่างานของตนเองเชื่อมโยงกับภาพใหญ่อย่างไร — ไม่ใช่แค่ทำตามสั่ง แต่รู้ว่าทำไปเพื่ออะไร</p>
+
+        <h4>หลักการเขียน</h4>
+        <p>ไม่ต้องคัดลอกเอกสารทั้งเล่ม ให้สรุปความเข้าใจเฉพาะประเด็นที่เกี่ยวข้องกับหน้าที่ของตนเอง โดยครอบคลุม 3 เรื่อง:</p>
+
+        <ol class="guide-list">
+          <li><strong>การศึกษามงฟอร์ต (MEC)</strong> — สรุปหลักการที่เกี่ยวข้องกับงานของตน เช่น ครูผู้สอนอาจเน้น Best Interests of Child และ Quest for Excellence ส่วนงานอภิบาลอาจเน้น Spiritual Vision และ Community of Life</li>
+          <li><strong>แผนยุทธศาสตร์มูลนิธิฯ</strong> — ระบุว่างานของตนสนับสนุนยุทธศาสตร์ที่เท่าไหร่ เป้าประสงค์ข้อใด เช่น "งานสารสนเทศสนับสนุนยุทธศาสตร์ที่ 3 เป้าประสงค์ 3.3"</li>
+          <li><strong>เป้าหมายและนโยบายของโรงเรียน</strong> — จากแผนพัฒนาการจัดการศึกษาของโรงเรียน ระบุเป้าหมายที่เกี่ยวข้องกับหน่วยงานของตน</li>
+        </ol>
+
+        <div class="highlight blue">
+          <strong>ตัวอย่าง:</strong> ครูกลุ่มสาระวิทยาศาสตร์ อาจเขียนว่า "งานของฉันสนับสนุนยุทธศาสตร์ที่ 2 ด้านการศึกษาคุณภาพแบบองค์รวม ตามเป้าหมายของโรงเรียนที่ต้องการยกระดับผลสัมฤทธิ์ของผู้เรียนตามหลักสูตร โดยยึดหลัก MEC ข้อ 5 Best Interests of Child เป็นแนวทาง"
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ส่วนที่ 2 ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn2">2</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 2 — หน้าที่หลักและขอบข่ายงาน</h3>
+        <div class="short">ฉันทำอะไร รับผิดชอบส่วนไหน</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนระบุชัดเจนว่าตนเองมีหน้าที่หลักอะไร รับผิดชอบอะไรตามโครงสร้างการบริหารของโรงเรียน</p>
+
+        <h4>หลักการเขียน</h4>
+        <p>ข้อมูลเหล่านี้ถูกกำหนดไว้แล้วในคู่มือคุณภาพหน่วยงานบนระบบ SWIS — ระบบสามารถดึงมาแสดงในแดชบอร์ดของบุคลากรแต่ละคนได้ สิ่งที่ต้องเข้าใจคือ:</p>
+
+        <ol class="guide-list">
+          <li><strong>KRA (Key Result Area)</strong> — กรอบหน้าที่หลักของหน่วยงานที่ตนสังกัด คัดมาจากคู่มือคุณภาพหน่วยงาน</li>
+          <li><strong>เป้าหมายคุณภาพของหน่วยงาน</strong> — เป้าหมายที่หน่วยงานกำหนดไว้ เชื่อมโยงจากแผนยุทธศาสตร์มูลนิธิฯ ผ่านแผนพัฒนาโรงเรียน</li>
+          <li><strong>หน้าที่หลักของตนเอง</strong> — ระบุว่าตนเองรับผิดชอบส่วนไหนของ KRA ตามที่ระบุในใบอัตรากำลัง</li>
+          <li><strong>หน้าที่เสริม</strong> — งานที่ได้รับมอบหมายเพิ่มเติมนอกเหนือจากหน้าที่หลัก</li>
+        </ol>
+
+        <div class="highlight green">
+          <strong>สำคัญ:</strong> หน้าที่หลักและหน้าที่เสริมมีผลต่อสัดส่วนการประเมินผลงานประจำปี (ดูส่วนที่ 5) การระบุให้ชัดเจนตั้งแต่ต้นปีจะช่วยให้ทั้งผู้ปฏิบัติและผู้ประเมินเข้าใจตรงกัน
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ส่วนที่ 3 ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn3">3</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 3 — คุณสมบัติตามหน้าที่ (Job Spec C/K/Cp)</h3>
+        <div class="short">ฉันต้องเป็นอะไร รู้อะไร ทำอะไรได้</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนรู้ว่าตำแหน่งของตนต้องการคุณสมบัติอะไรบ้าง ทั้งพื้นฐานที่ทุกคนต้องมี และเฉพาะทางตามหน้าที่</p>
+
+        <h4>โครงสร้างรหัส C/K/Cp — จากผลการสำรวจ 137 หัวข้อ</h4>
+        <p>คุณสมบัติทั้งหมดได้จากการสำรวจทุกหน่วยงานในโรงเรียนทุกแห่ง แล้วสรุปเป็นระบบรหัส 3 ประเภท:</p>
+
+        <div class="spec-layers">
+          <div class="spec-layer sl-base">
+            <div class="sl-codes">C(B)01–03<br>K(B)/Cp(B)01–08</div>
+            <div class="sl-desc">คุณลักษณะ ความรู้ และทักษะ <strong>พื้นฐาน</strong> สำหรับครู/บุคลากรทุกคน — จรรยาบรรณ, ความจงรักภักดี, ประวัติโรงเรียน, สารสนเทศ, เทคโนโลยี, ภาษา, PDCA, ระบบงาน, กฎหมายการศึกษา, วิจัย</div>
+          </div>
+          <div class="spec-layer sl-head">
+            <div class="sl-codes">K(B)/Cp(B)09–011</div>
+            <div class="sl-desc">เพิ่มเติมสำหรับ <strong>ตำแหน่งหัวหน้า</strong> — ธรรมาภิบาล, การบริหารคน/ภาวะผู้นำ, PDCA+4M+บริหารความเสี่ยง</div>
+          </div>
+          <div class="spec-layer sl-teach">
+            <div class="sl-codes">K(B)/Cp(B)11–14</div>
+            <div class="sl-desc">เพิ่มเติมสำหรับ <strong>ครูผู้สอนทุกคน</strong> — หลักสูตร, วัดผล, วิจัยในชั้นเรียน, จิตวิทยาเด็ก</div>
+          </div>
+          <div class="spec-layer sl-spec">
+            <div class="sl-codes">K(T)/Cp(T) 119 หัวข้อ</div>
+            <div class="sl-desc"><strong>เฉพาะทาง</strong> ตามหน้าที่ — ครูผู้สอนแยกตามกลุ่มสาระ (43 หัวข้อ), ครูสนับสนุน/บุคลากร (57 หัวข้อ), ครูปฐมวัย (19 หัวข้อ)</div>
+          </div>
+        </div>
+
+        <h4>ข้อมูลมาจากไหน</h4>
+        <ol class="guide-list">
+          <li><strong>รหัส C/K/Cp ทั้งหมดถูกรวบรวมไว้ที่ส่วนกลาง</strong> งาน HRD มูลนิธิฯ — ได้จากการสำรวจทุกหน่วยงานในทุกโรงเรียน ไม่ต้องกำหนดขึ้นมาเอง</li>
+          <li><strong>คู่มือคุณภาพหน่วยงานในระบบ SWIS</strong> ระบุแล้วว่าตำแหน่งไหนต้องมีสเปคข้อใดบ้าง — ระบบสามารถดึงมาแสดงในแดชบอร์ดของแต่ละคนได้โดยอัตโนมัติ</li>
+          <li><strong>สิ่งที่ต้องเข้าใจ</strong> คือโครงสร้างของรหัส — แยกพื้นฐาน (B) กับเฉพาะทาง (T) ออกจากกัน และรู้ว่ารหัสแต่ละข้อหมายถึงอะไร</li>
+        </ol>
+
+        <h4>ตัวอย่างตาราง C/K/Cp</h4>
+        <table class="ckcp-table">
+          <thead>
+            <tr><th>ประเภท</th><th>รหัส</th><th>คุณสมบัติ</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>C — คุณลักษณะ</td>
+              <td class="code">C(B)01</td>
+              <td>จรรยาบรรณวิชาชีพครู 5 ด้าน</td>
+            </tr>
+            <tr>
+              <td>K — ความรู้พื้นฐาน</td>
+              <td class="code">K(B)05</td>
+              <td>ความรู้ด้านการวางแผนขั้นตอนการทำงาน (PDCA)</td>
+            </tr>
+            <tr>
+              <td>Cp — ทักษะพื้นฐาน</td>
+              <td class="code">Cp(B)05</td>
+              <td>สามารถวางแผนการทำงานตามขั้นตอน PDCA</td>
+            </tr>
+            <tr>
+              <td>K — ความรู้เฉพาะทาง</td>
+              <td class="code">K(T)11</td>
+              <td>ความรู้วิชาตามมาตรฐานปริญญาตรี (ตามกลุ่มสาระ)</td>
+            </tr>
+            <tr>
+              <td>Cp — ทักษะเฉพาะทาง</td>
+              <td class="code">Cp(T)11</td>
+              <td>สามารถจัดการเรียนการสอนตามมาตรฐานปริญญาตรี</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight purple">
+          <strong>จุดสำคัญ:</strong> ตาราง C/K/Cp นี้เป็นแกนกลางที่ผูกทุกอย่างเข้าด้วยกัน — ใช้กำหนดหลักสูตรอบรม (ส่วนที่ 4) และใช้เป็นเกณฑ์ประเมินผลงาน (ส่วนที่ 5) ทุกรหัสต้องสามารถอ้างอิงกลับไปที่ตาราง Job Spec ของมูลนิธิฯ ได้
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ส่วนที่ 4 ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn4">4</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 4 — แผนอบรมและพัฒนา</h3>
+        <div class="short">ฉันต้องเรียนรู้อะไร จากช่องทางไหน</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนระบุหัวข้อที่ต้องอบรมพัฒนา โดยผูกกลับไปที่รหัส C/K/Cp จากส่วนที่ 3 ทุกหัวข้ออบรมต้องตอบสเปคที่กำหนดได้</p>
+
+        <h4>3 ช่องทางการอบรมพัฒนา</h4>
+        <p>การอบรมพัฒนาไม่ได้จำกัดอยู่ช่องทางเดียว — มี 3 ช่องทางที่สามารถใช้ตอบสเปคได้ทั้งหมด:</p>
+
+        <div class="train-channels">
+          <div class="train-ch ch-central">
+            <div class="ch-icon">🏛️</div>
+            <h5>งาน HRD มูลนิธิฯ จัดให้</h5>
+            <p>หลักสูตรที่จัดจากส่วนกลาง มีปฏิทินให้ครูแต่ละโรงเรียนเลือกลงทะเบียนเข้าร่วม ทั้งแบบ Onsite และ Online หน่วยงานประเภทเดียวกันจากต่างโรงเรียนเข้าร่วมพร้อมกันได้</p>
+          </div>
+          <div class="train-ch ch-group">
+            <div class="ch-icon">🤝</div>
+            <h5>กลุ่มโรงเรียนเป็นเจ้าภาพ</h5>
+            <p>โรงเรียนหนึ่งหรือกลุ่มโรงเรียนรวมกันจัดอบรมตามสเปค แล้วเชิญโรงเรียนในเครืออื่นเข้าร่วม เช่น กลุ่ม กทม. กลุ่มภาคเหนือ กลุ่มภาคตะวันออก</p>
+          </div>
+          <div class="train-ch ch-self">
+            <div class="ch-icon">📚</div>
+            <h5>หาเพิ่มเติมเอง</h5>
+            <p>บุคลากรสามารถหาแหล่งอบรมเพิ่มเติมนอกเหนือจากที่ส่วนกลางและกลุ่มโรงเรียนจัดให้ เช่น หลักสูตรจากหน่วยงานภายนอก การประชุมวิชาการ การศึกษาดูงาน</p>
+          </div>
+        </div>
+
+        <h4>หลักการเขียน</h4>
+        <ol class="guide-list">
+          <li>นำรหัส C/K/Cp จากส่วนที่ 3 มาจับคู่กับหัวข้ออบรม — ดูจากตาราง "รหัสอ้างอิง Job Spec" ที่มีหัวข้อการอบรมระบุไว้แล้วในคอลัมน์ขวา</li>
+          <li>ระบุช่องทาง — แต่ละหัวข้อจะเข้าอบรมจากช่องทางไหน (ส่วนกลาง / กลุ่มโรงเรียน / หาเพิ่มเติมเอง)</li>
+          <li>ระบุรายละเอียดการอบรม — รูปแบบ (Onsite/Online) วันเวลา สถานที่ วิทยากร ผลการประเมิน</li>
+          <li>ช่องว่างที่เติมภายหลังได้ — หากยังไม่ทราบรายละเอียดการอบรม ให้ใส่รหัส C/K/Cp ไว้ก่อน แล้วเติมรายละเอียดเมื่อมีกำหนดการ</li>
+        </ol>
+
+        <div class="highlight orange">
+          <strong>หลักคิด:</strong> ทุกหัวข้ออบรมต้องผูกรหัส C/K/Cp กลับได้ — ถ้าอบรมแล้วไม่ตอบสเปคข้อไหนเลย แสดงว่าไม่จำเป็นต้องอยู่ในแผน และในทางกลับกัน ถ้ามีสเปคข้อไหนที่ยังไม่มีแผนอบรมรองรับ ก็ต้องหาช่องทางเพิ่มเติม
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ส่วนที่ 5 ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn5">5</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 5 — กรอบการประเมินประจำปี</h3>
+        <div class="short">ฉันจะถูกวัดอย่างไร</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนรู้ตั้งแต่ต้นปีว่าจะถูกประเมินอะไรบ้าง ด้วยน้ำหนักเท่าไหร่ โดยผูก KPI แต่ละข้อกลับไปที่ C/K/Cp ของตน</p>
+
+        <h4>ตัวอย่างกรอบประเมิน — กลุ่มครูผู้สอน</h4>
+        <div class="eval-bars">
+          <div class="eval-bar">
+            <div class="bar-label">งานหลัก (สอน)</div>
+            <div class="bar-fill" style="width: 75%; background: linear-gradient(135deg, #1565c0, #0d47a1);">75%</div>
+          </div>
+          <div class="eval-bar">
+            <div class="bar-label">งานเสริม</div>
+            <div class="bar-fill" style="width: 30%; background: linear-gradient(135deg, #00695c, #004d40);">10%</div>
+          </div>
+          <div class="eval-bar">
+            <div class="bar-label">การปฏิบัติตน</div>
+            <div class="bar-fill" style="width: 45%; background: linear-gradient(135deg, #6a1b9a, #4a148c);">15%</div>
+          </div>
+        </div>
+
+        <h4>สัดส่วนน้ำหนัก — แต่ละโรงเรียนกำหนดเอง</h4>
+        <p>สัดส่วนน้ำหนักการประเมิน (เช่น 75/10/15) <strong>ไม่ได้กำหนดตายตัวจากส่วนกลาง</strong> แต่ให้อิสระแต่ละโรงเรียนไปประชุมตกลงกันเอง ผ่านงานทรัพยากรมนุษย์ของโรงเรียน โดยพิจารณาจากธรรมชาติงานและความเหมาะสมของแต่ละแห่ง ตัวอย่างข้างต้นเป็นเพียงแนวทาง</p>
+
+        <h4>หลักการ</h4>
+        <ol class="guide-list">
+          <li><strong>ประชุมตกลงสัดส่วน</strong> — งาน HR ของแต่ละโรงเรียนเป็นผู้จัด ให้ผู้เกี่ยวข้องร่วมกำหนดน้ำหนักที่เหมาะสมกับบริบทของโรงเรียนตน</li>
+          <li><strong>ผูก KPI กับ C/K/Cp</strong> — แต่ละตัวชี้วัดต้องอ้างอิงกลับไปที่รหัสความรู้หรือทักษะที่เกี่ยวข้อง</li>
+          <li><strong>ระบุรูปแบบการประเมิน</strong> — ประเมินจากผลงาน/สารสนเทศโรงเรียน หรือจากการทดสอบ พร้อมระบุแหล่งข้อมูลและเวลา</li>
+        </ol>
+
+        <div class="highlight red">
+          <strong>จุดเชื่อม:</strong> กรอบการประเมินนี้ไม่ได้เขียนขึ้นมาลอยๆ — มันเป็นผลลัพธ์จากการผูกสเปค C/K/Cp (ส่วนที่ 3) เข้ากับหน้าที่หลัก/เสริม (ส่วนที่ 2) สัดส่วนน้ำหนักเป็นเรื่องที่แต่ละโรงเรียนตกลงกันเองตามความเหมาะสม แต่โครงสร้างการผูก KPI ↔ C/K/Cp เป็นหลักการเดียวกันทั้งเครือ
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ส่วนที่ 6 ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pn6">6</div>
+      <div class="part-title">
+        <h3>ส่วนที่ 6 — เครื่องมือและทรัพยากร</h3>
+        <div class="short">ฉันใช้อะไรทำงาน</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>ให้ผู้เขียนระบุเครื่องมือทั้งกายภาพและซอฟต์แวร์ที่ต้องใช้ในการปฏิบัติหน้าที่ เพื่อให้ผู้บริหารเห็นว่าบุคลากรแต่ละคนต้องการอะไรในการทำงาน</p>
+
+        <h4>หลักการเขียน</h4>
+        <ol class="guide-list">
+          <li><strong>Hardware</strong> — เครื่องมือกายภาพ เช่น คอมพิวเตอร์ แท็บเล็ต อุปกรณ์สำนักงาน ห้องประชุม อุปกรณ์เฉพาะทาง</li>
+          <li><strong>Software / ระบบ</strong> — ซอฟต์แวร์ที่ต้องใช้ เช่น ระบบ SWIS, เครื่องมือสื่อสาร (Zoom, Line), ระบบเฉพาะทางของหน่วยงาน</li>
+          <li><strong>ทรัพยากรอื่นๆ</strong> — สิ่งที่จำเป็นนอกเหนือจาก Hardware และ Software เช่น งบประมาณสนับสนุน สื่อการเรียนการสอน</li>
+        </ol>
+
+        <div class="highlight gray">
+          <strong>ประโยชน์:</strong> ข้อมูลส่วนนี้ช่วยให้โรงเรียนวางแผนจัดซื้อจัดหาได้ตรงกับความต้องการจริง และเมื่อนำขึ้นระบบ SWIS จะเชื่อมโยงกับบัญชีทรัพย์สินของหน่วยงานได้ทันที
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ภาคผนวก ========== -->
+  <div class="part-card">
+    <div class="part-header" onclick="togglePart(this)">
+      <div class="part-num pnA">ผ</div>
+      <div class="part-title">
+        <h3>ภาคผนวก — เอกสารอ้างอิงที่ควรแนบ</h3>
+        <div class="short">ที่มาที่ไปของทุกสิ่งที่เขียนไว้ข้างต้น</div>
+      </div>
+      <span class="part-toggle">▼</span>
+    </div>
+    <div class="part-body">
+      <div class="part-content">
+        <h4>จุดประสงค์</h4>
+        <p>รวบรวมเอกสารอ้างอิงที่ใช้ในการเขียนคู่มือพัฒนาตนเอง เพื่อให้ผู้อ่านสามารถตรวจสอบที่มาที่ไปของข้อมูลได้</p>
+
+        <h4>เอกสารที่ควรแนบ</h4>
+        <ul class="appendix-list">
+          <li>ข้อมูลบริหารของฝ่ายที่สังกัด — ทิศทาง เป้าหมาย นโยบาย แผนงานของฝ่าย</li>
+          <li>แผนพัฒนาการจัดการศึกษาของโรงเรียน</li>
+          <li>แผนยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</li>
+          <li>การศึกษามงฟอร์ต (Montfortian Education Charter)</li>
+          <li>คำอธิบาย KRA และกรอบการประเมิน ตามกลุ่มตำแหน่ง</li>
+          <li>หลักสูตรการอบรมพัฒนาบุคลากรโรงเรียนในเครือฯ</li>
+          <li>เอกสารอ้างอิงเฉพาะทาง ตามหน้าที่และกลุ่มสาระ</li>
+        </ul>
+
+        <div class="highlight gray">
+          <strong>หมายเหตุ:</strong> เอกสารเหล่านี้แนบเพื่อความสมบูรณ์ของเล่ม ผู้เขียนไม่จำเป็นต้องจัดทำเอกสารเหล่านี้ขึ้นมาใหม่ — เป็นเอกสารที่มีอยู่แล้วในระบบของโรงเรียนและมูลนิธิฯ
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- .sdg-content -->
+
+<!-- ==================== FOOTER ==================== -->
+<footer style="text-align:center; padding:40px 24px; background:#f5f5f5; font-size:13px; color:#999;">
+  © มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ระบบ SWIS Plus
+</footer>
+
+<script>
+function togglePart(el) {
+  const card = el.closest('.part-card');
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
