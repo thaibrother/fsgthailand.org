@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ ครู — ศูนย์ช่วยเหลือ SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #2e7d32;
+  --accent-light: #e8f5e9;
+  --accent-glow: rgba(46,125,50,0.10);
+  --dark: #1a1a2e;
+  --text: #222;
+  --muted: #999;
+  --bg: #f6faf6;
+  --card: #fff;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Kanit', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+.topbar {
+  background: var(--dark);
+  padding: 12px 24px;
+  display: flex; align-items: center; gap: 12px;
+  color: #fff;
+  position: sticky; top: 0; z-index: 100;
+}
+.topbar .logo {
+  width: 30px; height: 30px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px; color: #fff;
+}
+.topbar .brand { font-size: 16px; font-weight: 700; }
+.topbar .role-label {
+  margin-left: auto;
+  padding: 5px 16px;
+  border-radius: 99px;
+  background: var(--accent);
+  font-size: 13px; font-weight: 600; color: #fff;
+}
+.topbar .other-links { display: flex; gap: 6px; margin-left: 8px; }
+.topbar .other-link {
+  padding: 5px 14px; border-radius: 99px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+  font-size: 12px; font-weight: 500;
+  text-decoration: none; transition: all 0.2s;
+}
+.topbar .other-link:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.center-stage {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  min-height: calc(100vh - 54px);
+  padding: 24px; transition: all 0.4s ease;
+}
+.center-stage.has-results { min-height: auto; justify-content: flex-start; padding-top: 48px; }
+
+.search-brand { text-align: center; margin-bottom: 32px; transition: all 0.4s ease; }
+.search-brand .icon {
+  width: 72px; height: 72px; background: var(--accent);
+  border-radius: 20px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 32px; color: #fff; margin-bottom: 16px;
+}
+.search-brand h1 { font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.search-brand p { font-size: 15px; color: var(--muted); font-weight: 300; }
+.center-stage.has-results .search-brand { margin-bottom: 20px; }
+.center-stage.has-results .search-brand .icon { width: 48px; height: 48px; font-size: 22px; border-radius: 14px; margin-bottom: 10px; }
+.center-stage.has-results .search-brand h1 { font-size: 20px; }
+.center-stage.has-results .search-brand p { display: none; }
+
+.search-wrap { width: 100%; max-width: 580px; position: relative; }
+.search-box {
+  width: 100%; padding: 18px 20px 18px 52px;
+  border: 2px solid #e0e0e0; border-radius: 16px;
+  font-size: 16px; font-family: 'Kanit', sans-serif;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='%23bbb' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") 18px center no-repeat;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-box:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-glow); }
+.search-box::placeholder { color: #ccc; }
+
+.autocomplete {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  max-height: 380px; overflow-y: auto; display: none; z-index: 200;
+}
+.autocomplete.visible { display: block; }
+.ac-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 18px; cursor: pointer;
+  transition: background 0.15s; border-bottom: 1px solid #f0f0f0;
+}
+.ac-item:last-child { border-bottom: none; }
+.ac-item:hover, .ac-item.ac-active { background: var(--accent-light); }
+.ac-item .ac-icon {
+  min-width: 26px; height: 26px; border-radius: 7px;
+  background: #f0f4f8; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--accent);
+}
+.ac-item:hover .ac-icon, .ac-item.ac-active .ac-icon { background: var(--accent); color: #fff; }
+.ac-item .ac-text { flex: 1; font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.5; }
+.ac-item .ac-text mark { background: #fff3d0; color: var(--text); border-radius: 2px; padding: 0 1px; }
+.ac-item .ac-cat { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.ac-hint { padding: 10px 18px; font-size: 12px; color: var(--muted); text-align: center; border-bottom: 1px solid #f0f0f0; }
+.ac-footer { padding: 10px 18px; font-size: 12px; color: var(--muted); text-align: center; cursor: pointer; }
+.ac-footer:hover { color: var(--accent); }
+
+.search-hints { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 620px; }
+.hint-chip {
+  padding: 8px 16px; border-radius: 99px; border: 1px solid #e0e0e0;
+  background: #fff; font-size: 13px; color: #666; cursor: pointer;
+  transition: all 0.2s; font-family: 'Kanit', sans-serif;
+}
+.hint-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+
+.results-area { width: 100%; max-width: 700px; margin-top: 32px; display: none; }
+.results-area.visible { display: block; }
+.results-count { font-size: 13px; color: var(--muted); margin-bottom: 16px; padding-left: 4px; }
+
+.cat-label {
+  font-size: 13px; font-weight: 700;
+  color: var(--accent);
+  padding: 16px 4px 8px;
+  border-bottom: 2px solid var(--accent-light);
+  margin-bottom: 8px;
+}
+.cat-label:first-child { padding-top: 0; }
+
+.faq-item {
+  border-radius: 12px; margin-bottom: 6px;
+  background: var(--card); border: 1px solid #eee;
+  overflow: hidden; transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: #ddd; }
+.faq-item.open { border-color: var(--accent); }
+.faq-q {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; cursor: pointer; user-select: none;
+  font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.6;
+}
+.faq-q .q-icon {
+  min-width: 26px; height: 26px; border-radius: 7px;
+  background: #f0f4f8; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--accent);
+}
+.faq-item.open .faq-q .q-icon { background: var(--accent); color: #fff; }
+.faq-q .q-text { flex: 1; }
+.faq-q .q-arrow { font-size: 14px; color: #ccc; transition: transform 0.3s; }
+.faq-item.open .faq-q .q-arrow { transform: rotate(180deg); color: var(--accent); }
+.faq-a { display: none; padding: 0 18px 18px 56px; font-size: 14px; color: #555; line-height: 1.9; }
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+.no-results { text-align: center; padding: 48px 24px; color: var(--muted); font-size: 15px; display: none; }
+
+@media (max-width: 600px) {
+  .topbar .other-links { display: none; }
+  .faq-a { padding-left: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">S+</div>
+  <span class="brand">ศูนย์ช่วยเหลือ</span>
+  <span class="role-label">ครู</span>
+  <div class="other-links">
+    <a href="faq-parent.html" class="other-link">สำหรับผู้ปกครอง</a>
+    <a href="faq-admin.html" class="other-link">สำหรับผู้บริหาร</a>
+  </div>
+</div>
+
+<div class="center-stage" id="centerStage">
+  <div class="search-brand">
+    <div class="icon">👩‍🏫</div>
+    <h1>ศูนย์ช่วยเหลือสำหรับครู</h1>
+    <p>ค้นหาเกี่ยวกับแผนงาน PDCA, คู่มือพัฒนาตนเอง, เช็คชื่อ, Job Spec และอื่นๆ</p>
+  </div>
+
+  <div class="search-wrap">
+    <input type="text" class="search-box" id="searchBox" placeholder="พิมพ์คำถาม เช่น PDCA, เช็คชื่อ, Job Spec, ดูเกรดลูก..." autocomplete="off">
+    <div class="autocomplete" id="autocomplete"></div>
+  </div>
+
+  <div class="search-hints" id="searchHints">
+    <div class="hint-chip" onclick="quickSearch('[แผนงาน]')">📋 แผนงาน PDCA</div>
+    <div class="hint-chip" onclick="quickSearch('[วิชาการ-ครู]')">📝 วิชาการ</div>
+    <div class="hint-chip" onclick="quickSearch('[พัฒนาตนเอง]')">📈 พัฒนาตนเอง</div>
+    <div class="hint-chip" onclick="quickSearch('[ปกครอง]')">🧒 งานปกครอง</div>
+    <div class="hint-chip" onclick="quickSearch('[ระบบ]')">💻 ระบบ SWIS</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง]')">👪 คำถามผู้ปกครอง</div>
+    <div class="hint-chip" onclick="quickSearch('[สุขภาพจิต]')">🧠 สุขภาพจิต</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-ระเบียบ]')">📏 ระเบียบ</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-ปฏิทิน]')">📅 ปฏิทิน</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-สุขภาพ]')">🏥 สุขภาพ</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-ทะเบียน]')">📝 ทะเบียน</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-กีฬา]')">⚽ กีฬา</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-ห้องสมุด]')">📖 ห้องสมุด</div>
+    <div class="hint-chip" onclick="quickSearch('[ผู้ปกครอง-การสื่อสาร]')">📢 การสื่อสาร</div>
+  </div>
+
+  <div class="results-area" id="resultsArea">
+    <div class="results-count" id="resultsCount"></div>
+    <div id="resultsContainer"></div>
+  </div>
+  <div class="no-results" id="noResults">
+    ไม่พบคำถามที่ตรงกัน — ลองใช้คำค้นอื่น หรือติดต่อเจ้าหน้าที่ IT ของโรงเรียน
+  </div>
+</div>
+
+<script>
+const faqData = [
+
+  // ==========================================
+  //  คำถามสำหรับครู (16 ข้อ)
+  // ==========================================
+
+  // ========== แผนงานและ PDCA ==========
+  { cat:'แผนงาน', q:'กรอกแผนงาน PDCA อย่างไร?',
+    a:'ไปที่เมนู <strong>"แผนงาน"</strong> → เลือกหน่วยงาน → กดสร้างแผนงานใหม่ ระบบจะแสดงแบบฟอร์มตามกระบวนการ PDCA 9 ขั้นตอน โดยข้อมูล Chain of Alignment (แผนยุทธศาสตร์ → แผนพัฒนาโรงเรียน) จะถูกดึงมาให้อัตโนมัติ',
+    tags:'[แผนงาน] PDCA plan แผนงาน แผนปฏิบัติการ 9 ขั้นตอน Chain of Alignment ยุทธศาสตร์ แผนพัฒนา สร้างแผน หน่วยงาน' },
+  { cat:'แผนงาน', q:'D4 D5 D6 คืออะไรในแผนงาน PDCA?',
+    a:'<strong>D4</strong> = งานหลักจากคู่มือคุณภาพ (กำหนดต้นปี) | <strong>D5</strong> = ประชุมวางแผนดำเนินงาน | <strong>D6</strong> = mini-PDCA ของแต่ละข้อใน D4 (ดำเนินงานตลอดปี) โดย 4.1↔6.1, 4.2↔6.2 ผูกกันตามลำดับ',
+    tags:'[แผนงาน] D4 D5 D6 mini-PDCA คู่มือคุณภาพ ประชุมวางแผน ดำเนินงาน ขั้นตอน' },
+  { cat:'แผนงาน', q:'แผนงานของฉันต้องผูกกับยุทธศาสตร์อะไร?',
+    a:'แผนงานทุกฉบับต้องเชื่อมโยงกับ <strong>แผนยุทธศาสตร์มูลนิธิฯ 5 ยุทธ์</strong> → แผนพัฒนาโรงเรียน → เป้าหมายคุณภาพ ระบบ SWIS จะแสดง Chain of Alignment ให้อัตโนมัติเมื่อเลือกหน่วยงาน',
+    tags:'[แผนงาน] ยุทธศาสตร์ strategic plan chain of alignment เป้าหมาย มูลนิธิ แผนพัฒนาโรงเรียน เชื่อมโยง' },
+
+  // ========== วิชาการ-ครู ==========
+  { cat:'วิชาการ-ครู', q:'บันทึกผลการสอนและให้เกรดอย่างไร?',
+    a:'ไปที่เมนู <strong>"วิชาการ"</strong> → เลือกรายวิชา → <strong>"บันทึกคะแนน"</strong> สามารถกรอกคะแนนเป็นรายหน่วยหรือรายภาคเรียน ระบบจะคำนวณเกรดตามเกณฑ์ที่โรงเรียนตั้งไว้',
+    tags:'[วิชาการ-ครู] score grading บันทึกคะแนน ให้เกรด ผลการสอน รายวิชา เกณฑ์ คำนวณ' },
+  { cat:'วิชาการ-ครู', q:'เช็คชื่อนักเรียนในระบบทำอย่างไร?',
+    a:'ไปที่เมนู <strong>"การมาเรียน"</strong> → เลือกห้อง → กด <strong>"เช็คชื่อ"</strong> ระบบจะแสดงรายชื่อนักเรียนพร้อมปุ่มระบุสถานะ (มา / ขาด / ลา / สาย) ข้อมูลจะอัปเดตทันทีและผู้ปกครองสามารถเห็นได้',
+    tags:'[วิชาการ-ครู] attendance check เช็คชื่อ มาเรียน ขาด ลา สาย ผู้ปกครอง อัปเดต สถานะ' },
+  { cat:'วิชาการ-ครู', q:'ส่งการบ้านและสื่อการสอนให้นักเรียนออนไลน์ได้ไหม?',
+    a:'ได้ — ไปที่เมนู <strong>"วิชาการ"</strong> → เลือกวิชา → <strong>"สื่อการสอน"</strong> อัปโหลดไฟล์หรือลิงก์ นักเรียนจะเห็นในหน้าบัญชีของตนเอง',
+    tags:'[วิชาการ-ครู] การบ้าน homework assignment สื่อการสอน อัปโหลด ไฟล์ ออนไลน์ ส่งงาน' },
+  { cat:'วิชาการ-ครู', q:'ดูสถิติผลการเรียนรายห้องได้ที่ไหน?',
+    a:'ไปที่เมนู <strong>"วิชาการ"</strong> → <strong>"รายงาน"</strong> ระบบแสดงสถิติเกรดเฉลี่ย จำนวนนักเรียนที่ผ่าน/ไม่ผ่าน แยกตามรายวิชาและห้องเรียน',
+    tags:'[วิชาการ-ครู] สถิติ statistics report รายงาน เกรดเฉลี่ย ผ่าน ไม่ผ่าน ห้อง วิชา' },
+
+  // ========== พัฒนาตนเอง ==========
+  { cat:'พัฒนาตนเอง', q:'คู่มือพัฒนาตนเอง ดูได้ที่ไหน?',
+    a:'ไปที่เมนู <strong>"พัฒนาตนเอง"</strong> ระบบจะแสดงคู่มือที่ถอดข้อมูลจากคู่มือคุณภาพหน่วยงานที่สังกัด ประกอบด้วย KRA, Job Spec (C/K/Cp) ของตำแหน่ง และแผนพัฒนาตนเองรายปี',
+    tags:'[พัฒนาตนเอง] self-development manual คู่มือพัฒนาตนเอง KRA Job Spec C/K/Cp แผนพัฒนาตนเอง คู่มือคุณภาพ' },
+  { cat:'พัฒนาตนเอง', q:'ดู Job Spec ของตำแหน่งตัวเองได้ที่ไหน?',
+    a:'ไปที่เมนู <strong>"ข้อมูลส่วนตัว"</strong> → แท็บ <strong>"คุณสมบัติตามตำแหน่ง"</strong> จะเห็น Job Spec แบ่งเป็น C (คุณลักษณะ), K (ความรู้), Cp (ทักษะ) ตามที่กำหนดไว้ในคู่มือคุณภาพหน่วยงาน',
+    tags:'[พัฒนาตนเอง] Job Spec C/K/Cp character knowledge competency คุณลักษณะ ความรู้ ทักษะ สเปค คุณสมบัติ ตำแหน่ง' },
+  { cat:'พัฒนาตนเอง', q:'บันทึกผลการอบรม/สัมมนาในระบบได้ไหม?',
+    a:'ได้ — ไปที่เมนู <strong>"พัฒนาตนเอง"</strong> → <strong>"บันทึกการอบรม"</strong> กรอกชื่อหลักสูตร วันที่ หน่วยงานจัด และอัปโหลดใบประกาศนียบัตร ข้อมูลจะเชื่อมกับ portfolio อัตโนมัติ',
+    tags:'[พัฒนาตนเอง] อบรม training seminar สัมมนา ใบประกาศ certificate portfolio หลักสูตร บันทึก' },
+
+  // ========== งานปกครอง ==========
+  { cat:'ปกครอง', q:'บันทึกพฤติกรรมนักเรียน (หักคะแนน/เพิ่มคะแนน) ทำอย่างไร?',
+    a:'ไปที่เมนู <strong>"พฤติกรรม"</strong> → เลือกนักเรียน → กด <strong>"บันทึกพฤติกรรม"</strong> เลือกประเภท (บวก/ลบ) ระบุเหตุผลและคะแนน ผู้ปกครองจะเห็นข้อมูลอัตโนมัติ',
+    tags:'[ปกครอง] พฤติกรรม behavior discipline หักคะแนน เพิ่มคะแนน ตักเตือน บันทึก ฝ่ายปกครอง' },
+  { cat:'ปกครอง', q:'พบนักเรียนถูก bully ต้องทำอย่างไรในระบบ?',
+    a:'บันทึกเหตุการณ์ในเมนู <strong>"พฤติกรรม"</strong> → <strong>"รายงานเหตุการณ์"</strong> ระบุรายละเอียดและนักเรียนที่เกี่ยวข้อง ระบบจะส่งแจ้งหัวหน้าฝ่ายปกครองและครูแนะแนวอัตโนมัติ',
+    tags:'[ปกครอง] bully กลั่นแกล้ง รายงาน เหตุการณ์ แจ้ง ฝ่ายปกครอง ครูแนะแนว anti-bullying' },
+  { cat:'ปกครอง', q:'นักเรียนมีสัญญาณปัญหาสุขภาพจิต ครูควรทำอย่างไร?',
+    a:'แจ้งครูแนะแนวหรือนักจิตวิทยาโรงเรียนทันที ผ่านเมนู <strong>"ส่งต่อ (Referral)"</strong> ระบุพฤติกรรมที่สังเกตเห็น ห้ามวินิจฉัยเอง ให้ผู้เชี่ยวชาญประเมิน ข้อมูลจะถูกเก็บเป็นความลับ',
+    tags:'[ปกครอง] [สุขภาพจิต] สุขภาพจิต mental health referral ส่งต่อ สังเกต พฤติกรรม ซึมเศร้า วิตกกังวล ครูแนะแนว นักจิตวิทยา' },
+
+  // ========== ระบบ SWIS ==========
+  { cat:'ระบบ', q:'ลืมรหัสผ่าน ทำอย่างไร?',
+    a:'กดปุ่ม <strong>"ลืมรหัสผ่าน"</strong> ที่หน้าล็อกอิน ระบบจะส่งลิงก์ตั้งรหัสใหม่ไปที่อีเมลที่ลงทะเบียนไว้ หากไม่ได้รับภายใน 5 นาที ให้ตรวจสอบ Spam หรือติดต่อ IT ของโรงเรียน',
+    tags:'[ระบบ] password login forgot reset รหัสผ่าน เข้าระบบไม่ได้ ล็อกอิน ตั้งรหัสใหม่ อีเมล spam IT' },
+  { cat:'ระบบ', q:'เปลี่ยนภาษาของระบบได้ไหม?',
+    a:'ได้ — กดไอคอนภาษาด้านขวาบนของหน้าจอ ระบบรองรับภาษาไทยและอังกฤษ การตั้งค่าจะจำไว้สำหรับครั้งถัดไป',
+    tags:'[ระบบ] language english thai ภาษาอังกฤษ เปลี่ยนภาษา ตั้งค่า setting locale' },
+  { cat:'ระบบ', q:'ใช้งานระบบ SWIS บนมือถือได้ไหม?',
+    a:'ได้ — SWIS Plus รองรับเว็บเบราว์เซอร์บนมือถือทุกรุ่น (Responsive Web) ไม่ต้องติดตั้งแอปเพิ่ม',
+    tags:'[ระบบ] mobile phone responsive app มือถือ แท็บเล็ต เบราว์เซอร์ SWIS' },
+
+  // ==========================================
+  //  คำถามผู้ปกครอง (ครูเห็นด้วย — 18 หมวด)
+  // ==========================================
+
+  // ========== 1. ผู้ปกครอง-วิชาการ ==========
+  { cat:'ผู้ปกครอง-วิชาการ', q:'ดูผลการเรียน (เกรด) ของลูกได้ที่ไหน?',
+    a:'ล็อกอินด้วยบัญชีผู้ปกครอง → เลือกชื่อบุตรหลาน → เมนู <strong>"ผลการเรียน"</strong> เห็นเกรดแยกรายวิชาและภาคเรียน ดูย้อนหลังได้ทุกปี',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-วิชาการ] grade GPA transcript เกรด ผลการเรียน คะแนน ลูก บุตรหลาน' },
+  { cat:'ผู้ปกครอง-วิชาการ', q:'ลูกมีวิชาไหนที่ต้องซ่อมหรือสอบแก้ตัว?',
+    a:'เมนู <strong>"ผลการเรียน"</strong> วิชาที่ต่ำกว่าเกณฑ์แสดงสีแดง พร้อมกำหนดสอบแก้ตัวและช่องทางติดต่อครูผู้สอน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-วิชาการ] ซ่อม สอบแก้ตัว ติด 0 ร มส ไม่ผ่าน เกณฑ์ remedial' },
+  { cat:'ผู้ปกครอง-วิชาการ', q:'ดูตารางสอบกลางภาค/ปลายภาคได้ที่ไหน?',
+    a:'เมนู <strong>"ปฏิทิน"</strong> หรือ <strong>"ตารางสอบ"</strong> เห็นกำหนดการสอบแยกตามวิชาพร้อมห้องสอบ',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-วิชาการ] ตารางสอบ กลางภาค ปลายภาค midterm final exam สอบ กำหนดการ' },
+
+  // ========== 2. ผู้ปกครอง-ครู ==========
+  { cat:'ผู้ปกครอง-ครู', q:'ครูประจำชั้นของลูกคือใคร ติดต่อได้อย่างไร?',
+    a:'เมนู <strong>"ข้อมูลบุตรหลาน"</strong> เห็นชื่อครูประจำชั้นพร้อมช่องทางติดต่อ ส่งข้อความผ่านระบบได้โดยตรง',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ครู] ครูประจำชั้น homeroom teacher ติดต่อ ส่งข้อความ contact' },
+  { cat:'ผู้ปกครอง-ครู', q:'ต้องการนัดพบครูเป็นการส่วนตัว ทำอย่างไร?',
+    a:'กดปุ่ม <strong>"นัดพบครู"</strong> ระบบแสดงช่วงเวลาว่างให้เลือก เมื่อครูยืนยันจะได้รับแจ้งเตือน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ครู] นัดพบ appointment ปรึกษา พบครู ส่วนตัว นัดหมาย' },
+  { cat:'ผู้ปกครอง-ครู', q:'ลูกมีปัญหากับวิชาที่เรียน ครูช่วยเหลือได้อย่างไร?',
+    a:'ติดต่อครูผู้สอนผ่านระบบข้อความ หรือแจ้งครูประจำชั้นเพื่อประสานงาน โรงเรียนมีระบบสอนเสริมและติว',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ครู] ปัญหาเรียน เรียนไม่ทัน สอนเสริม ติว ช่วยเหลือ remedial อ่อน' },
+
+  // ========== 3. ผู้ปกครอง-พฤติกรรม ==========
+  { cat:'ผู้ปกครอง-พฤติกรรม', q:'ดูสถิติการมาเรียนของลูกได้ที่ไหน?',
+    a:'เมนู <strong>"การมาเรียน"</strong> เห็นสรุปจำนวนวันมา ขาด ลา มาสาย แยกตามเดือนและภาคเรียน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-พฤติกรรม] attendance มาเรียน ขาดเรียน มาสาย ลา สถิติ เช็คชื่อ' },
+  { cat:'ผู้ปกครอง-พฤติกรรม', q:'ลูกขาดเรียน ระบบจะแจ้งเตือนไหม?',
+    a:'ระบบส่งแจ้งเตือนผ่าน SMS หรือ Line ได้ ขึ้นอยู่กับการตั้งค่าของแต่ละโรงเรียน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-พฤติกรรม] notification alert SMS Line แจ้งเตือน ขาดเรียน' },
+  { cat:'ผู้ปกครอง-พฤติกรรม', q:'ดูคะแนนความประพฤติของลูกได้ที่ไหน?',
+    a:'เมนู <strong>"พฤติกรรม"</strong> เห็นสรุปคะแนนความประพฤติพร้อมรายละเอียดกรณีหัก/เพิ่มคะแนน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-พฤติกรรม] คะแนนความประพฤติ พฤติกรรม หักคะแนน discipline behavior' },
+
+  // ========== 4. ผู้ปกครอง-การเงิน ==========
+  { cat:'ผู้ปกครอง-การเงิน', q:'ดูค่าธรรมเนียมและใบเสร็จได้ที่ไหน?',
+    a:'เมนู <strong>"การเงิน"</strong> เห็นรายการค่าธรรมเนียม สถานะการชำระ และดาวน์โหลดใบเสร็จ PDF',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การเงิน] fee payment receipt ค่าธรรมเนียม ใบเสร็จ ชำระเงิน ค่าเทอม' },
+  { cat:'ผู้ปกครอง-การเงิน', q:'ทุนการศึกษามีไหม สมัครอย่างไร?',
+    a:'โรงเรียนมีทุนหลายประเภท (ทุนเรียนดี ทุนกีฬา ทุนสงเคราะห์) ดูประกาศที่เมนู <strong>"ข่าวประชาสัมพันธ์"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การเงิน] ทุน scholarship ทุนเรียนดี ทุนกีฬา สงเคราะห์ สมัคร' },
+  { cat:'ผู้ปกครอง-การเงิน', q:'ขอใบกำกับภาษีได้ไหม?',
+    a:'ได้ — แจ้งฝ่ายการเงินพร้อมข้อมูลบริษัท/เลขผู้เสียภาษี ระบบจะออกใบกำกับภาษีให้ดาวน์โหลดในเมนู <strong>"การเงิน"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การเงิน] ใบกำกับภาษี tax invoice หักภาษี ลดหย่อน' },
+
+  // ========== 5. ผู้ปกครอง-บริการ ==========
+  { cat:'ผู้ปกครอง-บริการ', q:'แจ้งลาป่วย/ลากิจให้ลูก ทำอย่างไร?',
+    a:'เมนู <strong>"แจ้งลา"</strong> เลือกประเภท (ป่วย/กิจ) ระบุวันที่และเหตุผล ระบบส่งข้อมูลถึงครูประจำชั้นและฝ่ายปกครองทันที',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-บริการ] ลาป่วย ลากิจ แจ้งลา sick leave absence หยุดเรียน' },
+  { cat:'ผู้ปกครอง-บริการ', q:'ขอเอกสารรับรอง / ใบ ปพ. ทำอย่างไร?',
+    a:'เมนู <strong>"คำร้อง"</strong> → <strong>"ขอเอกสาร"</strong> เลือกประเภทเอกสาร ระบบแจ้งกำหนดรับและสถานะ',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-บริการ] เอกสาร ปพ ใบรับรอง transcript certificate คำร้อง' },
+  { cat:'ผู้ปกครอง-บริการ', q:'เปลี่ยนที่อยู่หรือเบอร์โทรผู้ปกครอง ทำอย่างไร?',
+    a:'เมนู <strong>"ข้อมูลส่วนตัว"</strong> แก้ไขที่อยู่และเบอร์โทรได้เอง อัปเดตทันที',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-บริการ] เปลี่ยนที่อยู่ เบอร์โทร อัปเดต แก้ไข profile address phone' },
+
+  // ========== 6. ผู้ปกครอง-สถานที่ ==========
+  { cat:'ผู้ปกครอง-สถานที่', q:'โรงเรียนมีกล้องวงจรปิดไหม?',
+    a:'มีกล้องวงจรปิดในจุดสำคัญทั่วบริเวณ ได้แก่ ประตูเข้า-ออก อาคารเรียน สนาม และจุดจอดรถรับ-ส่ง',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สถานที่] กล้อง CCTV วงจรปิด ความปลอดภัย security camera' },
+  { cat:'ผู้ปกครอง-สถานที่', q:'รถรับส่งนักเรียน มีเส้นทางและจุดจอดที่ไหนบ้าง?',
+    a:'เมนู <strong>"บริการ"</strong> → <strong>"รถรับส่ง"</strong> มีแผนที่แสดงจุดจอด เวลารับ-ส่ง และเบอร์ติดต่อคนขับ',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สถานที่] รถรับส่ง school bus เส้นทาง จุดจอด รับลูก ส่งลูก' },
+  { cat:'ผู้ปกครอง-สถานที่', q:'ห้องพยาบาลมีพยาบาลประจำไหม?',
+    a:'มีพยาบาลวิชาชีพประจำตลอดเวลาเปิดทำการ หากนักเรียนไม่สบายจะได้รับการดูแลเบื้องต้นและแจ้งผู้ปกครองทันที',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สถานที่] พยาบาล ห้องพยาบาล ไม่สบาย ป่วย nurse infirmary' },
+
+  // ========== 7. ผู้ปกครอง-อุปกรณ์ ==========
+  { cat:'ผู้ปกครอง-อุปกรณ์', q:'ลูกต้องพกแท็บเล็ตหรือโน้ตบุ๊กมาเองไหม?',
+    a:'ขึ้นอยู่กับนโยบายแต่ละโรงเรียนและระดับชั้น ดูประกาศที่เมนู <strong>"ข่าวประชาสัมพันธ์"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-อุปกรณ์] tablet laptop โน้ตบุ๊ก แท็บเล็ต iPad BYOD' },
+  { cat:'ผู้ปกครอง-อุปกรณ์', q:'โรงเรียนคุม screen time และการเล่นเกมในเวลาเรียนอย่างไร?',
+    a:'มีระบบบล็อกเว็บไซต์และแอปที่ไม่เหมาะสมผ่าน Wi-Fi โรงเรียน และมีกฎชัดเจนเรื่องการใช้อุปกรณ์ในเวลาเรียน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-อุปกรณ์] เกม screen time บล็อก Wi-Fi กฎ โทรศัพท์ มือถือ' },
+
+  // ========== 8. ผู้ปกครอง-ระเบียบ ==========
+  { cat:'ผู้ปกครอง-ระเบียบ', q:'ระเบียบทรงผมนักเรียนชาย-หญิง เป็นอย่างไร?',
+    a:'แตกต่างตามระดับชั้นและเพศ ดูรายละเอียดพร้อมภาพตัวอย่างที่เมนู <strong>"ระเบียบ"</strong> → <strong>"การแต่งกายและทรงผม"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระเบียบ] ทรงผม ผม ตัดผม สั้น ยาว ย้อมผม hair ฝ่ายปกครอง' },
+  { cat:'ผู้ปกครอง-ระเบียบ', q:'ชุดนักเรียนและเครื่องแต่งกาย มีกี่แบบ ซื้อที่ไหน?',
+    a:'มีหลายแบบ (ชุดปกติ ชุดพละ ชุดลูกเสือ ชุด EP/CEP) ดูร้านจำหน่ายที่เมนู <strong>"ระเบียบ"</strong> → <strong>"เครื่องแต่งกาย"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระเบียบ] ชุดนักเรียน เครื่องแต่งกาย uniform ชุดพละ ลูกเสือ ซื้อ' },
+  { cat:'ผู้ปกครอง-ระเบียบ', q:'นักเรียนพกโทรศัพท์มือถือมาโรงเรียนได้ไหม?',
+    a:'นโยบายแตกต่างตามโรงเรียนและระดับชั้น ดูระเบียบที่เมนู <strong>"ระเบียบ"</strong> → <strong>"การใช้อุปกรณ์สื่อสาร"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระเบียบ] มือถือ โทรศัพท์ phone mobile ฝาก ห้าม smartwatch' },
+  { cat:'ผู้ปกครอง-ระเบียบ', q:'เวลาเปิด-ปิดประตูโรงเรียน และเวลาเข้าแถวคือกี่โมง?',
+    a:'โดยทั่วไปเปิดรับ 06:30-07:30 น. เข้าแถว 07:40-08:00 น. เลิกเรียน 15:30-16:00 น. ดูเวลาเฉพาะโรงเรียนที่เมนู <strong>"ข้อมูลทั่วไป"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระเบียบ] เวลาเปิด ปิดประตู เข้าแถว เลิกเรียน มาสาย ประตู gate' },
+
+  // ========== 9. ผู้ปกครอง-ปฏิทิน ==========
+  { cat:'ผู้ปกครอง-ปฏิทิน', q:'ปฏิทินการศึกษา วันเปิด-ปิดภาคเรียน ดูได้ที่ไหน?',
+    a:'เมนู <strong>"ปฏิทิน"</strong> → <strong>"ปฏิทินการศึกษา"</strong> เห็นวันเปิด-ปิดเรียน วันสอบ วันหยุด ตลอดปี sync กับ Google Calendar ได้',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ปฏิทิน] ปฏิทิน calendar เปิดเทอม ปิดเทอม ภาคเรียน ปีการศึกษา' },
+  { cat:'ผู้ปกครอง-ปฏิทิน', q:'วันหยุดพิเศษของโรงเรียน (นอกเหนือวันหยุดราชการ) มีอะไรบ้าง?',
+    a:'มีวันหยุดพิเศษ เช่น วันนักบุญมงฟอร์ต (28 เม.ย.) วันสถาปนาโรงเรียน วันฉลองศาสนนาม ดูในเมนู <strong>"ปฏิทิน"</strong> กรอง "วันหยุดพิเศษ"',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ปฏิทิน] วันหยุด holiday มงฟอร์ต สถาปนา ฉลอง ศาสนนาม' },
+  { cat:'ผู้ปกครอง-ปฏิทิน', q:'วันประชุมผู้ปกครอง (Classroom Meeting) จัดเมื่อไหร่?',
+    a:'จัดอย่างน้อยภาคเรียนละ 1 ครั้ง ดูกำหนดการในเมนู <strong>"ปฏิทิน"</strong> กรอง "ประชุมผู้ปกครอง" ระบบส่งแจ้งเตือนล่วงหน้า',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ปฏิทิน] ประชุมผู้ปกครอง classroom meeting พบครู วันประชุม' },
+
+  // ========== 10. ผู้ปกครอง-สุขภาพ ==========
+  { cat:'ผู้ปกครอง-สุขภาพ', q:'โรงเรียนมีคู่มือป้องกันโรคระบาดไหม?',
+    a:'มีแผนเฝ้าระวังตามมาตรฐานกระทรวงสาธารณสุข ดูคู่มือที่เมนู <strong>"สุขภาพ"</strong> → <strong>"ป้องกันโรค"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สุขภาพ] โรคระบาด ไข้หวัด ไข้เลือดออก มือเท้าปาก โควิด flu ป้องกัน' },
+  { cat:'ผู้ปกครอง-สุขภาพ', q:'โรงเรียนมีตรวจสุขภาพประจำปีให้นักเรียนไหม?',
+    a:'จัดตรวจประจำปี (น้ำหนัก ส่วนสูง สายตา ฟัน) ผลบันทึกในเมนู <strong>"ข้อมูลสุขภาพ"</strong> ผู้ปกครองดูได้',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สุขภาพ] ตรวจสุขภาพ health check ประจำปี น้ำหนัก ส่วนสูง สายตา ฟัน' },
+  { cat:'ผู้ปกครอง-สุขภาพ', q:'ลูกมียาที่ต้องทานประจำ ฝากยาที่ห้องพยาบาลได้ไหม?',
+    a:'ได้ — แจ้งยาพร้อมใบสั่งแพทย์ผ่านเมนู <strong>"ข้อมูลสุขภาพ"</strong> → <strong>"ยาประจำตัว"</strong> พยาบาลจะดูแลตามเวลา',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สุขภาพ] ยา medicine ฝากยา ห้องพยาบาล ใบสั่งแพทย์ ยาประจำตัว' },
+
+  // ========== 11. ผู้ปกครอง-ทะเบียน ==========
+  { cat:'ผู้ปกครอง-ทะเบียน', q:'เปิดรับสมัครนักเรียนใหม่เมื่อไหร่ เอกสารอะไรบ้าง?',
+    a:'ดูประกาศรับสมัครและเอกสารที่เมนู <strong>"ข่าวประชาสัมพันธ์"</strong> → <strong>"รับสมัครนักเรียน"</strong> หรือเว็บไซต์โรงเรียน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ทะเบียน] สมัครเรียน admission enrollment รับสมัคร เอกสาร นักเรียนใหม่ ป.1 ม.1' },
+  { cat:'ผู้ปกครอง-ทะเบียน', q:'ย้ายเข้า/ย้ายออกกลางคัน ทำอย่างไร?',
+    a:'ติดต่อฝ่ายทะเบียน ดูขั้นตอนที่เมนู <strong>"คำร้อง"</strong> → <strong>"ย้ายเข้า/ย้ายออก"</strong> มีแบบฟอร์มออนไลน์',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ทะเบียน] ย้ายเข้า ย้ายออก transfer ลาออก กลางคัน เปลี่ยนโรงเรียน' },
+  { cat:'ผู้ปกครอง-ทะเบียน', q:'ขอใบ transcript / ใบจบการศึกษา ทำอย่างไร?',
+    a:'เมนู <strong>"คำร้อง"</strong> → <strong>"ขอเอกสาร"</strong> เลือก "ใบ ปพ.1" หรือ "ใบรับรองจบ" ระบบแจ้งกำหนดรับและสถานะ',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ทะเบียน] transcript ใบจบ ปพ.1 ปพ.7 รับรอง จบการศึกษา เอกสาร' },
+
+  // ========== 12. ผู้ปกครอง-กีฬา ==========
+  { cat:'ผู้ปกครอง-กีฬา', q:'ทีมกีฬาของโรงเรียนมีกีฬาอะไรบ้าง สมัครอย่างไร?',
+    a:'มีทีมกีฬาหลายประเภท (ฟุตบอล บาสเกตบอล ว่ายน้ำ แบดมินตัน วิ่ง) ดูรายชื่อทีมและคัดตัวที่เมนู <strong>"กิจกรรม"</strong> → <strong>"กีฬา"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กีฬา] ทีมกีฬา sports team ฟุตบอล บาสเกตบอล ว่ายน้ำ คัดตัว สมัคร' },
+  { cat:'ผู้ปกครอง-กีฬา', q:'ลูกมีโรคประจำตัว (หอบหืด หัวใจ) เรียนพลศึกษาได้ไหม?',
+    a:'ได้ — แจ้งข้อมูลพร้อมใบรับรองแพทย์ผ่านเมนู <strong>"ข้อมูลสุขภาพ"</strong> ครูพลศึกษาจะปรับกิจกรรมให้เหมาะสม',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กีฬา] โรคประจำตัว หอบหืด หัวใจ asthma PE พลศึกษา ใบรับรองแพทย์' },
+  { cat:'ผู้ปกครอง-กีฬา', q:'การแข่งขันกีฬาระหว่างโรงเรียนในเครือมีเมื่อไหร่?',
+    a:'จัดแข่งกีฬาเซนต์คาเบรียลสัมพันธ์เป็นประจำ ดูกำหนดการในเมนู <strong>"ปฏิทิน"</strong> กรอง "กีฬา"',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กีฬา] แข่งขัน tournament เซนต์คาเบรียลสัมพันธ์ ระหว่างโรงเรียน กีฬาสี' },
+
+  // ========== 13. ผู้ปกครอง-ห้องสมุด ==========
+  { cat:'ผู้ปกครอง-ห้องสมุด', q:'ห้องสมุดเปิดให้บริการเวลาไหน?',
+    a:'โดยทั่วไปเปิดก่อนเข้าเรียนจนถึงหลังเลิกเรียน ดูเวลาเฉพาะที่เมนู <strong>"ข้อมูลทั่วไป"</strong> → <strong>"ห้องสมุด"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ห้องสมุด] library ห้องสมุด เปิด ปิด เวลา อ่านหนังสือ' },
+  { cat:'ผู้ปกครอง-ห้องสมุด', q:'ยืม-คืนหนังสือผ่านระบบออนไลน์ได้ไหม?',
+    a:'ได้ — เมนู <strong>"ห้องสมุด"</strong> → <strong>"สืบค้น/จอง"</strong> ดูรายการยืมและกำหนดคืน เลยกำหนดมีแจ้งเตือน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ห้องสมุด] ยืม คืน หนังสือ borrow return book จอง สืบค้น' },
+  { cat:'ผู้ปกครอง-ห้องสมุด', q:'โรงเรียนมี e-book หรือฐานข้อมูลออนไลน์ให้ใช้ไหม?',
+    a:'ขึ้นอยู่กับแต่ละโรงเรียน ดูทรัพยากรที่เมนู <strong>"ห้องสมุด"</strong> → <strong>"ทรัพยากรออนไลน์"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ห้องสมุด] e-book ebook ออนไลน์ ฐานข้อมูล digital library สื่อ' },
+
+  // ========== 14. ผู้ปกครอง-การสื่อสาร ==========
+  { cat:'ผู้ปกครอง-การสื่อสาร', q:'ช่องทางรับข่าวสารจากโรงเรียน มีอะไรบ้าง?',
+    a:'ระบบ SWIS Plus (แจ้งเตือน/ข่าว), Line Official, Facebook Page, เว็บไซต์โรงเรียน ดูช่องทางทั้งหมดที่เมนู <strong>"ข่าวประชาสัมพันธ์"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การสื่อสาร] ข่าวสาร ช่องทาง Line Facebook เว็บไซต์ แจ้งเตือน' },
+  { cat:'ผู้ปกครอง-การสื่อสาร', q:'สมาคมผู้ปกครอง-ครู มีกิจกรรมอะไร เข้าร่วมอย่างไร?',
+    a:'จัดกิจกรรมสม่ำเสมอ (ประชุมใหญ่ ระดมทุน วันครอบครัว) ผู้ปกครองทุกคนเป็นสมาชิกอัตโนมัติ ดูที่เมนู <strong>"ข่าวประชาสัมพันธ์"</strong> กรอง "สมาคมผู้ปกครอง"',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การสื่อสาร] สมาคมผู้ปกครอง PTA parent association ประชุมใหญ่' },
+  { cat:'ผู้ปกครอง-การสื่อสาร', q:'ต้องการร้องเรียนหรือเสนอแนะ ส่งผ่านช่องทางไหน?',
+    a:'เมนู <strong>"ร้องเรียน/เสนอแนะ"</strong> ในระบบ SWIS (มีเลขติดตาม), กล่องรับความคิดเห็นที่โรงเรียน, หรือฝ่ายธุรการโดยตรง',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-การสื่อสาร] ร้องเรียน complaint feedback เสนอแนะ ติดต่อ ธุรการ' },
+
+  // ========== 15. ผู้ปกครอง-กิจกรรม ==========
+  { cat:'ผู้ปกครอง-กิจกรรม', q:'กิจกรรมนอกหลักสูตร (ชมรม) มีอะไรบ้าง สมัครอย่างไร?',
+    a:'ดูรายชื่อชมรมและกิจกรรมเสริมที่เมนู <strong>"กิจกรรม"</strong> → <strong>"ชมรม"</strong> สมัครออนไลน์ช่วงต้นภาคเรียน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กิจกรรม] ชมรม club กิจกรรม นอกหลักสูตร สมัคร extracurricular' },
+  { cat:'ผู้ปกครอง-กิจกรรม', q:'ค่ายลูกเสือ-เนตรนารี บังคับไปทุกคนไหม?',
+    a:'เป็นส่วนหนึ่งของหลักสูตร นักเรียนระดับชั้นที่กำหนดต้องเข้าร่วม หากมีเหตุจำเป็นติดต่อฝ่ายกิจกรรม',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กิจกรรม] ลูกเสือ เนตรนารี scout guide ค่ายพักแรม บังคับ ยกเว้น' },
+  { cat:'ผู้ปกครอง-กิจกรรม', q:'ทัศนศึกษา (field trip) ปีนี้ไปที่ไหน ค่าใช้จ่ายเท่าไหร่?',
+    a:'แต่ละระดับชั้นต่างกัน ดูที่เมนู <strong>"กิจกรรม"</strong> → <strong>"ทัศนศึกษา"</strong> ระบบส่งใบแจ้งค่าใช้จ่ายและแบบฟอร์มยินยอมล่วงหน้า',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กิจกรรม] ทัศนศึกษา field trip เที่ยว ค่าใช้จ่าย ยินยอม' },
+  { cat:'ผู้ปกครอง-กิจกรรม', q:'กิจกรรมจิตอาสา/บำเพ็ญประโยชน์ นักเรียนต้องทำกี่ชั่วโมง?',
+    a:'ขึ้นอยู่กับระดับชั้นและนโยบายโรงเรียน (โดยทั่วไป 10-20 ชม./ภาคเรียน) ดูเกณฑ์ที่เมนู <strong>"กิจกรรม"</strong> → <strong>"จิตอาสา"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กิจกรรม] จิตอาสา volunteer บำเพ็ญประโยชน์ ชั่วโมง community service' },
+  { cat:'ผู้ปกครอง-กิจกรรม', q:'กีฬาสี / วันสำคัญ ผู้ปกครองเข้าร่วมได้ไหม?',
+    a:'กิจกรรมหลายรายการเปิดให้ผู้ปกครองเข้าร่วม (กีฬาสี วันพ่อ วันแม่ งานประจำปี) ดูปฏิทินกิจกรรมที่เมนู <strong>"ปฏิทิน"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-กิจกรรม] กีฬาสี sports day วันพ่อ วันแม่ งานประจำปี เข้าร่วม' },
+
+  // ========== 16. ผู้ปกครอง-สุขภาพจิต ==========
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'โรงเรียนมีนักจิตวิทยาหรือที่ปรึกษาประจำไหม?',
+    a:'มีครูแนะแนวและนักจิตวิทยาประจำ นัดพบผ่านเมนู <strong>"แนะแนว"</strong> หรือแจ้งครูประจำชั้น',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] นักจิตวิทยา psychologist counselor ที่ปรึกษา แนะแนว' },
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'โรงเรียนมีการคัดกรองสุขภาพจิตนักเรียนไหม?',
+    a:'จัดคัดกรองเบื้องต้นเป็นประจำ (SDQ, 2Q/9Q) หากพบความเสี่ยงจะแจ้งผู้ปกครองและส่งต่อผู้เชี่ยวชาญ',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] คัดกรอง screening SDQ 2Q 9Q สุขภาพจิต mental health' },
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'ลูกมีอาการเครียด วิตกกังวล หรือซึมเศร้า จะแจ้งโรงเรียนอย่างไร?',
+    a:'แจ้งครูประจำชั้นหรือนัดพบนักจิตวิทยาผ่านเมนู <strong>"แนะแนว"</strong> → <strong>"นัดพบที่ปรึกษา"</strong> ข้อมูลเก็บเป็นความลับ',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] เครียด stress anxiety depression วิตกกังวล ซึมเศร้า' },
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'โรงเรียนรับมือกับเด็กที่ทำร้ายตัวเองอย่างไร?',
+    a:'มีระบบส่งต่อฉุกเฉิน (Referral System) ครูที่พบสัญญาณจะแจ้งนักจิตวิทยาทันที ประสานผู้ปกครองส่งต่อจิตแพทย์ สายด่วนสุขภาพจิต 1323',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] self-harm ทำร้ายตัวเอง ฆ่าตัวตาย suicide referral ฉุกเฉิน 1323' },
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'ลูกเป็นเด็กพิเศษ (ADHD, LD, Autism) โรงเรียนมีการดูแลอย่างไร?',
+    a:'มีระบบ Inclusive Education ครูประจำชั้นประสานนักจิตวิทยาจัดทำแผนดูแลรายบุคคล (IEP) ส่งรายงานแพทย์ผ่านเมนู <strong>"ข้อมูลสุขภาพ"</strong>',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] ADHD LD autism สมาธิสั้น เด็กพิเศษ IEP inclusive' },
+  { cat:'ผู้ปกครอง-สุขภาพจิต', q:'โรงเรียนมี Peer Counseling หรือเพื่อนช่วยเพื่อนไหม?',
+    a:'หลายโรงเรียนมีโครงการ <strong>Peer Counselor</strong> นักเรียนที่ผ่านอบรมรับฟังและดูแลเพื่อนเบื้องต้น สร้างบรรยากาศปลอดภัย',
+    tags:'[ผู้ปกครอง] [สุขภาพจิต] [ผู้ปกครอง-สุขภาพจิต] peer counseling เพื่อนช่วยเพื่อน buddy รับฟัง' },
+
+  // ========== 17. ผู้ปกครอง-สิทธิ์ ==========
+  { cat:'ผู้ปกครอง-สิทธิ์', q:'โรงเรียนมีนโยบายลงโทษนักเรียนอย่างไร?',
+    a:'<strong>ห้ามลงโทษทางกาย</strong>โดยเด็ดขาด ใช้ระบบตักเตือน → หักคะแนน → เชิญผู้ปกครอง → ทัณฑ์บน',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สิทธิ์] ลงโทษ ตี ทำโทษ punishment discipline สิทธิเด็ก corporal' },
+  { cat:'ผู้ปกครอง-สิทธิ์', q:'โรงเรียนถ่ายรูป/วิดีโอลูก ต้องขอความยินยอมไหม?',
+    a:'ตาม <strong>PDPA</strong> ต้องขอความยินยอมก่อนเผยแพร่ ให้/ถอนยินยอมผ่านเมนู <strong>"ข้อมูลส่วนตัว"</strong> → <strong>"ความยินยอม PDPA"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สิทธิ์] PDPA ถ่ายรูป วิดีโอ ยินยอม consent privacy ภาพ' },
+  { cat:'ผู้ปกครอง-สิทธิ์', q:'ข้อมูลลูกในระบบ SWIS ปลอดภัยไหม?',
+    a:'เก็บในระบบเข้ารหัส จำกัดสิทธิ์เข้าถึง เฉพาะครูประจำชั้น ฝ่ายทะเบียน และผู้บริหารที่ได้รับมอบหมาย ระบบบันทึก Log ทุกครั้ง',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สิทธิ์] PDPA data security ข้อมูลปลอดภัย เข้ารหัส encryption สิทธิ์เข้าถึง' },
+  { cat:'ผู้ปกครอง-สิทธิ์', q:'อาหารในโรงเรียนมีมาตรฐานอะไร?',
+    a:'ต้องผ่านมาตรฐาน <strong>"อาหารสะอาด รสชาติอร่อย" (Clean Food Good Taste)</strong> ของกรมอนามัย มีตรวจสอบเป็นระยะ แจ้งปัญหาผ่านเมนู <strong>"ร้องเรียน/เสนอแนะ"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สิทธิ์] อาหาร food safety โรงอาหาร สะอาด มาตรฐาน clean food อนามัย' },
+  { cat:'ผู้ปกครอง-สิทธิ์', q:'ลูกเกิดอุบัติเหตุในโรงเรียน ประกันคุ้มครองไหม?',
+    a:'นักเรียนทุกคนมีประกันอุบัติเหตุกลุ่มคุ้มครองระหว่างอยู่ในโรงเรียน ดูรายละเอียดที่เมนู <strong>"บริการ"</strong> → <strong>"ประกันอุบัติเหตุ"</strong>',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-สิทธิ์] ประกัน insurance อุบัติเหตุ accident คุ้มครอง บาดเจ็บ' },
+
+  // ========== 18. ผู้ปกครอง-ระบบ ==========
+  { cat:'ผู้ปกครอง-ระบบ', q:'ผู้ปกครองลืมรหัสผ่าน ทำอย่างไร?',
+    a:'กดปุ่ม <strong>"ลืมรหัสผ่าน"</strong> ที่หน้าล็อกอิน ระบบส่งลิงก์ตั้งรหัสใหม่ไปที่อีเมล ไม่ได้รับภายใน 5 นาทีให้เช็ค Spam หรือติดต่อ IT',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระบบ] password login forgot reset รหัสผ่าน ล็อกอิน ตั้งรหัสใหม่' },
+  { cat:'ผู้ปกครอง-ระบบ', q:'ผู้ปกครองเข้าระบบครั้งแรก ต้องทำอย่างไร?',
+    a:'ใช้ <strong>รหัสนักเรียน</strong> และ <strong>รหัสผ่านเริ่มต้น</strong> ที่โรงเรียนแจกให้ ล็อกอินครั้งแรกระบบจะให้ตั้งรหัสผ่านใหม่และยืนยันอีเมล',
+    tags:'[ผู้ปกครอง] [ผู้ปกครอง-ระบบ] เข้าระบบครั้งแรก first login ลงทะเบียน register รหัสเริ่มต้น' }
+];
+
+// ===== SEARCH ENGINE =====
+const searchBox = document.getElementById('searchBox');
+const acBox = document.getElementById('autocomplete');
+let acIndex = -1;
+
+searchBox.addEventListener('input', () => { updateAutocomplete(); applyFilters(); });
+searchBox.addEventListener('focus', () => { if (searchBox.value.trim()) updateAutocomplete(); });
+searchBox.addEventListener('keydown', (e) => {
+  const items = acBox.querySelectorAll('.ac-item');
+  if (!items.length) return;
+  if (e.key==='ArrowDown') { e.preventDefault(); acIndex=Math.min(acIndex+1,items.length-1); highlightAc(items); }
+  else if (e.key==='ArrowUp') { e.preventDefault(); acIndex=Math.max(acIndex-1,-1); highlightAc(items); }
+  else if (e.key==='Enter'&&acIndex>=0) { e.preventDefault(); items[acIndex].click(); }
+  else if (e.key==='Escape') { hideAutocomplete(); }
+});
+document.addEventListener('click', (e) => { if (!e.target.closest('.search-wrap')) hideAutocomplete(); });
+
+function highlightAc(items) { items.forEach((el,i)=>el.classList.toggle('ac-active',i===acIndex)); if(acIndex>=0&&items[acIndex])items[acIndex].scrollIntoView({block:'nearest'}); }
+function hideAutocomplete() { acBox.classList.remove('visible'); acIndex=-1; }
+
+function updateAutocomplete() {
+  const query=searchBox.value.trim().toLowerCase(); acIndex=-1;
+  if(!query){hideAutocomplete();return;}
+  const matched=faqData.filter(it=>(it.q+' '+it.tags).toLowerCase().includes(query)).slice(0,7);
+  if(!matched.length){hideAutocomplete();return;}
+  let html='<div class="ac-hint">แนะนำ '+matched.length+' รายการ</div>';
+  html+=matched.map(it=>{
+    const idx=faqData.indexOf(it);
+    return '<div class="ac-item" onclick="selectSuggestion('+idx+')">'+
+      '<div class="ac-icon">Q</div>'+
+      '<div class="ac-text">'+highlightText(it.q,query)+'</div>'+
+      '<div class="ac-cat">'+it.cat+'</div></div>';
+  }).join('');
+  const total=faqData.filter(it=>(it.q+' '+it.a+' '+it.tags).toLowerCase().includes(query)).length;
+  if(total>matched.length) html+='<div class="ac-footer" onclick="commitSearch()">ดูทั้งหมด ('+total+' รายการ) →</div>';
+  acBox.innerHTML=html; acBox.classList.add('visible');
+}
+
+function highlightText(t,q){const i=t.toLowerCase().indexOf(q);if(i===-1)return t;return t.substring(0,i)+'<mark>'+t.substring(i,i+q.length)+'</mark>'+t.substring(i+q.length);}
+function selectSuggestion(idx){hideAutocomplete();searchBox.value=faqData[idx].q;applyFilters();setTimeout(()=>{const el=document.getElementById('faq-0');if(el)el.classList.add('open');},100);}
+function commitSearch(){hideAutocomplete();applyFilters();}
+function quickSearch(t){searchBox.value=t;hideAutocomplete();applyFilters();searchBox.focus();}
+
+function applyFilters() {
+  const query=searchBox.value.trim().toLowerCase();
+  const stage=document.getElementById('centerStage');
+  const hints=document.getElementById('searchHints');
+  const resultsArea=document.getElementById('resultsArea');
+  const container=document.getElementById('resultsContainer');
+  const noResults=document.getElementById('noResults');
+  const countEl=document.getElementById('resultsCount');
+
+  if(!query){stage.classList.remove('has-results');hints.style.display='flex';resultsArea.classList.remove('visible');noResults.style.display='none';return;}
+
+  const matched=faqData.filter(it=>(it.q+' '+it.a+' '+it.tags).toLowerCase().includes(query));
+  stage.classList.add('has-results');hints.style.display='none';
+  if(!matched.length){resultsArea.classList.remove('visible');noResults.style.display='block';return;}
+  noResults.style.display='none';resultsArea.classList.add('visible');
+  countEl.textContent='พบ '+matched.length+' คำถาม';
+
+  // Group by category
+  let html='';
+  let lastCat='';
+  let idx=0;
+  matched.forEach(it=>{
+    if(it.cat!==lastCat){ html+='<div class="cat-label">'+it.cat+'</div>'; lastCat=it.cat; }
+    html+='<div class="faq-item" id="faq-'+idx+'">'+
+      '<div class="faq-q" onclick="toggleFaq('+idx+')">'+
+        '<div class="q-icon">Q</div>'+
+        '<div class="q-text">'+it.q+'</div>'+
+        '<span class="q-arrow">▼</span>'+
+      '</div>'+
+      '<div class="faq-a">'+it.a+'</div></div>';
+    idx++;
+  });
+  container.innerHTML=html;
+}
+
+function toggleFaq(i){document.getElementById('faq-'+i).classList.toggle('open');}
+searchBox.focus();
+</script>
+</body>
+</html>
