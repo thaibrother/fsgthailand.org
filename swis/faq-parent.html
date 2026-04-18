@@ -69,16 +69,16 @@ body{font-family:'Kanit',sans-serif;background:var(--bg);color:var(--text);min-h
     <a href="faq-admin.html" class="other-link">ผู้บริหาร</a>
     <a href="faq-teacher.html" class="other-link">ครู</a>
   </div>
-  <span class="stat">54 รายงาน | 25 หมวด</span>
+  <span class="stat">62 รายงาน | 28 หมวด</span>
 </div>
 <div class="center-stage" id="stage">
   <div class="search-brand">
     <div class="icon">👨‍👩‍👧</div>
     <h1>ศูนย์ข้อมูลสำหรับผู้ปกครอง</h1>
-    <p>ข้อมูลโรงเรียนทุกด้าน — สมัครเรียน ค่าเทอม หลักสูตร กิจกรรม ปฏิทิน กลุ่มสาระ — 54 รายการ</p>
+    <p>ข้อมูลโรงเรียนทุกด้าน — 62 รายการ ครอบคลุมทุกหน่วยงาน ทุกมุมมอง</p>
   </div>
   <div class="search-wrap">
-    <input type="text" class="search-box" id="searchBox" placeholder="ค้นหา เช่น ค่าเทอม, สมัครเรียน, คณิตศาสตร์, วิทยาศาสตร์, ดนตรี..." autocomplete="off">
+    <input type="text" class="search-box" id="searchBox" placeholder="ค้นหา เช่น ค่าเทอม, คณิตศาสตร์, ดนตรี, Bullying, PDPA, เด็กพิเศษ..." autocomplete="off">
     <div class="autocomplete" id="autocomplete"></div>
   </div>
   <div class="dept-filter" id="deptFilter">
@@ -108,6 +108,9 @@ body{font-family:'Kanit',sans-serif;background:var(--bg);color:var(--text);min-h
     <button class="dept-btn" data-dept="อภิบาล">✝️ อภิบาล (1)</button>
     <button class="dept-btn" data-dept="ร้านค้าโรงเรียน">🛒 ร้านค้าโรงเรียน (1)</button>
     <button class="dept-btn" data-dept="โครงการพิเศษ">⭐ โครงการพิเศษ (1)</button>
+    <button class="dept-btn" data-dept="สิทธิ์และนโยบาย">⚖️ สิทธิ์และนโยบาย (4)</button>
+    <button class="dept-btn" data-dept="สุขภาพจิต">🧠 สุขภาพจิต (2)</button>
+    <button class="dept-btn" data-dept="คุณภาพและมาตรฐาน">🏅 คุณภาพและมาตรฐาน (2)</button>
   </div>
   <div class="hint-chips" id="hintChips">
     <span class="hint-chip">สมัครเรียน เอกสาร</span>
@@ -121,15 +124,18 @@ body{font-family:'Kanit',sans-serif;background:var(--bg);color:var(--text);min-h
     <span class="hint-chip">แนะแนว ทุน</span>
     <span class="hint-chip">ระเบียบ เครื่องแบบ</span>
     <span class="hint-chip">ห้องพยาบาล</span>
-    <span class="hint-chip">ระบบ SWIS ดูเกรด</span>
-    <span class="hint-chip">ติดต่อโรงเรียน</span>
-    <span class="hint-chip">After School</span>
-    <span class="hint-chip">Transcript ใบรับรอง</span>
+    <span class="hint-chip">SWIS ดูเกรด</span>
     <span class="hint-chip">ภาษาไทย คณิต วิทย์</span>
     <span class="hint-chip">ดนตรี วงโยฯ</span>
     <span class="hint-chip">อนุบาล ปฐมวัย</span>
     <span class="hint-chip">หอพัก นักเรียนประจำ</span>
-    <span class="hint-chip">มงฟอร์ต ศึกษา</span>
+    <span class="hint-chip">มงฟอร์ต</span>
+    <span class="hint-chip">Bullying กลั่นแกล้ง</span>
+    <span class="hint-chip">สิทธิ์ นโยบาย PDPA</span>
+    <span class="hint-chip">สุขภาพจิต เด็กพิเศษ</span>
+    <span class="hint-chip">มาตรฐาน ประกันคุณภาพ</span>
+    <span class="hint-chip">Transcript ใบรับรอง</span>
+    <span class="hint-chip">After School</span>
     <span class="hint-chip">ซัมเมอร์</span>
   </div>
   <div class="results" id="results"></div>
@@ -297,7 +303,31 @@ const FAQ = [
     tags:"ร้านค้า ขาย เครื่องแบบ ชุดนักเรียน หนังสือ อุปกรณ์ สมุด ปากกา school shop uniform" },
   { cat:"โครงการพิเศษ", q:"โครงการพิเศษ (CEP/SMART TECH/MTE/ภาษาจีน) มีรายละเอียดอย่างไร?",
     a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดโครงการพิเศษ_CEP_SMART_TECH_MTE_และภาษาจีน\">📊 รายละเอียดโครงการพิเศษ CEP SMART TECH MTE และภาษาจีน</a>",
-    tags:"โครงการพิเศษ CEP SMART TECH MTE ภาษาจีน Chinese special program เสริม enrichment" }
+    tags:"โครงการพิเศษ CEP SMART TECH MTE ภาษาจีน Chinese special program เสริม enrichment" },
+  { cat:"สิทธิ์และนโยบาย", q:"นโยบายการลงโทษนักเรียน สิทธิ์ในการชี้แจง และขั้นตอนการอุทธรณ์มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดนโยบายการลงโทษ_สิทธิ์ชี้แจง_และขั้นตอนอุทธรณ์\">📊 รายละเอียดนโยบายการลงโทษ สิทธิ์ชี้แจง และขั้นตอนอุทธรณ์</a>",
+    tags:"สิทธิ์ นโยบาย กฎหมาย ลงโทษ punishment ชี้แจง อุทธรณ์ appeal ทนายความ lawyer สิทธิ์นักเรียน student rights ร้องเรียน" },
+  { cat:"สิทธิ์และนโยบาย", q:"นโยบายป้องกัน Bullying (การกลั่นแกล้ง) และการคุ้มครองนักเรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดนโยบายป้องกัน_Bullying_และคุ้มครองนักเรียน\">📊 รายละเอียดนโยบายป้องกัน Bullying และคุ้มครองนักเรียน</a>",
+    tags:"สิทธิ์ bullying กลั่นแกล้ง รังแก ทำร้าย cyber bullying ออนไลน์ คุ้มครอง ป้องกัน นโยบาย anti-bullying" },
+  { cat:"สิทธิ์และนโยบาย", q:"นโยบายความเป็นส่วนตัว การเก็บข้อมูลนักเรียน และ PDPA มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดนโยบายความเป็นส่วนตัว_PDPA_และการจัดการข้อมูลนักเรียน\">📊 รายละเอียดนโยบายความเป็นส่วนตัว PDPA และการจัดการข้อมูลนักเรียน</a>",
+    tags:"สิทธิ์ ความเป็นส่วนตัว privacy PDPA ข้อมูลส่วนบุคคล data protection กล้อง CCTV รูปถ่าย consent ยินยอม" },
+  { cat:"สิทธิ์และนโยบาย", q:"นโยบายความรับผิดชอบเมื่อเกิดอุบัติเหตุ ประกันอุบัติเหตุ และค่าเสียหายมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดนโยบายรับผิดชอบอุบัติเหตุ_ประกัน_และค่าเสียหาย\">📊 รายละเอียดนโยบายรับผิดชอบอุบัติเหตุ ประกัน และค่าเสียหาย</a>",
+    tags:"สิทธิ์ อุบัติเหตุ accident ประกัน insurance ค่าเสียหาย liability รับผิดชอบ เจ็บ บาดเจ็บ ล้ม ฟ้อง" },
+  { cat:"สุขภาพจิต", q:"ระบบดูแลสุขภาพจิตนักเรียน การคัดกรองพฤติกรรม และนักจิตวิทยาโรงเรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดระบบสุขภาพจิต_การคัดกรอง_และนักจิตวิทยาโรงเรียน\">📊 รายละเอียดระบบสุขภาพจิต การคัดกรอง และนักจิตวิทยาโรงเรียน</a>",
+    tags:"สุขภาพจิต mental health จิตวิทยา psychology คัดกรอง screening ซึมเศร้า depression วิตกกังวล anxiety เครียด stress ปรึกษา counselor" },
+  { cat:"สุขภาพจิต", q:"การจัดการกรณีเด็กพิเศษ (LD/ADHD/Gifted) และห้องเรียน Inclusive มีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดการดูแลเด็กพิเศษ_LD/ADHD/Gifted_และห้องเรียน_Inclusive\">📊 รายละเอียดการดูแลเด็กพิเศษ LD/ADHD/Gifted และห้องเรียน Inclusive</a>",
+    tags:"สุขภาพจิต เด็กพิเศษ special needs LD ADHD Gifted สมาธิสั้น บกพร่อง เรียนรู้ learning disability inclusive IEP แผนการศึกษาเฉพาะบุคคล" },
+  { cat:"คุณภาพและมาตรฐาน", q:"มาตรฐานการศึกษา ผลการประเมินคุณภาพ และอันดับโรงเรียนมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดมาตรฐานการศึกษา_ผลประเมินคุณภาพ_และอันดับโรงเรียน\">📊 รายละเอียดมาตรฐานการศึกษา ผลประเมินคุณภาพ และอันดับโรงเรียน</a>",
+    tags:"คุณภาพ มาตรฐาน standard สมศ. ประกันคุณภาพ QA accreditation ผลประเมิน O-NET อันดับ ranking ระดับชาติ" },
+  { cat:"คุณภาพและมาตรฐาน", q:"คุณวุฒิครู อัตราส่วนครูต่อนักเรียน และการพัฒนาวิชาชีพครูมีรายละเอียดอย่างไร?",
+    a:"<a href=\"#\" class=\"report-link\" data-report=\"รายละเอียดคุณวุฒิครู_อัตราส่วนครูต่อนักเรียน_และการพัฒนาวิชาชีพ\">📊 รายละเอียดคุณวุฒิครู อัตราส่วนครูต่อนักเรียน และการพัฒนาวิชาชีพ</a>",
+    tags:"คุณภาพ ครู คุณวุฒิ ปริญญา อัตราส่วน ratio พัฒนา อบรม training teacher qualification ใบประกอบวิชาชีพ" }
 ];
 
 function norm(s) {
