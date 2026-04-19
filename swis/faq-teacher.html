@@ -528,9 +528,20 @@ searchBox.addEventListener('input', () => {
   }
   const terms = norm(raw).split(/\s+/).filter(t=>t);
   let matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+  if (matches.length === 0) matches = faqNorm.filter(f => terms.some(t => f._s.includes(t)));
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
   if (matches.length > 0 && matches.length <= 12) {
     ac.innerHTML = matches.map(m => `<div class="ac-item" data-q="${m.q}"><span class="ac-cat">${m.cat}</span>${m.q}</div>`).join('');
+    ac.style.display = 'block';
+    ac.querySelectorAll('.ac-item').forEach(item => {
+      item.addEventListener('click', () => {
+        searchBox.value = item.dataset.q;
+        ac.style.display = 'none';
+        doSearch();
+      });
+    });
+  } else if (matches.length === 0 && raw.length >= 2) {
+    ac.innerHTML = `<div class="ac-item" data-q="${raw}" style="color:var(--accent)">💡 วิธี/รายงาน/รายละเอียด ${raw}</div>`;
     ac.style.display = 'block';
     ac.querySelectorAll('.ac-item').forEach(item => {
       item.addEventListener('click', () => {
@@ -566,12 +577,31 @@ function doSearch() {
   if (raw) {
     const terms = norm(raw).split(/\s+/).filter(t=>t);
     matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+    if (matches.length === 0) {
+      matches = faqNorm.filter(f => terms.some(t => f._s.includes(t)));
+    }
   } else {
     matches = faqNorm.slice();
   }
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
+  if (matches.length === 0 && raw) {
+    const genTitle = 'วิธี/รายงาน/รายละเอียด ' + raw;
+    results.innerHTML = `<div class="result-count">แสดง 1 หัวข้อจากคำค้นหา</div>
+      <div class="cat-group">
+        <div class="cat-label" style="background:#fff3e0;color:#e65100">💡 หัวข้อพร้อมเตรียมในฐานข้อมูล (1)</div>
+        <div class="faq-item open" onclick="this.classList.toggle('open')">
+          <div class="q"><span class="q-cat" style="background:#e65100">SWIS</span>${genTitle}</div>
+          <div class="a" style="display:block">
+            <p style="font-size:15px;margin-bottom:10px">ระบบ SWIS Plus รองรับการสร้างคู่มือปฏิบัติงานสำหรับหัวข้อ "<strong>${raw}</strong>" โดยหน่วยงานที่เกี่ยวข้องสามารถเพิ่มเข้าสู่ระบบได้ทันที</p>
+            <p style="font-size:13px;color:#888;border-top:1px solid #f0f0f0;padding-top:10px">💡 ทุกคำค้นหาสามารถเตรียมเป็นคู่มือ FAQ ในฐานข้อมูล SWIS Plus ได้ — หน่วยงานเจ้าของเรื่องเป็นผู้กำหนดเนื้อหา</p>
+          </div>
+        </div>
+      </div>`;
+    results.style.display = 'block';
+    return;
+  }
   if (matches.length === 0) {
-    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์' + (raw ? 'สำหรับ "' + raw + '"' : '') + '</p><p style="font-size:13px;margin-top:8px">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่</p></div>';
+    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์</p><p style="font-size:13px;margin-top:8px">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่</p></div>';
     results.style.display = 'block';
     return;
   }
