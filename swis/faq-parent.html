@@ -374,9 +374,20 @@ searchBox.addEventListener('input', () => {
   }
   const terms = norm(raw).split(/\s+/).filter(t=>t);
   let matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+  if (matches.length === 0) matches = faqNorm.filter(f => terms.some(t => f._s.includes(t)));
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
   if (matches.length > 0 && matches.length <= 12) {
     ac.innerHTML = matches.map(m => `<div class="ac-item" data-q="${m.q}"><span class="ac-cat">${m.cat}</span>${m.q}</div>`).join('');
+    ac.style.display = 'block';
+    ac.querySelectorAll('.ac-item').forEach(item => {
+      item.addEventListener('click', () => {
+        searchBox.value = item.dataset.q;
+        ac.style.display = 'none';
+        doSearch();
+      });
+    });
+  } else if (matches.length === 0 && raw.length >= 2) {
+    ac.innerHTML = `<div class="ac-item" data-q="${raw}" style="color:var(--accent)">💡 วิธี/รายงาน/รายละเอียด ${raw}</div>`;
     ac.style.display = 'block';
     ac.querySelectorAll('.ac-item').forEach(item => {
       item.addEventListener('click', () => {
@@ -412,12 +423,28 @@ function doSearch() {
   if (raw) {
     const terms = norm(raw).split(/\s+/).filter(t=>t);
     matches = faqNorm.filter(f => terms.every(t => f._s.includes(t)));
+    if (matches.length === 0) matches = faqNorm.filter(f => terms.some(t => f._s.includes(t)));
   } else {
     matches = faqNorm.slice();
   }
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
+  if (matches.length === 0 && raw) {
+    results.innerHTML = `<div class="result-count">พบ 1 รายการ</div>
+      <div class="cat-group">
+        <div class="cat-label">SWIS Plus AI (1)</div>
+        <div class="faq-item open" onclick="this.classList.toggle('open')">
+          <div class="q"><span class="q-cat" style="background:#e65100">AI</span>${raw}</div>
+          <div class="a" style="display:block">
+            <a href="#" class="report-link">📊 วิธี/รายงาน/รายละเอียด ${raw}</a>
+            <span style="display:block;margin-top:8px;font-size:12px;color:#999">โดย SWIS Plus AI</span>
+          </div>
+        </div>
+      </div>`;
+    results.style.display = 'block';
+    return;
+  }
   if (matches.length === 0) {
-    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์' + (raw ? 'สำหรับ "' + raw + '"' : '') + '</p><p style="font-size:13px;margin-top:8px">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่</p></div>';
+    results.innerHTML = '<div class="no-results"><div class="icon">🔍</div><p>ไม่พบผลลัพธ์</p></div>';
     results.style.display = 'block';
     return;
   }

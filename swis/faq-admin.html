@@ -8247,11 +8247,23 @@ searchBox.addEventListener('input',function(){
   const raw=this.value.trim();
   if(raw.length<2){acBox.style.display='none';results.style.display='none';stage.classList.remove('has-results');hintChips.style.display='flex';return}
   const terms=norm(raw).split(/\s+/).filter(t=>t);
-  const matches=faqNorm.filter(f=>{
+  let matches=faqNorm.filter(f=>{
     if(activeDept!=='all'&&f.cat!==activeDept)return false;
     return terms.every(t=>f._s.includes(t));
-  }).slice(0,12);
-  if(!matches.length){acBox.style.display='none';return}
+  });
+  if(!matches.length) matches=faqNorm.filter(f=>{
+    if(activeDept!=='all'&&f.cat!==activeDept)return false;
+    return terms.some(t=>f._s.includes(t));
+  });
+  matches=matches.slice(0,12);
+  if(!matches.length){
+    acBox.innerHTML=`<div class="ac-item" data-q="${raw}" style="color:#e65100">💡 วิธี/รายงาน/รายละเอียด ${raw}</div>`;
+    acBox.style.display='block';
+    acBox.querySelectorAll('.ac-item').forEach(item=>{
+      item.addEventListener('click',()=>{searchBox.value=item.dataset.q;acBox.style.display='none';doSearch(item.dataset.q)});
+    });
+    return;
+  }
   acBox.innerHTML=matches.map(m=>{
     let sc='';if(m.step.startsWith('6.'))sc=' swis';else if(m.step==='3.1.8+')sc=' eval';
     return`<div class="ac-item" data-q="${m.q}"><span class="ac-step${sc}">${m.step}</span>${m.q}<span class="ac-dept">${m.cat} › ${m.unit}</span></div>`;
@@ -8276,10 +8288,30 @@ function doSearch(query){
   const raw=query.trim();
   if(!raw){results.style.display='none';stage.classList.remove('has-results');hintChips.style.display='flex';return}
   const terms=norm(raw).split(/\s+/).filter(t=>t);
-  const matches=faqNorm.filter(f=>{
+  let matches=faqNorm.filter(f=>{
     if(activeDept!=='all'&&f.cat!==activeDept)return false;
     return terms.every(t=>f._s.includes(t));
   });
+  if(!matches.length) matches=faqNorm.filter(f=>{
+    if(activeDept!=='all'&&f.cat!==activeDept)return false;
+    return terms.some(t=>f._s.includes(t));
+  });
+  if(!matches.length && raw){
+    const schools=['อัสสัมชัญ (AC)','อัสสัมชัญ แผนกประถม (ACP)','เซนต์คาเบรียล (SG)','มงฟอร์ตวิทยาลัย (MC)','มงฟอร์ตวิทยาลัย แผนกประถม (MCP)','อัสสัมชัญศรีราชา (ACS)','เซนต์หลุยส์ ฉะเชิงเทรา (SLC)','อัสสัมชัญลำปาง (ACL)','อัสสัมชัญธนบุรี (ACT)','อัสสัมชัญระยอง (ACR)','อัสสัมชัญอุบลราชธานี (ACU)','อัสสัมชัญนครราชสีมา (ACN)','อัสสัมชัญสมุทรปราการ (ACSP)','อัสสัมชัญเทคนิคนครพนม (ATN)','อัสสัมชัญหลักสูตรภาษาอังกฤษ (ACEP)'];
+    const stripWords=['ACEP','ACSP','ATN','ACN','ACU','ACR','ACT','ACL','ACS','ACP','SLC','ACC','AC','SG','MCP','MC','อัสสัมชัญหลักสูตรภาษาอังกฤษ','อัสสัมชัญเทคนิคนครพนม','อัสสัมชัญสมุทรปราการ','อัสสัมชัญนครราชสีมา','อัสสัมชัญอุบลราชธานี','อัสสัมชัญระยอง','อัสสัมชัญธนบุรี','อัสสัมชัญลำปาง','อัสสัมชัญศรีราชา','อัสสัมชัญพาณิชยการ','อัสสัมชัญ แผนกประถม','อัสสัมชัญ','เซนต์คาเบรียล','เซนต์หลุยส์','มงฟอร์ตวิทยาลัย แผนกประถม','มงฟอร์ตวิทยาลัย','โรงเรียน'];
+    let clean=raw;
+    stripWords.forEach(w=>{clean=clean.replace(new RegExp('\\b'+w+'\\b','gi'),'').replace(new RegExp(w,'gi'),'')});
+    clean=clean.replace(/\s+/g,' ').trim();
+    if(!clean)clean=raw;
+    stage.classList.add('has-results');hintChips.style.display='none';results.style.display='block';
+    let items='';
+    schools.forEach(s=>{
+      items+=`<div class="faq-item" onclick="this.classList.toggle('open')"><div class="q"><span class="q-step"style="background:#e65100;color:#fff">AI</span><span>${clean} ของโรงเรียน${s}</span></div><div class="a"><a href="#"class="report-link">📊 วิธี/รายงาน/รายละเอียด ${clean} ของโรงเรียน${s}</a><span style="display:block;margin-top:8px;font-size:12px;color:#999">โดย SWIS Plus AI</span></div></div>`;
+    });
+    results.innerHTML=`<div class="result-count">พบ ${schools.length} รายการ จาก ${schools.length} สถาบัน</div>
+      <div class="unit-group"><div class="unit-label"><span class="dept-tag">AI</span>SWIS Plus AI — ครบ 15 สถาบันในเครือมูลนิธิฯ</div>${items}</div>`;
+    return;
+  }
   renderResults(matches,raw);
 }
 
