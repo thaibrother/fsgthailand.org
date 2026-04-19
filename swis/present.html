@@ -646,49 +646,51 @@
 <!-- ==================== MANAGEMENT CYCLE (SVG) ==================== -->
 <div class="mgmt-cycle">
   <div class="mgmt-cycle-title">Management Cycle</div>
-  <svg class="mc-svg" viewBox="0 0 760 620" xmlns="http://www.w3.org/2000/svg" font-family="Kanit, sans-serif">
-    <!-- Feedback loop line: bottom → right → top → down arrow -->
-    <path d="M 380 555 L 660 555 Q 680 555 680 535 L 680 55 Q 680 35 660 35 L 600 35" fill="none" stroke="#1a6e7e" stroke-width="2.5"/>
-    <!-- Arrow head at top of loop (pointing down-left) -->
-    <polygon points="600,28 600,42 586,35" fill="#1a6e7e"/>
+  <svg class="mc-svg" viewBox="0 0 760 640" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .mc-t { font-family: Kanit, sans-serif; }
+      .mc-bold { font-weight: 700; }
+      .mc-reg { font-weight: 400; }
+    </style>
 
-    <!-- Source of our spirit -->
-    <text x="40" y="42" font-size="26" font-weight="700" fill="#1a1a2e">Source of Our Spirit</text>
-    <text x="40" y="72" font-size="18" fill="#94a3b8" font-weight="400">— (Prompting) —</text>
+    <!-- ===== FEEDBACK LOOP (the big rectangle on right + bottom) ===== -->
+    <path d="M 370,570 L 700,570 L 700,80 L 420,80"
+          fill="none" stroke="#1a6e7e" stroke-width="2.5"/>
+    <!-- Down-arrow at end of top line (pointing down into Mission) -->
+    <line x1="420" y1="80" x2="420" y2="130" stroke="#1a6e7e" stroke-width="2.5"/>
+    <polygon points="413,126 427,126 420,140" fill="#1a6e7e"/>
 
-    <!-- Arrow down from loop to Mission -->
-    <line x1="560" y1="35" x2="560" y2="100" stroke="#1a6e7e" stroke-width="2.5"/>
-    <polygon points="553,96 567,96 560,110" fill="#1a6e7e"/>
+    <!-- ===== SOURCE OF OUR SPIRIT (top-left) ===== -->
+    <text x="50" y="45" class="mc-t mc-bold" font-size="28" fill="#1a1a2e">Source of our spirit</text>
+    <text x="50" y="78" class="mc-t mc-reg" font-size="20" fill="#64748b">-- (Prompting) --</text>
 
-    <!-- Mission in the school -->
-    <text x="40" y="130" font-size="24" font-weight="700" fill="#1a1a2e">
-      <tspan fill="#f58220">→</tspan> Mission in the School
-    </text>
+    <!-- ===== MISSION IN THE SCHOOL ===== -->
+    <text x="50" y="170" class="mc-t mc-bold" font-size="26" fill="#1a1a2e">→ Mission in the school</text>
 
-    <!-- Arrow down to 4M box -->
-    <line x1="200" y1="145" x2="200" y2="185" stroke="#1a6e7e" stroke-width="2.5"/>
-    <polygon points="193,181 207,181 200,195" fill="#1a6e7e"/>
+    <!-- Arrow down from Mission to 4M box -->
+    <line x1="250" y1="185" x2="250" y2="220" stroke="#1a6e7e" stroke-width="2.5"/>
+    <polygon points="243,216 257,216 250,230" fill="#1a6e7e"/>
 
-    <!-- 4M teal rounded box -->
-    <rect x="40" y="195" width="480" height="280" rx="24" ry="24" fill="#1a6e7e"/>
-    <!-- 4M items -->
-    <text x="80" y="252" font-size="22" font-weight="700" fill="#000">Man (HR) and Morale</text>
-    <text x="80" y="312" font-size="22" font-weight="700" fill="#000">Means (PDCA or System)</text>
-    <text x="80" y="372" font-size="22" font-weight="700" fill="#000">Tools (Facilities and SWIS)</text>
-    <text x="80" y="432" font-size="22" font-weight="700" fill="#000">Money or Budget</text>
+    <!-- ===== 4M TEAL BOX ===== -->
+    <rect x="50" y="230" width="460" height="260" rx="28" ry="28" fill="#1a6e7e"/>
+    <!-- Text inside box — WHITE for visibility -->
+    <text x="90" y="290" class="mc-t mc-bold" font-size="24" fill="#fff">Man (HR) and Morale</text>
+    <text x="90" y="340" class="mc-t mc-bold" font-size="24" fill="#fff">Means (PDCA or System)</text>
+    <text x="90" y="390" class="mc-t mc-bold" font-size="24" fill="#fff">Tools (Facilities and SWIS)</text>
+    <text x="90" y="440" class="mc-t mc-bold" font-size="24" fill="#fff">Money or Budget</text>
 
-    <!-- Monitoring text (right of box) -->
-    <text x="555" y="290" font-size="22" font-weight="700" fill="#1a1a2e">Monitoring</text>
-    <text x="555" y="325" font-size="22" font-weight="700" fill="#1a1a2e">Supervision</text>
-    <text x="555" y="360" font-size="22" font-weight="700" fill="#1a1a2e">and</text>
-    <text x="555" y="395" font-size="22" font-weight="700" fill="#1a1a2e">Adjusting</text>
+    <!-- ===== MONITORING TEXT (right of box) ===== -->
+    <text x="540" y="305" class="mc-t mc-bold" font-size="22" fill="#1a1a2e">Monitoring</text>
+    <text x="540" y="340" class="mc-t mc-bold" font-size="22" fill="#1a1a2e">Supervision</text>
+    <text x="540" y="375" class="mc-t mc-bold" font-size="22" fill="#1a1a2e">and</text>
+    <text x="540" y="410" class="mc-t mc-bold" font-size="22" fill="#1a1a2e">Adjusting</text>
 
-    <!-- Arrow down from 4M box -->
-    <line x1="200" y1="475" x2="200" y2="510" stroke="#1a6e7e" stroke-width="2.5"/>
-    <polygon points="193,506 207,506 200,520" fill="#1a6e7e"/>
+    <!-- Arrow down from 4M box to Assessment -->
+    <line x1="250" y1="490" x2="250" y2="525" stroke="#1a6e7e" stroke-width="2.5"/>
+    <polygon points="243,521 257,521 250,535" fill="#1a6e7e"/>
 
-    <!-- Assessment > Report > Development -->
-    <text x="40" y="550" font-size="24" font-weight="700" fill="#1a1a2e">Assessment &gt; Report &gt; Development</text>
+    <!-- ===== ASSESSMENT > REPORT > DEVELOPMENT ===== -->
+    <text x="50" y="570" class="mc-t mc-bold" font-size="26" fill="#1a1a2e">Assessment &gt; Report &gt; Development</text>
   </svg>
 </div>
 
