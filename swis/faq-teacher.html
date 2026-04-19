@@ -585,15 +585,14 @@ function doSearch() {
   }
   if (activeDept !== 'all') matches = matches.filter(f => f.cat === activeDept);
   if (matches.length === 0 && raw) {
-    const genTitle = 'วิธี/รายงาน/รายละเอียด ' + raw;
-    results.innerHTML = `<div class="result-count">แสดง 1 หัวข้อจากคำค้นหา</div>
+    results.innerHTML = `<div class="result-count">พบ 1 รายการ</div>
       <div class="cat-group">
-        <div class="cat-label" style="background:#fff3e0;color:#e65100">💡 หัวข้อพร้อมเตรียมในฐานข้อมูล (1)</div>
+        <div class="cat-label">SWIS Plus AI (1)</div>
         <div class="faq-item open" onclick="this.classList.toggle('open')">
-          <div class="q"><span class="q-cat" style="background:#e65100">SWIS</span>${genTitle}</div>
+          <div class="q"><span class="q-cat" style="background:#e65100">AI</span>${raw}</div>
           <div class="a" style="display:block">
-            <p style="font-size:15px;margin-bottom:10px">ระบบ SWIS Plus รองรับการสร้างคู่มือปฏิบัติงานสำหรับหัวข้อ "<strong>${raw}</strong>" โดยหน่วยงานที่เกี่ยวข้องสามารถเพิ่มเข้าสู่ระบบได้ทันที</p>
-            <p style="font-size:13px;color:#888;border-top:1px solid #f0f0f0;padding-top:10px">💡 ทุกคำค้นหาสามารถเตรียมเป็นคู่มือ FAQ ในฐานข้อมูล SWIS Plus ได้ — หน่วยงานเจ้าของเรื่องเป็นผู้กำหนดเนื้อหา</p>
+            <a href="#" class="report-link">📊 วิธี/รายงาน/รายละเอียด ${raw}</a>
+            <span style="display:block;margin-top:8px;font-size:12px;color:#999">โดย SWIS Plus AI</span>
           </div>
         </div>
       </div>`;
