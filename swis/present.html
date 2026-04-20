@@ -517,9 +517,99 @@
   .eco-student-card { flex-direction: column; text-align: center; }
   .eco-student-text { text-align: center; }
 }
+
+/* ===== PASSWORD GATE ===== */
+/* ลบ section นี้ทั้งหมด (CSS + #gate div + JS) เพื่อเปิดหน้านำเสนอตามปกติ */
+#gate {
+  position: fixed; inset: 0; z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #0e1e3a 0%, #1a1a2e 50%, #16213e 100%);
+  font-family: 'Kanit', sans-serif;
+}
+#gate .gate-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  backdrop-filter: blur(12px);
+}
+#gate .gate-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+#gate h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+#gate .gate-sub {
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+#gate input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Kanit', sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+#gate input::placeholder { color: rgba(255,255,255,0.35); }
+#gate input:focus { border-color: #f58220; }
+#gate .gate-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 36px;
+  background: #f58220;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Kanit', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#gate .gate-btn:hover { background: #e0710f; }
+#gate .gate-err {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 12px;
+  min-height: 20px;
+}
+#gate .gate-footer {
+  margin-top: 32px;
+  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+}
+.gate-hidden { display: none !important; }
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE — ลบ div#gate ทั้งบล็อก + CSS + JS ด้านล่าง เพื่อเปิดหน้าตามปกติ -->
+<div id="gate">
+  <div class="gate-box">
+    <div class="gate-icon">🔒</div>
+    <h2>เฉพาะผู้มีสิทธิ์นำเสนอเท่านั้น</h2>
+    <p class="gate-sub">กรุณาใส่รหัสผ่านเพื่อเข้าสู่สารบัญนำเสนอระบบ SWIS Plus</p>
+    <input type="password" id="gate-pw" placeholder="รหัสผ่าน" autocomplete="off">
+    <br>
+    <button class="gate-btn" id="gate-go">เข้าสู่ระบบ</button>
+    <div class="gate-err" id="gate-err"></div>
+    <div class="gate-footer">SWIS Plus Co., Ltd.</div>
+  </div>
+</div>
 
 <nav class="nav">
   <a class="brand" href="index.html">
@@ -775,5 +865,37 @@
 </footer>
 
 <script src="assets/js/nav.js"></script>
+
+<!-- PASSWORD GATE JS — ลบ script นี้ + div#gate + CSS เพื่อเปิดหน้าตามปกติ -->
+<script>
+(function(){
+  // ===== เปลี่ยนรหัสผ่านตรงนี้ =====
+  var PASS = "swisplus";
+  // ==================================
+  var gate = document.getElementById("gate");
+  if(!gate) return;
+  if(sessionStorage.getItem("swis_gate")==="ok"){
+    gate.classList.add("gate-hidden"); return;
+  }
+  document.body.style.overflow = "hidden";
+  var pw = document.getElementById("gate-pw");
+  var btn = document.getElementById("gate-go");
+  var err = document.getElementById("gate-err");
+  function tryLogin(){
+    if(pw.value === PASS){
+      sessionStorage.setItem("swis_gate","ok");
+      gate.classList.add("gate-hidden");
+      document.body.style.overflow = "";
+    } else {
+      err.textContent = "รหัสผ่านไม่ถูกต้อง";
+      pw.value = "";
+      pw.focus();
+    }
+  }
+  btn.addEventListener("click", tryLogin);
+  pw.addEventListener("keydown", function(e){ if(e.key==="Enter") tryLogin(); });
+  pw.focus();
+})();
+</script>
 </body>
 </html>
