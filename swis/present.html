@@ -869,9 +869,13 @@
 <!-- PASSWORD GATE JS — ลบ script นี้ + div#gate + CSS เพื่อเปิดหน้าตามปกติ -->
 <script>
 (function(){
-  // ===== เปลี่ยนรหัสผ่านตรงนี้ =====
-  var PASS = "swisplus";
-  // ==================================
+  // ===== SHA-256 hash ของรหัสผ่าน =====
+  var PASS_HASH = "9bef9113676071174e79350856d81168521cfb487651b26231b268eb0a28d159";
+  // =====================================
+  async function sha256(msg){
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");
+  }
   var gate = document.getElementById("gate");
   if(!gate) return;
   if(sessionStorage.getItem("swis_gate")==="ok"){
@@ -881,8 +885,9 @@
   var pw = document.getElementById("gate-pw");
   var btn = document.getElementById("gate-go");
   var err = document.getElementById("gate-err");
-  function tryLogin(){
-    if(pw.value === PASS){
+  async function tryLogin(){
+    var h = await sha256(pw.value);
+    if(h === PASS_HASH){
       sessionStorage.setItem("swis_gate","ok");
       gate.classList.add("gate-hidden");
       document.body.style.overflow = "";

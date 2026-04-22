@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงานที่ 1 — งานบริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --slate: #334155;
+    --slate-dark: #1e293b;
+    --slate-light: #475569;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── UMBRELLA DIAGRAM ── */
+  .umbrella-section { padding: 48px 24px; background: var(--white); }
+  .umbrella-container {
+    max-width: 800px; margin: 0 auto;
+  }
+  .umbrella-top {
+    background: linear-gradient(135deg, var(--slate-dark), var(--slate));
+    color: var(--white); text-align: center; padding: 24px 28px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    box-shadow: 0 4px 12px rgba(51,65,85,0.3);
+  }
+  .umbrella-top h3 {
+    font-family: 'Noto Sans Thai', sans-serif; color: var(--gold-light);
+    font-size: 1rem; margin-bottom: 4px;
+  }
+  .umbrella-top p { font-size: 0.82rem; color: rgba(255,255,255,0.8); }
+  .umbrella-connector {
+    display: flex; justify-content: center; gap: 0;
+  }
+  .umbrella-connector .line {
+    width: 2px; height: 24px; background: var(--slate-light);
+  }
+  .umbrella-children {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    padding: 0;
+  }
+  .umbrella-child {
+    text-align: center; padding: 16px 12px; border-radius: var(--radius);
+    font-size: 0.8rem; font-weight: 500; border: 2px solid var(--gray-200);
+    background: var(--gray-100); color: var(--text-light);
+    transition: transform 0.2s;
+  }
+  .umbrella-child:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .umbrella-child .child-num { font-weight: 700; color: var(--navy); font-size: 0.9rem; margin-bottom: 4px; }
+  .umbrella-child .child-count { font-size: 0.7rem; color: var(--text-muted); margin-top: 4px; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis-section { padding: 48px 24px; background: var(--white); }
+  .analysis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; max-width: 900px; margin: 0 auto;
+  }
+  .analysis-card {
+    background: var(--cream); border-radius: var(--radius); padding: 24px;
+    border-top: 3px solid var(--navy-light);
+  }
+  .analysis-card.gap-card { border-top-color: var(--red-soft); }
+  .analysis-card.prereq-card { border-top-color: var(--orange-soft); }
+  .analysis-card.ready-card { border-top-color: var(--green-soft); }
+  .analysis-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .analysis-card .card-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .tag-gap { background: #f8d7da; color: #721c24; }
+  .tag-prereq { background: #fff3cd; color: #856404; }
+  .tag-ready { background: #d4edda; color: #155724; }
+  .tag-risk { background: #e2e3e5; color: #383d41; }
+  .analysis-card p, .analysis-card li {
+    font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+  }
+  .analysis-card ul { list-style: none; padding: 0; }
+  .analysis-card li { padding: 4px 0 4px 16px; position: relative; }
+  .analysis-card li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy-light);
+  }
+  .analysis-card.gap-card li::before { background: var(--red-soft); }
+  .analysis-card.prereq-card li::before { background: var(--orange-soft); }
+
+  /* ── ROLE CARDS ── */
+  .role-section { padding: 48px 24px; }
+  .role-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+    max-width: 900px; margin: 0 auto;
+  }
+  .role-card {
+    background: var(--white); border-radius: var(--radius); padding: 24px;
+    box-shadow: var(--shadow); border-top: 3px solid var(--slate);
+    text-align: center;
+  }
+  .role-card .role-icon { font-size: 2rem; margin-bottom: 12px; }
+  .role-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 8px; color: var(--navy);
+  }
+  .role-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header.plan { background: #e8eef4; border-left: 4px solid var(--slate); }
+  .qg-level-header.monitor { background: #eef2f7; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.shared { background: #e8f0f8; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.sys { background: #fef9e7; border-left: 4px solid var(--gold-dark); }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header.plan .qg-badge { background: var(--slate); color: var(--white); }
+  .qg-level-header.monitor .qg-badge { background: var(--navy-light); color: var(--white); }
+  .qg-level-header.shared .qg-badge { background: var(--navy); color: var(--white); }
+  .qg-level-header.sys .qg-badge { background: #fce8b2; color: var(--gold-dark); }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .umbrella-children { grid-template-columns: 1fr 1fr; }
+    .role-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — กลุ่มงานที่ 1</div>
+  <h1>งานบริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</h1>
+  <div class="subtitle">เป้าหมายคุณภาพ กระบวนการ PDCA และการวิเคราะห์สถานะปัจจุบัน</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล → <strong>มาตรฐานที่ 3.3.1</strong> มีระบบสารสนเทศเพื่อการบริหารและการจัดการเรียนรู้ + <strong>มาตรฐานที่ 3.3.3</strong> มีระบบการสื่อสารที่มีประสิทธิภาพ — กลุ่มงานที่ 1 รับผิดชอบภาพรวมทั้งสองมาตรฐาน</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--slate);">
+    <h2 style="color: var(--slate-dark);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 1 เป็นร่มใหญ่ที่กำกับดูแลกลุ่มงานที่ 2–5 ให้ดำเนินการสอดคล้องกับยุทธศาสตร์ของมูลนิธิฯ ภารกิจหลักคือ ปฏิรูประบบเทคโนโลยีสารสนเทศ ลดความซ้ำซ้อน ลดการสูญเสียทรัพยากร และเพิ่มประสิทธิภาพ ให้สอดคล้องกับสภาพสังคมปัจจุบัน โดยทำหน้าที่วางแผน กำกับ ติดตาม ประเมินผล และรายงานภาพรวมต่อผู้บริหารมูลนิธิฯ</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- UMBRELLA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="umbrella-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>ตำแหน่ง: ร่มใหญ่ครอบ 4 กลุ่มงาน</h2>
+    <div class="section-desc">กลุ่มงานที่ 1 กำกับดูแลทุกกลุ่ม — วางแผน ติดตาม ประเมินผล รายงาน</div>
+  </div>
+  <div class="umbrella-container">
+    <div class="umbrella-top">
+      <h3>กลุ่มงานที่ 1 — บริหารฝ่าย ICT</h3>
+      <p>ปฏิรูประบบ · ลดการสูญเสีย · เพิ่มประสิทธิภาพ · สอดคล้องสภาพสังคมปัจจุบัน</p>
+    </div>
+    <div class="umbrella-connector"><div class="line"></div></div>
+    <div class="umbrella-children">
+      <div class="umbrella-child">
+        <div class="child-num">กลุ่ม 2</div>
+        ซอฟต์แวร์/สารสนเทศ
+        <div class="child-count">2.1 มูลนิธิฯ · 2.2 SWIS</div>
+      </div>
+      <div class="umbrella-child">
+        <div class="child-num">กลุ่ม 3</div>
+        สื่อสารมวลชน
+        <div class="child-count">3.1 PR · 3.2 Digital Media</div>
+      </div>
+      <div class="umbrella-child">
+        <div class="child-num">กลุ่ม 4</div>
+        เครือข่าย/อุปกรณ์
+        <div class="child-count">โครงสร้างพื้นฐาน IT</div>
+      </div>
+      <div class="umbrella-child">
+        <div class="child-num">กลุ่ม 5</div>
+        พัฒนาบุคลากร
+        <div class="child-count">5.1 ICT · 5.2 ผู้ใช้ทั่วไป</div>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:16px;">กลุ่ม 5 (พัฒนาบุคลากร) เป็นฐานรองรับทุกกลุ่ม · กระแสงาน: กลุ่ม 4 (รวบรวม) → กลุ่ม 2 (ผลิต) → กลุ่ม 3 (เผยแพร่)</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — งานบริหารฝ่าย ICT</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน ตามแผนผังจากรายงานประจำปี 2568</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วางแผนพัฒนาและปรับปรุงระบบเทคโนโลยีสารสนเทศ วิเคราะห์ปัญหาและความต้องการของโรงเรียนในเครือ</p>
+      <ul>
+        <li>จัดทำแผนงานประจำปีฝ่าย ICT ครอบคลุม 5 กลุ่มงาน</li>
+        <li>บริหารแบบสำรวจงานเทคโนฯ — เก็บข้อมูลพื้นฐานของทุกโรงเรียน</li>
+        <li>วางปฏิทินกิจกรรม: ประชุมคณะกรรมการ, เยี่ยมติดตามโรงเรียน</li>
+      </ul>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>นำเทคโนโลยีสารสนเทศมาใช้ในการบริหารจัดการและพัฒนาระบบงาน เพื่อลดความซ้ำซ้อน ลดการสูญเสียทรัพยากร และเพิ่มประสิทธิภาพ</p>
+      <ul>
+        <li>ประชุมคณะกรรมการฝ่าย ICT เป็นรายเดือน</li>
+        <li>ประสานงานกับกลุ่มงานที่ 2–5 ให้ดำเนินงานตามแผน</li>
+        <li>เยี่ยมติดตาม (นิเทศ) โรงเรียนตามปฏิทินที่กำหนด</li>
+      </ul>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>จัดทำรายงานผลการนิเทศและประเมินผล พร้อมข้อเสนอแนะ แบบเป็นระบบ เพื่อนำไปพัฒนาในปีการศึกษาถัดไป</p>
+      <ul>
+        <li>สรุปข้อเสนอแนะจากการนิเทศเป็นแผนปรับปรุง</li>
+        <li>ทบทวนยุทธศาสตร์และปรับเป้าหมายให้สอดคล้องสภาพจริง</li>
+      </ul>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ประเมินผล</span>
+      <p>กำกับ ติดตาม ประเมินผล และจัดทำรายงานผลการดำเนินงานด้านการบริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</p>
+      <ul>
+        <li>ประเมินผลการดำเนินงานของทุกกลุ่มงาน (2–5)</li>
+        <li>รวบรวมข้อมูลจากแบบสำรวจงานเทคโนฯ เพื่อวิเคราะห์ภาพรวม</li>
+        <li>จัดทำรายงานประจำปีเสนอผู้บริหารมูลนิธิฯ</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 3 KEY ROLES -->
+<!-- ══════════════════════════════════════════ -->
+<div class="role-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>บทบาทหลัก 3 ด้าน</h2>
+    <div class="section-desc">ภารกิจของกลุ่มงานที่ 1 ในฐานะร่มใหญ่ของฝ่าย ICT</div>
+  </div>
+  <div class="role-grid">
+    <div class="role-card">
+      <div class="role-icon">📋</div>
+      <h3>วางแผนและกำหนดทิศทาง</h3>
+      <p>กำหนดแผนงานประจำปีทั้ง 5 กลุ่ม จัดทำปฏิทินกิจกรรม บริหารแบบสำรวจงานเทคโนฯ จัดสรรงบประมาณ ประสานยุทธศาสตร์มูลนิธิฯ กับงาน ICT</p>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🔍</div>
+      <h3>กำกับ ติดตาม นิเทศ</h3>
+      <p>ประชุมคณะกรรมการรายเดือน เยี่ยมติดตามโรงเรียนตามปฏิทิน ติดตามสถานะ SWIS ของแต่ละโรง ประเมินผลการดำเนินงานของทุกกลุ่มงาน</p>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">📊</div>
+      <h3>รายงานและเสนอแนะ</h3>
+      <p>จัดทำรายงานประจำปีฝ่าย ICT เสนอผู้บริหารมูลนิธิฯ สรุปผลนิเทศพร้อมข้อเสนอแนะ วิเคราะห์ข้อมูลจากแบบสำรวจเพื่อวางแผนปีถัดไป</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ANALYSIS — What exists + What to develop -->
+<!-- ══════════════════════════════════════════ -->
+<div class="analysis-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>วิเคราะห์สถานะ: สิ่งที่มีแล้ว และสิ่งที่ต้องพัฒนาต่อ</h2>
+    <div class="section-desc">จากข้อมูลจริง — รายงานประจำปี 2568, แบบสำรวจงานเทคโนฯ, ปฏิทินกิจกรรม, การตรวจเยี่ยมโรงเรียน</div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- READY 1: Committee -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว</span>
+      <h3>คณะกรรมการฝ่าย ICT และปฏิทินกิจกรรม</h3>
+      <ul>
+        <li>มีคณะกรรมการฝ่าย ICT ที่ประชุมเป็นรายเดือน — มีวาระชัดเจน</li>
+        <li>มีปฏิทินกิจกรรมประจำปีที่ระบุกำหนดการเยี่ยมติดตามแต่ละโรงเรียนเป็นรายเดือน</li>
+        <li>ประธานฝ่าย ICT รับผิดชอบภาพรวม — สายงานชัดเจน</li>
+      </ul>
+    </div>
+
+    <!-- READY 2: Annual report -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว</span>
+      <h3>รายงานประจำปีและแบบสำรวจงานเทคโนฯ</h3>
+      <ul>
+        <li>มีรายงานประจำปีฝ่าย ICT ที่ครอบคลุมทั้ง 5 กลุ่มงาน — จัดทำเป็นรูปเล่มเสนอมูลนิธิฯ*</li>
+        <li>มีแบบสำรวจงานเทคโนฯ ที่สำรวจทุกโรงเรียนเป็นประจำ — ครอบคลุมบุคลากร, อุปกรณ์, ค่าใช้จ่าย</li>
+        <li>มีข้อมูลสถานะการใช้งาน SWIS ของทุกโรง (จาก 220 ฟังก์ชัน)*</li>
+      </ul>
+    </div>
+
+    <!-- GAP 1: No integrated dashboard -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>ระบบติดตามภาพรวมแบบบูรณาการ (Dashboard)</h3>
+      <ul>
+        <li>ข้อมูลจากแบบสำรวจ, สถานะ SWIS, ผลนิเทศ กระจายอยู่ในเอกสารหลายชุด — ไม่มีจุดรวมเดียว</li>
+        <li>ไม่มีระบบแสดงผลสรุป (dashboard) ที่ผู้บริหารสามารถเข้าถึงได้ทันที</li>
+        <li>การเปรียบเทียบข้ามโรงเรียนต้องทำด้วยมือ — ใช้เวลามากและเสี่ยงผิดพลาด</li>
+      </ul>
+    </div>
+
+    <!-- GAP 2: No quality framework -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>กรอบวัดคุณภาพที่เชื่อมโยงทุกกลุ่มงาน</h3>
+      <ul>
+        <li>แต่ละกลุ่มงาน (2–5) มี PDCA เป็นของตนเอง แต่ยังไม่มีกรอบวัดคุณภาพกลางที่เชื่อมทุกกลุ่ม</li>
+        <li>เป้าหมายคุณภาพของแต่ละกลุ่มยังไม่ได้ถูกนำมารวมเป็นตัวชี้วัดระดับฝ่าย</li>
+        <li>ยังไม่มีเกณฑ์ประเมินผลงานฝ่าย ICT โดยรวมที่เปรียบเทียบกับปีก่อนได้</li>
+      </ul>
+    </div>
+
+    <!-- PREREQ: Dependency on other groups -->
+    <div class="analysis-card prereq-card">
+      <span class="card-tag tag-prereq">เงื่อนไขจำเป็น</span>
+      <h3>เป้าหมายคุณภาพของกลุ่ม 2–5 ต้องชัดเจนก่อน</h3>
+      <ul>
+        <li>กลุ่มงานที่ 1 ประเมินผลได้ก็ต่อเมื่อกลุ่ม 2–5 มีเป้าหมายคุณภาพที่วัดได้</li>
+        <li>หากกลุ่มใดยังไม่มีตัวชี้วัดที่ชัดเจน การประเมินภาพรวมจะไม่สมบูรณ์</li>
+        <li>ขณะนี้ทุกกลุ่ม (2–5) มีเป้าหมายคุณภาพแล้ว — พร้อมเชื่อมโยงเข้าเป็นกรอบเดียว</li>
+      </ul>
+    </div>
+
+    <!-- RISK: Oversight gap -->
+    <div class="analysis-card" style="border-top: 3px solid var(--gray-600);">
+      <span class="card-tag tag-risk">ความเสี่ยงหลัก</span>
+      <h3>ความต่อเนื่องของการกำกับดูแล</h3>
+      <ul>
+        <li>การนิเทศโรงเรียนขึ้นอยู่กับปฏิทินที่กำหนด — หากเลื่อนหรือยกเลิกจะสูญเสียโอกาสติดตาม</li>
+        <li>ข้อมูลจากแบบสำรวจจะมีคุณค่าก็ต่อเมื่อทุกโรงเรียนตอบครบถ้วนและตรงเวลา</li>
+        <li>ผลการเยี่ยมติดตามต้องถูกบันทึกอย่างเป็นระบบ — หากไม่มีรูปแบบบันทึกที่ชัดเจน ข้อมูลจะสูญหาย</li>
+        <li><strong>ผลกระทบ:</strong> หากการกำกับดูแลไม่ต่อเนื่อง กลุ่มงานที่ 2–5 อาจดำเนินงานไม่สอดคล้องกับเป้าหมายของฝ่าย</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:24px;">* ข้อมูลจากเอกสาร: รายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568, แบบสำรวจงานเทคโนฯ 2568, ปฏิทินกิจกรรมฝ่าย ICT 2568</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน 1</h2>
+    <div class="section-desc">แยกตามบทบาทหลัก — แต่ละข้อมีตัวชี้วัดและเครื่องมือวัดผล</div>
+  </div>
+
+  <!-- 1A: PLANNING & COORDINATION -->
+  <div class="qg-level">
+    <div class="qg-level-header plan">
+      <span class="qg-badge">วางแผน</span>
+      <h3>การวางแผนและประสานงาน</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.1.1</td>
+          <td class="qg-goal">มีแผนงานประจำปีฝ่าย ICT ที่ครอบคลุมทั้ง 5 กลุ่มงาน พร้อมปฏิทินกิจกรรม</td>
+          <td>มีเอกสารแผนงาน + ปฏิทินกิจกรรมก่อนเปิดปีการศึกษา</td>
+          <td class="qg-tool">แผนงานประจำปีฝ่าย ICT + ปฏิทินกิจกรรม*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.1.2</td>
+          <td class="qg-goal">แบบสำรวจงานเทคโนฯ ดำเนินการครบทุกโรงเรียนภายในกำหนด</td>
+          <td>จำนวนโรงเรียนที่ตอบแบบสำรวจครบถ้วนภายในเวลาที่กำหนด</td>
+          <td class="qg-tool">สรุปสถานะการตอบแบบสำรวจ — ทะเบียนติดตาม</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.1.3</td>
+          <td class="qg-goal">มีงบประมาณฝ่าย ICT ที่ตั้งบนฐานข้อมูลจริง สอดคล้องกับแผนงาน</td>
+          <td>งบประมาณฝ่าย ICT อ้างอิงข้อมูลจากแบบสำรวจ + ผลการดำเนินงานปีก่อน</td>
+          <td class="qg-tool">เอกสารงบประมาณ — เทียบกับแผนงาน*</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.1.4</td>
+          <td class="qg-goal">เป้าหมายคุณภาพของทุกกลุ่มงาน (2–5) ถูกรวมเป็นกรอบตัวชี้วัดระดับฝ่าย</td>
+          <td>มีเอกสารกรอบตัวชี้วัดรวมที่ระบุเป้าหมายและสถานะของทุกกลุ่ม</td>
+          <td class="qg-tool">กรอบตัวชี้วัดภาพรวมฝ่าย ICT (ICT Quality Framework)*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1B: MONITORING & SUPERVISION -->
+  <div class="qg-level">
+    <div class="qg-level-header monitor">
+      <span class="qg-badge">กำกับ/นิเทศ</span>
+      <h3>การกำกับ ติดตาม และนิเทศโรงเรียน</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.2.1</td>
+          <td class="qg-goal">ประชุมคณะกรรมการฝ่าย ICT ครบตามกำหนด</td>
+          <td>จำนวนครั้งประชุมจริง เทียบกับแผน (เป้า: ทุกเดือน)</td>
+          <td class="qg-tool">รายงานการประชุม (minutes) — มีอยู่แล้ว*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.2.2</td>
+          <td class="qg-goal">เยี่ยมติดตาม (นิเทศ) โรงเรียนครบตามปฏิทินที่กำหนด</td>
+          <td>จำนวนโรงเรียนที่ได้รับการเยี่ยมติดตามจริง เทียบกับปฏิทิน</td>
+          <td class="qg-tool">ทะเบียนการเยี่ยมติดตาม — เทียบกับปฏิทิน*</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.2.3</td>
+          <td class="qg-goal">ผลการนิเทศถูกบันทึกอย่างเป็นระบบในรูปแบบมาตรฐาน</td>
+          <td>มีแบบฟอร์มบันทึกนิเทศมาตรฐาน + บันทึกครบทุกครั้งที่นิเทศ</td>
+          <td class="qg-tool">แบบฟอร์มบันทึกนิเทศฝ่าย ICT*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.2.4</td>
+          <td class="qg-goal">ติดตามสถานะการใช้งาน SWIS ของทุกโรงเรียนเป็นรอบ</td>
+          <td>รายงานสถานะ SWIS (จำนวนฟังก์ชันที่ใช้ / 220) ต่อโรง อัปเดตอย่างน้อยปีละ 1 ครั้ง</td>
+          <td class="qg-tool">รายงานสถานะ SWIS ประจำปี — มีข้อมูลอยู่ในรายงานประจำปี*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHARED / REPORTING -->
+  <div class="qg-level">
+    <div class="qg-level-header shared">
+      <span class="qg-badge">ภาพรวม</span>
+      <h3>การรายงานและบูรณาการข้อมูล</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.0.1</td>
+          <td class="qg-goal">มีรายงานประจำปีฝ่าย ICT ที่ครอบคลุมทุกกลุ่มงาน เสนอต่อผู้บริหารมูลนิธิฯ</td>
+          <td>รายงานจัดทำเสร็จสมบูรณ์ภายในกำหนด + ครอบคลุม 5 กลุ่มงาน</td>
+          <td class="qg-tool">รายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ — มีอยู่แล้ว*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.0.2</td>
+          <td class="qg-goal">มีระบบแสดงผลสรุปภาพรวม (Dashboard) ที่ผู้บริหารเข้าถึงได้ทันที</td>
+          <td>มี Dashboard แสดงสถานะเป้าหมายคุณภาพ, SWIS, แบบสำรวจ ของทุกกลุ่ม/ทุกโรง</td>
+          <td class="qg-tool">ICT Dashboard — ระบบแสดงผลสรุป*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.0.3</td>
+          <td class="qg-goal">มีการเปรียบเทียบผลดำเนินงาน ICT ข้ามปี เพื่อวัดพัฒนาการ</td>
+          <td>รายงานเปรียบเทียบปีต่อปี (year-over-year) อย่างน้อย 1 ครั้ง/ปี</td>
+          <td class="qg-tool">รายงานเปรียบเทียบประจำปี — ส่วนหนึ่งของรายงานประจำปี</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- POLICY & REGULATION -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#f0e6f6; border-left:4px solid #7c3aed;">
+      <span class="qg-badge" style="background:#7c3aed; color:#fff;">นโยบาย/ระเบียบ</span>
+      <h3>การออกนโยบาย ระเบียบ และประสานขอบข่ายงาน ICT</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.3.1</td>
+          <td class="qg-goal">มีระเบียบ/ข้อตกลงด้าน PDPA ที่แจ้งทุกโรงเรียนและมีหลักฐานการรับทราบ</td>
+          <td>จำนวนโรงเรียนที่ได้รับแจ้งและตอบรับ / 14 โรง</td>
+          <td class="qg-tool">หนังสือแจ้งระเบียบ + บันทึกการรับทราบ</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.2</td>
+          <td class="qg-goal">มีนโยบายกำกับดูแลการใช้เครื่องหมายและอัตลักษณ์ของสถาบัน (ตรามูลนิธิฯ ตราโรงเรียน ชื่อ สัญลักษณ์) ให้ถูกต้องตามกฎหมายทรัพย์สินทางปัญญา ครอบคลุมทุกช่องทาง ทั้งสื่อดิจิทัล สื่อสิ่งพิมพ์ และสินค้า/ของที่ระลึก</td>
+          <td>มีเอกสารนโยบายที่ระบุสิทธิ์การใช้ รูปแบบที่ถูกต้อง และข้อห้าม + แจ้งทุกโรงเรียน</td>
+          <td class="qg-tool">นโยบายการใช้เครื่องหมายและอัตลักษณ์สถาบัน (Institutional Identity &amp; Trademark Policy)</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.3</td>
+          <td class="qg-goal">ทุกโรงเรียนมีขอบข่ายงาน ICT ที่สอดคล้องกับโครงสร้างส่วนกลาง (5 กลุ่มงาน)</td>
+          <td>จำนวนโรงเรียนที่มีขอบข่ายงาน ICT ล้อกับส่วนกลาง / 14 โรง</td>
+          <td class="qg-tool">เปรียบเทียบขอบข่ายงาน ICT ระดับโรงเรียน กับโครงสร้างส่วนกลาง</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.4</td>
+          <td class="qg-goal">มีแนวปฏิบัติด้านความปลอดภัยไซเบอร์และการจัดการข้อมูล (Cybersecurity Policy) ที่แจ้งทุกโรงเรียน</td>
+          <td>มีเอกสารแนวปฏิบัติ + จำนวนโรงเรียนที่รับทราบ</td>
+          <td class="qg-tool">แนวปฏิบัติความปลอดภัยไซเบอร์ + บันทึกการรับทราบ</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.5</td>
+          <td class="qg-goal">มีแนวปฏิบัติด้านลิขสิทธิ์ซอฟต์แวร์ที่ใช้ในโรงเรียน</td>
+          <td>มีเอกสารแนวปฏิบัติที่ระบุซอฟต์แวร์ที่อนุญาต/ไม่อนุญาต + แจ้งทุกโรง</td>
+          <td class="qg-tool">แนวปฏิบัติลิขสิทธิ์ซอฟต์แวร์ + ทะเบียนซอฟต์แวร์</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.6</td>
+          <td class="qg-goal">มาตรฐานอุปกรณ์ขั้นต่ำและแผนสำรองข้อมูล (Backup) ที่ทีม SWIS Plus เคยแจ้ง ถูกยกสถานะเป็นนโยบาย ICT มูลนิธิฯ อย่างเป็นทางการ</td>
+          <td>มีเอกสารนโยบายที่ลงนามโดยประธานฝ่าย ICT + แจ้งทุกโรงอย่างเป็นทางการ</td>
+          <td class="qg-tool">นโยบายมาตรฐานอุปกรณ์และแผนสำรองข้อมูล — ยกระดับจากคำแนะนำทีม SWIS</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.7</td>
+          <td class="qg-goal">มีกรอบการบริหารผู้ให้บริการภายนอก (Vendor Management) — สัญญา ISP, จัดซื้ออุปกรณ์, บริการ Cloud — ที่โรงเรียนสามารถใช้อ้างอิงได้</td>
+          <td>มีแนวปฏิบัติการจัดซื้อ/จัดจ้างด้าน ICT + checklist ประเมินผู้ให้บริการ</td>
+          <td class="qg-tool">แนวปฏิบัติการบริหารผู้ให้บริการ ICT ภายนอก</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.8</td>
+          <td class="qg-goal">มีกลไกถ่ายทอดองค์ความรู้และแนวปฏิบัติที่ดีระหว่างโรงเรียน (Knowledge Sharing)</td>
+          <td>มีการจัดกิจกรรมแลกเปลี่ยนเรียนรู้ด้าน ICT อย่างน้อยปีละ 1 ครั้ง หรือมีช่องทางแบ่งปันแนวปฏิบัติที่ดี</td>
+          <td class="qg-tool">รายงานกิจกรรม Knowledge Sharing / ช่องทางแบ่งปัน (เช่น กรณีศึกษาจากโรงเรียนที่ SWIS ≥80%)</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SYSTEM QUALITY -->
+  <div class="qg-level">
+    <div class="qg-level-header sys">
+      <span class="qg-badge">ฐานราก</span>
+      <h3>โครงสร้างพื้นฐานการบริหาร</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">S.1</td>
+          <td class="qg-goal">มีโครงสร้างคณะกรรมการฝ่าย ICT ที่ชัดเจน พร้อมบทบาทหน้าที่ของสมาชิก</td>
+          <td>มีคำสั่งแต่งตั้ง + รายชื่อ + บทบาทหน้าที่ของคณะกรรมการ</td>
+          <td class="qg-tool">คำสั่งแต่งตั้งคณะกรรมการฝ่าย ICT*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.2</td>
+          <td class="qg-goal">เป้าหมายคุณภาพของฝ่าย ICT เชื่อมโยงกับยุทธศาสตร์มูลนิธิฯ อย่างเป็นเอกสาร</td>
+          <td>มีเอกสารแสดงความเชื่อมโยง: ยุทธศาสตร์ → กลยุทธ์ → มาตรฐาน → เป้าหมายคุณภาพ ICT</td>
+          <td class="qg-tool">แผนผังความเชื่อมโยง (Alignment Map) — ส่วนหนึ่งของรายงาน*</td>
+          <td><span class="qg-status qs-has">มีแล้ว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.3</td>
+          <td class="qg-goal">ข้อมูลจากแบบสำรวจงานเทคโนฯ ถูกนำมาวิเคราะห์เพื่อสนับสนุนการตัดสินใจ</td>
+          <td>มีรายงานวิเคราะห์ข้อมูลจากแบบสำรวจ (ไม่ใช่แค่รวบรวม) อย่างน้อยปีละ 1 ครั้ง</td>
+          <td class="qg-tool">รายงานวิเคราะห์แบบสำรวจงานเทคโนฯ*</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark);">
+    <strong>หมายเหตุ:</strong> * เครื่องมือวัดผลที่ยังไม่มี ต้องพัฒนาเพิ่ม — (1) กรอบตัวชี้วัดภาพรวมฝ่าย ICT (ICT Quality Framework) รวมเป้าหมายทุกกลุ่ม (2) แบบฟอร์มบันทึกนิเทศฝ่าย ICT แบบมาตรฐาน (3) ICT Dashboard แสดงผลสรุปภาพรวม · เอกสารอ้างอิงจากรายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568 และปฏิทินกิจกรรม
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--white); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน 1</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>22 ข้อ</strong> ใน 5 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          วางแผน: 4 ข้อ · กำกับ/นิเทศ: 4 ข้อ · ภาพรวม: 3 ข้อ · นโยบาย/ระเบียบ: 8 ข้อ · ฐานราก: 3 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">7 ข้อ — ใช้เครื่องมือที่มีวัดได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">4 ข้อ — ต้องปรับปรุง/เสริม</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">10 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px; border-top:1px solid var(--gray-200); margin-top:8px; padding-top:16px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">สิ่งที่ต้องสร้างใหม่ (3 รายการ)</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; font-size:0.82rem;">
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">1. ICT Quality Framework</strong><br>
+          <span style="color:var(--text-light);">กรอบตัวชี้วัดภาพรวม รวมเป้าหมายคุณภาพทุกกลุ่ม → วัดข้อ 1.1.4</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">2. แบบฟอร์มนิเทศ ICT</strong><br>
+          <span style="color:var(--text-light);">แบบบันทึกนิเทศมาตรฐาน ใช้กับทุกโรงเรียน → วัดข้อ 1.2.3</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">3. ICT Dashboard</strong><br>
+          <span style="color:var(--text-light);">ระบบแสดงผลสรุปภาพรวม สถานะทุกกลุ่ม/ทุกโรง → วัดข้อ 1.0.2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน 1 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน 1 บริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * กระบวนการ PDCA จากแผนผังรายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568<br>
+    * สถานะ SWIS จากรายงานประจำปี 2568 — 14 โรงเรียน จาก 220 ฟังก์ชัน<br>
+    * เป้าหมายคุณภาพ 22 ข้อ ใน 5 กลุ่ม — เครื่องมือวัดผลพร้อมใช้ 7 ข้อ, มีบางส่วน 5 ข้อ, ต้องพัฒนาใหม่ 10 ข้อ
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงานที่ 4 — งานเครือข่ายและอุปกรณ์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --indigo: #4f46e5;
+    --indigo-dark: #3730a3;
+    --indigo-light: #6366f1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow-section { padding: 48px 24px; background: var(--white); }
+  .flow-container {
+    max-width: 800px; margin: 0 auto; display: flex; align-items: center;
+    justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .flow-box {
+    padding: 14px 20px; border-radius: var(--radius); text-align: center;
+    font-size: 0.82rem; font-weight: 500; min-width: 140px;
+  }
+  .flow-box.active {
+    background: var(--indigo); color: var(--white); border: 2px solid var(--indigo-dark);
+    box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+  }
+  .flow-box.inactive { background: var(--gray-100); color: var(--text-light); border: 2px solid var(--gray-200); }
+  .flow-arrow { font-size: 1.4rem; color: var(--navy-light); font-weight: 700; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis-section { padding: 48px 24px; background: var(--white); }
+  .analysis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; max-width: 900px; margin: 0 auto;
+  }
+  .analysis-card {
+    background: var(--cream); border-radius: var(--radius); padding: 24px;
+    border-top: 3px solid var(--navy-light);
+  }
+  .analysis-card.gap-card { border-top-color: var(--red-soft); }
+  .analysis-card.prereq-card { border-top-color: var(--orange-soft); }
+  .analysis-card.ready-card { border-top-color: var(--green-soft); }
+  .analysis-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .analysis-card .card-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .tag-gap { background: #f8d7da; color: #721c24; }
+  .tag-prereq { background: #fff3cd; color: #856404; }
+  .tag-ready { background: #d4edda; color: #155724; }
+  .tag-risk { background: #e2e3e5; color: #383d41; }
+  .analysis-card p, .analysis-card li {
+    font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+  }
+  .analysis-card ul { list-style: none; padding: 0; }
+  .analysis-card li { padding: 4px 0 4px 16px; position: relative; }
+  .analysis-card li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy-light);
+  }
+  .analysis-card.gap-card li::before { background: var(--red-soft); }
+  .analysis-card.prereq-card li::before { background: var(--orange-soft); }
+
+  /* ── SURVEY HIGHLIGHT ── */
+  .survey-section { padding: 48px 24px; }
+  .survey-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    max-width: 800px; margin: 0 auto;
+  }
+  .survey-item {
+    background: var(--white); border-radius: var(--radius); padding: 20px;
+    box-shadow: var(--shadow); text-align: center;
+    border-top: 3px solid var(--indigo);
+  }
+  .survey-item .survey-icon { font-size: 1.8rem; margin-bottom: 8px; }
+  .survey-item h4 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.85rem;
+    margin-bottom: 6px; color: var(--navy);
+  }
+  .survey-item p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header.network { background: #ede9fe; border-left: 4px solid var(--indigo); }
+  .qg-level-header.hardware { background: #fef3e2; border-left: 4px solid var(--orange-soft); }
+  .qg-level-header.shared { background: #e8f0f8; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.sys { background: #fef9e7; border-left: 4px solid var(--gold-dark); }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header.network .qg-badge { background: var(--indigo); color: var(--white); }
+  .qg-level-header.hardware .qg-badge { background: var(--orange-soft); color: var(--white); }
+  .qg-level-header.shared .qg-badge { background: var(--navy); color: var(--white); }
+  .qg-level-header.sys .qg-badge { background: #fce8b2; color: var(--gold-dark); }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .survey-grid { grid-template-columns: 1fr; }
+    .flow-container { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — กลุ่มงานที่ 4</div>
+  <h1>งานเครือข่ายและอุปกรณ์</h1>
+  <div class="subtitle">Network and Hardware — เป้าหมายคุณภาพ กระบวนการ PDCA และการวิเคราะห์สถานะ</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล → <strong>มาตรฐานที่ 3.3.1</strong> งานเทคโนโลยีสารสนเทศเพื่อการศึกษาวิเคราะห์และรวบรวมข้อมูลเพื่อจัดทสารสนเทศสำหรับการบริหารจัดการของฝ่ายต่างๆ ในมูลนิธิฯ — กลุ่มงานที่ 4 เป็นโครงสร้างพื้นฐานที่รองรับระบบสารสนเทศทั้งหมด</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--indigo);">
+    <h2 style="color: var(--indigo-dark);">ปรัชญาการทำงาน</h2>
+    <p>งานเครือข่ายและอุปกรณ์เป็นจุดเริ่มต้นของกระแสข้อมูล — ระบบเครือข่ายและอุปกรณ์เทคโนโลยีสารสนเทศทำหน้าที่ <strong>รวบรวม</strong> ข้อมูลจากทุกจุดภายในโรงเรียน แล้วส่งต่อให้กลุ่มงานที่ 2 (ซอฟต์แวร์/สารสนเทศ) นำไปใช้ประโยชน์ หากโครงสร้างพื้นฐานไม่เพียงพอหรือไม่เสถียร ระบบสารสนเทศทั้งหมดจะไม่สามารถทำงานได้อย่างมีประสิทธิภาพ คุณภาพของงานเครือข่ายวัดจากความเสถียร ความเพียงพอ ความปลอดภัย และความทันสมัยของอุปกรณ์</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FLOW POSITION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="flow-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>ตำแหน่งในกระแสงาน 5 กลุ่ม</h2>
+    <div class="section-desc">กลุ่มงานที่ 4 อยู่ต้นทาง — รวบรวมข้อมูลแล้วส่งต่อให้กลุ่มที่ 2 ผลิตสารสนเทศ</div>
+  </div>
+  <div class="flow-container">
+    <div class="flow-box active">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 4</div>
+      <div style="font-size:0.75rem;">เครือข่าย/อุปกรณ์<br><em>รวบรวม</em></div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box inactive">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 2</div>
+      <div style="font-size:0.75rem;">ซอฟต์แวร์/สารสนเทศ<br><em>ผลิต · สร้าง</em></div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box inactive">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 3</div>
+      <div style="font-size:0.75rem;">สื่อสารมวลชน<br><em>เผยแพร่</em></div>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:16px;">กลุ่ม 1 (บริหาร) เป็นร่มใหญ่ครอบทั้ง 4 กลุ่ม · กลุ่ม 5 (พัฒนาบุคลากร) เป็นฐานรองรับ</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — งานเครือข่ายและอุปกรณ์</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน ตามแผนผังจากรายงานประจำปี 2568</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วางแผนพัฒนาและจัดเตรียมระบบเครือข่ายและอุปกรณ์เทคโนโลยีสารสนเทศ ให้เพียงพอและเหมาะสมต่อการใช้งาน</p>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ดำเนินติดตั้งและพัฒนาระบบเครือข่าย รวมถึงจัดหาและดูแลอุปกรณ์เทคโนโลยี เพื่อให้ทุกอนุกรรมการสามารถดำเนินการตามแผนของอนุกรรมการที่กำหนดไว้ เพื่อให้บรรลุเป้าหมายตามแผนยุทธศาสตร์ของมูลนิธิฯ</p>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>ปรับปรุงและพัฒนาระบบเครือข่ายและอุปกรณ์ให้ทันสมัย มีประสิทธิภาพ และรองรับการใช้งานที่เพิ่มขึ้น</p>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ตรวจสอบ</span>
+      <p>ตรวจสอบการทำงานของระบบเครือข่ายและอุปกรณ์ รวมถึงติดตามประสิทธิภาพการใช้งาน และแก้ไขปัญหาที่เกิดขึ้น</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SURVEY HIGHLIGHTS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="survey-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>ข้อมูลที่สำรวจจากแบบสำรวจงานเทคโนฯ 2568</h2>
+    <div class="section-desc">แบบสำรวจหมวด 4 ครอบคลุม 6 ด้านหลักของโครงสร้างพื้นฐาน</div>
+  </div>
+  <div class="survey-grid">
+    <div class="survey-item">
+      <div class="survey-icon">👤</div>
+      <h4>บุคลากรเครือข่าย</h4>
+      <p>จำนวน ตำแหน่ง วุฒิการศึกษา ความเชี่ยวชาญ 5 ระดับ + การจ้างภายนอก</p>
+    </div>
+    <div class="survey-item">
+      <div class="survey-icon">🗺️</div>
+      <h4>แผนผังเครือข่าย</h4>
+      <p>มีหรือไม่มี — แผนผังโครงสร้าง Network ของโรงเรียน</p>
+    </div>
+    <div class="survey-item">
+      <div class="survey-icon">🛡️</div>
+      <h4>Firewall</h4>
+      <p>มีหรือไม่ ยี่ห้อ/รุ่น ลักษณะ (Hardware / Software / Router-UTM)</p>
+    </div>
+    <div class="survey-item">
+      <div class="survey-icon">🌐</div>
+      <h4>Internet</h4>
+      <p>ประเภท (Lease Line / ADSL) Bandwidth ผู้ให้บริการ ราคา ปริมาณใช้งานเฉลี่ย</p>
+    </div>
+    <div class="survey-item">
+      <div class="survey-icon">📡</div>
+      <h4>WiFi</h4>
+      <p>จำนวน Access Point ยี่ห้อ ราคาต่อหน่วย % ครอบคลุมพื้นที่อาคารเรียน</p>
+    </div>
+    <div class="survey-item">
+      <div class="survey-icon">💰</div>
+      <h4>ค่าใช้จ่าย</h4>
+      <p>ค่าใช้จ่ายทั้งหมด (บาท/ปี) แยกบุคลากรภายใน / จ้างภายนอก</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ANALYSIS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="analysis-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>วิเคราะห์สถานะ: สิ่งที่มีแล้ว และสิ่งที่ต้องพัฒนาต่อ</h2>
+    <div class="section-desc">จากข้อมูลจริง — แบบสำรวจงานเทคโนฯ 2568, รายงานประจำปี, การตรวจเยี่ยมโรงเรียน</div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- READY 1: Survey data -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — ฐาน</span>
+      <h3>แบบสำรวจโครงสร้างพื้นฐานครบทุกด้าน</h3>
+      <ul>
+        <li>แบบสำรวจงานเทคโนฯ 2568 ครอบคลุมข้อมูล 6 ด้าน: บุคลากร, แผนผัง, Firewall, Internet, WiFi, ค่าใช้จ่าย*</li>
+        <li>สำรวจทุกโรงเรียนในเครือ — สามารถเปรียบเทียบข้ามโรงเรียนได้</li>
+        <li>มีข้อมูลระดับความเชี่ยวชาญ 5 ระดับของบุคลากรเครือข่าย</li>
+      </ul>
+    </div>
+
+    <!-- READY 2: Basic infrastructure -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว</span>
+      <h3>โครงสร้างพื้นฐานเบื้องต้นครบทุกโรงเรียน</h3>
+      <ul>
+        <li>ทุกโรงเรียนมีระบบ Internet และ WiFi — แต่ประเภทบริการ (Lease Line / ADSL) และ Bandwidth แตกต่างกัน</li>
+        <li>ส่วนใหญ่มีระบบ Firewall (Hardware หรือ Software) — บางแห่งรวมอยู่ใน Router/UTM</li>
+        <li>ทุกโรงเรียนมีบุคลากรหรือผู้รับจ้างภายนอกดูแลระบบเครือข่าย</li>
+      </ul>
+    </div>
+
+    <!-- GAP 1: No standards -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>มาตรฐานขั้นต่ำและระบบจัดซื้อที่โปร่งใส</h3>
+      <ul>
+        <li>ไม่มีเกณฑ์กลางว่า "Bandwidth ขั้นต่ำสำหรับโรงเรียนขนาด X ควรเป็นเท่าใด"</li>
+        <li>ไม่มีข้อกำหนดว่า "ทุกโรงเรียนต้องมี Firewall ที่ใช้งานได้จริง"</li>
+        <li>ไม่มีมาตรฐาน WiFi coverage ขั้นต่ำ (เช่น ครอบคลุม ≥ 80% ของพื้นที่อาคารเรียน)</li>
+        <li>แต่ละโรงเรียนจัดซื้ออุปกรณ์ตามดุลพินิจ — ไม่มีการสำรวจความต้องการก่อนซื้อ ไม่มีแผนจัดซื้อที่ผูกกับเป้าหมายคุณภาพ</li>
+        <li>บัญชีทรัพย์สินในระบบ SWIS ยังไม่ครบถ้วน — ไม่สามารถตรวจสอบประสิทธิภาพและความคุ้มค่าของอุปกรณ์ที่จัดซื้อแล้วได้</li>
+        <li>ยังไม่มีการเปรียบเทียบข้ามโรงเรียนอย่างเป็นระบบ — โรงเรียนขนาดเท่ากันอาจมีค่าใช้จ่ายอุปกรณ์ต่างกันมากโดยไม่ทราบสาเหตุ</li>
+      </ul>
+    </div>
+
+    <!-- GAP 2: No monitoring -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>ระบบตรวจสอบและรายงานสถานะเครือข่ายแบบรวมศูนย์</h3>
+      <ul>
+        <li>ไม่มี Network Monitoring System ที่รายงานสถานะ uptime/downtime ของแต่ละโรงเรียน</li>
+        <li>ไม่มีรายงาน bandwidth utilization เป็นรายเดือน — ไม่ทราบว่าโรงเรียนใดใช้งานเกินความจุ</li>
+        <li>การแก้ไขปัญหาเป็นแบบ reactive (เมื่อเสียจึงแก้) ไม่ใช่ proactive (ป้องกันก่อน)</li>
+      </ul>
+    </div>
+
+    <!-- PREREQ: Network diagram -->
+    <div class="analysis-card prereq-card">
+      <span class="card-tag tag-prereq">เงื่อนไขจำเป็น</span>
+      <h3>แผนผังเครือข่าย (Network Diagram) ครบทุกโรงเรียน</h3>
+      <ul>
+        <li>แบบสำรวจถามว่า "มีแผนผังระบบเครือข่ายหรือไม่" — ยังไม่ทราบว่ากี่โรงเรียนมี</li>
+        <li>แผนผังเครือข่ายเป็นเอกสารพื้นฐานสำหรับการวางแผน ขยาย และแก้ไขปัญหา</li>
+        <li>หากไม่มีแผนผัง การประเมินความเพียงพอของโครงสร้างพื้นฐานจะทำได้ยาก</li>
+      </ul>
+    </div>
+
+    <!-- RISK: Dependency -->
+    <div class="analysis-card" style="border-top: 3px solid var(--gray-600);">
+      <span class="card-tag tag-risk">ความเสี่ยงหลัก</span>
+      <h3>ความเหลื่อมล้ำด้านโครงสร้างพื้นฐานระหว่างโรงเรียน</h3>
+      <ul>
+        <li>โรงเรียนขนาดใหญ่ในกรุงเทพฯ มีงบประมาณจัดซื้ออุปกรณ์มากกว่าโรงเรียนต่างจังหวัด</li>
+        <li>Bandwidth และ WiFi coverage แตกต่างกัน — ส่งผลต่อคุณภาพการใช้งาน SWIS และระบบสารสนเทศอื่น</li>
+        <li>บุคลากรด้านเครือข่ายมีระดับความเชี่ยวชาญแตกต่างกัน — บางโรงเรียนพึ่งพาผู้รับจ้างภายนอกเป็นหลัก</li>
+        <li><strong>ผลกระทบ:</strong> หากโครงสร้างพื้นฐานไม่เพียงพอ ระบบ SWIS (กลุ่มงานที่ 2) จะไม่สามารถทำงานได้เต็มประสิทธิภาพ — กลุ่มที่ 4 เป็นต้นทางของทุกระบบ</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:24px;">* ข้อมูลจากเอกสาร: แบบสำรวจงานเทคโนฯ 2568 หมวด 4.1, รายงานประจำปีฝ่าย ICT 2568, แผนผัง PDCA กลุ่มงานที่ 4</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน 4</h2>
+    <div class="section-desc">แยกตามมิติ — แต่ละข้อมีตัวชี้วัดปลายทางและเครื่องมือวัดผล<br>
+      <span style="font-size:0.8rem; color:var(--indigo);">Phase 1 = ด้านบริหาร/บริการ (ดำเนินการก่อน) · Phase 2 = ด้านวิชาการ/การเรียนการสอน (รุกคืบภายหลัง)</span>
+    </div>
+  </div>
+
+  <!-- 4.1 NETWORK — โครงสร้างพื้นฐานร่วม -->
+  <div class="qg-level">
+    <div class="qg-level-header network">
+      <span class="qg-badge">เครือข่าย</span>
+      <h3>ระบบเครือข่ายและการเชื่อมต่อ — โครงสร้างพื้นฐานร่วม</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.1.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์ความเพียงพอของ Bandwidth แต่ละโรงเรียนเทียบกับจำนวนผู้ใช้ได้</td>
+          <td>ข้อมูล Bandwidth ต่อจำนวนผู้ใช้ (Mbps/คน) พร้อมวิเคราะห์เปรียบเทียบข้ามโรง</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — Bandwidth + จำนวนผู้ใช้*</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.2</td>
+          <td class="qg-goal">สามารถรายงานสถานะระบบป้องกันเครือข่าย (Firewall) ของทุกโรงเรียนได้</td>
+          <td>ข้อมูลสถานะ Firewall ครบทุกโรง — ประเภท, รุ่น, ใช้งานจริงหรือไม่</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด Firewall*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.3</td>
+          <td class="qg-goal">สามารถเปรียบเทียบ WiFi coverage ข้ามโรงเรียนได้ — เห็นว่าโรงไหนพร้อม โรงไหนยังขาด</td>
+          <td>ข้อมูล % ครอบคลุมพื้นที่อาคารเรียน ครบทุกโรง</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — ช่อง "ครอบคลุมพื้นที่อาคารเรียน %"*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.4</td>
+          <td class="qg-goal">สามารถระบุได้ว่าโรงเรียนใดมี/ไม่มี แผนผังระบบเครือข่าย (Network Diagram) ที่เป็นปัจจุบัน</td>
+          <td>ข้อมูลสถานะแผนผังเครือข่ายครบทุกโรง — สะท้อนความพร้อมในการดูแลระบบ</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — ช่อง "แผนผังระบบเครือข่าย"*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.5</td>
+          <td class="qg-goal">สามารถติดตามความเสถียรของระบบเครือข่ายแต่ละโรงเรียนได้ — เห็น downtime และผลกระทบ</td>
+          <td>ข้อมูล downtime (ครั้ง/ชั่วโมง) ต่อเดือน ต่อโรง — วิเคราะห์แนวโน้มได้</td>
+          <td class="qg-tool">Network Monitoring System (ระยะยาว)*</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.1B CAPACITY PLANNING — Demand Side -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#fdf2f8; border-left:4px solid #be185d;">
+      <span class="qg-badge" style="background:#be185d; color:var(--white);">Capacity Planning</span>
+      <h3>การวิเคราะห์กำลังการรองรับและลักษณะการใช้งาน</h3>
+    </div>
+    <div style="padding:12px 24px; background:#fdf2f8; font-size:0.8rem; color:#9d174d; line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      ปัญหาที่เกิดจริง: เมื่อผู้ใช้จำนวนมากใช้งานพร้อมกัน เครือข่ายอืดช้า — ผู้ใช้ที่ไม่เข้าใจโครงสร้างพื้นฐานมักโทษคุณภาพซอฟต์แวร์เป็นอันดับแรก ข้อมูลด้าน Capacity Planning ช่วยพิสูจน์สาเหตุจริงและวางแผนจัดการทรัพยากรตามข้อมูล
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.1.6</td>
+          <td class="qg-goal">สามารถวิเคราะห์ลักษณะการใช้งานเครือข่ายแยกตามพื้นที่/ห้อง/ช่วงเวลาได้ — เห็นว่าจุดใดมี demand สูงเมื่อใด</td>
+          <td>ข้อมูล Utilization แยกตามโซน/ห้อง/ช่วงเวลา — ระบุจุดคอขวดได้</td>
+          <td class="qg-tool">Network Monitoring + SWIS กิจกรรม/ตารางสอน (ระยะยาว)*</td>
+          <td><span class="qg-status qs-future">ต้องพัฒนาเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.7</td>
+          <td class="qg-goal">สามารถคาดการณ์ความต้องการใช้งานเครือข่ายล่วงหน้าจากกิจกรรม/ตารางสอนได้ — ห้องประชุม อบรม พิธีการ รองรับผู้ใช้จำนวนมาก</td>
+          <td>ข้อมูลกิจกรรม × จำนวนคน × สถานที่ → ประมาณ bandwidth ที่ต้องการ รวมถึงการจัด mobile AP/router รองรับตามสถานการณ์</td>
+          <td class="qg-tool">SWIS ปฏิทินกิจกรรม + ข้อมูลโครงสร้างพื้นฐาน (ระยะยาว)*</td>
+          <td><span class="qg-status qs-future">ต้องพัฒนาเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.8</td>
+          <td class="qg-goal">สามารถแยกแยะได้ว่าปัญหาความช้าเกิดจากโครงสร้างพื้นฐาน (bandwidth/อุปกรณ์ไม่พอ) หรือจากซอฟต์แวร์ — มีข้อมูลพิสูจน์สาเหตุจริง</td>
+          <td>รายงานวิเคราะห์ปัญหาแยก infrastructure vs software พร้อมหลักฐาน (traffic log, response time, server load)</td>
+          <td class="qg-tool">Network Monitoring + Application Performance Log (ระยะยาว)*</td>
+          <td><span class="qg-status qs-future">ต้องพัฒนาเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.2 EQUIPMENT — ADMIN/SERVICE (เริ่มก่อน) -->
+  <div class="qg-level">
+    <div class="qg-level-header hardware">
+      <span class="qg-badge">อุปกรณ์ · บริหาร/บริการ</span>
+      <h3>อุปกรณ์ด้านบริหารและบริการ — เริ่มดำเนินการก่อน</h3>
+    </div>
+    <div style="padding:12px 24px; background:#fef9e7; font-size:0.8rem; color:var(--gold-dark); line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      ใช้ข้อมูลจากฟังก์ชันบัญชีทรัพย์สินใน SWIS ที่มีอยู่แล้ว — วิเคราะห์ รายงาน สะท้อนให้ผู้นำเห็น โรงเรียนที่ใช้ SWIS ครบจะมีข้อมูลวิเคราะห์ได้ โรงที่ไม่ใช้จะเห็นช่องว่างชัดเจน
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.2.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์ความเพียงพอของอุปกรณ์ด้านบริหาร/บริการจากข้อมูลในระบบ SWIS ได้</td>
+          <td>ข้อมูลอัตราส่วนอุปกรณ์ต่อผู้ใช้งานบริหาร เปรียบเทียบข้ามโรงได้</td>
+          <td class="qg-tool">บัญชีทรัพย์สิน SWIS + ข้อมูลบุคลากร SWIS</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.2.2</td>
+          <td class="qg-goal">ข้อมูลบัญชีทรัพย์สินด้าน IT ในระบบ SWIS ครบถ้วนเป็นปัจจุบัน — สะท้อนความจริงของแต่ละโรง</td>
+          <td>ข้อมูลทรัพย์สินใน SWIS ตรงกับของจริง — โรงที่ป้อนข้อมูลครบวิเคราะห์ได้ โรงที่ไม่ครบเห็นช่องว่าง</td>
+          <td class="qg-tool">ระบบบัญชีทรัพย์สิน SWIS (ฟังก์ชันมีอยู่แล้ว)</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.2.3</td>
+          <td class="qg-goal">สามารถวิเคราะห์ค่าใช้จ่ายด้านอุปกรณ์ IT เปรียบเทียบข้ามโรงเรียนได้ — เห็นความแตกต่างและความคุ้มค่า</td>
+          <td>ข้อมูลค่าใช้จ่าย (บาท/ปี) แยกประเภท เปรียบเทียบโรงขนาดเท่ากันได้</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + บัญชีทรัพย์สิน SWIS</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.2.4</td>
+          <td class="qg-goal">สามารถวิเคราะห์อายุการใช้งานอุปกรณ์ — เห็นว่าอุปกรณ์ใดควรทดแทน เมื่อใด</td>
+          <td>ข้อมูลอายุอุปกรณ์จาก SWIS แสดงให้เห็นรายการที่เกินอายุใช้งาน ต่อโรง</td>
+          <td class="qg-tool">บัญชีทรัพย์สิน SWIS — วันที่จัดซื้อ + อายุใช้งาน</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.3 EQUIPMENT — ACADEMIC (รุกคืบภายหลัง) -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#f0fdf4; border-left:4px solid var(--green-soft);">
+      <span class="qg-badge" style="background:var(--green-soft); color:var(--white);">อุปกรณ์ · วิชาการ</span>
+      <h3>อุปกรณ์ด้านวิชาการและการเรียนการสอน — รุกคืบภายหลัง</h3>
+    </div>
+    <div style="padding:12px 24px; background:#f0fdf4; font-size:0.8rem; color:#166534; line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      ปัจจุบันแต่ละโรงเรียนจัดซื้ออุปกรณ์ด้านวิชาการโดยฝ่ายเทคโนฯ ของโรงเรียนนำเสนอผู้อำนวยการ โดยยังไม่มีการศึกษาลักษณะการจัดการเรียนการสอนและความต้องการของผู้สอน/ผู้เรียนก่อน — เมื่อข้อมูลด้านบริหาร/บริการพร้อมแล้ว จึงขยายมาสู่ด้านวิชาการ
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.3.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์ความเพียงพอของอุปกรณ์ด้านวิชาการจากข้อมูลในระบบ SWIS ได้</td>
+          <td>ข้อมูลอุปกรณ์วิชาการใน SWIS แยกหมวด (Lab, ห้องเรียน, ห้องสมุด) วิเคราะห์ต่อผู้เรียนได้</td>
+          <td class="qg-tool">บัญชีทรัพย์สิน SWIS — หมวดอุปกรณ์วิชาการ</td>
+          <td><span class="qg-status qs-future">รอ Phase บริหาร/บริการเสร็จ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.3.2</td>
+          <td class="qg-goal">มีข้อมูลลักษณะการจัดการเรียนการสอนที่ต้องอาศัยเทคโนโลยี — เพื่อวิเคราะห์ว่าอุปกรณ์ที่มีตอบโจทย์หรือไม่</td>
+          <td>ข้อมูลรูปแบบการสอนที่ใช้เทคโนโลยี × อุปกรณ์ที่มี — สะท้อนช่องว่าง</td>
+          <td class="qg-tool">ข้อมูลจากฝ่ายวิชาการ/หลักสูตร (เฉพาะเมื่อพร้อม)</td>
+          <td><span class="qg-status qs-future">รอ Phase บริหาร/บริการเสร็จ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHARED / CROSS-CUTTING -->
+  <div class="qg-level">
+    <div class="qg-level-header shared">
+      <span class="qg-badge">ภาพรวม</span>
+      <h3>การวิเคราะห์ภาพรวม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.0.1</td>
+          <td class="qg-goal">สามารถเปรียบเทียบโครงสร้างพื้นฐานและอุปกรณ์ข้ามโรงเรียนได้ — เห็นความแตกต่าง จุดแข็ง จุดที่ต้องพัฒนา</td>
+          <td>รายงานเปรียบเทียบข้ามโรง (Bandwidth, WiFi, Firewall, อุปกรณ์, ค่าใช้จ่าย) วิเคราะห์ได้ทุกมิติ</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + บัญชีทรัพย์สิน SWIS — วิเคราะห์ข้ามโรง</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.0.2</td>
+          <td class="qg-goal">ข้อมูลจากระบบ SWIS สะท้อนให้เห็นว่าโรงเรียนใดใช้ระบบจริงจัง โรงใดยังไม่ใช้ — ส่งต่อผู้นำขับเคลื่อน</td>
+          <td>รายงานสถานะการใช้ฟังก์ชัน SWIS (บัญชีทรัพย์สิน) ต่อโรง — ครบ/ไม่ครบ/ไม่ได้ใช้</td>
+          <td class="qg-tool">SWIS Dashboard — สถานะการใช้งานฟังก์ชัน</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.5 SECURITY & COMPLIANCE -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#fef2f2; border-left:4px solid #991b1b;">
+      <span class="qg-badge" style="background:#991b1b; color:var(--white);">ความปลอดภัย · Compliance</span>
+      <h3>มาตรฐานความปลอดภัยสารสนเทศและการปฏิบัติตามกฎหมาย</h3>
+    </div>
+    <div style="padding:12px 24px; background:#fef2f2; font-size:0.8rem; color:#991b1b; line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      สถานศึกษาจัดเก็บข้อมูลส่วนบุคคลของนักเรียน ผู้ปกครอง และบุคลากรจำนวนมาก — ต้องปฏิบัติตามกรอบกฎหมายไทยและมาตรฐานสากลที่เกี่ยวข้อง
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.5.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะการปฏิบัติตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล (PDPA) ของแต่ละโรงเรียนได้</td>
+          <td>ข้อมูลสถานะ PDPA ต่อโรง — มีนโยบาย, แต่งตั้ง DPO, consent form, กระบวนการจัดการเมื่อข้อมูลรั่ว</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + ข้อมูลจากฝ่ายบริหาร</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.5.2</td>
+          <td class="qg-goal">สามารถรายงานสถานะมาตรการรักษาความมั่นคงปลอดภัยไซเบอร์ของแต่ละโรงเรียนได้ — ตาม พ.ร.บ.ไซเบอร์ และแนวปฏิบัติสากล</td>
+          <td>ข้อมูลมาตรการความปลอดภัย (Backup, Antivirus, Access Control, Incident Response Plan) ต่อโรง</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวดความปลอดภัย*</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.5.3</td>
+          <td class="qg-goal">สามารถรายงานสถานะระบบสำรองข้อมูล (Backup) และแผนกู้คืนระบบ (Disaster Recovery) ของแต่ละโรงเรียนได้</td>
+          <td>ข้อมูลระบบ Backup ต่อโรง — ความถี่, ที่เก็บ, ทดสอบกู้คืนหรือไม่</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด Backup*</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SYSTEM QUALITY -->
+  <div class="qg-level">
+    <div class="qg-level-header sys">
+      <span class="qg-badge">ฐานราก</span>
+      <h3>คุณภาพบุคลากรและการจัดการ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">S.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะบุคลากรด้านเครือข่ายของแต่ละโรงเรียนได้ — เห็นว่าโรงไหนมี โรงไหนพึ่งพาภายนอก</td>
+          <td>ข้อมูลบุคลากรเครือข่าย (จำนวน, ระดับความเชี่ยวชาญ, in-house/outsource) ครบทุกโรง</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด 4.1*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.2</td>
+          <td class="qg-goal">สามารถติดตามการพัฒนาทักษะบุคลากรด้านเครือข่ายได้ — เชื่อมกับกลุ่มงานที่ 5</td>
+          <td>ข้อมูลการอบรม/สัมมนาด้านเครือข่ายและความปลอดภัย ต่อโรง ต่อปี</td>
+          <td class="qg-tool">ข้อมูลอบรม — เชื่อมกับกลุ่มงานที่ 5 (พัฒนาบุคลากร)</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.6;">
+    <strong>หลักการสำคัญ:</strong> ใช้ข้อมูลจากระบบ SWIS ที่มีฟังก์ชันอยู่แล้ว (โดยเฉพาะบัญชีทรัพย์สิน) → วิเคราะห์ → รายงาน → สะท้อนให้ผู้นำเห็น → ผู้นำขับเคลื่อน หลีกเลี่ยงการสำรวจเพิ่มเติม — ใช้เฉพาะเมื่อจำเป็น เพื่อพิสูจน์ว่าฐานข้อมูล SWIS มีประสิทธิภาพกว่า<br><br>
+    <strong>แหล่งข้อมูลหลัก:</strong> (1) ฟังก์ชันบัญชีทรัพย์สินใน SWIS (มีอยู่แล้ว) (2) แบบสำรวจงานเทคโนฯ 2568 (ดำเนินการแล้ว)<br>
+    · บัญชีทรัพย์สินจากระบบ SWIS — เป็นรายงานจากระบบหลังจัดซื้อจริง ตรงกันทั้งมูลนิธิฯ และหน่วยงาน<br><br>
+    <strong>จุดแข็งของระบบ SWIS:</strong> ระบบสามารถรวบรวมและประมวลผลข้อมูลจัดทำสารสนเทศรายงานประเมินตนเอง (SAR) จากระบบได้โดยอัตโนมัติ — ไม่ต้องรวบรวมจากหลายแหล่งมาเขียนใหม่
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--white); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน 4</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>21 ข้อ</strong> ใน 8 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.8;">
+          เครือข่าย: 5 ข้อ · Capacity Planning: 3 ข้อ · อุปกรณ์บริหาร/บริการ: 4 ข้อ<br>
+          อุปกรณ์วิชาการ: 2 ข้อ · ภาพรวม: 2 ข้อ · ความปลอดภัย/Compliance: 3 ข้อ · ฐานราก: 2 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะข้อมูล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีข้อมูล</span> <span style="color:var(--text-light);">4 ข้อ — วิเคราะห์ได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">11 ข้อ — มีระบบ/ข้อมูลดิบ ต้องเสริมให้ครบ</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">1 ข้อ — ต้องพัฒนาระบบเพิ่ม (Network Monitoring)</span></div>
+          <div><span class="qg-status qs-future" style="margin-right:6px;">ต้องพัฒนา/รอ Phase</span> <span style="color:var(--text-light);">5 ข้อ — Capacity Planning 3 + อุปกรณ์วิชาการ 2</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px; border-top:1px solid var(--gray-200); margin-top:8px; padding-top:16px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">วิธีการขับเคลื่อน</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; font-size:0.78rem;">
+        <div style="background:#e8f4f8; padding:10px 12px; border-radius:4px; text-align:center; border-top:3px solid var(--navy-light);">
+          <strong style="color:var(--navy);">1. ข้อมูลจาก SWIS</strong><br>
+          <span style="color:var(--text-light);">บัญชีทรัพย์สิน<br>ข้อมูลบุคลากร</span>
+        </div>
+        <div style="background:#eef6ee; padding:10px 12px; border-radius:4px; text-align:center; border-top:3px solid var(--green-soft);">
+          <strong style="color:#166534;">2. วิเคราะห์</strong><br>
+          <span style="color:var(--text-light);">เปรียบเทียบข้ามโรง<br>เห็นจุดแข็ง/จุดอ่อน</span>
+        </div>
+        <div style="background:#fef9e7; padding:10px 12px; border-radius:4px; text-align:center; border-top:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">3. รายงาน · สะท้อน</strong><br>
+          <span style="color:var(--text-light);">ส่งข้อมูลให้ผู้นำเห็น<br>ใครเอางาน/ไม่เอางาน</span>
+        </div>
+        <div style="background:#fdf2f2; padding:10px 12px; border-radius:4px; text-align:center; border-top:3px solid var(--red-soft);">
+          <strong style="color:#991b1b;">4. ผู้นำขับเคลื่อน</strong><br>
+          <span style="color:var(--text-light);">ประสานให้ผู้นำ<br>ใช้ข้อมูลตัดสินใจ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน 4 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน 4 เครือข่ายและอุปกรณ์ (Network and Hardware) — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * ข้อมูลโครงสร้างพื้นฐานจากแบบสำรวจงานเทคโนฯ 2568 ดำเนินการโดยฝ่าย ICT มูลนิธิฯ<br>
+    * กระบวนการ PDCA จากแผนผังรายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568<br>
+    * เป้าหมายคุณภาพ 21 ข้อ ใน 8 กลุ่ม — เครือข่าย 5 · Capacity Planning 3 · อุปกรณ์บริหาร/บริการ 4 · อุปกรณ์วิชาการ 2 · ภาพรวม 2 · ความปลอดภัย/Compliance 3 · ฐานราก 2<br>
+    * วิธีการขับเคลื่อน: ข้อมูลจาก SWIS → วิเคราะห์เปรียบเทียบ → รายงานสะท้อน → ผู้นำขับเคลื่อน
+  </p>
+</div>
+
+</body>
+</html>

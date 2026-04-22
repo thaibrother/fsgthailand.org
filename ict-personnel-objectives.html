@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงานที่ 5 — งานพัฒนาบุคลากร ICT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --emerald: #059669;
+    --emerald-dark: #047857;
+    --emerald-light: #10b981;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── TWO AUDIENCE ── */
+  .audience-section { padding: 48px 24px; background: var(--white); }
+  .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+  .audience-card {
+    background: var(--cream); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+  }
+  .audience-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--gold-light);
+  }
+  .audience-card ul { list-style: none; padding: 0; }
+  .audience-card li {
+    padding: 6px 0; font-size: 0.88rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .audience-card li:last-child { border-bottom: none; }
+  .audience-card li strong { color: var(--navy); font-weight: 600; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis-section { padding: 48px 24px; }
+  .analysis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; max-width: 900px; margin: 0 auto;
+  }
+  .analysis-card {
+    background: var(--white); border-radius: var(--radius); padding: 24px;
+    border-top: 3px solid var(--navy-light); box-shadow: var(--shadow);
+  }
+  .analysis-card.gap-card { border-top-color: var(--red-soft); }
+  .analysis-card.prereq-card { border-top-color: var(--orange-soft); }
+  .analysis-card.ready-card { border-top-color: var(--green-soft); }
+  .analysis-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .analysis-card .card-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .tag-gap { background: #f8d7da; color: #721c24; }
+  .tag-prereq { background: #fff3cd; color: #856404; }
+  .tag-ready { background: #d4edda; color: #155724; }
+  .tag-risk { background: #e2e3e5; color: #383d41; }
+  .analysis-card p, .analysis-card li {
+    font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+  }
+  .analysis-card ul { list-style: none; padding: 0; }
+  .analysis-card li { padding: 4px 0 4px 16px; position: relative; }
+  .analysis-card li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy-light);
+  }
+  .analysis-card.gap-card li::before { background: var(--red-soft); }
+  .analysis-card.prereq-card li::before { background: var(--orange-soft); }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; background: var(--white); }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--cream);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header.ict-staff { background: #d1fae5; border-left: 4px solid var(--emerald); }
+  .qg-level-header.general-user { background: #dbeafe; border-left: 4px solid #3b82f6; }
+  .qg-level-header.shared { background: #e8f0f8; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.sys { background: #fef9e7; border-left: 4px solid var(--gold-dark); }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header.ict-staff .qg-badge { background: var(--emerald); color: var(--white); }
+  .qg-level-header.general-user .qg-badge { background: #3b82f6; color: var(--white); }
+  .qg-level-header.shared .qg-badge { background: var(--navy); color: var(--white); }
+  .qg-level-header.sys .qg-badge { background: #fce8b2; color: var(--gold-dark); }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .analysis-grid, .audience-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — กลุ่มงานที่ 5</div>
+  <h1>งานพัฒนาบุคลากร ICT</h1>
+  <div class="subtitle">และทักษะการใช้เทคโนโลยีสารสนเทศของบุคลากรทุกหน่วยงานโรงเรียนในเครือฯ</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล — กลุ่มงานที่ 5 เป็นฐานรากที่พัฒนาคนให้พร้อมใช้เทคโนโลยี รองรับทั้ง 4 กลุ่มงานที่เหลือ</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--emerald);">
+    <h2 style="color: var(--emerald-dark);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 5 เป็น <strong>ฐานรองรับ</strong> ของทั้ง 4 กลุ่มงาน — ไม่ว่าเครือข่ายจะดี ซอฟต์แวร์จะพร้อม หรือสื่อจะมีคุณภาพเพียงใด หากบุคลากรไม่มีทักษะเพียงพอ ระบบทั้งหมดจะไม่สามารถทำงานได้เต็มศักยภาพ การพัฒนาแบ่งเป็น 2 กลุ่มที่ต้องการแนวทางต่างกัน: บุคลากร ICT ที่ต้องมีทักษะเฉพาะทาง กับผู้ใช้งานทั่วไปที่ต้องสามารถใช้ระบบสารสนเทศในการปฏิบัติงานประจำวันได้</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — งานพัฒนาบุคลากร ICT</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน ตามแผนผังจากรายงานประจำปี 2568</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วิเคราะห์สถานะกำลังคนและทักษะ ICT จากข้อมูลที่มี — แยก 3 กลุ่ม:</p>
+      <ul>
+        <li><strong>ICT ส่วนกลาง (5.1):</strong> วิเคราะห์ช่องว่างกำลังคน 5 กลุ่มงาน</li>
+        <li><strong>ICT ตามโรงเรียน (5.2):</strong> วิเคราะห์ระดับทักษะ สถานะ SOP สัดส่วน outsource</li>
+        <li><strong>ผู้ใช้งาน SWIS (5.3):</strong> วิเคราะห์การใช้โมดูลจริง match กับ Job Spec HRD</li>
+      </ul>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ดำเนินการตามแผนที่วิเคราะห์ได้:</p>
+      <ul>
+        <li><strong>5.2:</strong> จัดอบรมตามช่องว่างทักษะ พัฒนา SOP ตามโรงเรียน</li>
+        <li><strong>5.3:</strong> อบรม SWIS ตามโมดูลที่ต้องใช้จริง</li>
+        <li><strong>5.4:</strong> อบรม Security Awareness ให้บุคลากรทุกคน</li>
+      </ul>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ติดตาม</span>
+      <p>ตรวจสอบผลจากข้อมูลจริง — ไม่ใช้แบบสอบถามความพึงพอใจ:</p>
+      <ul>
+        <li>สถิติการใช้งาน SWIS หลังอบรม — ใช้จริงหรือไม่ (5.3.4)</li>
+        <li>เปรียบเทียบข้ามโรงเรียน — โรงไหนพัฒนา โรงไหนยังเหมือนเดิม (5.0.1)</li>
+      </ul>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>รายงานผลให้ผู้นำขับเคลื่อน — ข้อมูลพูดเอง:</p>
+      <ul>
+        <li>สะท้อนให้เห็นว่าโรงใดลงทุนพัฒนาคน โรงใดไม่ลงทุน (5.0.2)</li>
+        <li>ฟีดแบค HRD ให้ปรับ Job Spec ด้านเทคโนโลยีให้ชัดเจนขึ้น</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TWO AUDIENCES -->
+<!-- ══════════════════════════════════════════ -->
+<div class="audience-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>กลุ่มเป้าหมาย 3 กลุ่ม</h2>
+    <div class="section-desc">แต่ละกลุ่มต้องการข้อมูลและแนวทางพัฒนาต่างกัน — ไม่รวมบริษัท SWIS Plus (ผู้รับจ้างงาน 2.2)</div>
+  </div>
+  <div class="audience-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="audience-card" style="border-top: 3px solid var(--navy);">
+      <h3>5.1 ICT ส่วนกลาง</h3>
+      <ul>
+        <li><strong>ขอบเขต:</strong> ประสานนโยบาย กำกับมาตรฐาน 5 กลุ่มงาน</li>
+        <li><strong>ปัจจุบัน:</strong> 2 คน ดูแล 14 โรงเรียน</li>
+        <li><strong>สิ่งที่ต้องวิเคราะห์:</strong> ช่องว่างกำลังคน กลุ่มงานไหนมีคน กลุ่มไหนว่าง</li>
+        <li><strong>เป้าหมาย:</strong> 2 ข้อ — สะท้อนภาระงานให้ผู้นำเห็น</li>
+      </ul>
+    </div>
+    <div class="audience-card" style="border-top: 3px solid var(--emerald);">
+      <h3>5.2 ICT ตามโรงเรียน</h3>
+      <ul>
+        <li><strong>ขอบเขต:</strong> ฝ่ายเทคโนฯ 14 โรงเรียน ทักษะเฉพาะทาง</li>
+        <li><strong>สิ่งที่ต้องวิเคราะห์:</strong> ระดับทักษะ สถานะอบรม SOP สัดส่วน outsource</li>
+        <li><strong>แหล่งข้อมูล:</strong> แบบสำรวจงานเทคโนฯ 5 ระดับ*</li>
+        <li><strong>เป้าหมาย:</strong> 4 ข้อ — เปรียบเทียบข้ามโรงเรียน</li>
+      </ul>
+    </div>
+    <div class="audience-card" style="border-top: 3px solid #3b82f6;">
+      <h3>5.3 ผู้ใช้งาน SWIS</h3>
+      <ul>
+        <li><strong>ขอบเขต:</strong> ครู ผู้บริหาร เจ้าหน้าที่ ที่ใช้ระบบ SWIS</li>
+        <li><strong>สิ่งที่ต้องวิเคราะห์:</strong> ใช้โมดูลใดจริง match กับ Job Spec HRD ข้อใด</li>
+        <li><strong>จุดเชื่อม HRD:</strong> K(B)02-03, Cp(B)02-03 → ต้องแยก KPI ตามกลุ่มงาน</li>
+        <li><strong>เป้าหมาย:</strong> 4 ข้อ — วิเคราะห์ gap สมรรถนะ</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ANALYSIS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="analysis-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>วิเคราะห์สถานะ: สิ่งที่มีแล้ว และสิ่งที่ต้องพัฒนาต่อ</h2>
+    <div class="section-desc">จากข้อมูลจริง — แบบสำรวจงานเทคโนฯ 2568, ตารางอบรม SWIS, รายงานประจำปี</div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- READY 1: Survey baseline -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — ฐาน</span>
+      <h3>ข้อมูลพื้นฐานบุคลากร ICT ครบทุกกลุ่มงาน</h3>
+      <ul>
+        <li>แบบสำรวจงานเทคโนฯ 2568 สำรวจบุคลากรทั้ง 5 กลุ่มงาน: จำนวน วุฒิ ตำแหน่ง ความเชี่ยวชาญ*</li>
+        <li>ระดับความเชี่ยวชาญ 5 ระดับ: พื้นฐาน → มีวุฒิ/ใบประกาศ → พอใช้ → ดี → เชี่ยวชาญ</li>
+        <li>สำรวจการจ้างภายนอก (outsource) พร้อมค่าใช้จ่าย — ทราบว่าโรงเรียนใดพึ่งพาภายนอก</li>
+      </ul>
+    </div>
+
+    <!-- READY 2: SWIS training -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — 5.2</span>
+      <h3>ระบบอบรมการใช้งาน SWIS</h3>
+      <ul>
+        <li>มีตารางอบรมการใช้งานโมดูล SWIS ให้กับโรงเรียนต่างๆ ตลอดปี (ปฏิทินกิจกรรมฝ่าย ICT)*</li>
+        <li>มีรายชื่อผู้ใช้งานแต่ละโมดูล — ทราบว่าใครผ่านการอบรมแล้ว</li>
+        <li>มีข้อมูลป้อนกลับจากผู้เข้าอบรม — ส่วนใหญ่ตอบรับเชิงบวก (แต่ยังไม่เป็นระบบ)</li>
+      </ul>
+    </div>
+
+    <!-- GAP 1: SOP -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี — 5.2.3</span>
+      <h3>คู่มือปฏิบัติงาน ICT (SOP) ตามโรงเรียน</h3>
+      <ul>
+        <li>ไม่มีระบบถ่ายทอดความรู้เมื่อบุคลากร ICT ลาออก — ความรู้สูญหาย</li>
+        <li>ไม่ทราบว่าโรงเรียนใดมี/ไม่มี SOP — ต้องสำรวจ</li>
+        <li>สะท้อนความพร้อมรองรับการหมุนเวียนคน</li>
+      </ul>
+    </div>
+
+    <!-- GAP 2: Mapping ICT ↔ HRD -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี — 5.3.2</span>
+      <h3>ตาราง Mapping ตำแหน่ง × โมดูล SWIS × รหัส Job Spec HRD</h3>
+      <ul>
+        <li>รหัส K(B)02-03 / Cp(B)02-03 กว้างเกินไป — ไม่แยก KPI ตามกลุ่มงาน</li>
+        <li>ต้องฟีดแบค HRD ให้ปรับ: เขียนเป็นสมรรถนะ ไม่ล็อคชื่อโปรแกรม + แยกระดับ</li>
+        <li>Commission on ICT and HRM รวมเป็นหน่วยเดียวกันแล้ว (มติ PC ครั้งที่ 9) — โอกาสในการบูรณาการ</li>
+      </ul>
+    </div>
+
+    <!-- GAP 3: Security Awareness -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี — 5.4.1</span>
+      <h3>หลักสูตร Security Awareness</h3>
+      <ul>
+        <li>ยังไม่มีหลักสูตรอบรมความปลอดภัยสารสนเทศสำหรับบุคลากร</li>
+        <li>PDPA และ Cybersecurity Act กำหนดให้ต้องมีการอบรม</li>
+        <li>เชื่อมกับกลุ่มงาน 4 (ข้อ 4.5) ที่กำหนดมาตรฐานความปลอดภัยระบบ</li>
+      </ul>
+    </div>
+
+    <!-- RISK -->
+    <div class="analysis-card" style="border-top: 3px solid var(--gray-600);">
+      <span class="card-tag tag-risk">ความเสี่ยงหลัก</span>
+      <h3>ช่องว่างทักษะระหว่างโรงเรียน + กำลังคนส่วนกลาง</h3>
+      <ul>
+        <li>ICT ส่วนกลาง 2 คน ดูแล 5 กลุ่มงาน 14 โรงเรียน — ภาระงานเกินกำลัง กลุ่ม 1,3,4,5 ไม่มีคนทำจริง</li>
+        <li>โรงเรียนที่มีบุคลากร ICT เก่ง พัฒนาได้ด้วยตนเอง โรงที่ไม่มี ต้องพึ่งส่วนกลางหรือจ้างภายนอก</li>
+        <li><strong>ผลกระทบ:</strong> ความเหลื่อมล้ำด้านทักษะ ICT → ข้อมูลจากบางโรงเรียนไม่ครบ → กระทบทุกกลุ่มงาน</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:24px;">* ข้อมูลจากเอกสาร: แบบสำรวจงานเทคโนฯ 2568 ทุกหมวด (บุคลากร), ปฏิทินกิจกรรมฝ่าย ICT 2568, รายงานประจำปี 2568</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน 5</h2>
+    <div class="section-desc">แยกตามกลุ่มบุคลากร — แต่ละข้อมีตัวชี้วัดปลายทางและแหล่งข้อมูล<br>
+      <span style="font-size:0.8rem; color:var(--indigo);">บุคลากร ICT = เจ้าหน้าที่ส่วนกลาง + ฝ่ายเทคโนฯ ตามโรงเรียน · ไม่รวมบริษัท SWIS Plus (ผู้รับจ้างพัฒนาซอฟต์แวร์ งาน 2.2)</span>
+    </div>
+  </div>
+
+  <!-- 5.1 ICT STAFF — ส่วนกลาง -->
+  <div class="qg-level">
+    <div class="qg-level-header ict-staff">
+      <span class="qg-badge">ICT ส่วนกลาง</span>
+      <h3>บุคลากร ICT ระดับมูลนิธิฯ — ประสานนโยบายและกำกับมาตรฐาน</h3>
+    </div>
+    <div style="padding:12px 24px; background:#eef2ff; font-size:0.8rem; color:var(--indigo-dark); line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      ปัจจุบัน ICT ส่วนกลางมีบุคลากรจริง 2 คน สำหรับ 5 กลุ่มงานครอบคลุม 14 โรงเรียน — บริษัท SWIS Plus เป็นผู้รับจ้างพัฒนาซอฟต์แวร์ (งาน 2.2) ไม่ใช่บุคลากรส่วนกลาง
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">5.1.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะกำลังคน ICT ส่วนกลางเทียบกับขอบเขตงาน 5 กลุ่มได้ — เห็นช่องว่างระหว่างงานที่ต้องทำกับคนที่มี</td>
+          <td>ข้อมูลจำนวนบุคลากรส่วนกลาง × กลุ่มงานที่รับผิดชอบ — สะท้อนภาระงานจริง</td>
+          <td class="qg-tool">โครงสร้างฝ่าย ICT + ข้อมูลอัตรากำลัง</td>
+          <td><span class="qg-status qs-partial">มีข้อมูล ยังไม่วิเคราะห์</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.1.2</td>
+          <td class="qg-goal">สามารถระบุได้ว่างาน ICT กลุ่มใดมีผู้รับผิดชอบจริง กลุ่มใดยังว่าง — สะท้อนให้ผู้นำเห็นโครงสร้างที่ต้องเสริม</td>
+          <td>รายงานสถานะกำลังคนต่อกลุ่มงาน: มีคนทำ / ไม่มีคนทำ / พึ่งผู้รับจ้างภายนอก</td>
+          <td class="qg-tool">โครงสร้างฝ่าย ICT — แยกตามกลุ่มงาน 1-5</td>
+          <td><span class="qg-status qs-partial">มีข้อมูล ยังไม่วิเคราะห์</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5.2 ICT STAFF — ตามโรงเรียน -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#f0fdf4; border-left:4px solid var(--green-soft);">
+      <span class="qg-badge" style="background:var(--green-soft); color:var(--white);">ICT ตามโรงเรียน</span>
+      <h3>ฝ่ายเทคโนโลยีสารสนเทศของแต่ละโรงเรียน — 14 แห่ง</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">5.2.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์ระดับทักษะบุคลากร ICT แต่ละโรงเรียนได้ — เห็นจุดแข็ง จุดที่ต้องพัฒนา เปรียบเทียบข้ามโรง</td>
+          <td>ข้อมูลระดับทักษะ (5 ระดับ) แยกรายทักษะ ครบทุกโรง — วิเคราะห์เปรียบเทียบได้</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — ระดับความเชี่ยวชาญ*</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.2.2</td>
+          <td class="qg-goal">สามารถรายงานสถานะการอบรมด้าน ICT ของบุคลากรแต่ละโรงเรียนได้ — เห็นว่าโรงไหนลงทุนพัฒนาคน โรงไหนไม่ลงทุน</td>
+          <td>ข้อมูลจำนวนชั่วโมงอบรม ต่อบุคลากร ICT ต่อโรง ต่อปี</td>
+          <td class="qg-tool">บันทึกการอบรม SWIS + แบบสำรวจงานเทคโนฯ</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.2.3</td>
+          <td class="qg-goal">สามารถระบุได้ว่าโรงเรียนใดมี/ไม่มีคู่มือปฏิบัติงาน ICT (SOP) และระบบถ่ายทอดความรู้</td>
+          <td>ข้อมูลสถานะ SOP ต่อโรง — มี/ไม่มี/เป็นปัจจุบัน — สะท้อนความพร้อมรองรับการหมุนเวียนคน</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + ข้อมูลจากฝ่ายบริหาร</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.2.4</td>
+          <td class="qg-goal">สามารถเปรียบเทียบสัดส่วน in-house / outsource ด้าน ICT ข้ามโรงเรียนได้ — เห็นว่าโรงไหนพึ่งตัวเอง โรงไหนพึ่งภายนอก</td>
+          <td>ข้อมูลสัดส่วนงาน ICT ที่ทำเอง vs จ้างภายนอก ต่อโรง</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวดบุคลากร*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5.3 SWIS USERS — ผู้ใช้งาน SWIS -->
+  <div class="qg-level">
+    <div class="qg-level-header general-user">
+      <span class="qg-badge">ผู้ใช้งาน SWIS</span>
+      <h3>ครูและบุคลากรผู้ใช้งานระบบ SWIS — ทักษะการใช้งานและการเชื่อม Job Spec</h3>
+    </div>
+    <div style="padding:12px 24px; background:#fef9e7; font-size:0.8rem; color:var(--gold-dark); line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      SWIS มี spec ของ user (ใช้โมดูลอะไร ทำงานอะไร) → แมตช์กับรหัส Job Spec ของ HRD (C/K/Cp) → เห็นช่องว่างสมรรถนะ → วางแผนพัฒนาตรงจุด
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">5.3.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์ได้ว่าผู้ใช้ SWIS แต่ละคนใช้โมดูลใดจริง — เห็นระดับการใช้งานเทียบกับ spec ที่กำหนด</td>
+          <td>ข้อมูล active users ต่อโมดูล ต่อโรง — เปรียบเทียบกับจำนวนที่ควรใช้ได้</td>
+          <td class="qg-tool">สถิติการใช้งานจากระบบ SWIS (Log)</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.3.2</td>
+          <td class="qg-goal">สามารถแมตช์ SWIS user spec กับรหัส Job Spec ของ HRD ได้ — เห็นว่าตำแหน่งใดต้องใช้ SWIS โมดูลใด ตรงกับสมรรถนะ C/K/Cp ข้อใด</td>
+          <td>ตาราง mapping: ตำแหน่ง × โมดูล SWIS × รหัส Job Spec HRD — เชื่อม ICT กับ HRM</td>
+          <td class="qg-tool">Job Spec HRD (C/K/Cp 137 หัวข้อ) + SWIS Module List</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.3.3</td>
+          <td class="qg-goal">สามารถรายงานสถานะการอบรมการใช้งาน SWIS แยกตามโมดูลและโรงเรียนได้ — เห็นว่าโรงไหนอบรมครบ โรงไหนยังขาด</td>
+          <td>ข้อมูลผู้ผ่านอบรม ต่อโมดูล ต่อโรง — เทียบกับจำนวนผู้ที่ต้องใช้</td>
+          <td class="qg-tool">ตารางอบรม SWIS + รายชื่อผู้ใช้งานจาก SWIS</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.3.4</td>
+          <td class="qg-goal">ข้อมูลการใช้งาน SWIS หลังอบรมสะท้อนให้เห็นว่าผู้ผ่านอบรมใช้งานจริงหรือไม่ — แยก "อบรมแล้วใช้" กับ "อบรมแล้วไม่ใช้"</td>
+          <td>ข้อมูล active users หลังอบรม 1 เดือน ต่อโมดูล — วิเคราะห์ประสิทธิผลการอบรม</td>
+          <td class="qg-tool">สถิติการใช้งานจากระบบ SWIS (Log)</td>
+          <td><span class="qg-status qs-partial">มีระบบ ข้อมูลไม่ครบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5.4 SECURITY AWARENESS -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#fef2f2; border-left:4px solid #991b1b;">
+      <span class="qg-badge" style="background:#991b1b; color:var(--white);">ความปลอดภัย</span>
+      <h3>ความตระหนักด้านความปลอดภัยสารสนเทศ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">5.4.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะการอบรม Security Awareness ของบุคลากรแต่ละโรงเรียนได้</td>
+          <td>ข้อมูลจำนวนผู้ผ่านอบรมด้านความปลอดภัยสารสนเทศ ต่อโรง ต่อปี</td>
+          <td class="qg-tool">บันทึกการอบรม (เมื่อมีหลักสูตร)</td>
+          <td><span class="qg-status qs-none">ยังไม่มีหลักสูตร</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHARED / CROSS-CUTTING -->
+  <div class="qg-level">
+    <div class="qg-level-header shared">
+      <span class="qg-badge">ภาพรวม</span>
+      <h3>การวิเคราะห์ภาพรวม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">5.0.1</td>
+          <td class="qg-goal">สามารถเปรียบเทียบระดับทักษะ ICT ข้ามโรงเรียนได้ — เห็นว่าโรงไหนพร้อม โรงไหนต้องเสริม</td>
+          <td>รายงานเปรียบเทียบข้ามโรง: ระดับทักษะ, ชั่วโมงอบรม, สัดส่วน outsource, สถานะ SOP</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + บันทึกอบรม — วิเคราะห์ข้ามโรง</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">5.0.2</td>
+          <td class="qg-goal">ข้อมูลจากระบบ SWIS สะท้อนให้เห็นว่าโรงเรียนใดลงทุนพัฒนาบุคลากร ICT จริงจัง โรงใดยังไม่ลงทุน — ส่งต่อผู้นำขับเคลื่อน</td>
+          <td>รายงานสถานะการพัฒนาบุคลากร ICT ต่อโรง — อบรม, ทักษะ, การใช้ SWIS — ข้อมูลพูดเอง</td>
+          <td class="qg-tool">SWIS Dashboard + แบบสำรวจงานเทคโนฯ</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SYSTEM QUALITY -->
+  <div class="qg-level">
+    <div class="qg-level-header sys">
+      <span class="qg-badge">ฐานราก</span>
+      <h3>คุณภาพระบบการพัฒนา</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">S.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่ากลุ่มงานที่ 5 มีกำลังคนรับผิดชอบเพียงพอหรือไม่ — เทียบกับขอบเขตงาน 14 โรงเรียน</td>
+          <td>ข้อมูลผู้ประสานงาน/วิทยากรส่วนกลาง × จำนวนโรงที่ต้องดูแล — สะท้อนให้ผู้นำเห็น</td>
+          <td class="qg-tool">โครงสร้างฝ่าย ICT — กลุ่มงานที่ 5</td>
+          <td><span class="qg-status qs-partial">มีข้อมูล ยังไม่วิเคราะห์</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.2</td>
+          <td class="qg-goal">สามารถรายงานสถานะสื่อการเรียนรู้ (คู่มือ, วิดีโอ, e-learning) ต่อโมดูล SWIS ได้ — เห็นว่าโมดูลใดมีสื่อพร้อม โมดูลใดยังไม่มี</td>
+          <td>ข้อมูลจำนวนโมดูลที่มีสื่อการเรียนรู้ / ทั้งหมด</td>
+          <td class="qg-tool">คลังสื่อการเรียนรู้ — เว็บ / ระบบ SWIS</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.7;">
+    <strong>หมายเหตุ:</strong><br>
+    * เครื่องมือวัดผลที่ยังไม่มี ต้องพัฒนาเพิ่ม — (1) คู่มือปฏิบัติงาน ICT (SOP) ตามโรงเรียน (2) ตาราง mapping ตำแหน่ง × โมดูล SWIS × รหัส Job Spec HRD (3) หลักสูตร Security Awareness<br>
+    * รหัส Job Spec ที่เกี่ยวข้องโดยตรง: <strong>K(B)02, Cp(B)02</strong> (สารสนเทศ), <strong>K(B)03, Cp(B)03</strong> (เทคโนโลยี) — ปัจจุบันเป็นรหัสกว้าง ไม่แยก KPI ตามกลุ่มงาน ต้องฟีดแบคให้ HRD ปรับปรุง<br>
+    * ข้อเสนอปรับปรุง Job Spec: เขียนเป็นสมรรถนะ ไม่ล็อคชื่อโปรแกรม + กำหนด KPI แยกตามกลุ่มงาน + แยกระดับความสามารถ<br>
+    * ข้อมูลบุคลากรจากแบบสำรวจงานเทคโนฯ 2568 — ดำเนินการโดยฝ่าย ICT มูลนิธิฯ<br>
+    * บุคลากร ICT ในคู่มือนี้ = เจ้าหน้าที่ส่วนกลาง + ฝ่ายเทคโนฯ ตามโรงเรียน — ไม่รวมบริษัท SWIS Plus (ผู้รับจ้างพัฒนาซอฟต์แวร์ งาน 2.2)
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--cream); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน 5</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>15 ข้อ</strong> ใน 6 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          5.1 ICT ส่วนกลาง: 2 ข้อ · 5.2 ICT ตามโรงเรียน: 4 ข้อ · 5.3 ผู้ใช้งาน SWIS: 4 ข้อ · 5.4 ความปลอดภัย: 1 ข้อ · 5.0 ภาพรวม: 2 ข้อ · S ฐานราก: 2 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">2 ข้อ — ใช้เครื่องมือที่มีวัดได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">10 ข้อ — ต้องปรับปรุง/เสริม</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">3 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px; border-top:1px solid var(--gray-200); margin-top:8px; padding-top:16px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">สิ่งที่ต้องสร้างใหม่ (3 รายการ)</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; font-size:0.82rem;">
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">1. คู่มือปฏิบัติงาน ICT (SOP)</strong><br>
+          <span style="color:var(--text-light);">ระบบถ่ายทอดความรู้ตามโรงเรียน → วัดข้อ 5.2.3</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">2. Mapping ICT ↔ HRD</strong><br>
+          <span style="color:var(--text-light);">ตำแหน่ง × โมดูล SWIS × รหัส C/K/Cp → วัดข้อ 5.3.2</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">3. Security Awareness</strong><br>
+          <span style="color:var(--text-light);">หลักสูตรความปลอดภัยสารสนเทศ → วัดข้อ 5.4.1</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">ข้อเสนอต่อ HRD</div>
+      <div style="background:#eef2ff; padding:12px 16px; border-radius:4px; border-left:3px solid var(--navy-light); font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+        รหัส K(B)02-03 / Cp(B)02-03 ปัจจุบันกว้างเกินไป ต้องฟีดแบค HRD ให้ <strong>กำหนด KPI แยกตามกลุ่มงาน</strong> + <strong>เขียนเป็นสมรรถนะ ไม่ล็อคชื่อโปรแกรม</strong> + <strong>แยกระดับความสามารถ</strong> — เพื่อให้ SWIS data match กับ Job Spec ได้อัตโนมัติ
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน 5 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน 5 พัฒนาบุคลากร ICT และทักษะการใช้เทคโนโลยีสารสนเทศ — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * ข้อมูลบุคลากรจากแบบสำรวจงานเทคโนฯ 2568 ดำเนินการโดยฝ่าย ICT มูลนิธิฯ<br>
+    * กระบวนการ PDCA จากแผนผังรายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568<br>
+    * รหัส Job Spec อ้างอิง: K(B)02, Cp(B)02 (สารสนเทศ), K(B)03, Cp(B)03 (เทคโนโลยี) — ฉบับ 22 ก.พ. 2569<br>
+    * เป้าหมายคุณภาพ 15 ข้อ ใน 6 กลุ่ม — เครื่องมือวัดผลพร้อมใช้ 2 ข้อ, มีบางส่วน 10 ข้อ, ต้องพัฒนาใหม่ 3 ข้อ
+  </p>
+</div>
+
+</body>
+</html>

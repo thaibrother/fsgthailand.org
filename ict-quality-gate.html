@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT Quality Manual — Access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --gold: #c9a74e;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── LOGIN CARD ── */
+  .login-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+  }
+  .login-card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  .login-header {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    padding: 32px 28px;
+    text-align: center;
+    color: var(--white);
+  }
+  .login-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .login-header p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+  .login-body {
+    padding: 32px 28px;
+  }
+  .login-body label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .login-body input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .login-body input[type="password"]:focus {
+    border-color: var(--navy);
+  }
+  .login-body button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .login-body button:hover {
+    background: var(--navy-dark);
+  }
+  .error-msg {
+    display: none;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #fff5f5;
+    color: var(--red-soft);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid #fecaca;
+  }
+  .login-footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--gray-200);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── FRAMEWORK OVERVIEW ── */
+  .fw-box {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .fw-title {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    padding: 20px 24px;
+    color: var(--gold-light);
+    text-align: center;
+  }
+  .fw-title h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .fw-title p { font-size: 0.8rem; opacity: 0.7; }
+  .fw-body { padding: 24px; }
+
+  /* Strategy alignment bar */
+  .fw-strategy {
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #3730a3;
+    line-height: 1.6;
+  }
+
+  /* Diagram container */
+  .fw-diagram {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Top layer - Group 1 */
+  .fw-layer-top {
+    background: #f0f4ff;
+    border: 2px solid #6366f1;
+    border-radius: 8px;
+    padding: 14px 18px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .fw-layer-top h4 { color: #4338ca; font-size: 0.9rem; font-family: 'Noto Sans Thai', sans-serif; }
+  .fw-layer-top p { font-size: 0.75rem; color: #6366f1; margin-top: 2px; }
+
+  /* Arrow */
+  .fw-arrow {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1;
+    margin: 4px 0;
+  }
+
+  /* Middle layer - Groups 2-4 */
+  .fw-layer-mid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .fw-mid-card {
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .fw-mid-card h4 { font-size: 0.82rem; font-family: 'Noto Sans Thai', sans-serif; margin-bottom: 2px; }
+  .fw-mid-card p { font-size: 0.7rem; line-height: 1.4; }
+
+  /* Bottom layer - Group 5 */
+  .fw-layer-bot {
+    background: #f5f3ff;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    padding: 14px 18px;
+    text-align: center;
+  }
+  .fw-layer-bot h4 { color: #5b21b6; font-size: 0.9rem; font-family: 'Noto Sans Thai', sans-serif; }
+  .fw-layer-bot p { font-size: 0.75rem; color: #7c3aed; margin-top: 2px; }
+
+  /* Connection labels */
+  .fw-connect {
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0 4px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+  .fw-connect span {
+    background: var(--gray-100);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  /* Principle box */
+  .fw-principle {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: #fef9e7;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.8rem;
+    color: var(--gold-dark, #8b6914);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 600px) {
+    .fw-layer-mid { grid-template-columns: 1fr; }
+  }
+
+  /* ── QUALITY INDEX (hidden by default) ── */
+  .quality-index {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .qi-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .qi-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .qi-header p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  .qi-card {
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    border-left: 4px solid var(--navy);
+  }
+  .qi-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+  .qi-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .qi-card p {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+  .qi-card .qi-stats {
+    margin-top: 8px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .qi-stat {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: var(--gray-100);
+    color: var(--text-light);
+  }
+  /* Sub-group list inside card */
+  .qi-subs {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .qi-sub {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--gray-100);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .qi-sub:hover { background: var(--gray-200); }
+  .qi-sub-code {
+    font-weight: 600;
+    color: var(--navy);
+    min-width: 28px;
+  }
+  .qi-sub-label { flex: 1; }
+  .qi-sub-status {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qi-sub-status.ready { background: #d1fae5; color: #047857; }
+  .qi-sub-status.wip { background: #fff3cd; color: #856404; }
+  .qi-sub-status.disabled { background: #e9ecef; color: #6c757d; }
+  .qi-back {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .qi-back:hover { color: var(--navy); }
+  .qi-footer {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ LOGIN SCREEN ═══ -->
+<div class="login-container" id="loginScreen">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>คู่มือบริหารคุณภาพ</h1>
+      <p>Commission on ICT and HRM<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    </div>
+    <div class="login-body">
+      <label for="pwd">รหัสเข้าถึง</label>
+      <input type="password" id="pwd" placeholder="กรอกรหัส..." autofocus
+             onkeydown="if(event.key==='Enter')checkPwd()">
+      <button onclick="checkPwd()">เข้าสู่ระบบ</button>
+      <div class="error-msg" id="errMsg">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
+    </div>
+    <div class="login-footer">
+      เอกสารภายใน — สำหรับบุคลากรที่ได้รับอนุญาตเท่านั้น
+    </div>
+  </div>
+</div>
+
+<!-- ═══ QUALITY INDEX (shown after login) ═══ -->
+<div class="quality-index" id="qualityIndex">
+  <div class="qi-header">
+    <h1>เป้าหมายคุณภาพ — ฝ่ายเทคโนโลยีสารสนเทศ</h1>
+    <p>Commission on ICT and HRM · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  </div>
+
+  <!-- ═══ FRAMEWORK OVERVIEW ═══ -->
+  <div class="fw-box">
+    <div class="fw-title">
+      <h2>กรอบความเข้าใจ — โครงสร้าง 5 กลุ่มงาน ICT</h2>
+      <p>แต่ละกลุ่มงานมีเป้าหมายคุณภาพของตัวเอง เชื่อมกันเป็นระบบ</p>
+    </div>
+    <div class="fw-body">
+
+      <!-- Strategy alignment -->
+      <div class="fw-strategy">
+        <strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล<br>
+        → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล
+      </div>
+
+      <!-- Diagram -->
+      <div class="fw-diagram">
+
+        <!-- Layer 1: Administration -->
+        <div class="fw-layer-top">
+          <h4>กลุ่มงาน 1 — บริหารฝ่าย ICT</h4>
+          <p>กำกับดูแล วางนโยบาย ประสานงาน รายงานผล — ครอบคลุมทั้ง 5 กลุ่ม</p>
+        </div>
+
+        <div class="fw-arrow">▼ กำกับ ▼</div>
+
+        <!-- Layer 2-4: Core Operations -->
+        <div class="fw-layer-mid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="fw-mid-card" style="background:#ecfeff; border:1px solid #06b6d4;">
+            <h4 style="color:#0e7490;">กลุ่มงาน 2 — ซอฟต์แวร์</h4>
+            <div style="display:flex; flex-direction:column; gap:4px; margin-top:6px;">
+              <span style="background:#cffafe; color:#0e7490; padding:2px 8px; border-radius:4px; font-size:0.68rem;">2.1 สารสนเทศระดับมูลนิธิฯ</span>
+              <span style="background:#cffafe; color:#0e7490; padding:2px 8px; border-radius:4px; font-size:0.68rem;">2.2 SWIS 220 ฟังก์ชัน <em>(SWIS Plus)</em></span>
+            </div>
+          </div>
+          <div class="fw-mid-card" style="background:#fffbeb; border:1px solid #d97706;">
+            <h4 style="color:#92400e;">กลุ่มงาน 3 — สื่อสาร</h4>
+            <div style="display:flex; flex-direction:column; gap:4px; margin-top:6px;">
+              <span style="background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:4px; font-size:0.68rem;">3.1 สื่อดิจิทัล</span>
+              <span style="background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:4px; font-size:0.68rem;">3.2 สื่อสิ่งพิมพ์</span>
+            </div>
+          </div>
+          <div class="fw-mid-card" style="background:#ecfdf5; border:1px solid #059669;">
+            <h4 style="color:#047857;">กลุ่มงาน 4 — เครือข่ายและอุปกรณ์</h4>
+            <div style="display:flex; flex-direction:column; gap:4px; margin-top:6px;">
+              <span style="background:#d1fae5; color:#047857; padding:2px 8px; border-radius:4px; font-size:0.68rem;">4.1 เครือข่าย</span>
+              <span style="background:#d1fae5; color:#047857; padding:2px 8px; border-radius:4px; font-size:0.68rem;">4.2 อุปกรณ์</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fw-arrow">▼ รองรับโดย ▼</div>
+
+        <!-- Layer 5: Foundation -->
+        <div class="fw-layer-bot">
+          <h4>กลุ่มงาน 5 — พัฒนาบุคลากร ICT</h4>
+          <p>ฐานราก — ไม่ว่าระบบจะดีเพียงใด หากคนไม่พร้อม ระบบทั้งหมดไม่สามารถทำงานได้เต็มศักยภาพ</p>
+          <div style="display:flex; gap:6px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+            <span style="background:#ede9fe; color:#5b21b6; padding:2px 8px; border-radius:4px; font-size:0.68rem;">5.1 บุคลากร ICT</span>
+            <span style="background:#ede9fe; color:#5b21b6; padding:2px 8px; border-radius:4px; font-size:0.68rem;">5.2 ผู้ใช้งานทั่วไป</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principle -->
+      <div class="fw-principle">
+        <strong>หลักการวัดคุณภาพ:</strong> ทุกเป้าหมายใช้หลัก data-driven — <em>"สามารถวิเคราะห์.../สามารถรายงาน..."</em> ไม่ใช่ <em>"ทุกโรงเรียนต้อง..."</em><br>
+        ใช้ข้อมูลจากระบบ SWIS และแบบสำรวจที่มี → วิเคราะห์ → รายงาน → สะท้อนให้ผู้นำขับเคลื่อน — ข้อมูลพูดเอง
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ WORK GROUP CARDS ═══ -->
+
+  <!-- Group 1 -->
+  <a class="qi-card" href="ict-admin-objectives.html" style="border-left-color:#6366f1;">
+    <h3>กลุ่มงานที่ 1 — บริหารฝ่าย ICT</h3>
+    <p>กำกับดูแล วางนโยบาย ประสานงาน รายงานผล — ร่มใหญ่ครอบทั้ง 5 กลุ่มงาน</p>
+    <div class="qi-stats">
+      <span class="qi-stat">22 เป้าหมาย</span>
+      <span class="qi-stat">เป้าหมายคุณภาพ</span>
+    </div>
+  </a>
+
+  <!-- Group 2 -->
+  <div class="qi-card" style="border-left-color:#0891b2; cursor:default;">
+    <h3>กลุ่มงานที่ 2 — พัฒนาซอฟต์แวร์</h3>
+    <p>ระบบสารสนเทศระดับมูลนิธิฯ + ระบบ SWIS 220 ฟังก์ชันระดับโรงเรียน</p>
+    <div class="qi-subs">
+      <div class="qi-sub" style="opacity:0.6; cursor:default;">
+        <span class="qi-sub-code">2.1</span>
+        <span class="qi-sub-label">สารสนเทศระดับมูลนิธิฯ</span>
+        <span class="qi-sub-status wip">อยู่ระหว่างจัดทำ</span>
+      </div>
+      <a class="qi-sub" href="ict-swis-objectives.html">
+        <span class="qi-sub-code">2.2</span>
+        <span class="qi-sub-label">พัฒนาซอฟต์แวร์ระดับโรงเรียน (SWIS)</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Group 3 -->
+  <div class="qi-card" style="border-left-color:#d97706; cursor:default;">
+    <h3>กลุ่มงานที่ 3 — สื่อสารมวลชน</h3>
+    <p>สื่อดิจิทัล สื่อสิ่งพิมพ์ การประชาสัมพันธ์เครือมูลนิธิฯ</p>
+    <div class="qi-subs">
+      <a class="qi-sub" href="ict-media-objectives.html">
+        <span class="qi-sub-code">3.1</span>
+        <span class="qi-sub-label">สื่อดิจิทัลและช่องทางออนไลน์</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+      <a class="qi-sub" href="ict-media-objectives.html">
+        <span class="qi-sub-code">3.2</span>
+        <span class="qi-sub-label">สื่อสิ่งพิมพ์และโสตทัศนูปกรณ์</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Group 4 -->
+  <div class="qi-card" style="border-left-color:#059669; cursor:default;">
+    <h3>กลุ่มงานที่ 4 — เครือข่ายและอุปกรณ์</h3>
+    <p>ระบบเครือข่าย อุปกรณ์ IT โครงสร้างพื้นฐานทุกโรงเรียน</p>
+    <div class="qi-subs">
+      <a class="qi-sub" href="ict-network-objectives.html">
+        <span class="qi-sub-code">4.1</span>
+        <span class="qi-sub-label">เครือข่าย</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+      <a class="qi-sub" href="ict-network-objectives.html">
+        <span class="qi-sub-code">4.2</span>
+        <span class="qi-sub-label">อุปกรณ์</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+    </div>
+    <div class="qi-stats">
+      <span class="qi-stat">21 เป้าหมาย</span>
+    </div>
+  </div>
+
+  <!-- Group 5 -->
+  <div class="qi-card" style="border-left-color:#7c3aed; cursor:default;">
+    <h3>กลุ่มงานที่ 5 — พัฒนาบุคลากร ICT</h3>
+    <p>ฐานราก — พัฒนาคนให้พร้อมรองรับระบบทั้งหมด</p>
+    <div class="qi-subs">
+      <a class="qi-sub" href="ict-personnel-objectives.html">
+        <span class="qi-sub-code">5.1</span>
+        <span class="qi-sub-label">บุคลากร ICT</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+      <a class="qi-sub" href="ict-personnel-objectives.html">
+        <span class="qi-sub-code">5.2</span>
+        <span class="qi-sub-label">ผู้ใช้งานทั่วไปในโรงเรียน</span>
+        <span class="qi-sub-status ready">พร้อม</span>
+      </a>
+    </div>
+    <div class="qi-stats">
+      <span class="qi-stat">15 เป้าหมาย</span>
+    </div>
+  </div>
+
+  <a class="qi-back" href="ict-hrm.html">&larr; กลับหน้า Commission on ICT and HRM</a>
+
+  <div class="qi-footer">
+    เอกสารภายใน — Commission on ICT and HRM<br>
+    มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ฉบับ 22 เมษายน 2569
+  </div>
+</div>
+
+<script>
+async function sha256(msg){
+  var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");
+}
+var PASS_HASH = "9bef9113676071174e79350856d81168521cfb487651b26231b268eb0a28d159";
+async function checkPwd() {
+  var input = document.getElementById('pwd').value;
+  var h = await sha256(input);
+  if (h === PASS_HASH) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('qualityIndex').style.display = 'block';
+    document.body.style.alignItems = 'flex-start';
+    document.body.style.paddingTop = '40px';
+    try { sessionStorage.setItem('ict-q', '1'); } catch(e) {}
+  } else {
+    var err = document.getElementById('errMsg');
+    err.style.display = 'block';
+    document.getElementById('pwd').value = '';
+    document.getElementById('pwd').focus();
+    setTimeout(function(){ err.style.display = 'none'; }, 3000);
+  }
+}
+// Auto-login if session exists
+try {
+  if (sessionStorage.getItem('ict-q') === '1') {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('qualityIndex').style.display = 'block';
+    document.body.style.alignItems = 'flex-start';
+    document.body.style.paddingTop = '40px';
+  }
+} catch(e) {}
+</script>
+
+</body>
+</html>

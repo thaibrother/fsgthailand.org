@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงานที่ 3 — งานสื่อสารมวลชน Digital / Non-digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --teal-light: #14b8a6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow-section { padding: 48px 24px; background: var(--white); }
+  .flow-container {
+    max-width: 800px; margin: 0 auto; display: flex; align-items: center;
+    justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .flow-box {
+    padding: 14px 20px; border-radius: var(--radius); text-align: center;
+    font-size: 0.82rem; font-weight: 500; min-width: 140px;
+  }
+  .flow-box.active {
+    background: var(--teal); color: var(--white); border: 2px solid var(--teal-dark);
+    box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+  }
+  .flow-box.inactive { background: var(--gray-100); color: var(--text-light); border: 2px solid var(--gray-200); }
+  .flow-arrow { font-size: 1.4rem; color: var(--navy-light); font-weight: 700; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis-section { padding: 48px 24px; background: var(--white); }
+  .analysis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; max-width: 900px; margin: 0 auto;
+  }
+  .analysis-card {
+    background: var(--cream); border-radius: var(--radius); padding: 24px;
+    border-top: 3px solid var(--navy-light);
+  }
+  .analysis-card.gap-card { border-top-color: var(--red-soft); }
+  .analysis-card.prereq-card { border-top-color: var(--orange-soft); }
+  .analysis-card.ready-card { border-top-color: var(--green-soft); }
+  .analysis-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .analysis-card .card-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .tag-gap { background: #f8d7da; color: #721c24; }
+  .tag-prereq { background: #fff3cd; color: #856404; }
+  .tag-ready { background: #d4edda; color: #155724; }
+  .tag-risk { background: #e2e3e5; color: #383d41; }
+  .analysis-card p, .analysis-card li {
+    font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+  }
+  .analysis-card ul { list-style: none; padding: 0; }
+  .analysis-card li { padding: 4px 0 4px 16px; position: relative; }
+  .analysis-card li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy-light);
+  }
+  .analysis-card.gap-card li::before { background: var(--red-soft); }
+  .analysis-card.prereq-card li::before { background: var(--orange-soft); }
+
+  /* ── TWO COLUMN CONTEXT ── */
+  .context-section { padding: 48px 24px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+  .col-card {
+    background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+  }
+  .col-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--gold-light);
+  }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card li {
+    padding: 6px 0; font-size: 0.88rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .col-card li:last-child { border-bottom: none; }
+  .col-card li strong { color: var(--navy); font-weight: 600; }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header.digital { background: #e0f2f1; border-left: 4px solid var(--teal); }
+  .qg-level-header.nondigital { background: #fef3e2; border-left: 4px solid var(--orange-soft); }
+  .qg-level-header.shared { background: #e8f0f8; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.sys { background: #fef9e7; border-left: 4px solid var(--gold-dark); }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header.digital .qg-badge { background: var(--teal); color: var(--white); }
+  .qg-level-header.nondigital .qg-badge { background: var(--orange-soft); color: var(--white); }
+  .qg-level-header.shared .qg-badge { background: var(--navy); color: var(--white); }
+  .qg-level-header.sys .qg-badge { background: #fce8b2; color: var(--gold-dark); }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .analysis-grid, .two-col { grid-template-columns: 1fr; }
+    .flow-container { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — กลุ่มงานที่ 3</div>
+  <h1>งานสื่อสารมวลชน Digital / Non-digital</h1>
+  <div class="subtitle">เป้าหมายคุณภาพ กระบวนการ PDCA และการวิเคราะห์สถานะปัจจุบัน</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล → <strong>มาตรฐานที่ 3.3.3</strong> มูลนิธิฯ และฝ่ายที่รับผิดชอบนำสารสนเทศไปวิเคราะห์ เพื่อการพัฒนา การบริหารจัดการ และการรายงาน</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--teal);">
+    <h2 style="color: var(--teal-dark);">ปรัชญาการทำงาน</h2>
+    <p>งานสื่อสารมวลชนเป็นปลายทางของระบบสารสนเทศ — รับข้อมูลที่รวบรวมและผลิตจากกลุ่มงานที่ 2 และ 4 แล้วนำมาเผยแพร่สู่กลุ่มเป้าหมายผ่านช่องทางที่เหมาะสม ทั้ง Digital (เว็บไซต์โรงเรียน สื่อสังคมออนไลน์ แพลตฟอร์มออนไลน์) และ Non-digital (ป้ายประชาสัมพันธ์ เอกสาร แผ่นพับ) คุณภาพของงานสื่อสารวัดจากความครบถ้วน ถูกต้อง ทันเวลา และการเข้าถึงกลุ่มเป้าหมายได้จริง</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FLOW POSITION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="flow-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>ตำแหน่งในกระแสงาน 5 กลุ่ม</h2>
+    <div class="section-desc">กลุ่มงานที่ 3 อยู่ปลายทาง — รับผลผลิตจากกลุ่มที่ 2 และ 4 แล้วเผยแพร่สู่ภายนอก</div>
+  </div>
+  <div class="flow-container">
+    <div class="flow-box inactive">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 4</div>
+      <div style="font-size:0.75rem;">เครือข่าย/อุปกรณ์<br><em>รวบรวม</em></div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box inactive">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 2</div>
+      <div style="font-size:0.75rem;">ซอฟต์แวร์/สารสนเทศ<br><em>ผลิต · สร้าง</em></div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box active">
+      <div style="font-weight:700; margin-bottom:4px;">กลุ่ม 3</div>
+      <div style="font-size:0.75rem;">สื่อสารมวลชน<br><em>เผยแพร่</em></div>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:16px;">กลุ่ม 1 (บริหาร) เป็นร่มใหญ่ครอบทั้ง 4 กลุ่ม · กลุ่ม 5 (พัฒนาบุคลากร) เป็นฐานรองรับ</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — งานสื่อสารมวลชน</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน ตามแผนผังจากรายงานประจำปี 2568</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วางแผนเผยแพร่ข้อมูลข่าวสารและกิจกรรม กำหนดช่องทางการสื่อสารทั้ง Digital และ Non-digital ให้เหมาะสมกับกลุ่มเป้าหมาย</p>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ดำเนินเผยแพร่ข้อมูลข่าวสารผ่านช่องทางต่างๆ:</p>
+      <ul>
+        <li><strong>3.1 Digital:</strong> เว็บไซต์โรงเรียน สื่อสังคมออนไลน์ ระบบสารสนเทศ แพลตฟอร์มออนไลน์</li>
+        <li><strong>3.2 Non-digital:</strong> ป้ายประชาสัมพันธ์ เอกสาร แผ่นพับ การประชาสัมพันธ์ภายในสถานศึกษา</li>
+      </ul>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>นำผลการประเมินมาปรับปรุงรูปแบบการสื่อสารและช่องทางการเผยแพร่ เพื่อให้การประชาสัมพันธ์มีประสิทธิภาพและเข้าถึงกลุ่มเป้าหมายได้ดียิ่งขึ้น</p>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ประเมินผล</span>
+      <p>ประเมินประสิทธิภาพและผลสัมฤทธิ์ของแผนงานด้านสื่อสารมวลชน Digital / Non-digital ทั้งในระดับหน่วยงานและภาพรวมขององค์กร โดยใช้เกณฑ์มาตรฐานที่สอดคล้องกับคู่มือคุณภาพหน่วยงาน</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SCOPE: 3.1 vs 3.2 -->
+<!-- ══════════════════════════════════════════ -->
+<div class="context-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>ขอบเขต: 2 กลุ่มงานย่อย</h2>
+  </div>
+  <div class="two-col">
+    <div class="col-card" style="border-top: 3px solid var(--teal);">
+      <h3>3.1 งานประชาสัมพันธ์ (PR)</h3>
+      <ul>
+        <li><strong>เว็บไซต์โรงเรียน</strong> — หน้าตาองค์กร ข้อมูลพื้นฐาน ข่าวสาร</li>
+        <li><strong>สื่อสังคมออนไลน์</strong> — Facebook, LINE, YouTube, Instagram</li>
+        <li><strong>ระบบสารสนเทศ</strong> — ข่าวประชาสัมพันธ์ผ่านระบบ SWIS</li>
+        <li><strong>แพลตฟอร์มออนไลน์</strong> — Google Workspace, Microsoft 365</li>
+        <li>สำรวจจากแบบสำรวจงานเทคโนฯ: มีบุคลากร, วุฒิ, ความเชี่ยวชาญ 5 ระดับ</li>
+      </ul>
+    </div>
+    <div class="col-card" style="border-top: 3px solid var(--orange-soft);">
+      <h3>3.2 งานผลิตสื่อดิจิทัล (Digital Media)</h3>
+      <ul>
+        <li><strong>ป้ายประชาสัมพันธ์</strong> — ป้ายหน้าโรงเรียน ป้ายภายใน</li>
+        <li><strong>เอกสาร</strong> — จดหมายข่าว รายงานประจำปี</li>
+        <li><strong>แผ่นพับ</strong> — สื่อสิ่งพิมพ์แนะนำโรงเรียน</li>
+        <li><strong>สื่อดิจิทัล</strong> — วิดีโอ กราฟิก ภาพถ่าย สื่อผสม</li>
+        <li>สำรวจจากแบบสำรวจงานเทคโนฯ: มีบุคลากร, การจ้างภายนอก, ค่าใช้จ่าย</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ANALYSIS — What exists + What to develop -->
+<!-- ══════════════════════════════════════════ -->
+<div class="analysis-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>วิเคราะห์สถานะ: สิ่งที่มีแล้ว และสิ่งที่ต้องพัฒนาต่อ</h2>
+    <div class="section-desc">จากข้อมูลจริง — แบบสำรวจงานเทคโนฯ 2568, รายงานประจำปี, การตรวจเยี่ยมโรงเรียน</div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- READY 1: Website -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — 3.1</span>
+      <h3>เว็บไซต์โรงเรียนและสื่อสังคมออนไลน์</h3>
+      <ul>
+        <li>ทุกโรงเรียนมีเว็บไซต์เป็นของตนเอง — เป็นหน้าตาหลักขององค์กร</li>
+        <li>ส่วนใหญ่มี Facebook Page, LINE Official หรือช่องทางสื่อสังคมออนไลน์อย่างน้อย 1 ช่องทาง</li>
+        <li>แบบสำรวจระบุว่าแต่ละโรงเรียนมีบุคลากรรับผิดชอบงาน PR — แต่ระดับความเชี่ยวชาญแตกต่างกัน</li>
+      </ul>
+    </div>
+
+    <!-- READY 2: Survey data -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — ฐาน</span>
+      <h3>แบบสำรวจบุคลากรด้านสื่อสารมวลชน</h3>
+      <ul>
+        <li>แบบสำรวจงานเทคโนฯ 2568 ครอบคลุมทั้ง 3.1 (PR) และ 3.2 (Digital Media) ของทุกโรงเรียน*</li>
+        <li>สำรวจ: จำนวนบุคลากร, วุฒิการศึกษา, ระดับความเชี่ยวชาญ 5 ระดับ (พื้นฐาน → เชี่ยวชาญ)</li>
+        <li>สำรวจ: การจ้างบุคคลหรือบริษัทภายนอก, ค่าใช้จ่ายทั้งหมด (บาท/ปี)</li>
+      </ul>
+    </div>
+
+    <!-- GAP 1: No quality standards -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>มาตรฐานคุณภาพงานสื่อสารที่ชัดเจน</h3>
+      <ul>
+        <li>แต่ละโรงเรียนดำเนินการตามดุลพินิจ — ไม่มีเกณฑ์กลางว่า "ข่าวสารควรเผยแพร่ภายในกี่วัน" หรือ "ข้อมูลบนเว็บต้องอัปเดตทุกกี่สัปดาห์"</li>
+        <li>ไม่มีแม่แบบ (template) กลางสำหรับเนื้อหาประเภทต่างๆ เช่น ข่าวกิจกรรม จดหมายข่าว รายงานประจำปี</li>
+        <li>คุณภาพจึงขึ้นอยู่กับทักษะของบุคลากรแต่ละโรงเรียน ซึ่งแตกต่างกันมาก</li>
+      </ul>
+    </div>
+
+    <!-- GAP 2: No measurement -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ยังไม่มี</span>
+      <h3>ระบบวัดผลและประเมินประสิทธิภาพการสื่อสาร</h3>
+      <ul>
+        <li>ไม่มีการวัดจำนวนผู้เข้าชมเว็บไซต์ (analytics) อย่างเป็นระบบ — บางโรงเรียนมี แต่ไม่ได้รายงาน</li>
+        <li>ไม่มีการสำรวจว่าข่าวสารถึงกลุ่มเป้าหมายจริงหรือไม่ (reach & engagement)</li>
+        <li>ไม่มีรายงานเปรียบเทียบผลการสื่อสารข้ามโรงเรียน</li>
+      </ul>
+    </div>
+
+    <!-- PREREQ: Content from Group 2 -->
+    <div class="analysis-card prereq-card">
+      <span class="card-tag tag-prereq">เงื่อนไขจำเป็น</span>
+      <h3>คุณภาพเนื้อหาขึ้นอยู่กับต้นทาง (กลุ่มที่ 2 และ 4)</h3>
+      <ul>
+        <li>กลุ่มงานที่ 3 เป็นปลายทาง — เผยแพร่ได้ดีก็ต่อเมื่อข้อมูลจากกลุ่ม 2 (สารสนเทศ) มีคุณภาพ</li>
+        <li>หากข้อมูลใน SWIS ไม่ครบถ้วนหรือไม่ทันเวลา การประชาสัมพันธ์ก็ไม่สามารถอ้างอิงข้อมูลที่น่าเชื่อถือได้</li>
+        <li>ต้องกำหนดว่า "ข้อมูลจากระบบ" ส่วนใดควรเผยแพร่สาธารณะ ส่วนใดเป็นข้อมูลภายใน</li>
+      </ul>
+    </div>
+
+    <!-- RISK: Inconsistency -->
+    <div class="analysis-card" style="border-top: 3px solid var(--gray-600);">
+      <span class="card-tag tag-risk">ความเสี่ยงหลัก</span>
+      <h3>ความไม่สม่ำเสมอของภาพลักษณ์องค์กร</h3>
+      <ul>
+        <li>โรงเรียนแต่ละแห่งมีรูปแบบการสื่อสารเป็นเอกเทศ — ขาดอัตลักษณ์ร่วมของเครือมูลนิธิฯ</li>
+        <li>บุคลากรด้าน PR/Digital Media มีระดับความเชี่ยวชาญแตกต่างกัน (พื้นฐาน → เชี่ยวชาญ) ตามที่สำรวจ</li>
+        <li>โรงเรียนขนาดเล็กอาจไม่มีบุคลากรเฉพาะทาง ต้องจ้างภายนอกหรือมอบหมายให้ครูทำเพิ่ม — เพิ่มภาระครูซึ่งขัดกับปรัชญาของกลุ่มงานที่ 2</li>
+        <li><strong>ผลกระทบ:</strong> ภาพลักษณ์ของเครือมูลนิธิฯ ในสายตาสาธารณะไม่เป็นเอกภาพ อาจส่งผลต่อความน่าเชื่อถือและการรับสมัครนักเรียน</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:24px;">* ข้อมูลจากเอกสาร: แบบสำรวจงานเทคโนฯ 2568 หมวด 3.1 และ 3.2, รายงานประจำปีฝ่าย ICT 2568, แผนผัง PDCA กลุ่มงานที่ 3</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน 3</h2>
+    <div class="section-desc">แยกตามกลุ่มงานย่อย — แต่ละข้อมีตัวชี้วัดและเครื่องมือวัดผล</div>
+  </div>
+
+  <!-- 3.1 DIGITAL / PR -->
+  <div class="qg-level">
+    <div class="qg-level-header digital">
+      <span class="qg-badge">3.1</span>
+      <h3>งานประชาสัมพันธ์ — Digital (PR)</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.1.1</td>
+          <td class="qg-goal">ทุกโรงเรียนมีเว็บไซต์ที่ข้อมูลพื้นฐานถูกต้องและเป็นปัจจุบัน</td>
+          <td>ผลตรวจข้อมูลบนเว็บไซต์ (ชื่อผู้บริหาร, หลักสูตร, ค่าธรรมเนียม, ปฏิทิน) ตรงกับความเป็นจริง</td>
+          <td class="qg-tool">Checklist ตรวจเว็บไซต์ — ตรวจเป็นรอบ (ภาคเรียนละ 1 ครั้ง)</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.2</td>
+          <td class="qg-goal">ข่าวสารและกิจกรรมของโรงเรียนได้รับการเผยแพร่ทันเวลา</td>
+          <td>ระยะเวลาตั้งแต่เกิดกิจกรรมถึงเผยแพร่ (เช่น ≤ 3 วันทำการ)</td>
+          <td class="qg-tool">บันทึกวันที่กิจกรรม vs วันที่เผยแพร่</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.3</td>
+          <td class="qg-goal">ช่องทาง Digital เข้าถึงกลุ่มเป้าหมายได้จริง</td>
+          <td>สถิติผู้เข้าชมเว็บไซต์ (pageviews) และ engagement บนสื่อสังคมออนไลน์</td>
+          <td class="qg-tool">Google Analytics / Facebook Insights / LINE OA Dashboard</td>
+          <td><span class="qg-status qs-partial">บางโรงมี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.4</td>
+          <td class="qg-goal">มีบุคลากรรับผิดชอบงาน PR ที่มีทักษะเพียงพอ</td>
+          <td>จำนวนบุคลากร PR ต่อโรงเรียน + ระดับความเชี่ยวชาญ (จากแบบสำรวจ 5 ระดับ)</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด 3.1*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.5</td>
+          <td class="qg-goal">ข้อมูลประชาสัมพันธ์บนระบบ SWIS สอดคล้องกับข่าวที่เผยแพร่บนเว็บไซต์</td>
+          <td>ความสอดคล้องระหว่างข่าวสารบน SWIS กับเว็บไซต์โรงเรียน</td>
+          <td class="qg-tool">สุ่มตรวจเทียบ SWIS ↔ เว็บไซต์</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3.2 NON-DIGITAL / DIGITAL MEDIA PRODUCTION -->
+  <div class="qg-level">
+    <div class="qg-level-header nondigital">
+      <span class="qg-badge">3.2</span>
+      <h3>งานผลิตสื่อดิจิทัล (Digital Media) และสื่อสิ่งพิมพ์</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.2.1</td>
+          <td class="qg-goal">สื่อที่ผลิตมีคุณภาพและสอดคล้องกับอัตลักษณ์ของเครือมูลนิธิฯ</td>
+          <td>สื่อที่ผลิตใช้ตราสัญลักษณ์ สี แบบอักษร ตามแนวปฏิบัติกลาง (ถ้ามี)</td>
+          <td class="qg-tool">แนวปฏิบัติด้านอัตลักษณ์องค์กร (Brand Guidelines)*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.2.2</td>
+          <td class="qg-goal">มีบุคลากรหรือผู้รับจ้างภายนอกที่มีทักษะเพียงพอสำหรับงานผลิตสื่อ</td>
+          <td>จำนวนบุคลากร Digital Media ต่อโรงเรียน + ระดับความเชี่ยวชาญ + การจ้างภายนอก</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด 3.2*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.2.3</td>
+          <td class="qg-goal">ค่าใช้จ่ายด้านสื่อสารมวลชน (ทั้ง in-house และ outsource) ถูกบันทึกอย่างเป็นระบบ</td>
+          <td>ค่าใช้จ่ายรวม (บาท/ปี) ต่อโรงเรียน แยกประเภท in-house / outsource</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — ช่อง "ค่าใช้จ่ายทั้งหมด"*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.2.4</td>
+          <td class="qg-goal">สื่อ Non-digital (ป้าย เอกสาร แผ่นพับ) ได้รับการปรับปรุงให้เป็นปัจจุบันเป็นรอบ</td>
+          <td>ผลตรวจว่าสื่อ Non-digital ที่ติดตั้งยังตรงกับข้อมูลปัจจุบัน</td>
+          <td class="qg-tool">Checklist ตรวจสื่อ Non-digital — ตรวจเป็นรอบ (ปีละ 1 ครั้ง)</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHARED / CROSS-CUTTING -->
+  <div class="qg-level">
+    <div class="qg-level-header shared">
+      <span class="qg-badge">ภาพรวม</span>
+      <h3>เป้าหมายร่วม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.0.1</td>
+          <td class="qg-goal">มีแนวปฏิบัติด้านการสื่อสาร (Communication Guidelines) ที่ทุกโรงเรียนสามารถใช้เป็นมาตรฐานกลาง</td>
+          <td>มีเอกสารแนวปฏิบัติ + จำนวนโรงเรียนที่นำไปใช้จริง</td>
+          <td class="qg-tool">เอกสาร Communication Guidelines*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.0.2</td>
+          <td class="qg-goal">มีการเปรียบเทียบผลงานด้านสื่อสารข้ามโรงเรียน เพื่อแลกเปลี่ยนแนวปฏิบัติที่ดี</td>
+          <td>รายงานเปรียบเทียบข้ามโรง (จำนวนข่าว, engagement, ค่าใช้จ่าย) อย่างน้อยปีละ 1 ครั้ง</td>
+          <td class="qg-tool">รายงานสรุปประจำปี — กลุ่มงานที่ 3</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.0.3</td>
+          <td class="qg-goal">ข้อมูลข่าวสารสำคัญของมูลนิธิฯ เผยแพร่ผ่านช่องทางกลางอย่างน้อย 1 ช่องทาง</td>
+          <td>จำนวนข่าวสารระดับมูลนิธิฯ ที่เผยแพร่ต่อปี + ช่องทาง</td>
+          <td class="qg-tool">เว็บไซต์มูลนิธิฯ / thaibrothers.net</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SYSTEM QUALITY -->
+  <div class="qg-level">
+    <div class="qg-level-header sys">
+      <span class="qg-badge">ฐานราก</span>
+      <h3>คุณภาพบุคลากรและทรัพยากร</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">S.1</td>
+          <td class="qg-goal">ทุกโรงเรียนมีบุคลากรรับผิดชอบงานสื่อสาร (3.1 หรือ 3.2) อย่างน้อย 1 คน</td>
+          <td>จำนวนโรงเรียนที่มีบุคลากร PR/Digital Media เต็มเวลาหรือกำหนดหน้าที่ชัดเจน</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ — หมวด 3.1 และ 3.2*</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.2</td>
+          <td class="qg-goal">บุคลากรด้านสื่อสารได้รับการพัฒนาทักษะเป็นระยะ</td>
+          <td>จำนวนครั้งอบรม/สัมมนาด้าน PR หรือ Digital Media ต่อปี</td>
+          <td class="qg-tool">ตารางอบรม — เชื่อมกับกลุ่มงานที่ 5 (พัฒนาบุคลากร)</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.3</td>
+          <td class="qg-goal">มีอุปกรณ์และซอฟต์แวร์สำหรับผลิตสื่อที่เพียงพอ</td>
+          <td>รายการอุปกรณ์ (กล้อง, คอมพิวเตอร์, ซอฟต์แวร์ตัดต่อ) ต่อโรงเรียน</td>
+          <td class="qg-tool">แบบสำรวจงานเทคโนฯ + ระบบทรัพย์สินจาก SWIS</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark);">
+    <strong>หมายเหตุ:</strong> * เครื่องมือวัดผลที่ยังไม่มี ต้องพัฒนาเพิ่ม — (1) Checklist ตรวจเว็บไซต์โรงเรียน (2) แนวปฏิบัติด้านอัตลักษณ์องค์กร (Brand Guidelines) (3) เกณฑ์การเผยแพร่ข่าวสาร (Communication Guidelines) (4) Checklist ตรวจสื่อ Non-digital · ข้อมูลบุคลากรจากแบบสำรวจงานเทคโนฯ 2568 — ดำเนินการโดยฝ่าย ICT มูลนิธิฯ
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--white); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน 3</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>15 ข้อ</strong> ใน 4 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          3.1 PR: 5 ข้อ · 3.2 Digital Media: 4 ข้อ · ภาพรวม: 3 ข้อ · ฐานราก: 3 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">4 ข้อ — ใช้เครื่องมือที่มีวัดได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">4 ข้อ — ต้องปรับปรุง/เสริม</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">7 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px; border-top:1px solid var(--gray-200); margin-top:8px; padding-top:16px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">สิ่งที่ต้องสร้างใหม่ (4 รายการ)</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:0.82rem;">
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">1. Checklist ตรวจเว็บไซต์</strong><br>
+          <span style="color:var(--text-light);">ตรวจข้อมูลพื้นฐาน ความเป็นปัจจุบัน เป็นรอบภาคเรียนละ 1 ครั้ง → วัดข้อ 3.1.1</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">2. Brand Guidelines</strong><br>
+          <span style="color:var(--text-light);">แนวปฏิบัติด้านอัตลักษณ์องค์กร — ตรา สี แบบอักษร → วัดข้อ 3.2.1</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">3. Communication Guidelines</strong><br>
+          <span style="color:var(--text-light);">มาตรฐานการเผยแพร่ข่าวสาร เกณฑ์ความทันเวลา → วัดข้อ 3.0.1</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">4. Checklist สื่อ Non-digital</strong><br>
+          <span style="color:var(--text-light);">ตรวจป้าย เอกสาร แผ่นพับ ว่าเป็นปัจจุบัน ปีละ 1 ครั้ง → วัดข้อ 3.2.4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน 3 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน 3 สื่อสารมวลชน Digital / Non-digital — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * ข้อมูลบุคลากรจากแบบสำรวจงานเทคโนฯ 2568 ดำเนินการโดยฝ่าย ICT มูลนิธิฯ<br>
+    * กระบวนการ PDCA จากแผนผังรายงานประจำปีฝ่ายเทคโนโลยีสารสนเทศ 2568<br>
+    * เป้าหมายคุณภาพ 15 ข้อ ใน 4 กลุ่ม — เครื่องมือวัดผลพร้อมใช้ 4 ข้อ, มีบางส่วน 4 ข้อ, ต้องพัฒนาใหม่ 7 ข้อ
+  </p>
+</div>
+
+</body>
+</html>
