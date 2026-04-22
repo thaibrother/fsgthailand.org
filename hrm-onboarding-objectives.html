@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงาน HRM 3 — เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --emerald: #059669;
+    --emerald-dark: #047857;
+    --emerald-light: #10b981;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white); padding: 60px 24px 40px; text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block; background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+  .section-heading { text-align: center; padding: 48px 24px 0; }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px; }
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell { padding: 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+  .qg-section { padding: 48px 24px; background: var(--white); }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--cream);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header { padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px; white-space: nowrap;
+  }
+  .qg-level-header h3 { font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--navy); }
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left; border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .footer-note { text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem; }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1), .pdca-cell:nth-child(3) { border-right: none; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — งาน HRM กลุ่มที่ 3</div>
+  <h1>เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</h1>
+  <div class="subtitle">Onboarding Process — คณะอนุกรรมการเตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</div>
+</div>
+
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล — งาน HRM กลุ่ม 3 รับช่วงต่อจากการสรรหา (กลุ่ม 2): ทำให้บุคลากรใหม่พร้อมทำงานได้ตรงตาม Job Spec ตั้งแต่วันแรก</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--navy-light);">
+    <h2 style="color: var(--navy);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 3 เป็น <strong>สะพานเชื่อม</strong> ระหว่างการสรรหา (กลุ่ม 2) กับการปฏิบัติงานจริง — บุคลากรที่ผ่านการสรรหามาแล้ว ต้องได้รับการปฐมนิเทศที่สอดคล้องกับ Job Spec ที่กำหนด เข้าใจระบบงานของสถาบัน รู้จักเครื่องมือ (SWIS) และเข้าใจวัฒนธรรมองค์กรตามจิตตารมณ์มงฟอร์ต ถ้า Onboarding ไม่ดี ต้นทุนการพัฒนา (กลุ่ม 5) จะสูงขึ้น และอัตราลาออก (กลุ่ม 6) จะสูงตาม</p>
+  </div>
+</div>
+
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — เตรียมศักยภาพเข้าสู่งาน</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน — ใช้ข้อมูลจาก SWIS ติดตามคุณภาพ Onboarding</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วิเคราะห์ข้อมูลบุคลากรใหม่จากระบบ SWIS:</p>
+      <ul>
+        <li>ดึงข้อมูลบุคลากรรับใหม่แต่ละปี — จำนวน ตำแหน่ง วุฒิ แยกโรงเรียน</li>
+        <li>วิเคราะห์ว่าโรงเรียนใดมี/ไม่มีหลักสูตร Onboarding</li>
+        <li>กำหนดเนื้อหา Onboarding ให้สอดคล้องกับ Job Spec (C/K/Cp) แต่ละตำแหน่ง</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ดำเนินการ Onboarding ตามแผน:</p>
+      <ul>
+        <li>จัดปฐมนิเทศ — แนะนำจิตตารมณ์มงฟอร์ต ระบบงาน SWIS กฎระเบียบ</li>
+        <li>จับคู่พี่เลี้ยง (Mentor) ให้บุคลากรใหม่ตามตำแหน่งงาน</li>
+        <li>บันทึกข้อมูลการผ่าน Onboarding เข้าระบบ SWIS</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ติดตาม</span>
+      <p>ตรวจสอบผลจากข้อมูลจริง:</p>
+      <ul>
+        <li>วิเคราะห์อัตราการลาออกภายในปีแรก — สะท้อนคุณภาพ Onboarding</li>
+        <li>เปรียบเทียบข้ามโรงเรียน — โรงไหนรักษาคนใหม่ได้ โรงไหนไม่ได้</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>รายงานผลให้ผู้นำขับเคลื่อน:</p>
+      <ul>
+        <li>สะท้อนให้เห็นว่าโรงใดมี Onboarding ที่ช่วยรักษาคนใหม่ได้ โรงใดไม่มี</li>
+        <li>ฟีดแบคกลับกระบวนการสรรหา (กลุ่ม 2) — ปัญหาที่พบจาก Onboarding</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน HRM 3</h2>
+    <div class="section-desc">แยกตามมิติการวิเคราะห์ — แต่ละข้อมีตัวชี้วัดปลายทางและแหล่งข้อมูล</div>
+  </div>
+
+  <!-- 3.1 หลักสูตร Onboarding -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">หลักสูตร</span>
+      <h3>หลักสูตรปฐมนิเทศและระบบ Onboarding</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.1.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มี หลักสูตรปฐมนิเทศบุคลากรใหม่ — เห็นความครอบคลุมทั้งเครือ</td>
+          <td>ข้อมูลสถานะหลักสูตร Onboarding ต่อโรง — มี/ไม่มี/สอดคล้อง Job Spec</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหารแต่ละโรงเรียน</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.2</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าเนื้อหา Onboarding ครอบคลุมหัวข้อสำคัญหรือไม่ — จิตตารมณ์มงฟอร์ต, Job Spec, ระบบ SWIS, กฎระเบียบสถาบัน</td>
+          <td>ข้อมูลเนื้อหาหลักสูตร Onboarding เทียบกับรายการหัวข้อมาตรฐาน ต่อโรง</td>
+          <td class="qg-tool">คู่มือ Onboarding มาตรฐาน (ต้องจัดทำ)</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.1.3</td>
+          <td class="qg-goal">สามารถรายงานจำนวนบุคลากรใหม่ที่ผ่าน/ไม่ผ่านกระบวนการ Onboarding แต่ละปีได้ — แยกตามโรงเรียน</td>
+          <td>ข้อมูลจำนวนผู้ผ่าน Onboarding vs จำนวนบุคลากรรับใหม่ ต่อปี ต่อโรง</td>
+          <td class="qg-tool">SWIS — ประวัติบุคลากร + บันทึกอบรม</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลบุคลากรใหม่ ไม่มีบันทึก Onboarding</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3.2 ระบบพี่เลี้ยง -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#d1fae5; border-left:4px solid var(--emerald);">
+      <span class="qg-badge" style="background:var(--emerald); color:var(--white);">พี่เลี้ยง</span>
+      <h3>ระบบพี่เลี้ยง (Mentoring) สำหรับบุคลากรใหม่</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.2.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มี ระบบพี่เลี้ยงสำหรับบุคลากรใหม่ — เห็นโรงไหนดูแลคนใหม่อย่างเป็นระบบ</td>
+          <td>ข้อมูลสถานะระบบพี่เลี้ยง ต่อโรง — มี/ไม่มี/มีแต่ไม่เป็นระบบ</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหารแต่ละโรงเรียน</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3.0 ภาพรวม -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy-light);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">ภาพรวม</span>
+      <h3>การวิเคราะห์ภาพรวม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.0.1</td>
+          <td class="qg-goal">สามารถวิเคราะห์อัตราลาออกภายในปีแรกของบุคลากรใหม่ เปรียบเทียบข้ามโรงเรียนได้ — สะท้อนคุณภาพ Onboarding ของแต่ละโรง</td>
+          <td>ข้อมูลอัตราลาออกปีแรก (first-year turnover) ต่อโรง ต่อปี — วิเคราะห์แนวโน้มได้</td>
+          <td class="qg-tool">SWIS — ประวัติบุคลากร (วันเข้า-ออก)</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ ยังไม่วิเคราะห์</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.0.2</td>
+          <td class="qg-goal">ข้อมูลจากระบบ SWIS สะท้อนให้เห็นความสัมพันธ์ระหว่างคุณภาพ Onboarding กับอัตราการรักษาบุคลากรใหม่ — ส่งต่อผู้นำขับเคลื่อน</td>
+          <td>รายงานเปรียบเทียบ: โรงที่มี Onboarding ดี vs โรงที่ไม่มี → อัตราลาออกปีแรกต่างกันอย่างไร</td>
+          <td class="qg-tool">SWIS — ข้อมูลบุคลากร + สถานะ Onboarding</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div style="max-width:900px; margin:0 auto 24px; background:var(--white); border:2px solid var(--navy-light); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy-light); padding:12px 24px; color:var(--white); font-weight:600; font-size:0.9rem;">ข้อเสนอแนะ — สิ่งที่ยังไม่มีและแนวทางดำเนินการ</div>
+    <div style="padding:20px 24px; display:grid; gap:16px;">
+
+      <div style="background:#f8f0ff; padding:16px 20px; border-radius:var(--radius); border-left:4px solid #7c3aed;">
+        <div style="font-weight:600; color:#7c3aed; font-size:0.88rem; margin-bottom:8px;">3.1.1 + 3.1.2 หลักสูตรปฐมนิเทศมาตรฐาน</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> แต่ละโรงเรียนอาจมีการปฐมนิเทศบุคลากรใหม่ แต่ไม่มีข้อมูลว่ามีหรือไม่ และเนื้อหาครอบคลุมแค่ไหน<br>
+          <strong>แนวทาง:</strong> จัดทำ "รายการหัวข้อมาตรฐาน Onboarding" (Checklist) ครอบคลุม 4 มิติ — จิตตารมณ์มงฟอร์ต, Job Spec ของตำแหน่ง, ระบบงาน SWIS, กฎระเบียบสถาบัน → ส่งให้โรงเรียนตรวจสอบว่าตนเองมี/ไม่มี/มีบางส่วน<br>
+          <strong>ขั้นตอนแรก:</strong> ร่าง Checklist หัวข้อ Onboarding มาตรฐาน แล้วนำเข้าประชุมคณะอนุกรรมการกลุ่ม 3 พิจารณา → เมื่อผ่านแล้ว ใช้เป็นเครื่องมือสำรวจสถานะทุกโรง
+        </div>
+      </div>
+
+      <div style="background:#f8f0ff; padding:16px 20px; border-radius:var(--radius); border-left:4px solid #7c3aed;">
+        <div style="font-weight:600; color:#7c3aed; font-size:0.88rem; margin-bottom:8px;">3.2.1 ระบบพี่เลี้ยง (Mentoring)</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> ไม่มีข้อมูลว่าโรงเรียนใดมีระบบพี่เลี้ยงอย่างเป็นทางการ<br>
+          <strong>แนวทาง:</strong> เริ่มจากสำรวจสถานะก่อน — ถามฝ่ายบริหารแต่ละโรงว่ามีระบบพี่เลี้ยงหรือไม่ ถ้ามีเป็นทางการหรือไม่เป็นทางการ แล้วนำข้อมูลมาเปรียบเทียบกับอัตราลาออกปีแรก (ข้อ 3.0.1) → ถ้าเห็นความสัมพันธ์ชัด ข้อมูลจะพูดเองว่าควรมี<br>
+          <strong>ขั้นตอนแรก:</strong> เพิ่มคำถามเรื่องระบบพี่เลี้ยงเข้าไปในชุดสำรวจเดียวกับข้อ 3.1.1 — ไม่ต้องทำสำรวจแยก
+        </div>
+      </div>
+
+      <div style="background:#f8f0ff; padding:16px 20px; border-radius:var(--radius); border-left:4px solid #7c3aed;">
+        <div style="font-weight:600; color:#7c3aed; font-size:0.88rem; margin-bottom:8px;">3.0.2 วิเคราะห์ความสัมพันธ์ Onboarding ↔ Retention</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> ยังไม่มีเครื่องมือเชื่อมข้อมูล Onboarding กับอัตราลาออก<br>
+          <strong>แนวทาง:</strong> เมื่อได้ข้อมูลสำรวจจากข้อ 3.1.1 แล้ว นำมาจับคู่กับข้อมูลลาออกปีแรกจาก SWIS (ข้อ 3.0.1) → วิเคราะห์ว่าโรงที่มี Onboarding ดีกว่า มีอัตราลาออกปีแรกต่ำกว่าจริงหรือไม่ — ข้อมูลจะเป็นหลักฐานให้ผู้นำเห็นคุณค่าของ Onboarding<br>
+          <strong>ขั้นตอนแรก:</strong> ทำข้อ 3.0.1 ให้เสร็จก่อน (วิเคราะห์อัตราลาออกปีแรกจาก SWIS) แล้วค่อยเชื่อมกับข้อมูล Onboarding ทีหลัง
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.7;">
+    <strong>หมายเหตุ:</strong><br>
+    * Onboarding ต้องครอบคลุม 4 มิติ: จิตตารมณ์มงฟอร์ต (MEC), Job Spec ของตำแหน่ง, ระบบงาน SWIS, กฎระเบียบสถาบัน<br>
+    * ข้อมูลทั้งหมดอ้างอิงจากระบบ SWIS ของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--cream); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน HRM 3</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>6 ข้อ</strong> ใน 3 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          3.1 หลักสูตร: 3 ข้อ · 3.2 พี่เลี้ยง: 1 ข้อ · 3.0 ภาพรวม: 2 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">0 ข้อ</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">2 ข้อ — มีข้อมูลดิบ ต้องวิเคราะห์</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">4 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน HRM 3 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน HRM 3 เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * Onboarding ครอบคลุม 4 มิติ: จิตตารมณ์มงฟอร์ต, Job Spec, ระบบ SWIS, กฎระเบียบสถาบัน<br>
+    * เป้าหมายคุณภาพ 6 ข้อ ใน 3 กลุ่ม — มีบางส่วน 2 ข้อ, ต้องพัฒนาใหม่ 4 ข้อ
+  </p>
+</div>
+
+</body>
+</html>

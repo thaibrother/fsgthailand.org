@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงาน HRM 4 — นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c; --navy-dark: #0d2640; --navy-light: #2c5f8a;
+    --gold: #c9a74e; --gold-dark: #8b6914; --gold-light: #e8d494;
+    --cream: #fafaf7; --white: #ffffff;
+    --gray-100: #f1f3f5; --gray-200: #e9ecef; --gray-600: #6c757d;
+    --text: #2a2a2a; --text-light: #5a5a5a; --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07); --shadow-lg: 0 8px 32px rgba(0,0,0,0.1); --radius: 8px;
+    --red-soft: #dc3545; --orange-soft: #e67e22; --green-soft: #27ae60;
+    --emerald: #059669; --emerald-dark: #047857;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--cream); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif; font-weight: 600; color: var(--navy); line-height: 1.3; }
+  .page-header { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%); color: var(--white); padding: 60px 24px 40px; text-align: center; }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label { display: inline-block; background: rgba(201,167,78,0.2); border: 1px solid var(--gold); color: var(--gold-light); padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .vision-section { background: var(--white); border-left: 4px solid var(--gold); padding: 32px; margin: 40px auto; max-width: 960px; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+  .section-heading { text-align: center; padding: 48px 24px 0; }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px; }
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 800px; margin: 0 auto; border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden; }
+  .pdca-cell { padding: 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content; }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+  .qg-section { padding: 48px 24px; background: var(--white); }
+  .qg-level { max-width: 900px; margin: 0 auto 32px; background: var(--cream); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .qg-level-header { padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+  .qg-level-header .qg-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px; white-space: nowrap; }
+  .qg-level-header h3 { font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--navy); }
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th { background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem; font-weight: 600; color: var(--text-light); text-align: left; border-bottom: 2px solid var(--gray-200); }
+  .qg-table td { padding: 10px 12px; font-size: 0.82rem; color: var(--text-light); border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5; }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .footer-note { text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem; }
+  .footer-note .draft-label { display: inline-block; background: #fff3cd; color: #856404; padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px; }
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1), .pdca-cell:nth-child(3) { border-right: none; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — งาน HRM กลุ่มที่ 4</div>
+  <h1>นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</h1>
+  <div class="subtitle">Supervision &amp; Monitoring — คณะอนุกรรมการนิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</div>
+</div>
+
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล — งาน HRM กลุ่ม 4 เป็นกลไกตรวจสอบว่าระบบ HR ทำงานจริงหรือไม่ ผ่านการลงพื้นที่นิเทศ 14 โรงเรียน</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--navy-light);">
+    <h2 style="color: var(--navy);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 4 เป็น <strong>กระจกสะท้อน</strong> — การนิเทศไม่ใช่การตรวจสอบเพื่อจับผิด แต่เป็นการเก็บข้อมูลสถานะจริงของแต่ละโรงเรียนเทียบกับ Job Spec และคู่มือคุณภาพหน่วยงาน แล้วสะท้อนกลับให้ผู้บริหารเห็น ปีการศึกษา 2568 ดำเนินการนิเทศแล้ว 14 โรง* (ACEP เลื่อนไปปี 2569) ข้อมูลจากการนิเทศเป็นหลักฐานเชิงประจักษ์ที่มีค่าที่สุดของระบบ HRM</p>
+  </div>
+</div>
+
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — นิเทศและกำกับติดตามคุณภาพ</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน — ใช้ข้อมูลจาก SWIS + ผลนิเทศเป็นฐาน</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วิเคราะห์ข้อมูลจาก SWIS เพื่อวางแผนนิเทศ:</p>
+      <ul>
+        <li>ดึงข้อมูลสถานะ Job Spec ของแต่ละโรง — ลงข้อมูลครบหรือไม่ (C/K/Cp)</li>
+        <li>วิเคราะห์ผลนิเทศปีก่อน — ประเด็นที่ต้องติดตามต่อ</li>
+        <li>กำหนดประเด็นนิเทศให้สอดคล้องกับคู่มือคุณภาพหน่วยงาน</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ลงพื้นที่นิเทศตามแผน:</p>
+      <ul>
+        <li>ตรวจสถานะ Job Spec ในระบบ SWIS — ครบ/ไม่ครบ/ถูกต้องหรือไม่</li>
+        <li>ตรวจแผนงาน PDCA 9 ขั้นตอนในระบบ SWIS — มี/ไม่มี/สอดคล้องคู่มือ</li>
+        <li>สังเกตการณ์และเก็บข้อมูลเชิงคุณภาพจากการสนทนากับผู้บริหารและบุคลากร</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ติดตาม</span>
+      <p>วิเคราะห์ผลนิเทศจากข้อมูลจริง:</p>
+      <ul>
+        <li>เปรียบเทียบผลนิเทศข้ามโรงเรียน — โรงไหนปฏิบัติได้ดี โรงไหนต้องปรับปรุง</li>
+        <li>เปรียบเทียบกับผลนิเทศปีก่อน — มีพัฒนาการหรือถดถอย</li>
+      </ul>
+    </div>
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>รายงานผลให้ผู้นำขับเคลื่อน:</p>
+      <ul>
+        <li>สรุปผลนิเทศรายโรง + ภาพรวมเครือ — ส่งต่อให้ Provincial Council</li>
+        <li>ฟีดแบคกลับกลุ่มงานอื่น: สรรหา (2), พัฒนา (5), รักษา (6)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน HRM 4</h2>
+    <div class="section-desc">แยกตามมิติการวิเคราะห์ — แต่ละข้อมีตัวชี้วัดปลายทางและแหล่งข้อมูล<br>
+      <span style="font-size:0.8rem; color:var(--navy);">นิเทศปีการศึกษา 2568: ดำเนินการแล้ว 14 โรง* — ACEP เลื่อนไปปี 2569</span>
+    </div>
+  </div>
+
+  <!-- 4.1 สถานะ Job Spec -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">Job Spec</span>
+      <h3>กำกับติดตามสถานะ Job Spec ในระบบ SWIS</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.1.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะการลงข้อมูล Job Spec (C/K/Cp) ในระบบ SWIS ของแต่ละโรงเรียนได้ — เห็นว่าโรงไหนครบ โรงไหนยังขาด</td>
+          <td>ข้อมูลสถานะ JS ต่อโรง: ครบ 100% / 70-80% / 0% — แยก C, K, Cp</td>
+          <td class="qg-tool">SWIS — ข้อมูล Job Spec</td>
+          <td><span class="qg-status qs-has">มีในระบบ SWIS</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.1.2</td>
+          <td class="qg-goal">สามารถวิเคราะห์ความสอดคล้องของ Job Spec ที่ลงในระบบ กับคู่มือคุณภาพหน่วยงานได้ — เห็นว่าตรงกันหรือไม่</td>
+          <td>รายงาน match/mismatch: JS ในระบบ vs คู่มือคุณภาพหน่วยงาน ต่อโรง</td>
+          <td class="qg-tool">SWIS — Job Spec + คู่มือคุณภาพหน่วยงาน</td>
+          <td><span class="qg-status qs-partial">มีข้อมูล ต้องวิเคราะห์ข้าม</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.2 ผลนิเทศ -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#d1fae5; border-left:4px solid var(--emerald);">
+      <span class="qg-badge" style="background:var(--emerald); color:var(--white);">ผลนิเทศ</span>
+      <h3>ผลการนิเทศกำกับติดตาม — ลงพื้นที่จริง</h3>
+    </div>
+    <div style="padding:12px 24px; background:#f0fdf4; font-size:0.8rem; color:var(--emerald-dark); line-height:1.6; border-bottom:1px solid var(--gray-200);">
+      ปีการศึกษา 2568: ลงนิเทศแล้ว 14 โรง (มิ.ย.-ธ.ค. 68) ตามลำดับ: AC → ATSN → ACN → ACSP → ACR → SG → ACT → ACS → MCS → MCP → ACL → ACP → SLC → ACU*
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.2.1</td>
+          <td class="qg-goal">สามารถรายงานผลนิเทศรายโรงเรียนได้ — เห็นสถานะการปฏิบัติตาม Job Spec และคู่มือคุณภาพหน่วยงานของแต่ละโรง</td>
+          <td>รายงานผลนิเทศรายโรง — ประเด็นที่พบ จุดแข็ง จุดที่ต้องปรับปรุง</td>
+          <td class="qg-tool">บันทึกนิเทศ — คณะอนุกรรมการกลุ่ม 4</td>
+          <td><span class="qg-status qs-has">มีแล้ว 14 โรง*</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.2.2</td>
+          <td class="qg-goal">สามารถเปรียบเทียบผลนิเทศข้ามโรงเรียนได้ — เห็นว่าโรงไหนปฏิบัติตาม Job Spec ได้ดี โรงไหนต้องปรับปรุง</td>
+          <td>รายงานเปรียบเทียบข้ามโรง: ระดับการปฏิบัติตาม JS + คู่มือคุณภาพ</td>
+          <td class="qg-tool">สรุปผลนิเทศ — วิเคราะห์ข้ามโรง</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลรายโรง ยังไม่วิเคราะห์ข้าม</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.2.3</td>
+          <td class="qg-goal">สามารถเปรียบเทียบผลนิเทศปีนี้กับปีก่อนได้ — เห็นว่าโรงเรียนมีพัฒนาการหรือถดถอย</td>
+          <td>รายงานเปรียบเทียบ year-on-year ต่อโรง — จุดที่ดีขึ้น / จุดที่เท่าเดิม / จุดที่ถดถอย</td>
+          <td class="qg-tool">บันทึกนิเทศ — ย้อนหลังหลายปี</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลปีเดียว ต้องเก็บต่อเนื่อง</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.3 แผนงาน PDCA ในระบบ SWIS -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#fef9e7; border-left:4px solid var(--gold-dark);">
+      <span class="qg-badge" style="background:var(--gold-dark); color:var(--white);">PDCA ใน SWIS</span>
+      <h3>กำกับติดตามแผนงาน PDCA 9 ขั้นตอนในระบบ SWIS</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.3.1</td>
+          <td class="qg-goal">สามารถรายงานสถานะแผนงาน PDCA 9 ขั้นตอนในระบบ SWIS ของแต่ละโรงเรียนได้ — เห็นว่าโรงไหนมีแผนงานครบ โรงไหนยังไม่มี</td>
+          <td>ข้อมูลสถานะแผนงาน PDCA ต่อโรง: มี/ไม่มี/ครบ 9 ขั้นตอน/ไม่ครบ</td>
+          <td class="qg-tool">SWIS — แผนงาน PDCA</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">4.3.2</td>
+          <td class="qg-goal">สามารถวิเคราะห์ความสอดคล้องของแผนงาน PDCA กับคู่มือคุณภาพหน่วยงานได้ — เห็นว่าแผนงานตรงกับเป้าหมายคุณภาพหรือไม่</td>
+          <td>รายงาน match/mismatch: แผนงาน D4 vs หัวข้อในคู่มือคุณภาพ ต่อหน่วยงาน</td>
+          <td class="qg-tool">SWIS — แผนงาน + คู่มือคุณภาพหน่วยงาน</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือวิเคราะห์ข้าม</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4.0 ภาพรวม -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy-light);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">ภาพรวม</span>
+      <h3>การวิเคราะห์ภาพรวม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">4.0.1</td>
+          <td class="qg-goal">ข้อมูลจากการนิเทศสะท้อนให้เห็นระดับความพร้อมด้านทรัพยากรมนุษย์ของแต่ละโรงเรียน — ส่งต่อผู้นำขับเคลื่อน</td>
+          <td>รายงานสรุปความพร้อม HR ต่อโรง: JS + PDCA + คู่มือคุณภาพ — จัดลำดับได้</td>
+          <td class="qg-tool">ผลนิเทศ + SWIS Data</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div style="max-width:900px; margin:0 auto 24px; background:var(--white); border:2px solid var(--navy-light); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy-light); padding:12px 24px; color:var(--white); font-weight:600; font-size:0.9rem;">ข้อเสนอแนะ — สิ่งที่ยังไม่มีและแนวทางดำเนินการ</div>
+    <div style="padding:20px 24px; display:grid; gap:16px;">
+
+      <div style="background:#f8f0ff; padding:16px 20px; border-radius:var(--radius); border-left:4px solid #7c3aed;">
+        <div style="font-weight:600; color:#7c3aed; font-size:0.88rem; margin-bottom:8px;">4.3.2 วิเคราะห์ความสอดคล้อง แผนงาน PDCA ↔ คู่มือคุณภาพหน่วยงาน</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> แผนงาน PDCA อยู่ในระบบ SWIS คู่มือคุณภาพหน่วยงานก็มี แต่ยังไม่มีเครื่องมือตรวจสอบว่าแผนงาน D4 ตรงกับหัวข้อในคู่มือหรือไม่<br>
+          <strong>แนวทาง:</strong> พัฒนา Dashboard ใน SWIS ที่แสดงรายการหัวข้อจากคู่มือคุณภาพหน่วยงาน เทียบกับแผนงาน D4 ที่ลงในระบบ — เห็นทันทีว่าหัวข้อไหนมีแผนรองรับ หัวข้อไหนยังไม่มี<br>
+          <strong>ขั้นตอนแรก:</strong> ประสาน SWIS Plus จัดทำ prototype การเปรียบเทียบข้อมูลข้ามโมดูล (คู่มือคุณภาพ × แผนงาน PDCA) สำหรับ 1-2 โรงนำร่อง → ถ้าได้ผลดีค่อยขยายทุกโรง
+        </div>
+      </div>
+
+      <div style="background:#f0f4f8; padding:16px 20px; border-radius:var(--radius); border-left:4px solid var(--navy-light);">
+        <div style="font-weight:600; color:var(--navy); font-size:0.88rem; margin-bottom:8px;">4.2.3 เปรียบเทียบผลนิเทศ year-on-year (มีบางส่วน)</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> มีข้อมูลนิเทศ 1 ปี (2568) ยังเปรียบเทียบข้ามปีไม่ได้<br>
+          <strong>แนวทาง:</strong> กำหนดรูปแบบบันทึกผลนิเทศให้เป็นมาตรฐานเดียวกันตั้งแต่ปีนี้เป็นต้นไป (scoring rubric) เพื่อให้เปรียบเทียบข้ามปีได้ ไม่ใช่แค่บันทึกเชิงคุณภาพที่เทียบกันยาก<br>
+          <strong>ขั้นตอนแรก:</strong> จัดทำแบบฟอร์มนิเทศมาตรฐาน — กำหนดประเด็นตรวจ + ระดับคะแนน → ใช้ในการนิเทศปี 2569 เป็นต้นไป
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.7;">
+    <strong>หมายเหตุ:</strong><br>
+    * นิเทศปี 2568: AC → ATSN → ACN → ACSP → ACR → SG → ACT → ACS → MCS → MCP → ACL → ACP → SLC → ACU (14 โรง) — ACEP เลื่อนไปปี 2569<br>
+    * สถานะ JS ในระบบ SWIS: ครบ 100% = 9 โรง, 70-80% = 5 โรง, 0% = ACEP — ณ มี.ค. 2569<br>
+    * คู่มือคุณภาพหน่วยงาน = เครื่องมือหลักของ HRM (ไม่ใช่ ICT) — SWIS Plus พัฒนาระบบตาม HRM มอบหมาย<br>
+    * ข้อมูลทั้งหมดอ้างอิงจากระบบ SWIS ของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--cream); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน HRM 4</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>8 ข้อ</strong> ใน 4 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          4.1 Job Spec: 2 ข้อ · 4.2 ผลนิเทศ: 3 ข้อ · 4.3 PDCA ใน SWIS: 2 ข้อ · 4.0 ภาพรวม: 1 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">2 ข้อ — ใช้ข้อมูล SWIS + ผลนิเทศ</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">5 ข้อ — ต้องวิเคราะห์ข้าม/เก็บต่อเนื่อง</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">1 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน HRM 4 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน HRM 4 นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์ — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * นิเทศปี 2568: 14 โรง (มิ.ย.-ธ.ค. 68) — ACEP เลื่อนไปปี 2569<br>
+    * เป้าหมายคุณภาพ 8 ข้อ ใน 4 กลุ่ม — มีแล้ว 2 ข้อ, มีบางส่วน 5 ข้อ, ต้องพัฒนาใหม่ 1 ข้อ
+  </p>
+</div>
+
+</body>
+</html>

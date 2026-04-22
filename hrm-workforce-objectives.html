@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงาน HRM 2 — สรรหา วางแผนและวิเคราะห์อัตรากำลัง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --emerald: #059669;
+    --emerald-dark: #047857;
+    --emerald-light: #10b981;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; background: var(--white); }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--cream);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — งาน HRM กลุ่มที่ 2</div>
+  <h1>สรรหา วางแผนและวิเคราะห์อัตรากำลัง</h1>
+  <div class="subtitle">Workforce Planning &amp; Recruitment — คณะอนุกรรมการสรรหา วางแผนและวิเคราะห์อัตรากำลัง</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล — งาน HRM กลุ่ม 2 เป็นต้นทางของระบบทรัพยากรมนุษย์: วางแผนอัตรากำลังให้ตรงกับ Job Spec แล้วสรรหาคนที่ใช่</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PHILOSOPHY -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--navy-light);">
+    <h2 style="color: var(--navy);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 2 เป็น <strong>ต้นน้ำ</strong> ของวงจร HR ทั้งระบบ — ถ้าวิเคราะห์อัตรากำลังไม่ตรงกับภาระงานจริง หรือสรรหาคนไม่ตรงกับ Job Spec ที่กำหนดไว้ ระบบ Onboarding (กลุ่ม 3), นิเทศ (กลุ่ม 4), พัฒนา (กลุ่ม 5), รักษา (กลุ่ม 6) และสืบทอด (กลุ่ม 7) จะเริ่มจากจุดที่ผิดทั้งหมด การวางแผนต้องอิงข้อมูลจาก SWIS — ไม่ใช่ความรู้สึก</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — สรรหาและวิเคราะห์อัตรากำลัง</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน — ใช้ข้อมูลจาก SWIS และ Job Spec เป็นฐาน</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วิเคราะห์อัตรากำลังจากข้อมูลจริงในระบบ SWIS:</p>
+      <ul>
+        <li>ดึงข้อมูลจำนวนบุคลากรแยกตำแหน่ง × โรงเรียน เทียบกับ Job Spec ที่กำหนด</li>
+        <li>วิเคราะห์อัตราลาออก/เกษียณ ย้อนหลัง — คาดการณ์ตำแหน่งว่างล่วงหน้า</li>
+        <li>เทียบอัตรากำลังจริง กับ อัตรากำลังที่ควรมีตามภาระงาน</li>
+      </ul>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ดำเนินการสรรหาตามแผนที่วิเคราะห์ได้:</p>
+      <ul>
+        <li>กำหนดคุณสมบัติผู้สมัครให้สอดคล้องกับ Job Spec (C/K/Cp)</li>
+        <li>ประสานโรงเรียนจัดทำแผนรับบุคลากรตามช่วงเวลาที่วิเคราะห์</li>
+        <li>บันทึกข้อมูลการสรรหาเข้าระบบ SWIS ทุกขั้นตอน</li>
+      </ul>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ติดตาม</span>
+      <p>ตรวจสอบผลจากข้อมูลจริง:</p>
+      <ul>
+        <li>เทียบจำนวนบุคลากรรับใหม่ vs ตำแหน่งว่างจริง — สรรหาได้ตรงเป้าหรือไม่</li>
+        <li>วิเคราะห์คุณสมบัติผู้ได้รับคัดเลือก vs Job Spec — ตรง/ไม่ตรง</li>
+        <li>เปรียบเทียบข้ามโรงเรียน — โรงไหนครบ โรงไหนยังขาด</li>
+      </ul>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>รายงานผลให้ผู้นำขับเคลื่อน:</p>
+      <ul>
+        <li>สะท้อนข้อมูลอัตรากำลังให้เห็นว่าโรงใดขาดแคลน โรงใดเกินอัตรา</li>
+        <li>ฟีดแบคกลับ Job Spec — ปรับคุณสมบัติที่หาคนไม่ได้ให้สอดคล้องตลาดแรงงาน</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน HRM 2</h2>
+    <div class="section-desc">แยกตามมิติการวิเคราะห์ — แต่ละข้อมีตัวชี้วัดปลายทางและแหล่งข้อมูล<br>
+      <span style="font-size:0.8rem; color:var(--navy);">ข้อมูลอ้างอิงจาก SWIS + Job Spec (C/K/Cp 137 หัวข้อ) — ครอบคลุม 14 โรงเรียน*</span>
+    </div>
+  </div>
+
+  <!-- 2.1 วิเคราะห์อัตรากำลัง -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">อัตรากำลัง</span>
+      <h3>วิเคราะห์อัตรากำลังบุคลากร — เทียบภาระงานจริงกับ Job Spec</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">2.1.1</td>
+          <td class="qg-goal">สามารถรายงานจำนวนบุคลากรแยกตามตำแหน่งและโรงเรียนได้ — เห็นภาพรวมอัตรากำลังทั้งเครือ</td>
+          <td>ข้อมูลจำนวนบุคลากร × ตำแหน่ง × โรงเรียน — ครบ 14 แห่ง เปรียบเทียบได้</td>
+          <td class="qg-tool">SWIS — ข้อมูลบุคลากร</td>
+          <td><span class="qg-status qs-has">มีในระบบ SWIS</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.1.2</td>
+          <td class="qg-goal">สามารถวิเคราะห์อัตรากำลังจริง เทียบกับอัตรากำลังที่ควรมีตามภาระงานของแต่ละโรงเรียนได้ — เห็นว่าโรงไหนขาด โรงไหนเกิน</td>
+          <td>รายงาน gap analysis: อัตราจริง vs อัตราที่ควรมี แยกตามกลุ่มงาน ต่อโรง</td>
+          <td class="qg-tool">SWIS — ข้อมูลบุคลากร + โครงสร้างตำแหน่ง</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ ยังไม่มีเกณฑ์</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.1.3</td>
+          <td class="qg-goal">สามารถวิเคราะห์วุฒิการศึกษาและคุณสมบัติของบุคลากรเทียบกับ Job Spec ที่กำหนดไว้ — เห็นว่าตำแหน่งใดมีคนตรงสเปค ตำแหน่งใดไม่ตรง</td>
+          <td>รายงาน match/mismatch: วุฒิจริง vs วุฒิที่ Job Spec กำหนด แยกตามตำแหน่ง ต่อโรง</td>
+          <td class="qg-tool">SWIS — ข้อมูลบุคลากร + Job Spec (C/K/Cp)</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลบุคลากร JS ลง 9 โรง*</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.1.4</td>
+          <td class="qg-goal">สามารถรายงานอัตราการลาออก/เกษียณ ย้อนหลังได้ — คาดการณ์ตำแหน่งว่างล่วงหน้าเพื่อวางแผนสรรหา</td>
+          <td>ข้อมูลอัตราลาออก/เกษียณ ต่อปี ต่อโรง แยกตามกลุ่มตำแหน่ง — วิเคราะห์แนวโน้มได้</td>
+          <td class="qg-tool">SWIS — ประวัติบุคลากร (เข้า-ออก)</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2.2 การสรรหา -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#d1fae5; border-left:4px solid var(--emerald);">
+      <span class="qg-badge" style="background:var(--emerald); color:var(--white);">สรรหา</span>
+      <h3>กระบวนการสรรหาและคัดเลือกบุคลากร</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">2.2.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มี กระบวนการสรรหาที่สอดคล้องกับ Job Spec — เห็นว่าเกณฑ์คัดเลือกตรงกับสเปคหรือไม่</td>
+          <td>ข้อมูลสถานะกระบวนการสรรหา ต่อโรง — มี/ไม่มี/สอดคล้อง Job Spec</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหารแต่ละโรงเรียน</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.2.2</td>
+          <td class="qg-goal">สามารถรายงานจำนวนบุคลากรรับใหม่แต่ละปีเทียบกับตำแหน่งว่างจริงได้ — เห็นประสิทธิภาพการสรรหา</td>
+          <td>ข้อมูลจำนวนรับใหม่ vs ตำแหน่งว่าง ต่อปี ต่อโรง — วิเคราะห์ fill rate ได้</td>
+          <td class="qg-tool">SWIS — ประวัติบุคลากร (เข้างาน)</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2.0 ภาพรวม -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy-light);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">ภาพรวม</span>
+      <h3>การวิเคราะห์ภาพรวม — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">2.0.1</td>
+          <td class="qg-goal">สามารถเปรียบเทียบอัตรากำลังข้ามโรงเรียนได้ — เห็นว่าโรงไหนมีบุคลากรเพียงพอ โรงไหนขาดแคลน สัดส่วนครูต่อนักเรียนต่างกันอย่างไร</td>
+          <td>รายงานเปรียบเทียบข้ามโรง: จำนวนบุคลากร, สัดส่วนครูต่อนักเรียน, อัตราลาออก</td>
+          <td class="qg-tool">SWIS — ข้อมูลบุคลากร + ข้อมูลนักเรียน</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.0.2</td>
+          <td class="qg-goal">ข้อมูลจากระบบ SWIS สะท้อนให้เห็นว่าโรงเรียนใดมีปัญหาอัตรากำลังเรื้อรัง โรงใดบริหารกำลังคนได้ดี — ส่งต่อผู้นำขับเคลื่อน</td>
+          <td>รายงานแนวโน้มอัตรากำลัง ย้อนหลัง 3 ปี ต่อโรง — ข้อมูลพูดเอง</td>
+          <td class="qg-tool">SWIS — ประวัติบุคลากร (ย้อนหลัง)</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลดิบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div style="max-width:900px; margin:0 auto 24px; background:var(--white); border:2px solid var(--navy-light); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy-light); padding:12px 24px; color:var(--white); font-weight:600; font-size:0.9rem;">ข้อเสนอแนะ — สิ่งที่ยังไม่มีและแนวทางดำเนินการ</div>
+    <div style="padding:20px 24px; display:grid; gap:16px;">
+
+      <div style="background:#f8f0ff; padding:16px 20px; border-radius:var(--radius); border-left:4px solid #7c3aed;">
+        <div style="font-weight:600; color:#7c3aed; font-size:0.88rem; margin-bottom:8px;">2.2.1 กระบวนการสรรหาที่สอดคล้อง Job Spec</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> แต่ละโรงเรียนมีกระบวนการสรรหาของตนเอง แต่ยังไม่มีข้อมูลว่าเกณฑ์คัดเลือกสอดคล้องกับ Job Spec หรือไม่<br>
+          <strong>แนวทาง:</strong> ใช้ข้อมูล Job Spec (C/K/Cp) ที่ลงในระบบ SWIS แล้ว สร้างชุดคำถาม/เกณฑ์คัดเลือกมาตรฐานแยกตามกลุ่มตำแหน่ง — ส่งให้ฝ่ายบริหารทุกโรงใช้เป็นแนวทาง ไม่ใช่บังคับ แต่ให้รายงานว่าใช้หรือไม่ใช้<br>
+          <strong>ขั้นตอนแรก:</strong> สำรวจสถานะปัจจุบัน — โรงไหนมีเกณฑ์เป็นลายลักษณ์อักษร โรงไหนใช้ดุลพินิจ → ข้อมูลนี้เป็นฐานให้วางเกณฑ์กลางได้
+        </div>
+      </div>
+
+      <div style="background:#f0f4f8; padding:16px 20px; border-radius:var(--radius); border-left:4px solid var(--navy-light);">
+        <div style="font-weight:600; color:var(--navy); font-size:0.88rem; margin-bottom:8px;">2.1.2 เกณฑ์อัตรากำลังที่ "ควรมี" (มีบางส่วน — ขาดเกณฑ์)</div>
+        <div style="font-size:0.82rem; color:var(--text-light); line-height:1.7;">
+          <strong>สถานะ:</strong> มีข้อมูลจำนวนบุคลากรจริงจาก SWIS แต่ยังไม่มีเกณฑ์กลางว่า "ควรมีเท่าไร"<br>
+          <strong>แนวทาง:</strong> ใช้มาตรฐาน สช. (สัดส่วนครูต่อนักเรียน) เป็นฐาน + ดูจากโครงสร้างตำแหน่งตาม Job Spec → คำนวณ gap อัตโนมัติจาก SWIS<br>
+          <strong>ขั้นตอนแรก:</strong> รวบรวมเกณฑ์มาตรฐานจาก สช./สพฐ. + กำหนดเกณฑ์ภายในมูลนิธิฯ เพิ่มเติมสำหรับตำแหน่งที่มาตรฐานภายนอกไม่ครอบคลุม
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.7;">
+    <strong>หมายเหตุ:</strong><br>
+    * Job Spec ลงข้อมูลครบ 100% = 9 โรง (ACP, ACL, MC, MCP, ACS, ACU, SLC, ACN, ATSN) / อีก 5 โรงอยู่ที่ 70-80% / ACEP 0% — ณ มี.ค. 2569<br>
+    * อัตรากำลังที่ "ควรมี" ต้องมีเกณฑ์กลาง เช่น สัดส่วนครูต่อนักเรียน ตามมาตรฐาน สช./สพฐ.<br>
+    * ข้อมูลทั้งหมดอ้างอิงจากระบบ SWIS ของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--cream); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน HRM 2</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>8 ข้อ</strong> ใน 3 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          2.1 อัตรากำลัง: 4 ข้อ · 2.2 สรรหา: 2 ข้อ · 2.0 ภาพรวม: 2 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">1 ข้อ — ใช้ข้อมูล SWIS ได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">6 ข้อ — ต้องวิเคราะห์/เสริมเกณฑ์</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">1 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน HRM 2 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน HRM 2 สรรหา วางแผนและวิเคราะห์อัตรากำลัง — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * ข้อมูลบุคลากรจากระบบ SWIS — ดำเนินการโดยฝ่าย HRM มูลนิธิฯ<br>
+    * Job Spec C/K/Cp 137 หัวข้อ — ฉบับปรับปรุง 2569<br>
+    * สถานะ JS ในระบบ SWIS: ครบ 9 โรง, 70-80% อีก 5 โรง, ACEP 0% — ณ มี.ค. 2569<br>
+    * เป้าหมายคุณภาพ 8 ข้อ ใน 3 กลุ่ม — เครื่องมือวัดผลพร้อมใช้ 1 ข้อ, มีบางส่วน 6 ข้อ, ต้องพัฒนาใหม่ 1 ข้อ
+  </p>
+</div>
+
+</body>
+</html>
