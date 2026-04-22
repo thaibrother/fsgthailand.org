@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWIS 2.2 — โครงร่างวัตถุประสงค์และการเชื่อมต่อ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PYRAMID ── */
+  .pyramid-section { padding: 0 24px 48px; }
+  .pyramid {
+    display: flex; flex-direction: column; align-items: center; gap: 0;
+    max-width: 800px; margin: 0 auto;
+  }
+  .pyramid-level {
+    position: relative; border-radius: var(--radius); padding: 24px 28px;
+    transition: transform 0.2s, box-shadow 0.2s; cursor: default;
+  }
+  .pyramid-level:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .level-5 { width: 45%; min-width: 320px; }
+  .level-4 { width: 58%; min-width: 380px; }
+  .level-3 { width: 71%; min-width: 440px; }
+  .level-2 { width: 84%; min-width: 500px; }
+  .level-1 { width: 97%; min-width: 560px; }
+
+  .level-5 { background: linear-gradient(135deg, #1a3a5c, #2c5f8a); color: var(--white); border: 2px solid var(--gold); }
+  .level-5 .level-num, .level-5 .level-title { color: var(--gold-light); }
+  .level-5 .level-desc { color: rgba(255,255,255,0.85); }
+  .level-4 { background: linear-gradient(135deg, #2c5f8a, #3a7cb8); color: var(--white); }
+  .level-4 .level-num { color: var(--gold-light); }
+  .level-4 .level-desc { color: rgba(255,255,255,0.85); }
+  .level-3 { background: var(--white); border: 2px solid var(--navy-light); }
+  .level-3 .level-num { color: var(--gold-dark); }
+  .level-2 { background: var(--white); border: 2px solid var(--gray-200); }
+  .level-2 .level-num { color: var(--gold-dark); }
+  .level-1 { background: var(--gray-100); border: 2px solid var(--gray-200); }
+  .level-1 .level-num { color: var(--gold-dark); }
+
+  .level-num { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .level-title { font-family: 'Noto Sans Thai', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+  .level-desc { font-size: 0.88rem; line-height: 1.6; color: var(--text-light); }
+  .level-keywords { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .keyword {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 0.75rem; font-weight: 500;
+  }
+  .level-5 .keyword { background: rgba(255,255,255,0.15); color: var(--gold-light); }
+  .level-4 .keyword { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+  .level-3 .keyword { background: #e8f0f8; color: var(--navy); }
+  .level-2 .keyword { background: #f0f4e8; color: #4a6d2c; }
+  .level-1 .keyword { background: #e9ecef; color: var(--text-light); }
+
+  /* Timeline badge */
+  .timeline-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px;
+  }
+  .tb-short { background: #d4edda; color: #155724; }
+  .tb-mid { background: #fff3cd; color: #856404; }
+  .tb-long { background: #f8d7da; color: #721c24; }
+
+  .connector {
+    display: flex; flex-direction: column; align-items: center; padding: 6px 0;
+    color: var(--navy-light);
+  }
+  .connector .arrow { font-size: 1.2rem; line-height: 1; opacity: 0.5; }
+  .connector .conn-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.5px; }
+
+  /* ── ANALYSIS SECTION ── */
+  .analysis-section { padding: 48px 24px; background: var(--white); }
+
+  .analysis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; max-width: 900px; margin: 0 auto;
+  }
+  .analysis-card {
+    background: var(--cream); border-radius: var(--radius); padding: 24px;
+    border-top: 3px solid var(--navy-light);
+  }
+  .analysis-card.gap-card { border-top-color: var(--red-soft); }
+  .analysis-card.prereq-card { border-top-color: var(--orange-soft); }
+  .analysis-card.ready-card { border-top-color: var(--green-soft); }
+
+  .analysis-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem;
+    margin-bottom: 10px; color: var(--navy);
+  }
+  .analysis-card .card-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .tag-gap { background: #f8d7da; color: #721c24; }
+  .tag-prereq { background: #fff3cd; color: #856404; }
+  .tag-ready { background: #d4edda; color: #155724; }
+  .tag-risk { background: #e2e3e5; color: #383d41; }
+
+  .analysis-card p, .analysis-card li {
+    font-size: 0.85rem; color: var(--text-light); line-height: 1.6;
+  }
+  .analysis-card ul { list-style: none; padding: 0; }
+  .analysis-card li { padding: 4px 0 4px 16px; position: relative; }
+  .analysis-card li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy-light);
+  }
+  .analysis-card.gap-card li::before { background: var(--red-soft); }
+  .analysis-card.prereq-card li::before { background: var(--orange-soft); }
+
+  /* ── TIMELINE SECTION ── */
+  .timeline-section { padding: 48px 24px; }
+  .timeline-container { max-width: 800px; margin: 0 auto; }
+  .timeline-phase {
+    display: flex; gap: 24px; margin-bottom: 32px; position: relative;
+  }
+  .timeline-phase::before {
+    content: ''; position: absolute; left: 55px; top: 60px; bottom: -32px;
+    width: 2px; background: var(--gray-200);
+  }
+  .timeline-phase:last-child::before { display: none; }
+
+  .phase-marker {
+    flex-shrink: 0; width: 110px; text-align: center; padding-top: 8px;
+  }
+  .phase-years {
+    font-size: 0.8rem; font-weight: 700; color: var(--navy);
+    background: var(--white); border: 2px solid var(--navy-light);
+    border-radius: 20px; padding: 4px 12px; display: inline-block;
+  }
+  .phase-label {
+    font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;
+  }
+
+  .phase-content {
+    flex: 1; background: var(--white); border-radius: var(--radius);
+    padding: 24px; box-shadow: var(--shadow);
+  }
+  .phase-content h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem;
+    margin-bottom: 12px; color: var(--navy);
+  }
+  .phase-content .phase-levels {
+    display: inline-block; background: var(--navy); color: var(--gold-light);
+    padding: 2px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .phase-items { list-style: none; padding: 0; }
+  .phase-items li {
+    padding: 6px 0; font-size: 0.85rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .phase-items li:last-child { border-bottom: none; }
+  .phase-items li strong { color: var(--navy); }
+  .phase-milestone {
+    margin-top: 12px; padding: 8px 12px; background: #fff8e1;
+    border-radius: 4px; font-size: 0.8rem; color: var(--gold-dark); font-weight: 500;
+  }
+
+  /* ── LINKAGE ── */
+  .linkage-section { padding: 48px 24px; background: var(--white); }
+  .linkage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto; }
+  .linkage-card {
+    background: var(--cream); border-radius: var(--radius); padding: 24px;
+    border-left: 3px solid var(--gold);
+  }
+  .linkage-card h3 { font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; margin-bottom: 8px; color: var(--navy); }
+  .linkage-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .linkage-from, .linkage-to {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 0.7rem; font-weight: 600; margin-bottom: 8px;
+  }
+  .linkage-from { background: var(--navy); color: var(--white); }
+  .linkage-to { background: var(--gold-dark); color: var(--white); margin-left: 4px; }
+
+  /* ── CONTEXT ── */
+  .context-section { padding: 48px 24px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+  .col-card {
+    background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+  }
+  .col-card h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--gold-light);
+  }
+  .col-card ul { list-style: none; padding: 0; }
+  .col-card li {
+    padding: 6px 0; font-size: 0.88rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .col-card li:last-child { border-bottom: none; }
+  .col-card li strong { color: var(--navy); font-weight: 600; }
+
+  /* ── STATUS BAR ── */
+  .status-section { padding: 48px 24px; background: var(--white); }
+  .status-bar-container { max-width: 800px; margin: 0 auto; }
+  .status-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+  }
+  .status-label { width: 60px; font-size: 0.8rem; font-weight: 600; color: var(--navy); text-align: right; }
+  .status-bar-bg {
+    flex: 1; height: 24px; background: var(--gray-100); border-radius: 12px; overflow: hidden;
+  }
+  .status-bar-fill {
+    height: 100%; border-radius: 12px; display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 8px; font-size: 0.7rem; font-weight: 700; color: var(--white);
+    transition: width 0.8s ease;
+  }
+  .fill-high { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+  .fill-mid { background: linear-gradient(90deg, #e67e22, #f39c12); }
+  .fill-low { background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .status-pct { width: 40px; font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .level-5,.level-4,.level-3,.level-2,.level-1 { width: 100% !important; min-width: unset !important; }
+    .linkage-grid, .two-col, .analysis-grid { grid-template-columns: 1fr; }
+    .timeline-phase { flex-direction: column; gap: 12px; }
+    .timeline-phase::before { display: none; }
+    .phase-marker { width: auto; text-align: left; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(3), .qg-table td:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — กลุ่มงานที่ 2.2</div>
+  <h1>งานพัฒนาซอฟต์แวร์เพื่อสถานศึกษา (SWIS)</h1>
+  <div class="subtitle">โครงร่างลำดับชั้นวัตถุประสงค์ การวิเคราะห์ช่องว่าง และแผนระยะเวลา</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ปรัชญาการพัฒนา</h2>
+    <p>ภารกิจหลักของโรงเรียนคืองานวิชาการและกิจกรรมเพื่อคุณภาพผู้เรียน สอดคล้องกับพันธกิจของคณะเซนต์คาเบรียล ระบบ SWIS จึงถูกพัฒนาขึ้นเพื่อถ่ายโอนภาระงานบริหารและบริการออกจากครูให้มากที่สุด แล้วจึงขยายขอบเขตสู่เครื่องมือวิชาการและกิจกรรมตามลำดับ โดยทำหน้าที่เป็น backbone ฐานข้อมูลกลางที่เชื่อมโยงทุกระบบ</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- CURRENT STATUS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="status-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>สถานะปัจจุบัน — Adoption Rate (27 โมดูล / ฐานตรวจ 220 ฟังก์ชัน)*</h2>
+    <div class="section-desc">ข้อมูล ณ ปีการศึกษา 2568 — ยิ่งสูงยิ่งพร้อมก้าวสู่ชั้นถัดไป</div>
+  </div>
+  <div class="status-bar-container">
+    <div class="status-row"><span class="status-label">MCP</span><div class="status-bar-bg"><div class="status-bar-fill fill-high" style="width:86%">190</div></div><span class="status-pct">86%</span></div>
+    <div class="status-row"><span class="status-label">ACP</span><div class="status-bar-bg"><div class="status-bar-fill fill-high" style="width:86%">190</div></div><span class="status-pct">86%</span></div>
+    <div class="status-row"><span class="status-label">SLC</span><div class="status-bar-bg"><div class="status-bar-fill fill-high" style="width:86%">189</div></div><span class="status-pct">86%</span></div>
+    <div class="status-row"><span class="status-label">ACL</span><div class="status-bar-bg"><div class="status-bar-fill fill-high" style="width:85%">188</div></div><span class="status-pct">85%</span></div>
+    <div class="status-row"><span class="status-label">ACT</span><div class="status-bar-bg"><div class="status-bar-fill fill-high" style="width:77%">170</div></div><span class="status-pct">77%</span></div>
+    <div class="status-row"><span class="status-label">ACS</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:71%">157</div></div><span class="status-pct">71%</span></div>
+    <div class="status-row"><span class="status-label">MCS</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:68%">150</div></div><span class="status-pct">68%</span></div>
+    <div class="status-row"><span class="status-label">ACN</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:63%">138</div></div><span class="status-pct">63%</span></div>
+    <div class="status-row"><span class="status-label">ACR</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:59%">129</div></div><span class="status-pct">59%</span></div>
+    <div class="status-row"><span class="status-label">ACU</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:56%">123</div></div><span class="status-pct">56%</span></div>
+    <div class="status-row"><span class="status-label">SG</span><div class="status-bar-bg"><div class="status-bar-fill fill-mid" style="width:54%">118</div></div><span class="status-pct">54%</span></div>
+    <div class="status-row"><span class="status-label">AC</span><div class="status-bar-bg"><div class="status-bar-fill fill-low" style="width:48%">106</div></div><span class="status-pct">48%</span></div>
+    <div class="status-row"><span class="status-label">ACSP</span><div class="status-bar-bg"><div class="status-bar-fill fill-low" style="width:48%">106</div></div><span class="status-pct">48%</span></div>
+    <div class="status-row"><span class="status-label">ATSN</span><div class="status-bar-bg"><div class="status-bar-fill fill-low" style="width:25%">54</div></div><span class="status-pct">25%</span></div>
+    <div class="status-row"><span class="status-label">ACEP</span><div class="status-bar-bg"><div class="status-bar-fill fill-low" style="width:2%"></div></div><span class="status-pct">—</span></div>
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:16px;">* ฐานตรวจติดตาม 220 ฟังก์ชัน จาก 25 โมดูล (ยังไม่รวมโมดูลห้องสมุดที่เพิ่งพัฒนาเสร็จปี 68 และโมดูลบัตร RFID อีก 3 ฟังก์ชัน — รวมทั้งหมด 27 โมดูล) · ข้อมูลจากรายงานฝ่าย ICT ปีการศึกษา 2568 — จำนวนฟังก์ชันที่เปิดใช้งาน ยังไม่ได้วัดคุณภาพการใช้งานจริง</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PYRAMID -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>ลำดับชั้นวัตถุประสงค์ 5 ระดับ</h2>
+  <div class="section-desc">จากฐานข้อมูล → สู่ความสามารถคาดการณ์อนาคต</div>
+</div>
+
+<div class="pyramid-section">
+  <div class="pyramid">
+
+    <div class="pyramid-level level-5">
+      <span class="timeline-badge tb-long">ระยะยาว 5+ ปี</span>
+      <div class="level-num">ชั้นที่ 5 — เป้าหมายสูงสุด</div>
+      <div class="level-title">R&D — คาดการณ์อนาคตเป็น Scenario</div>
+      <div class="level-desc">องค์กรสามารถคาดการณ์อนาคตจากฐานข้อมูลของตนเองได้ โดยจัดทำ scenario สำหรับแต่ละหน่วยงาน แต่ละโรงเรียน และระดับมูลนิธิฯ</div>
+      <div class="level-keywords">
+        <span class="keyword">Scenario Planning</span>
+        <span class="keyword">Predictive</span>
+        <span class="keyword">Research-based</span>
+      </div>
+    </div>
+
+    <div class="connector">
+      <span class="arrow">&#9650;</span>
+      <span class="conn-label">ต้องวิเคราะห์ได้ก่อน จึงคาดการณ์ได้</span>
+    </div>
+
+    <div class="pyramid-level level-4">
+      <span class="timeline-badge tb-long">ระยะยาว 4-5 ปี</span>
+      <div class="level-num">ชั้นที่ 4</div>
+      <div class="level-title">ข้อมูลเชิงวิเคราะห์ข้ามระบบ</div>
+      <div class="level-desc">ประมวลผลข้ามหน่วยงาน ข้ามโรงเรียน ข้ามปี — เห็นแนวโน้ม จุดเสี่ยง โอกาส ความสัมพันธ์ระหว่างตัวแปร</div>
+      <div class="level-keywords">
+        <span class="keyword">Cross-school Trends</span>
+        <span class="keyword">Risk Detection</span>
+        <span class="keyword">เปรียบเทียบได้</span>
+      </div>
+    </div>
+
+    <div class="connector">
+      <span class="arrow">&#9650;</span>
+      <span class="conn-label">ต้องเข้าถึงได้ก่อน จึงวิเคราะห์ได้</span>
+    </div>
+
+    <div class="pyramid-level level-3">
+      <span class="timeline-badge tb-mid">ระยะกลาง 2-3 ปี</span>
+      <div class="level-num">ชั้นที่ 3</div>
+      <div class="level-title">เครื่องมือบริหาร — Management Information</div>
+      <div class="level-desc">ผู้บริหารเรียกดูข้อมูลรวม เปรียบเทียบข้ามโรง ข้ามปี ติดตาม KPI จากจุดเดียว — ข้อมูลพร้อมใช้ตัดสินใจ</div>
+      <div class="level-keywords">
+        <span class="keyword">Dashboard</span>
+        <span class="keyword">KPI Tracking</span>
+        <span class="keyword">เข้าถึงได้</span>
+        <span class="keyword">ตัดสินใจได้</span>
+      </div>
+    </div>
+
+    <div class="connector">
+      <span class="arrow">&#9650;</span>
+      <span class="conn-label">ต้องลดภาระครูก่อน จึงมีข้อมูลบริหารที่แท้จริง</span>
+    </div>
+
+    <div class="pyramid-level level-2">
+      <span class="timeline-badge tb-short">ระยะสั้น 1-2 ปี</span>
+      <div class="level-num">ชั้นที่ 2</div>
+      <div class="level-title">ลดภาระครู — ถ่ายโอนงานบริหาร/บริการเข้าระบบ</div>
+      <div class="level-desc">ถ่ายโอนกระบวนการบริหารและบริการออกจากครูเข้าสู่ระบบ เพื่อให้ครูมุ่งเน้นคุณภาพผู้เรียน อันเป็นภารกิจหลักของสถานศึกษา</div>
+      <div class="level-keywords">
+        <span class="keyword">ฟังก์ชันบริหาร/บริการ</span>
+        <span class="keyword">ลดภาระครู</span>
+        <span class="keyword">ครูมุ่งเน้นผู้เรียน</span>
+      </div>
+    </div>
+
+    <div class="connector">
+      <span class="arrow">&#9650;</span>
+      <span class="conn-label">ต้องมีฐานข้อมูลก่อน จึงถ่ายโอนภาระได้</span>
+    </div>
+
+    <div class="pyramid-level level-1">
+      <span class="timeline-badge tb-short">ระยะสั้น ปัจจุบัน-1 ปี</span>
+      <div class="level-num">ชั้นที่ 1 — ฐานราก</div>
+      <div class="level-title">ฐานข้อมูลครบถ้วน ถูกต้อง ทันเวลา</div>
+      <div class="level-desc">ข้อมูลทุกโรงเรียน ทุกหน่วยงาน ได้รับการบันทึกครบถ้วน ถูกต้อง ทันเวลา — เป็นปัจจัยพื้นฐานของทุกระดับที่อยู่เหนือขึ้นไป</div>
+      <div class="level-keywords">
+        <span class="keyword">ครบ</span>
+        <span class="keyword">ถูก</span>
+        <span class="keyword">ทัน</span>
+        <span class="keyword">Backbone</span>
+        <span class="keyword">เชื่อมระบบภายนอก</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- ANALYSIS — What exists + What to develop -->
+<!-- ══════════════════════════════════════════ -->
+<div class="analysis-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>วิเคราะห์สถานะ: สิ่งที่มีแล้ว และสิ่งที่ต้องพัฒนาต่อ</h2>
+    <div class="section-desc">จากข้อมูลจริง — รายงานตรวจติดตาม, Executive Dashboard, แบบสำรวจงานเทคโนฯ</div>
+  </div>
+
+  <div class="analysis-grid">
+
+    <!-- READY 1: Monitoring -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — ชั้น 1</span>
+      <h3>ระบบตรวจติดตามความครบถ้วนของข้อมูล</h3>
+      <ul>
+        <li>ตารางตรวจเยี่ยม 14 โรงเรียน มีภราดาผู้ตรวจประจำแต่ละโรง (ปีการศึกษา 2568)*</li>
+        <li>รายงานสารสนเทศตรวจติดตาม SWIS วัดถึง: ความสมบูรณ์ของข้อมูล, พฤติกรรมการใช้งาน, รายงานสารสนเทศจากระบบ, วิเคราะห์ปัญหา, ความเสี่ยง, ความโดดเด่น, แนวทางพัฒนา</li>
+        <li>ระดับความครบถ้วนของข้อมูลแต่ละโรงเรียนไม่เท่ากัน ขึ้นอยู่กับความร่วมมือและการให้ความสำคัญของผู้บริหารสถานศึกษา</li>
+      </ul>
+    </div>
+
+    <!-- READY 2: Dashboard -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">มีแล้ว — ชั้น 3</span>
+      <h3>Executive Dashboard สำหรับผู้บริหาร</h3>
+      <ul>
+        <li>มีหน้า Dashboard อย่างน้อย 9 ด้าน: สารสนเทศนักเรียน, วิชาการ, พฤติกรรม·วินัย, สุขภาพ, ข้อมูลครอบครัว, ภูมิลำเนา·เชื้อชาติ·ศาสนา, ทุนการศึกษา, ปฏิทินงาน, แหล่งเรียนรู้*</li>
+        <li>มี Foundation Dashboard Spec กำหนดเป็นเอกสารแล้ว</li>
+        <li>มีความชัดเจนเป็นระยะ แต่เมื่อเพิ่มฟังก์ชันและรายงานใหม่ โครงสร้างเริ่มซับซ้อน จำเป็นต้องจัดระเบียบเป็นรอบ</li>
+      </ul>
+    </div>
+
+    <!-- DEVELOP 1: Dashboard clutter -->
+    <div class="analysis-card prereq-card">
+      <span class="card-tag tag-prereq">ต้องพัฒนาต่อ — ชั้น 3</span>
+      <h3>จัดระเบียบ Dashboard ที่เติบโตจนซับซ้อน</h3>
+      <ul>
+        <li>เมื่อเพิ่มฟังก์ชันใหม่และต้องการรายงานเพิ่มเติม → รายงานสะสมจนโครงสร้างซับซ้อน จำเป็นต้องจัดระเบียบเป็นรอบ</li>
+        <li>ต้องออกแบบโครงสร้างรายงานที่รองรับการเติบโตได้ โดยไม่ต้องปรับโครงสร้างใหม่ทุกครั้งที่เพิ่มโมดูล</li>
+        <li>เชื่อมกับ 50 รายการ 7 กลุ่ม ของงาน 2.1 เพื่อจัดหมวดหมู่ให้สอดคล้องกัน</li>
+      </ul>
+    </div>
+
+    <!-- DEVELOP 2: Satisfaction survey -->
+    <div class="analysis-card gap-card">
+      <span class="card-tag tag-gap">ต้องเพิ่ม — ชั้น 2</span>
+      <h3>การสำรวจความพึงพอใจรายโมดูล เป็นระบบ</h3>
+      <ul>
+        <li>ปัจจุบันมีข้อมูลป้อนกลับจากผู้ใช้ในระหว่างการอบรม — ส่วนใหญ่ตอบรับเชิงบวก แต่เป็นข้อมูลที่ไม่ได้จัดเก็บอย่างเป็นระบบ</li>
+        <li><strong>ยังขาด</strong> การสำรวจความพึงพอใจเป็นประจำ (รายโมดูล รายช่วงเวลา) เพื่อยืนยันอย่างเป็นทางการว่า SWIS ลดภาระครูจริง</li>
+        <li>ต้องเพิ่มเข้าแผน: แบบสำรวจความพึงพอใจ + การลดภาระงาน แยกตามโมดูล ทำเป็นรอบ (เช่น ปีละครั้ง หรือหลังอบรมทุกครั้ง)</li>
+      </ul>
+    </div>
+
+    <!-- READY 3: Core mechanism -->
+    <div class="analysis-card ready-card">
+      <span class="card-tag tag-ready">จุดแข็งหลัก</span>
+      <h3>กลไกที่สมบูรณ์แล้ว</h3>
+      <ul>
+        <li>กลไกหลัก 3 องค์ประกอบครบถ้วน: คู่มือคุณภาพ (prompt) + แผนงาน PDCA (execute) + SWIS (platform)</li>
+        <li>27 โมดูล (ฐานตรวจ 220 ฟังก์ชัน*) พัฒนาเสร็จ — 4 โรงเรียน adoption 85%+</li>
+        <li>ทีม SWIS Plus มีอยู่จริง พัฒนาต่อเนื่อง มีผู้รับผิดชอบรายฟังก์ชัน*</li>
+        <li>เชื่อม HRM ↔ ICT ผ่าน Commission เดียวกันแล้ว (มติ PC ครั้งที่ 9)</li>
+        <li>มีแบบสำรวจบุคลากร ICT ทุกโรงเรียน ครอบคลุมทั้ง 5 กลุ่มงาน พร้อมวุฒิและความเชี่ยวชาญ*</li>
+      </ul>
+    </div>
+
+    <!-- PREREQ: Historical depth -->
+    <div class="analysis-card prereq-card">
+      <span class="card-tag tag-prereq">เงื่อนไขจำเป็น — ชั้น 4-5</span>
+      <h3>ความลึกของข้อมูลย้อนหลังและบุคลากรวิเคราะห์</h3>
+      <ul>
+        <li>การวิเคราะห์แนวโน้มและคาดการณ์ต้องมีข้อมูลย้อนหลังอย่างน้อย 3-5 ปีที่มีคุณภาพสม่ำเสมอ</li>
+        <li>โรงเรียนที่อัตราการใช้งานยังต่ำ จะทำให้ข้อมูลย้อนหลังมีช่องว่าง — การเปรียบเทียบข้ามโรงเรียนจึงไม่สมบูรณ์</li>
+        <li>ระดับ 4-5 ต้องการบุคลากรที่มีทักษะวิเคราะห์ข้อมูล — อาจพัฒนาทีมที่มีอยู่ หรือนำเทคโนโลยี AI มาสนับสนุน</li>
+      </ul>
+    </div>
+
+    <!-- RISK: Director adoption -->
+    <div class="analysis-card" style="border-top-color: var(--gray-600);">
+      <span class="card-tag tag-risk">ความเสี่ยงหลัก</span>
+      <h3>ผู้บริหารสถานศึกษาใช้งานตามระดับที่มีอยู่ ไม่มีการร้องขอเพิ่มเติม</h3>
+      <ul>
+        <li>ผู้อำนวยการบางท่านใช้ประจำ บางท่านใช้เฉพาะบางส่วน แต่ไม่มีผู้ใดร้องขอเพิ่มเติมรายงานหรือฟังก์ชันใหม่</li>
+        <li><strong>สาเหตุเบื้องต้น:</strong> ไม่คุ้นเคยกับเทคโนโลยี, กังวลว่าจะปรับตัวไม่ทัน, เกรงว่าระบบจะพัฒนาไปเกินระดับความถนัด</li>
+        <li><strong>สาเหตุเชิงโครงสร้าง:</strong> สถานศึกษาบางแห่งไม่ประสงค์ให้เกิดความโปร่งใส เนื่องจากมีการใช้จ่ายตามดุลพินิจส่วนตัว ซึ่งอาจไม่สอดคล้องกับระเบียบและนโยบายของมูลนิธิฯ — การนำระบบมาใช้จะเปิดเผยข้อมูลเหล่านี้</li>
+        <li>อุปสรรคเพิ่มเติมจากการหมุนเวียนผู้บริหาร — ความต่อเนื่องขาดช่วง ต้องสร้างความเข้าใจใหม่ในแต่ละรอบการโยกย้าย</li>
+        <li><strong>ผลกระทบ:</strong> ระบบมีความพร้อม (supply) แต่ผู้บริหารไม่เรียกใช้ (demand) → ระดับ 3-5 จะหยุดชะงักหากไม่แก้ไข — และเมื่อสาเหตุเกี่ยวข้องกับผลประโยชน์ ไม่ใช่เพียงทักษะ การอบรมเพียงอย่างเดียวจึงไม่เพียงพอ</li>
+      </ul>
+      <h3 style="margin-top:16px;">มาตรการรับมือ 3 ชั้น</h3>
+      <ul>
+        <li><strong>ชั้น 1 — Transparency (ดำเนินการแล้ว):</strong> เปิดให้ภราดาผู้ร่วมบริหารเข้าถึง Executive Dashboard ได้ — ใช้ความโปร่งใสเป็นกลไกกำกับทางอ้อม โดยสิทธิ์การอนุมัติยังคงอยู่ที่ผู้อำนวยการ</li>
+        <li><strong>ชั้น 2 — บูรณาการ SWIS ในกระบวนการบังคับ (อยู่ระหว่างดำเนินการ):</strong> คู่มือคุณภาพหน่วยงานกำหนดให้ SWIS เป็นเครื่องมือในขั้นตอน PDCA → ผู้บริหารต้องใช้โดยอัตโนมัติตามระบบ ไม่ใช่ตามความสมัครใจ</li>
+        <li><strong>ชั้น 3 — ระเบียบมูลนิธิฯ (ยังไม่มี):</strong> หากมูลนิธิฯ กำหนดนโยบายชัดเจนว่า "การเบิกจ่ายต้องผ่านระบบที่ตรวจสอบได้" จะเปลี่ยนจากแรงจูงใจเป็นข้อบังคับ — แต่ต้องผ่านมติคณะกรรมการมูลนิธิฯ</li>
+      </ul>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-top:12px; padding: 8px 12px; background:#fff8e1; border-radius:4px;"><strong>วิเคราะห์:</strong> ปัญหานี้ไม่สามารถแก้ไขด้วยเทคโนโลยีเพียงอย่างเดียว — เป็นปัญหาด้านธรรมาภิบาลและวัฒนธรรมองค์กร มาตรการชั้น 1-2 ใช้แนวทาง Servant Strategy (สร้างความโปร่งใสโดยไม่บังคับ) ส่วนชั้น 3 ต้องอาศัยนโยบายจากระดับมูลนิธิฯ ซึ่งอาจไม่เกิดขึ้นในระยะสั้น ดังนั้นแผนจึงต้องเตรียมความพร้อมว่าระดับ 3-5 ของพีระมิดอาจเริ่มได้เฉพาะในโรงเรียนที่ผู้บริหารให้ความร่วมมือก่อน แล้วใช้ผลลัพธ์ที่ปรากฏเป็นแรงจูงใจให้โรงเรียนอื่นเข้าร่วมตามมา</p>
+    </div>
+
+    <!-- NEW: Satisfaction survey plan -->
+    <div class="analysis-card" style="border-top: 3px solid var(--navy);">
+      <span class="card-tag" style="background:#e8f0f8; color:var(--navy);">เสนอเพิ่มเข้าแผน</span>
+      <h3>ระบบสำรวจความพึงพอใจเป็นรอบ</h3>
+      <ul>
+        <li>สำรวจความพึงพอใจแยกตามโมดูล — ถามเรื่องความสะดวก การลดภาระงาน ปัญหาที่พบ ข้อเสนอแนะ</li>
+        <li>ทำเป็นประจำ (เช่น ปีละ 1 ครั้ง หรือหลังอบรมโมดูลใหม่ทุกครั้ง) เพื่อสะสมข้อมูลเชิงประจักษ์</li>
+        <li>ผลสำรวจจะเป็นหลักฐานเชิงประจักษ์ยืนยันว่า SWIS ช่วยลดภาระครูได้จริง — สามารถใช้ประกอบการนำเสนอต่อผู้บริหารระดับมูลนิธิฯ</li>
+        <li>สามารถพัฒนาเป็นฟังก์ชันในระบบ SWIS โดยตรง เพื่อจัดส่งแบบสำรวจออนไลน์และรวบรวมผลโดยอัตโนมัติ</li>
+      </ul>
+    </div>
+
+  </div>
+  <p style="text-align:center; font-size:0.75rem; color:var(--text-muted); margin-top:24px;">* ข้อมูลจากเอกสาร: ตารางตรวจติดตาม SWIS 2568, สรุปการใช้งานของโรงเรียนในเครือ 2568, รายงานความคืบหน้าระบบ SWIS, สรุปแบบสำรวจงานเทคโนฯ, Executive Dashboard PDFs</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<style>
+  .qg-section { padding: 48px 24px; }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header.l1 { background: var(--gray-100); border-left: 4px solid var(--gray-600); }
+  .qg-level-header.l2 { background: #f0f4e8; border-left: 4px solid #4a6d2c; }
+  .qg-level-header.l3 { background: #e8f0f8; border-left: 4px solid var(--navy-light); }
+  .qg-level-header.l4 { background: linear-gradient(135deg, #2c5f8a, #3a7cb8); border-left: 4px solid var(--gold); }
+  .qg-level-header.l5 { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); border-left: 4px solid var(--gold); }
+  .qg-level-header.sys { background: #fef9e7; border-left: 4px solid var(--gold-dark); }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header.l1 .qg-badge { background: var(--gray-200); color: var(--text); }
+  .qg-level-header.l2 .qg-badge { background: #dce8cc; color: #2d5016; }
+  .qg-level-header.l3 .qg-badge { background: #cde0f2; color: var(--navy); }
+  .qg-level-header.l4 .qg-badge,.qg-level-header.l5 .qg-badge { background: rgba(255,255,255,0.2); color: var(--gold-light); }
+  .qg-level-header.sys .qg-badge { background: #fce8b2; color: var(--gold-dark); }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+  .qg-level-header.l4 h3,.qg-level-header.l5 h3 { color: var(--white); }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool {
+    font-size: 0.75rem; color: var(--navy-light); font-style: italic;
+  }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+  @media (max-width: 768px) {
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน 2.2</h2>
+    <div class="section-desc">จัดตามลำดับชั้นวัตถุประสงค์ — แต่ละข้อมีตัวชี้วัดและเครื่องมือวัดผล</div>
+  </div>
+
+  <!-- LEVEL 1 -->
+  <div class="qg-level">
+    <div class="qg-level-header l1">
+      <span class="qg-badge">ชั้น 1</span>
+      <h3>ฐานข้อมูลครบถ้วน ถูกต้อง ทันเวลา</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.1</td>
+          <td class="qg-goal">ทุกโรงเรียนเปิดใช้งานฟังก์ชันในระบบ SWIS ไม่ต่ำกว่า 80% ของฟังก์ชันทั้งหมด</td>
+          <td>% ฟังก์ชันที่เปิดใช้งาน ต่อโรงเรียน</td>
+          <td class="qg-tool">หน้าตรวจติดตาม SWIS — แถบสีเขียว/แดงรายโมดูล</td>
+          <td><span class="qg-status qs-partial">4 โรง ≥80%</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.2</td>
+          <td class="qg-goal">ข้อมูลในระบบครบถ้วนตามรายการที่กำหนดของแต่ละโมดูล</td>
+          <td>ผลตรวจ "ความสมบูรณ์ของข้อมูล" จากรายงานตรวจติดตาม</td>
+          <td class="qg-tool">รายงานสารสนเทศตรวจติดตาม SWIS — คอลัมน์ "ความสมบูรณ์ของข้อมูล"</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3</td>
+          <td class="qg-goal">ข้อมูลถูกต้อง ตรวจสอบได้จากการเยี่ยมโรงเรียน</td>
+          <td>ผลสุ่มตรวจความถูกต้อง (sampling) เทียบกับเอกสารจริง</td>
+          <td class="qg-tool">ตารางตรวจเยี่ยมโรงเรียนประจำปี (ภราดาผู้ตรวจ)</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.4</td>
+          <td class="qg-goal">ข้อมูลบันทึกทันเวลา — ไม่ช้ากว่ากรอบเวลาที่กำหนด</td>
+          <td>ผลตรวจ "พฤติกรรมการใช้งาน" จากรายงานตรวจติดตาม</td>
+          <td class="qg-tool">รายงานตรวจติดตาม — คอลัมน์ "พฤติกรรมการใช้งาน"</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.5</td>
+          <td class="qg-goal">ฟังก์ชันที่พัฒนาใหม่ได้รับการ deploy ให้ทุกโรงเรียนอย่างทั่วถึง ไม่ตกหล่น</td>
+          <td>จำนวนโรงเรียนที่ได้รับการ deploy ภายใน 30 วันหลัง release</td>
+          <td class="qg-tool">รายงานความคืบหน้าระบบ SWIS</td>
+          <td><span class="qg-status qs-partial">ไม่เท่ากัน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEVEL 2 -->
+  <div class="qg-level">
+    <div class="qg-level-header l2">
+      <span class="qg-badge">ชั้น 2</span>
+      <h3>ลดภาระครู — ถ่ายโอนงานบริหาร/บริการเข้าระบบ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">2.1</td>
+          <td class="qg-goal">กระบวนการบริหาร/บริการที่เป็นภาระครูได้รับการถ่ายโอนเข้าระบบ SWIS อย่างครบถ้วน</td>
+          <td>จำนวนกระบวนการที่ digitize แล้ว / ที่ยังเหลือ</td>
+          <td class="qg-tool">รายการฟังก์ชันแยกตามประเภท "บริหาร/บริการ" vs "วิชาการ/กิจกรรม"*</td>
+          <td><span class="qg-status qs-none">ยังไม่แยก</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.2</td>
+          <td class="qg-goal">ครูและบุคลากรสามารถใช้งานฟังก์ชันได้จริงภายหลังการอบรม</td>
+          <td>จำนวนผู้ใช้งานจริง (active users) ต่อโมดูล ต่อโรงเรียน</td>
+          <td class="qg-tool">สถิติจากระบบ SWIS + ตารางอบรมการใช้งานโมดูล</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.3</td>
+          <td class="qg-goal">ครูมีความพึงพอใจว่า SWIS ช่วยลดภาระงานบริหาร/บริการได้จริง</td>
+          <td>คะแนนความพึงพอใจรายโมดูล (สำรวจเป็นรอบ ปีละ 1 ครั้ง)</td>
+          <td class="qg-tool">แบบสำรวจความพึงพอใจรายโมดูล*</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">2.4</td>
+          <td class="qg-goal">ฟังก์ชันวิชาการ/กิจกรรมเพิ่มขึ้นตามลำดับ หลังจากงานบริหาร/บริการเข้าระบบแล้ว</td>
+          <td>จำนวนโมดูลวิชาการที่เพิ่มใหม่ ต่อปี</td>
+          <td class="qg-tool">รายงานความคืบหน้าระบบ SWIS</td>
+          <td><span class="qg-status qs-partial">พัฒนาต่อเนื่อง</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEVEL 3 -->
+  <div class="qg-level">
+    <div class="qg-level-header l3">
+      <span class="qg-badge">ชั้น 3</span>
+      <h3>เครื่องมือบริหาร — Management Information</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">3.1</td>
+          <td class="qg-goal">Executive Dashboard ครอบคลุมข้อมูลบริหารทุกด้านที่จำเป็น</td>
+          <td>จำนวนด้านที่มี Dashboard (ปัจจุบัน 9+ ด้าน)</td>
+          <td class="qg-tool">Foundation Dashboard Spec + หน้า Dashboard จริง</td>
+          <td><span class="qg-status qs-has">9+ ด้าน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.2</td>
+          <td class="qg-goal">โครงสร้าง Dashboard รองรับการเติบโต — เพิ่มรายงานใหม่ได้โดยไม่สูญเสียความเป็นระเบียบ</td>
+          <td>โครงสร้างหมวดหมู่รายงานสอดคล้องกับ 50 รายการของงาน 2.1</td>
+          <td class="qg-tool">การจัดหมวดหมู่รายงาน เชื่อมกับ 7 กลุ่มข้อมูลของ 2.1</td>
+          <td><span class="qg-status qs-none">ต้องจัดใหม่</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.3</td>
+          <td class="qg-goal">ผู้บริหาร (ผอ. + ภราดาผู้ร่วมบริหาร) เข้าใช้ Dashboard จริงอย่างสม่ำเสมอ</td>
+          <td>สถิติการเข้าใช้งานรายเดือน ต่อโรงเรียน</td>
+          <td class="qg-tool">Log ระบบ SWIS</td>
+          <td><span class="qg-status qs-partial">ใช้ไม่เท่ากัน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">3.4</td>
+          <td class="qg-goal">รายงานสารสนเทศจากระบบพร้อมนำไปใช้ตัดสินใจ ไม่ใช่แค่ตัวเลขดิบ</td>
+          <td>ผลตรวจ "รายงานสารสนเทศ" จากรายงานตรวจติดตาม</td>
+          <td class="qg-tool">รายงานตรวจติดตาม — คอลัมน์ "รายงานสารสนเทศจากระบบ"</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEVEL 4 -->
+  <div class="qg-level">
+    <div class="qg-level-header l4">
+      <span class="qg-badge">ชั้น 4</span>
+      <h3>ข้อมูลเชิงวิเคราะห์ข้ามระบบ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th style="color:rgba(255,255,255,0.5);">เป้าหมายคุณภาพ</th><th style="color:rgba(255,255,255,0.5);">ตัวชี้วัด</th><th style="color:rgba(255,255,255,0.5);">เครื่องมือวัดผล</th><th style="color:rgba(255,255,255,0.5);">สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id" style="color:var(--gold-light);">4.1</td>
+          <td class="qg-goal" style="color:var(--white);">ข้อมูลย้อนหลังมีคุณภาพสม่ำเสมอ ≥ 3 ปี ในทุกโรงที่ adoption ≥ 80%</td>
+          <td style="color:rgba(255,255,255,0.8);">จำนวนปี × จำนวนโรง ที่ข้อมูลครบตามเกณฑ์ชั้น 1</td>
+          <td class="qg-tool" style="color:rgba(255,255,255,0.6);">เปรียบเทียบผลตรวจติดตามข้ามปี</td>
+          <td><span class="qg-status qs-future">ระยะยาว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id" style="color:var(--gold-light);">4.2</td>
+          <td class="qg-goal" style="color:var(--white);">เปรียบเทียบข้อมูลข้ามโรงเรียนได้ โดยใช้มาตรฐานเดียวกัน</td>
+          <td style="color:rgba(255,255,255,0.8);">รายงานเปรียบเทียบข้ามโรง (cross-school report) มีกี่ด้าน</td>
+          <td class="qg-tool" style="color:rgba(255,255,255,0.6);">Foundation Dashboard — cross-school view</td>
+          <td><span class="qg-status qs-future">ระยะยาว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id" style="color:var(--gold-light);">4.3</td>
+          <td class="qg-goal" style="color:var(--white);">มีระบบเชื่อมต่อ (backbone) กับระบบภายนอกที่โรงเรียนใช้อย่างน้อย 1 ระบบ</td>
+          <td style="color:rgba(255,255,255,0.8);">จำนวนระบบภายนอกที่เชื่อมสำเร็จ และข้อมูลไหลเข้า SWIS</td>
+          <td class="qg-tool" style="color:rgba(255,255,255,0.6);">ยังไม่มี — ต้องพัฒนา</td>
+          <td><span class="qg-status qs-future">ระยะยาว</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LEVEL 5 -->
+  <div class="qg-level">
+    <div class="qg-level-header l5">
+      <span class="qg-badge">ชั้น 5</span>
+      <h3>R&D — คาดการณ์อนาคตเป็น Scenario</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th style="color:rgba(255,255,255,0.5);">เป้าหมายคุณภาพ</th><th style="color:rgba(255,255,255,0.5);">ตัวชี้วัด</th><th style="color:rgba(255,255,255,0.5);">เครื่องมือวัดผล</th><th style="color:rgba(255,255,255,0.5);">สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id" style="color:var(--gold-light);">5.1</td>
+          <td class="qg-goal" style="color:var(--white);">ตอบคำถามเชิงวิจัยของมูลนิธิฯ ได้จากฐานข้อมูลภายใน 1 สัปดาห์</td>
+          <td style="color:rgba(255,255,255,0.8);">จำนวนคำถามเชิงวิจัยที่ตอบได้ / ระยะเวลาเฉลี่ย</td>
+          <td class="qg-tool" style="color:rgba(255,255,255,0.6);">ยังไม่มี — ต้องสร้างระบบ</td>
+          <td><span class="qg-status qs-future">ระยะยาว</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id" style="color:var(--gold-light);">5.2</td>
+          <td class="qg-goal" style="color:var(--white);">สร้าง scenario คาดการณ์อนาคตได้สำหรับแต่ละโรงเรียนและมูลนิธิฯ</td>
+          <td style="color:rgba(255,255,255,0.8);">จำนวน scenario ที่ผลิตได้ ต่อปี + ระดับความแม่นยำ</td>
+          <td class="qg-tool" style="color:rgba(255,255,255,0.6);">ยังไม่มี — เป้าหมายสูงสุด</td>
+          <td><span class="qg-status qs-future">ระยะยาว</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SYSTEM QUALITY -->
+  <div class="qg-level">
+    <div class="qg-level-header sys">
+      <span class="qg-badge">ฐานราก</span>
+      <h3>คุณภาพตัวซอฟต์แวร์และทีมพัฒนา</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัด</th><th>เครื่องมือวัดผล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">S.1</td>
+          <td class="qg-goal">ระบบ SWIS เสถียรและเข้าถึงได้ตลอดเวลาเปิดเรียน</td>
+          <td>Uptime ≥ 99% ในช่วงเปิดเรียน</td>
+          <td class="qg-tool">Server monitoring log</td>
+          <td><span class="qg-status qs-partial">ไม่มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.2</td>
+          <td class="qg-goal">ปัญหาที่พบจากการตรวจติดตามได้รับการแก้ไขภายในระยะเวลาที่กำหนด</td>
+          <td>ผลตรวจ "วิเคราะห์ปัญหา" + "ความเสี่ยง" + "แนวทางพัฒนา" จากรายงานตรวจติดตาม</td>
+          <td class="qg-tool">รายงานตรวจติดตาม — 3 คอลัมน์สุดท้าย</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.3</td>
+          <td class="qg-goal">มีแผนอบรมผู้ใช้งานเป็นระบบ ครอบคลุมทุกโรงทุกโมดูลที่เปิดใหม่</td>
+          <td>จำนวนครั้งอบรม ต่อโรงเรียน ต่อปี + จำนวนผู้เข้าร่วม</td>
+          <td class="qg-tool">ตารางอบรมการใช้งานโมดูล + รายชื่อผู้ใช้งานแต่ละโมดูล</td>
+          <td><span class="qg-status qs-has">มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.4</td>
+          <td class="qg-goal">ทีม SWIS Plus มีกำลังคนและสมรรถนะเพียงพอต่อการพัฒนาและดูแลระบบ</td>
+          <td>จำนวนนักพัฒนา / ฟังก์ชันที่รับผิดชอบ / ระยะเวลาพัฒนาเฉลี่ย</td>
+          <td class="qg-tool">รายงานความคืบหน้าระบบ SWIS (มีชื่อผู้รับผิดชอบรายฟังก์ชัน)</td>
+          <td><span class="qg-status qs-has">มีข้อมูล</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">S.5</td>
+          <td class="qg-goal">ระบบมี Export AI &amp; Prompt พร้อมรองรับการวิเคราะห์ข้อมูลเชิงลึกในอนาคต</td>
+          <td>ผลตรวจ "Export AI &amp; Prompt" จากรายงานตรวจติดตาม</td>
+          <td class="qg-tool">รายงานตรวจติดตาม — คอลัมน์ "Export AI &amp; Prompt"</td>
+          <td><span class="qg-status qs-partial">เริ่มมีบางส่วน</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark);">
+    <strong>หมายเหตุ:</strong> * เครื่องมือวัดผลที่ยังไม่มี ต้องพัฒนาเพิ่ม 2 รายการ — (1) จัดประเภทฟังก์ชัน "บริหาร/บริการ" vs "วิชาการ/กิจกรรม" เพื่อวัดข้อ 2.1 (2) สร้างแบบสำรวจความพึงพอใจรายโมดูล เพื่อวัดข้อ 2.3 · ระบบ SWIS มีทั้งหมด 27 โมดูล — ฐานตรวจติดตามปี 2568 ใช้ 25 โมดูล (220 ฟังก์ชัน) ยังไม่รวมโมดูลห้องสมุด (เพิ่งเสร็จปี 68) และโมดูลบัตร RFID (3 ฟังก์ชัน) · จำนวนฟังก์ชันรวมสุดท้ายต้องยืนยันร่วมกับทีม SWIS Plus
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--white); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน 2.2</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>23 ข้อ</strong> ใน 6 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          ชั้น 1: 5 ข้อ · ชั้น 2: 4 ข้อ · ชั้น 3: 4 ข้อ · ชั้น 4: 3 ข้อ · ชั้น 5: 2 ข้อ · ฐานราก: 5 ข้อ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">8 ข้อ — ใช้เครื่องมือที่มีวัดได้เลย</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">7 ข้อ — ต้องปรับปรุง/เสริม</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">3 ข้อ — ต้องพัฒนาใหม่</span></div>
+          <div><span class="qg-status qs-future" style="margin-right:6px;">ระยะยาว</span> <span style="color:var(--text-light);">5 ข้อ — รอข้อมูลสะสม</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 24px 20px; border-top:1px solid var(--gray-200); margin-top:8px; padding-top:16px;">
+      <div style="font-weight:600; color:var(--navy); margin-bottom:8px; font-size:0.85rem;">สิ่งที่ต้องสร้างใหม่ (2 รายการ)</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:0.82rem;">
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">1. จัดประเภทฟังก์ชัน</strong><br>
+          <span style="color:var(--text-light);">แยก 27 โมดูลเป็น "บริหาร/บริการ" vs "วิชาการ/กิจกรรม" → วัดข้อ 2.1 ได้</span>
+        </div>
+        <div style="background:#fff8e1; padding:10px 14px; border-radius:4px; border-left:3px solid var(--gold-dark);">
+          <strong style="color:var(--gold-dark);">2. แบบสำรวจความพึงพอใจ</strong><br>
+          <span style="color:var(--text-light);">สำรวจรายโมดูลเป็นรอบ ปีละ 1 ครั้ง → วัดข้อ 2.3 ได้</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TIMELINE -->
+<!-- ══════════════════════════════════════════ -->
+<div class="timeline-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>แผนระยะเวลาภาพรวม</h2>
+    <div class="section-desc">ประมาณการจากสถานะปัจจุบัน — ต้องทบทวนเป็นระยะ</div>
+  </div>
+
+  <div class="timeline-container">
+
+    <!-- SHORT TERM -->
+    <div class="timeline-phase">
+      <div class="phase-marker">
+        <div class="phase-years" style="border-color: var(--green-soft);">2569-2570</div>
+        <div class="phase-label">ระยะสั้น</div>
+      </div>
+      <div class="phase-content">
+        <span class="phase-levels">ชั้น 1 + ชั้น 2</span>
+        <h3>ปิดช่องว่างฐานราก + ปลดภาระครูให้ครบ</h3>
+        <ul class="phase-items">
+          <li><strong>ยกระดับอัตราการใช้งานให้ถึง 80%+ ทุกโรงเรียน</strong> — ใช้ระบบตรวจติดตามที่มีอยู่ เน้นกลุ่มที่ยังต่ำกว่า 50%</li>
+          <li><strong>พัฒนาระบบสำรวจความพึงพอใจรายโมดูล</strong> — สร้างหลักฐานเชิงประจักษ์ว่า SWIS ช่วยลดภาระครูได้จริง</li>
+          <li><strong>จัดประเภทฟังก์ชัน</strong> — แยก 27 โมดูล (220+ ฟังก์ชัน) เป็น "บริหาร/บริการ" vs "วิชาการ/กิจกรรม" เพื่อวัดชั้น 2 ได้ชัดขึ้น</li>
+          <li><strong>ยกระดับการตรวจติดตาม</strong> — จากตรวจ adoption เชิงปริมาณ → เพิ่มมิติคุณภาพข้อมูลที่บันทึกจริง</li>
+        </ul>
+        <div class="phase-milestone">Milestone: ทุกโรงเรียนใช้งานครบ 80%+ และมีผลสำรวจความพึงพอใจรายโมดูลรอบแรก</div>
+      </div>
+    </div>
+
+    <!-- MID TERM -->
+    <div class="timeline-phase">
+      <div class="phase-marker">
+        <div class="phase-years" style="border-color: var(--orange-soft);">2571-2572</div>
+        <div class="phase-label">ระยะกลาง</div>
+      </div>
+      <div class="phase-content">
+        <span class="phase-levels">ชั้น 3</span>
+        <h3>Management Information พร้อมใช้</h3>
+        <ul class="phase-items">
+          <li><strong>จัดระเบียบ Dashboard ที่มีอยู่</strong> — ปรับโครงสร้างรายงาน 9+ ด้าน ให้รองรับการเติบโตโดยไม่ต้องรีเซ็ต เชื่อม 50 รายการจากงาน 2.1</li>
+          <li><strong>เชื่อมระบบภายนอกตัวแรก</strong> — คัดเลือกระบบวิชาการที่พร้อมที่สุดมาเชื่อมเป็นต้นแบบ backbone</li>
+          <li><strong>ใช้ผลสำรวจความพึงพอใจ</strong> ที่สะสมจากระยะสั้น เป็นหลักฐานประกอบการขยายผล</li>
+          <li><strong>ฝึกทักษะวิเคราะห์ข้อมูล</strong> ให้ทีม SWIS Plus + บุคลากร ICT โรงเรียน เตรียมเข้าชั้น 4</li>
+        </ul>
+        <div class="phase-milestone">Milestone: Dashboard จัดระเบียบเสร็จ + เชื่อมระบบภายนอกตัวแรกสำเร็จ</div>
+      </div>
+    </div>
+
+    <!-- LONG TERM -->
+    <div class="timeline-phase">
+      <div class="phase-marker">
+        <div class="phase-years" style="border-color: var(--red-soft);">2573-2575</div>
+        <div class="phase-label">ระยะยาว</div>
+      </div>
+      <div class="phase-content">
+        <span class="phase-levels">ชั้น 4 + ชั้น 5</span>
+        <h3>วิเคราะห์ข้ามระบบ → R&D Scenario</h3>
+        <ul class="phase-items">
+          <li><strong>วิเคราะห์แนวโน้มข้ามโรง ข้ามปี</strong> — ต้องมีข้อมูลคุณภาพสม่ำเสมอสะสมอย่างน้อย 3 ปีจากชั้น 1-2</li>
+          <li><strong>กำหนดคำถามเชิงวิจัยของมูลนิธิฯ</strong> — เช่น แนวโน้มจำนวนนักเรียนใน 5 ปี ผลกระทบจากการเกษียณของครู การคาดการณ์งบประมาณ การประเมินความเสี่ยงรายโรงเรียน</li>
+          <li><strong>สร้าง scenario สำหรับแต่ละหน่วย</strong> — ใช้ AI + ข้อมูลจริงประมวลผล ให้ผู้บริหารเห็นทางเลือกอนาคตก่อนตัดสินใจ</li>
+          <li><strong>อาจต้องเพิ่มตำแหน่ง Data Analyst</strong> หรือสร้างหน่วย R&D เล็กๆ ภายใต้ ICT</li>
+        </ul>
+        <div class="phase-milestone">Milestone: สามารถตอบคำถาม "ถ้า...แล้วจะเป็นอย่างไร" จากข้อมูลจริงได้ภายใน 1 สัปดาห์</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- LINKAGES -->
+<!-- ══════════════════════════════════════════ -->
+<div class="linkage-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>การเชื่อมต่อระหว่างชั้น</h2>
+  </div>
+  <div class="linkage-grid">
+    <div class="linkage-card">
+      <span class="linkage-from">ชั้น 1</span><span class="linkage-to">ชั้น 2</span>
+      <h3>ฐานข้อมูล → ลดภาระครู</h3>
+      <p>เมื่อข้อมูลพื้นฐานอยู่ในระบบครบถ้วน จึงสามารถสร้างฟังก์ชันอัตโนมัติที่ทำงานแทนครูได้ — ลดการกรอกข้อมูลซ้ำซ้อนและการจัดทำเอกสารด้วยมือ</p>
+    </div>
+    <div class="linkage-card">
+      <span class="linkage-from">ชั้น 2</span><span class="linkage-to">ชั้น 3</span>
+      <h3>ลดภาระครู → เครื่องมือบริหาร</h3>
+      <p>เมื่องานบริหาร/บริการดำเนินผ่านระบบ ข้อมูลจะไหลเข้าฐานข้อมูลกลางโดยอัตโนมัติ — ผู้บริหารสามารถดูภาพรวมจากข้อมูลจริงที่เกิดจากการปฏิบัติงานประจำวัน</p>
+    </div>
+    <div class="linkage-card">
+      <span class="linkage-from">ชั้น 3</span><span class="linkage-to">ชั้น 4</span>
+      <h3>เครื่องมือบริหาร → วิเคราะห์ข้ามระบบ</h3>
+      <p>เมื่อมี Management Information ครบทุกโรงเรียน ทุกปี จึงสามารถเปรียบเทียบข้ามโรงเรียนและข้ามปีการศึกษา เห็นแนวโน้มที่ไม่อาจมองเห็นจากข้อมูลแยกส่วน</p>
+    </div>
+    <div class="linkage-card">
+      <span class="linkage-from">ชั้น 4</span><span class="linkage-to">ชั้น 5</span>
+      <h3>วิเคราะห์ข้ามระบบ → R&D Scenario</h3>
+      <p>เมื่อมีข้อมูลเชิงวิเคราะห์สะสมข้ามปี จึงสามารถจัดทำ scenario คาดการณ์อนาคตได้ — มองเห็นทิศทางพันธกิจล่วงหน้า</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- CONTEXT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="context-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>บริบท: 2 กลุ่มงานในโรงเรียน</h2>
+  </div>
+  <div class="two-col">
+    <div class="col-card">
+      <h3>งานวิชาการและกิจกรรม</h3>
+      <ul>
+        <li><strong>หัวใจของโรงเรียน</strong> — เพื่อคุณภาพนักเรียนตามพันธกิจ</li>
+        <li>ครูต้องมุ่งเน้นเป้าหมายตามหลักสูตร</li>
+        <li>มีเครื่องมือการสอนจากหลายแหล่งให้เลือกใช้</li>
+        <li>SWIS ขยายขอบเขตเพิ่มเครื่องมือวิชาการตามลำดับ</li>
+        <li><strong>SWIS เป็น backbone</strong> เชื่อมระบบภายนอกที่คัดเลือกแล้ว</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h3>งานบริหารและบริการ</h3>
+      <ul>
+        <li>องค์กรขนาดใหญ่มีรายละเอียดมาก</li>
+        <li>ปัจจุบันภาระตกอยู่ที่ครู → เสียโฟกัส</li>
+        <li><strong>SWIS ถ่ายโอนภาระ</strong> นำงานเข้าระบบ</li>
+        <li>คู่มือคุณภาพ + แผนงาน PDCA + SWIS รองรับ</li>
+        <li>27 โมดูล ครอบคลุม 220+ ฟังก์ชัน ใน 14 โรงเรียน*</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน 2.2 — ฉบับ 22 เมษายน 2569</div>
+  <p>งาน 2.2 พัฒนาซอฟต์แวร์เพื่อสถานศึกษา (SWIS) — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * ข้อมูล adoption จากรายงานฝ่าย ICT ปีการศึกษา 2568<br>
+    * ระบบ SWIS: 27 โมดูล — ฐานตรวจติดตาม 25 โมดูล (220 ฟังก์ชัน) ยังไม่รวมโมดูลห้องสมุดและ RFID · ข้อมูลจากทีม SWIS Plus (จิตราพร, เม.ย. 2569)<br>
+    * เป้าหมายคุณภาพ 23 ข้อ ใน 6 กลุ่ม — เครื่องมือวัดผลพร้อมใช้ 8 ข้อ, มีบางส่วน 7 ข้อ, ต้องพัฒนาใหม่ 3 ข้อ, รอข้อมูลสะสม 5 ข้อ
+  </p>
+</div>
+
+</body>
+</html>
