@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governance Manual — Full Text | Montfortian Network</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1a3a5c; --navy-light:#2c5f8a; --navy-dark:#0d2640;
+  --gold:#8b6914; --gold-light:#c4960a; --gold-pale:#e8d494;
+  --cream:#f5f3ed; --white:#fff; --text:#2a2a2a; --text-light:#666; --text-muted:#999;
+  --shadow:0 2px 12px rgba(0,0,0,0.07); --radius:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter','Noto Sans Thai',sans-serif;color:var(--text);background:var(--cream);line-height:1.8;}
+h1,h2,h3,h4{font-family:'Cinzel','Noto Sans Thai',serif;color:var(--navy);}
+nav{background:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;padding:0 16px;}
+nav a{color:var(--navy);text-decoration:none;padding:16px 20px;font-size:0.88em;font-weight:500;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;}
+nav a:hover,nav a.active{border-bottom-color:var(--gold);color:var(--gold);}
+nav .brand{font-family:'Cinzel',serif;font-weight:700;font-size:1em;color:var(--navy);margin-right:auto;padding:12px 0;text-decoration:none;}
+.hero{background:linear-gradient(135deg,var(--navy-dark),var(--navy),var(--navy-light));color:var(--white);padding:60px 24px 40px;text-align:center;}
+.hero h1{color:var(--gold-pale);font-size:clamp(1.5em,3.5vw,2.2em);margin-bottom:8px;}
+.hero .sub{opacity:0.7;font-size:0.95em;max-width:700px;margin:0 auto;}
+.container{max-width:900px;margin:0 auto;padding:40px 24px;}
+.page-ref{display:inline-block;background:var(--gold-light);color:var(--white);font-size:0.7em;padding:1px 8px;border-radius:3px;font-weight:600;margin-left:8px;vertical-align:middle;}
+.chapter{margin:48px 0 24px;padding:24px;background:var(--navy);color:var(--white);border-radius:var(--radius);}
+.chapter h2{color:var(--gold-pale);font-size:1.4em;margin:0;}
+.chapter .ch-sub{color:rgba(255,255,255,0.7);font-size:0.9em;margin-top:4px;}
+.bi{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:16px 0;}
+.bi .en{border-left:3px solid var(--navy);padding-left:16px;}
+.bi .th{border-left:3px solid var(--gold);padding-left:16px;font-family:'Noto Sans Thai',sans-serif;}
+.bi p,.bi li{font-size:0.88em;line-height:1.8;color:var(--text-light);}
+@media(max-width:768px){.bi{grid-template-columns:1fr;}}
+.def-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.85em;}
+.def-table th{background:var(--navy);color:var(--white);padding:8px 12px;text-align:left;font-weight:600;}
+.def-table td{padding:8px 12px;border-bottom:1px solid #eee;vertical-align:top;}
+.def-table tr:nth-child(even){background:#f8f8f5;}
+.rubric{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.82em;}
+.rubric th{background:var(--navy-light);color:var(--white);padding:8px 10px;text-align:center;font-weight:600;}
+.rubric td{padding:8px 10px;border:1px solid #e0e0e0;vertical-align:top;line-height:1.6;}
+.rubric td:first-child{text-align:center;font-weight:600;color:var(--navy);white-space:nowrap;width:70px;}
+.rubric tr:nth-child(even){background:#f8f8f5;}
+.section-title{font-size:1.1em;color:var(--navy);margin:32px 0 8px;padding-bottom:8px;border-bottom:2px solid var(--gold);}
+.weight-badge{display:inline-block;background:var(--gold-light);color:var(--white);font-size:0.75em;padding:2px 10px;border-radius:10px;font-weight:600;margin-left:8px;}
+.note{background:#fff8e1;padding:12px 16px;border-radius:var(--radius);font-size:0.82em;color:var(--gold);margin:16px 0;line-height:1.6;}
+.footer{background:var(--navy-dark);color:rgba(255,255,255,0.6);text-align:center;padding:40px 24px;font-size:0.82em;}
+.footer a{color:var(--gold-pale);text-decoration:none;}
+.toc{background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);margin:24px 0;}
+.toc h3{margin-bottom:12px;}
+.toc a{display:block;color:var(--navy);text-decoration:none;padding:4px 0;font-size:0.9em;border-bottom:1px solid #f0f0f0;}
+.toc a:hover{color:var(--gold);}
+.toc .toc-ch{font-weight:600;margin-top:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Montfortian Network</a>
+  <a href="governance.html">Governance Summary</a>
+  <a href="governance-full.html" class="active">Full Text</a>
+</nav>
+
+<div class="hero">
+  <h1>Governance Manual — Full Text</h1>
+  <div class="sub">คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568 — เนื้อหาฉบับเต็มพร้อมเลขหน้าอ้างอิง</div>
+</div>
+
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>Table of Contents / สารบัญ</h3>
+    <a class="toc-ch" href="#preface">Preface / คำนำ <span class="page-ref">p.1</span></a>
+    <a class="toc-ch" href="#ch1">Chapter 1: Governance-Based School Administration / บทที่ 1 <span class="page-ref">p.6</span></a>
+    <a href="#ch1-obj">&nbsp;&nbsp;Objectives / วัตถุประสงค์ <span class="page-ref">p.7</span></a>
+    <a href="#ch1-def">&nbsp;&nbsp;Definitions / นิยามศัพท์ <span class="page-ref">p.7</span></a>
+    <a class="toc-ch" href="#ch2">Chapter 2: Governance Principles & Criteria / บทที่ 2 <span class="page-ref">p.16</span></a>
+    <a href="#ch2-p1">&nbsp;&nbsp;1. Participation / หลักการมีส่วนร่วม <span class="page-ref">p.17</span></a>
+    <a href="#ch2-p2">&nbsp;&nbsp;2. Transparency / หลักความโปร่งใส <span class="page-ref">p.20</span></a>
+    <a href="#ch2-p3">&nbsp;&nbsp;3. Accountability / หลักความรับผิดชอบ <span class="page-ref">p.22</span></a>
+    <a href="#ch2-p4">&nbsp;&nbsp;4. Equity / หลักความเสมอภาค <span class="page-ref">p.24</span></a>
+    <a href="#ch2-p5">&nbsp;&nbsp;5. Cost-Effectiveness / หลักความคุ้มค่า <span class="page-ref">p.27</span></a>
+    <a class="toc-ch" href="#ch3">Chapter 3: Implementation / บทที่ 3 <span class="page-ref">p.42</span></a>
+    <a class="toc-ch" href="#ch4">Chapter 4: Scoring & Promotion / บทที่ 4 <span class="page-ref">p.62</span></a>
+    <a class="toc-ch" href="#appendix">Appendices / ภาคผนวก <span class="page-ref">p.70</span></a>
+  </div>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- PREFACE -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="preface">
+    <h2>Preface / คำนำ <span class="page-ref">p.1-3</span></h2>
+  </div>
+
+  <div class="bi">
+    <div class="en">
+      <p>The Governance-Based Administration Manual for schools under the Saint Gabriel's Foundation of Thailand was first developed in 2016, following the resolutions of the 31st General Chapter (2012), under the theme "Authentic Leaders for a Greater Brotherhood." In June 2016, Brother John Kallarackal, the Superior General, issued Circular Letter No. 2, proposing that each province establish a subcommittee to draft a Governance-Based Administration Manual.</p>
+      <p style="margin-top:12px;">The Thai Province's first edition (2017) was based on four core governance principles: Participation, Transparency, Accountability, and Equity.</p>
+      <p style="margin-top:12px;">In 2024, Brother Dr. Dechachai Sripijarn initiated a revision (Order No. 14/2024), chaired by Brother Dr. Sakda Sakanthawat. The subcommittee met four times (Oct 3, Nov 4, Nov 11, Nov 17, 2024) and presented the revised manual on Nov 25. After further review on Dec 11, 2024, the manual was approved on January 13, 2025.</p>
+      <p style="margin-top:12px;"><strong>The 2025 Revised Edition introduces a fifth principle: Cost-Effectiveness.</strong> The five principles are: Participation, Transparency, Accountability, Equity, and Cost-Effectiveness.</p>
+      <p style="margin-top:12px;font-style:italic;">Signed: Brother Dr. Sakda Sakontawat, Chairman of the Saint Gabriel's Foundation of Thailand</p>
+    </div>
+    <div class="th">
+      <p>การบริหารงานภายใต้หลักธรรมาภิบาลเป็นหัวใจสำคัญของการพัฒนาคุณภาพการศึกษาของโรงเรียนในเครือมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ฉบับแรกจัดทำขึ้นเมื่อ พ.ศ. 2560 จากมติการประชุมสมัชชาใหญ่ครั้งที่ 30 และ 31 โดยอัคราธิการ John Kallarackal พร้อมคณะผู้บริหารออกจดหมายเวียนฉบับที่ 2</p>
+      <p style="margin-top:12px;">ฉบับแรกประกอบด้วยหลัก 4 ประการ: การมีส่วนร่วม ความโปร่งใส ความรับผิดชอบ และความเสมอภาค</p>
+      <p style="margin-top:12px;">ปี 2567 ภราดา ดร.เดชาชัย ศรีพิจารณ์ สั่งแต่งตั้งคณะกรรมการทบทวน (คำสั่งที่ 14/2567) ประธาน: ภราดา ดร.ศักดา สกนธวัฒน์ ประชุม 4 ครั้ง (3, 4, 11, 17 พ.ย. 2567) นำเสนอ 25 พ.ย. ทบทวนเพิ่ม 11 ธ.ค. อนุมัติ 13 ม.ค. 2568</p>
+      <p style="margin-top:12px;"><strong>ฉบับปรับปรุงเพิ่มหลักที่ 5: หลักความคุ้มค่า (Cost-effectiveness)</strong> รวม 5 หลัก: การมีส่วนร่วม ความโปร่งใส ความรับผิดชอบ ความเสมอภาค และความคุ้มค่า</p>
+      <p style="margin-top:12px;font-style:italic;">ลงนาม: ภราดา ดร.ศักดา สกนธวัฒน์ ประธานมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- CHAPTER 1 -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="ch1">
+    <h2>Chapter 1 / บทที่ 1 <span class="page-ref">p.6-15</span></h2>
+    <div class="ch-sub">Governance-Based School Administration / การบริหารจัดการโดยใช้หลักธรรมาภิบาล</div>
+  </div>
+
+  <h3 class="section-title" id="ch1-obj">Objectives / วัตถุประสงค์ <span class="page-ref">p.7</span></h3>
+  <div class="bi">
+    <div class="en">
+      <ol style="padding-left:16px;">
+        <li>To serve as a manual for governance-based administration in all schools under the Foundation.</li>
+        <li>To provide guidelines for promoting, supervising, monitoring, and overseeing school governance.</li>
+        <li>To establish assessment criteria for governance-based administration in schools.</li>
+      </ol>
+    </div>
+    <div class="th">
+      <ol style="padding-left:16px;">
+        <li>เพื่อใช้เป็นคู่มือในการบริหารจัดการโดยใช้หลักธรรมาภิบาลของโรงเรียนในสังกัดมูลนิธิฯ ทุกโรง</li>
+        <li>เพื่อใช้เป็นแนวทางในการส่งเสริม กำกับ ติดตาม ดูแลการบริหารจัดการโดยใช้หลักธรรมาภิบาล</li>
+        <li>เพื่อใช้เป็นกรอบการประเมินในการบริหารจัดการโดยใช้หลักธรรมาภิบาล</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 class="section-title" id="ch1-def">Definitions / นิยามศัพท์เฉพาะ <span class="page-ref">p.7-15</span></h3>
+
+  <table class="def-table">
+    <thead><tr><th>#</th><th>English</th><th>ไทย</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Stakeholders</strong> — Administrators, co-administrators, teachers, teaching assistants, staff, students, parents, alumni</td><td><strong>ผู้มีส่วนได้ส่วนเสีย</strong> — ผู้บริหาร ผู้ร่วมบริหาร ครู ครูสนับสนุนการสอน เจ้าหน้าที่ นักเรียน ผู้ปกครอง ศิษย์เก่า</td></tr>
+      <tr><td>3</td><td><strong>Feedback Channels</strong> — Suggestion boxes, hotlines, interviews, Focus Groups, school websites, SWIS parent correspondence module, Chat Rooms</td><td><strong>ช่องทางรับฟังข้อคิดเห็น</strong> — ตู้รับฟัง สายด่วน สัมภาษณ์ Focus Group เว็บไซต์ ระบบ SWIS ห้องสนทนาออนไลน์</td></tr>
+      <tr><td>7</td><td><strong>Human Resource Management Process</strong> — 6 steps: 7.1 Recruitment & Selection, 7.2 Personnel Development Plans, 7.3 Performance Evaluation, 7.4 Recognition & Disciplinary Systems, 7.5 Performance Reporting, 7.6 Transparency in Recruitment and Compensation</td><td><strong>กระบวนการบริหารงานบุคลากร</strong> — 6 ขั้นตอน: 7.1 สรรหาคัดเลือก, 7.2 แผนพัฒนาบุคลากร, 7.3 ประเมินผลการปฏิบัติงาน, 7.4 ระบบรางวัล/วินัย, 7.5 รายงานผลการปฏิบัติงาน, 7.6 ความโปร่งใสค่าตอบแทน</td></tr>
+      <tr><td>9</td><td><strong>Operational Planning</strong> — Departmental plans aligned with the 9-step PDCA model of the Foundation, annual action plans, strategic plans</td><td><strong>แผนงาน</strong> — แผนหน่วยงานตาม PDCA 9 ขั้นตอนของมูลนิธิฯ แผนปฏิบัติการประจำปี แผนยุทธศาสตร์</td></tr>
+      <tr><td>15</td><td><strong>Educational Management Efficiency</strong> — Effective use of 4M: Man, Money, Material, Management; including SWIS for planning and development</td><td><strong>ประสิทธิผลในการบริหารจัดการการศึกษา</strong> — การใช้ทรัพยากร 4M อย่างมีประสิทธิภาพ รวมถึงการใช้ระบบ SWIS ในการวางแผนและพัฒนา</td></tr>
+      <tr><td>16</td><td><strong>School Quality Management Handbook</strong> — A structured reference document outlining quality assurance standards and school governance principles</td><td><strong>คู่มือบริหารคุณภาพโรงเรียน</strong> — เอกสารกรอบแนวทางการบริหารจัดการคุณภาพ ครอบคลุมภาระงานตามโครงสร้างการบริหารงานของโรงเรียน</td></tr>
+      <tr><td>17</td><td><strong>Departmental Quality Management Handbook</strong> — Operational guidelines specific to each department's responsibilities and quality standards</td><td><strong>คู่มือบริหารคุณภาพหน่วยงาน</strong> — คู่มือที่ใช้เป็นกรอบแนวทางการดำเนินงานตามภาระคุณภาพและตามมาตรฐานคุณภาพที่เกี่ยวข้องตามโครงสร้างการบริหารงานของโรงเรียน</td></tr>
+      <tr><td>18</td><td><strong>Sufficiency Economy Philosophy</strong> — 3 Core Elements: Moderation, Reasonability, Resilience; 2 Supporting Conditions: Knowledge, Ethics & Integrity</td><td><strong>หลักปรัชญาของเศรษฐกิจพอเพียง</strong> — 3 ห่วง: ความพอประมาณ ความมีเหตุผล ภูมิคุ้มกัน; 2 เงื่อนไข: ความรู้ คุณธรรม</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>4 Governance Dimensions / 4 มิติการดำเนินงาน:</strong> (1) Planning / การวางแผน (2) Implementation / การนำไปปฏิบัติ (3) Monitoring & Evaluation / การกำกับติดตามและประเมินผล (4) Reporting / การรายงานผล <span class="page-ref">p.12</span>
+  </div>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- CHAPTER 2 -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="ch2">
+    <h2>Chapter 2 / บทที่ 2 <span class="page-ref">p.16-41</span></h2>
+    <div class="ch-sub">Governance Principles & School Oversight Criteria / รายละเอียดและเกณฑ์การกำกับดูแลโรงเรียน</div>
+  </div>
+
+  <div class="note">
+    <strong>Components & Weighting / องค์ประกอบและน้ำหนัก:</strong>
+    1. Participation (20) · 2. Transparency (20) · 3. Accountability (20) · 4. Equity (20) · 5. Cost-Effectiveness (20) = <strong>Total 100 points</strong> <span class="page-ref">p.17</span>
+  </div>
+
+  <!-- ── 1. PARTICIPATION ── -->
+  <h3 class="section-title" id="ch2-p1">1. Participation / หลักการมีส่วนร่วม <span class="weight-badge">20 pts</span> <span class="page-ref">p.17-19</span></h3>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>1.1 Stakeholder Feedback Opportunities (4 pts) / เปิดโอกาสร่วมแสดงความคิดเห็น</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No formal channels for stakeholder feedback / ไม่มีการจัดให้มีช่องทางรับฟังข้อคิดเห็น</td></tr>
+      <tr><td>2</td><td>Designated person responsible + stakeholder needs assessment via appropriate channels / จัดให้มีผู้ดูแลรับผิดชอบ + สำรวจความต้องการผ่านช่องทางที่เหมาะสม</td></tr>
+      <tr><td>3</td><td>Level 2 + at least 5 different feedback channels + procedures reviewed and approved by director / ผ่านเกณฑ์ระดับ 2 + มีช่องทางรับฟังอย่างน้อย 5 ช่องทาง + ทบทวนขั้นตอนเสนอผู้อำนวยการเห็นชอบ</td></tr>
+      <tr><td>4</td><td>Level 3 + channels publicly communicated + feedback compiled and reported to director at least once per semester + systematic tracking and evaluation / ผ่านเกณฑ์ระดับ 3 + เผยแพร่ช่องทาง + สรุปข้อคิดเห็นรายงานผู้อำนวยการอย่างน้อยภาคเรียนละ 1 ครั้ง + ติดตามประเมินผลอย่างเป็นระบบ</td></tr>
+      <tr><td>5</td><td>Level 4 + 100% of valuable feedback integrated into policies/strategies/action plans / ผ่านเกณฑ์ระดับ 4 + ร้อยละ 100 ของข้อคิดเห็นที่เป็นประโยชน์ถูกนำไปกำหนดเป็นนโยบาย/ยุทธศาสตร์/แผนงาน</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>1.2 Participation in Decision-Making (6 pts) / เปิดโอกาสร่วมตัดสินใจ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No mechanisms for stakeholder participation in decision-making / ไม่มีการเปิดโอกาสให้ร่วมตัดสินใจ</td></tr>
+      <tr><td>2</td><td>Stakeholders participate in policy and regulation decisions / ผู้มีส่วนได้ส่วนเสียมีส่วนร่วมในการกำหนดนโยบาย กฎ ระเบียบ</td></tr>
+      <tr><td>3</td><td>Level 2 + participation in curriculum decisions and budget-funded projects + training on decision-making roles / ผ่านระดับ 2 + ร่วมตัดสินใจเรื่องหลักสูตร โครงการที่ใช้งบประมาณ + จัดอบรมพัฒนาความเข้าใจ</td></tr>
+      <tr><td>4</td><td>Level 3 + stakeholders actively monitor and evaluate decision outcomes + reports to director per semester / ผ่านระดับ 3 + ติดตามประเมินผลการมีส่วนร่วม + จัดทำรายงานเสนอผู้อำนวยการ</td></tr>
+      <tr><td>5</td><td>Level 4 + ≥85% satisfaction with participation in decision-making / ผ่านระดับ 4 + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>1.3 Contribution to School Development (10 pts) / เปิดโอกาสร่วมพัฒนา</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No guidelines for stakeholder involvement in school development / ไม่มีการกำหนดแนวทางการคัดเลือกยุทธศาสตร์ให้ผู้มีส่วนได้ส่วนเสียเข้ามีส่วนร่วม</td></tr>
+      <tr><td>2</td><td>Guidelines established for stakeholder participation / มีการกำหนดแนวทาง</td></tr>
+      <tr><td>3</td><td>Level 2 + stakeholders participate in vision, mission, strategic direction + planning and implementing annual programs + monitoring execution / ผ่านระดับ 2 + ร่วมกำหนดวิสัยทัศน์ พันธกิจ ยุทธศาสตร์ + ร่วมกำหนดแผนงาน + ร่วมติดตามตรวจสอบ</td></tr>
+      <tr><td>4</td><td>Level 3 + stakeholders provide recommendations for improvement + contribute to joint projects + training to strengthen engagement + reports per semester / ผ่านระดับ 3 + ให้คำแนะนำปรับปรุง + เผยแพร่โครงการร่วม + จัดอบรม + รายงานภาคเรียนละ 1 ครั้ง</td></tr>
+      <tr><td>5</td><td>Level 4 + stakeholders actively involved in ≥25% of school projects + ≥85% satisfaction / ผ่านระดับ 4 + แผนงาน ≥25% มีส่วนร่วมข้ามหน่วยงาน + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── 2. TRANSPARENCY ── -->
+  <h3 class="section-title" id="ch2-p2">2. Transparency / หลักความโปร่งใส <span class="weight-badge">20 pts</span> <span class="page-ref">p.20-21</span></h3>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>2.1 Administrative Structure (7 pts) / โครงสร้างการบริหารงาน</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No disclosure of administrative structure / ไม่มีการเปิดเผยโครงสร้างบริหาร</td></tr>
+      <tr><td>2</td><td>Disclosure exists but access is incomplete / มีการเปิดเผยแต่เข้าถึงไม่ทั่วถึง</td></tr>
+      <tr><td>3</td><td>Level 2 + complete disclosure per Education Act and school charter / ผ่านระดับ 2 + เปิดเผยครบตามกรอบ พ.ร.บ. การศึกษา + ตราสารจัดตั้งโรงเรียน</td></tr>
+      <tr><td>4</td><td>Level 3 + no stakeholder complaints regarding transparency / ผ่านระดับ 3 + ไม่มีข้อร้องเรียน</td></tr>
+      <tr><td>5</td><td>Level 4 + ≥85% stakeholder satisfaction / ผ่านระดับ 4 + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>2.2 Financial Management (6 pts) / กระบวนการบริหารงานการเงิน</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No disclosure of financial processes / ไม่มีการเปิดเผยกระบวนการการเงิน</td></tr>
+      <tr><td>2</td><td>Disclosure exists but access is incomplete / มีการเปิดเผยแต่เข้าถึงไม่ทั่วถึง</td></tr>
+      <tr><td>3</td><td>Level 2 + complete disclosure per Education Act, school charter, and Foundation financial standards / ผ่านระดับ 2 + เปิดเผยครบตาม พ.ร.บ. + มาตรฐานการเงินมูลนิธิฯ</td></tr>
+      <tr><td>4</td><td>Level 3 + no complaints regarding financial transparency / ผ่านระดับ 3 + ไม่มีข้อร้องเรียน</td></tr>
+      <tr><td>5</td><td>Level 4 + ≥85% stakeholder satisfaction with financial accessibility / ผ่านระดับ 4 + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>2.3 Human Resource Management (7 pts) / กระบวนการบริหารงานบุคลากร</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No disclosure of HR processes / ไม่มีการเปิดเผยกระบวนการ HR</td></tr>
+      <tr><td>2</td><td>Disclosure exists but access is incomplete / มีการเปิดเผยแต่เข้าถึงไม่ทั่วถึง</td></tr>
+      <tr><td>3</td><td>Level 2 + complete disclosure per Education Act, school charter, and Foundation HR manual / ผ่านระดับ 2 + เปิดเผยครบตาม พ.ร.บ. + คู่มือบริหารทรัพยากรมนุษย์มูลนิธิฯ</td></tr>
+      <tr><td>4</td><td>Level 3 + no complaints regarding HR transparency / ผ่านระดับ 3 + ไม่มีข้อร้องเรียน</td></tr>
+      <tr><td>5</td><td>Level 4 + ≥85% stakeholder satisfaction with HR accessibility / ผ่านระดับ 4 + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── 3. ACCOUNTABILITY ── -->
+  <h3 class="section-title" id="ch2-p3">3. Accountability / หลักความรับผิดชอบ <span class="weight-badge">20 pts</span> <span class="page-ref">p.22-24</span></h3>
+
+  <div class="note">Sub-criteria: 3.1 Roles & Duties (5) · 3.2 Accountability for Errors (4) · 3.3 Accountability for Successes (5) · 3.4 Environmental Responsibility (6) — split into 3.4.1 Protection (3) + 3.4.2 Restoration (3)</div>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>3.1 Responsibility in Roles & Duties (5 pts) / การแสดงความรับผิดชอบต่อบทบาทและหน้าที่</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No 9-step PDCA planning + no communication + no execution per structure / ไม่พบแผน PDCA 9 ขั้นตอน + ไม่มีการสื่อสาร + ไม่ดำเนินงานตามโครงสร้าง</td></tr>
+      <tr><td>2</td><td>PDCA 9 applied but not across all departments + communication incomplete + execution incomplete / มีแผน PDCA 9 แต่ไม่ครบทุกหน่วยงาน</td></tr>
+      <tr><td>3</td><td>PDCA 9 applied across all departments + communication complete + execution complete / มีแผน PDCA 9 ครบทุกหน่วยงาน + สื่อสารครบ + ดำเนินงานครบ</td></tr>
+      <tr><td>4</td><td>Level 3 + ≥25% of work plans exceed success targets / ผ่านระดับ 3 + แผนงาน ≥25% บรรลุเป้าหมาย</td></tr>
+      <tr><td>5</td><td>Level 4 + work plans achieve Best Practice status / ผ่านระดับ 4 + แผนงานอยู่ในระดับแบบอย่างที่ดี</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── 4. EQUITY ── -->
+  <h3 class="section-title" id="ch2-p4">4. Equity / หลักความเสมอภาค <span class="weight-badge">20 pts</span> <span class="page-ref">p.24-26</span></h3>
+
+  <div class="note">Sub-criteria: 4.1 Fairness in Establishing Rules (10) · 4.2 Fairness in Implementing Rules (10)</div>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>4.1 Fairness in Establishing Rules (10 pts) / การกำหนดกฎระเบียบมีความยุติธรรม</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No clear evidence of fair rule-making / ไม่สามารถแสดงหลักฐานว่ากฎระเบียบมีความยุติธรรม</td></tr>
+      <tr><td>2</td><td>Rules established fairly but not fully meeting Level 3 requirements / มีกฎระเบียบที่ยุติธรรมแต่ยังไม่ครบ</td></tr>
+      <tr><td>3</td><td>Level 2 + review committee using relevant information + database of rules + clear written guidelines + stakeholder input + feedback reviewed for amendments / ผ่านระดับ 2 + มีคณะกรรมการทบทวน + ฐานข้อมูลกฎระเบียบ + ข้อบังคับเป็นลายลักษณ์อักษร + รับฟังความคิดเห็น + นำข้อเสนอแนะมาปรับปรุง</td></tr>
+      <tr><td>4</td><td>Level 3 + all stakeholders aware of rules through various channels / ผ่านระดับ 3 + สื่อสารให้ทุกฝ่ายรับทราบครบถ้วน</td></tr>
+      <tr><td>5</td><td>Level 4 + no complaints about unfair rules + ≥85% satisfaction / ผ่านระดับ 4 + ไม่มีข้อร้องเรียน + ความพึงพอใจ ≥85%</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── 5. COST-EFFECTIVENESS ── -->
+  <h3 class="section-title" id="ch2-p5">5. Cost-Effectiveness / หลักความคุ้มค่า <span class="weight-badge">20 pts</span> <span class="page-ref">p.27-28</span></h3>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>5.1 Efficient Resource Utilization (10 pts) / การใช้ทรัพยากรให้เกิดประสิทธิผล</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No clear evidence of efficient management / ไม่สามารถแสดงหลักฐานว่ามีการดำเนินการให้เกิดประสิทธิผลได้</td></tr>
+      <tr><td>2</td><td>Efficient but not meeting all Level 3 requirements / มีประสิทธิผลแต่ไม่ครบตามระดับ 3</td></tr>
+      <tr><td>3</td><td>Level 2 + Personnel managed per Foundation HR quality manual + Finance per Foundation financial policies + Materials per school quality development plans + Management per School Quality Management Handbook + <strong>SWIS used for planning and development</strong> + Performance data used systematically / ผ่านระดับ 2 + บริหารคน ตามคู่มือคุณภาพหน่วยงาน + การเงินตามนโยบายมูลนิธิฯ + วัสดุตามแผนพัฒนา + การจัดการตามคู่มือบริหารคุณภาพ + <strong>ใช้ระบบ SWIS ในการวางแผนพัฒนาประสิทธิภาพ</strong> + ผู้บริหารใช้สารสนเทศจากระบบ</td></tr>
+      <tr><td>4</td><td>Level 3 + resource utilization evaluations inform improvement plans + annual stakeholder satisfaction surveys / ผ่านระดับ 3 + นำผลการประเมินมาปรับปรุง + สำรวจความพึงพอใจ</td></tr>
+      <tr><td>5</td><td>Level 4 + operations continuously reviewed to align with economic and social changes / ผ่านระดับ 4 + ทบทวนให้สอดคล้องกับการเปลี่ยนแปลง</td></tr>
+    </tbody>
+  </table>
+
+  <table class="rubric">
+    <thead><tr><th>Level</th><th>5.2 Maximizing Benefits (10 pts) / การใช้ทรัพยากรให้ได้ประโยชน์สูงสุด</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>No clear evidence of maximized resource utilization / ไม่สามารถแสดงหลักฐานว่าใช้ทรัพยากรให้เกิดประโยชน์สูงสุดได้</td></tr>
+      <tr><td>2</td><td>Partially applies cost-effective management / มีบางส่วนแต่ไม่ครบ</td></tr>
+      <tr><td>3</td><td>Level 2 + sufficiency economy principles applied + resource conservation + information system for quality management + development plans aligned with social and economic trends + <strong>IT systems used systematically for management</strong> / ผ่านระดับ 2 + ประยุกต์เศรษฐกิจพอเพียง + อนุรักษ์ทรัพยากร + ระบบข้อมูลสารสนเทศครอบคลุม + แผนพัฒนาสอดคล้องสถานการณ์ + <strong>ใช้เทคโนโลยีสารสนเทศเป็นระบบ</strong></td></tr>
+      <tr><td>4</td><td>Level 3 + expanded conservation efforts + stakeholder satisfaction surveys inform improvements / ผ่านระดับ 3 + ขยายงานอนุรักษ์ + นำผลสำรวจมาปรับปรุง</td></tr>
+      <tr><td>5</td><td>Level 4 + operations continuously revised to align with changes / ผ่านระดับ 4 + ทบทวนอย่างต่อเนื่อง</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- CHAPTER 3 -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="ch3">
+    <h2>Chapter 3 / บทที่ 3 <span class="page-ref">p.42-57</span></h2>
+    <div class="ch-sub">Implementation / การนำคู่มือไปสู่การปฏิบัติ</div>
+  </div>
+
+  <div class="bi">
+    <div class="en">
+      <p><strong>Implementation Steps:</strong></p>
+      <ol style="padding-left:16px;font-size:0.88em;">
+        <li>School administrators, department heads, and staff follow the manual alongside the Internal Quality Assurance Committee.</li>
+        <li>The Internal QA Committee monitors, supervises, and reports on governance-based administration.</li>
+        <li>The Educational Standards and Personnel Development division conducts training.</li>
+        <li>Training on governance evaluation methods is conducted for QA committees.</li>
+      </ol>
+      <p style="margin-top:16px;"><strong>Data Collection Methods:</strong> Document Review + Direct Observation + Stakeholder Interviews (9 groups: Director, Advisory Committee, Department Heads, Teachers, Support Staff, Staff, Students, Parents, Alumni)</p>
+    </div>
+    <div class="th">
+      <p><strong>แนวทางการนำไปสู่การปฏิบัติ:</strong></p>
+      <ol style="padding-left:16px;font-size:0.88em;">
+        <li>ผู้บริหาร หัวหน้าฝ่าย และบุคลากรดำเนินงานตามคู่มือ ร่วมกับคณะกรรมการประกันคุณภาพภายใน</li>
+        <li>คณะกรรมการประกันคุณภาพ กำกับ ติดตาม รายงานผล</li>
+        <li>ฝ่ายการศึกษามูลนิธิฯ จัดอบรมเรื่องหลักธรรมาภิบาล</li>
+        <li>อบรมแนวทางการประเมินให้คณะกรรมการประกันคุณภาพ</li>
+      </ol>
+      <p style="margin-top:16px;"><strong>วิธีเก็บรวบรวมข้อมูล:</strong> ตรวจเอกสาร + สังเกตการณ์ + สัมภาษณ์ 9 กลุ่ม: ผู้อำนวยการ คณะกรรมการที่ปรึกษา หัวหน้ากลุ่มสาระ ครูผู้สอน ครูสนับสนุน เจ้าหน้าที่ นักเรียน ผู้ปกครอง ศิษย์เก่า</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- CHAPTER 4 -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="ch4">
+    <h2>Chapter 4 / บทที่ 4 <span class="page-ref">p.62-69</span></h2>
+    <div class="ch-sub">Scoring & Promotion / แนวทางการให้คะแนนและการส่งเสริม</div>
+  </div>
+
+  <div class="bi">
+    <div class="en">
+      <p><strong>Scoring based on 3 aspects:</strong></p>
+      <ol style="padding-left:16px;font-size:0.88em;">
+        <li><strong>Approach</strong> — Completeness of structure, alignment with policies, continuous improvement</li>
+        <li><strong>Deployment</strong> — Extent to which policies are correctly implemented across all levels</li>
+        <li><strong>Results</strong> — Measurable outcomes aligned with regulations, objectives, and best practices</li>
+      </ol>
+      <p style="margin-top:16px;"><strong>Recognition:</strong></p>
+      <ul style="padding-left:16px;font-size:0.88em;">
+        <li>Gold Certificate: ≥90 points</li>
+        <li>Silver Certificate: 85-89 points</li>
+        <li>Bronze Certificate: 80-84 points</li>
+        <li>Merit Certificate: 75-79 points</li>
+        <li>PLC Leadership: ≥Level 3 for 3 consecutive years → PLC/SLC leader</li>
+        <li>National/International Accreditation: ≥Level 3 for 3 consecutive years → nominated</li>
+      </ul>
+    </div>
+    <div class="th">
+      <p><strong>เกณฑ์การให้คะแนน 3 มิติ:</strong></p>
+      <ol style="padding-left:16px;font-size:0.88em;">
+        <li><strong>Approach</strong> — ความครบถ้วนของโครงสร้าง ความสอดคล้องกับนโยบาย การปรับปรุงต่อเนื่อง</li>
+        <li><strong>Deployment</strong> — การนำนโยบายไปปฏิบัติอย่างถูกต้องทุกระดับ</li>
+        <li><strong>Results</strong> — ผลลัพธ์ที่วัดได้ สอดคล้องกับเป้าหมาย แนวปฏิบัติที่ดี</li>
+      </ol>
+      <p style="margin-top:16px;"><strong>ระบบรางวัล:</strong></p>
+      <ul style="padding-left:16px;font-size:0.88em;">
+        <li>เหรียญทอง: ≥90 คะแนน</li>
+        <li>เหรียญเงิน: 85-89 คะแนน</li>
+        <li>เหรียญทองแดง: 80-84 คะแนน</li>
+        <li>ชมเชย: 75-79 คะแนน</li>
+        <li>PLC Leadership: ≥ระดับ 3 ต่อเนื่อง 3 ปี → เป็นผู้นำ PLC/SLC</li>
+        <li>ระดับประเทศ/สากล: ≥ระดับ 3 ต่อเนื่อง 3 ปี → เข้าสู่การรับรอง</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- APPENDICES -->
+  <!-- ═══════════════════════════════ -->
+  <div class="chapter" id="appendix">
+    <h2>Appendices / ภาคผนวก <span class="page-ref">p.70-76</span></h2>
+  </div>
+
+  <div class="bi">
+    <div class="en">
+      <p><strong>Appendix A:</strong> References <span class="page-ref">p.71</span></p>
+      <p><strong>Appendix B:</strong> Review Committee for the Governance Manual — Order No. 14/2024, chaired by Brother Dr. Sakda Sakanthawat <span class="page-ref">p.72-74</span></p>
+      <p><strong>Appendix C:</strong> Subcommittee Members — Brother Dr. Surakij (Vice-Chair), Brother Dr. Wirayut, Brother Supanun, Brother Manit, and others <span class="page-ref">p.75-76</span></p>
+    </div>
+    <div class="th">
+      <p><strong>ภาคผนวก ก:</strong> เอกสารอ้างอิง <span class="page-ref">p.71</span></p>
+      <p><strong>ภาคผนวก ข:</strong> คณะกรรมการทบทวนคู่มือ — คำสั่งที่ 14/2567 ประธาน: ภราดา ดร.ศักดา สกนธวัฒน์ <span class="page-ref">p.72-74</span></p>
+      <p><strong>ภาคผนวก ค:</strong> คณะอนุกรรมการ — ภราดา ดร.สุรกิจ (รองประธาน), ภราดา ดร.วีรยุทธ, ภราดาศุภนันท์, ภราดามานิต และคณะ <span class="page-ref">p.75-76</span></p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p><a href="governance.html">&larr; Governance Summary</a> &middot; <a href="index.html">Home</a></p>
+  <p style="margin-top:8px;">Content transcribed from: Governance-Based Administration Manual (Revised Edition 2025)</p>
+  <p>Saint Gabriel's Foundation of Thailand &middot; ISBN not assigned &middot; Published April 2025, 5,000 copies</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Governance — From Authentic Leadership to Practice | Montfortian Network</title>
+<meta name="description" content="Governance-Based Administration Manual for schools under the Saint Gabriel's Foundation of Thailand — 5 principles, 15 criteria, 5 levels, 100 points. From Authentic Leaders to measurable practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a3a5c; --navy-light: #2c5f8a; --navy-dark: #0d2640;
+  --gold: #8b6914; --gold-light: #c4960a; --gold-pale: #e8d494;
+  --cream: #f5f3ed; --white: #ffffff;
+  --text: #2a2a2a; --text-light: #666; --text-muted: #999;
+  --purple: #7c3aed; --purple-light: #f3e8ff;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07); --radius: 8px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter','Noto Sans Thai',sans-serif; color:var(--text); background:var(--cream); line-height:1.8; }
+h1,h2,h3,h4 { font-family:'Cinzel','Noto Sans Thai',serif; color:var(--navy); }
+
+/* NAV */
+nav { background:var(--white); position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; padding:0 16px; }
+nav a { color:var(--navy); text-decoration:none; padding:16px 20px; font-size:0.88em; font-weight:500; border-bottom:3px solid transparent; transition:all 0.2s; white-space:nowrap; }
+nav a:hover, nav a.active { border-bottom-color:var(--gold); color:var(--gold); }
+nav .brand { font-family:'Cinzel',serif; font-weight:700; font-size:1em; color:var(--navy); margin-right:auto; padding:12px 0; text-decoration:none; }
+
+/* HERO */
+.hero { background:linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%); color:var(--white); padding:80px 24px 60px; text-align:center; }
+.hero h1 { color:var(--gold-pale); font-size:clamp(1.8em,4vw,2.8em); margin-bottom:12px; letter-spacing:2px; }
+.hero .subtitle { opacity:0.8; font-size:1.05em; font-weight:300; max-width:700px; margin:0 auto 8px; }
+.hero .subtitle-th { opacity:0.6; font-size:0.95em; font-family:'Noto Sans Thai',sans-serif; max-width:700px; margin:0 auto 32px; }
+.hero .origin-badge { display:inline-block; background:rgba(201,167,78,0.2); border:1px solid var(--gold-light); color:var(--gold-pale); padding:6px 20px; border-radius:20px; font-size:0.82em; letter-spacing:0.5px; }
+
+/* SECTION */
+.section { max-width:960px; margin:0 auto; padding:60px 24px; }
+.section h2 { font-size:1.6em; margin-bottom:8px; }
+.section-line { width:60px; height:3px; background:var(--gold); margin-bottom:24px; }
+.section p, .section li { color:var(--text-light); font-size:0.95em; }
+
+/* BILINGUAL BLOCK */
+.bilingual { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin:32px 0; }
+.bilingual .lang { padding:24px; border-radius:var(--radius); }
+.bilingual .lang-en { background:var(--white); border-left:4px solid var(--navy); }
+.bilingual .lang-th { background:var(--white); border-left:4px solid var(--gold); font-family:'Noto Sans Thai',sans-serif; }
+.bilingual .lang h3 { font-size:1.1em; margin-bottom:12px; }
+.bilingual .lang p { font-size:0.9em; line-height:1.8; }
+@media(max-width:768px) { .bilingual { grid-template-columns:1fr; } }
+
+/* CHAIN */
+.chain { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:0; margin:40px 0; padding:24px; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); }
+.chain-item { text-align:center; padding:16px 20px; min-width:140px; }
+.chain-item .chain-year { font-family:'Cinzel',serif; font-weight:700; color:var(--gold); font-size:0.85em; }
+.chain-item .chain-label { font-size:0.82em; color:var(--text-light); margin-top:4px; line-height:1.4; }
+.chain-arrow { font-size:1.5em; color:var(--gold); padding:0 4px; }
+@media(max-width:600px) { .chain { flex-direction:column; } .chain-arrow { transform:rotate(90deg); } }
+
+/* PRINCIPLES GRID */
+.principles { display:grid; grid-template-columns:1fr; gap:24px; margin:32px 0; }
+.principle-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+.principle-header { padding:16px 24px; display:flex; align-items:center; gap:16px; }
+.principle-num { font-family:'Cinzel',serif; font-size:1.8em; font-weight:700; color:var(--gold); min-width:40px; }
+.principle-title { flex:1; }
+.principle-title h3 { font-size:1em; margin:0; }
+.principle-title .title-th { font-family:'Noto Sans Thai',sans-serif; font-size:0.88em; color:var(--text-light); font-weight:400; }
+.principle-weight { font-family:'Cinzel',serif; font-size:1.4em; font-weight:700; color:var(--navy); }
+.principle-weight span { font-size:0.55em; color:var(--text-muted); display:block; font-family:'Inter',sans-serif; font-weight:400; }
+.principle-body { padding:0 24px 20px; }
+.criteria-list { list-style:none; padding:0; }
+.criteria-list li { padding:8px 0; border-bottom:1px solid #f0f0f0; font-size:0.88em; display:flex; justify-content:space-between; align-items:center; }
+.criteria-list li:last-child { border-bottom:none; }
+.criteria-list .cr-name { flex:1; }
+.criteria-list .cr-name .cr-th { color:var(--text-muted); font-family:'Noto Sans Thai',sans-serif; font-size:0.9em; display:block; }
+.criteria-list .cr-weight { font-weight:600; color:var(--navy); min-width:40px; text-align:right; }
+
+/* SCORING */
+.scoring-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.88em; }
+.scoring-table th { background:var(--navy); color:var(--white); padding:10px 12px; font-weight:600; text-align:center; }
+.scoring-table td { padding:8px 12px; text-align:center; border-bottom:1px solid #eee; }
+.scoring-table tr:nth-child(even) { background:#f8f8f5; }
+
+/* AWARDS */
+.awards { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin:24px 0; }
+.award { text-align:center; padding:20px; border-radius:var(--radius); }
+.award-icon { font-size:2em; margin-bottom:8px; }
+.award-name { font-weight:600; font-size:0.95em; }
+.award-score { font-size:0.82em; color:var(--text-muted); }
+.gold { background:#fff8e1; border:2px solid #c4960a; }
+.silver { background:#f5f5f5; border:2px solid #9e9e9e; }
+.bronze { background:#fff3e0; border:2px solid #bf8040; }
+.merit { background:#e8f5e9; border:2px solid #4caf50; }
+
+/* SWIS HIGHLIGHT */
+.swis-highlight { background:linear-gradient(135deg, #fff8e1, #fff3cd); border:2px solid var(--gold); border-radius:var(--radius); padding:24px; margin:32px 0; }
+.swis-highlight h3 { color:var(--gold); margin-bottom:12px; }
+
+/* FOOTER */
+.footer { background:var(--navy-dark); color:rgba(255,255,255,0.6); text-align:center; padding:40px 24px; font-size:0.82em; }
+.footer a { color:var(--gold-pale); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Montfortian Network</a>
+  <a href="index.html#founder">The Founder</a>
+  <a href="index.html#congregations">Congregations</a>
+  <a href="index.html#thai-province">Thai Province</a>
+  <a href="governance.html" class="active">Governance</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="origin-badge">From Authentic Leadership to Measurable Practice</div>
+  <h1>Good Governance</h1>
+  <div class="subtitle">Governance-Based Administration Manual for Schools under the Saint Gabriel's Foundation of Thailand</div>
+  <div class="subtitle-th">คู่มือการบริหารโดยใช้หลักธรรมาภิบาล สำหรับโรงเรียนในสังกัดมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
+  <div class="origin-badge" style="margin-top:16px; opacity:0.7;">Revised Edition 2025 (ฉบับปรับปรุง ปี 2568)</div>
+  <div style="margin-top:20px;"><a href="governance-full.html" style="color:var(--gold-pale); text-decoration:none; border:1px solid var(--gold-pale); padding:10px 24px; border-radius:20px; font-size:0.9em; transition:all 0.2s;">Read Full Text with Page References &rarr;</a></div>
+</div>
+
+<!-- CHAIN OF ORIGIN -->
+<div class="section">
+  <h2>Chain of Origin</h2>
+  <div class="section-line"></div>
+
+  <div class="bilingual">
+    <div class="lang lang-en">
+      <h3>From Vision to Practice</h3>
+      <p>Good Governance in the Montfortian tradition is not an external compliance requirement. It flows directly from the call to "Authentic Leadership" issued by the 31st General Chapter in 2012. The Superior General, Brother John Kallarackal, translated this vision into Circular Letter No. 2 (2016), directing every province to develop a governance manual rooted in the fundamental belief that all human beings possess dignity and equal rights.</p>
+    </div>
+    <div class="lang lang-th">
+      <h3>จากวิสัยทัศน์สู่การปฏิบัติ</h3>
+      <p>หลักธรรมาภิบาลในประเพณีมงฟอร์ตไม่ใช่ข้อกำหนดจากภายนอก แต่ไหลมาจากการเรียกร้องสู่ "ผู้นำแท้" ในการประชุมสมัชชาใหญ่ครั้งที่ 31 (พ.ศ. 2555) ภราดาอัคราธิการ John Kallarackal ได้แปลวิสัยทัศน์นี้เป็นจดหมายเวียนฉบับที่ 2 (พ.ศ. 2559) สั่งให้ทุกแขวงจัดทำคู่มือธรรมาภิบาลบนพื้นฐานความเชื่อว่ามนุษย์ทุกคนมีศักดิ์ศรีและสิทธิที่เท่าเทียมกัน</p>
+    </div>
+  </div>
+
+  <div class="chain">
+    <div class="chain-item">
+      <div class="chain-year">2012</div>
+      <div class="chain-label">31st General Chapter<br><em>"Authentic Leaders for a Greater Brotherhood"</em></div>
+    </div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-item">
+      <div class="chain-year">2016</div>
+      <div class="chain-label">Circular Letter No. 2<br><em>Good Governance Directive</em></div>
+    </div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-item">
+      <div class="chain-year">2017</div>
+      <div class="chain-label">Thai Province<br><em>1st Governance Manual (4 principles)</em></div>
+    </div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-item">
+      <div class="chain-year">2025</div>
+      <div class="chain-label">Revised Edition<br><em>5 principles, 15 criteria, 100 points</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- 5 PRINCIPLES -->
+<div class="section" style="background:var(--white); max-width:100%; padding:60px 24px;">
+  <div style="max-width:960px; margin:0 auto;">
+    <h2>Five Governance Principles</h2>
+    <div class="section-line"></div>
+
+    <div class="bilingual" style="margin-bottom:32px;">
+      <div class="lang lang-en" style="border:none; padding:0;">
+        <p>The revised 2025 edition establishes five core governance principles, each weighted equally at 20 points, totaling 100. Schools are evaluated across 15 sub-criteria using a 5-level rubric.</p>
+      </div>
+      <div class="lang lang-th" style="border:none; padding:0;">
+        <p>ฉบับปรับปรุง 2568 กำหนดหลักธรรมาภิบาล 5 หลัก น้ำหนักเท่ากันหลักละ 20 คะแนน รวม 100 คะแนน ประเมินด้วย 15 เกณฑ์ย่อย 5 ระดับ</p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <!-- 1. Participation -->
+      <div class="principle-card">
+        <div class="principle-header" style="background:#e8f4f8;">
+          <div class="principle-num">1</div>
+          <div class="principle-title">
+            <h3>Participation</h3>
+            <div class="title-th">หลักการมีส่วนร่วม</div>
+          </div>
+          <div class="principle-weight">20<span>points</span></div>
+        </div>
+        <div class="principle-body">
+          <ul class="criteria-list">
+            <li><div class="cr-name">1.1 Stakeholder feedback opportunities<span class="cr-th">เปิดโอกาสให้ผู้มีส่วนได้ส่วนเสียร่วมแสดงความคิดเห็น</span></div><div class="cr-weight">4</div></li>
+            <li><div class="cr-name">1.2 Stakeholder participation in decision-making<span class="cr-th">เปิดโอกาสให้ร่วมตัดสินใจในการบริหารจัดการศึกษา</span></div><div class="cr-weight">6</div></li>
+            <li><div class="cr-name">1.3 Stakeholder contribution to school development<span class="cr-th">เปิดโอกาสให้ร่วมพัฒนาในการบริหารจัดการศึกษา</span></div><div class="cr-weight">10</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Transparency -->
+      <div class="principle-card">
+        <div class="principle-header" style="background:#eef6ee;">
+          <div class="principle-num">2</div>
+          <div class="principle-title">
+            <h3>Transparency</h3>
+            <div class="title-th">หลักความโปร่งใส</div>
+          </div>
+          <div class="principle-weight">20<span>points</span></div>
+        </div>
+        <div class="principle-body">
+          <ul class="criteria-list">
+            <li><div class="cr-name">2.1 Administrative structure transparency<span class="cr-th">การบริหารจัดการตามโครงสร้างการบริหารงานโรงเรียน</span></div><div class="cr-weight">7</div></li>
+            <li><div class="cr-name">2.2 Financial management process<span class="cr-th">กระบวนการบริหารงานการเงิน</span></div><div class="cr-weight">6</div></li>
+            <li><div class="cr-name">2.3 Human resource management process<span class="cr-th">กระบวนการบริหารงานบุคลากร</span></div><div class="cr-weight">7</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Accountability -->
+      <div class="principle-card">
+        <div class="principle-header" style="background:#fef9e7;">
+          <div class="principle-num">3</div>
+          <div class="principle-title">
+            <h3>Accountability</h3>
+            <div class="title-th">หลักความรับผิดชอบ</div>
+          </div>
+          <div class="principle-weight">20<span>points</span></div>
+        </div>
+        <div class="principle-body">
+          <ul class="criteria-list">
+            <li><div class="cr-name">3.1 Responsibility in roles and duties<span class="cr-th">การแสดงความรับผิดชอบต่อบทบาทและหน้าที่</span></div><div class="cr-weight">5</div></li>
+            <li><div class="cr-name">3.2 Accountability for errors<span class="cr-th">การแสดงความรับผิดชอบต่อผลของการตัดสินใจ กรณีผิดพลาด</span></div><div class="cr-weight">4</div></li>
+            <li><div class="cr-name">3.3 Accountability for successes<span class="cr-th">การแสดงความรับผิดชอบต่อผลของการตัดสินใจ กรณีสำเร็จ</span></div><div class="cr-weight">5</div></li>
+            <li><div class="cr-name">3.4 Environmental responsibility<span class="cr-th">การแสดงความรับผิดชอบต่อคุณภาพสิ่งแวดล้อม</span></div><div class="cr-weight">6</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Equity -->
+      <div class="principle-card">
+        <div class="principle-header" style="background:#f3e8ff;">
+          <div class="principle-num">4</div>
+          <div class="principle-title">
+            <h3>Equity</h3>
+            <div class="title-th">หลักความเสมอภาค</div>
+          </div>
+          <div class="principle-weight">20<span>points</span></div>
+        </div>
+        <div class="principle-body">
+          <ul class="criteria-list">
+            <li><div class="cr-name">4.1 Fairness in establishing rules and regulations<span class="cr-th">การกำหนดกฎ ระเบียบ ข้อบังคับมีความยุติธรรม</span></div><div class="cr-weight">10</div></li>
+            <li><div class="cr-name">4.2 Fairness in implementing rules and regulations<span class="cr-th">การใช้กฎ ระเบียบ ข้อบังคับมีความยุติธรรมและเป็นธรรม</span></div><div class="cr-weight">10</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5. Cost-effectiveness -->
+      <div class="principle-card">
+        <div class="principle-header" style="background:#fdf2f2;">
+          <div class="principle-num">5</div>
+          <div class="principle-title">
+            <h3>Cost-Effectiveness</h3>
+            <div class="title-th">หลักความคุ้มค่า</div>
+          </div>
+          <div class="principle-weight">20<span>points</span></div>
+        </div>
+        <div class="principle-body">
+          <ul class="criteria-list">
+            <li><div class="cr-name">5.1 Efficient school management and resource utilization<span class="cr-th">การบริหารจัดการโรงเรียนและการใช้ทรัพยากรให้เกิดประสิทธิผล</span></div><div class="cr-weight">10</div></li>
+            <li><div class="cr-name">5.2 Maximizing benefits from school management<span class="cr-th">การบริหารจัดการโรงเรียนและการใช้ทรัพยากรให้ได้ประโยชน์สูงสุด</span></div><div class="cr-weight">10</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SWIS HIGHLIGHT -->
+<div class="section">
+  <div class="swis-highlight">
+    <h3>SWIS in the Governance Manual</h3>
+    <div class="bilingual" style="margin:16px 0 0;">
+      <div class="lang lang-en" style="background:transparent; border-color:var(--gold);">
+        <p><strong>Criterion 5.1, Level 3</strong> explicitly states that schools must use <strong>"SWIS (School Web-based Information System) of the Saint Gabriel's Foundation of Thailand"</strong> for planning and improving operational efficiency across all departments.</p>
+        <p style="margin-top:8px;"><strong>Criterion 5.2, Level 3</strong> requires that <strong>"IT systems are used systematically for management efficiency."</strong></p>
+      </div>
+      <div class="lang lang-th" style="background:transparent; border-color:var(--gold);">
+        <p><strong>เกณฑ์ 5.1 ระดับ 3</strong> กำหนดชัดเจนว่าโรงเรียนต้อง <strong>"จัดทำระบบสารสนเทศโรงเรียนโดยใช้เทคโนโลยีสารสนเทศระบบ SWIS (School Web-based Information System) ของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย และนำไปใช้ในการวางแผน พัฒนาประสิทธิภาพการปฏิบัติงาน"</strong></p>
+        <p style="margin-top:8px;"><strong>เกณฑ์ 5.2 ระดับ 3</strong> กำหนดว่า <strong>"มีการใช้ระบบเทคโนโลยีสารสนเทศเป็นเครื่องมือในการบริหารจัดการอย่างเป็นระบบ"</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCORING & AWARDS -->
+<div class="section" style="background:var(--white); max-width:100%; padding:60px 24px;">
+  <div style="max-width:960px; margin:0 auto;">
+    <h2>Evaluation &amp; Recognition</h2>
+    <div class="section-line"></div>
+
+    <div class="bilingual" style="margin-bottom:24px;">
+      <div class="lang lang-en" style="border:none; padding:0;">
+        <p>Schools are evaluated using a three-pronged approach: document review, direct observation, and stakeholder interviews across 9 groups. Scoring follows a cumulative 5-level rubric where each level builds upon the previous.</p>
+      </div>
+      <div class="lang lang-th" style="border:none; padding:0;">
+        <p>ประเมินด้วย 3 วิธี: ตรวจเอกสาร สังเกตการณ์ตรง สัมภาษณ์ผู้มีส่วนได้ส่วนเสีย 9 กลุ่ม ให้คะแนนแบบสะสม 5 ระดับ แต่ละระดับต่อยอดจากระดับก่อนหน้า</p>
+      </div>
+    </div>
+
+    <div class="awards">
+      <div class="award gold">
+        <div class="award-icon">&#127941;</div>
+        <div class="award-name">Gold Certificate</div>
+        <div class="award-name" style="font-family:'Noto Sans Thai',sans-serif; font-weight:400; font-size:0.82em; color:var(--text-muted);">เกียรติบัตรเหรียญทอง</div>
+        <div class="award-score">90 &ndash; 100 points</div>
+      </div>
+      <div class="award silver">
+        <div class="award-icon">&#129352;</div>
+        <div class="award-name">Silver Certificate</div>
+        <div class="award-name" style="font-family:'Noto Sans Thai',sans-serif; font-weight:400; font-size:0.82em; color:var(--text-muted);">เกียรติบัตรเหรียญเงิน</div>
+        <div class="award-score">85 &ndash; 89 points</div>
+      </div>
+      <div class="award bronze">
+        <div class="award-icon">&#129353;</div>
+        <div class="award-name">Bronze Certificate</div>
+        <div class="award-name" style="font-family:'Noto Sans Thai',sans-serif; font-weight:400; font-size:0.82em; color:var(--text-muted);">เกียรติบัตรเหรียญทองแดง</div>
+        <div class="award-score">80 &ndash; 84 points</div>
+      </div>
+      <div class="award merit">
+        <div class="award-icon">&#127942;</div>
+        <div class="award-name">Merit Certificate</div>
+        <div class="award-name" style="font-family:'Noto Sans Thai',sans-serif; font-weight:400; font-size:0.82em; color:var(--text-muted);">เกียรติบัตรชมเชย</div>
+        <div class="award-score">75 &ndash; 79 points</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REFERENCE -->
+<div class="section">
+  <h2>Document Reference</h2>
+  <div class="section-line"></div>
+  <div class="bilingual">
+    <div class="lang lang-en">
+      <h3>Source Documents</h3>
+      <p><strong>Primary:</strong> Governance-Based Administration Manual (Revised Edition 2025), Saint Gabriel's Foundation of Thailand. Published April 2025, 5,000 copies.</p>
+      <p style="margin-top:8px;"><strong>Origin:</strong> "Authentic Leaders for a Greater Brotherhood" — 31st General Chapter of the Brothers of Saint Gabriel, 2012. Circular Letter No. 2, Brother John Kallarackal, Superior General, June 2016.</p>
+      <p style="margin-top:8px;"><strong>Review Committee:</strong> Appointed by Order No. 14/2024, chaired by Brother Dr. Sakda Sakanthawat. Subcommittee meetings: Oct 3, Nov 4, Nov 11, Nov 17, Nov 25, Dec 11, 2024. Approved January 13, 2025.</p>
+    </div>
+    <div class="lang lang-th">
+      <h3>เอกสารอ้างอิง</h3>
+      <p><strong>เอกสารหลัก:</strong> คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568 มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย พิมพ์ครั้งที่ 1 เมษายน 2568 จำนวน 5,000 เล่ม</p>
+      <p style="margin-top:8px;"><strong>ต้นกำเนิด:</strong> "ผู้นำแท้เพื่อภราดรภาพที่ยิ่งใหญ่" — การประชุมสมัชชาใหญ่ครั้งที่ 31 คณะภราดาเซนต์คาเบรียล พ.ศ. 2555 จดหมายเวียนฉบับที่ 2 ภราดา John Kallarackal อัคราธิการ มิถุนายน 2559</p>
+      <p style="margin-top:8px;"><strong>คณะกรรมการทบทวน:</strong> แต่งตั้งโดยคำสั่งที่ 14/2567 ประธาน: ภราดา ดร.ศักดา สกนธวัฒน์ ประชุมอนุกรรมการ: 3, 4, 11, 17, 25 พ.ย. + 11 ธ.ค. 2567 อนุมัติ 13 มกราคม 2568</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Montfortian Network &mdash; <a href="index.html">Home</a> &middot; <a href="governance.html">Governance</a></p>
+  <p style="margin-top:8px;">Saint Gabriel's Foundation of Thailand &middot; 2 Soi Thonglor 25, Bangkok 10110</p>
+  <p style="margin-top:4px; opacity:0.5;">Content derived from the Governance-Based Administration Manual (Revised Edition 2025)</p>
+</div>
+
+</body>
+</html>
