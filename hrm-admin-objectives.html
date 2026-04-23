@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>กลุ่มงาน HRM 1 — บริหารงาน HRM มูลนิธิฯ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+    --orange-soft: #e67e22;
+    --green-soft: #27ae60;
+    --emerald: #059669;
+    --emerald-dark: #047857;
+    --emerald-light: #10b981;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── SECTION HEADING ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── PDCA DIAGRAM ── */
+  .pdca-section { padding: 0 24px 48px; }
+  .pdca-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 800px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+  }
+  .pdca-cell {
+    padding: 24px; min-height: 180px;
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .pdca-cell:nth-child(1) { background: #e8f4f8; border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(2) { background: #eef6ee; border-bottom: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(3) { background: #fef9e7; border-right: 1px solid var(--gray-200); }
+  .pdca-cell:nth-child(4) { background: #fdf2f2; }
+  .pdca-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 8px; padding: 2px 10px; border-radius: 4px; display: inline-block; width: fit-content;
+  }
+  .pdca-cell:nth-child(1) .pdca-label { background: var(--navy); color: var(--white); }
+  .pdca-cell:nth-child(2) .pdca-label { background: var(--green-soft); color: var(--white); }
+  .pdca-cell:nth-child(3) .pdca-label { background: var(--gold-dark); color: var(--white); }
+  .pdca-cell:nth-child(4) .pdca-label { background: var(--red-soft); color: var(--white); }
+  .pdca-cell p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+  .pdca-cell ul { list-style: none; padding: 0; margin-top: 8px; }
+  .pdca-cell li { font-size: 0.82rem; color: var(--text-light); padding: 3px 0 3px 14px; position: relative; }
+  .pdca-cell li::before { content: ''; position: absolute; left: 0; top: 10px; width: 5px; height: 5px; border-radius: 50%; background: var(--navy-light); }
+
+  /* ── QUALITY GOALS ── */
+  .qg-section { padding: 48px 24px; background: var(--white); }
+  .qg-level {
+    max-width: 900px; margin: 0 auto 32px; background: var(--cream);
+    border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .qg-level-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+  }
+  .qg-level-header .qg-badge {
+    font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .qg-level-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; color: var(--navy);
+  }
+
+  .qg-table { width: 100%; border-collapse: collapse; }
+  .qg-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.75rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .qg-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .qg-table tr:last-child td { border-bottom: none; }
+  .qg-table .qg-id { font-weight: 700; color: var(--navy); white-space: nowrap; width: 40px; }
+  .qg-table .qg-goal { font-weight: 500; color: var(--text); }
+  .qg-table .qg-tool { font-size: 0.75rem; color: var(--navy-light); font-style: italic; }
+  .qg-status {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .qs-has { background: #d4edda; color: #155724; }
+  .qs-partial { background: #fff3cd; color: #856404; }
+  .qs-none { background: #f8d7da; color: #721c24; }
+  .qs-future { background: #e2e3e5; color: #383d41; }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 0.8rem;
+  }
+  .footer-note .draft-label {
+    display: inline-block; background: #fff3cd; color: #856404;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .pdca-grid { grid-template-columns: 1fr; }
+    .pdca-cell:nth-child(1) { border-right: none; }
+    .pdca-cell:nth-child(3) { border-right: none; }
+    .page-header h1 { font-size: 1.4rem; }
+    .qg-table th:nth-child(4), .qg-table td:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- HEADER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="page-header">
+  <div class="group-label">Commission on ICT and HRM — งาน HRM กลุ่มที่ 1</div>
+  <h1>บริหารงาน HRM มูลนิธิฯ</h1>
+  <div class="subtitle">HRM Administration — ร่มบริหารครอบกลุ่มงาน HRM 2–7</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- STRATEGIC ALIGNMENT -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section">
+    <h2>ความสอดคล้องเชิงยุทธศาสตร์</h2>
+    <p><strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → <strong>กลยุทธ์ 3.3</strong> พัฒนาการกำกับติดตามโรงเรียนในเครือมูลนิธิฯ ให้มีประสิทธิภาพและประสิทธิผล — กลุ่ม 1 เป็นร่มใหญ่ที่กำกับ วางแผน ประสานงาน และรายงานผลของกลุ่มงาน HRM 2-7 ทั้งหมด</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PHILOSOPHY -->
+<!-- ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="vision-section" style="border-left-color: var(--navy-light);">
+    <h2 style="color: var(--navy);">ปรัชญาการทำงาน</h2>
+    <p>กลุ่มงานที่ 1 เป็น <strong>"สมอง"</strong> ของระบบ HR — วางแผนรวม กำกับทิศ ประสานกลุ่มงาน 2-7 (สรรหาอัตรากำลัง, เตรียมบุคลากรใหม่, นิเทศกำกับติดตาม, พัฒนาบุคลากร, รักษาบุคลากร, สืบทอดตำแหน่ง) ติดตามผลรวม รายงานให้ผู้นำเห็นภาพรวม ไม่ได้ลงมือทำเองทุกอย่าง แต่ต้องเห็นทุกอย่างและเชื่อมทุกอย่างเข้าด้วยกัน</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="vision-section" style="border-left-color: #7c3aed;">
+    <h2 style="color: #7c3aed;">ความสอดคล้องกับหลักธรรมาภิบาล</h2>
+    <p style="font-size:0.88rem; line-height:1.8;">
+      <strong style="color:#7c3aed;">เกณฑ์ 1.1</strong> Participation (4 คะแนน) — HRM กลุ่ม 1 ต้องมีช่องทางรับฟังข้อคิดเห็นจากผู้มีส่วนได้ส่วนเสียอย่างน้อย 5 ช่องทาง<br>
+      <strong style="color:#7c3aed;">เกณฑ์ 1.2</strong> Participation (6 คะแนน) — ต้องมีกลไกให้ผู้มีส่วนได้ส่วนเสียร่วมตัดสินใจในนโยบาย HR<br>
+      <strong style="color:#7c3aed;">เกณฑ์ 4.1</strong> Equity (10 คะแนน) — ต้องมีระบบทบทวนกฎระเบียบ HR อย่างเป็นระบบ ยุติธรรม<br>
+      <strong style="color:#7c3aed;">เกณฑ์ 3.2</strong> Accountability (4 คะแนน) — ต้องมีระบบบันทึกและแก้ไขข้อผิดพลาดจากแผนงาน<br>
+      <strong style="color:#7c3aed;">เกณฑ์ 3.3</strong> Accountability (5 คะแนน) — ต้องมีระบบให้รางวัลผลงานดีเด่น<br>
+      <span style="color:var(--text-muted); font-size:0.82rem;">อ้างอิง: คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568</span>
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA DIAGRAM -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA — บริหารงาน HRM มูลนิธิฯ</h2>
+  <div class="section-desc">วงจรคุณภาพ 4 ขั้นตอน — กำกับและเชื่อมกลุ่มงาน 2-7 (สรรหา, Onboarding, นิเทศ, พัฒนาบุคลากร, รักษาบุคลากร, สืบทอดตำแหน่ง)</div>
+</div>
+
+<div class="pdca-section">
+  <div class="pdca-grid">
+
+    <!-- PLAN -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Plan — วางแผน</span>
+      <p>วิเคราะห์ข้อมูลจากกลุ่ม 2-7 (สรรหา, Onboarding, นิเทศ, พัฒนา, รักษา, สืบทอด) → วางแผนรวม:</p>
+      <ul>
+        <li>รวบรวมข้อมูลสถานะจากกลุ่มงาน 2-7 ทุกกลุ่ม</li>
+        <li>กำหนดเป้าหมายคุณภาพ HR ระดับเครือมูลนิธิฯ ให้สอดคล้องกับธรรมาภิบาล</li>
+        <li>กำหนดปฏิทินการนิเทศและติดตามผลรวม</li>
+      </ul>
+    </div>
+
+    <!-- DO -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Do — ดำเนินการ</span>
+      <p>ประสานกลุ่มงาน 2-7 (สรรหา, Onboarding, นิเทศ, พัฒนา, รักษา, สืบทอด) + เปิดช่องทางรับฟังผู้มีส่วนได้ส่วนเสีย:</p>
+      <ul>
+        <li>ประสานงานให้กลุ่ม 2-7 ดำเนินงานได้ตามเป้าหมาย</li>
+        <li>เปิดและบริหารช่องทางรับฟังข้อคิดเห็นจากผู้มีส่วนได้ส่วนเสีย</li>
+        <li>สนับสนุนกลไกให้ผู้มีส่วนได้ส่วนเสียร่วมตัดสินใจในนโยบาย HR</li>
+      </ul>
+    </div>
+
+    <!-- CHECK -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Check — ติดตาม</span>
+      <p>รวบรวมผลจากทุกกลุ่มงาน ตรวจสอบความสอดคล้องกับธรรมาภิบาล:</p>
+      <ul>
+        <li>รวบรวมรายงานผลจากกลุ่มงาน 2-7 (สรรหา, Onboarding, นิเทศ, พัฒนา, รักษา, สืบทอด)</li>
+        <li>ตรวจสอบว่าแผนงาน HR สอดคล้องกับเกณฑ์ธรรมาภิบาล 5 หลักหรือไม่</li>
+        <li>วิเคราะห์โรงเรียนใดบริหาร HR ได้ดี โรงใดยังต้องพัฒนา</li>
+      </ul>
+    </div>
+
+    <!-- ACT -->
+    <div class="pdca-cell">
+      <span class="pdca-label">Act — ปรับปรุง</span>
+      <p>รายงานผลรวมให้ผู้นำ ปรับแผนตามข้อมูล:</p>
+      <ul>
+        <li>รายงาน Governance Readiness ด้าน HR ต่อโรงให้ผู้นำขับเคลื่อน</li>
+        <li>ปรับเป้าหมายคุณภาพและแผนงานปีถัดไปตามข้อมูลจริง</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- QUALITY GOALS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="qg-section">
+  <div class="section-heading" style="padding:0;">
+    <h2>เป้าหมายคุณภาพงาน HRM 1</h2>
+    <div class="section-desc">แยกตามมิติ: บริหารงาน HRM + ธรรมาภิบาล — แต่ละข้อมีตัวชี้วัดปลายทางและแหล่งข้อมูล<br>
+      <span style="font-size:0.8rem; color:var(--navy);">ครอบคลุมทั้งงานบริหารกลุ่ม 2-7 และเกณฑ์ธรรมาภิบาล — 14 โรงเรียน*</span>
+    </div>
+  </div>
+
+  <!-- 1.A วางแผนและกำกับงาน HRM -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">วางแผน/กำกับ</span>
+      <h3>วางแผนรวมและกำกับดูแลกลุ่มงาน 2-7</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.A.1</td>
+          <td class="qg-goal">มีแผนงานประจำปี HRM ที่ครอบคลุมกลุ่มงาน 2-7 (สรรหา, Onboarding, นิเทศ, พัฒนา, รักษา, สืบทอด) พร้อมปฏิทินกิจกรรม</td>
+          <td>แผนงาน HRM ประจำปี — ครบทุกกลุ่มงาน</td>
+          <td class="qg-tool">เอกสารแผนงาน HRM</td>
+          <td><span class="qg-status qs-partial">มีบางส่วน</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.A.2</td>
+          <td class="qg-goal">ประชุมคณะอนุกรรมการ HRM ครบตามกำหนด — มีวาระครอบคลุมทุกกลุ่มงาน</td>
+          <td>รายงานประชุม HRM — จำนวนครั้ง/ปี + วาระ</td>
+          <td class="qg-tool">รายงานประชุม</td>
+          <td><span class="qg-status qs-partial">มีการประชุมแต่ยังไม่ครบวาระ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.A.3</td>
+          <td class="qg-goal">สามารถรายงานสถานะเป้าหมายคุณภาพ HRM ของทุกกลุ่มงาน 2-7 ในภาพรวมได้ — เห็นว่ากลุ่มใดบรรลุเป้า กลุ่มใดยังไม่ถึง</td>
+          <td>Dashboard สรุปสถานะเป้าหมาย HRM ทุกกลุ่ม</td>
+          <td class="qg-tool">รวมจากทุกกลุ่มงาน + SWIS</td>
+          <td><span class="qg-status qs-none">ยังไม่มี Dashboard รวม</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.A.4</td>
+          <td class="qg-goal">มีรายงานประจำปี HRM ที่ครอบคลุมผลดำเนินงานทุกกลุ่ม 2-7 เสนอต่อผู้บริหารมูลนิธิฯ</td>
+          <td>รายงานประจำปี HRM — ครบ 6 ด้าน</td>
+          <td class="qg-tool">รวบรวมจากทุกกลุ่มงาน</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.B นิเทศและติดตาม -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#d1fae5; border-left:4px solid var(--emerald);">
+      <span class="qg-badge" style="background:var(--emerald); color:var(--white);">นิเทศ/ติดตาม</span>
+      <h3>นิเทศ ติดตาม และรายงานผลรวม</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.B.1</td>
+          <td class="qg-goal">สามารถเปรียบเทียบผลดำเนินงาน HRM ข้ามโรงเรียนได้ — เห็นว่าโรงเรียนใดบริหาร HR ได้ดี โรงใดยังต้องพัฒนา</td>
+          <td>รายงานเปรียบเทียบ HRM 14 โรง — ข้อมูลพูดเอง</td>
+          <td class="qg-tool">SWIS + ผลนิเทศ</td>
+          <td><span class="qg-status qs-partial">มีข้อมูลบางส่วนจากนิเทศ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.B.2</td>
+          <td class="qg-goal">สามารถเปรียบเทียบผลดำเนินงาน HRM ข้ามปีได้ — เห็นว่าเครือมูลนิธิฯ มีพัฒนาการหรือถดถอย</td>
+          <td>รายงานแนวโน้ม HRM ย้อนหลัง ≥2 ปี</td>
+          <td class="qg-tool">SWIS — ข้อมูลย้อนหลัง</td>
+          <td><span class="qg-status qs-none">ยังไม่มีข้อมูลเพียงพอ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.1 ธรรมาภิบาลด้าน HR — Participation -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#f5f0ff; border-left:4px solid #7c3aed;">
+      <span class="qg-badge" style="background:#7c3aed; color:#fff;">ธรรมาภิบาลด้าน HR</span>
+      <h3>การมีส่วนร่วม — ช่องทางรับฟังและกลไกร่วมตัดสินใจ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.1.1</td>
+          <td class="qg-goal">สามารถรายงานจำนวนช่องทางรับฟังข้อคิดเห็นของผู้มีส่วนได้ส่วนเสียแต่ละโรงเรียนได้ — เห็นว่าโรงไหนมีกี่ช่องทาง</td>
+          <td>จำนวนช่องทาง ≥5 ต่อโรง</td>
+          <td class="qg-tool">SWIS Feedback module + สำรวจ</td>
+          <td><span class="qg-status qs-partial">มีบางส่วนใน SWIS</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.1.2</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มีกลไกให้ผู้มีส่วนได้ส่วนเสียร่วมตัดสินใจในนโยบาย HR — เช่น คณะกรรมการร่วม การประชุมเปิด</td>
+          <td>สถานะ มี/ไม่มี ต่อโรง</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหารแต่ละโรง</td>
+          <td><span class="qg-status qs-none">ยังไม่มีเครื่องมือ</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.1.3</td>
+          <td class="qg-goal">สามารถรายงานสัดส่วนแผนงาน HR ที่มีผู้มีส่วนได้ส่วนเสียร่วมในการติดตามได้ — เห็นว่ากี่เปอร์เซ็นต์ของแผนงานมีส่วนร่วม</td>
+          <td>สัดส่วน % ต่อโรง</td>
+          <td class="qg-tool">แผนงาน PDCA ใน SWIS</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.2 ความเสมอภาค -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#f5f0ff; border-left:4px solid #7c3aed;">
+      <span class="qg-badge" style="background:#7c3aed; color:#fff;">ความเสมอภาค</span>
+      <h3>ระบบทบทวนกฎระเบียบและข้อร้องเรียน HR</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.2.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มีระบบทบทวนกฎระเบียบ HR อย่างเป็นระบบ — มีคณะกรรมการทบทวน มีฐานข้อมูลกฎระเบียบ</td>
+          <td>สถานะ มี/ไม่มี ต่อโรง</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหาร</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.2.2</td>
+          <td class="qg-goal">สามารถรายงานข้อร้องเรียนด้าน HR ที่ได้รับการแก้ไขได้ — เห็นว่ามีกี่เรื่อง แก้ไขกี่เรื่อง</td>
+          <td>จำนวน/สัดส่วนที่แก้ไขสำเร็จ</td>
+          <td class="qg-tool">SWIS + บันทึกฝ่ายบริหาร</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.3 ความรับผิดชอบ -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">ความรับผิดชอบ</span>
+      <h3>ระบบบันทึกข้อผิดพลาดและระบบให้รางวัล</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.3.1</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มีระบบบันทึกและแก้ไขข้อผิดพลาดจากแผนงาน HR</td>
+          <td>สถานะ มี/ไม่มี + หลักฐานการรับผลและแก้ไข</td>
+          <td class="qg-tool">รายงานนิเทศ + แผนงาน PDCA</td>
+          <td><span class="qg-status qs-none">ยังไม่มี</span></td>
+        </tr>
+        <tr>
+          <td class="qg-id">1.3.2</td>
+          <td class="qg-goal">สามารถรายงานได้ว่าโรงเรียนใดมี/ไม่มีระบบให้รางวัลผลงาน HR ดีเด่นอย่างเป็นระบบ</td>
+          <td>สถานะ มี/ไม่มี + ประเภทรางวัล</td>
+          <td class="qg-tool">สำรวจจากฝ่ายบริหาร</td>
+          <td><span class="qg-status qs-partial">มีบางโรง ไม่เป็นระบบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 1.0 ภาพรวม -->
+  <div class="qg-level">
+    <div class="qg-level-header" style="background:#e8f0f8; border-left:4px solid var(--navy-light);">
+      <span class="qg-badge" style="background:var(--navy); color:var(--white);">ภาพรวม</span>
+      <h3>Governance Readiness ด้าน HR — ระดับเครือมูลนิธิฯ</h3>
+    </div>
+    <table class="qg-table">
+      <thead><tr><th></th><th>เป้าหมายคุณภาพ</th><th>ตัวชี้วัดปลายทาง</th><th>แหล่งข้อมูล</th><th>สถานะ</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="qg-id">1.0.1</td>
+          <td class="qg-goal">ข้อมูลจากระบบสะท้อนให้เห็นว่าโรงเรียนใดบริหาร HR ตามหลักธรรมาภิบาลได้ดี โรงใดยังต้องพัฒนา — รายงาน Governance Readiness ด้าน HR ต่อโรง</td>
+          <td>รายงานสรุป Governance Readiness ข้อมูลพูดเอง</td>
+          <td class="qg-tool">รวมจากทุกกลุ่มงาน</td>
+          <td><span class="qg-status qs-none">ยังไม่มีระบบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTES -->
+  <div style="max-width:900px; margin:0 auto; padding:16px 24px; background:#fff8e1; border-radius:var(--radius); font-size:0.82rem; color:var(--gold-dark); line-height:1.7;">
+    <strong>หมายเหตุ:</strong><br>
+    * เป้าหมายคุณภาพ 8 ข้อ ใน 4 กลุ่ม — ครอบคลุมงานบริหาร + เกณฑ์ธรรมาภิบาล<br>
+    * ข้อมูลทั้งหมดอ้างอิงจากคู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568<br>
+    * กลุ่มงาน 1 เป็น "สมอง" ของระบบ — ไม่ได้ลงมือเองทุกอย่าง แต่ต้องเห็นและเชื่อมทุกกลุ่มงานเข้าด้วยกัน
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div style="max-width:900px; margin:24px auto 0; background:var(--cream); border:2px solid var(--navy); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
+    <div style="background:var(--navy); padding:12px 24px; color:var(--gold-light); font-weight:600; font-size:0.9rem;">สรุปเป้าหมายคุณภาพงาน HRM 1</div>
+    <div style="padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.85rem;">
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">จำนวนเป้าหมาย</div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <span style="background:var(--gray-100); padding:4px 12px; border-radius:4px;"><strong>14 ข้อ</strong> ใน 6 กลุ่ม</span>
+        </div>
+        <div style="margin-top:8px; color:var(--text-light); font-size:0.8rem; line-height:1.6;">
+          1.A วางแผน/กำกับ: 4 ข้อ · 1.B นิเทศ/ติดตาม: 2 ข้อ · 1.1 ธรรมาภิบาล: 3 ข้อ · 1.2 ความเสมอภาค: 2 ข้อ · 1.3 ความรับผิดชอบ: 2 ข้อ · 1.0 ภาพรวม: 1 ข้อ
+        </div>
+        <div style="margin-top:8px; color:var(--text-muted); font-size:0.78rem; line-height:1.5;">
+          ข้อมูลตรงมาจาก Gap Analysis ธรรมาภิบาล × เป้าหมายคุณภาพ
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:600; color:var(--navy); margin-bottom:8px;">สถานะเครื่องมือวัดผล</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div><span class="qg-status qs-has" style="margin-right:6px;">มีแล้ว</span> <span style="color:var(--text-light);">0 ข้อ</span></div>
+          <div><span class="qg-status qs-partial" style="margin-right:6px;">มีบางส่วน</span> <span style="color:var(--text-light);">5 ข้อ — ต้องเสริม/ขยาย</span></div>
+          <div><span class="qg-status qs-none" style="margin-right:6px;">ยังไม่มี</span> <span style="color:var(--text-light);">9 ข้อ — ต้องพัฒนาใหม่</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<div class="footer-note">
+  <div class="draft-label">เอกสารงาน HRM 1 — ฉบับ 23 เมษายน 2569</div>
+  <p>งาน HRM 1 บริหารงาน HRM มูลนิธิฯ — Commission on ICT and HRM</p>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px; font-size:0.7rem; line-height:1.6;">
+    * เป้าหมายคุณภาพ 8 ข้อ ใน 4 กลุ่ม — มีแล้ว 0, บางส่วน 5, ยังไม่มี 9<br>
+    * อ้างอิง: คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568<br>
+    * กลุ่มงาน 1 กำกับกลุ่มงาน HRM 2-7 ทั้งหมด ครอบคลุม 14 โรงเรียนในเครือมูลนิธิฯ
+  </p>
+</div>
+
+</body>
+</html>
