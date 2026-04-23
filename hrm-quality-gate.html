@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เป้าหมายคุณภาพ HRM — Quality Manual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --gold: #c9a74e;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-container { width: 100%; max-width: 440px; padding: 20px; }
+  .login-card { background: var(--white); border-radius: 12px; box-shadow: var(--shadow-lg); overflow: hidden; }
+  .login-header { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); padding: 32px 28px; text-align: center; color: var(--white); }
+  .login-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 8px; }
+  .login-header p { font-size: 0.85rem; opacity: 0.8; line-height: 1.6; }
+  .login-body { padding: 32px 28px; }
+  .login-body label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .login-body input[type="password"] { width: 100%; padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: var(--radius); font-size: 1rem; font-family: inherit; transition: border-color 0.2s; outline: none; }
+  .login-body input[type="password"]:focus { border-color: var(--navy); }
+  .login-body button { width: 100%; margin-top: 16px; padding: 12px; background: var(--navy); color: var(--white); border: none; border-radius: var(--radius); font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.2s; }
+  .login-body button:hover { background: var(--navy-dark); }
+  .error-msg { display: none; margin-top: 12px; padding: 10px 14px; background: #fff5f5; color: var(--red-soft); border-radius: 6px; font-size: 0.85rem; text-align: center; border: 1px solid #fecaca; }
+  .login-footer { padding: 16px 28px; border-top: 1px solid var(--gray-200); text-align: center; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── FRAMEWORK ── */
+  .fw-box { background: var(--white); border-radius: 12px; box-shadow: var(--shadow-lg); margin-bottom: 32px; overflow: hidden; }
+  .fw-title { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); padding: 20px 24px; color: var(--gold-light); text-align: center; }
+  .fw-title h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 4px; }
+  .fw-title p { font-size: 0.8rem; opacity: 0.7; }
+  .fw-body { padding: 24px; }
+  .fw-strategy { background: #f0f4f8; border: 1px solid #1a3a5c; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; text-align: center; font-size: 0.82rem; color: #1a3a5c; line-height: 1.6; }
+  .fw-diagram { display: grid; grid-template-columns: 1fr; gap: 0; position: relative; }
+  .fw-layer-top { background: linear-gradient(135deg,#0d2640,#1a3a5c); border-radius: 8px; padding: 14px 18px; text-align: center; margin-bottom: 8px; }
+  .fw-layer-top h4 { color: #e8d494; font-size: 0.9rem; font-family: 'Noto Sans Thai', sans-serif; }
+  .fw-layer-top p { font-size: 0.75rem; color: rgba(255,255,255,0.8); margin-top: 2px; }
+  .fw-arrow { text-align: center; font-size: 1.2rem; color: var(--text-muted); line-height: 1; margin: 4px 0; }
+  .fw-layer-mid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+  .fw-mid-card { border-radius: 8px; padding: 12px 14px; text-align: center; background: #e8f0f8; border: 1px solid #2c5f8a; }
+  .fw-mid-card h4 { font-size: 0.82rem; font-family: 'Noto Sans Thai', sans-serif; margin-bottom: 2px; color: #1a3a5c; }
+  .fw-mid-card p { font-size: 0.65rem; line-height: 1.4; color: #334155; }
+  .fw-principle { margin-top: 16px; padding: 14px 18px; background: #f0f4f8; border-left: 3px solid #1a3a5c; border-radius: 0 8px 8px 0; font-size: 0.8rem; color: #1a3a5c; line-height: 1.7; }
+  @media (max-width: 600px) { .fw-layer-mid { grid-template-columns: 1fr; } }
+
+  /* ── QUALITY INDEX ── */
+  .quality-index { display: none; max-width: 700px; margin: 0 auto; padding: 20px; }
+  .qi-header { text-align: center; margin-bottom: 32px; }
+  .qi-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+  .qi-header p { color: var(--text-light); font-size: 0.9rem; }
+  .qi-card { display: block; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 24px; margin-bottom: 12px; text-decoration: none; color: var(--text); transition: all 0.2s; border-left: 4px solid var(--navy); }
+  .qi-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .qi-card h3 { font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .qi-card p { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+  .qi-card .qi-stats { margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .qi-stat { font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; background: var(--gray-100); color: var(--text-light); }
+  .qi-back { display: inline-block; margin-top: 24px; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; }
+  .qi-back:hover { color: var(--navy); }
+  .qi-footer { margin-top: 32px; text-align: center; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- ═══ LOGIN SCREEN ═══ -->
+<div class="login-container" id="loginScreen">
+  <div class="login-card">
+    <div class="login-header">
+      <h1>คู่มือบริหารคุณภาพ HRM</h1>
+      <p>Commission on ICT and HRM<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    </div>
+    <div class="login-body">
+      <label for="pwd">รหัสเข้าถึง</label>
+      <input type="password" id="pwd" placeholder="กรอกรหัส..." autofocus
+             onkeydown="if(event.key==='Enter')checkPwd()">
+      <button onclick="checkPwd()">เข้าสู่ระบบ</button>
+      <div class="error-msg" id="errMsg">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
+    </div>
+    <div class="login-footer">
+      เอกสารภายใน — สำหรับบุคลากรที่ได้รับอนุญาตเท่านั้น
+    </div>
+  </div>
+</div>
+
+<!-- ═══ QUALITY INDEX (shown after login) ═══ -->
+<div class="quality-index" id="qualityIndex">
+  <div class="qi-header">
+    <h1>คู่มือบริหารคุณภาพ HRM</h1>
+    <p>Commission on ICT and HRM · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">เป้าหมายคุณภาพฝ่าย HRM · 7 กลุ่มงาน · 55 เป้าหมาย</p>
+  </div>
+
+  <!-- ═══ HRM FRAMEWORK ═══ -->
+  <div class="fw-box">
+    <div class="fw-title">
+      <h2>กรอบความเข้าใจ — โครงสร้าง HRM 7 กลุ่มงาน</h2>
+      <p>คณะกรรมการ HRM + อนุกรรมการ 6 คณะ ภายใต้คำสั่ง สนบ.ที่ 1/2568</p>
+    </div>
+    <div class="fw-body">
+      <div class="fw-strategy">
+        <strong>ยุทธศาสตร์ที่ 3</strong> พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล<br>
+        → แกนกลาง: <strong>Job Specification (C/K/Cp) 137 หัวข้อ</strong> + ระบบ SWIS เป็นเครื่องมือติดตาม
+      </div>
+
+      <div class="fw-diagram">
+        <div class="fw-layer-top">
+          <h4>กลุ่มงาน HRM 1 — บริหาร HRM</h4>
+          <p>วางระบบ HR มาตรฐานเดียวกัน 14 โรง + พัฒนาสารสนเทศผ่าน SWIS</p>
+        </div>
+
+        <div class="fw-arrow">▼ กำกับ ▼</div>
+
+        <div class="fw-layer-mid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="fw-mid-card">
+            <h4>HRM 2. สรรหาและวิเคราะห์อัตรากำลัง</h4>
+            <p>Workforce &amp; Recruitment</p>
+          </div>
+          <div class="fw-mid-card">
+            <h4>HRM 3. เตรียมศักยภาพเข้าสู่งาน</h4>
+            <p>Onboarding Process</p>
+          </div>
+          <div class="fw-mid-card">
+            <h4>HRM 4. นิเทศและกำกับติดตาม</h4>
+            <p>Supervision &amp; Monitoring</p>
+          </div>
+        </div>
+
+        <div class="fw-layer-mid" style="grid-template-columns: repeat(3, 1fr); margin-top:12px;">
+          <div class="fw-mid-card">
+            <h4>HRM 5. พัฒนาคุณภาพ HR</h4>
+            <p>HRD</p>
+          </div>
+          <div class="fw-mid-card">
+            <h4>HRM 6. รักษาบุคลากร</h4>
+            <p>HR Retention</p>
+          </div>
+          <div class="fw-mid-card">
+            <h4>HRM 7. สืบทอดตำแหน่ง</h4>
+            <p>Succession Planning</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-principle">
+        <strong>เครื่องมือหลัก:</strong> คู่มือคุณภาพหน่วยงาน + คู่มือพัฒนาตนเอง + กรอบประเมินบุคลากร + แผนงาน PDCA 9 ขั้นตอนใน SWIS<br>
+        <strong>ข้อมูล Job Spec:</strong> สมบูรณ์ 100% = 9 โรง · 70-80% = 5 โรง · 0% = ACEP (เลื่อนปี 2569)
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ HRM CARDS ═══ -->
+
+  <a class="qi-card" style="border-left-color:#1a3a5c;" href="hrm-admin-objectives.html">
+    <h3>กลุ่มงาน HRM 1 — บริหาร HRM</h3>
+    <p>HRM Administration — ธรรมาภิบาล การมีส่วนร่วม ความเสมอภาค ความรับผิดชอบ</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">14 เป้าหมาย</span>
+      <span class="qi-stat">บางส่วน 5 · ยังไม่มี 9</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-workforce-objectives.html">
+    <h3>กลุ่มงาน HRM 2 — สรรหา วางแผนและวิเคราะห์อัตรากำลัง</h3>
+    <p>Workforce Planning &amp; Recruitment</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">8 เป้าหมาย</span>
+      <span class="qi-stat">มีแล้ว 1 · บางส่วน 6 · ยังไม่มี 1</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-onboarding-objectives.html">
+    <h3>กลุ่มงาน HRM 3 — เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</h3>
+    <p>Onboarding Process</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">6 เป้าหมาย</span>
+      <span class="qi-stat">บางส่วน 2 · ยังไม่มี 4</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-supervision-objectives.html">
+    <h3>กลุ่มงาน HRM 4 — นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</h3>
+    <p>Supervision &amp; Monitoring — นิเทศ 14 โรงเรียนครบในปีการศึกษา 2568</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">8 เป้าหมาย</span>
+      <span class="qi-stat">มีแล้ว 2 · บางส่วน 5 · ยังไม่มี 1</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-hrd-objectives.html">
+    <h3>กลุ่มงาน HRM 5 — พัฒนาคุณภาพทรัพยากรมนุษย์</h3>
+    <p>HRD — อบรมพัฒนาบุคลากร 15 หัวข้อ (2568) + วางแผน 8 หัวข้อ (2569)</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">7 เป้าหมาย</span>
+      <span class="qi-stat">มีแล้ว 1 · บางส่วน 4 · ยังไม่มี 2</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-retention-objectives.html">
+    <h3>กลุ่มงาน HRM 6 — ระบบการรักษาบุคลากร</h3>
+    <p>HR Retention</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">6 เป้าหมาย</span>
+      <span class="qi-stat">มีแล้ว 1 · บางส่วน 4 · ยังไม่มี 1</span>
+    </div>
+  </a>
+
+  <a class="qi-card" style="border-left-color:#2c5f8a;" href="hrm-succession-objectives.html">
+    <h3>กลุ่มงาน HRM 7 — ระบบการสืบทอดตำแหน่ง</h3>
+    <p>Succession Planning</p>
+    <div class="qi-stats">
+      <span class="qi-stat" style="background:#d4edda; color:#155724;">6 เป้าหมาย</span>
+      <span class="qi-stat">บางส่วน 1 · ยังไม่มี 5</span>
+    </div>
+  </a>
+
+  <a class="qi-back" href="ict-hrm.html">&larr; กลับหน้า Commission on ICT and HRM</a>
+
+  <div class="qi-footer">
+    เอกสารภายใน — Commission on ICT and HRM · ฝ่าย HRM<br>
+    มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ฉบับ 23 เมษายน 2569
+  </div>
+</div>
+
+<script>
+async function sha256(msg){
+  var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");
+}
+var PASS_HASH = "9bef9113676071174e79350856d81168521cfb487651b26231b268eb0a28d159";
+async function checkPwd() {
+  var input = document.getElementById('pwd').value;
+  var h = await sha256(input);
+  if (h === PASS_HASH) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('qualityIndex').style.display = 'block';
+    document.body.style.alignItems = 'flex-start';
+    document.body.style.paddingTop = '40px';
+    try { sessionStorage.setItem('hrm-q', '1'); } catch(e) {}
+  } else {
+    var err = document.getElementById('errMsg');
+    err.style.display = 'block';
+    document.getElementById('pwd').value = '';
+    document.getElementById('pwd').focus();
+    setTimeout(function(){ err.style.display = 'none'; }, 3000);
+  }
+}
+try {
+  if (sessionStorage.getItem('hrm-q') === '1') {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('qualityIndex').style.display = 'block';
+    document.body.style.alignItems = 'flex-start';
+    document.body.style.paddingTop = '40px';
+  }
+} catch(e) {}
+</script>
+
+</body>
+</html>
