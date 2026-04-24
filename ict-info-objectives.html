@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT 2.1 — สารสนเทศระดับมูลนิธิฯ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 {
+    font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .page-header h1 { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 8px; }
+  .page-header .subtitle { color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 300; }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+
+  /* ── SECTIONS ── */
+  .section-heading {
+    text-align: center; padding: 48px 24px 0;
+  }
+  .section-heading h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .section-heading .section-desc {
+    color: var(--text-muted); font-size: 0.9rem; margin-bottom: 40px;
+  }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 32px; margin: 40px auto; max-width: 960px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* ── PRINCIPLE ── */
+  .principle-box {
+    max-width: 900px; margin: 0 auto 40px; padding: 20px 28px;
+    background: #f0f4e8; border-left: 4px solid #4a6d2c;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.88rem; color: var(--text-light);
+  }
+  .principle-box strong { color: #2d5016; }
+
+  /* ── DIMENSION BADGES ── */
+  .dim-grid {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    max-width: 800px; margin: 0 auto 48px; padding: 0 24px;
+  }
+  .dim-badge {
+    padding: 8px 20px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+    background: var(--white); border: 2px solid var(--navy-light); color: var(--navy);
+    box-shadow: var(--shadow);
+  }
+  .dim-badge em { font-weight: 400; font-style: normal; color: var(--text-muted); font-size: 0.75rem; }
+
+  /* ── COMMISSION CARDS ── */
+  .comm-section { padding: 0 24px 48px; max-width: 960px; margin: 0 auto; }
+  .comm-card {
+    background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .comm-header {
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .comm-num {
+    font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 4px;
+    white-space: nowrap; background: var(--navy); color: var(--white);
+  }
+  .comm-header h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; font-weight: 600;
+    margin: 0; flex: 1;
+  }
+  .comm-status {
+    font-size: 0.7rem; font-weight: 600; padding: 2px 10px; border-radius: 3px;
+  }
+  .cs-ready { background: #d4edda; color: #155724; }
+  .cs-partial { background: #fff3cd; color: #856404; }
+  .cs-none { background: #f8d7da; color: #721c24; }
+  .cs-wip { background: #e2e3e5; color: #383d41; }
+  .comm-body { padding: 16px 24px; }
+  .comm-body p.comm-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; }
+
+  .info-table { width: 100%; border-collapse: collapse; }
+  .info-table th {
+    background: var(--gray-100); padding: 8px 12px; font-size: 0.72rem;
+    font-weight: 600; color: var(--text-light); text-align: left;
+    border-bottom: 2px solid var(--gray-200);
+  }
+  .info-table td {
+    padding: 10px 12px; font-size: 0.82rem; color: var(--text-light);
+    border-bottom: 1px solid var(--gray-100); vertical-align: top; line-height: 1.5;
+  }
+  .info-table tr:last-child td { border-bottom: none; }
+  .info-table .wg-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .tool-tag {
+    display: inline-block; padding: 1px 8px; border-radius: 3px;
+    font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+  }
+  .tt-swis { background: #cffafe; color: #0e7490; }
+  .tt-need { background: #f8d7da; color: #721c24; }
+  .tt-ext { background: #fff3cd; color: #856404; }
+
+  /* ── RELATIONSHIP ── */
+  .rel-box {
+    max-width: 900px; margin: 0 auto 40px; padding: 24px 28px;
+    background: linear-gradient(135deg, #2c5f8a, #3a7cb8);
+    border-radius: var(--radius); color: var(--white);
+  }
+  .rel-box h3 { color: var(--gold-light); font-family: 'Noto Sans Thai', sans-serif; font-size: 0.95rem; margin-bottom: 8px; }
+  .rel-box p { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+  .rel-flow {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin-top: 16px; flex-wrap: wrap;
+  }
+  .rel-node {
+    padding: 10px 20px; border-radius: var(--radius); font-size: 0.82rem; font-weight: 600; text-align: center;
+  }
+  .rel-22 { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); }
+  .rel-21 { background: var(--gold); color: var(--navy-dark); }
+  .rel-arrow { font-size: 1.2rem; color: var(--gold-light); }
+
+  /* ── FOOTER ── */
+  .footer-note {
+    text-align: center; padding: 40px 24px; font-size: 0.75rem; color: var(--text-muted);
+    border-top: 1px solid var(--gray-200); margin-top: 40px;
+  }
+  .back-link {
+    display: block; text-align: center; padding: 16px;
+    color: var(--navy-light); text-decoration: none; font-size: 0.85rem;
+  }
+  .back-link:hover { color: var(--navy); text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .info-table th:nth-child(3), .info-table td:nth-child(3) { display: none; }
+    .rel-flow { flex-direction: column; }
+    .rel-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="group-label">กลุ่มงาน ICT 2 — พัฒนาซอฟต์แวร์</div>
+  <h1>2.1 สารสนเทศระดับมูลนิธิฯ</h1>
+  <div class="subtitle">ระบบสารสนเทศที่ตอบสนองทุกหน่วยงานในโครงสร้างมูลนิธิฯ<br>เพื่อตอบคำถามว่าเป้าหมายระดับมูลนิธิฯ บรรลุหรือไม่ มากน้อยเพียงใด</div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- VISION -->
+<!-- ══════════════════════════════════════════ -->
+<div class="vision-section">
+  <h2>หลักการและแนวคิด</h2>
+  <p>มูลนิธิฯ มีโครงสร้างบริหาร 6 ฝ่าย (Commission) แต่ละฝ่ายมีกรอบงานที่ต้องรับผิดชอบ — งาน 2.1 มีหน้าที่พัฒนาเครื่องมือและระบบสารสนเทศที่ <strong>ตอบสนองงานของทุกฝ่าย</strong> บนแพลตฟอร์มเดียวกัน เพื่อให้ข้อมูลจากทุกหน่วยงานไหลมารวมกัน และสามารถประมวลผลตอบคำถามระดับมูลนิธิฯ ได้</p>
+  <p style="margin-top:12px; font-size:0.85rem; color:var(--text-muted);">ก่อนจะมีสารสนเทศ แต่ละฝ่ายต้องมีเครื่องมือที่ตอบสนองงานของตนเองอยู่บนแพลตฟอร์ม — เมื่อเครื่องมือพร้อม ข้อมูลจึงไหลเข้าสู่ระบบ และกลายเป็นสารสนเทศที่ใช้บริหารระดับมูลนิธิฯ ได้</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 6 QUALITY DIMENSIONS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>6 มิติคุณภาพสารสนเทศ</h2>
+  <div class="section-desc">ใช้วัดคุณภาพ "ระบบ" — ไม่ใช่วัดเนื้อหาข้อมูล<br>แต่ละหัวข้อจะเน้นมิติไหนหนักกว่าขึ้นอยู่กับธรรมชาติของข้อมูลนั้น</div>
+</div>
+
+<div class="dim-grid">
+  <div class="dim-badge">ครบ <em>— ครอบคลุมทุกโรง ทุกหน่วยงาน</em></div>
+  <div class="dim-badge">ถูก <em>— ตรงกับความเป็นจริง ตรวจสอบได้</em></div>
+  <div class="dim-badge">ทัน <em>— อัปเดตทันต่อการตัดสินใจ</em></div>
+  <div class="dim-badge">เข้าถึงได้ <em>— คนที่ต้องใช้เรียกดูได้จริง</em></div>
+  <div class="dim-badge">เปรียบเทียบได้ <em>— ข้ามโรง ข้ามปี มาตรฐานเดียวกัน</em></div>
+  <div class="dim-badge">ตัดสินใจได้ <em>— ประมวลแล้วพร้อมใช้ ไม่ใช่แค่ตัวเลขดิบ</em></div>
+</div>
+
+<div class="principle-box">
+  <strong>หลักการวัดคุณภาพ:</strong> งาน 2.1 วัดที่ "ระบบมีข้อมูลไว้ใช้บริหารหรือไม่" — ไม่ได้วัดว่า O-NET ได้กี่คะแนน หรืออัตราคงอยู่ต้องกี่ % (นั่นเป็นเป้าหมายของโรงเรียน/ฝ่ายที่เกี่ยวข้อง)<br>
+  <strong>เป้าหมายคุณภาพ:</strong> ทำให้กรรมการบริหารมูลนิธิฯ มองเห็นภาพทั้งเครือ ตัดสินใจได้ ติดตามได้
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- RELATIONSHIP 2.1 ↔ 2.2 -->
+<!-- ══════════════════════════════════════════ -->
+<div class="rel-box">
+  <h3>ความสัมพันธ์ระหว่าง 2.1 กับ 2.2</h3>
+  <p>งาน 2.2 (SWIS) พัฒนาเครื่องมือและเก็บข้อมูลระดับโรงเรียน — งาน 2.1 รับข้อมูลจาก SWIS และระบบอื่นมาประมวลผลระดับมูลนิธิฯ</p>
+  <div class="rel-flow">
+    <div class="rel-node rel-22">2.2 SWIS<br><small>เครื่องมือ + ข้อมูลระดับโรงเรียน</small></div>
+    <div class="rel-arrow">→</div>
+    <div class="rel-node rel-21">2.1 สารสนเทศมูลนิธิฯ<br><small>ประมวลผล + ตอบคำถามระดับมูลนิธิฯ</small></div>
+  </div>
+  <p style="margin-top:12px; font-size:0.78rem; color:rgba(255,255,255,0.6);">รวมถึงเครื่องมือจากฝ่ายอื่นที่ต้องพัฒนาเพิ่มเพื่อให้ครบทุก Commission</p>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- 6 COMMISSIONS — INFORMATION TOPICS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="section-heading">
+  <h2>หัวข้อสารสนเทศจาก 6 ฝ่าย</h2>
+  <div class="section-desc">จากโครงสร้างบริหารมูลนิธิฯ — แต่ละฝ่ายต้องมีเครื่องมือบนแพลตฟอร์มเดียวกัน<br>เพื่อให้ข้อมูลไหลเข้าสู่ระบบสารสนเทศระดับมูลนิธิฯ</div>
+</div>
+
+<div class="comm-section">
+
+  <!-- ═══ COMMISSION 1: Administration ═══ -->
+  <div class="comm-card">
+    <div class="comm-header">
+      <span class="comm-num">ฝ่าย 1</span>
+      <h3>Commission on Administration — สำนักงานบริหารมูลนิธิฯ</h3>
+      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">กำกับดูแลนโยบาย แผนงาน ธุรการ ทะเบียน — เป็นศูนย์กลางบริหารจัดการระดับมูลนิธิฯ</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">งานนโยบายและแผน</td>
+            <td>สถานะแผนยุทธศาสตร์ 5 ยุทธ์ 47 KPI · ความคืบหน้ารายปี · การจัดทำแผนพัฒนาโรงเรียน 14 แห่ง</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานธุรการ</td>
+            <td>ระบบสารบรรณ · หนังสือเข้า-ออก · มติที่ประชุม · ปฏิทินกิจกรรมมูลนิธิฯ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานทะเบียน</td>
+            <td>ทะเบียนโรงเรียน · ใบอนุญาต · ข้อมูลนิติกรรม · สถานะการจดทะเบียน</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">บริษัทพัฒนาบุคลากร</td>
+            <td>ผลประกอบการ · แผนอบรม · สถิติผู้เข้าอบรม</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ COMMISSION 2: Finance & Assets ═══ -->
+  <div class="comm-card">
+    <div class="comm-header">
+      <span class="comm-num">ฝ่าย 2</span>
+      <h3>Commission on Finance & Assets — ฝ่ายการเงินและทรัพย์สิน</h3>
+      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">การเงิน บัญชี งบประมาณ กองทุน ทรัพย์สิน แผนแม่บทอาคาร — ข้อมูลการเงินเป็นหัวใจของการตัดสินใจระดับมูลนิธิฯ</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">งานการเงิน</td>
+            <td>รายรับ-รายจ่ายรายโรง · กระแสเงินสดรวม · สถานะการเงินทั้งเครือ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานบัญชี</td>
+            <td>งบการเงินรายโรง · งบรวมมูลนิธิฯ · ผลการตรวจสอบบัญชี</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานงบประมาณ</td>
+            <td>งบประมาณประจำปีรายโรง · เปรียบเทียบงบตั้ง vs งบใช้จริง · ฐานคำนวณงบประมาณ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานกองทุน</td>
+            <td>สถานะกองทุนสำรอง · กองทุนการศึกษา · ยอดสะสมรายโรง</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานทรัพย์สิน / ลิขสิทธิ์</td>
+            <td>บัญชีทรัพย์สินรวมทั้งเครือ · สถานะที่ดิน-อาคาร · ทรัพย์สินทางปัญญา</td>
+            <td><span class="tool-tag tt-swis">มีบางส่วนใน SWIS</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานแผนแม่บทอาคาร</td>
+            <td>แผนแม่บทรายโรง · สถานะโครงการก่อสร้าง · ค่าเสื่อมราคา</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ COMMISSION 3: Education ═══ -->
+  <div class="comm-card">
+    <div class="comm-header">
+      <span class="comm-num">ฝ่าย 3</span>
+      <h3>Commission on Education — ฝ่ายการศึกษา</h3>
+      <span class="comm-status cs-partial">มีบางส่วนใน SWIS</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">พัฒนาคุณภาพการศึกษา มาตรฐาน EdTech — ข้อมูลวิชาการเป็นแก่นของพันธกิจโรงเรียน</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">งานสำนักงานฝ่าย</td>
+            <td>แผนงานฝ่ายการศึกษา · รายงานผลดำเนินงาน · ปฏิทินกิจกรรมวิชาการ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานพัฒนาคุณภาพการศึกษา</td>
+            <td>ผลสัมฤทธิ์ทางการเรียน · O-NET / V-NET · อัตราการเรียนต่อ · จำนวนนักเรียนรายโรง · อัตราคงอยู่</td>
+            <td><span class="tool-tag tt-swis">มีบางส่วนใน SWIS</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานมาตรฐานคุณภาพ</td>
+            <td>ผลประเมินภายใน-ภายนอก · สถานะ สมศ. · มาตรฐาน BSG · CEFR</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งาน EdTech</td>
+            <td>เทคโนโลยีการเรียนการสอน · แพลตฟอร์มที่ใช้ · สถิติการใช้งาน</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ COMMISSION 4: ICT and HRM ═══ -->
+  <div class="comm-card" style="border-left: 3px solid var(--gold);">
+    <div class="comm-header" style="background: #fefce8;">
+      <span class="comm-num" style="background: var(--gold-dark);">ฝ่าย 4</span>
+      <h3>Commission on ICT and HRM — ฝ่ายเทคโนโลยีสารสนเทศและทรัพยากรมนุษย์</h3>
+      <span class="comm-status cs-ready">มีเครื่องมือพร้อม</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">ICT 5 กลุ่มงาน + HRM 7 กลุ่มงาน — เป็นฝ่ายที่มีเครื่องมือบนแพลตฟอร์มพร้อมที่สุด เนื่องจากเป็นผู้พัฒนาแพลตฟอร์มเอง</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">ICT — ระบบสารสนเทศ</td>
+            <td>สถานะ SWIS 14 โรง · Adoption rate · ข้อมูลตรวจติดตาม · Dashboard ผู้บริหาร</td>
+            <td><span class="tool-tag tt-swis">SWIS + Dashboard</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">ICT — สื่อสารมวลชน</td>
+            <td>สถิติสื่อดิจิทัล · เว็บไซต์ · สื่อสิ่งพิมพ์</td>
+            <td><span class="tool-tag tt-swis">มีเครื่องมือ</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">ICT — เครือข่ายและอุปกรณ์</td>
+            <td>บัญชีทรัพย์สิน IT · สถานะเครือข่ายรายโรง · แผนจัดซื้อ</td>
+            <td><span class="tool-tag tt-swis">มีบางส่วนใน SWIS</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">HRM — ทรัพยากรมนุษย์</td>
+            <td>อัตรากำลังรายโรง · Job Spec C/K/Cp · วุฒิ-ประสบการณ์ · Workload · สถิติเข้า-ออก · นิเทศ</td>
+            <td><span class="tool-tag tt-swis">SWIS + คู่มือคุณภาพ</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;">→ ดูรายละเอียดเป้าหมายคุณภาพ: <a href="ict-quality-gate.html" style="color:var(--navy-light);">ICT Quality Gate</a> · <a href="hrm-quality-gate.html" style="color:var(--navy-light);">HRM Quality Gate</a></p>
+    </div>
+  </div>
+
+  <!-- ═══ COMMISSION 5: Activities & JPIC ═══ -->
+  <div class="comm-card">
+    <div class="comm-header">
+      <span class="comm-num">ฝ่าย 5</span>
+      <h3>Commission on Activities & JPIC — ฝ่ายกิจกรรม ยุติธรรม และสันติ</h3>
+      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">กิจกรรมบุคลากร กิจกรรมมูลนิธิฯ นันทนาการ ยุติธรรม สิ่งสร้าง อภิบาล</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">งานกิจกรรมบุคลากร</td>
+            <td>กิจกรรมพัฒนาบุคลากร · สถิติผู้เข้าร่วม · ผลประเมินกิจกรรม</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานกิจกรรมมูลนิธิฯ</td>
+            <td>ปฏิทินงาน · ผลดำเนินกิจกรรมระดับมูลนิธิฯ · งบกิจกรรม</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานนันทนาการและกีฬา</td>
+            <td>กิจกรรมกีฬาระหว่างสถาบัน · ผลการแข่งขัน · สถิติการจัดงาน</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานยุติธรรม สิ่งสร้าง อภิบาล</td>
+            <td>โครงการรับใช้สังคม · กิจกรรมสิ่งแวดล้อม · งานอภิบาลนักเรียน</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ COMMISSION 6: Formation & Vocation ═══ -->
+  <div class="comm-card">
+    <div class="comm-header">
+      <span class="comm-num">ฝ่าย 6</span>
+      <h3>Commission on Formation & Vocation — ฝ่ายการฝึกอบรมและส่งเสริมกระแสเรียก</h3>
+      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+    </div>
+    <div class="comm-body">
+      <p class="comm-desc">ยุวลัย บ้านนักศึกษา นวกรรม กระแสเรียก มงฟอร์ตศึกษา — หัวใจของการสืบทอดพันธกิจคณะ</p>
+      <table class="info-table">
+        <thead><tr><th>กลุ่มงาน</th><th>หัวข้อสารสนเทศที่มูลนิธิฯ ต้องการ</th><th>เครื่องมือ</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="wg-name">ยุวลัยเซนต์หลุยส์แมรี่</td>
+            <td>จำนวนผู้สมัครรายปี · สถานะนักเรียนยุวลัย · อัตราสำเร็จ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">บ้านนักศึกษา</td>
+            <td>จำนวนนักศึกษาภราดา · สถานะการศึกษา · แผนฝึกอบรม</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">บ้านนวกรรม</td>
+            <td>จำนวนนวกะ · สถานะการฝึก · อัตราการปฏิญาณ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">งานส่งเสริมกระแสเรียก</td>
+            <td>กิจกรรมส่งเสริม · สถิติผู้สนใจ · ช่องทางสรรหา</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+          <tr>
+            <td class="wg-name">สำนักงานมงฟอร์ตศึกษา</td>
+            <td>หลักสูตรมงฟอร์ต · ผลการอบรม · เอกสารวิชาการ</td>
+            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PDCA BUTTON -->
+<!-- ══════════════════════════════════════════ -->
+<div style="max-width:900px; margin:24px auto 0; text-align:center;">
+  <a href="#" style="display:inline-block; background:var(--navy); color:var(--gold-light); padding:14px 32px; border-radius:var(--radius); font-weight:600; font-size:0.9rem; text-decoration:none; box-shadow:var(--shadow); transition:background 0.2s;">
+    แผนงาน PDCA 9 ขั้นตอนของ งาน ICT 2.1 สารสนเทศระดับมูลนิธิฯ
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<a class="back-link" href="ict-quality-gate.html">&larr; กลับหน้า ICT Quality Gate</a>
+
+<div class="footer-note">
+  เอกสารภายใน — Commission on ICT and HRM · งาน 2.1 สารสนเทศระดับมูลนิธิฯ<br>
+  มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ฉบับ 24 เมษายน 2569
+</div>
+
+</body>
+</html>
