@@ -119,7 +119,7 @@
   }
   .cs-ready { background: #d4edda; color: #155724; }
   .cs-partial { background: #fff3cd; color: #856404; }
-  .cs-none { background: #f8d7da; color: #721c24; }
+  .cs-shared { background: #e0e7ff; color: #3730a3; }
   .cs-wip { background: #e2e3e5; color: #383d41; }
   .comm-body { padding: 16px 24px; }
   .comm-body p.comm-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; }
@@ -141,7 +141,8 @@
     font-size: 0.7rem; font-weight: 600; white-space: nowrap;
   }
   .tt-swis { background: #cffafe; color: #0e7490; }
-  .tt-need { background: #f8d7da; color: #721c24; }
+  .tt-shared { background: #e0e7ff; color: #3730a3; }
+  .tt-need { background: #fef3c7; color: #92400e; }
   .tt-ext { background: #fff3cd; color: #856404; }
 
   /* ── RELATIONSHIP ── */
@@ -195,7 +196,7 @@
 <div class="vision-section">
   <h2>หลักการและแนวคิด</h2>
   <p>มูลนิธิฯ มีโครงสร้างบริหาร 6 ฝ่าย (Commission) แต่ละฝ่ายมีกรอบงานที่ต้องรับผิดชอบ — งาน 2.1 มีหน้าที่พัฒนาเครื่องมือและระบบสารสนเทศที่ <strong>ตอบสนองงานของทุกฝ่าย</strong> บนแพลตฟอร์มเดียวกัน เพื่อให้ข้อมูลจากทุกหน่วยงานไหลมารวมกัน และสามารถประมวลผลตอบคำถามระดับมูลนิธิฯ ได้</p>
-  <p style="margin-top:12px; font-size:0.85rem; color:var(--text-muted);">ก่อนจะมีสารสนเทศ แต่ละฝ่ายต้องมีเครื่องมือที่ตอบสนองงานของตนเองอยู่บนแพลตฟอร์ม — เมื่อเครื่องมือพร้อม ข้อมูลจึงไหลเข้าสู่ระบบ และกลายเป็นสารสนเทศที่ใช้บริหารระดับมูลนิธิฯ ได้</p>
+  <p style="margin-top:12px; font-size:0.85rem; color:var(--text-muted);">ปัจจุบันแพลตฟอร์มส่วนกลางมีเครื่องมือเขียนแผนงาน PDCA และ Dashboard พื้นฐานให้ทุกฝ่ายแล้ว — ส่วนฟังก์ชันเฉพาะทางของแต่ละฝ่าย แต่ละฝ่ายเป็นผู้คิดและออกแบบ แล้วร้องขอให้พัฒนาเพิ่มบนแพลตฟอร์มเดียวกัน เมื่อเครื่องมือพร้อม ข้อมูลจะไหลเข้าสู่ระบบสารสนเทศระดับมูลนิธิฯ ได้</p>
 </div>
 
 <!-- ══════════════════════════════════════════ -->
@@ -231,15 +232,15 @@
     <div class="rel-arrow">→</div>
     <div class="rel-node rel-21">2.1 สารสนเทศมูลนิธิฯ<br><small>ประมวลผล + ตอบคำถามระดับมูลนิธิฯ</small></div>
   </div>
-  <p style="margin-top:12px; font-size:0.78rem; color:rgba(255,255,255,0.6);">รวมถึงเครื่องมือจากฝ่ายอื่นที่ต้องพัฒนาเพิ่มเพื่อให้ครบทุก Commission</p>
+  <p style="margin-top:12px; font-size:0.78rem; color:rgba(255,255,255,0.6);">แพลตฟอร์มส่วนกลางมี PDCA + Dashboard พื้นฐาน — ฟังก์ชันเฉพาะทางพัฒนาเพิ่มเมื่อแต่ละฝ่ายร้องขอ</p>
 </div>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- 6 COMMISSIONS — INFORMATION TOPICS -->
 <!-- ══════════════════════════════════════════ -->
 <div class="section-heading">
-  <h2>หัวข้อสารสนเทศจาก 6 ฝ่าย</h2>
-  <div class="section-desc">จากโครงสร้างบริหารมูลนิธิฯ — แต่ละฝ่ายต้องมีเครื่องมือบนแพลตฟอร์มเดียวกัน<br>เพื่อให้ข้อมูลไหลเข้าสู่ระบบสารสนเทศระดับมูลนิธิฯ</div>
+  <h2>สารสนเทศระดับมูลนิธิฯ ของแต่ละฝ่าย</h2>
+  <div class="section-desc">แต่ละฝ่ายมีกรอบงานและหัวข้อสารสนเทศที่ต้องรายงานต่อมูลนิธิฯ<br>แพลตฟอร์มส่วนกลางมีเครื่องมือแผนงาน PDCA และ Dashboard พื้นฐานให้แล้ว<br>ฟังก์ชันเฉพาะทางพัฒนาเพิ่มเมื่อแต่ละฝ่ายแจ้งความต้องการ</div>
 </div>
 
 <div class="comm-section">
@@ -249,7 +250,7 @@
     <div class="comm-header">
       <span class="comm-num">ฝ่าย 1</span>
       <h3>Commission on Administration — สำนักงานบริหารมูลนิธิฯ</h3>
-      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+      <span class="comm-status cs-shared">มี PDCA · รอร้องขอเพิ่ม</span>
     </div>
     <div class="comm-body">
       <p class="comm-desc">กำกับดูแลนโยบาย แผนงาน ธุรการ ทะเบียน — เป็นศูนย์กลางบริหารจัดการระดับมูลนิธิฯ</p>
@@ -259,22 +260,22 @@
           <tr>
             <td class="wg-name">งานนโยบายและแผน</td>
             <td>สถานะแผนยุทธศาสตร์ 5 ยุทธ์ 47 KPI · ความคืบหน้ารายปี · การจัดทำแผนพัฒนาโรงเรียน 14 แห่ง</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานธุรการ</td>
             <td>ระบบสารบรรณ · หนังสือเข้า-ออก · มติที่ประชุม · ปฏิทินกิจกรรมมูลนิธิฯ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานทะเบียน</td>
             <td>ทะเบียนโรงเรียน · ใบอนุญาต · ข้อมูลนิติกรรม · สถานะการจดทะเบียน</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">บริษัทพัฒนาบุคลากร</td>
             <td>ผลประกอบการ · แผนอบรม · สถิติผู้เข้าอบรม</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
         </tbody>
       </table>
@@ -286,7 +287,7 @@
     <div class="comm-header">
       <span class="comm-num">ฝ่าย 2</span>
       <h3>Commission on Finance & Assets — ฝ่ายการเงินและทรัพย์สิน</h3>
-      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+      <span class="comm-status cs-shared">มี PDCA · รอร้องขอเพิ่ม</span>
     </div>
     <div class="comm-body">
       <p class="comm-desc">การเงิน บัญชี งบประมาณ กองทุน ทรัพย์สิน แผนแม่บทอาคาร — ข้อมูลการเงินเป็นหัวใจของการตัดสินใจระดับมูลนิธิฯ</p>
@@ -296,22 +297,22 @@
           <tr>
             <td class="wg-name">งานการเงิน</td>
             <td>รายรับ-รายจ่ายรายโรง · กระแสเงินสดรวม · สถานะการเงินทั้งเครือ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานบัญชี</td>
             <td>งบการเงินรายโรง · งบรวมมูลนิธิฯ · ผลการตรวจสอบบัญชี</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานงบประมาณ</td>
             <td>งบประมาณประจำปีรายโรง · เปรียบเทียบงบตั้ง vs งบใช้จริง · ฐานคำนวณงบประมาณ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานกองทุน</td>
             <td>สถานะกองทุนสำรอง · กองทุนการศึกษา · ยอดสะสมรายโรง</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานทรัพย์สิน / ลิขสิทธิ์</td>
@@ -321,7 +322,7 @@
           <tr>
             <td class="wg-name">งานแผนแม่บทอาคาร</td>
             <td>แผนแม่บทรายโรง · สถานะโครงการก่อสร้าง · ค่าเสื่อมราคา</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
         </tbody>
       </table>
@@ -333,7 +334,7 @@
     <div class="comm-header">
       <span class="comm-num">ฝ่าย 3</span>
       <h3>Commission on Education — ฝ่ายการศึกษา</h3>
-      <span class="comm-status cs-partial">มีบางส่วนใน SWIS</span>
+      <span class="comm-status cs-shared">PDCA + บางส่วนใน SWIS</span>
     </div>
     <div class="comm-body">
       <p class="comm-desc">พัฒนาคุณภาพการศึกษา มาตรฐาน EdTech — ข้อมูลวิชาการเป็นแก่นของพันธกิจโรงเรียน</p>
@@ -343,7 +344,7 @@
           <tr>
             <td class="wg-name">งานสำนักงานฝ่าย</td>
             <td>แผนงานฝ่ายการศึกษา · รายงานผลดำเนินงาน · ปฏิทินกิจกรรมวิชาการ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานพัฒนาคุณภาพการศึกษา</td>
@@ -353,12 +354,12 @@
           <tr>
             <td class="wg-name">งานมาตรฐานคุณภาพ</td>
             <td>ผลประเมินภายใน-ภายนอก · สถานะ สมศ. · มาตรฐาน BSG · CEFR</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งาน EdTech</td>
             <td>เทคโนโลยีการเรียนการสอน · แพลตฟอร์มที่ใช้ · สถิติการใช้งาน</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
         </tbody>
       </table>
@@ -408,7 +409,7 @@
     <div class="comm-header">
       <span class="comm-num">ฝ่าย 5</span>
       <h3>Commission on Activities & JPIC — ฝ่ายกิจกรรม ยุติธรรม และสันติ</h3>
-      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+      <span class="comm-status cs-shared">มี PDCA · รอร้องขอเพิ่ม</span>
     </div>
     <div class="comm-body">
       <p class="comm-desc">กิจกรรมบุคลากร กิจกรรมมูลนิธิฯ นันทนาการ ยุติธรรม สิ่งสร้าง อภิบาล</p>
@@ -418,22 +419,22 @@
           <tr>
             <td class="wg-name">งานกิจกรรมบุคลากร</td>
             <td>กิจกรรมพัฒนาบุคลากร · สถิติผู้เข้าร่วม · ผลประเมินกิจกรรม</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานกิจกรรมมูลนิธิฯ</td>
             <td>ปฏิทินงาน · ผลดำเนินกิจกรรมระดับมูลนิธิฯ · งบกิจกรรม</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานนันทนาการและกีฬา</td>
             <td>กิจกรรมกีฬาระหว่างสถาบัน · ผลการแข่งขัน · สถิติการจัดงาน</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานยุติธรรม สิ่งสร้าง อภิบาล</td>
             <td>โครงการรับใช้สังคม · กิจกรรมสิ่งแวดล้อม · งานอภิบาลนักเรียน</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
         </tbody>
       </table>
@@ -445,7 +446,7 @@
     <div class="comm-header">
       <span class="comm-num">ฝ่าย 6</span>
       <h3>Commission on Formation & Vocation — ฝ่ายการฝึกอบรมและส่งเสริมกระแสเรียก</h3>
-      <span class="comm-status cs-none">ยังไม่มีเครื่องมือ</span>
+      <span class="comm-status cs-shared">มี PDCA · รอร้องขอเพิ่ม</span>
     </div>
     <div class="comm-body">
       <p class="comm-desc">ยุวลัย บ้านนักศึกษา นวกรรม กระแสเรียก มงฟอร์ตศึกษา — หัวใจของการสืบทอดพันธกิจคณะ</p>
@@ -455,27 +456,27 @@
           <tr>
             <td class="wg-name">ยุวลัยเซนต์หลุยส์แมรี่</td>
             <td>จำนวนผู้สมัครรายปี · สถานะนักเรียนยุวลัย · อัตราสำเร็จ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">บ้านนักศึกษา</td>
             <td>จำนวนนักศึกษาภราดา · สถานะการศึกษา · แผนฝึกอบรม</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">บ้านนวกรรม</td>
             <td>จำนวนนวกะ · สถานะการฝึก · อัตราการปฏิญาณ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">งานส่งเสริมกระแสเรียก</td>
             <td>กิจกรรมส่งเสริม · สถิติผู้สนใจ · ช่องทางสรรหา</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
           <tr>
             <td class="wg-name">สำนักงานมงฟอร์ตศึกษา</td>
             <td>หลักสูตรมงฟอร์ต · ผลการอบรม · เอกสารวิชาการ</td>
-            <td><span class="tool-tag tt-need">ต้องพัฒนา</span></td>
+            <td><span class="tool-tag tt-shared">PDCA แผนงาน</span> <span class="tool-tag tt-need">รอฝ่ายร้องขอ</span></td>
           </tr>
         </tbody>
       </table>
