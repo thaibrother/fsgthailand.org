@@ -1,40 +1,360 @@
 <!doctype html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>News — redirecting to Montfortian Network</title>
-<meta http-equiv="refresh" content="0; url=https://montfortian.net/news.html">
-<link rel="canonical" href="https://montfortian.net/news.html">
+<title>ข่าวคณะภราดาเซนต์คาเบรียลทั่วโลก — มูลนิธิคณะเซนต์คาเบรียลฯ</title>
+<meta name="description" content="ข่าวสารเกี่ยวกับคณะภราดาเซนต์คาเบรียลและครอบครัวมงฟอร์เตียนทั่วโลก รวบรวมโดยอัตโนมัติจากแหล่งข่าวสาธารณะรายวัน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+:root {
+  --navy: #0e1e3a;
+  --navy-soft: #1a3a5c;
+  --orange: #f58220;
+  --orange-soft: #fff4e6;
+  --orange-dark: #c25a06;
+  --soft: #f8f6f2;
+  --border: #e5e5e5;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+  --en-blue: #2c5f8a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  display: flex; min-height: 100vh; margin: 0;
-  align-items: center; justify-content: center;
-  background: linear-gradient(160deg, #1a3a5c 0%, #0d2640 100%);
-  color: white; text-align: center; padding: 24px;
+  font-family: 'Kanit', sans-serif;
+  color: var(--text); background: var(--soft);
+  line-height: 1.6;
 }
-.box { max-width: 480px; }
-h1 { font-size: 1.8em; margin-bottom: 14px; font-weight: 600; }
-p { opacity: 0.85; line-height: 1.7; margin-bottom: 20px; }
-a {
-  display: inline-block; padding: 12px 28px;
-  background: #c4960a; color: white;
-  border-radius: 24px; text-decoration: none;
-  font-weight: 600; font-size: 0.95em;
+
+/* ===== NAV ===== */
+nav {
+  background: white; position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex; align-items: center; flex-wrap: wrap;
+  padding: 0 16px; gap: 0;
 }
-a:hover { background: #d8a812; }
+nav a {
+  color: var(--navy); text-decoration: none;
+  padding: 16px 16px; font-size: 0.92em; font-weight: 500;
+  border-bottom: 3px solid transparent; transition: all 0.2s;
+  white-space: nowrap;
+}
+nav a:hover, nav a.active {
+  border-bottom-color: var(--orange); color: var(--orange-dark);
+}
+nav .brand {
+  font-weight: 700; font-size: 1em; color: var(--navy);
+  margin-right: auto; padding: 12px 0;
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0e1e3a 0%, #16213e 50%, #1a1a2e 100%);
+  color: white; padding: 70px 24px 50px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(245,130,32,0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(245,130,32,0.08) 0%, transparent 50%);
+}
+.hero > * { position: relative; }
+.hero h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800; line-height: 1.3;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero p {
+  opacity: 0.85; font-size: 16px; line-height: 1.8;
+  max-width: 720px; margin: 0 auto 12px;
+  font-weight: 300;
+}
+.hero .meta {
+  margin-top: 22px; font-size: 13px;
+  color: rgba(255,255,255,0.6); font-weight: 300;
+}
+
+/* ===== CONTROLS ===== */
+.controls {
+  max-width: 1100px; margin: 0 auto;
+  padding: 28px 20px 0;
+  display: flex; gap: 10px; flex-wrap: wrap;
+  align-items: center;
+}
+.filter-tab {
+  padding: 8px 18px; border-radius: 22px;
+  background: white; border: 1.5px solid var(--border);
+  font-size: 14px; cursor: pointer; transition: all 0.2s;
+  color: var(--muted); font-family: inherit;
+}
+.filter-tab.active {
+  background: var(--orange); color: white;
+  border-color: var(--orange);
+  box-shadow: 0 2px 8px rgba(245,130,32,0.3);
+}
+.filter-tab:hover:not(.active) {
+  border-color: var(--orange);
+  color: var(--orange-dark);
+}
+.search-input {
+  margin-left: auto;
+  padding: 8px 16px; border-radius: 22px;
+  border: 1.5px solid var(--border); background: white;
+  font-size: 14px; font-family: inherit;
+  outline: none; min-width: 220px;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--orange); }
+
+/* ===== FEED ===== */
+.feed-meta {
+  max-width: 1100px; margin: 18px auto 0;
+  padding: 0 20px; font-size: 14px; color: var(--muted);
+}
+.feed {
+  max-width: 1100px; margin: 18px auto 60px;
+  padding: 0 20px;
+}
+.news-card {
+  background: white; padding: 22px 26px;
+  border-radius: 14px; margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid var(--orange);
+  display: block; text-decoration: none; color: inherit;
+}
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-left-color: var(--navy);
+}
+.news-card.lang-en { border-left-color: var(--en-blue); }
+.news-card h3 {
+  font-size: 17px; font-weight: 600;
+  color: var(--navy); margin-bottom: 10px;
+  line-height: 1.6;
+}
+.news-card .meta {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  font-size: 13px; color: var(--muted);
+  align-items: center;
+}
+.news-card .source {
+  font-weight: 500; color: var(--orange-dark);
+}
+.lang-tag {
+  display: inline-block;
+  padding: 2px 10px; border-radius: 12px;
+  font-size: 11px; font-weight: 600;
+}
+.lang-tag.en { background: #e3edf7; color: var(--en-blue); }
+.lang-tag.th { background: var(--orange-soft); color: var(--orange-dark); }
+
+.empty {
+  text-align: center; padding: 80px 20px;
+  color: var(--muted); background: white;
+  border-radius: 14px; margin-bottom: 20px;
+}
+.empty h3 {
+  color: var(--navy); margin-bottom: 12px;
+  font-size: 18px; font-weight: 600;
+}
+
+/* ===== BANNER ===== */
+.banner-info {
+  max-width: 1100px; margin: 0 auto 0;
+  padding: 16px 20px;
+}
+.banner-card {
+  background: linear-gradient(135deg, var(--orange-soft) 0%, #fff8e8 100%);
+  border-left: 4px solid var(--orange);
+  padding: 16px 20px; border-radius: 10px;
+  font-size: 14px; color: var(--navy);
+  display: flex; gap: 14px; align-items: center;
+  flex-wrap: wrap;
+}
+.banner-card a {
+  color: var(--orange-dark); font-weight: 500;
+  text-decoration: none; border-bottom: 1px dotted currentColor;
+}
+.banner-card a:hover { border-bottom-style: solid; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: white; padding: 32px 20px;
+  text-align: center; font-size: 13.5px;
+  color: var(--muted); border-top: 1px solid var(--border);
+  margin-top: 30px;
+}
+footer a { color: var(--orange-dark); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .search-input { width: 100%; margin-left: 0; margin-top: 8px; }
+  .news-card { padding: 18px 20px; }
+  .news-card h3 { font-size: 16px; }
+}
 </style>
 </head>
 <body>
-<div class="box">
-  <h1>📰 News from the Montfortian Family</h1>
-  <p>ข่าวสารคณะภราดาเซนต์คาเบรียลทั่วโลก รวบรวมโดยอัตโนมัติจากแหล่งข่าวสาธารณะ</p>
-  <p>กำลังนำท่านไปยังหน้าหลักที่ <strong>montfortian.net/news</strong>…</p>
-  <a href="https://montfortian.net/news.html">เปิดหน้าข่าวเลย →</a>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="index.html" class="brand">
+    <span>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</span>
+  </a>
+  <a href="index.html">หน้าแรก</a>
+  <a href="ict-hrm.html">ICT &amp; HRM</a>
+  <a href="education.html">การศึกษา</a>
+  <a href="administration.html">บริหารทั่วไป</a>
+  <a href="news.html" class="active">📰 ข่าวคณะ</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>ข่าวคณะภราดาเซนต์คาเบรียลทั่วโลก</h1>
+  <p>ข่าวสารเกี่ยวกับคณะภราดาเซนต์คาเบรียลและครอบครัวมงฟอร์เตียน — รวบรวมโดยอัตโนมัติจากแหล่งข่าวสาธารณะรายวัน</p>
+  <div class="meta" id="metaTop">กำลังโหลดข่าว…</div>
+</section>
+
+<!-- ===== INFO BANNER ===== -->
+<div class="banner-info">
+  <div class="banner-card">
+    <span>ℹ️</span>
+    <span><strong>ข่าวแสดงตามภาษาต้นฉบับ</strong> — ระบบไม่ได้แปลให้ คลิกชื่อข่าวเพื่อเปิดอ่านที่แหล่งข่าวเดิม</span>
+  </div>
+  <div class="banner-card" style="margin-top:10px">
+    <span>🌐</span>
+    <span>ข้อมูลรวมจากแหล่งทั่วโลก — สำหรับฉบับ English เต็ม ดูที่ <a href="https://montfortian.net/news.html" target="_blank" rel="noopener">montfortian.net/news</a></span>
+  </div>
 </div>
+
+<!-- ===== CONTROLS ===== -->
+<div class="controls">
+  <button class="filter-tab active" data-filter="th">🇹🇭 ภาษาไทย</button>
+  <button class="filter-tab" data-filter="all">ทั้งหมด</button>
+  <button class="filter-tab" data-filter="en">🇬🇧 อังกฤษ (ทั่วโลก)</button>
+  <button class="filter-tab" data-filter="thai-foundation">มูลนิธิ/คณะภราดา</button>
+  <button class="filter-tab" data-filter="thai-school">โรงเรียนในเครือ</button>
+  <button class="filter-tab" data-filter="global-en">Global News</button>
+  <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาข่าว…">
+</div>
+
+<div class="feed-meta" id="feedMeta"></div>
+
+<!-- ===== FEED ===== -->
+<div class="feed" id="feed">
+  <div class="empty"><h3>กำลังโหลดข่าว…</h3></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>ข่าวรวบรวมโดยอัตโนมัติทุกวัน ผ่าน GitHub Actions จาก Google News และแหล่งข่าวสาธารณะอื่น ๆ</p>
+  <p>หน้านี้เป็น mirror ของ <a href="https://montfortian.net/news.html" target="_blank">montfortian.net/news</a> โดยกรองภาษาไทยเป็นหลัก</p>
+  <p style="margin-top:10px">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย — <a href="index.html">fsgthailand.org</a></p>
+</footer>
+
 <script>
-  setTimeout(() => { window.location.replace('https://montfortian.net/news.html'); }, 800);
+const FEED_URL = 'https://montfortian.net/news-feed.json';
+let DATA = { items: [], count: 0, generated_at: '' };
+let currentFilter = 'th';  // default Thai
+let searchQuery = '';
+
+const feedEl = document.getElementById('feed');
+const metaTopEl = document.getElementById('metaTop');
+const feedMetaEl = document.getElementById('feedMeta');
+const searchInput = document.getElementById('searchInput');
+
+fetch(FEED_URL)
+  .then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    DATA = data;
+    const ts = new Date(data.generated_at);
+    const tsStr = ts.toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric' }) +
+                  ' เวลา ' + ts.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Bangkok' });
+    metaTopEl.innerHTML = `รวมข่าว ${data.count} เรื่อง · อัปเดตล่าสุด ${tsStr} (เวลาไทย)`;
+    render();
+  })
+  .catch(err => {
+    feedEl.innerHTML = '<div class="empty"><h3>โหลดข่าวไม่สำเร็จ</h3><p>กรุณาลองใหม่ในภายหลัง หรือเปิดที่ <a href="https://montfortian.net/news.html" target="_blank">montfortian.net/news</a> โดยตรง</p></div>';
+    metaTopEl.textContent = 'ไม่สามารถโหลดข่าวได้';
+    console.error(err);
+  });
+
+function render() {
+  let items = DATA.items;
+  if (currentFilter === 'en') items = items.filter(i => i.lang === 'en');
+  else if (currentFilter === 'th') items = items.filter(i => i.lang === 'th');
+  else if (currentFilter !== 'all') items = items.filter(i => i.tag === currentFilter);
+
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    items = items.filter(i =>
+      i.title.toLowerCase().includes(q) ||
+      (i.source || '').toLowerCase().includes(q) ||
+      (i.summary || '').toLowerCase().includes(q)
+    );
+  }
+
+  feedMetaEl.textContent = `แสดง ${items.length} จาก ${DATA.count} ข่าว` +
+    (searchQuery ? ` ตรงกับคำค้น "${searchQuery}"` : '');
+
+  if (items.length === 0) {
+    feedEl.innerHTML = '<div class="empty"><h3>ไม่พบข่าวที่ตรงกับเงื่อนไข</h3><p>ลองเปลี่ยน filter หรือคำค้น</p></div>';
+    return;
+  }
+
+  feedEl.innerHTML = items.map(item => {
+    const date = item.pub_date ? new Date(item.pub_date).toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' }) : '';
+    const langClass = item.lang === 'en' ? 'lang-en' : 'lang-th';
+    const langTag = item.lang === 'en' ? 'EN' : 'TH';
+    return `
+      <a href="${escape(item.link)}" target="_blank" rel="noopener" class="news-card ${langClass}">
+        <h3>${escape(item.title)}</h3>
+        <div class="meta">
+          <span class="lang-tag ${item.lang}">${langTag}</span>
+          <span class="source">${escape(item.source || 'แหล่งข่าว')}</span>
+          <span>·</span>
+          <span>${date}</span>
+        </div>
+      </a>
+    `;
+  }).join('');
+}
+
+function escape(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+document.querySelectorAll('.filter-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+let searchTimer;
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    searchQuery = searchInput.value.trim();
+    render();
+  }, 200);
+});
 </script>
+
 </body>
 </html>
