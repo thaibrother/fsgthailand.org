@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ข่าวคณะภราดาเซนต์คาเบรียลทั่วโลก — มูลนิธิคณะเซนต์คาเบรียลฯ</title>
-<meta name="description" content="ข่าวสารเกี่ยวกับคณะภราดาเซนต์คาเบรียลและครอบครัวมงฟอร์เตียนทั่วโลก รวบรวมโดยอัตโนมัติจากแหล่งข่าวสาธารณะรายวัน">
+<title>อัพเดทข่าว — มูลนิธิคณะเซนต์คาเบรียลฯ</title>
+<meta name="description" content="ข่าวสารและประกาศที่สถานศึกษาในเครือฯ ต้องติดตาม — คณะภราดาทั่วโลก กระทรวงศึกษาธิการ สช. คุรุสภา และอื่น ๆ ภายใต้พันธกิจตามจิตตารมณ์ของนักบุญมงฟอร์ต">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -209,17 +209,19 @@ footer a:hover { text-decoration: underline; }
   <a href="index.html" class="brand">
     <span>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</span>
   </a>
-  <a href="index.html">หน้าแรก</a>
-  <a href="ict-hrm.html">ICT &amp; HRM</a>
-  <a href="education.html">การศึกษา</a>
-  <a href="administration.html">บริหารทั่วไป</a>
-  <a href="news.html" class="active">📰 ข่าวคณะ</a>
+  <a href="index.html">← หน้าแรก</a>
 </nav>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <h1>ข่าวคณะภราดาเซนต์คาเบรียลทั่วโลก</h1>
-  <p>ข่าวสารเกี่ยวกับคณะภราดาเซนต์คาเบรียลและครอบครัวมงฟอร์เตียน — รวบรวมโดยอัตโนมัติจากแหล่งข่าวสาธารณะรายวัน</p>
+  <h1>อัพเดทข่าว</h1>
+  <p style="font-size:17px;opacity:0.85;font-weight:300;line-height:1.7;margin-bottom:14px">
+    คณะภราดาเซนต์คาเบรียลทั่วโลก · ประกาศกระทรวงศึกษาธิการ · สช. · คุรุสภา · นโยบายการศึกษา
+  </p>
+  <p style="font-size:15px;opacity:0.7;font-style:italic;font-weight:300;max-width:680px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.18);padding-top:14px">
+    &ldquo;พัฒนาตนเอง รับใช้ผู้อื่น พร้อมเรียนรู้ตลอดชีวิต&rdquo;
+    — <strong style="color:#f5c77e">ภายใต้พันธกิจตามจิตตารมณ์ของนักบุญหลุยส์-มารี เดอ มงฟอร์ต</strong>
+  </p>
   <div class="meta" id="metaTop">กำลังโหลดข่าว…</div>
 </section>
 
@@ -227,7 +229,7 @@ footer a:hover { text-decoration: underline; }
 <div class="banner-info">
   <div class="banner-card">
     <span>ℹ️</span>
-    <span><strong>ข่าวแสดงตามภาษาต้นฉบับ</strong> — ระบบไม่ได้แปลให้ คลิกชื่อข่าวเพื่อเปิดอ่านที่แหล่งข่าวเดิม</span>
+    <span><strong>หัวข้อแปลเป็นภาษาไทยอัตโนมัติ</strong> โดย Google Translate — อาจมีคลาดเคลื่อนบ้าง คลิกเพื่ออ่านต้นฉบับที่แหล่งข่าวเดิม</span>
   </div>
   <div class="banner-card" style="margin-top:10px">
     <span>🌐</span>
@@ -237,12 +239,15 @@ footer a:hover { text-decoration: underline; }
 
 <!-- ===== CONTROLS ===== -->
 <div class="controls">
-  <button class="filter-tab active" data-filter="th">🇹🇭 ภาษาไทย</button>
-  <button class="filter-tab" data-filter="all">ทั้งหมด</button>
-  <button class="filter-tab" data-filter="en">🇬🇧 อังกฤษ (ทั่วโลก)</button>
+  <button class="filter-tab active" data-filter="all">ทั้งหมด</button>
+  <button class="filter-tab" data-filter="gov-edu">📚 ประกาศ/นโยบายการศึกษา</button>
   <button class="filter-tab" data-filter="thai-foundation">มูลนิธิ/คณะภราดา</button>
-  <button class="filter-tab" data-filter="thai-school">โรงเรียนในเครือ</button>
-  <button class="filter-tab" data-filter="global-en">Global News</button>
+  <button class="filter-tab" data-filter="th">🇹🇭 ต้นฉบับไทย</button>
+  <button class="filter-tab" data-filter="non-th">🌐 ข่าวต่างประเทศ (แปลแล้ว)</button>
+  <button class="filter-tab" data-filter="sg-brothers">Brothers SG</button>
+  <button class="filter-tab" data-filter="fdls-sisters">FDLS Sisters</button>
+  <button class="filter-tab" data-filter="smm-missionaries">SMM Missionaries</button>
+  <button class="filter-tab" data-filter="vatican-news">Vatican News</button>
   <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาข่าว…">
 </div>
 
@@ -292,14 +297,15 @@ fetch(FEED_URL)
 
 function render() {
   let items = DATA.items;
-  if (currentFilter === 'en') items = items.filter(i => i.lang === 'en');
-  else if (currentFilter === 'th') items = items.filter(i => i.lang === 'th');
+  if (currentFilter === 'th') items = items.filter(i => i.lang === 'th');
+  else if (currentFilter === 'non-th') items = items.filter(i => i.lang !== 'th');
   else if (currentFilter !== 'all') items = items.filter(i => i.tag === currentFilter);
 
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
     items = items.filter(i =>
       i.title.toLowerCase().includes(q) ||
+      (i.title_th || '').toLowerCase().includes(q) ||
       (i.source || '').toLowerCase().includes(q) ||
       (i.summary || '').toLowerCase().includes(q)
     );
@@ -315,13 +321,19 @@ function render() {
 
   feedEl.innerHTML = items.map(item => {
     const date = item.pub_date ? new Date(item.pub_date).toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' }) : '';
-    const langClass = item.lang === 'en' ? 'lang-en' : 'lang-th';
-    const langTag = item.lang === 'en' ? 'EN' : 'TH';
+    const isThai = item.lang === 'th';
+    const langClass = isThai ? 'lang-th' : 'lang-en';
+    // Display title — prefer title_th (translated) for non-Thai items, else original
+    const displayTitle = item.title_th || item.title;
+    // Show original beneath if translated
+    const showOriginal = !isThai && item.title_th && item.title_th !== item.title;
+    const langTag = isThai ? 'ไทย' : `แปลจาก ${(item.lang || '').toUpperCase()}`;
     return `
       <a href="${escape(item.link)}" target="_blank" rel="noopener" class="news-card ${langClass}">
-        <h3>${escape(item.title)}</h3>
+        <h3>${escape(displayTitle)}</h3>
+        ${showOriginal ? `<div style="font-size:13px;color:#888;margin-top:4px;font-style:italic">ต้นฉบับ: ${escape(item.title)}</div>` : ''}
         <div class="meta">
-          <span class="lang-tag ${item.lang}">${langTag}</span>
+          <span class="lang-tag ${isThai ? 'th' : 'en'}">${langTag}</span>
           <span class="source">${escape(item.source || 'แหล่งข่าว')}</span>
           <span>·</span>
           <span>${date}</span>
