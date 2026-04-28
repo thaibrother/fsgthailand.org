@@ -240,14 +240,13 @@ footer a:hover { text-decoration: underline; }
 <!-- ===== CONTROLS ===== -->
 <div class="controls">
   <button class="filter-tab active" data-filter="all">ทั้งหมด</button>
-  <button class="filter-tab" data-filter="gov-edu">📚 ประกาศ/นโยบายการศึกษา</button>
-  <button class="filter-tab" data-filter="thai-foundation">มูลนิธิ/คณะภราดา</button>
-  <button class="filter-tab" data-filter="th">🇹🇭 ต้นฉบับไทย</button>
-  <button class="filter-tab" data-filter="non-th">🌐 ข่าวต่างประเทศ (แปลแล้ว)</button>
-  <button class="filter-tab" data-filter="sg-brothers">Brothers SG</button>
-  <button class="filter-tab" data-filter="fdls-sisters">FDLS Sisters</button>
-  <button class="filter-tab" data-filter="smm-missionaries">SMM Missionaries</button>
-  <button class="filter-tab" data-filter="vatican-news">Vatican News</button>
+  <button class="filter-tab" data-filter="aud:administrators">👔 ผู้บริหารสถานศึกษา</button>
+  <button class="filter-tab" data-filter="aud:teachers">👩‍🏫 ครู</button>
+  <button class="filter-tab" data-filter="aud:students">🎓 นักเรียน</button>
+  <button class="filter-tab" data-filter="aud:alumni">🤝 ศิษย์เก่า</button>
+  <button class="filter-tab" data-filter="aud:edu-tech">💡 เทคโน/นวัตกรรม</button>
+  <button class="filter-tab" data-filter="aud:quality">⭐ คุณภาพการศึกษา</button>
+  <button class="filter-tab" data-filter="aud:montfortian-family">✝️ คณะภราดาเซนต์คาเบรียล</button>
   <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาข่าว…">
 </div>
 
@@ -295,9 +294,22 @@ fetch(FEED_URL)
     console.error(err);
   });
 
+const AUDIENCE_LABELS = {
+  'administrators': '👔 ผู้บริหาร',
+  'teachers': '👩‍🏫 ครู',
+  'students': '🎓 นักเรียน',
+  'alumni': '🤝 ศิษย์เก่า',
+  'edu-tech': '💡 เทคโน',
+  'quality': '⭐ คุณภาพ',
+  'montfortian-family': '✝️ คณะภราดา',
+};
+
 function render() {
   let items = DATA.items;
-  if (currentFilter === 'th') items = items.filter(i => i.lang === 'th');
+  if (currentFilter.startsWith('aud:')) {
+    const audience = currentFilter.slice(4);
+    items = items.filter(i => (i.audiences || []).includes(audience));
+  } else if (currentFilter === 'th') items = items.filter(i => i.lang === 'th');
   else if (currentFilter === 'non-th') items = items.filter(i => i.lang !== 'th');
   else if (currentFilter !== 'all') items = items.filter(i => i.tag === currentFilter);
 
@@ -323,16 +335,20 @@ function render() {
     const date = item.pub_date ? new Date(item.pub_date).toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: '2-digit' }) : '';
     const isThai = item.lang === 'th';
     const langClass = isThai ? 'lang-th' : 'lang-en';
-    // Display title — prefer title_th (translated) for non-Thai items, else original
     const displayTitle = item.title_th || item.title;
-    // Show original beneath if translated
     const showOriginal = !isThai && item.title_th && item.title_th !== item.title;
     const langTag = isThai ? 'ไทย' : `แปลจาก ${(item.lang || '').toUpperCase()}`;
+    // Audience badges
+    const audienceBadges = (item.audiences || [])
+      .map(a => AUDIENCE_LABELS[a] || a)
+      .map(label => `<span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;background:#fff;border:1px solid #e0c0a0;color:#c25a06;margin-right:4px">${label}</span>`)
+      .join('');
     return `
       <a href="${escape(item.link)}" target="_blank" rel="noopener" class="news-card ${langClass}">
         <h3>${escape(displayTitle)}</h3>
         ${showOriginal ? `<div style="font-size:13px;color:#888;margin-top:4px;font-style:italic">ต้นฉบับ: ${escape(item.title)}</div>` : ''}
-        <div class="meta">
+        ${audienceBadges ? `<div style="margin-top:8px">${audienceBadges}</div>` : ''}
+        <div class="meta" style="margin-top:8px">
           <span class="lang-tag ${isThai ? 'th' : 'en'}">${langTag}</span>
           <span class="source">${escape(item.source || 'แหล่งข่าว')}</span>
           <span>·</span>
