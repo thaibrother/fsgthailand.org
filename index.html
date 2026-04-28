@@ -541,14 +541,10 @@
     .rome-cal-items { padding: 10px 16px; justify-content: center; }
     .rome-cal-items .rc-tag { font-size: 11px; padding: 4px 10px; }
   }
-  /* ── Pin Rome Calendar above fixed nav, push nav + hero down ── */
+  /* ── Pin Rome Calendar above fixed nav (heights auto-adjust via JS) ── */
   .rome-cal { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
-  nav { top: 56px !important; }
-  .hero { margin-top: 124px !important; }
-  @media (max-width: 767px) {
-    nav { top: 100px !important; }
-    .hero { margin-top: 168px !important; }
-  }
+  /* nav.top + .hero.margin-top set dynamically by liturgical-calendar.js
+     after badge content renders (handles wrapping for multi-row tags) */
 </style>
 <section class="rome-cal">
   <div class="rc-container">
