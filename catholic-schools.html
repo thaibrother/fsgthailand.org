@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>โรงเรียนคาทอลิกทั่วประเทศ — มูลนิธิคณะเซนต์คาเบรียลฯ</title>
+<meta name="description" content="Directory โรงเรียนคาทอลิกในประเทศไทย — แบ่งตามภาค จังหวัด สังฆมณฑล และคณะนักบวช · ภายใต้พระศาสนจักรคาทอลิก">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0e1e3a;
+  --navy-soft: #1a3a5c;
+  --orange: #f58220;
+  --orange-soft: #fff4e6;
+  --orange-dark: #c25a06;
+  --gold: #c4960a;
+  --soft: #f8f6f2;
+  --border: #e5e5e5;
+  --text: #2a2a2a;
+  --muted: #6b6b6b;
+  --vatican: #f0c419;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Kanit', sans-serif;
+  color: var(--text); background: var(--soft);
+  line-height: 1.6;
+}
+
+nav {
+  background: white; position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex; align-items: center; flex-wrap: wrap;
+  padding: 0 16px;
+}
+nav a {
+  color: var(--navy); text-decoration: none;
+  padding: 16px 16px; font-size: 0.92em; font-weight: 500;
+  border-bottom: 3px solid transparent; transition: all 0.2s;
+  white-space: nowrap;
+}
+nav a:hover, nav a.active {
+  border-bottom-color: var(--orange); color: var(--orange-dark);
+}
+nav .brand {
+  font-weight: 700; font-size: 1em; color: var(--navy);
+  margin-right: auto; padding: 12px 0;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0e1e3a 0%, #16213e 60%, #1a1a2e 100%);
+  color: white; padding: 80px 24px 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(245,130,32,0.18) 0%, transparent 55%),
+              radial-gradient(circle at 80% 70%, rgba(196,150,10,0.12) 0%, transparent 50%);
+}
+.hero > * { position: relative; }
+.hero h1 {
+  font-size: clamp(28px, 4.4vw, 44px);
+  font-weight: 800; line-height: 1.3;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f5c77e 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .sub {
+  opacity: 0.88; font-size: 17px; line-height: 1.8;
+  max-width: 760px; margin: 0 auto 14px; font-weight: 300;
+}
+.hero .quote {
+  margin-top: 22px; padding: 16px 28px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  font-style: italic; font-size: 15px;
+  max-width: 720px; margin-left: auto; margin-right: auto;
+  opacity: 0.78; font-weight: 300;
+}
+.hero .quote strong { color: #f5c77e; font-style: normal; font-weight: 500; }
+
+/* Hierarchy diagram */
+.hierarchy {
+  max-width: 1000px; margin: 50px auto;
+  padding: 0 24px;
+}
+.hierarchy h2 {
+  font-size: 26px; color: var(--navy);
+  margin-bottom: 24px; text-align: center;
+}
+.hier-box {
+  background: white; padding: 30px 28px;
+  border-radius: 16px; border: 1.5px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+.hier-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 0;
+}
+.hier-row .level {
+  flex-shrink: 0; width: 60px; height: 60px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 700;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: white;
+}
+.hier-row .level.vatican { background: linear-gradient(135deg, #c4960a 0%, #f0c419 100%); }
+.hier-row .level.brothers { background: linear-gradient(135deg, var(--orange) 0%, #f5c77e 100%); }
+.hier-row .level.local { background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%); }
+.hier-row .info {
+  flex: 1;
+}
+.hier-row .info h4 {
+  font-size: 17px; font-weight: 600; color: var(--navy);
+  margin-bottom: 4px;
+}
+.hier-row .info p {
+  font-size: 14px; color: var(--muted); line-height: 1.6;
+}
+.hier-arrow {
+  display: flex; justify-content: center;
+  font-size: 28px; color: var(--orange);
+  margin: -4px 0;
+}
+
+/* Section */
+.section {
+  max-width: 1100px; margin: 0 auto;
+  padding: 50px 24px;
+}
+.section h2 {
+  font-size: 26px; color: var(--navy);
+  margin-bottom: 18px; text-align: center;
+}
+.section .lead {
+  font-size: 15px; color: var(--muted);
+  max-width: 760px; margin: 0 auto 30px;
+  text-align: center; line-height: 1.8;
+}
+
+/* Regional grid */
+.regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px; margin-top: 30px;
+}
+.region-card {
+  background: white; padding: 24px 22px;
+  border-radius: 14px; border: 1.5px solid var(--border);
+  border-top: 4px solid var(--orange);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.region-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+.region-card h3 {
+  font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px;
+}
+.region-card .region-en {
+  font-size: 12px; color: var(--orange-dark);
+  font-weight: 500; margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+.region-card .stat-row {
+  display: flex; gap: 10px; margin-bottom: 14px;
+  padding-bottom: 14px; border-bottom: 1px dashed #e5e5e5;
+}
+.region-card .stat-row .stat {
+  flex: 1; text-align: center;
+}
+.region-card .stat-row .num {
+  font-size: 22px; font-weight: 800; color: var(--orange-dark);
+  line-height: 1;
+}
+.region-card .stat-row .lbl {
+  font-size: 11px; color: var(--muted); margin-top: 4px;
+}
+.region-card .dioceses {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7;
+}
+.region-card .dioceses strong { color: var(--navy); }
+.region-card .sg-schools {
+  margin-top: 12px; padding: 10px 12px;
+  background: var(--orange-soft);
+  border-radius: 8px; font-size: 13px;
+  color: var(--orange-dark);
+}
+.region-card .sg-schools strong { color: var(--navy); }
+
+/* Provincial table */
+.provinces {
+  margin-top: 50px;
+}
+.prov-table {
+  width: 100%; background: white;
+  border-collapse: separate; border-spacing: 0;
+  border-radius: 14px; overflow: hidden;
+  border: 1.5px solid var(--border);
+  font-size: 14px;
+}
+.prov-table th, .prov-table td {
+  padding: 12px 16px; text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prov-table th {
+  background: #f8f6f2; font-weight: 600;
+  color: var(--navy); font-size: 13px;
+  text-transform: uppercase; letter-spacing: 0.4px;
+}
+.prov-table tbody tr:last-child td { border-bottom: none; }
+.prov-table tbody tr:hover { background: #fafafa; }
+.prov-table .num { text-align: center; font-weight: 600; color: var(--orange-dark); }
+.prov-table .region-tag {
+  font-size: 11px; padding: 2px 10px;
+  background: var(--orange-soft); color: var(--orange-dark);
+  border-radius: 10px; font-weight: 500;
+}
+
+/* Congregations */
+.congregations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px; margin-top: 30px;
+}
+.cong-card {
+  background: white; padding: 18px 20px;
+  border-radius: 12px; border: 1.5px solid var(--border);
+  border-left: 4px solid var(--gold);
+}
+.cong-card h4 {
+  font-size: 15px; font-weight: 700; color: var(--navy);
+  margin-bottom: 4px;
+}
+.cong-card .en {
+  font-size: 12px; color: var(--muted);
+  margin-bottom: 10px; font-style: italic;
+}
+.cong-card p {
+  font-size: 13px; color: var(--text); line-height: 1.7;
+}
+.cong-card.us {
+  border-left-color: var(--orange);
+  background: linear-gradient(135deg, #fff8f0 0%, white 60%);
+}
+.cong-card.us h4 { color: var(--orange-dark); }
+
+/* Resources */
+.resources {
+  background: white; padding: 30px 28px;
+  border-radius: 14px; border: 1.5px solid var(--border);
+  margin-top: 40px;
+}
+.resources h3 {
+  font-size: 17px; color: var(--navy); margin-bottom: 14px;
+}
+.resources ul {
+  list-style: none; padding: 0;
+}
+.resources li {
+  padding: 8px 0; border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+.resources li:last-child { border-bottom: none; }
+.resources a {
+  color: var(--orange-dark); text-decoration: none;
+  font-weight: 500;
+}
+.resources a:hover { text-decoration: underline; }
+.resources .desc {
+  display: block; font-size: 12px; color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Notice */
+.notice {
+  background: linear-gradient(135deg, var(--orange-soft) 0%, #fff8e8 100%);
+  border-left: 4px solid var(--orange);
+  padding: 16px 22px; border-radius: 10px;
+  font-size: 14px; color: var(--navy); line-height: 1.7;
+  margin: 30px 0;
+}
+.notice strong { color: var(--orange-dark); }
+
+footer {
+  background: white; padding: 30px 20px;
+  text-align: center; font-size: 13.5px;
+  color: var(--muted); border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+footer a { color: var(--orange-dark); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="index.html" class="brand">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</a>
+  <a href="index.html">← หน้าแรก</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>โรงเรียนคาทอลิกในประเทศไทย</h1>
+  <p class="sub">
+    Directory โรงเรียนคาทอลิกทั่วประเทศ — แบ่งตามภาค จังหวัด สังฆมณฑล และคณะนักบวช
+    ภายใต้สังกัดของพระศาสนจักรคาทอลิก กรุงโรม
+  </p>
+  <div class="quote">
+    <strong>"Wisdom and Virtue, Connected by Innovation"</strong> · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ทำงานเคียงข้างโรงเรียนคาทอลิกอีกหลายร้อยแห่งในประเทศ
+  </div>
+</section>
+
+<!-- ===== HIERARCHY ===== -->
+<section class="hierarchy">
+  <h2>โครงสร้างการสังกัด</h2>
+  <div class="hier-box">
+
+    <div class="hier-row">
+      <div class="level vatican">⛪</div>
+      <div class="info">
+        <h4>พระศาสนจักรคาทอลิก กรุงโรม (Holy See / Vatican)</h4>
+        <p>ผู้นำสูงสุดคือสมเด็จพระสันตะปาปา · กำหนดทิศทางและจิตตารมณ์การศึกษาคาทอลิกผ่าน <a href="https://www.vatican.va/" target="_blank" rel="noopener">vatican.va</a></p>
+      </div>
+    </div>
+
+    <div class="hier-arrow">↓</div>
+
+    <div class="hier-row">
+      <div class="level brothers">🏛️</div>
+      <div class="info">
+        <h4>คณะภราดาเซนต์คาเบรียล (Montfort Brothers of Saint Gabriel) — ที่ตั้งกลาง กรุงโรม</h4>
+        <p>คณะนักบวชสากล · ก่อตั้งโดยนักบุญหลุยส์-มารี เดอ มงฟอร์ต (1715) · มีโรงเรียนใน 40+ ประเทศ · เว็บไซต์ <a href="https://www.sg-gabrielites.org/" target="_blank" rel="noopener">sg-gabrielites.org</a></p>
+      </div>
+    </div>
+
+    <div class="hier-arrow">↓</div>
+
+    <div class="hier-row">
+      <div class="level local">🇹🇭</div>
+      <div class="info">
+        <h4>แขวงประเทศไทย (Thai Province) — มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</h4>
+        <p>15 โรงเรียนในเครือ · ก่อตั้ง 1901 · เคียงข้างโรงเรียนคาทอลิกอีกหลายร้อยแห่งจากคณะนักบวชต่าง ๆ ทั่วประเทศ ภายใต้ <a href="https://catholic.or.th/" target="_blank" rel="noopener">สภาประมุขบาทหลวงโรมันคาทอลิกแห่งประเทศไทย</a> และ <a href="https://www.cect.or.th/" target="_blank" rel="noopener">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REGIONS ===== -->
+<section class="section">
+  <h2>โรงเรียนคาทอลิก แบ่งตามภาค</h2>
+  <p class="lead">
+    ประเทศไทยมีสังฆมณฑลคาทอลิก 11 แห่ง และอัครสังฆมณฑล 2 แห่ง · โรงเรียนคาทอลิกกระจายอยู่ทุกภาค
+    ดำเนินการโดยคุณพ่อ ซิสเตอร์ มาเซอร์ ภราดา และฆราวาส
+  </p>
+
+  <div class="notice">
+    <strong>หมายเหตุ:</strong> ตัวเลขโรงเรียนต่อภาคยังเป็นข้อมูลโดยประมาณ — สำหรับข้อมูลทางการที่เป็นปัจจุบัน
+    กรุณาดูที่ <a href="https://www.cect.or.th/" target="_blank" rel="noopener">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a>
+  </div>
+
+  <div class="regions">
+
+    <div class="region-card">
+      <h3>ภาคกลาง</h3>
+      <div class="region-en">CENTRAL · BANGKOK METROPOLITAN</div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">~150</div><div class="lbl">โรงเรียนคาทอลิก</div></div>
+        <div class="stat"><div class="num">5</div><div class="lbl">โรง Brothers SG</div></div>
+      </div>
+      <div class="dioceses">
+        <strong>อัครสังฆมณฑลกรุงเทพฯ</strong> (Archdiocese of Bangkok) · ครอบคลุมกรุงเทพฯ ปริมณฑล อยุธยา<br>
+        <strong>สังฆมณฑลราชบุรี</strong> (Diocese of Ratchaburi) · ครอบคลุมราชบุรี กาญจนบุรี เพชรบุรี<br>
+        <strong>สังฆมณฑลนครสวรรค์</strong> (Diocese of Nakhon Sawan) · ครอบคลุมนครสวรรค์ ลพบุรี
+      </div>
+      <div class="sg-schools">
+        <strong>Brothers SG ในภาค:</strong> AC · ACP · SG · ACSP · ACEP
+      </div>
+    </div>
+
+    <div class="region-card">
+      <h3>ภาคตะวันออก</h3>
+      <div class="region-en">EAST · EASTERN SEABOARD</div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">~60</div><div class="lbl">โรงเรียนคาทอลิก</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">โรง Brothers SG</div></div>
+      </div>
+      <div class="dioceses">
+        <strong>สังฆมณฑลจันทบุรี</strong> (Diocese of Chanthaburi) · ครอบคลุมชลบุรี ระยอง จันทบุรี ตราด ฉะเชิงเทรา ปราจีนบุรี
+      </div>
+      <div class="sg-schools">
+        <strong>Brothers SG ในภาค:</strong> ACR (ระยอง) · ACS (ศรีราชา ชลบุรี) · SLC (เซนต์หลุยส์ ฉะเชิงเทรา)
+      </div>
+    </div>
+
+    <div class="region-card">
+      <h3>ภาคเหนือ</h3>
+      <div class="region-en">NORTH · UPPER NORTH</div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">~50</div><div class="lbl">โรงเรียนคาทอลิก</div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl">โรง Brothers SG</div></div>
+      </div>
+      <div class="dioceses">
+        <strong>สังฆมณฑลเชียงใหม่</strong> (Diocese of Chiang Mai) · ครอบคลุมเชียงใหม่ ลำพูน แม่ฮ่องสอน<br>
+        <strong>สังฆมณฑลเชียงราย</strong> (Diocese of Chiang Rai) · ครอบคลุมเชียงราย พะเยา น่าน แพร่<br>
+        (สังฆมณฑลนครสวรรค์ ครอบคลุมจังหวัดเหนือล่าง)
+      </div>
+      <div class="sg-schools">
+        <strong>Brothers SG ในภาค:</strong> MCP (มงฟอร์ตวิทยาลัย ประถม) · MCS (มงฟอร์ตวิทยาลัย มัธยม) · ACL (อัสสัมชัญลำปาง)
+      </div>
+    </div>
+
+    <div class="region-card">
+      <h3>ภาคตะวันออกเฉียงเหนือ</h3>
+      <div class="region-en">NORTHEAST · ISAN</div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">~80</div><div class="lbl">โรงเรียนคาทอลิก</div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl">โรง Brothers SG</div></div>
+      </div>
+      <div class="dioceses">
+        <strong>อัครสังฆมณฑลท่าแร่-หนองแสง</strong> (Archdiocese of Thare and Nonseng) · ครอบคลุมสกลนคร นครพนม มุกดาหาร<br>
+        <strong>สังฆมณฑลอุดรธานี</strong> (Diocese of Udon Thani)<br>
+        <strong>สังฆมณฑลนครราชสีมา</strong> (Diocese of Nakhon Ratchasima)<br>
+        <strong>สังฆมณฑลอุบลราชธานี</strong> (Diocese of Ubon Ratchathani)
+      </div>
+      <div class="sg-schools">
+        <strong>Brothers SG ในภาค:</strong> ACN (นครราชสีมา) · ACU (อุบลฯ) · ATSN (เทคนิคนครพนม)
+      </div>
+    </div>
+
+    <div class="region-card">
+      <h3>ภาคใต้</h3>
+      <div class="region-en">SOUTH · ANDAMAN &amp; GULF</div>
+      <div class="stat-row">
+        <div class="stat"><div class="num">~30</div><div class="lbl">โรงเรียนคาทอลิก</div></div>
+        <div class="stat"><div class="num">0</div><div class="lbl">โรง Brothers SG</div></div>
+      </div>
+      <div class="dioceses">
+        <strong>สังฆมณฑลสุราษฎร์ธานี</strong> (Diocese of Surat Thani) · ครอบคลุมจังหวัดทางใต้ทั้งหมด รวมภูเก็ต สงขลา ฯลฯ
+      </div>
+      <div class="sg-schools" style="background:#f5f5f5;color:var(--muted)">
+        Brothers SG ยังไม่มีสาขาในภาคใต้
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SUMMARY TABLE ===== -->
+<section class="section">
+  <h2>สรุปจำนวนต่อภาค</h2>
+  <p class="lead">รวมทุกคณะ — Brothers of Saint Gabriel + คณะอื่น ๆ + โรงเรียนสังฆมณฑล</p>
+
+  <table class="prov-table">
+    <thead>
+      <tr>
+        <th>ภาค</th>
+        <th>จังหวัดหลัก</th>
+        <th>สังฆมณฑล</th>
+        <th class="num">รร.คาทอลิก<br>(ประมาณ)</th>
+        <th class="num">Brothers SG</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="region-tag">ภาคกลาง</span></td>
+        <td>กรุงเทพฯ ปริมณฑล ราชบุรี กาญจนบุรี ลพบุรี อยุธยา</td>
+        <td>3</td>
+        <td class="num">~150</td>
+        <td class="num">5</td>
+      </tr>
+      <tr>
+        <td><span class="region-tag">ภาคตะวันออก</span></td>
+        <td>ชลบุรี ระยอง จันทบุรี ฉะเชิงเทรา ตราด ปราจีนบุรี</td>
+        <td>1</td>
+        <td class="num">~60</td>
+        <td class="num">3</td>
+      </tr>
+      <tr>
+        <td><span class="region-tag">ภาคเหนือ</span></td>
+        <td>เชียงใหม่ เชียงราย ลำปาง พะเยา น่าน แพร่ ลำพูน</td>
+        <td>2</td>
+        <td class="num">~50</td>
+        <td class="num">3</td>
+      </tr>
+      <tr>
+        <td><span class="region-tag">ภาคอีสาน</span></td>
+        <td>นครราชสีมา อุดรฯ อุบลฯ สกลนคร นครพนม ขอนแก่น</td>
+        <td>4</td>
+        <td class="num">~80</td>
+        <td class="num">3</td>
+      </tr>
+      <tr>
+        <td><span class="region-tag">ภาคใต้</span></td>
+        <td>สงขลา ภูเก็ต สุราษฎร์ธานี ตรัง นครศรีธรรมราช</td>
+        <td>1</td>
+        <td class="num">~30</td>
+        <td class="num">0</td>
+      </tr>
+      <tr style="background:#f8f6f2;font-weight:600">
+        <td colspan="2"><strong>รวมทั้งประเทศ</strong></td>
+        <td><strong>11</strong></td>
+        <td class="num"><strong>~370</strong></td>
+        <td class="num"><strong>15</strong> (Foundation members)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===== CONGREGATIONS ===== -->
+<section class="section">
+  <h2>คณะนักบวชหลักที่ดำเนินกิจการโรงเรียนในประเทศไทย</h2>
+  <p class="lead">โรงเรียนคาทอลิกในไทยอยู่ภายใต้การดำเนินการของคณะนักบวชหลายแห่ง · นี่คือคณะหลักที่มีจำนวนโรงเรียนสำคัญ</p>
+
+  <div class="congregations">
+
+    <div class="cong-card us">
+      <h4>คณะภราดาเซนต์คาเบรียล</h4>
+      <div class="en">Brothers of Saint Gabriel · SG</div>
+      <p>15 โรงเรียน · 1901-ปัจจุบัน · ผู้นำคือ <a href="https://montfortian.net/brothers.html" target="_blank">ภราดาคณะ</a> · เน้น MEC (Montfortian Education Charter)</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะซาเลเซียน</h4>
+      <div class="en">Salesians of Don Bosco · SDB</div>
+      <p>โรงเรียนเซนต์ดอมินิกคอลเลจ และโรงเรียนซาเลเซียนหลายแห่ง · ก่อตั้งโดยนักบุญฌอง บอสโก</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะเซนต์ปอล เดอ ชาร์ตร</h4>
+      <div class="en">Sisters of Saint Paul of Chartres · SPC</div>
+      <p>โรงเรียนเซนต์โยเซฟคอนเวนต์ · เซนต์ฟรังซีสซาเวียร์ · มีหลายสาขาทั่วประเทศ</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะธิดาแม่พระองค์อุปถัมภ์</h4>
+      <div class="en">Daughters of Mary Help of Christians · FMA · Salesian Sisters</div>
+      <p>โรงเรียนมารีย์ฯ · เน้นหญิง · เน้นเด็กยากจน</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะภคิณีรักกางเขนแห่งท่าแร่</h4>
+      <div class="en">Lovers of the Cross of Tarae · LCT</div>
+      <p>โรงเรียน 5+ แห่งในภาคอีสาน · ภายใต้อัครสังฆมณฑลท่าแร่-หนองแสง · พื้นที่สกลนคร นครพนม</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะอุร์สุลิน</h4>
+      <div class="en">Ursulines · OSU</div>
+      <p>โรงเรียน Mater Dei (กรุงเทพฯ) · เน้นการศึกษาผู้หญิง</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะภราดาดวงพระหฤทัยฯ</h4>
+      <div class="en">Brothers of Sacred Heart · SC</div>
+      <p>โรงเรียนหลายแห่งในกรุงเทพฯ และภูมิภาค</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะเยซูอิต</h4>
+      <div class="en">Society of Jesus · SJ · Jesuits</div>
+      <p>วิทยาลัยเซวียร์ · โรงเรียนภายใต้การดำเนินการของคณะ</p>
+    </div>
+
+    <div class="cong-card">
+      <h4>คณะอื่น ๆ + โรงเรียนสังฆมณฑล</h4>
+      <div class="en">Other congregations + Diocesan schools</div>
+      <p>คณะคาร์เมไลท์ · คณะแม่พระประจักษ์แห่งลูร์ด · โรงเรียนสังกัดสังฆมณฑลโดยตรง · ฯลฯ</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== RESOURCES ===== -->
+<section class="section">
+  <h2>แหล่งข้อมูลทางการ</h2>
+
+  <div class="resources">
+    <h3>📚 พระศาสนจักรคาทอลิกประเทศไทย</h3>
+    <ul>
+      <li>
+        <a href="https://catholic.or.th/" target="_blank" rel="noopener">สภาประมุขบาทหลวงโรมันคาทอลิกแห่งประเทศไทย</a>
+        <span class="desc">Catholic Bishops' Conference of Thailand (CBCT) — สภาสูงสุดของโรมันคาทอลิกในไทย</span>
+      </li>
+      <li>
+        <a href="https://www.cect.or.th/" target="_blank" rel="noopener">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a>
+        <span class="desc">Catholic Education Council of Thailand (CECT) — directory โรงเรียนคาทอลิกที่เป็นทางการ</span>
+      </li>
+      <li>
+        <a href="https://www.vatican.va/" target="_blank" rel="noopener">vatican.va — พระศาสนจักรคาทอลิก กรุงโรม</a>
+        <span class="desc">Holy See · เอกสารหลักของพระศาสนจักร</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="resources">
+    <h3>🏛️ คณะภราดาเซนต์คาเบรียล (Montfortian Family)</h3>
+    <ul>
+      <li>
+        <a href="https://www.sg-gabrielites.org/" target="_blank" rel="noopener">sg-gabrielites.org — ที่ตั้งกลาง กรุงโรม</a>
+        <span class="desc">เว็บไซต์ทางการของคณะ Brothers of Saint Gabriel นานาชาติ</span>
+      </li>
+      <li>
+        <a href="https://montfortian.net/" target="_blank" rel="noopener">montfortian.net — Montfortian Network</a>
+        <span class="desc">เครือข่าย 3 คณะมงฟอร์ตเตียน · งานเขียนของนักบุญหลุยส์-มารี เดอ มงฟอร์ต</span>
+      </li>
+      <li>
+        <a href="https://thaibrothers.net/" target="_blank" rel="noopener">thaibrothers.net — ภราดาแขวงไทย</a>
+        <span class="desc">ข่าวกิจกรรมของภราดาคณะเซนต์คาเบรียลในประเทศไทย</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="resources">
+    <h3>📂 ฐานข้อมูลภายใน</h3>
+    <ul>
+      <li>
+        <a href="index.html#schools">15 โรงเรียนในเครือมูลนิธิฯ</a>
+        <span class="desc">รายละเอียดโรงเรียนคณะภราดาเซนต์คาเบรียลในประเทศไทย</span>
+      </li>
+      <li>
+        <a href="news.html">อัพเดทข่าว — มีหมวด ⛪ การศึกษาคาทอลิก</a>
+        <span class="desc">ข่าวสารโรงเรียนคาทอลิกทั่วประเทศ · อัปเดตอัตโนมัติทุกวัน</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย — <a href="index.html">fsgthailand.org</a></p>
+  <p style="margin-top:8px;font-size:12px">หน้านี้เป็น directory เบื้องต้น · สำหรับข้อมูลทางการ ดูที่ <a href="https://www.cect.or.th/" target="_blank">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a></p>
+</footer>
+
+</body>
+</html>
