@@ -1,0 +1,1443 @@
+{
+  "source": "https://www.catholic-education.or.th/edct/",
+  "fetched": "2026-04-30",
+  "total_schools": 287,
+  "by_category": {
+    "diocesan": 134,
+    "male_religious": 31,
+    "female_religious": 77,
+    "lay": 45
+  },
+  "by_diocese": {
+    "อัครสังฆมณฑลท่าแร่-หนองแสง": 14,
+    "สังฆมณฑลอุดรธานี": 26,
+    "สังฆมณฑลนครราชสีมา": 20,
+    "สังฆมณฑลอุบลราชธานี": 20,
+    "สังฆมณฑลเชียงราย": 12,
+    "สังฆมณฑลเชียงใหม่": 12,
+    "สังฆมณฑลนครสวรรค์": 21,
+    "อัครสังฆมณฑลกรุงเทพฯ": 67,
+    "สังฆมณฑลราชบุรี": 27,
+    "สังฆมณฑลจันทบุรี": 43,
+    "สังฆมณฑลสุราษฎร์ธานี": 25
+  },
+  "dioceses": [
+    {
+      "diocese": "อัครสังฆมณฑลท่าแร่-หนองแสง",
+      "diocese_en": "Archdiocese of Tha Re-Nong Saeng",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-khxng-xakhr-sangkhmnthl-tha-rae-hnxng-saeng",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "เซนต์ยอแซฟสกลนคร",
+            "province": "สกลนคร"
+          },
+          {
+            "name": "เซนต์ยอแซฟมุกดาหาร",
+            "province": "มุกดาหาร"
+          },
+          {
+            "name": "เซนต์ยอแซฟกาฬสินธุ์",
+            "province": "กาฬสินธุ์"
+          },
+          {
+            "name": "เซนต์ยอแซฟยานนาวา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์ยอแซฟนาแก",
+            "province": "นครพนม"
+          },
+          {
+            "name": "เซนต์ยอแซฟศรีสงคราม",
+            "province": "นครพนม"
+          },
+          {
+            "name": "เซนต์ยอแซฟกุฉินารายณ์",
+            "province": "กาฬสินธุ์"
+          },
+          {
+            "name": "เซนต์โยเซฟนครพนม",
+            "province": "นครพนม"
+          },
+          {
+            "name": "เซนต์ยอเซฟนิคมน้ำอูน",
+            "province": "สกลนคร"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "อัสสัมชัญเทคนิคนครพนม",
+            "province": "นครพนม",
+            "congregation": "เซนต์คาเบรียล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์โยเซฟ ท่าแร่",
+            "province": "สกลนคร",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "มารีย์พิทักษ์ สว่างแดนดิน",
+            "province": "สกลนคร",
+            "congregation": "รักกางเขน ท่าแร่"
+          },
+          {
+            "name": "มารีย์พิทักษ์ พังโคน",
+            "province": "สกลนคร",
+            "congregation": "รักกางเขน ท่าแร่"
+          },
+          {
+            "name": "นิรมลวิทยา",
+            "province": "สกลนคร",
+            "congregation": "รักกางเขน ท่าแร่"
+          }
+        ],
+        "lay": []
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลอุดรธานี",
+      "diocese_en": "Diocese of Udon Thani",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkh-mnth-xudrthani",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "มหาไถ่ศึกษาเลย",
+            "province": "เลย"
+          },
+          {
+            "name": "มหาไถ่ศึกษาบ้านน้อยสามเหลี่ยม",
+            "province": "ขอนแก่น"
+          },
+          {
+            "name": "มหาไถ่ศึกษาขอนแก่น",
+            "province": "ขอนแก่น"
+          },
+          {
+            "name": "มหาไถ่ศึกษาภาคตะวันออกเฉียงเหนือ",
+            "province": "ขอนแก่น"
+          },
+          {
+            "name": "มหาไถ่ศึกษาบ้านไผ่",
+            "province": "ขอนแก่น"
+          },
+          {
+            "name": "มหาไถ่ศึกษาเมืองพล",
+            "province": "ขอนแก่น"
+          },
+          {
+            "name": "มหาไถ่ศึกษาบ้านดุง",
+            "province": "อุดรธานี"
+          },
+          {
+            "name": "มหาไถ่ศึกษาท่าบ่ม",
+            "province": "เลย"
+          },
+          {
+            "name": "มหาไถ่ศึกษา กุมภวาปี",
+            "province": "อุดรธานี"
+          },
+          {
+            "name": "มหาไถ่ศึกษา บึงกาฬ",
+            "province": "บึงกาฬ"
+          },
+          {
+            "name": "อ.มหาไถ่ศึกษา โพนสูง",
+            "province": "อุดรธานี"
+          },
+          {
+            "name": "อ.มหาไถ่ศึกษาอุดรธานี",
+            "province": "อุดรธานี"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "ดอนบอสโกวิทยา",
+            "province": "อุดรธานี",
+            "congregation": "ซาเลเซียน"
+          },
+          {
+            "name": "อนุบาลนิจจานุเคราะห์",
+            "province": "หนองคาย",
+            "congregation": "พระมหาไถ่"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์ปอลหนองคาย",
+            "province": "หนองคาย",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "โรซารีโอวิทยา",
+            "province": "หนองคาย",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์เมรี่ (อุดรธานี)",
+            "province": "อุดรธานี",
+            "congregation": "ธิดาแม่พระองค์อุปถัมภ์"
+          },
+          {
+            "name": "วิสุทธิวงศ์ (โพนสูง)",
+            "province": "อุดรธานี",
+            "congregation": "ธิดาแม่พระองค์อุปถัมภ์"
+          },
+          {
+            "name": "พระกุมารเยซูขอนแก่น",
+            "province": "ขอนแก่น",
+            "congregation": "พระกุมารเยซู"
+          },
+          {
+            "name": "พระกุมารเยซูบ้านไผ่",
+            "province": "ขอนแก่น",
+            "congregation": "พระกุมารเยซู"
+          },
+          {
+            "name": "พระมหาไถ่ศึกษาโนนสมบูรณ์",
+            "province": "ขอนแก่น",
+            "congregation": "พระกุมารเยซู"
+          },
+          {
+            "name": "มารีย์พิทักษ์อุดรธานี",
+            "province": "อุดรธานี",
+            "congregation": "รักกางเขน ท่าแร่"
+          },
+          {
+            "name": "มารีย์พิทักษ์เซกา",
+            "province": "บึงกาฬ",
+            "congregation": "รักกางเขน ท่าแร่"
+          },
+          {
+            "name": "การศึกษาเด็กพิเศษมารีย์นิรมล",
+            "province": "ขอนแก่น",
+            "congregation": "ธิดาเมตตาธรรม"
+          },
+          {
+            "name": "โฮลี่เมรี อุดรธานี",
+            "province": "อุดรธานี",
+            "congregation": "ธิดาพระราชินีมาเรีย"
+          }
+        ],
+        "lay": [
+          {
+            "name": "เซนต์จอห์นท่าบ่ม",
+            "province": "เลย"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลนครราชสีมา",
+      "diocese_en": "Diocese of Nakhon Ratchasima",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-nkhrrachsima",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "มารีย์วิทยา",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "เซนต์โยเซฟศึกษา",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "เทเรซา อุปถัมภ์",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "มารดาวนารักษ์",
+            "province": "บุรีรัมย์"
+          },
+          {
+            "name": "มารีย์อนุสรณ์",
+            "province": "บุรีรัมย์"
+          },
+          {
+            "name": "มารีย์อุปถัมภ์ ชัยภูมิ",
+            "province": "ชัยภูมิ"
+          },
+          {
+            "name": "มารีพิทักษ์",
+            "province": "บุรีรัมย์"
+          },
+          {
+            "name": "รุ่งอรุณวิทยา",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "มารีย์รักษ์",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "มารีย์แก้งคร้อ",
+            "province": "ชัยภูมิ"
+          },
+          {
+            "name": "วิทยาลัยเทคโนโลยีมารีย์บริหารธุรกิจ",
+            "province": "นครราชสีมา"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "อัสสัมชัญนครราชสีมา",
+            "province": "นครราชสีมา",
+            "congregation": "เซนต์คาเบรียล"
+          }
+        ],
+        "female_religious": [],
+        "lay": [
+          {
+            "name": "มารีย์ธงชัย",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "มูลนิธิรุ่งนภานครราชสีมา",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "รุ่งนภาอนุสรณ์ศาสตร์",
+            "province": "บุรีรัมย์"
+          },
+          {
+            "name": "มูลนิธิรุ่งนภาทุ่งเสมียนตรา",
+            "province": "ชัยภูมิ"
+          },
+          {
+            "name": "มูลนิธิรุ่งนภาโนนดินแดง",
+            "province": "บุรีรัมย์"
+          },
+          {
+            "name": "มารดาดรุณีรักษ์",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "สารสาสน์วิเทศนครราชสีมา",
+            "province": "นครราชสีมา"
+          },
+          {
+            "name": "สารสาสน์วิเทศโคราช",
+            "province": "นครราชสีมา"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลอุบลราชธานี",
+      "diocese_en": "Diocese of Ubon Ratchathani",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-xublrachthani",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "ซ่งแย้ทิพยา",
+            "province": "ยโสธร"
+          },
+          {
+            "name": "พระกุมารอุบล",
+            "province": "อุบลราชธานี"
+          },
+          {
+            "name": "พระกุมารร้อยเอ็ด",
+            "province": "ร้อยเอ็ด"
+          },
+          {
+            "name": "วิสุทธิวงศ์",
+            "province": "อำนาจเจริญ"
+          },
+          {
+            "name": "มารดาทรงธรรม",
+            "province": "ศรีสะเกษ"
+          },
+          {
+            "name": "มารีย์นุเคราะห์",
+            "province": "ยโสธร"
+          },
+          {
+            "name": "เทพพิทักษ์พิทยา",
+            "province": "อุบลราชธานี"
+          },
+          {
+            "name": "พระกุมารมหาสารคาม",
+            "province": "มหาสารคาม"
+          },
+          {
+            "name": "พระกุมารศึกษา",
+            "province": "มหาสารคาม"
+          },
+          {
+            "name": "พระกุมารสุรินทร์",
+            "province": "สุรินทร์"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "อัสสัมชัญอุบลราชธานี",
+            "province": "อุบลราชธานี",
+            "congregation": "เซนต์คาเบรียล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "พระแม่มารีอุบลราชธานี",
+            "province": "อุบลราชธานี",
+            "congregation": "พระราชินีมาเรีย"
+          },
+          {
+            "name": "อาเวมารีอา",
+            "province": "อุบลราชธานี",
+            "congregation": "รักกางเขน อุบลราชธานี"
+          },
+          {
+            "name": "อาเวมารีอาอำนาจเจริญ",
+            "province": "อำนาจเจริญ",
+            "congregation": "รักกางเขน อุบลราชธานี"
+          },
+          {
+            "name": "มารีย์นิรมล",
+            "province": "อุบลราชธานี",
+            "congregation": "รักกางเขน อุบลราชธานี"
+          },
+          {
+            "name": "มารีวิทยา",
+            "province": "ศรีสะเกษ",
+            "congregation": "รักกางเขน อุบลราชธานี"
+          },
+          {
+            "name": "มารีย์อุปถัมภ์กันทรลักษณ์",
+            "province": "ศรีสะเกษ",
+            "congregation": "รักกางเขน อุบลราชธานี"
+          },
+          {
+            "name": "เซนต์เอเมลี",
+            "province": "อุบลราชธานี",
+            "congregation": "นักบุญยอแซฟแห่งการประจักษ์"
+          }
+        ],
+        "lay": [
+          {
+            "name": "มูลนิธิรุ่งนภายโสธร",
+            "province": "ยโสธร"
+          },
+          {
+            "name": "มูลนิธิรุ่งนภา",
+            "province": "ยโสธร"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลเชียงราย",
+      "diocese_en": "Diocese of Chiang Rai",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-cheiyngray",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "สันติวิทยา",
+            "province": "เชียงราย"
+          },
+          {
+            "name": "ศิริมาตย์เทวี",
+            "province": "เชียงราย"
+          },
+          {
+            "name": "เทพพิทักษ์วิทยา",
+            "province": "แพร่"
+          },
+          {
+            "name": "นุชนาถอนุสรณ์",
+            "province": "เชียงราย"
+          }
+        ],
+        "male_religious": [],
+        "female_religious": [
+          {
+            "name": "ปิยมาตย์",
+            "province": "พะเยา",
+            "congregation": "อุร์สุลิน"
+          },
+          {
+            "name": "พระกุมารเยซู เชียงของ",
+            "province": "เชียงราย",
+            "congregation": "พระกุมารเยซู"
+          }
+        ],
+        "lay": [
+          {
+            "name": "มารดาอุปถัมภ์",
+            "province": "แพร่"
+          },
+          {
+            "name": "เซนต์ฟรังซิสเซเวียร์",
+            "province": "แพร่"
+          },
+          {
+            "name": "มารีย์รักษ์ฯแผนกอนุบาล",
+            "province": "เชียงราย"
+          },
+          {
+            "name": "มารีย์รักษ์ฯแผนกประถม",
+            "province": "เชียงราย"
+          },
+          {
+            "name": "สานฝัน",
+            "province": "แพร่"
+          },
+          {
+            "name": "มูลนิธิรุ่งนภาแม่จัน",
+            "province": "เชียงราย"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลเชียงใหม่",
+      "diocese_en": "Diocese of Chiang Mai",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-cheiynghim",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "อรุโณทัย",
+            "province": "ลำปาง"
+          },
+          {
+            "name": "พระหฤทัย เชียงใหม่",
+            "province": "เชียงใหม่"
+          },
+          {
+            "name": "ศีลรวี",
+            "province": "เชียงใหม่"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "มงฟอร์ตวิทยาลัย แผนกประถม",
+            "province": "เชียงใหม่",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "มงฟอร์ตวิทยาลัย แผนกมัธยม",
+            "province": "เชียงใหม่",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญลำปาง",
+            "province": "ลำปาง",
+            "congregation": "เซนต์คาเบรียล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เจ้าฟ้าอุบลรัตน์",
+            "province": "เชียงใหม่",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟแม่แจ่ม",
+            "province": "เชียงใหม่",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เรยีนาเชลีวิทยาลัย",
+            "province": "เชียงใหม่",
+            "congregation": "อุร์สุลิน"
+          }
+        ],
+        "lay": [
+          {
+            "name": "สารสาสน์วิเทศเชียงใหม่",
+            "province": "เชียงใหม่"
+          },
+          {
+            "name": "สารสาสน์วิเทศล้านนา",
+            "province": "เชียงใหม่"
+          },
+          {
+            "name": "สารสาสน์วิเทศอุปถัมภ์",
+            "province": "เชียงใหม่"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลนครสวรรค์",
+      "diocese_en": "Diocese of Nakhon Sawan",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-nkhrswrrkh",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "พระวรสาร",
+            "province": "ลพบุรี"
+          },
+          {
+            "name": "เซนต์นิโกลาส",
+            "province": "พิษณุโลก"
+          },
+          {
+            "name": "ภัทรวิทยา",
+            "province": "ตาก"
+          },
+          {
+            "name": "เซนต์คาเบรียลสันติพัฒนา",
+            "province": "เพชรบูรณ์"
+          },
+          {
+            "name": "เซนต์ฟรังซีสเซเวียร์มัธโนทัย",
+            "province": "ตาก"
+          },
+          {
+            "name": "พระกุมารเยซูสิงห์บุรี",
+            "province": "สิงห์บุรี"
+          },
+          {
+            "name": "ยอแซฟพิจิตร",
+            "province": "พิจิตร"
+          },
+          {
+            "name": "เซนต์แมรี่ อุตรดิตถ์",
+            "province": "อุตรดิตถ์"
+          },
+          {
+            "name": "ปรีชาญาณศึกษา",
+            "province": "ตาก"
+          },
+          {
+            "name": "อนุบาลสิริโรจนา",
+            "province": "ตาก"
+          },
+          {
+            "name": "สันถวไมตรีศึกษา",
+            "province": "ตาก"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "ลาซาลโชติรวีนครสวรรค์",
+            "province": "นครสวรรค์",
+            "congregation": "ภราดาลาซาล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์โยเซฟนครสวรรค์",
+            "province": "นครสวรรค์",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟศรีเพชรบูรณ์",
+            "province": "เพชรบูรณ์",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟ แม่ระมาด",
+            "province": "ตาก",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "อัสสัมชัญฯ ลำนารายณ์",
+            "province": "ลพบุรี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "อัสสัมชัญฯ ลพบุรี",
+            "province": "ลพบุรี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "พระหฤทัยสวรรคโลก",
+            "province": "สุโขทัย",
+            "congregation": "พระหฤทัยของพระเยซูเจ้า"
+          }
+        ],
+        "lay": [
+          {
+            "name": "มารีย์วิทยา",
+            "province": "นครสวรรค์"
+          },
+          {
+            "name": "นานาชาติเซนต์จอห์นแมรี่",
+            "province": "นครสวรรค์"
+          },
+          {
+            "name": "สารสาสน์วิเทศสุโขทัย",
+            "province": "สุโขทัย"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "อัครสังฆมณฑลกรุงเทพฯ",
+      "diocese_en": "Archdiocese of Bangkok",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-xakhr-sangkhmnthl-krungtheph",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "กุหลาบวิทยา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "อัสสัมชัญศึกษา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เปรมฤดีศึกษา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์หลุยส์ศึกษา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์ราฟาแอล",
+            "province": "สมุทรปราการ"
+          },
+          {
+            "name": "สามัคคีสงเคราะห์",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "แม่พระฟาติมา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "โยนออฟอาร์ค",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "พระมารดานิจจานุเคราะห์",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "ซางตาครู้สศึกษา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์แมรี่",
+            "province": "สมุทรปราการ"
+          },
+          {
+            "name": "แม่พระประจักษ์",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์ปีเตอร์ ธนบุรี",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "พระแม่สกลสงเคราะห์",
+            "province": "นนทบุรี"
+          },
+          {
+            "name": "คาเบรียลอุปถัมภ์",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "พระวิสุทธิวงส์",
+            "province": "ปทุมธานี"
+          },
+          {
+            "name": "เซนต์เทเรซา",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "มาเรียลัย",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "เซนต์แอนโทนี",
+            "province": "ฉะเชิงเทรา"
+          },
+          {
+            "name": "ดาราสมุทร",
+            "province": "ฉะเชิงเทรา"
+          },
+          {
+            "name": "มารดานฤมล",
+            "province": "ฉะเชิงเทรา"
+          },
+          {
+            "name": "มาลาสวรรค์พิทยา",
+            "province": "นครนายก"
+          },
+          {
+            "name": "นักบุญยอแซฟอุปถัมภ์ฯ",
+            "province": "นครนายก"
+          },
+          {
+            "name": "คอมมูนิต้า อินคอนโทร",
+            "province": "ปทุมธานี"
+          },
+          {
+            "name": "นักบุญเปโตร",
+            "province": "นครปฐม"
+          },
+          {
+            "name": "ยอแซฟอุปถัมภ์",
+            "province": "นครปฐม"
+          },
+          {
+            "name": "บอสโกพิทักษ์",
+            "province": "นครปฐม"
+          },
+          {
+            "name": "อันนาลัย",
+            "province": "สมุทรสาคร"
+          },
+          {
+            "name": "เซนต์แอนดรูว์",
+            "province": "นครปฐม"
+          },
+          {
+            "name": "ราษฎร์บำรุงศิลป์",
+            "province": "อยุธยา"
+          },
+          {
+            "name": "เซนต์เทเรซาแสงทอง",
+            "province": "อยุธยา"
+          },
+          {
+            "name": "เซนต์จอห์น บัปติสต์",
+            "province": "อยุธยา"
+          },
+          {
+            "name": "ยอแซฟอยุธยา",
+            "province": "อยุธยา"
+          },
+          {
+            "name": "ไตรราชวิทยา",
+            "province": "อยุธยา"
+          },
+          {
+            "name": "แม่พระประจักษ์",
+            "province": "สุพรรณบุรี"
+          },
+          {
+            "name": "ยอแซฟอุปถัมภ์ อู่ทอง",
+            "province": "สุพรรณบุรี"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "อัสสัมชัญ (มัธยม)",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญ (ประถม)",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญธนบุรี",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญสมุทรปราการ",
+            "province": "สมุทรปราการ",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "เซนต์คาเบรียล",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญ (ภาษาอังกฤษ)",
+            "province": "สมุทรสาคร",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "เซนต์หลุยส์",
+            "province": "ฉะเชิงเทรา",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "เซนต์ดอมินิก",
+            "province": "กรุงเทพฯ",
+            "congregation": "ซาเลเซียน"
+          },
+          {
+            "name": "พระมหาไถ่ศึกษา",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระมหาไถ่"
+          },
+          {
+            "name": "ร่วมฤดีวิเทศศึกษา",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระมหาไถ่"
+          },
+          {
+            "name": "ลาซาล",
+            "province": "กรุงเทพฯ",
+            "congregation": "ภราดาลาซาล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "อัสสัมชัญคอนแวนต์",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "อัสสัมชัญคอนแวนต์ สีลม",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟคอนแวนต์",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์ฟรังซีสเซเวียร์ (เมืองทอง)",
+            "province": "นนทบุรี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์ฟรังซีสซาเวียร์คอนแวนต์",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "ซางตาครู้สคอนแวนท์",
+            "province": "กรุงเทพฯ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟบางนา",
+            "province": "สมุทรปราการ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟทิพวัล",
+            "province": "สมุทรปราการ",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "พระหฤทัยคอนแวนต์",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระหฤทัยของพระเยซูเจ้า"
+          },
+          {
+            "name": "พระหฤทัยพัฒนเวศม์",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระหฤทัยของพระเยซูเจ้า"
+          },
+          {
+            "name": "พระหฤทัยนนทบุรี",
+            "province": "นนทบุรี",
+            "congregation": "พระหฤทัยของพระเยซูเจ้า"
+          },
+          {
+            "name": "พระหฤทัยดอนเมือง",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระหฤทัยของพระเยซูเจ้า"
+          },
+          {
+            "name": "มาแตร์เดอีวิทยาลัย",
+            "province": "กรุงเทพฯ",
+            "congregation": "อุร์สุลิน"
+          },
+          {
+            "name": "วาสุเทวี",
+            "province": "กรุงเทพฯ",
+            "congregation": "อุร์สุลิน"
+          },
+          {
+            "name": "มารีย์อุปถัมภ์",
+            "province": "นครปฐม",
+            "congregation": "ธิดาแม่พระองค์อุปถัมภ์"
+          },
+          {
+            "name": "พระแม่มารีสาธุประดิษฐ์",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระราชินีมาเรีย"
+          },
+          {
+            "name": "พระแม่มารีพระโขนง",
+            "province": "กรุงเทพฯ",
+            "congregation": "พระราชินีมาเรีย"
+          },
+          {
+            "name": "อนุบาลบ้านดรุณ",
+            "province": "",
+            "congregation": "พระราชินีมาเรีย"
+          },
+          {
+            "name": "อนุบาลหทัยนิรมล",
+            "province": "กรุงเทพฯ",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "พระแม่มารี",
+            "province": "กรุงเทพฯ",
+            "congregation": "ธิดาพระราชินีมาเรีย"
+          }
+        ],
+        "lay": []
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลราชบุรี",
+      "diocese_en": "Diocese of Ratchaburi",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-rachburi",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "ดรุณาราชบุรี",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "เทพินทร์พิทยา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "เทพวิทยา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "วีรศิลป์",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "อนุชนศึกษา",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "ดรุณานุเคราะห์",
+            "province": "สมุทรสงคราม"
+          },
+          {
+            "name": "ดรุณานุกูล",
+            "province": "สมุทรสงคราม"
+          },
+          {
+            "name": "เรืองวิทย์พระหฤทัย",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "วันทามารีอา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "ดำเนินวิทยา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "ธีรศาสตร์",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "ดรุณากาญจนบุรี",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "ดรุณาราชบุรีวิเทศศึกษา",
+            "province": "ราชบุรี"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "สารสิทธิ์พิทยาลัย",
+            "province": "ราชบุรี",
+            "congregation": "ซาเลเซียน"
+          },
+          {
+            "name": "ลาซาลสังขละบุรี",
+            "province": "กาญจนบุรี",
+            "congregation": "ภราดาลาซาล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์โยเซฟเพชรบุรี",
+            "province": "เพชรบุรี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "นารีวิทยา",
+            "province": "ราชบุรี",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "นารีวุฒิ",
+            "province": "ราชบุรี",
+            "congregation": "ธิดาแม่พระองค์อุปถัมภ์"
+          }
+        ],
+        "lay": [
+          {
+            "name": "เนอสเซอรี่บ้านแม่พระอุปถัมภ์",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศออนซี",
+            "province": "เพชรบุรี"
+          },
+          {
+            "name": "อุดมวิทยา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "อำนวยวิทย์",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศกาญจนบุรี",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "สารสาสน์ฯเพชรบุรี",
+            "province": "เพชรบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศท่ามะกา",
+            "province": "กาญจนบุรี"
+          },
+          {
+            "name": "วังตาลวิทยา",
+            "province": "ราชบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศสมุทรสงคราม",
+            "province": "สมุทรสงคราม"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลจันทบุรี",
+      "diocese_en": "Diocese of Chanthaburi",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-canthburi",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "ศรีหฤทัย",
+            "province": "จันทบุรี"
+          },
+          {
+            "name": "ชุมชนพัฒนา",
+            "province": "สระแก้ว"
+          },
+          {
+            "name": "อนุบาลโสตพัฒนา",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "ดาราสมุทร ศรีราชา",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "ปรีชานุศาสน์",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "วัฒนานุศาสน์",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "ประชาสงเคราะห์",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "สันติภาพ",
+            "province": "ฉะเชิงเทรา"
+          },
+          {
+            "name": "ดาราจรัส",
+            "province": "ฉะเชิงเทรา"
+          },
+          {
+            "name": "เทวรักษ์",
+            "province": "ปราจีนบุรี"
+          },
+          {
+            "name": "คริสตสงเคราะห์",
+            "province": "นครนายก"
+          },
+          {
+            "name": "ปัญจทรัพย์",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "ดาราสมุทรสระแก้ว",
+            "province": "สระแก้ว"
+          },
+          {
+            "name": "ปัญจทรัพย์ มีนบุรี",
+            "province": "กรุงเทพฯ"
+          },
+          {
+            "name": "บ้านยอแซฟพิทักษ์",
+            "province": "จันทบุรี"
+          },
+          {
+            "name": "ดาราสมุทร อรัญประเทศ",
+            "province": "สระแก้ว"
+          },
+          {
+            "name": "อนุบาลคริสตสงเคราะห์",
+            "province": "นครนายก"
+          },
+          {
+            "name": "มารีย์เนอสเซอร์รี่",
+            "province": "ระยอง"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "อัสสัมชัญศรีราชา",
+            "province": "ชลบุรี",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "อัสสัมชัญระยอง",
+            "province": "ระยอง",
+            "congregation": "เซนต์คาเบรียล"
+          },
+          {
+            "name": "ลาซาลจันทบุรี (มารดาพิทักษ์)",
+            "province": "จันทบุรี",
+            "congregation": "ภราดาลาซาล"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์ปอลคอนแวนต์",
+            "province": "ชลบุรี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เซนต์โยเซฟระยอง",
+            "province": "ระยอง",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "เมรี่อิมมาคุเลตคอนแวนต์",
+            "province": "ชลบุรี",
+            "congregation": "พระกุมารเยซู"
+          },
+          {
+            "name": "มารดานุสรณ์",
+            "province": "ตราด",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "สตรีมารดาพิทักษ์",
+            "province": "จันทบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "ยอแซฟวิทยา",
+            "province": "จันทบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "มารีวิทยา",
+            "province": "ปราจีนบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "มารีวิทยากบินทร์บุรี",
+            "province": "ปราจีนบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "มารีวิทยาศรีมโหสถ",
+            "province": "ปราจีนบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          },
+          {
+            "name": "ลัมแบรต์พิชญาลัย",
+            "province": "จันทบุรี",
+            "congregation": "รักกางเขน จันทบุรี"
+          }
+        ],
+        "lay": [
+          {
+            "name": "อนุบาลภักดีพรรณ",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "วุฒินันท์",
+            "province": "ระยอง"
+          },
+          {
+            "name": "รัตนชัยศึกษา",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "ดวงมณี",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "มารีวิทย์",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "มารีวิทย์บ่อวิน",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "มารีวิทย์สัตหีบ",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศชลบุรี",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "อนุบาลพร้อมคุณ",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "คิวคิด อินเตอร์เนชั่นแนล เนอร์เซอรี่",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "สารสาสน์วิเทศบูรพา",
+            "province": "ชลบุรี"
+          },
+          {
+            "name": "อนุบาลพรพระแม่",
+            "province": "ชลบุรี"
+          }
+        ]
+      }
+    },
+    {
+      "diocese": "สังฆมณฑลสุราษฎร์ธานี",
+      "diocese_en": "Diocese of Surat Thani",
+      "url": "https://www.catholic-education.or.th/edct/index.php/sthan-suksa-sangkad-spha/rongreiyn-sangkad-sangkhmnthl-surasdrthani",
+      "categories": {
+        "diocesan": [
+          {
+            "name": "เทพมิตรศึกษา",
+            "province": "สุราษฎร์ธานี"
+          },
+          {
+            "name": "อรุณวิทยา",
+            "province": "ประจวบคีรีขันธ์"
+          },
+          {
+            "name": "มานะศึกษา",
+            "province": "ยะลา"
+          },
+          {
+            "name": "อุปถัมภ์วิทยาพนม",
+            "province": "สุราษฎร์ธานี"
+          },
+          {
+            "name": "วันทามารีอา",
+            "province": "ประจวบคีรีขันธ์"
+          },
+          {
+            "name": "มารีย์พิทักษ์ศึกษา",
+            "province": "นครศรีธรรมราช"
+          },
+          {
+            "name": "เจริญศรีศึกษา",
+            "province": "ปัตตานี"
+          }
+        ],
+        "male_religious": [
+          {
+            "name": "หัวหินวิทยาลัย",
+            "province": "ประจวบคีรีขันธ์",
+            "congregation": "ซาเลเซียน"
+          },
+          {
+            "name": "แสงทองวิทยา",
+            "province": "สงขลา",
+            "congregation": "ซาเลเซียน"
+          },
+          {
+            "name": "ศรีอรุโณทัย",
+            "province": "ระนอง",
+            "congregation": "รอยแผลศักดิ์สิทธิ์"
+          },
+          {
+            "name": "ดรุโณทัย",
+            "province": "ตรัง",
+            "congregation": "รอยแผลศักดิ์สิทธิ์"
+          },
+          {
+            "name": "ดาวรุ่งวิทยา",
+            "province": "ภูเก็ต",
+            "congregation": "รอยแผลศักดิ์สิทธิ์"
+          },
+          {
+            "name": "มารีรัก พังงา",
+            "province": "พังงา",
+            "congregation": "รอยแผลศักดิ์สิทธิ์"
+          }
+        ],
+        "female_religious": [
+          {
+            "name": "เซนต์โยเซฟเกาะสมุย",
+            "province": "สุราษฎร์ธานี",
+            "congregation": "เซนต์ปอล เดอ ชาร์ตร"
+          },
+          {
+            "name": "ธิดานุเคราะห์",
+            "province": "สงขลา",
+            "congregation": "ธิดาแม่พระองค์อุปถัมภ์"
+          },
+          {
+            "name": "พระแม่มารีประจวบคีรีขันธ์",
+            "province": "ประจวบคีรีขันธ์",
+            "congregation": "พระราชินีมาเรีย"
+          },
+          {
+            "name": "ธิดาแม่พระ",
+            "province": "สุราษฎร์ธานี",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "นิรมลชุมพร",
+            "province": "ชุมพร",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "ดรุณศึกษา (จุฬาภรณ์)",
+            "province": "นครศรีธรรมราช",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "ดาราสมุทร",
+            "province": "ภูเก็ต",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "ถนอมศรีศึกษา",
+            "province": "ยะลา",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "ดรุณศึกษา 2 (ร่อนพิบูลย์)",
+            "province": "นครศรีธรรมราช",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "ธิดาแม่พระ",
+            "province": "กระบี่",
+            "congregation": "ผู้รับใช้ดวงหทัยพระแม่มารีย์"
+          },
+          {
+            "name": "อนุบาลธิดาเมตตาธรรม",
+            "province": "พัทลุง",
+            "congregation": "ธิดาเมตตาธรรม"
+          }
+        ],
+        "lay": [
+          {
+            "name": "สารสาสน์วิเทศสุราษฎร์",
+            "province": "สุราษฎร์ธานี"
+          }
+        ]
+      }
+    }
+  ]
+}

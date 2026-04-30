@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>โรงเรียนคาทอลิกในประเทศไทย — ครบทุกสังฆมณฑล | FSG Thailand</title>
+<meta name="description" content="รายชื่อโรงเรียนคาทอลิกในประเทศไทย 287 แห่ง จัดตาม 11 สังฆมณฑล แบ่งหมวด diocesan / คณะนักบวชชาย-หญิง / ฆราวาส — ข้อมูลจากสภาการศึกษาคาทอลิกแห่งประเทศไทย">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a2547;
+  --navy-2: #1a3a5c;
+  --gold: #c9a74e;
+  --orange: #d97706;
+  --cream: #faf8f0;
+  --paper: #fffef8;
+  --text: #2a2a2a;
+  --text-light: #5a5a5a;
+  --border: #e5e0d0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Sarabun', system-ui, sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+h1, h2, h3 { font-family: 'Cinzel', 'Sarabun', serif; font-weight: 600; }
+a { color: var(--navy); }
+
+.topnav { background: rgba(10,37,71,0.96); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+.topnav a { color: #e8d5a0; text-decoration: none; font-size: 0.95em; }
+.topnav .brand { font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #4a2a0e 200%);
+  color: white; padding: 70px 24px; text-align: center;
+}
+.hero h1 { font-size: clamp(1.6em, 4.5vw, 2.4em); margin-bottom: 16px; line-height: 1.3; }
+.hero .subtitle { max-width: 720px; margin: 0 auto 24px; opacity: 0.92; font-weight: 300; line-height: 1.7; font-size: 1.05em; }
+.hero .stats { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.hero .stat { background: rgba(255,255,255,0.08); padding: 14px 22px; border-radius: 12px; border: 1px solid rgba(232,213,160,0.3); }
+.hero .stat .num { font-size: 1.8em; font-weight: 700; color: #e8d5a0; }
+.hero .stat .lbl { font-size: 0.85em; opacity: 0.85; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 50px 24px; }
+
+.controls {
+  position: sticky; top: 60px; z-index: 50;
+  background: var(--cream); padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+.controls-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.search-box {
+  flex: 1; min-width: 240px;
+  padding: 10px 16px; border: 2px solid var(--border); border-radius: 10px;
+  font-size: 0.95em; outline: none; font-family: inherit;
+  background: white;
+}
+.search-box:focus { border-color: var(--gold); }
+.cat-filter { display: flex; gap: 6px; flex-wrap: wrap; }
+.cat-filter button {
+  padding: 8px 14px; border: 1px solid var(--border); background: white;
+  border-radius: 8px; cursor: pointer; font-size: 0.88em; font-family: inherit;
+  transition: all 0.15s;
+}
+.cat-filter button.active { background: var(--navy); color: white; border-color: var(--navy); }
+.cat-filter button:hover:not(.active) { border-color: var(--gold); }
+
+.diocese-section { margin-bottom: 30px; }
+.diocese-header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  color: white; padding: 18px 24px; border-radius: 12px 12px 0 0;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+  cursor: pointer; user-select: none;
+}
+.diocese-header h2 { font-size: 1.2em; font-weight: 600; }
+.diocese-header .count { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 16px; font-size: 0.85em; }
+.diocese-header .toggle { color: var(--gold); font-size: 1.2em; transition: transform 0.2s; }
+.diocese-section.collapsed .diocese-header .toggle { transform: rotate(-90deg); }
+.diocese-section.collapsed .diocese-body { display: none; }
+
+.diocese-body {
+  background: var(--paper); border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 12px 12px; padding: 18px 24px;
+}
+.cat-block { margin-bottom: 18px; }
+.cat-block:last-child { margin-bottom: 0; }
+.cat-block h3 {
+  font-size: 0.9em; color: var(--navy); margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  border-bottom: 2px solid var(--gold); padding-bottom: 6px;
+}
+.school-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+.school-item {
+  padding: 10px 12px; background: white; border-radius: 8px;
+  border-left: 3px solid var(--gold); font-size: 0.93em;
+}
+.school-item .name { font-weight: 600; color: var(--navy); }
+.school-item .meta { font-size: 0.82em; color: var(--text-light); margin-top: 2px; }
+.school-item.fsg { border-left-color: var(--orange); background: #fff8f0; }
+.school-item.fsg .name { color: var(--orange); }
+
+.empty-cat { color: var(--text-light); font-style: italic; font-size: 0.9em; padding: 6px; }
+
+.notice {
+  background: linear-gradient(135deg, #fff8f0 0%, #fff4e6 100%);
+  border-left: 4px solid var(--gold);
+  padding: 16px 22px; border-radius: 0 10px 10px 0;
+  margin-bottom: 30px; font-size: 0.95em;
+}
+.notice strong { color: var(--navy); }
+.notice a { color: var(--orange); font-weight: 600; }
+
+.sources {
+  background: var(--navy); color: white;
+  padding: 30px; border-radius: 14px;
+  margin-top: 40px;
+}
+.sources h3 { color: #e8d5a0; margin-bottom: 14px; font-size: 1.15em; }
+.sources ul { list-style: none; }
+.sources ul li { padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,0.15); }
+.sources ul li:last-child { border-bottom: none; }
+.sources a { color: white; text-decoration: underline; text-decoration-color: rgba(232,213,160,0.5); }
+
+footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 30px; text-align: center; font-size: 0.9em; }
+footer a { color: #e8d5a0; text-decoration: none; }
+
+.loading { text-align: center; padding: 60px; color: var(--text-light); }
+
+@media (max-width: 600px) {
+  .controls { top: 50px; }
+  .container { padding: 30px 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="/" class="brand">⚜ FSG Thailand</a>
+  <a href="/catholic-schools.html">← directory ภาพรวม</a>
+</nav>
+
+<header class="hero">
+  <h1>โรงเรียนคาทอลิกในประเทศไทย<br>ครบทุกสังฆมณฑล</h1>
+  <p class="subtitle">
+    รายชื่อโรงเรียนคาทอลิกใน 11 สังฆมณฑลของประเทศไทย
+    จัดแบ่งเป็น diocesan / คณะนักบวชชาย / คณะนักบวชหญิง / ฆราวาส
+  </p>
+  <div class="stats">
+    <div class="stat"><div class="num" id="stat-total">…</div><div class="lbl">โรงเรียนทั้งหมด</div></div>
+    <div class="stat"><div class="num">11</div><div class="lbl">สังฆมณฑล</div></div>
+    <div class="stat"><div class="num" id="stat-fsg">15</div><div class="lbl">ในเครือเซนต์คาเบรียล</div></div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="notice">
+    <strong>ที่มา:</strong> ข้อมูลจาก
+    <a href="https://www.catholic-education.or.th/edct/" target="_blank" rel="noopener">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a>
+    (catholic-education.or.th) · ดึงข้อมูลล่าสุด เม.ย. 2569 ·
+    สำหรับประวัติศาสตร์พระศาสนจักรในไทย ดูที่
+    <a href="https://catholichaab.com/main/" target="_blank" rel="noopener">หอจดหมายเหตุอัครสังฆมณฑลกรุงเทพ (catholichaab.com)</a>
+  </div>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <input type="search" class="search-box" id="search" placeholder="🔍 ค้นชื่อโรงเรียน, จังหวัด, คณะ..." />
+      <div class="cat-filter">
+        <button class="active" data-cat="all">ทั้งหมด</button>
+        <button data-cat="diocesan">สังกัดสังฆมณฑล</button>
+        <button data-cat="male_religious">คณะนักบวชชาย</button>
+        <button data-cat="female_religious">คณะนักบวชหญิง</button>
+        <button data-cat="lay">ฆราวาส</button>
+        <button data-cat="fsg">เครือ SG เท่านั้น</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="results">
+    <div class="loading">⏳ กำลังโหลดข้อมูล…</div>
+  </div>
+
+  <div class="sources">
+    <h3>📚 แหล่งข้อมูลและการอ้างอิง</h3>
+    <ul>
+      <li>
+        <a href="https://www.catholic-education.or.th/edct/" target="_blank" rel="noopener">สภาการศึกษาคาทอลิกแห่งประเทศไทย</a>
+        — รายชื่อโรงเรียนคาทอลิกแยกตามสังฆมณฑล (ใช้เป็น canonical source ของหน้านี้)
+      </li>
+      <li>
+        <a href="https://catholichaab.com/main/" target="_blank" rel="noopener">หอจดหมายเหตุ อัครสังฆมณฑลกรุงเทพฯ</a>
+        — ประวัติพระศาสนจักรในไทย, ประวัติบุญราศี, มิสซังกรุงสยาม, MEP
+      </li>
+      <li>
+        <a href="https://www.catholic.or.th/" target="_blank" rel="noopener">สภาประมุขบาทหลวงโรมันคาทอลิกแห่งประเทศไทย</a>
+        — เว็บกลางของพระศาสนจักรคาทอลิกในไทย
+      </li>
+      <li>
+        <a href="https://www.vatican.va/" target="_blank" rel="noopener">วาติกัน</a>
+        — Holy See
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>⚜ มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p style="margin-top:8px;font-size:0.85em">หน้านี้ render จาก data/catholic_schools_thailand.json · อัพเดทล่าสุด เม.ย. 2569</p>
+</footer>
+
+<script>
+const CATEGORIES = {
+  diocesan: 'สังกัดสังฆมณฑล',
+  male_religious: 'คณะนักบวชชาย',
+  female_religious: 'คณะนักบวชหญิง',
+  lay: 'ฆราวาส',
+};
+
+let allData = null;
+let currentFilter = 'all';
+let currentSearch = '';
+
+function isFSG(school, category) {
+  return category !== 'diocesan' && (school.congregation || '').includes('เซนต์คาเบรียล');
+}
+
+function matchSchool(school, category, dioceseName) {
+  // search filter
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    const hay = [
+      school.name, school.province, school.congregation || '',
+      dioceseName, CATEGORIES[category]
+    ].join(' ').toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  // category filter
+  if (currentFilter === 'all') return true;
+  if (currentFilter === 'fsg') return isFSG(school, category);
+  return currentFilter === category;
+}
+
+function render() {
+  if (!allData) return;
+  const root = document.getElementById('results');
+  const sections = [];
+  let totalShown = 0;
+
+  for (const diocese of allData.dioceses) {
+    let dioceseHtml = '';
+    let dioceseCount = 0;
+
+    for (const [cat, label] of Object.entries(CATEGORIES)) {
+      const schools = diocese.categories[cat] || [];
+      const filtered = schools.filter(s => matchSchool(s, cat, diocese.diocese));
+      if (filtered.length === 0) continue;
+      dioceseCount += filtered.length;
+
+      const items = filtered.map(s => {
+        const fsg = isFSG(s, cat);
+        const meta = [s.province, s.congregation].filter(Boolean).join(' · ');
+        return `<div class="school-item${fsg?' fsg':''}">
+          <div class="name">${s.name}</div>
+          ${meta ? `<div class="meta">${meta}</div>` : ''}
+        </div>`;
+      }).join('');
+
+      dioceseHtml += `<div class="cat-block">
+        <h3>${label} (${filtered.length})</h3>
+        <div class="school-grid">${items}</div>
+      </div>`;
+    }
+
+    if (dioceseCount === 0) continue;
+    totalShown += dioceseCount;
+
+    sections.push(`<section class="diocese-section">
+      <div class="diocese-header" onclick="this.parentElement.classList.toggle('collapsed')">
+        <h2>${diocese.diocese}</h2>
+        <div style="display:flex;gap:14px;align-items:center">
+          <span class="count">${dioceseCount} โรง</span>
+          <span class="toggle">▼</span>
+        </div>
+      </div>
+      <div class="diocese-body">${dioceseHtml}</div>
+    </section>`);
+  }
+
+  root.innerHTML = sections.length
+    ? sections.join('')
+    : `<div class="loading">ไม่พบผลลัพธ์ตามตัวกรอง</div>`;
+
+  // update top stats based on filter
+  const countLabel = (currentFilter === 'all' && !currentSearch) ? '' : ` · กรองแล้ว ${totalShown}`;
+  document.getElementById('stat-total').textContent = (currentFilter === 'all' && !currentSearch)
+    ? allData.total_schools
+    : `${totalShown} / ${allData.total_schools}`;
+}
+
+async function loadData() {
+  try {
+    const resp = await fetch('data/catholic_schools_thailand.json', { cache: 'no-cache' });
+    allData = await resp.json();
+    document.getElementById('stat-total').textContent = allData.total_schools;
+    render();
+  } catch (err) {
+    document.getElementById('results').innerHTML =
+      `<div class="loading">❌ ไม่สามารถโหลดข้อมูลได้ — ${err.message}</div>`;
+  }
+}
+
+document.getElementById('search').addEventListener('input', e => {
+  currentSearch = e.target.value.trim();
+  render();
+});
+
+document.querySelectorAll('.cat-filter button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-filter button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.cat;
+    render();
+  });
+});
+
+loadData();
+</script>
+
+</body>
+</html>
