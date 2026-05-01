@@ -4,20 +4,22 @@
  * Data source: data/rome_calendar_YYYY.json
  *   (converted from Calendar_YYYY.csv maintained by Province staff)
  *
- * 8 badges (each hidden if empty):
+ * 9 badges (each hidden if empty) — visual order in <div class="rome-cal-items">:
  *   - Season    ← Liturgical Season/Sunday
  *   - Saints    ← Saints/Feasts
  *   - Special   ← Special Days/Events
  *   - History   ← Historical Events
  *   - Deceased  ← Deceased Brothers (from rome calendar JSON)
- *   - Birthday  ← Living Brothers' birthdays (with age)
+ *   - Feastday  ← Living Brothers' Saint name day (วันฉลองศาสนนาม)
  *   - Firstvow  ← Living Brothers' First Vows anniversary (with years)
  *   - Perpvow   ← Living Brothers' Perpetual Vows anniversary (with years)
+ *   - Birthday  ← Living Brothers' birthdays (with age)
  *
  * Brothers data source: data/brothers_dates.json
  *   { "birthdays": { "MM-DD": [{name, community, year}, ...] },
  *     "first_vows": { "MM-DD": [...] },
- *     "perpetual_vows": { "MM-DD": [...] } }
+ *     "perpetual_vows": { "MM-DD": [...] },
+ *     "feast_days": { "MM-DD": [{name, community, saint, feast}, ...] } }
  *
  * Required HTML:
  *   <span id="rc-date"></span>
@@ -29,13 +31,14 @@
  *   <span id="rc-birthday"></span>
  *   <span id="rc-firstvow"></span>
  *   <span id="rc-perpvow"></span>
+ *   <span id="rc-feastday"></span>
  * ────────────────────────────────────────────────────────────────── */
 
 (function () {
   'use strict';
 
   const SECTIONS = ['season', 'saints', 'special', 'history', 'deceased',
-                    'birthday', 'firstvow', 'perpvow'];
+                    'feastday', 'firstvow', 'perpvow', 'birthday'];
 
   function fmtDate(date) {
     const m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -146,9 +149,9 @@
       setTag('rc-deceased', entry.deceased);
     }
 
-    // Brothers' anniversaries — birthday / first vow / perpetual vow
+    // Brothers' anniversaries — birthday / first vow / perpetual vow / feast day
     // independent of liturgical calendar
-    let bdayText = '', fvText = '', pvText = '';
+    let bdayText = '', fvText = '', pvText = '', fdText = '';
     try {
       const data = await loadBrotherDates();
       const mmdd = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
@@ -164,12 +167,29 @@
         (data.perpetual_vows || {})[mmdd],
         (yrs) => yrs + ' yrs'
       );
+      // Feast Day — group by saint feast then list bros
+      const fdList = (data.feast_days || {})[mmdd] || [];
+      if (fdList.length > 0) {
+        const byFeast = {};
+        fdList.forEach(b => {
+          const key = b.feast || b.saint;
+          if (!byFeast[key]) byFeast[key] = [];
+          byFeast[key].push(b);
+        });
+        fdText = Object.keys(byFeast).map(feast => {
+          const bros = byFeast[feast].map(b =>
+            b.name + (b.community ? ' (' + b.community + ')' : '')
+          ).join(', ');
+          return feast + ' — ' + bros;
+        }).join(' · ');
+      }
     } catch (err) {
       console.warn('liturgical-calendar (brothers):', err.message);
     }
     setTag('rc-birthday', bdayText);
     setTag('rc-firstvow', fvText);
     setTag('rc-perpvow', pvText);
+    setTag('rc-feastday', fdText);
 
     // After content set, recompute heights
     adjustLayout();
