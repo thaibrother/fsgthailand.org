@@ -538,8 +538,25 @@
   @media (max-width: 767px) {
     .rome-cal-inner { flex-direction: column; }
     .rome-cal-date { padding: 12px 20px; font-size: 14px; justify-content: center; }
-    .rome-cal-items { padding: 10px 16px; justify-content: center; }
-    .rome-cal-items .rc-tag { font-size: 11px; padding: 4px 10px; }
+    .rome-cal-items {
+      padding: 10px 16px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+    }
+    .rome-cal-items .rc-tag {
+      font-size: 11px; padding: 6px 12px;
+      white-space: normal;
+      word-break: break-word;
+      width: 100%;
+      max-width: 100%;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+    .rome-cal-items .rc-tag .rc-label {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
   }
   /* ── Pin Rome Calendar above fixed nav (heights auto-adjust via JS) ── */
   .rome-cal { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
