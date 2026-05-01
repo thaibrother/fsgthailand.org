@@ -77,13 +77,13 @@
       nav.style.top = calH + 'px';
     }
 
-    const navH = nav ? nav.offsetHeight : 0;
-    const firstHero = document.querySelector('.hero, .hero-section, main, .main-content');
-    if (firstHero && getComputedStyle(firstHero).position !== 'fixed') {
-      const totalOffset = calH + navH;
-      const computed = parseInt(getComputedStyle(firstHero).marginTop, 10) || 0;
-      if (computed > 0 || firstHero.classList.contains('hero')) {
-        firstHero.style.marginTop = totalOffset + 'px';
+    // Only push hero down if the nav is FIXED (layout depends on calendar offset).
+    // Pages with sticky nav don't need this — calendar floats above natural flow.
+    if (nav && getComputedStyle(nav).position === 'fixed') {
+      const navH = nav.offsetHeight;
+      const firstHero = document.querySelector('.hero, .hero-section, main, .main-content');
+      if (firstHero && getComputedStyle(firstHero).position !== 'fixed') {
+        firstHero.style.marginTop = (calH + navH) + 'px';
       }
     }
   }
