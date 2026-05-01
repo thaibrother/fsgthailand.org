@@ -29,12 +29,12 @@
   <!-- Connection lines -->
   <line x1="450" y1="265" x2="130" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
   <line x1="450" y1="265" x2="290" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="265" x2="450" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <!-- HR line removed; Student box now occupies this space -->
   <line x1="450" y1="265" x2="610" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
   <line x1="450" y1="265" x2="770" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
   <line x1="450" y1="385" x2="90" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
   <line x1="450" y1="385" x2="250" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="410" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <!-- PDCA-near line removed; Parent box now occupies this space -->
   <line x1="450" y1="385" x2="570" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
   <line x1="450" y1="385" x2="730" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
 
@@ -128,7 +128,26 @@
   <text x="825" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Record / Search</text>
   <line x1="765" y1="325" x2="545" y2="325" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
 
+
+  <!-- Top center: Student (above DB) -->
+  <line x1="450" y1="240" x2="450" y2="263" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <rect x="390" y="170" width="120" height="70" rx="14" fill="url(#gBlue)" filter="url(#shadowSm)"/>
+  <circle cx="450" cy="195" r="11" fill="rgba(255,255,255,0.3)"/>
+  <rect x="442" y="187" width="16" height="14" rx="2" fill="rgba(255,255,255,0.6)"/>
+  <text x="450" y="220" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Student</text>
+  <text x="450" y="234" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">360° Dashboard</text>
+
+  <!-- Bottom center: Parent (below DB) -->
+  <line x1="450" y1="400" x2="450" y2="373" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
+  <rect x="390" y="400" width="120" height="70" rx="14" fill="url(#gGreen)" filter="url(#shadowSm)"/>
+  <circle cx="442" cy="425" r="9" fill="rgba(255,255,255,0.3)"/>
+  <circle cx="458" cy="425" r="9" fill="rgba(255,255,255,0.3)"/>
+  <rect x="438" y="418" width="9" height="11" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+  <rect x="453" y="418" width="9" height="11" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+  <text x="450" y="450" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Parent</text>
+  <text x="450" y="464" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)">Realtime · Multi-child</text>
+
   <!-- Bottom labels -->
-  <text x="450" y="590" text-anchor="middle" font-size="13" fill="#6b6b6b">28 modules · 265 functions · One database · Cross-dimensional analysis</text>
+  <text x="450" y="590" text-anchor="middle" font-size="13" fill="#6b6b6b">28 modules · 265 functions · 4 dashboards (Executive · Teacher · Student · Parent) · One database</text>
   <text x="450" y="610" text-anchor="middle" font-size="11" fill="#999">SWIS Plus — swisplus.com</text>
 </svg>
