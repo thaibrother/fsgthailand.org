@@ -66,39 +66,14 @@
   }
   .nav-brand-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; white-space: nowrap; }
   nav ul { list-style: none; display: flex; gap: 2px; }
-  nav ul li { position: relative; }
   nav ul li a {
     color: var(--text-light); text-decoration: none;
     padding: 8px 14px; border-radius: 6px; font-size: 13px;
     font-weight: 500; transition: all 0.2s;
-    display: inline-block;
   }
   nav ul li a:hover, nav ul li a.active {
     color: var(--navy); background: var(--gray-100);
   }
-  nav .caret { font-size: 9px; opacity: 0.6; margin-left: 2px; }
-
-  /* ── Dropdown submenu ── */
-  nav ul li.has-submenu > .submenu {
-    display: none;
-    position: absolute; top: 100%; left: 0;
-    background: var(--white); min-width: 220px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    border-radius: 8px; padding: 6px;
-    z-index: 1000;
-    border: 1px solid var(--gray-200);
-  }
-  nav ul li.has-submenu:hover > .submenu,
-  nav ul li.has-submenu:focus-within > .submenu { display: block; }
-  nav ul li.has-submenu .submenu li { width: 100%; }
-  nav ul li.has-submenu .submenu li a {
-    display: block; padding: 8px 14px; white-space: nowrap;
-    border-radius: 4px; font-size: 13px;
-  }
-  nav ul li.has-submenu .submenu li a:hover {
-    background: var(--gray-100); color: var(--navy);
-  }
-
   .hamburger { display: none; background: none; border: none; font-size: 24px; cursor: pointer; padding: 8px; color: var(--navy); }
   @media (max-width: 960px) {
     .hamburger { display: block; }
@@ -106,17 +81,9 @@
       display: none; position: absolute; top: 68px; left: 0; right: 0;
       background: var(--white); flex-direction: column; padding: 12px 16px;
       border-bottom: 1px solid var(--gray-200); box-shadow: var(--shadow-lg);
-      max-height: 80vh; overflow-y: auto;
     }
     nav ul.open { display: flex; }
     nav ul li a { padding: 12px 16px; display: block; }
-    /* Mobile: submenu inline (not popup) */
-    nav ul li.has-submenu > .submenu {
-      display: block; position: static; box-shadow: none;
-      border: none; padding-left: 16px; min-width: 0;
-      border-left: 2px solid var(--gray-200); margin-left: 8px;
-    }
-    nav .caret { display: none; }
   }
 
   /* ── HERO ── */
@@ -210,6 +177,68 @@
   .eco-site:hover { border-color: var(--navy); color: var(--navy); }
   .eco-site.current { background: var(--navy); color: var(--white); border-color: var(--navy); }
   .eco-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── CELEBRATION (BISHOP APPOINTMENT) ── */
+  .celebration {
+    background: linear-gradient(135deg, #fdf6e3 0%, #fef9e7 100%);
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+    padding: 56px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .celebration::before {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background-image: radial-gradient(circle at 90% 10%, rgba(201, 167, 78, 0.08) 0%, transparent 40%),
+                      radial-gradient(circle at 10% 90%, rgba(201, 167, 78, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .celebration-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 320px 1fr; gap: 48px;
+    align-items: center;
+    position: relative;
+  }
+  .celebration-img {
+    border-radius: 12px; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(139, 105, 20, 0.25);
+    border: 3px solid var(--white);
+  }
+  .celebration-img img { width: 100%; display: block; }
+  .celebration-text .eyebrow {
+    color: var(--gold-dark);
+    font-size: 12px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; margin-bottom: 14px;
+    display: inline-block;
+  }
+  .celebration-text .occasion {
+    color: var(--text); font-size: 17px; margin-bottom: 16px; line-height: 1.6;
+  }
+  .celebration-text .name {
+    font-size: 30px; color: var(--navy-dark);
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    margin: 8px 0; line-height: 1.2;
+  }
+  .celebration-text .position {
+    font-size: 19px; color: var(--navy);
+    font-weight: 600; margin-bottom: 20px;
+    border-bottom: 2px solid var(--gold); padding-bottom: 12px;
+    display: inline-block;
+  }
+  .celebration-text p {
+    color: var(--text); line-height: 1.85; margin-bottom: 14px; font-size: 15px;
+  }
+  .celebration-date {
+    font-size: 13px; color: var(--text-muted);
+    margin-top: 16px; font-style: italic;
+  }
+  @media (max-width: 768px) {
+    .celebration { padding: 40px 16px; }
+    .celebration-inner { grid-template-columns: 1fr; gap: 28px; }
+    .celebration-img { max-width: 280px; margin: 0 auto; }
+    .celebration-text { text-align: center; }
+    .celebration-text .position { display: inline-block; }
+  }
 
   /* ── SECTION ── */
   .section { padding: 80px 20px; max-width: 1140px; margin: 0 auto; }
@@ -471,32 +500,14 @@
     <button class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
     <ul>
       <li><a href="#home" class="active">Home</a></li>
-      <li class="has-submenu">
-        <a href="#about">About <span class="caret">▾</span></a>
-        <ul class="submenu">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#strategy">Strategy</a></li>
-          <li><a href="#governance">Governance</a></li>
-          <li><a href="our-place.html">Our Place in the Church</a></li>
-        </ul>
-      </li>
-      <li class="has-submenu">
-        <a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Brothers <span class="caret">▾</span></a>
-        <ul class="submenu">
-          <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Brothers Directory</a></li>
-          <li><a href="alumni.html">Notable Alumni</a></li>
-          <li><a href="#network">Network</a></li>
-        </ul>
-      </li>
-      <li class="has-submenu">
-        <a href="#schools">Schools <span class="caret">▾</span></a>
-        <ul class="submenu">
-          <li><a href="#schools">Our 15 Schools</a></li>
-          <li><a href="catholic-schools.html">Catholic Schools (Directory)</a></li>
-        </ul>
-      </li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#strategy">Strategy</a></li>
+      <li><a href="#governance">Governance</a></li>
+      <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Brothers</a></li>
+      <li><a href="#schools">Schools</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="#network">Network</a></li>
       <li><a href="#innovation">Innovation</a></li>
-      <li><a href="news.html">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -538,45 +549,29 @@
   @media (max-width: 767px) {
     .rome-cal-inner { flex-direction: column; }
     .rome-cal-date { padding: 12px 20px; font-size: 14px; justify-content: center; }
-    .rome-cal-items {
-      padding: 10px 16px;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 6px;
-    }
-    .rome-cal-items .rc-tag {
-      font-size: 11px; padding: 6px 12px;
-      white-space: normal;
-      word-break: break-word;
-      width: 100%;
-      max-width: 100%;
-      align-items: flex-start;
-      line-height: 1.5;
-    }
-    .rome-cal-items .rc-tag .rc-label {
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .rome-cal-items { padding: 10px 16px; justify-content: center; }
+    .rome-cal-items .rc-tag { font-size: 11px; padding: 4px 10px; }
   }
-  /* ── Pin Rome Calendar above fixed nav (heights auto-adjust via JS) ── */
+  /* ── Pin Rome Calendar above fixed nav, push nav + hero down ── */
   .rome-cal { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
-  /* nav.top + .hero.margin-top set dynamically by liturgical-calendar.js
-     after badge content renders (handles wrapping for multi-row tags) */
+  nav { top: 56px !important; }
+  .hero { margin-top: 124px !important; }
+  @media (max-width: 767px) {
+    nav { top: 100px !important; }
+    .hero { margin-top: 168px !important; }
+  }
 </style>
 <section class="rome-cal">
   <div class="rc-container">
     <div class="rome-cal-inner">
       <div class="rome-cal-date">
         <span class="rc-cross">&#10014;</span>
-        <span id="rc-date">Loading&hellip;</span>
+        <span id="rc-date">Apr 16 &middot; Wednesday</span>
       </div>
       <div class="rome-cal-items">
-        <span class="rc-tag" id="rc-season"><span class="rc-label">Season</span> &hellip;</span>
-        <span class="rc-tag" id="rc-saints" style="display:none"><span class="rc-label">Saints</span> </span>
-        <span class="rc-tag" id="rc-special" style="display:none"><span class="rc-label">Special</span> </span>
-        <span class="rc-tag" id="rc-history" style="display:none"><span class="rc-label">History</span> </span>
-        <span class="rc-tag" id="rc-deceased" style="display:none"><span class="rc-label">Deceased</span> </span>
-        <a class="rc-tag" id="rc-brothers-link" href="https://montfortian.net/brothers-today.html" target="_blank" rel="noopener" style="text-decoration:none;color:rgba(255,255,255,0.85)"><span class="rc-label">Brothers</span> Today @ Montfortian Network &rarr;</a>
+        <span class="rc-tag"><span class="rc-label">Season</span> Easter &mdash; 3rd Week</span>
+        <span class="rc-tag"><span class="rc-label">Saints</span> St. Bernadette Soubirous</span>
+        <span class="rc-tag"><span class="rc-label">Special</span> World Voice Day</span>
       </div>
     </div>
   </div>
@@ -609,14 +604,33 @@
   </div>
 </div>
 
+<!-- ═══ CELEBRATION — Bishop Appointment 7 May 2026 ═══ -->
+<section class="celebration" id="celebration">
+  <div class="celebration-inner">
+    <div class="celebration-img">
+      <img src="images/announcements/bishop_petro_2026.png"
+           alt="คุณพ่อเปโตร สุพจน์ ฤกษ์สุจริต — พระสังฆราชแห่งสังฆมณฑลเชียงใหม่"
+           onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="celebration-text">
+      <span class="eyebrow">✦ ร่วมแสดงความยินดี ✦</span>
+      <p class="occasion">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ขอร่วมโมทนาคุณพระเจ้า และร่วมแสดงความยินดีอย่างสุดซึ้ง ในโอกาสที่ <b>สมเด็จพระสันตะปาปาเลโอที่ 14</b> ทรงแต่งตั้ง</p>
+      <div class="name">คุณพ่อเปโตร สุพจน์ ฤกษ์สุจริต</div>
+      <div class="position">เป็น พระสังฆราชแห่งสังฆมณฑลเชียงใหม่</div>
+      <p>ขอองค์พระผู้เป็นเจ้าทรงอำนวยพระพร ประทานพระปรีชาญาณ ความเข้มแข็ง และความชื่นชมยินดีในพันธกิจ เพื่อท่านจะได้เป็นศิษยาภิบาลที่เปี่ยมด้วยความรัก และเป็นเครื่องหมายแห่งความหวังแก่ประชากรของพระเจ้า</p>
+      <div class="celebration-date">ประกาศ ณ วันที่ 7 พฤษภาคม ค.ศ. 2026</div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ PRESIDENT BANNER ═══ -->
 <div class="president-banner">
   <div class="president-banner-inner">
-    <img src="images/brothers/surakit.JPG" alt="Bro. Surakit Srisarankulwong" class="president-photo">
+    <img src="images/brothers/surakit.JPG" alt="Bro. Surakit Srisrankulwong" class="president-photo">
     <div class="president-info">
       <div class="pres-role">President of the Foundation</div>
-      <div class="pres-name">Bro. Surakit Srisarankulwong</div>
-      <div class="pres-name-th">ภราดาสุรกิต ศรีสราญกุลวงศ์</div>
+      <div class="pres-name">Bro. Surakit Srisrankulwong</div>
+      <div class="pres-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
       <div class="pres-title">ประธานมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
     </div>
   </div>
@@ -660,7 +674,7 @@
   <div class="about-grid">
     <div class="about-card">
       <h3>The Foundation</h3>
-      <p>The Foundation of the Brothers of Saint Gabriel in Thailand is a legally registered educational foundation under Thai law. It oversees 15 schools across the nation, serving tens of thousands of students from kindergarten through secondary and technical education. The Foundation operates under the spiritual and educational guidance of the Congregation of the Brothers of Saint Gabriel, headquartered in Rome.</p>
+      <p>The Foundation of the Brothers of Saint Gabriel in Thailand is a legally registered educational foundation under Thai law. It oversees 14 schools across the nation, serving tens of thousands of students from kindergarten through secondary and technical education. The Foundation operates under the spiritual and educational guidance of the Congregation of the Brothers of Saint Gabriel, headquartered in Rome.</p>
     </div>
     <div class="about-card">
       <h3>Our Heritage</h3>
@@ -668,7 +682,7 @@
     </div>
     <div class="about-card">
       <h3>Governance</h3>
-      <p>The Foundation Board of Directors is led by the President, with board members overseeing 7 commissions. Based at Soi Thonglor in Bangkok, the Board provides strategic direction for all 15 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
+      <p>The Foundation Board of Directors is led by the President, with board members overseeing 7 commissions. Based at Soi Thonglor in Bangkok, the Board provides strategic direction for all 14 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
     </div>
     <div class="about-card">
       <h3>Core Values</h3>
@@ -697,7 +711,7 @@
       <div class="eyebrow">Strategic Plan 2022&ndash;2027</div>
       <h2>Five Strategic Pillars</h2>
       <div class="divider"></div>
-      <p>Empowering Minds, Transforming Lives &mdash; driving 15 schools toward international excellence</p>
+      <p>Empowering Minds, Transforming Lives &mdash; driving 14 schools toward international excellence</p>
     </div>
 
     <!-- Vision & Mission -->
@@ -715,7 +729,7 @@
       <div class="vm-card">
         <div class="vm-icon">&#127760;</div>
         <h4>International Frameworks</h4>
-        <p>Aligned with <a href="https://montfortian.net/writings/mec.html" target="_blank" rel="noopener">MEC</a>, <a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">UN SDGs</a>, <a href="https://www.educationglobalcompact.org/en/" target="_blank" rel="noopener">Global Compact on Education</a>, <a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html" target="_blank" rel="noopener">Laudato Si'</a>, <a href="https://www.tqa.or.th/" target="_blank" rel="noopener">TQA</a>, <a href="https://www.iso.org/" target="_blank" rel="noopener">ISO standards</a>, and <a href="https://www.onec.go.th/" target="_blank" rel="noopener">Thai national education plans</a>.</p>
+        <p>Aligned with MEC, UN SDGs, Global Compact on Education, Laudato Si', TQA, ISO standards, and Thai national education plans.</p>
       </div>
     </div>
 
@@ -736,7 +750,7 @@
       <div class="strat-card">
         <div class="strat-num">3</div>
         <h4>Digital Empowerment &amp; Infrastructure</h4>
-        <p>Leveraging the School Web-based Information System (SWIS) to create a seamless, transparent, and high-efficiency management culture across all 15 institutions.</p>
+        <p>Leveraging the School Web-based Information System (SWIS) to create a seamless, transparent, and high-efficiency management culture across all 14 institutions.</p>
         <span class="kpi-tag">10 KPIs</span>
       </div>
       <div class="strat-card">
@@ -762,7 +776,7 @@
       <div class="eyebrow">Governance</div>
       <h2>Foundation Administration</h2>
       <div class="divider"></div>
-      <p>The organizational structure of St. Gabriel's Foundation of Thailand — 6 Commissions serving 15 schools</p>
+      <p>The organizational structure of St. Gabriel's Foundation of Thailand — 6 Commissions serving 14 schools</p>
     </div>
 
     <div class="gov-org">
@@ -784,10 +798,10 @@
       <div class="gov-line"></div>
       <div class="gov-row">
         <div class="gov-top" style="background:var(--navy);font-size:14px;padding:14px 24px;flex-direction:column;align-items:center;gap:8px;">
-          <img src="images/brothers/bro_surakit.jpg" alt="Bro. Surakit Srisarankulwong" style="width:80px;height:80px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;">
+          <img src="images/brothers/bro_surakit.jpg" alt="Bro. Surakit Srisrankulwong" style="width:80px;height:80px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;">
           <div style="text-align:center;">
             President of the Foundation · ประธานมูลนิธิฯ
-            <small style="display:block;font-weight:400;font-size:12px;opacity:0.8;margin-top:4px;">Bro. Surakit Srisarankulwong<br>ภราดาสุรกิต ศรีสราญกุลวงศ์</small>
+            <small style="display:block;font-weight:400;font-size:12px;opacity:0.8;margin-top:4px;">Bro. Surakit Srisrankulwong<br>ภราดาสุรกิต ศรีสรณ์กุลวงศ์</small>
           </div>
         </div>
       </div>
@@ -802,8 +816,8 @@
             <img src="images/brothers/surakit.JPG" alt="Bro. Surakit">
             <div class="gov-chair-info">
               <div class="chair-label">Chairman</div>
-              <div class="chair-name">Bro. Surakit Srisarankulwong</div>
-              <div class="chair-name-th">ภราดาสุรกิต ศรีสราญกุลวงศ์</div>
+              <div class="chair-name">Bro. Surakit Srisrankulwong</div>
+              <div class="chair-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
             </div>
           </div>
           <h4>Commission on Administration</h4>
@@ -932,24 +946,23 @@
             <li>Vocation Promotion · งานส่งเสริมกระแสเรียก</li>
             <li>Montfort Studies · สำนักงานมงฟอร์ตศึกษา</li>
           </ul>
-          <a href="https://montfortian.net/formation.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View at montfortian.net &rarr;</a>
-          <div style="font-size:10px;color:var(--text-muted);margin-top:6px;font-style:italic;">งานกระแสเรียก/บ้านอบรม &mdash; ภาคชีวิตนักบวช</div>
+          <a href="formation.html" style="display:inline-block;margin-top:10px;padding:6px 16px;background:var(--navy);color:var(--white);border-radius:16px;font-size:11px;text-decoration:none;font-weight:600;">View details &rarr;</a>
         </div>
       </div>
 
       <!-- Bottom -->
       <div class="gov-bottom">
-        <strong>15 Schools Nationwide</strong> · สถาบันในเครือมูลนิธิฯ 15 แห่ง
+        <strong>14 Schools Nationwide</strong> · สถาบันในเครือมูลนิธิฯ 15 แห่ง
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ OUR 15 SCHOOLS ═══ -->
+<!-- ═══ OUR 14 SCHOOLS ═══ -->
 <div class="section" id="schools">
   <div class="sec-head">
     <div class="eyebrow">Our Schools</div>
-    <h2>15 Schools Across Thailand</h2>
+    <h2>14 Schools Across Thailand</h2>
     <div class="divider"></div>
     <p>From the heart of Bangkok to the provinces &mdash; a nationwide Gabrielite education network</p>
   </div>
@@ -1103,7 +1116,7 @@
         <div class="net-icon">&#127963;</div>
         <h4>Generalate &mdash; Rome</h4>
         <p>The worldwide headquarters of the Congregation, led by the Superior General and General Council. All Provinces report to Rome.</p>
-        <a href="https://stgabrielinst.org" target="_blank">Visit Generalate &#8594;</a>
+        <a href="https://www.brothersofsaintgabriel.org" target="_blank">Visit Generalate &#8594;</a>
       </div>
       <div class="net-card">
         <div class="net-icon">&#9968;</div>
@@ -1156,7 +1169,7 @@
     <div class="inno-text">
       <h3>The Foundation&rsquo;s Central Intelligence</h3>
       <p>SWIS is our proprietary, cloud-native ecosystem developed by SWIS Plus Co. It serves as the foundation&rsquo;s central intelligence, seamlessly integrating school management, academic tracking, and administrative workflows into a unified, web-based platform. Designed for the 21st-century educator, it ensures that data-driven decision-making is accessible anytime, anywhere.</p>
-      <p>With over 220 functional modules serving all 15 schools, SWIS connects job specifications to real performance, tracks staff competencies and workload, and powers everything from quality assurance (PDCA) to executive dashboards &mdash; aligned with Pillar 4: Digital Empowerment &amp; Infrastructure.</p>
+      <p>With over 220 functional modules serving all 14 schools, SWIS connects job specifications to real performance, tracks staff competencies and workload, and powers everything from quality assurance (PDCA) to executive dashboards &mdash; aligned with Pillar 4: Digital Empowerment &amp; Infrastructure.</p>
       <a href="swis/index.html" target="_blank" class="btn-gold">swisplus.com &#8594;</a>
     </div>
     <div class="inno-visual">
@@ -1236,7 +1249,7 @@
         <li><a href="#strategy">Strategic Plan</a></li>
         <li><a href="#governance">Governance</a></li>
         <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Our Brothers</a></li>
-        <li><a href="#schools">Our 15 Schools</a></li>
+        <li><a href="#schools">Our 14 Schools</a></li>
         <li><a href="alumni.html">Notable Alumni</a></li>
         <li><a href="#innovation">Innovation / SWIS</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1254,7 +1267,7 @@
     <div>
       <h4>Global Network</h4>
       <ul>
-        <li><a href="https://stgabrielinst.org" target="_blank">Generalate (Rome)</a></li>
+        <li><a href="https://www.brothersofsaintgabriel.org" target="_blank">Generalate (Rome)</a></li>
         <li><a href="https://www.montfortian.info" target="_blank">Montfortian Family</a></li>
       </ul>
     </div>
@@ -1280,7 +1293,5 @@
     a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
   });
 </script>
-<script src="js/liturgical-calendar.js"></script>
-<script src="js/site-data.js"></script>
 </body>
 </html>
