@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission on IT & HRM — FSG Thailand · 2026-2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c;
+    --navy-dark: #0d2640;
+    --navy-light: #2c5f8a;
+    --gold: #c9a74e;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d494;
+    --cream: #fafaf7;
+    --white: #ffffff;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-600: #6c757d;
+    --ict: #0ea5e9;
+    --ict-bg: #e0f2fe;
+    --hrm: #10b981;
+    --hrm-bg: #d1fae5;
+    --text: #2a2a2a;
+    --text-light: #5a5a5a;
+    --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Sarabun', 'Inter', -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', 'Sarabun', Georgia, serif;
+    font-weight: 600; color: var(--navy); line-height: 1.3;
+  }
+
+  /* ── HEADER ── */
+  header.top {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 16px 20px;
+  }
+  .top-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .top-logo {
+    width: 44px; height: 44px;
+  }
+  .top-text { line-height: 1.2; }
+  .top-text strong { color: var(--navy); font-family: 'Playfair Display', serif; font-size: 17px; }
+  .top-text small { color: var(--text-muted); font-size: 12px; display: block; }
+
+  /* ── HERO ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white); padding: 80px 20px 60px; text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  .page-hero-inner { max-width: 800px; margin: 0 auto; }
+  .page-hero .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .page-hero h1 { font-size: 36px; color: var(--white); margin-bottom: 12px; }
+  .page-hero h1 small { display: block; font-size: 18px; font-weight: 400; color: var(--gold-light); margin-top: 6px; }
+  .page-hero p { font-size: 16px; opacity: 0.9; max-width: 640px; margin: 0 auto; }
+
+  /* ── CHAIRMAN BAR ── */
+  .chairman-bar {
+    max-width: 1140px; margin: -40px auto 0; padding: 0 20px; position: relative; z-index: 10;
+  }
+  .chairman-card {
+    display: flex; align-items: center; gap: 22px;
+    padding: 24px 30px; background: var(--white);
+    border-radius: var(--radius); box-shadow: var(--shadow-lg);
+    border: 2px solid var(--gold);
+  }
+  .chairman-card .ch-label {
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--gold-dark); margin-bottom: 4px;
+  }
+  .chairman-card .ch-name { font-weight: 700; color: var(--navy); font-size: 20px; font-family: 'Playfair Display', serif; }
+  .chairman-card .ch-name-th { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── SECTION ── */
+  .section { padding: 70px 20px; max-width: 1140px; margin: 0 auto; }
+  .section.alt { background: var(--white); max-width: 100%; padding: 70px 20px; }
+  .section.alt .section-inner { max-width: 1140px; margin: 0 auto; }
+  .sec-head { text-align: center; margin-bottom: 48px; }
+  .eyebrow {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 10px;
+  }
+  .sec-head h2 { font-size: 30px; margin-bottom: 8px; }
+  .sec-head .divider { width: 50px; height: 3px; background: var(--gold); margin: 14px auto; border-radius: 2px; }
+  .sec-head p { color: var(--text-light); font-size: 15px; max-width: 680px; margin: 0 auto; }
+
+  /* ── TWO STREAMS GRID ── */
+  .streams { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+  @media (max-width: 800px) { .streams { grid-template-columns: 1fr; } }
+  .stream {
+    background: var(--white); border-radius: var(--radius); padding: 32px;
+    box-shadow: var(--shadow); border-top: 6px solid;
+  }
+  .stream.ict { border-top-color: var(--ict); }
+  .stream.hrm { border-top-color: var(--hrm); }
+  .stream .stream-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .stream.ict .stream-tag { background: var(--ict-bg); color: #0369a1; }
+  .stream.hrm .stream-tag { background: var(--hrm-bg); color: #047857; }
+  .stream h3 { font-size: 22px; margin-bottom: 8px; }
+  .stream .stream-sub { color: var(--text-light); font-size: 14px; margin-bottom: 20px; }
+  .stream h4 {
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    color: var(--navy); margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .stream ul { list-style: none; padding: 0; }
+  .stream ul li {
+    padding: 8px 0 8px 22px; position: relative;
+    color: var(--text); font-size: 14px; border-bottom: 1px solid var(--gray-100);
+  }
+  .stream ul li:last-child { border-bottom: none; }
+  .stream.ict ul li::before {
+    content: '▸'; color: var(--ict); position: absolute; left: 0; font-weight: bold;
+  }
+  .stream.hrm ul li::before {
+    content: '▸'; color: var(--hrm); position: absolute; left: 0; font-weight: bold;
+  }
+
+  .stream .key-fact {
+    background: var(--gray-100); padding: 14px; border-radius: 6px;
+    font-size: 13px; color: var(--text-light); margin-top: 16px;
+  }
+  .stream .key-fact strong { color: var(--navy); }
+
+  /* ── INTEGRATION ── */
+  .integration {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white); border-radius: var(--radius);
+    padding: 40px 32px; margin-top: 28px; text-align: center;
+  }
+  .integration .eyebrow { color: var(--gold-light); }
+  .integration h3 { color: var(--white); font-size: 22px; margin-bottom: 16px; }
+  .integration p { opacity: 0.92; max-width: 720px; margin: 0 auto 20px; font-size: 14px; }
+  .integration-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px;
+  }
+  @media (max-width: 800px) { .integration-grid { grid-template-columns: 1fr 1fr; } }
+  .integration-pill {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px 12px; border-radius: 6px; font-size: 13px; line-height: 1.4;
+  }
+  .integration-pill strong { color: var(--gold-light); display: block; margin-bottom: 4px; font-size: 12px; }
+
+  /* ── ROLES TABLE ── */
+  .roles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  @media (max-width: 800px) { .roles-grid { grid-template-columns: 1fr; } }
+  .role-card {
+    background: var(--white); border-radius: var(--radius); padding: 28px;
+    box-shadow: var(--shadow); border-left: 6px solid;
+  }
+  .role-card.ict { border-left-color: var(--ict); }
+  .role-card.hrm { border-left-color: var(--hrm); }
+  .role-card h3 { font-size: 19px; margin-bottom: 16px; }
+  .role-list { list-style: none; }
+  .role-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 1px dashed var(--gray-200);
+  }
+  .role-list li:last-child { border-bottom: none; }
+  .role-label { font-size: 13px; color: var(--text-light); }
+  .role-name { font-weight: 600; color: var(--navy); font-size: 14px; }
+  .role-name.tbd { color: var(--text-muted); font-style: italic; font-weight: 400; }
+
+  /* ── CHOOSE ── */
+  .choose-section {
+    background: var(--cream); border: 2px dashed var(--gold);
+    border-radius: var(--radius); padding: 36px;
+    text-align: center; margin-top: 40px;
+  }
+  .choose-section h3 { font-size: 22px; margin-bottom: 12px; color: var(--navy); }
+  .choose-section p { font-size: 14px; color: var(--text-light); margin-bottom: 24px; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .choose-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-choose {
+    display: inline-block; padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    transition: all 0.2s; min-width: 200px;
+  }
+  .btn-ict { background: var(--ict); color: white; }
+  .btn-ict:hover { background: #0369a1; }
+  .btn-hrm { background: var(--hrm); color: white; }
+  .btn-hrm:hover { background: #047857; }
+
+  /* ── MEMBERS LIST ── */
+  .members-table {
+    width: 100%; border-collapse: collapse; background: var(--white);
+    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    font-size: 14px;
+  }
+  .members-table th {
+    background: var(--navy); color: white; text-align: left;
+    padding: 14px 18px; font-family: 'Inter', sans-serif;
+    font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;
+  }
+  .members-table td { padding: 12px 18px; border-bottom: 1px solid var(--gray-100); }
+  .members-table tr:last-child td { border-bottom: none; }
+  .members-table tr:hover { background: var(--gray-100); }
+  .members-table .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .badge.chair { background: var(--gold); color: var(--navy-dark); }
+  .badge.advisor { background: var(--gray-200); color: var(--text); }
+  .badge.ict { background: var(--ict-bg); color: #0369a1; }
+  .badge.hrm { background: var(--hrm-bg); color: #047857; }
+  .badge.tbd { background: var(--gray-100); color: var(--text-muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark); color: var(--white); padding: 50px 20px 24px;
+    font-size: 13px; line-height: 1.8;
+  }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto; text-align: center;
+  }
+  footer h4 { color: var(--gold); font-size: 14px; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+  footer p { opacity: 0.7; }
+  .footer-bottom {
+    max-width: 1140px; margin: 32px auto 0;
+    padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center; font-size: 12px; opacity: 0.5;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <svg class="top-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" fill="#1a3a5c"/>
+      <text x="32" y="40" font-family="Playfair Display, serif" font-size="22" font-weight="700" fill="#c9a74e" text-anchor="middle">SG</text>
+    </svg>
+    <div class="top-text">
+      <strong>Saint Gabriel's Foundation, Thailand</strong>
+      <small>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</small>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Commission Work Framework · AY 2026-2027</div>
+    <h1>Information Technology &amp; Human Resources Management
+      <small>ฝ่ายเทคโนโลยีสารสนเทศและการบริหารทรัพยากรมนุษย์</small>
+    </h1>
+    <p>กรอบสาระงานของฝ่ายเพื่อให้คณะกรรมการได้ศึกษาก่อนการประชุมครั้งแรก · ภายใต้แผนยุทธศาสตร์ ๖ ปีของมูลนิธิฯ และมติสมัชชาแขวง</p>
+  </div>
+</section>
+
+<!-- ═══ CHAIRMAN BAR ═══ -->
+<div class="chairman-bar">
+  <div class="chairman-card">
+    <div>
+      <div class="ch-label">Chairman</div>
+      <div class="ch-name">Bro. Supanun Khantapreecha</div>
+      <div class="ch-name-th">ภราดาศุภนันท์ ขันธปรีชา · Provincial Councilor · ผู้อำนวยการ ACEP</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OVERVIEW ═══ -->
+<section class="section">
+  <div class="sec-head">
+    <div class="eyebrow">Overview</div>
+    <h2>One Commission, Two Work Streams</h2>
+    <div class="divider"></div>
+    <p>Per ประกาศ Special Assignments and Responsibilities 2026-2027 ลงนาม ๑๗ พ.ค. ๒๕๖๙ โดยภราดาสุรกิจ ศรีสราญกุลวงศ์ เจ้าคณะแขวง · ฝ่ายนี้บูรณาการการบริหารเทคโนโลยีสารสนเทศและทรัพยากรมนุษย์เข้าด้วยกัน · ดำเนินงานคู่ขนานเป็น ๒ สาย เพื่อให้มีความลึกเชิงเทคนิค และเชื่อมต่อในจุดที่ทั้งสองสายมาบรรจบกัน</p>
+  </div>
+
+  <div class="streams">
+
+    <!-- ICT STREAM -->
+    <div class="stream ict">
+      <span class="stream-tag">Stream A</span>
+      <h3>Information Technology (ICT)</h3>
+      <div class="stream-sub">ระบบสารสนเทศกลางของเครือฯ ผ่าน SWIS · ครอบคลุม ๑๔ โรงเรียน</div>
+
+      <h4>๕ กลุ่มงานหลัก</h4>
+      <ul>
+        <li>๑. พัฒนาระบบสารสนเทศ (SWIS Core Development)</li>
+        <li>๒. โครงสร้างพื้นฐานและความปลอดภัย (Infrastructure)</li>
+        <li>๓. สนับสนุนผู้ใช้และนิเทศโรงเรียน (User Support)</li>
+        <li>๔. ข้อมูลและรายงาน (Data &amp; Reporting)</li>
+        <li>๕. บูรณาการระบบ (System Integration · SWIS Plus)</li>
+      </ul>
+
+      <h4>เป้าหมายปีการศึกษา ๒๕๖๙</h4>
+      <ul>
+        <li>Real-time Audit Dashboard ของมูลนิธิฯ</li>
+        <li>SWIS Plus ขยายไปสู่โรงเรียนนอกเครือฯ</li>
+        <li>Data integration: SWIS ↔ HR Job Spec</li>
+        <li>Capacity building บุคลากร IT ใน ๑๔ โรง</li>
+      </ul>
+
+      <div class="key-fact">
+        <strong>เครื่องมือที่มีอยู่:</strong> SWIS ครอบคลุม <strong>๒๒๐ ฟังก์ชัน</strong> · <strong>๑๔ โรงเรียน</strong> · พัฒนาต่อเนื่อง <strong>๒๐ ปี</strong>
+      </div>
+    </div>
+
+    <!-- HRM STREAM -->
+    <div class="stream hrm">
+      <span class="stream-tag">Stream B</span>
+      <h3>Human Resources Management (HRM)</h3>
+      <div class="stream-sub">ระบบบริหารทรัพยากรมนุษย์ของเครือฯ · นิเทศ ๑๔ โรงเรียน</div>
+
+      <h4>๗ อนุกรรมการ</h4>
+      <ul>
+        <li>๑. สรรหาและคัดเลือกบุคลากร</li>
+        <li>๒. พัฒนาบุคลากร</li>
+        <li>๓. ประเมินผลและตอบแทน</li>
+        <li>๔. สวัสดิการและความสัมพันธ์แรงงาน</li>
+        <li>๕. Job Specification (C/K/Cp · ๑๓๗ หัวข้อ)</li>
+        <li>๖. นิเทศโรงเรียน</li>
+        <li>๗. พัฒนา SOP และนโยบาย</li>
+      </ul>
+
+      <h4>เป้าหมายปีการศึกษา ๒๕๖๙</h4>
+      <ul>
+        <li>SOP HR ใหม่ — Due Process ตามกฎหมาย (deadline ๔ ส.ค. ๖๙)</li>
+        <li>Job Spec ครบทุกตำแหน่งใน ๑๔ โรง</li>
+        <li>นิเทศ HRM ทั้ง ๑๔ โรงเรียน</li>
+        <li>ระบบ Career Path ของบุคลากรในเครือฯ</li>
+      </ul>
+
+      <div class="key-fact">
+        <strong>Mandate จากศาลแรงงานภาค ๗ (คดี ร ๒๕๑/๒๕๖๙):</strong> ผู้พิพากษาตักเตือนเรื่องข้อบกพร่องในสัญญาจ้างของครู — เป็นพื้นฐานของการปฏิรูป SOP HR ใหม่
+      </div>
+    </div>
+
+  </div>
+
+  <!-- INTEGRATION POINTS -->
+  <div class="integration">
+    <div class="eyebrow">Integration Points</div>
+    <h3>จุดที่ ๒ สายงานบรรจบกัน</h3>
+    <p>การที่ฝ่าย IT &amp; HRM เป็นฝ่ายเดียวกัน ทำให้สามารถสร้าง integration ที่ฝ่ายแยกทำไม่ได้ — เป็นข้อได้เปรียบเชิงระบบ</p>
+
+    <div class="integration-grid">
+      <div class="integration-pill">
+        <strong>Job Spec ใน SWIS</strong>
+        ICT สร้าง module · HRM ป้อน ๑๓๗ หัวข้อ
+      </div>
+      <div class="integration-pill">
+        <strong>HR Dashboard</strong>
+        ICT สร้าง dashboard · HRM กำหนด metrics
+      </div>
+      <div class="integration-pill">
+        <strong>Performance Tracking</strong>
+        ICT เก็บ data · HRM ประเมินและรายงาน
+      </div>
+      <div class="integration-pill">
+        <strong>Audit Trail</strong>
+        ICT log การแก้ไข · HRM ตรวจสอบ
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CHAIN OF ALIGNMENT ═══ -->
+<section class="section alt">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Strategic Anchor</div>
+      <h2>Chain of Alignment</h2>
+      <div class="divider"></div>
+      <p>ทุกแผนงานของฝ่ายต้องเชื่อมโยงตามลำดับนี้ เพื่อให้บรรลุเป้าหมายคุณภาพระดับสากลของมูลนิธิฯ</p>
+    </div>
+
+    <div style="background: var(--white); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); max-width: 800px; margin: 0 auto;">
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px;">
+        <div style="padding: 14px 20px; background: var(--navy); color: white; border-radius: 6px; text-align: center;">
+          <strong>แผนยุทธศาสตร์ ๖ ปี มูลนิธิฯ</strong> (๕ ยุทธ์ · ๔๗ KPI)
+        </div>
+        <div style="text-align: center; color: var(--gold-dark); font-size: 20px;">↓</div>
+        <div style="padding: 14px 20px; background: var(--navy-light); color: white; border-radius: 6px; text-align: center;">
+          <strong>คู่มือธรรมาภิบาล ฉบับปรับปรุง ๒๕๖๘</strong> (๕ หลัก · ๑๕ เกณฑ์ · ๑๐๐ คะแนน)
+        </div>
+        <div style="text-align: center; color: var(--gold-dark); font-size: 20px;">↓</div>
+        <div style="padding: 14px 20px; background: var(--gold); color: var(--navy-dark); border-radius: 6px; text-align: center; font-weight: 600;">
+          แผนพัฒนาฝ่าย IT &amp; HRM ปีการศึกษา ๒๕๖๙ (สาย ICT + สาย HRM)
+        </div>
+        <div style="text-align: center; color: var(--gold-dark); font-size: 20px;">↓</div>
+        <div style="padding: 14px 20px; background: var(--gray-200); color: var(--text); border-radius: 6px; text-align: center;">
+          <strong>KPI</strong> ของแต่ละสายงาน (ผูกกับ ๔๗ KPI ของแผนยุทธ์)
+        </div>
+        <div style="text-align: center; color: var(--gold-dark); font-size: 20px;">↓</div>
+        <div style="padding: 14px 20px; background: var(--gray-200); color: var(--text); border-radius: 6px; text-align: center;">
+          <strong>งบประมาณ</strong> ที่มีฐานคำนวณ (Cost-effectiveness)
+        </div>
+        <div style="text-align: center; color: var(--gold-dark); font-size: 20px;">↓</div>
+        <div style="padding: 14px 20px; background: linear-gradient(135deg, var(--ict), var(--hrm)); color: white; border-radius: 6px; text-align: center; font-weight: 600;">
+          SWIS — เก็บข้อมูล · ติดตาม · ประเมิน
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROLES ═══ -->
+<section class="section">
+  <div class="sec-head">
+    <div class="eyebrow">Roles &amp; Responsibilities</div>
+    <h2>โครงสร้างผู้รับผิดชอบของแต่ละสาย</h2>
+    <div class="divider"></div>
+    <p>แต่ละสายงานมี ๓ บทบาทหลัก · เลขานุการ · ผู้บันทึก · ผู้ประสานงาน · เพื่อให้การดำเนินงานเป็นระบบและบรรลุเป้าหมายคุณภาพ</p>
+  </div>
+
+  <div class="roles-grid">
+
+    <div class="role-card ict">
+      <h3 style="color: #0369a1;">Stream A · ICT</h3>
+      <ul class="role-list">
+        <li><span class="role-label">เลขานุการ + ผู้ประสานงาน</span><span class="role-name">Bro. Apisit Ngamwong</span></li>
+        <li><span class="role-label">ผู้บันทึก</span><span class="role-name tbd">หารือในการประชุมครั้งแรก</span></li>
+      </ul>
+      <div style="margin-top: 18px; padding: 14px; background: var(--ict-bg); border-radius: 6px; font-size: 13px; color: #0369a1;">
+        <strong>หน้าที่หลัก:</strong> นัดประชุม · ทำวาระ · ประสานงานกับฝ่าย/Commission อื่น · ติดตาม action items · เก็บเอกสารของสาย
+      </div>
+    </div>
+
+    <div class="role-card hrm">
+      <h3 style="color: #047857;">Stream B · HRM</h3>
+      <ul class="role-list">
+        <li><span class="role-label">เลขานุการ + ผู้ประสานงาน</span><span class="role-name">Bro. Krissada Ngamwong</span></li>
+        <li><span class="role-label">ผู้บันทึก</span><span class="role-name tbd">หารือในการประชุมครั้งแรก</span></li>
+      </ul>
+      <div style="margin-top: 18px; padding: 14px; background: var(--hrm-bg); border-radius: 6px; font-size: 13px; color: #047857;">
+        <strong>หน้าที่หลัก:</strong> นัดประชุม · ทำวาระ · ประสานงานกับฝ่าย/Commission อื่น · ติดตาม action items · เก็บเอกสารของสาย
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ MEMBERS ═══ -->
+<section class="section alt">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="eyebrow">Commission Members</div>
+      <h2>คณะกรรมการ ๑๕ ท่าน</h2>
+      <div class="divider"></div>
+      <p>ตามประกาศ Special Assignments and Responsibilities 2026-2027 · สายงานของแต่ละท่านจะกำหนดร่วมกันในการประชุมครั้งแรก</p>
+    </div>
+
+    <table class="members-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th>ชื่อ</th>
+          <th>บทบาท</th>
+          <th>สายงาน</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>๑</td><td><strong>Bro. Supanun Khantapreecha</strong></td><td><span class="badge chair">Chairman</span></td><td>ICT + HRM</td></tr>
+        <tr><td>๒</td><td>Bro. Surasit Sukchai</td><td><span class="badge advisor">Advisor</span></td><td>ICT + HRM</td></tr>
+        <tr><td>๓</td><td>Bro. Arwut Silaket</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๔</td><td>Bro. Manit Sakonthawat</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๕</td><td>Bro. Sarawut Yuchompoo</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๖</td><td>Bro. Kullachart Juntachoto</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๗</td><td>Bro. Sirichai Phangrak</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๘</td><td>Bro. Palakorn Pianpan</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๙</td><td>Bro. Patcharapakorn Langbubpha</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๑๐</td><td>Bro. Kornkavee Yindeevech</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๑๑</td><td>Bro. Natton Suphon</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๑๒</td><td>Bro. Panuwat Mouentup</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๑๓</td><td><strong>Bro. Apisit Ngamwong</strong></td><td><span class="badge ict">Secretary &amp; Coordinator</span></td><td><span class="badge ict">ICT</span></td></tr>
+        <tr><td>๑๔</td><td>Bro. Thanapoom Saiprom</td><td>กรรมการ</td><td><span class="badge tbd">เลือกสายงาน</span></td></tr>
+        <tr><td>๑๕</td><td><strong>Bro. Krissada Ngamwong</strong></td><td><span class="badge hrm">Secretary &amp; Coordinator</span></td><td><span class="badge hrm">HRM</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- CHOOSE STREAM CTA -->
+    <div class="choose-section">
+      <h3>เลือกสายงานที่ท่านสนใจ</h3>
+      <p>ขอเชิญกรรมการทุกท่านศึกษากรอบงานทั้ง ๒ สาย แล้วเลือกสายงานที่ท่านสนใจและถนัด · ในกรณีที่ท่านสนใจทั้ง ๒ สาย กรุณาระบุลำดับความสนใจ · ส่งคำตอบกลับมาที่<strong>เลขานุการของฝ่าย</strong> ก่อนการประชุมครั้งแรก เพื่อนำเข้าหารือร่วมกัน</p>
+      <div class="choose-buttons">
+        <a href="mailto:fsgofficethailand@gmail.com?subject=เลือกสายงาน ICT&body=กระผม ภราดา [ชื่อ-สกุล]%0Aขอแจ้งความสนใจในสายงาน ICT%0A%0Aทักษะหรือประสบการณ์ที่เกี่ยวข้อง:%0A_______________%0A%0Aหมายเหตุ:%0A_______________" class="btn-choose btn-ict">เลือกสาย ICT</a>
+        <a href="mailto:fsgofficethailand@gmail.com?subject=เลือกสายงาน HRM&body=กระผม ภราดา [ชื่อ-สกุล]%0Aขอแจ้งความสนใจในสายงาน HRM%0A%0Aทักษะหรือประสบการณ์ที่เกี่ยวข้อง:%0A_______________%0A%0Aหมายเหตุ:%0A_______________" class="btn-choose btn-hrm">เลือกสาย HRM</a>
+      </div>
+      <p style="margin-top: 20px; font-size: 13px; color: var(--text-muted);">หรือตอบกลับผ่าน E-Office ของมูลนิธิฯ</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ READING LIST ═══ -->
+<section class="section">
+  <div class="sec-head">
+    <div class="eyebrow">Pre-Reading</div>
+    <h2>เอกสารพื้นฐานสำหรับเตรียมตัว</h2>
+    <div class="divider"></div>
+    <p>ขอความอนุเคราะห์ศึกษาก่อนเข้าร่วมการประชุมครั้งแรก เพื่อให้การหารือบนพื้นฐานเดียวกัน</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <h4 style="font-family: Inter; font-size: 14px; color: var(--gold-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Tier ๑ — ทุกท่านต้องอ่าน</h4>
+      <ul style="list-style: none; padding: 0; font-size: 14px;">
+        <li style="padding: 6px 0; color: var(--text);">๑. แผนยุทธศาสตร์ ๖ ปี มูลนิธิฯ</li>
+        <li style="padding: 6px 0;">๒. คู่มือธรรมาภิบาล ฉบับปรับปรุง ๒๕๖๘</li>
+        <li style="padding: 6px 0;">๓. ประกาศ Special Assignments 2026-2027</li>
+        <li style="padding: 6px 0;">๔. Rules of Life (Constitutions)</li>
+        <li style="padding: 6px 0;">๕. Authentic Leaders for a Greater Brotherhood</li>
+        <li style="padding: 6px 0;">๖. Montfortian Education Charter (MEC)</li>
+        <li style="padding: 6px 0;">๗. Provincial Directory</li>
+      </ul>
+    </div>
+    <div style="background: white; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <h4 style="font-family: Inter; font-size: 14px; color: var(--gold-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Tier ๒ — ตามสายงานที่เลือก</h4>
+      <div style="margin-bottom: 16px;">
+        <strong style="font-size: 13px; color: var(--ict);">สำหรับสาย ICT:</strong>
+        <ul style="list-style: none; padding: 0; font-size: 13px; margin-top: 4px;">
+          <li style="padding: 3px 0;">• กรอบ ๕ กลุ่มงานของฝ่าย ICT</li>
+          <li style="padding: 3px 0;">• กรอบฟังก์ชัน SWIS (๒๒๐ ฟังก์ชัน)</li>
+          <li style="padding: 3px 0;">• รายงานนิเทศ ICT ๑๔ โรง (๒๕๖๘)</li>
+          <li style="padding: 3px 0;">• แผนพัฒนา SWIS Plus</li>
+        </ul>
+      </div>
+      <div>
+        <strong style="font-size: 13px; color: var(--hrm);">สำหรับสาย HRM:</strong>
+        <ul style="list-style: none; padding: 0; font-size: 13px; margin-top: 4px;">
+          <li style="padding: 3px 0;">• Job Specification C/K/Cp (๑๓๗ หัวข้อ)</li>
+          <li style="padding: 3px 0;">• กรอบการนิเทศ HRM ๑๔ โรง</li>
+          <li style="padding: 3px 0;">• รายงานนิเทศ HRM ๒๕๖๘</li>
+          <li style="padding: 3px 0;">• กฎหมายแรงงานที่เกี่ยวข้อง</li>
+          <li style="padding: 3px 0;">• รายงานคดีแรงงาน (รวมคดี ร ๒๕๑/๒๕๖๙)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <h4>Saint Gabriel's Foundation, Thailand</h4>
+    <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>๒ ซอยแสงเงิน (ทองหล่อ ๒๕) แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร ๑๐๑๑๐</p>
+    <p style="margin-top: 12px;">
+      <a href="https://fsgthailand.org" style="color: var(--gold); text-decoration: none;">fsgthailand.org</a> ·
+      <a href="https://thaibrothers.net" style="color: var(--gold-light); text-decoration: none;">thaibrothers.net</a> ·
+      <a href="https://swisplus.com" style="color: var(--gold-light); text-decoration: none;">swisplus.com</a>
+    </p>
+  </div>
+  <div class="footer-bottom">
+    Commission Work Framework · AY 2026-2027 · Published 20 May 2026
+  </div>
+</footer>
+
+</body>
+</html>
