@@ -568,10 +568,8 @@
         <span class="rc-cross">&#10014;</span>
         <span id="rc-date">Apr 16 &middot; Wednesday</span>
       </div>
-      <div class="rome-cal-items">
-        <span class="rc-tag"><span class="rc-label">Season</span> Easter &mdash; 3rd Week</span>
-        <span class="rc-tag"><span class="rc-label">Saints</span> St. Bernadette Soubirous</span>
-        <span class="rc-tag"><span class="rc-label">Special</span> World Voice Day</span>
+      <div class="rome-cal-items" id="rc-items">
+        <span class="rc-tag"><span class="rc-label">Season</span> <span id="rc-season">&mdash;</span></span>
       </div>
     </div>
   </div>
@@ -583,6 +581,20 @@
     var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     var el = document.getElementById('rc-date');
     if (el) el.innerHTML = months[d.getMonth()] + ' ' + d.getDate() + ' &middot; ' + days[d.getDay()];
+
+    // Pull today's calendar entry from rome_calendar_2026.json
+    var pad = function(n){ return n < 10 ? '0'+n : ''+n; };
+    var key = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate());
+    fetch('data/rome_calendar_2026.json').then(function(r){ return r.json(); }).then(function(cal){
+      var entry = cal[key];
+      if (!entry) return;
+      var container = document.getElementById('rc-items');
+      var html = '<span class="rc-tag"><span class="rc-label">Season</span> ' + (entry.season || '—') + '</span>';
+      if (entry.saints) html += ' <span class="rc-tag"><span class="rc-label">Saints</span> ' + entry.saints + '</span>';
+      if (entry.special) html += ' <span class="rc-tag"><span class="rc-label">Special</span> ' + entry.special + '</span>';
+      if (entry.deceased) html += ' <span class="rc-tag"><span class="rc-label">Deceased</span> ' + entry.deceased + '</span>';
+      container.innerHTML = html;
+    }).catch(function(){});
   })();
 </script>
 
@@ -630,7 +642,7 @@
     <div class="president-info">
       <div class="pres-role">President of the Foundation</div>
       <div class="pres-name">Bro. Surakit Srisrankulwong</div>
-      <div class="pres-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
+      <div class="pres-name-th">ภราดาสุรกิจ ศรีสราญกุลวงศ์</div>
       <div class="pres-title">ประธานมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
     </div>
   </div>
@@ -674,7 +686,7 @@
   <div class="about-grid">
     <div class="about-card">
       <h3>The Foundation</h3>
-      <p>The Foundation of the Brothers of Saint Gabriel in Thailand is a legally registered educational foundation under Thai law. It oversees 14 schools across the nation, serving tens of thousands of students from kindergarten through secondary and technical education. The Foundation operates under the spiritual and educational guidance of the Congregation of the Brothers of Saint Gabriel, headquartered in Rome.</p>
+      <p>The Foundation of the Brothers of Saint Gabriel in Thailand is a legally registered educational foundation under Thai law. It oversees 15 schools across the nation, serving tens of thousands of students from kindergarten through secondary and technical education. The Foundation operates under the spiritual and educational guidance of the Congregation of the Brothers of Saint Gabriel, headquartered in Rome.</p>
     </div>
     <div class="about-card">
       <h3>Our Heritage</h3>
@@ -682,7 +694,7 @@
     </div>
     <div class="about-card">
       <h3>Governance</h3>
-      <p>The Foundation Board of Directors is led by the President, with board members overseeing 7 commissions. Based at Soi Thonglor in Bangkok, the Board provides strategic direction for all 14 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
+      <p>The Foundation Board of Directors is led by the President, with board members overseeing 7 commissions. Based at Soi Thonglor in Bangkok, the Board provides strategic direction for all 15 schools, ensuring alignment with Montfortian values, Thai educational standards, and international quality frameworks.</p>
     </div>
     <div class="about-card">
       <h3>Core Values</h3>
@@ -711,7 +723,7 @@
       <div class="eyebrow">Strategic Plan 2022&ndash;2027</div>
       <h2>Five Strategic Pillars</h2>
       <div class="divider"></div>
-      <p>Empowering Minds, Transforming Lives &mdash; driving 14 schools toward international excellence</p>
+      <p>Empowering Minds, Transforming Lives &mdash; driving 15 schools toward international excellence</p>
     </div>
 
     <!-- Vision & Mission -->
@@ -776,7 +788,7 @@
       <div class="eyebrow">Governance</div>
       <h2>Foundation Administration</h2>
       <div class="divider"></div>
-      <p>The organizational structure of St. Gabriel's Foundation of Thailand — 6 Commissions serving 14 schools</p>
+      <p>The organizational structure of St. Gabriel's Foundation of Thailand — 6 Commissions serving 15 schools</p>
     </div>
 
     <div class="gov-org">
@@ -801,7 +813,7 @@
           <img src="images/brothers/bro_surakit.jpg" alt="Bro. Surakit Srisrankulwong" style="width:80px;height:80px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;">
           <div style="text-align:center;">
             President of the Foundation · ประธานมูลนิธิฯ
-            <small style="display:block;font-weight:400;font-size:12px;opacity:0.8;margin-top:4px;">Bro. Surakit Srisrankulwong<br>ภราดาสุรกิต ศรีสรณ์กุลวงศ์</small>
+            <small style="display:block;font-weight:400;font-size:12px;opacity:0.8;margin-top:4px;">Bro. Surakit Srisrankulwong<br>ภราดาสุรกิจ ศรีสราญกุลวงศ์</small>
           </div>
         </div>
       </div>
@@ -817,7 +829,7 @@
             <div class="gov-chair-info">
               <div class="chair-label">Chairman</div>
               <div class="chair-name">Bro. Surakit Srisrankulwong</div>
-              <div class="chair-name-th">ภราดาสุรกิต ศรีสรณ์กุลวงศ์</div>
+              <div class="chair-name-th">ภราดาสุรกิจ ศรีสราญกุลวงศ์</div>
             </div>
           </div>
           <h4>Commission on Administration</h4>
@@ -838,7 +850,7 @@
             <div class="gov-chair-info">
               <div class="chair-label">Chairman</div>
               <div class="chair-name">Bro. Chamnan Laoruckphon</div>
-              <div class="chair-name-th">ภราดาชำนาญ เหล่ารักผล</div>
+              <div class="chair-name-th">ภราดาชำนาญ เลารักผล</div>
             </div>
           </div>
           <h4>Commission on Finance &amp; Assets</h4>
@@ -861,7 +873,7 @@
             <div class="gov-chair-info">
               <div class="chair-label">Chairman</div>
               <div class="chair-name">Bro. Witthaya Thepkom</div>
-              <div class="chair-name-th">ภราดาวิทยา เทพกมล</div>
+              <div class="chair-name-th">ภราดาวิทยา เทพกอม</div>
             </div>
           </div>
           <h4>Commission on Education</h4>
@@ -952,7 +964,7 @@
 
       <!-- Bottom -->
       <div class="gov-bottom">
-        <strong>14 Schools Nationwide</strong> · สถาบันในเครือมูลนิธิฯ 15 แห่ง
+        <strong>15 Schools Nationwide</strong> · สถาบันในเครือมูลนิธิฯ 15 แห่ง
       </div>
     </div>
   </div>
@@ -962,7 +974,7 @@
 <div class="section" id="schools">
   <div class="sec-head">
     <div class="eyebrow">Our Schools</div>
-    <h2>14 Schools Across Thailand</h2>
+    <h2>15 Schools Across Thailand</h2>
     <div class="divider"></div>
     <p>From the heart of Bangkok to the provinces &mdash; a nationwide Gabrielite education network</p>
   </div>
@@ -1169,7 +1181,7 @@
     <div class="inno-text">
       <h3>The Foundation&rsquo;s Central Intelligence</h3>
       <p>SWIS is our proprietary, cloud-native ecosystem developed by SWIS Plus Co. It serves as the foundation&rsquo;s central intelligence, seamlessly integrating school management, academic tracking, and administrative workflows into a unified, web-based platform. Designed for the 21st-century educator, it ensures that data-driven decision-making is accessible anytime, anywhere.</p>
-      <p>With over 220 functional modules serving all 14 schools, SWIS connects job specifications to real performance, tracks staff competencies and workload, and powers everything from quality assurance (PDCA) to executive dashboards &mdash; aligned with Pillar 4: Digital Empowerment &amp; Infrastructure.</p>
+      <p>With over 220 functional modules serving all 15 schools, SWIS connects job specifications to real performance, tracks staff competencies and workload, and powers everything from quality assurance (PDCA) to executive dashboards &mdash; aligned with Pillar 4: Digital Empowerment &amp; Infrastructure.</p>
       <a href="swis/index.html" target="_blank" class="btn-gold">swisplus.com &#8594;</a>
     </div>
     <div class="inno-visual">
@@ -1249,7 +1261,7 @@
         <li><a href="#strategy">Strategic Plan</a></li>
         <li><a href="#governance">Governance</a></li>
         <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Our Brothers</a></li>
-        <li><a href="#schools">Our 14 Schools</a></li>
+        <li><a href="#schools">Our 15 Schools</a></li>
         <li><a href="alumni.html">Notable Alumni</a></li>
         <li><a href="#innovation">Innovation / SWIS</a></li>
         <li><a href="#contact">Contact</a></li>
