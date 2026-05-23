@@ -69,7 +69,7 @@
   @media (max-width: 600px) { .fw-layer-mid { grid-template-columns: 1fr; } }
 
   /* ── QUALITY INDEX ── */
-  .quality-index { display: none; max-width: 700px; margin: 0 auto; padding: 20px; }
+  .quality-index { display: block; max-width: 700px; margin: 0 auto; padding: 40px 20px 20px; }
   .qi-header { text-align: center; margin-bottom: 32px; }
   .qi-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
   .qi-header p { color: var(--text-light); font-size: 0.9rem; }
@@ -86,27 +86,7 @@
 </head>
 <body>
 
-<!-- ═══ LOGIN SCREEN ═══ -->
-<div class="login-container" id="loginScreen">
-  <div class="login-card">
-    <div class="login-header">
-      <h1>คู่มือบริหารคุณภาพ HRM</h1>
-      <p>Commission on ICT and HRM<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
-    </div>
-    <div class="login-body">
-      <label for="pwd">รหัสเข้าถึง</label>
-      <input type="password" id="pwd" placeholder="กรอกรหัส..." autofocus
-             onkeydown="if(event.key==='Enter')checkPwd()">
-      <button onclick="checkPwd()">เข้าสู่ระบบ</button>
-      <div class="error-msg" id="errMsg">รหัสไม่ถูกต้อง กรุณาลองใหม่</div>
-    </div>
-    <div class="login-footer">
-      เอกสารภายใน — สำหรับบุคลากรที่ได้รับอนุญาตเท่านั้น
-    </div>
-  </div>
-</div>
-
-<!-- ═══ QUALITY INDEX (shown after login) ═══ -->
+<!-- ═══ QUALITY INDEX (open access — password gate removed 22 พ.ค. 69) ═══ -->
 <div class="quality-index" id="qualityIndex">
   <div class="qi-header">
     <h1>คู่มือบริหารคุณภาพ HRM</h1>
@@ -245,38 +225,7 @@
   </div>
 </div>
 
-<script>
-async function sha256(msg){
-  var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
-  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");
-}
-var PASS_HASH = "9bef9113676071174e79350856d81168521cfb487651b26231b268eb0a28d159";
-async function checkPwd() {
-  var input = document.getElementById('pwd').value;
-  var h = await sha256(input);
-  if (h === PASS_HASH) {
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('qualityIndex').style.display = 'block';
-    document.body.style.alignItems = 'flex-start';
-    document.body.style.paddingTop = '40px';
-    try { sessionStorage.setItem('hrm-q', '1'); } catch(e) {}
-  } else {
-    var err = document.getElementById('errMsg');
-    err.style.display = 'block';
-    document.getElementById('pwd').value = '';
-    document.getElementById('pwd').focus();
-    setTimeout(function(){ err.style.display = 'none'; }, 3000);
-  }
-}
-try {
-  if (sessionStorage.getItem('hrm-q') === '1') {
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('qualityIndex').style.display = 'block';
-    document.body.style.alignItems = 'flex-start';
-    document.body.style.paddingTop = '40px';
-  }
-} catch(e) {}
-</script>
+<!-- Password gate JS removed 22 พ.ค. 69 — public access -->
 
 </body>
 </html>
