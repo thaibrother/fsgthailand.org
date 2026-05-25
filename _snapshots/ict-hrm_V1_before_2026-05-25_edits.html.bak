@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commission on Education — FSG Thailand</title>
+<title>Commission on ICT and HRM — FSG Thailand</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
     --shadow: 0 2px 12px rgba(0,0,0,0.07);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
     --radius: 8px;
-    --accent: #7c3aed;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -95,12 +94,12 @@
   .page-hero {
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
     color: var(--white); padding: 60px 20px; text-align: center;
-    border-bottom: 4px solid var(--accent);
+    border-bottom: 4px solid var(--gold);
   }
   .page-hero-inner { max-width: 800px; margin: 0 auto; }
   .page-hero .eyebrow {
     font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
   }
   .page-hero h1 { font-size: 32px; color: var(--white); margin-bottom: 8px; }
   .page-hero p { font-size: 15px; opacity: 0.8; }
@@ -113,15 +112,15 @@
     display: flex; align-items: center; gap: 20px;
     padding: 20px 28px; background: var(--white);
     border-radius: var(--radius); box-shadow: var(--shadow-lg);
-    border: 2px solid var(--accent);
+    border: 2px solid var(--gold);
   }
   .chairman-card img {
     width: 72px; height: 72px; border-radius: 50%;
-    object-fit: cover; border: 3px solid var(--accent); flex-shrink: 0;
+    object-fit: cover; border: 3px solid var(--gold); flex-shrink: 0;
   }
   .chairman-card .ch-label {
     font-size: 10px; font-weight: 600; text-transform: uppercase;
-    letter-spacing: 1.5px; color: var(--accent); margin-bottom: 2px;
+    letter-spacing: 1.5px; color: var(--gold-dark); margin-bottom: 2px;
   }
   .chairman-card .ch-name { font-weight: 700; color: var(--navy); font-size: 18px; }
   .chairman-card .ch-name-th { font-size: 13px; color: var(--text-muted); }
@@ -135,7 +134,7 @@
     color: var(--gold-dark); margin-bottom: 10px;
   }
   .sec-head h2 { font-size: 28px; margin-bottom: 8px; }
-  .sec-head .divider { width: 50px; height: 3px; background: var(--accent); margin: 12px auto; border-radius: 2px; }
+  .sec-head .divider { width: 50px; height: 3px; background: var(--gold); margin: 12px auto; border-radius: 2px; }
   .sec-head p { color: var(--text-light); font-size: 14px; max-width: 600px; margin: 0 auto; }
 
   /* ── DETAIL GRID ── */
@@ -146,44 +145,16 @@
   .detail-card {
     background: var(--white); border-radius: var(--radius);
     padding: 20px; font-size: 13px; box-shadow: var(--shadow);
-    border-left: 4px solid var(--accent);
   }
   .detail-card h4 {
     font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
     color: var(--navy); margin-bottom: 8px;
   }
   .detail-card p { color: var(--text-light); font-size: 13px; line-height: 1.6; }
+  .detail-card.header-ict { border-left: 4px solid #0ea5e9; }
+  .detail-card.header-hrm { border-left: 4px solid #10b981; }
 
-  .group-header {
-    background: rgba(124, 58, 237, 0.05);
-  }
-  .group-header h4 {
-    color: var(--accent);
-  }
-
-  /* ── SUBCOMMITTEE SECTION ── */
-  .subcommittee-section {
-    background: var(--white); border-radius: var(--radius);
-    padding: 24px; margin-top: 32px; box-shadow: var(--shadow);
-    border-left: 4px solid var(--accent);
-  }
-  .subcommittee-section h3 {
-    font-size: 16px; color: var(--navy); margin-bottom: 12px;
-  }
-  .subcommittee-item {
-    margin-bottom: 16px;
-  }
-  .subcommittee-item strong {
-    color: var(--navy); font-weight: 600;
-  }
-  .subcommittee-members {
-    font-size: 12px; color: var(--text-light); margin-top: 4px;
-  }
-
-  /* ── MEMBERS SECTION ── */
-  .members-section {
-    margin-top: 32px;
-  }
+  /* ── MEMBERS GRID ── */
   .members-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;
     margin-top: 24px;
@@ -191,14 +162,30 @@
   .member-card {
     background: var(--white); border-radius: var(--radius);
     padding: 16px; box-shadow: var(--shadow);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--gold);
   }
-  .member-card p {
-    font-size: 13px; color: var(--text); margin: 4px 0;
-  }
+  .member-card p { margin: 0; }
+  .member-card p:first-child { font-size: 14px; color: var(--navy); }
   .member-role {
-    font-size: 11px; color: var(--text-muted); font-weight: 500;
+    font-size: 11px; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 4px !important;
   }
+
+  /* ── SWIS BANNER ── */
+  .swis-banner {
+    text-align: center; padding: 40px 24px;
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    border-radius: var(--radius); color: var(--white); margin-top: 40px;
+  }
+  .swis-banner h3 { color: var(--gold); font-size: 24px; margin-bottom: 8px; }
+  .swis-banner p { font-size: 13px; opacity: 0.75; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn-gold {
+    display: inline-block; padding: 10px 28px;
+    background: var(--gold); color: var(--navy-dark);
+    border-radius: 24px; font-size: 13px; text-decoration: none; font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
 
   /* ── FOOTER ── */
   footer {
@@ -251,131 +238,155 @@
 <!-- ═══ BREADCRUMB ═══ -->
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
-    <a href="index.html">Home</a> &rsaquo; <a href="index.html#governance">Governance</a> &rsaquo; <strong>Commission on Education</strong>
+    <a href="index.html">Home</a> &rsaquo; <a href="index.html#governance">Governance</a> &rsaquo; <strong>Commission on ICT and HRM</strong>
   </div>
 </div>
 
 <!-- ═══ PAGE HERO ═══ -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="eyebrow">Commission on Education</div>
-    <h1>Educational Excellence &amp; Quality Assurance</h1>
-    <p>ฝ่ายการศึกษา — Mission-driven learning across all 15 schools</p>
+    <div class="eyebrow">Commission on ICT and HRM</div>
+    <h1>Information Technology &amp; Human Resources</h1>
+    <p>Merged commission driving quality across all 15 schools — powered by SWIS Platform</p>
   </div>
 </div>
 
 <!-- ═══ CHAIRMAN ═══ -->
 <div class="chairman-bar">
   <div class="chairman-card">
-    <img src="images/brothers/witaya.JPG" alt="Bro. Witthaya Thepkom">
+    <img src="images/brothers/supanun.jpg" alt="Bro. Supanun Khantapreecha">
     <div>
       <div class="ch-label">Chairman</div>
-      <div class="ch-name">Bro. Witthaya Thepkom</div>
-      <div class="ch-name-th">ภราดาวิทยา เทพกอม</div>
+      <div class="ch-name">Bro. Supanun Khantapreecha</div>
+      <div class="ch-name-th">ภราดาศุภนันท์ ขันธปรีชา</div>
     </div>
   </div>
 </div>
 
-<!-- ═══ WORK GROUPS ═══ -->
-<div class="section">
+<!-- ═══ ICT SECTION ═══ -->
+<div class="section" id="ict">
   <div class="sec-head">
-    <div class="eyebrow">Work Groups</div>
-    <h2>Commission Structure</h2>
+    <div class="eyebrow">ICT</div>
+    <h2>Information &amp; Communications Technology</h2>
     <div class="divider"></div>
-    <p>3 integrated groups managing educational quality, curriculum, and standards</p>
+    <p>5 Work Groups — Aligned with Strategic Plan 3.3</p>
   </div>
 
   <div class="detail-grid">
-    <div class="detail-card" style="grid-column:1/-1;">
+    <div class="detail-card header-ict" style="grid-column:1/-1;">
       <h4>Overview</h4>
-      <p>The Commission on Education drives academic excellence, pedagogical innovation, and continuous quality improvement across all 15 schools. Aligned with Montfort Educational Philosophy and international quality standards.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 1: Education Office Management — กลุ่มงานบริหารสำนักงานฝ่ายการศึกษา</h4>
-      <p>Centralized management of educational strategy, budgeting, and coordination.</p>
+      <p>Developing IT systems for administration and learning across all 15 schools. Policy, infrastructure, software development, media communications, and personnel upskilling under one unified commission.</p>
     </div>
     <div class="detail-card">
-      <h4>Education Policy, Planning &amp; Direction</h4>
-      <p><strong>งานนโยบาย วางแผน และทิศทางการศึกษา</strong> — Strategic direction, policy development, and vision alignment for all schools.</p>
+      <h4>1. ICT Administration</h4>
+      <p>Overall ICT governance across the Foundation. Policy, coordination, and reporting.</p>
     </div>
     <div class="detail-card">
-      <h4>Budget &amp; Audit</h4>
-      <p><strong>งานงบประมาณและตรวจสอบ</strong> — Educational budget allocation and fiscal audit of education-related expenditures.</p>
+      <h4>2. Software Development</h4>
+      <p><strong>2.1 Foundation Level</strong> — central information systems.<br>
+      <strong>2.2 School Level (SWIS Plus)</strong> — the <a href="swis/index.html" target="_blank" style="color:#0369a1;">SWIS platform</a> with 220 functions deployed across 15 schools.</p>
     </div>
     <div class="detail-card">
-      <h4>Finance &amp; Accounting</h4>
-      <p><strong>งานการเงินและบัญชี</strong> — Financial management and accounting specific to educational operations.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 2: Educational Quality Development — กลุ่มงานพัฒนาคุณภาพการศึกษา</h4>
-      <p>Continuous improvement in teaching, learning, and student assessment.</p>
+      <h4>3. Media Communications</h4>
+      <p>Digital media production and non-digital media. Brand, PR, and content across the Foundation network.</p>
     </div>
     <div class="detail-card">
-      <h4>Curriculum &amp; Teaching</h4>
-      <p><strong>งานหลักสูตรและการเรียนการสอน</strong> — Curriculum development, instructional design, and pedagogical excellence.</p>
+      <h4>4. Network &amp; Engineering</h4>
+      <p>IT infrastructure, networking, hardware, and technical support for all schools.</p>
     </div>
     <div class="detail-card">
-      <h4>Teaching Supervision</h4>
-      <p><strong>งานนิเทศการเรียนการสอน</strong> — Classroom observation, teacher coaching, and instructional feedback.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Assessment &amp; Evaluation</h4>
-      <p><strong>งานวัดและประเมินผล</strong> — Student assessment design, learning outcome measurement, and data analysis.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Research &amp; Development</h4>
-      <p><strong>งานวิจัยและพัฒนา</strong> — Educational research, innovation pilots, and evidence-based practice development.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 3: Educational Quality Standards — กลุ่มงานมาตรฐานคุณภาพการศึกษา</h4>
-      <p>Quality assurance systems and international standards compliance.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Quality Assurance Promotion</h4>
-      <p><strong>งานส่งเสริมระบบประกันคุณภาพการศึกษา</strong> — Implementation of quality assurance systems, PDCA cycles, and self-assessment frameworks.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Quality Standards Assessment</h4>
-      <p><strong>งานประเมินมาตรฐานคุณภาพการศึกษา</strong> — Evaluation against quality standards, accreditation support, and continuous improvement monitoring.</p>
+      <h4>5. ICT Personnel Development</h4>
+      <p>Training ICT staff and upskilling all school personnel on technology tools including SWIS.</p>
     </div>
   </div>
 
-  <!-- Sub-committee -->
-  <div class="subcommittee-section">
-    <h3>Sub-Committee: Committee on QA &amp; BSG Standardization</h3>
-    <div class="subcommittee-item">
-      <strong>Chairman:</strong> Bro. Patcharapakorn Langbubpha
+  <!-- Quality Manual Link -->
+  <div style="text-align:center; margin-top:24px;">
+    <a href="ict-quality-gate.html" style="display:inline-block; padding:14px 32px; background:linear-gradient(135deg,#1a3a5c,#2c5f8a); color:#e8d494; text-decoration:none; border-radius:8px; font-weight:600; font-size:15px; box-shadow:0 4px 16px rgba(26,58,92,0.3); transition:all 0.2s;">
+      เป้าหมายคุณภาพ ICT — Quality Manual &rarr;
+    </a>
+  </div>
+</div>
+
+<!-- ═══ HRM SECTION ═══ -->
+<div class="section" id="hrm" style="padding-top:0;">
+  <div class="sec-head">
+    <div class="eyebrow">HRM</div>
+    <h2>Human Resource Management</h2>
+    <div class="divider"></div>
+    <p>7 Sub-committees — Job Specification system (C/K/Cp) with 137 competency items tracked via SWIS</p>
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-card header-hrm" style="grid-column:1/-1;">
+      <h4>Overview</h4>
+      <p>Unified HR standards across all 15 schools. Workforce planning, quality manuals, supervision visits, and succession planning — all integrated with the SWIS platform for data-driven decisions.</p>
     </div>
-    <div class="subcommittee-item">
-      <strong>Members:</strong>
-      <div class="subcommittee-members">
-        • Bro. Witthaya Thepkom (Advisor)<br>
-        • Bro. Sarawut Yuchompoo<br>
-        • Bro. Prajak Nansrithong<br>
-        • Bro. Pittaya Tueaita<br>
-        • Bro. Natton Suphol<br>
-        • Bro. Krissada Ngamwong<br>
-        • Bro. Pakpoom Jaisamret<br>
-        • Bro. Teerachai Charoensumran (Secretary)
-      </div>
+    <div class="detail-card">
+      <h4>1. HR Administration</h4>
+      <p>Foundation-wide HR policies, standards alignment, and SWIS-based information management.</p>
     </div>
+    <div class="detail-card">
+      <h4>2. Workforce Planning &amp; Recruitment</h4>
+      <p>Manpower analysis, recruitment standards, and strategic workforce allocation across 15 schools.</p>
+    </div>
+    <div class="detail-card">
+      <h4>3. Onboarding Process</h4>
+      <p>Preparing new hires with competency readiness aligned to their Job Specification before deployment.</p>
+    </div>
+    <div class="detail-card">
+      <h4>4. Supervision &amp; Monitoring</h4>
+      <p>Annual school visits (15 schools monitored in 2568). Quality manuals, PDCA tracking, and KRA assessment.</p>
+    </div>
+    <div class="detail-card">
+      <h4>5. HR Development (HRD)</h4>
+      <p>Continuous professional development — 15 training programs in 2568 (online + onsite). 7-year HRD roadmap since 2562.</p>
+    </div>
+    <div class="detail-card">
+      <h4>6. HR Retention</h4>
+      <p>Employee welfare, engagement, and retention strategies to maintain quality educators.</p>
+    </div>
+    <div class="detail-card">
+      <h4>7. Succession Planning</h4>
+      <p>Identifying and developing future leaders for school administration and Foundation roles.</p>
+    </div>
+  </div>
+
+  <!-- Quality Manual Link -->
+  <div style="text-align:center; margin-top:24px;">
+    <a href="hrm-quality-gate.html" style="display:inline-block; padding:14px 32px; background:linear-gradient(135deg,#1a3a5c,#2c5f8a); color:#e8d494; text-decoration:none; border-radius:8px; font-weight:600; font-size:15px; box-shadow:0 4px 16px rgba(26,58,92,0.3); transition:all 0.2s;">
+      เป้าหมายคุณภาพ HRM — Quality Manual &rarr;
+    </a>
+  </div>
+
+  <!-- SWIS Connection -->
+  <div class="swis-banner">
+    <h3>SWIS Platform</h3>
+    <p>The digital backbone connecting ICT and HRM — 220 functions across 15 schools, Job Spec tracking, PDCA workflow, quality manuals, and school monitoring</p>
+    <a href="swis/index.html" target="_blank" class="btn-gold">Visit swisplus.com &rarr;</a>
   </div>
 </div>
 
 <!-- ═══ COMMISSION MEMBERS ═══ -->
 <div class="section" style="padding-top:40px;">
   <div class="sec-head">
-    <div class="eyebrow">Commission Members</div>
+    <div class="eyebrow">Commission Members 2026-2027</div>
     <h2>Governance Team</h2>
     <div class="divider"></div>
+    <p>คณะกรรมการฝ่ายเทคโนโลยีสารสนเทศและการบริหารทรัพยากรมนุษย์ — ตามประกาศ Special Assignments and Responsibilities 2026-2027 ลงนาม ๑๗ พฤษภาคม ๒๕๖๙</p>
   </div>
 
   <div class="members-grid">
     <div class="member-card">
-      <p><strong>Bro. Anuwat Wipaktamrongkun</strong></p>
+      <p><strong>Bro. Surasit Sukchai</strong></p>
+      <p class="member-role">Advisor</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Arwut Silaket</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Manit Sakonthawat</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
@@ -383,11 +394,15 @@
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Prajak Nansrithong</strong></p>
+      <p><strong>Bro. Kullachart Juntachoto</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Pittaya Tueaita</strong></p>
+      <p><strong>Bro. Sirichai Phangrak</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Palakorn Pianpan</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
@@ -395,11 +410,19 @@
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Krissada Ngamwong</strong></p>
+      <p><strong>Bro. Kornkavee Yindeevech</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Teerachai Charoensumran</strong></p>
+      <p><strong>Bro. Natton Suphon</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Panuwat Mouentup</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Apisit Ngamwong</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
@@ -407,15 +430,7 @@
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Pakpoom Jaisamret</strong></p>
-      <p class="member-role">Member</p>
-    </div>
-    <div class="member-card">
-      <p><strong>Bro. Nattapong Wantaprom</strong></p>
-      <p class="member-role">Member</p>
-    </div>
-    <div class="member-card">
-      <p><strong>Bro. Pathanant Chaiyara</strong></p>
+      <p><strong>Bro. Krissada Ngamwong</strong></p>
       <p class="member-role">Secretary</p>
     </div>
   </div>
@@ -444,7 +459,6 @@
       <h4>Our Websites</h4>
       <ul>
         <li><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
-        <li><a href="https://bsgthailand.org" target="_blank" rel="noopener">bsgthailand.org</a></li>
         <li><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
         <li><a href="swis/index.html" target="_blank">swisplus.com</a></li>
         <li><a href="montfortian-stream.html">สายธารพันธกิจ</a></li>

@@ -503,7 +503,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#strategy">Strategy</a></li>
       <li><a href="#governance">Governance</a></li>
-      <li><a href="https://bsgthailand.org/brothers/" target="_blank" rel="noopener">Brothers</a></li>
+      <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Brothers</a></li>
       <li><a href="#schools">Schools</a></li>
       <li><a href="alumni.html">Alumni</a></li>
       <li><a href="#network">Network</a></li>
@@ -514,12 +514,89 @@
 </nav>
 
 <!-- ============================================
-     ROME CALENDAR — MIGRATED 2026-05-25
-     Moved to bsgthailand.org (Sacred · Province) which owns
-     the daily liturgical calendar for all Brothers' sites.
-     Data + script: bsgthailand.org/data/rome_calendar_2026.json
-                  + bsgthailand.org/assets/js/rome-cal.js
+     ROME CALENDAR (adapted from thaibrothers.net)
      ============================================ -->
+<style>
+  .rome-cal { background: #0d2640; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+  .rome-cal .rc-container { max-width: 1200px; margin: 0 auto; }
+  .rome-cal-inner { display: flex; align-items: stretch; min-height: 56px; }
+  .rome-cal-date {
+    background: linear-gradient(135deg, #8b0000 0%, #6d0000 100%);
+    color: white; padding: 14px 28px;
+    display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 16px; font-weight: 600;
+  }
+  .rome-cal-date .rc-cross { font-size: 20px; opacity: 0.8; }
+  .rome-cal-items {
+    display: flex; align-items: center; gap: 6px;
+    padding: 10px 24px; flex-wrap: wrap; flex: 1;
+  }
+  .rome-cal-items .rc-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: rgba(255,255,255,0.85);
+    padding: 5px 14px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    white-space: nowrap;
+  }
+  .rome-cal-items .rc-tag .rc-label {
+    color: #c9a74e; font-weight: 600; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  @media (max-width: 767px) {
+    .rome-cal-inner { flex-direction: column; }
+    .rome-cal-date { padding: 12px 20px; font-size: 14px; justify-content: center; }
+    .rome-cal-items { padding: 10px 16px; justify-content: center; }
+    .rome-cal-items .rc-tag { font-size: 11px; padding: 4px 10px; }
+  }
+  /* ── Pin Rome Calendar above fixed nav, push nav + hero down ── */
+  .rome-cal { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; }
+  nav { top: 56px !important; }
+  .hero { margin-top: 124px !important; }
+  @media (max-width: 767px) {
+    nav { top: 100px !important; }
+    .hero { margin-top: 168px !important; }
+  }
+</style>
+<section class="rome-cal">
+  <div class="rc-container">
+    <div class="rome-cal-inner">
+      <div class="rome-cal-date">
+        <span class="rc-cross">&#10014;</span>
+        <span id="rc-date">Apr 16 &middot; Wednesday</span>
+      </div>
+      <div class="rome-cal-items" id="rc-items">
+        <span class="rc-tag"><span class="rc-label">Season</span> <span id="rc-season">&mdash;</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  (function(){
+    var d = new Date();
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var el = document.getElementById('rc-date');
+    if (el) el.innerHTML = months[d.getMonth()] + ' ' + d.getDate() + ' &middot; ' + days[d.getDay()];
+
+    // Pull today's calendar entry from rome_calendar_2026.json
+    var pad = function(n){ return n < 10 ? '0'+n : ''+n; };
+    var key = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate());
+    fetch('data/rome_calendar_2026.json').then(function(r){ return r.json(); }).then(function(cal){
+      var entry = cal[key];
+      if (!entry) return;
+      var container = document.getElementById('rc-items');
+      var html = '<span class="rc-tag"><span class="rc-label">Season</span> ' + (entry.season || '—') + '</span>';
+      if (entry.saints) html += ' <span class="rc-tag"><span class="rc-label">Saints</span> ' + entry.saints + '</span>';
+      if (entry.special) html += ' <span class="rc-tag"><span class="rc-label">Special</span> ' + entry.special + '</span>';
+      if (entry.deceased) html += ' <span class="rc-tag"><span class="rc-label">Deceased</span> ' + entry.deceased + '</span>';
+      container.innerHTML = html;
+    }).catch(function(){});
+  })();
+</script>
 
 <!-- ═══ HERO ═══ -->
 <div class="hero" id="home">
@@ -1036,26 +1113,56 @@
   </div>
 </div>
 
-<!-- ═══ GLOBAL NETWORK · MIGRATED 2026-05-25 ═══
-     Full content (Generalate · Montfortian Family · 15 Provinces tags) now lives at:
-     https://bsgthailand.org/about/global-network.html
-     (Sacred · Province · proper home for worldwide Religious structure) -->
+<!-- ═══ GLOBAL NETWORK ═══ -->
 <div class="section alt" id="network">
   <div class="sec-inner">
     <div class="sec-head">
       <div class="eyebrow">Global Network</div>
       <h2>The Gabrielite Family Worldwide</h2>
       <div class="divider"></div>
-      <p>The Foundation in Thailand is one local expression of a worldwide Congregation &mdash; present in over 40 countries across 5 continents.</p>
+      <p>Part of a worldwide Congregation present in over 40 countries across 5 continents</p>
     </div>
 
-    <div class="net-grid" style="grid-template-columns: 1fr; max-width:720px; margin: 0 auto;">
-      <div class="net-card" style="text-align:center; padding:36px 28px;">
-        <div class="net-icon" style="font-size:38px;">&#127757;</div>
-        <h4 style="font-size:1.15em;">Full Worldwide Network</h4>
-        <p>The Generalate in Rome, the Montfortian Family (Brothers of Saint Gabriel, Daughters of Wisdom, Company of Mary), and the full list of Provinces and Districts where the Brothers serve today.</p>
-        <p style="font-size:0.88em; color:var(--text-light); margin-top:14px;">This content is now hosted by the Sacred site of the Thailand Province, which is the proper home for the worldwide Religious structure.</p>
-        <a href="https://bsgthailand.org/about/global-network.html" target="_blank" rel="noopener" style="display:inline-block; margin-top:18px; padding:12px 28px; background:var(--navy); color:#fff; text-decoration:none; border-radius:6px; font-weight:600; font-size:0.92em;">View Global Network at bsgthailand.org &rarr;</a>
+    <div class="net-grid">
+      <div class="net-card">
+        <div class="net-icon">&#127963;</div>
+        <h4>Generalate &mdash; Rome</h4>
+        <p>The worldwide headquarters of the Congregation, led by the Superior General and General Council. All Provinces report to Rome.</p>
+        <a href="https://www.brothersofsaintgabriel.org" target="_blank">Visit Generalate &#8594;</a>
+      </div>
+      <div class="net-card">
+        <div class="net-icon">&#9968;</div>
+        <h4>The Montfortian Family</h4>
+        <p>Together with the Company of Mary (Montfort Missionaries), the Daughters of Wisdom, and lay associates, we form the global Montfortian spiritual family.</p>
+        <a href="https://www.montfortian.info" target="_blank">Montfortian Family &#8594;</a>
+      </div>
+      <div class="net-card">
+        <div class="net-icon">&#128591;</div>
+        <h4>Congregation &amp; Religious Life</h4>
+        <p>Learn about the Brothers' charism, vocation, formation, and the three vows of Chastity, Poverty, and Obedience that guide our mission.</p>
+        <a href="https://montfortian.net" target="_blank">montfortian.net &#8594;</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <h4 style="color:var(--navy); margin-bottom:12px; font-family:'Inter',sans-serif; font-weight:600; font-size:14px;">PROVINCES &amp; DISTRICTS WORLDWIDE</h4>
+      <div class="province-tags">
+        <a class="prov-tag" href="http://montfortbrothers.com/" target="_blank">&#127470;&#127475; India (4 Provinces)</a>
+        <a class="prov-tag" href="https://thaibrothers.net" target="_blank">&#127481;&#127469; Thailand</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127467;&#127479; France</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127464;&#127462; Canada</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127480;&#127468; Singapore / Malaysia</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127468;&#127463; United Kingdom</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127480;&#127472; South Korea</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127470;&#127465; Indonesia</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127472;&#127466; Kenya / East Africa</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127474;&#127468; Madagascar</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127464;&#127465; DR Congo</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127477;&#127469; Philippines</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127463;&#127465; Bangladesh</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127475;&#127477; Nepal</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127473;&#127472; Sri Lanka</a>
+        <a class="prov-tag" href="https://www.stgabrielinst.org" target="_blank">&#127462;&#127482; Australia</a>
       </div>
     </div>
   </div>
@@ -1153,7 +1260,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#strategy">Strategic Plan</a></li>
         <li><a href="#governance">Governance</a></li>
-        <li><a href="https://bsgthailand.org/brothers/" target="_blank" rel="noopener">Our Brothers</a></li>
+        <li><a href="https://montfortian.net/brothers.html" target="_blank" rel="noopener">Our Brothers</a></li>
         <li><a href="#schools">Our 15 Schools</a></li>
         <li><a href="alumni.html">Notable Alumni</a></li>
         <li><a href="#innovation">Innovation / SWIS</a></li>
@@ -1163,7 +1270,6 @@
     <div>
       <h4>Our Websites</h4>
       <ul>
-        <li><a href="https://bsgthailand.org" target="_blank" rel="noopener">bsgthailand.org</a></li>
         <li><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
         <li><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
         <li><a href="swis/index.html" target="_blank">swisplus.com</a></li>

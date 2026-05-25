@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formation &amp; Vocation — moved to Montfortian Network</title>
 <meta name="description" content="Religious formation and vocation development for the Brothers of Saint Gabriel — Province of Thailand. Now hosted at montfortian.net.">
-<meta http-equiv="refresh" content="0; url=https://bsgthailand.org/vocations/">
-<link rel="canonical" href="https://bsgthailand.org/vocations/">
+<meta http-equiv="refresh" content="0; url=https://montfortian.net/formation.html">
+<link rel="canonical" href="https://montfortian.net/formation.html">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root { --navy:#1a3a5c; --navy-dark:#0d2640; --gold:#c9a74e; --cream:#fafaf7; --text:#2a2a2a; --text-light:#5a5a5a; }
@@ -29,17 +29,17 @@
 <div class="card">
   <div class="crest">&#10014;</div>
   <h1>Formation &amp; Vocation</h1>
-  <div class="subtitle">หน้านี้ย้ายไปที่เว็บไซต์ของคณะภราดาแขวงประเทศไทยแล้ว</div>
+  <div class="subtitle">หน้านี้ย้ายไปที่ Montfortian Network แล้ว</div>
 
   <div class="reason">
-    <strong>ทำไมย้าย?</strong> งานด้าน <em>Vocation</em> และ <em>Religious Formation</em>
+    <strong>ทำไมย้าย?</strong> งานด้าน <em>Vocation Development</em> และ <em>Religious Formation</em>
     เป็นพันธกิจของ <strong>คณะภราดาเซนต์คาเบรียล แขวงประเทศไทย</strong> (Province of Thailand)
-    ซึ่งมีเว็บไซต์อยู่ที่ <a href="https://bsgthailand.org" style="color:var(--navy)">bsgthailand.org</a> &mdash;
+    ซึ่งมีบ้านอยู่ที่ <a href="https://montfortian.net" style="color:var(--navy)">montfortian.net</a> &mdash;
     ส่วน <strong>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</strong> (fsgthailand.org)
     มีพันธกิจดูแลด้านบริหารสถานศึกษา 15 โรง ซึ่งเป็นคนละมิติกัน
   </div>
 
-  <a class="cta" href="https://bsgthailand.org/vocations/">ไปที่หน้า Vocations &rarr;</a>
+  <a class="cta" href="https://montfortian.net/formation.html">ไปที่หน้า Formation &amp; Vocation &rarr;</a>
   <br>
   <a class="back" href="index.html">&larr; กลับหน้าแรก fsgthailand.org</a>
 
@@ -47,6 +47,6 @@
     Auto-redirecting in 3 seconds. If not redirected, click the button above.
   </div>
 </div>
-<script>setTimeout(() => { window.location.href = 'https://bsgthailand.org/vocations/'; }, 3000);</script>
+<script>setTimeout(() => { window.location.href = 'https://montfortian.net/formation.html'; }, 3000);</script>
 </body>
 </html>

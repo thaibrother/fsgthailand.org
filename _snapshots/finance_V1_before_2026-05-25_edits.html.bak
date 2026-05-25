@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commission on Education — FSG Thailand</title>
+<title>Commission on Finance &amp; Temporal Goods — FSG Thailand</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
     --shadow: 0 2px 12px rgba(0,0,0,0.07);
     --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
     --radius: 8px;
-    --accent: #7c3aed;
+    --accent: #d97706;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -154,32 +154,6 @@
   }
   .detail-card p { color: var(--text-light); font-size: 13px; line-height: 1.6; }
 
-  .group-header {
-    background: rgba(124, 58, 237, 0.05);
-  }
-  .group-header h4 {
-    color: var(--accent);
-  }
-
-  /* ── SUBCOMMITTEE SECTION ── */
-  .subcommittee-section {
-    background: var(--white); border-radius: var(--radius);
-    padding: 24px; margin-top: 32px; box-shadow: var(--shadow);
-    border-left: 4px solid var(--accent);
-  }
-  .subcommittee-section h3 {
-    font-size: 16px; color: var(--navy); margin-bottom: 12px;
-  }
-  .subcommittee-item {
-    margin-bottom: 16px;
-  }
-  .subcommittee-item strong {
-    color: var(--navy); font-weight: 600;
-  }
-  .subcommittee-members {
-    font-size: 12px; color: var(--text-light); margin-top: 4px;
-  }
-
   /* ── MEMBERS SECTION ── */
   .members-section {
     margin-top: 32px;
@@ -251,27 +225,27 @@
 <!-- ═══ BREADCRUMB ═══ -->
 <div class="breadcrumb">
   <div class="breadcrumb-inner">
-    <a href="index.html">Home</a> &rsaquo; <a href="index.html#governance">Governance</a> &rsaquo; <strong>Commission on Education</strong>
+    <a href="index.html">Home</a> &rsaquo; <a href="index.html#governance">Governance</a> &rsaquo; <strong>Commission on Finance &amp; Temporal Goods</strong>
   </div>
 </div>
 
 <!-- ═══ PAGE HERO ═══ -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="eyebrow">Commission on Education</div>
-    <h1>Educational Excellence &amp; Quality Assurance</h1>
-    <p>ฝ่ายการศึกษา — Mission-driven learning across all 15 schools</p>
+    <div class="eyebrow">Commission on Finance &amp; Temporal Goods</div>
+    <h1>Financial Management &amp; Asset Stewardship</h1>
+    <p>ฝ่ายการเงินและทรัพย์สิน — Fiscal responsibility and institutional resources</p>
   </div>
 </div>
 
 <!-- ═══ CHAIRMAN ═══ -->
 <div class="chairman-bar">
   <div class="chairman-card">
-    <img src="images/brothers/witaya.JPG" alt="Bro. Witthaya Thepkom">
+    <img src="images/brothers/chamnan.JPG" alt="Bro. Chamnan Laoruckphon">
     <div>
       <div class="ch-label">Chairman</div>
-      <div class="ch-name">Bro. Witthaya Thepkom</div>
-      <div class="ch-name-th">ภราดาวิทยา เทพกอม</div>
+      <div class="ch-name">Bro. Chamnan Laoruckphon</div>
+      <div class="ch-name-th">ภราดาชำนาญ เลารักผล</div>
     </div>
   </div>
 </div>
@@ -282,85 +256,37 @@
     <div class="eyebrow">Work Groups</div>
     <h2>Commission Structure</h2>
     <div class="divider"></div>
-    <p>3 integrated groups managing educational quality, curriculum, and standards</p>
+    <p>6 specialized work groups managing finance and institutional assets</p>
   </div>
 
   <div class="detail-grid">
     <div class="detail-card" style="grid-column:1/-1;">
       <h4>Overview</h4>
-      <p>The Commission on Education drives academic excellence, pedagogical innovation, and continuous quality improvement across all 15 schools. Aligned with Montfort Educational Philosophy and international quality standards.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 1: Education Office Management — กลุ่มงานบริหารสำนักงานฝ่ายการศึกษา</h4>
-      <p>Centralized management of educational strategy, budgeting, and coordination.</p>
+      <p>The Commission on Finance &amp; Temporal Goods ensures sound financial management, accurate accounting, comprehensive budgeting, fund stewardship, and proper management of Foundation properties and intellectual assets across all institutions and operations.</p>
     </div>
     <div class="detail-card">
-      <h4>Education Policy, Planning &amp; Direction</h4>
-      <p><strong>งานนโยบาย วางแผน และทิศทางการศึกษา</strong> — Strategic direction, policy development, and vision alignment for all schools.</p>
+      <h4>Finance</h4>
+      <p><strong>งานการเงิน</strong> — Overall financial management, reporting, treasury operations, and fiscal policy development for the Foundation.</p>
     </div>
     <div class="detail-card">
-      <h4>Budget &amp; Audit</h4>
-      <p><strong>งานงบประมาณและตรวจสอบ</strong> — Educational budget allocation and fiscal audit of education-related expenditures.</p>
+      <h4>Accounting</h4>
+      <p><strong>งานบัญชี</strong> — Recording, reconciliation, ledger management, and preparation of financial statements in compliance with standards.</p>
     </div>
     <div class="detail-card">
-      <h4>Finance &amp; Accounting</h4>
-      <p><strong>งานการเงินและบัญชี</strong> — Financial management and accounting specific to educational operations.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 2: Educational Quality Development — กลุ่มงานพัฒนาคุณภาพการศึกษา</h4>
-      <p>Continuous improvement in teaching, learning, and student assessment.</p>
+      <h4>Budgeting</h4>
+      <p><strong>งานงบประมาณ</strong> — Annual budget development, allocation, monitoring, and adjustment across the Foundation and schools.</p>
     </div>
     <div class="detail-card">
-      <h4>Curriculum &amp; Teaching</h4>
-      <p><strong>งานหลักสูตรและการเรียนการสอน</strong> — Curriculum development, instructional design, and pedagogical excellence.</p>
+      <h4>Fund Management</h4>
+      <p><strong>งานกองทุน</strong> — Endowment and special fund administration, investment oversight, and fund distribution policies.</p>
     </div>
     <div class="detail-card">
-      <h4>Teaching Supervision</h4>
-      <p><strong>งานนิเทศการเรียนการสอน</strong> — Classroom observation, teacher coaching, and instructional feedback.</p>
+      <h4>Property &amp; IP</h4>
+      <p><strong>งานทรัพย์สิน / ลิขสิทธิ์</strong> — Real estate management, asset registry, intellectual property, and legal protection of institutional holdings.</p>
     </div>
     <div class="detail-card">
-      <h4>Assessment &amp; Evaluation</h4>
-      <p><strong>งานวัดและประเมินผล</strong> — Student assessment design, learning outcome measurement, and data analysis.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Research &amp; Development</h4>
-      <p><strong>งานวิจัยและพัฒนา</strong> — Educational research, innovation pilots, and evidence-based practice development.</p>
-    </div>
-
-    <div class="detail-card group-header" style="grid-column:1/-1;">
-      <h4>Group 3: Educational Quality Standards — กลุ่มงานมาตรฐานคุณภาพการศึกษา</h4>
-      <p>Quality assurance systems and international standards compliance.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Quality Assurance Promotion</h4>
-      <p><strong>งานส่งเสริมระบบประกันคุณภาพการศึกษา</strong> — Implementation of quality assurance systems, PDCA cycles, and self-assessment frameworks.</p>
-    </div>
-    <div class="detail-card">
-      <h4>Quality Standards Assessment</h4>
-      <p><strong>งานประเมินมาตรฐานคุณภาพการศึกษา</strong> — Evaluation against quality standards, accreditation support, and continuous improvement monitoring.</p>
-    </div>
-  </div>
-
-  <!-- Sub-committee -->
-  <div class="subcommittee-section">
-    <h3>Sub-Committee: Committee on QA &amp; BSG Standardization</h3>
-    <div class="subcommittee-item">
-      <strong>Chairman:</strong> Bro. Patcharapakorn Langbubpha
-    </div>
-    <div class="subcommittee-item">
-      <strong>Members:</strong>
-      <div class="subcommittee-members">
-        • Bro. Witthaya Thepkom (Advisor)<br>
-        • Bro. Sarawut Yuchompoo<br>
-        • Bro. Prajak Nansrithong<br>
-        • Bro. Pittaya Tueaita<br>
-        • Bro. Natton Suphol<br>
-        • Bro. Krissada Ngamwong<br>
-        • Bro. Pakpoom Jaisamret<br>
-        • Bro. Teerachai Charoensumran (Secretary)
-      </div>
+      <h4>Master Plan</h4>
+      <p><strong>งานแผนแม่บทอาคารสถานที่</strong> — Long-term facility planning, infrastructure development, capital projects, and infrastructure maintenance strategy.</p>
     </div>
   </div>
 </div>
@@ -375,15 +301,23 @@
 
   <div class="members-grid">
     <div class="member-card">
-      <p><strong>Bro. Anuwat Wipaktamrongkun</strong></p>
+      <p><strong>Bro. Anant Prichavudhi</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Sarawut Yuchompoo</strong></p>
+      <p><strong>Bro. Viharn Srihaphol</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Prajak Nansrithong</strong></p>
+      <p><strong>Bro. Kittisak Charoensri</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Manit Sakonthawat</strong></p>
+      <p class="member-role">Member</p>
+    </div>
+    <div class="member-card">
+      <p><strong>Bro. Kullachart Juntachoto</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
@@ -391,31 +325,19 @@
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Patcharapakorn Langbubpha</strong></p>
+      <p><strong>Bro. Jamrus Kaewamka</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Krissada Ngamwong</strong></p>
+      <p><strong>Bro. Khanchit Seesawan</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Teerachai Charoensumran</strong></p>
+      <p><strong>Bro. Apisit Ngamwong</strong></p>
       <p class="member-role">Member</p>
     </div>
     <div class="member-card">
-      <p><strong>Bro. Thanapoom Saiprom</strong></p>
-      <p class="member-role">Member</p>
-    </div>
-    <div class="member-card">
-      <p><strong>Bro. Pakpoom Jaisamret</strong></p>
-      <p class="member-role">Member</p>
-    </div>
-    <div class="member-card">
-      <p><strong>Bro. Nattapong Wantaprom</strong></p>
-      <p class="member-role">Member</p>
-    </div>
-    <div class="member-card">
-      <p><strong>Bro. Pathanant Chaiyara</strong></p>
+      <p><strong>Bro. Siam Kaewprasith</strong></p>
       <p class="member-role">Secretary</p>
     </div>
   </div>
@@ -444,7 +366,6 @@
       <h4>Our Websites</h4>
       <ul>
         <li><a href="https://thaibrothers.net" target="_blank">thaibrothers.net</a></li>
-        <li><a href="https://bsgthailand.org" target="_blank" rel="noopener">bsgthailand.org</a></li>
         <li><a href="https://montfortian.net" target="_blank">montfortian.net</a></li>
         <li><a href="swis/index.html" target="_blank">swisplus.com</a></li>
         <li><a href="montfortian-stream.html">สายธารพันธกิจ</a></li>
