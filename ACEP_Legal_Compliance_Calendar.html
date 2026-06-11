@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACEP Legal Compliance Calendar</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0f1923; color: #e8edf2; padding: 24px; line-height: 1.5; }
+
+.header { border-left: 4px solid #e8b84b; padding-left: 16px; margin-bottom: 24px; }
+.header h1 { font-size: 1.4rem; font-weight: 700; color: #e8b84b; }
+.header p { font-size: 0.82rem; color: #8899aa; margin-top: 4px; }
+
+.alert-box { background: #1a1010; border: 1px solid #c0392b; border-left: 4px solid #c0392b; border-radius: 6px; padding: 12px 16px; margin-bottom: 24px; font-size: 0.83rem; line-height: 1.7; color: #f5c6c6; }
+.alert-box strong { color: #ff6b6b; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab { padding: 8px 16px; border-radius: 20px; border: 1px solid #2a3a4a; background: #162030; color: #8899aa; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+.tab.active { background: #e8b84b; color: #0f1923; border-color: #e8b84b; font-weight: 700; }
+.tab:hover:not(.active) { border-color: #e8b84b; color: #e8b84b; }
+
+.section-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: #556677; margin: 20px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #1e2d3d; }
+
+.card { background: #162030; border: 1px solid #1e2d3d; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+.card.red { border-left: 4px solid #c0392b; }
+.card.orange { border-left: 4px solid #e67e22; }
+.card.yellow { border-left: 4px solid #e8b84b; }
+.card.green { border-left: 4px solid #27ae60; }
+.card.blue { border-left: 4px solid #2980b9; }
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.card-title { font-size: 0.92rem; font-weight: 600; color: #d4e0ec; }
+.badge { font-size: 0.68rem; padding: 3px 8px; border-radius: 10px; white-space: nowrap; font-weight: 700; flex-shrink: 0; }
+.badge.urgent { background: #c0392b22; color: #ff6b6b; border: 1px solid #c0392b55; }
+.badge.soon { background: #e67e2222; color: #ffaa55; border: 1px solid #e67e2255; }
+.badge.monthly { background: #2980b922; color: #55aaff; border: 1px solid #2980b955; }
+.badge.annual { background: #27ae6022; color: #55dd88; border: 1px solid #27ae6055; }
+.badge.new-law { background: #9b59b622; color: #cc88ff; border: 1px solid #9b59b655; }
+.badge.ongoing { background: #34495e44; color: #99aabc; border: 1px solid #34495e88; }
+
+.card-deadline { font-size: 0.78rem; color: #8899aa; margin-top: 6px; }
+.card-deadline span { color: #e8b84b; font-weight: 700; }
+.card-law { font-size: 0.72rem; color: #556677; margin-top: 4px; font-style: italic; }
+.card-detail { font-size: 0.8rem; color: #99aabb; margin-top: 8px; line-height: 1.6; }
+
+.expand-btn { font-size: 0.72rem; color: #2980b9; cursor: pointer; margin-top: 8px; display: inline-block; user-select: none; }
+.expand-btn:hover { color: #55aaff; }
+.detail-panel { display: none; margin-top: 8px; }
+.detail-panel.open { display: block; }
+
+.penalty { background: #1a0f0f; border-radius: 4px; padding: 8px 10px; margin-top: 8px; font-size: 0.76rem; color: #ffaaaa; }
+.penalty strong { color: #ff6b6b; }
+
+.note-box { background: #0d1a2a; border: 1px dashed #2a4060; border-radius: 6px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.82rem; line-height: 1.7; color: #8899aa; }
+.note-box strong { color: #e8b84b; }
+
+.tl-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1e2d3d; font-size: 0.82rem; }
+.tl-row:last-child { border-bottom: none; }
+.tl-date { width: 100px; color: #e8b84b; font-weight: 700; flex-shrink: 0; padding-top: 2px; }
+.tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.tl-dot.red { background: #c0392b; }
+.tl-dot.orange { background: #e67e22; }
+.tl-dot.blue { background: #2980b9; }
+.tl-dot.green { background: #27ae60; }
+.tl-text { color: #99aabb; }
+.tl-text strong { color: #d4e0ec; }
+
+.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚖️ ACEP Legal Compliance Calendar</h1>
+  <p>กฎหมายที่ ACEP ต้องปฏิบัติตาม พร้อม Deadline — อัปเดต มิถุนายน 2569</p>
+</div>
+
+<div class="alert-box">
+  <strong>⚠️ สถานะพิเศษโรงเรียนเอกชน (มาตรา 86 พ.ร.บ. โรงเรียนเอกชน 2550 แก้ไข 2554):</strong><br>
+  กิจการโรงเรียนในระบบ <strong>ไม่อยู่ภายใต้บังคับโดยตรง</strong> ของ พ.ร.บ. คุ้มครองแรงงาน / ประกันสังคม / เงินทดแทน — แต่ <strong>ต้องให้สิทธิประโยชน์แก่ผู้ปฏิบัติงานไม่น้อยกว่าที่กฎหมายเหล่านั้นกำหนด</strong> ศาลแรงงานและศาลฎีกาใช้กฎหมายเหล่านี้เป็นเกณฑ์วัดในทางปฏิบัติ รวมถึงคดี ร.315-322/2567 ที่อยู่ระหว่างพิจารณา
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('monthly', this)">📅 รายเดือน</div>
+  <div class="tab" onclick="showTab('annual', this)">📆 รายปี / ต่อเนื่อง</div>
+  <div class="tab" onclick="showTab('new2568', this)">🆕 กฎหมายใหม่ 2568</div>
+  <div class="tab" onclick="showTab('timeline', this)">⏱ Timeline &amp; Action Items</div>
+</div>
+
+<!-- TAB: MONTHLY -->
+<div id="tab-monthly">
+
+  <div class="section-title">🔵 ทุกเดือน — deadline คงที่ วันที่ 15 ของเดือนถัดไป</div>
+
+  <div class="card blue">
+    <div class="card-top">
+      <div class="card-title">ส่งเงินสมทบประกันสังคม (มาตรา 33)</div>
+      <div class="badge monthly">ทุกเดือน</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>วันที่ 15 ของเดือนถัดจากเดือนที่หักเงิน</span></div>
+    <div class="card-law">พ.ร.บ. ประกันสังคม 2533 มาตรา 47</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด / บทลงโทษ</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        นายจ้างหักเงินสมทบจากลูกจ้าง <strong>5% ของค่าจ้าง</strong> (ฐานสูงสุด 15,000 บาท = สูงสุด 750 บาท/คน/เดือน) + นายจ้างสมทบเพิ่มเท่ากัน<br><br>
+        <strong>สำหรับ ACEP:</strong> พนักงานสายสนับสนุน (ธุรการ รปภ. แม่บ้าน เจ้าหน้าที่) อยู่ในระบบประกันสังคม ม.33<br>
+        ครูและบุคลากรทางการศึกษาอาจอยู่ในกองทุนสงเคราะห์ครูโรงเรียนเอกชน (สช.) แทน — ต้องแยกตรวจสอบ
+      </div>
+      <div class="penalty"><strong>บทลงโทษหากส่งล่าช้า:</strong> เงินเพิ่ม 2% ต่อเดือนของเงินค้างส่ง + โทษอาญาจำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 20,000 บาท หรือทั้งจำทั้งปรับ</div>
+    </div>
+  </div>
+
+  <div class="card blue">
+    <div class="card-top">
+      <div class="card-title">ส่งเงินกองทุนสงเคราะห์ลูกจ้าง (สะสม + สมทบ)</div>
+      <div class="badge new-law">เริ่ม 1 ต.ค. 2569</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>วันที่ 15 ของเดือนถัดไป — เริ่มบังคับ 1 ตุลาคม 2569</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน หมวด 13 + พระราชกฤษฎีกา 2567</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด / อัตรา</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        <strong>อัตรา ปี 2569–2573:</strong> ลูกจ้างสะสม 0.25% + นายจ้างสมทบ 0.25% ของค่าจ้างรวม<br>
+        <strong>อัตรา หลัง 1 ต.ค. 2573:</strong> เพิ่มเป็น 0.50% ฝ่ายละ<br><br>
+        <strong>⚠️ มติ ครม. 26 ส.ค. 2568:</strong> เลื่อนจาก 1 ต.ค. 2568 เป็น <strong>1 ต.ค. 2569</strong><br>
+        ต้องยื่นแบบรายชื่อลูกจ้างล่วงหน้าก่อนวันบังคับใช้<br><br>
+        ยกเว้น: นายจ้างที่จัดให้มีกองทุนสำรองเลี้ยงชีพ (PVD) อยู่แล้ว อาจได้รับยกเว้น — ต้องตรวจสอบ
+      </div>
+      <div class="penalty"><strong>บทลงโทษหากไม่ส่ง:</strong> เงินเพิ่ม 5% ต่อเดือนของเงินค้างส่ง</div>
+    </div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-top">
+      <div class="card-title">จ่ายค่าจ้าง ค่าล่วงเวลา ค่าทำงานวันหยุด</div>
+      <div class="badge monthly">ทุกเดือน</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ตามรอบที่กำหนด — อย่างน้อย 1 ครั้ง/เดือน</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 70</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด / บทลงโทษ</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        ค่าล่วงเวลาและค่าทำงานวันหยุดต้องจ่ายอย่างน้อย 1 ครั้ง/เดือน<br>
+        <strong>กรณีเลิกจ้าง:</strong> ต้องจ่ายทุกรายการภายใน <strong>3 วัน</strong> นับจากวันเลิกจ้าง
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> ดอกเบี้ย 15% ต่อปีระหว่างเวลาผิดนัด · หากจงใจโดยปราศจากเหตุผล: เงินเพิ่ม 15% ทุก 7 วัน + โทษอาญา จำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 100,000 บาท</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TAB: ANNUAL -->
+<div id="tab-annual" class="hidden">
+
+  <div class="section-title">📌 มกราคมทุกปี</div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">ยื่นแบบแสดงสภาพการจ้างและสภาพการทำงานประจำปี</div>
+      <div class="badge annual">ทุกปี — ม.ค.</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ภายในเดือนมกราคมของทุกปี</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 115/1 (นายจ้างที่มีลูกจ้าง ≥ 10 คน)</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        ยื่นต่อกรมสวัสดิการและคุ้มครองแรงงาน หรือผู้ที่อธิบดีมอบหมาย<br>
+        พนักงานตรวจแรงงานจะส่งแบบฟอร์มให้นายจ้างล่วงหน้าในเดือนธันวาคม<br>
+        หากข้อมูลเปลี่ยนแปลง ต้องแจ้งภายในเดือนถัดจากที่เปลี่ยนแปลง
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> ปรับไม่เกิน 20,000 บาท (หลังได้รับหนังสือเตือนแล้วไม่ยื่นใน 15 วัน)</div>
+    </div>
+  </div>
+
+  <div class="section-title">📌 ก่อนสิ้นปีปฏิทิน / ต้นปีการศึกษา</div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">ประกาศวันหยุดตามประเพณีประจำปี</div>
+      <div class="badge annual">ทุกปี</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ประกาศล่วงหน้าก่อนต้นปี — ≥ 13 วัน รวมวันแรงงาน</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 29</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        ต้องประกาศล่วงหน้าเป็นรายปี ≥ 13 วัน<br>
+        วันแรงงานแห่งชาติ (1 พ.ค.) เป็นบังคับรวมอยู่ด้วย<br>
+        หากวันหยุดตรงกับวันหยุดประจำสัปดาห์: ต้องให้หยุดชดเชยในวันทำงานถัดไป<br>
+        หากไม่อาจให้หยุดได้: ต้องตกลงกับลูกจ้าง จ่ายค่าทำงานวันหยุด หรือเลื่อนหยุดวันอื่น
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> ปรับไม่เกิน 20,000 บาท</div>
+    </div>
+  </div>
+
+  <div class="section-title">📌 ตลอดปี — ต้องมีและรักษาไว้เสมอ</div>
+
+  <div class="card green">
+    <div class="card-top">
+      <div class="card-title">ข้อบังคับเกี่ยวกับการทำงาน (Work Regulations)</div>
+      <div class="badge ongoing">ต้องมีตลอด</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>จัดทำทันทีเมื่อมีลูกจ้าง ≥ 10 คน · แก้ไขให้เสร็จใน 7 วัน</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 108</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูหัวข้อบังคับที่ต้องมี</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        ต้องครอบคลุมอย่างน้อย 8 หัวข้อ:<br>
+        (1) วันทำงาน เวลาทำงาน เวลาพัก<br>
+        (2) วันหยุดและหลักเกณฑ์การหยุด<br>
+        (3) หลักเกณฑ์ OT และวันหยุด<br>
+        (4) วันและสถานที่จ่ายค่าจ้าง / OT / วันหยุด<br>
+        (5) วันลาและหลักเกณฑ์การลา <strong>(ต้องอัปเดตลาคลอด 120 วัน)</strong><br>
+        (6) วินัยและโทษทางวินัย<br>
+        (7) การร้องทุกข์<br>
+        (8) การเลิกจ้าง ค่าชดเชย ค่าชดเชยพิเศษ<br><br>
+        ต้องส่งสำเนาอธิบดีภายใน 7 วัน + ปิดประกาศในที่เปิดเผย
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> ปรับไม่เกิน 20,000 บาท</div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <div class="card-top">
+      <div class="card-title">ทะเบียนลูกจ้างและเอกสารการจ่ายค่าจ้าง</div>
+      <div class="badge ongoing">ต้องมีตลอด</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>จัดทำใน 15 วันนับแต่ลูกจ้างเข้างาน · เก็บ ≥ 2 ปีหลังสิ้นสุดสัญญา</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 112-115</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        ทะเบียนลูกจ้าง: ชื่อ เพศ สัญชาติ วันเกิด ที่อยู่ วันเริ่มจ้าง ตำแหน่ง อัตราค่าจ้าง วันสิ้นสุด<br>
+        เอกสารการจ่ายค่าจ้าง: วัน/เวลาทำงาน ผลงาน อัตราและจำนวนที่จ่าย<br>
+        <strong>หากมีคดีหรือข้อพิพาท:</strong> ต้องเก็บไว้จนกว่าคำพิพากษาถึงที่สุด<br>
+        ⚠️ สำคัญมากสำหรับคดีฎีกา ร.315-322/2567 ที่ ACEP กำลังเผชิญอยู่
+      </div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <div class="card-top">
+      <div class="card-title">วันลาพักผ่อนประจำปี (Annual Leave)</div>
+      <div class="badge ongoing">ตลอดปี</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ลูกจ้างครบ 1 ปี → สิทธิ ≥ 6 วันทำงาน/ปี</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 30</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียด</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        กำหนดวันหยุดล่วงหน้าหรือตกลงกับลูกจ้าง สะสมและเลื่อนได้ถ้าตกลงกัน<br>
+        <strong>หากเลิกจ้าง:</strong> ต้องจ่ายค่าจ้างสำหรับวันหยุดพักผ่อนที่เหลือและสะสม (ม.67)
+      </div>
+    </div>
+  </div>
+
+  <div class="card green">
+    <div class="card-top">
+      <div class="card-title">วันหยุดประจำสัปดาห์ — ≥ 1 วัน/สัปดาห์</div>
+      <div class="badge ongoing">ตลอดปี</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ระยะห่างวันหยุดต้องไม่เกิน 6 วัน</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 28</div>
+  </div>
+
+  <div class="card green">
+    <div class="card-top">
+      <div class="card-title">วันลาป่วย — จ่ายค่าจ้างระหว่างลา ≤ 30 วัน/ปี</div>
+      <div class="badge ongoing">ตลอดปี</div>
+    </div>
+    <div class="card-deadline">Deadline: <span>ลาป่วยตามจริง ≥ 3 วันทำงาน: นายจ้างขอใบแพทย์ได้</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 32, 57</div>
+  </div>
+
+</div>
+
+<!-- TAB: NEW 2568 -->
+<div id="tab-new2568" class="hidden">
+
+  <div class="note-box">
+    <strong>สถานะกฎหมายล่าสุด (มิถุนายน 2569):</strong><br>
+    • พ.ร.บ. คุ้มครองแรงงาน ฉบับที่ 9 พ.ศ. 2568 — บังคับใช้แล้วตั้งแต่ 7 ธันวาคม 2568<br>
+    • กองทุนสงเคราะห์ลูกจ้าง — เลื่อนเป็น 1 ตุลาคม 2569 (ตามมติ ครม. 26 ส.ค. 2568)<br>
+    • ค่าจ้างขั้นต่ำ — ปรับ 400 บาท/วัน บางพื้นที่ มีผล 1 กรกฎาคม 2568<br>
+    • พ.ร.บ. คุ้มครองแรงงาน ฉบับปรับปรุงล่าสุดที่กรมสวัสดิการฯ จัดทำ: ถึงฉบับที่ 8 (2566)
+  </div>
+
+  <div class="section-title">🆕 พ.ร.บ. คุ้มครองแรงงาน ฉบับที่ 9 — บังคับใช้แล้ว 7 ธ.ค. 2568</div>
+
+  <div class="card red">
+    <div class="card-top">
+      <div class="card-title">🔴 ลาคลอด: เพิ่มเป็น 120 วัน (เดิม 98 วัน) — ต้องแก้ข้อบังคับด่วน</div>
+      <div class="badge urgent">บังคับแล้ว</div>
+    </div>
+    <div class="card-deadline">มีผลบังคับ: <span>7 ธันวาคม 2568</span> — ข้อบังคับ ACEP ยังไม่อัปเดต = ผิดกฎหมาย</div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 41, 59 (แก้ไข ฉบับที่ 9)</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูรายละเอียดทั้งหมด</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        <strong>สิทธิลูกจ้างหญิง:</strong> ลาคลอดได้ <strong>120 วัน</strong> ต่อครรภ์ (รวมวันหยุดระหว่างลา)<br>
+        <strong>นายจ้างจ่ายค่าจ้าง:</strong> ตลอดระยะเวลาที่ลา <strong>แต่ไม่เกิน 60 วัน</strong><br>
+        ส่วนที่เกิน 60 วัน: ประกันสังคมจ่าย (สำหรับลูกจ้างที่อยู่ในระบบ ม.33)<br><br>
+        <strong>กรณีพิเศษ:</strong> บุตรเจ็บป่วยรุนแรง / มีความผิดปกติ / พิการ<br>
+        → ลาเพิ่มได้อีก ≤ 15 วัน ได้รับค่าจ้าง 50%<br><br>
+        <strong>⚠️ Action Required:</strong> ACEP ต้องแก้ข้อบังคับการทำงานหมวดลาคลอด และส่งสำเนาอธิบดีภายใน 7 วันหลังแก้ไข
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> ปรับไม่เกิน 20,000 บาท / จำคุกไม่เกิน 6 เดือน (กรณีฝ่าฝืน)</div>
+    </div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-top">
+      <div class="card-title">ลาดูแลคู่สมรสที่คลอดบุตร — สิทธิใหม่ ≤ 15 วัน</div>
+      <div class="badge urgent">บังคับแล้ว</div>
+    </div>
+    <div class="card-deadline">มีผลบังคับ: <span>7 ธันวาคม 2568</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน ฉบับที่ 9</div>
+    <div class="card-detail" style="margin-top:8px;">ลูกจ้าง (ชายหรือหญิง) มีสิทธิลาเพื่อช่วยเหลือคู่สมรสที่คลอดบุตรได้ไม่เกิน <strong>15 วัน</strong> ได้รับค่าจ้างระหว่างลา — ต้องเพิ่มในข้อบังคับการทำงาน</div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-top">
+      <div class="card-title">ลาตรวจครรภ์ก่อนคลอด — สิทธิใหม่</div>
+      <div class="badge urgent">บังคับแล้ว</div>
+    </div>
+    <div class="card-deadline">มีผลบังคับ: <span>7 ธันวาคม 2568</span></div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน ฉบับที่ 9</div>
+    <div class="card-detail" style="margin-top:8px;">ลูกจ้างหญิงมีสิทธิลาเพื่อตรวจครรภ์ก่อนคลอด ได้รับค่าจ้างระหว่างลา — ต้องเพิ่มในข้อบังคับการทำงาน</div>
+  </div>
+
+  <div class="section-title">🆕 กองทุนสงเคราะห์ลูกจ้าง — เริ่ม 1 ต.ค. 2569</div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">ยื่นแบบรายชื่อลูกจ้างก่อนวันบังคับใช้ + ตั้งระบบหักเงิน</div>
+      <div class="badge soon">เตรียมตัว Q3/2569</div>
+    </div>
+    <div class="card-deadline">เริ่มส่งเงิน: <span>1 ตุลาคม 2569</span> (เลื่อนจาก 1 ต.ค. 2568 ตามมติ ครม.)</div>
+    <div class="card-law">พ.ร.บ. คุ้มครองแรงงาน มาตรา 130-131 + พระราชกฤษฎีกา 2567</div>
+    <span class="expand-btn" onclick="toggleDetail(this)">▼ ดูอัตราและขั้นตอน</span>
+    <div class="detail-panel">
+      <div class="card-detail">
+        <strong>อัตราระยะแรก (ต.ค. 2569 – ก.ย. 2573):</strong><br>
+        ลูกจ้างสะสม 0.25% + นายจ้างสมทบ 0.25% ของค่าจ้างรวม<br><br>
+        <strong>อัตราระยะที่สอง (ต.ค. 2573 เป็นต้นไป):</strong><br>
+        เพิ่มเป็น 0.50% ฝ่ายละ<br><br>
+        <strong>ขั้นตอนที่ต้องทำ:</strong><br>
+        1. ยื่นแบบรายชื่อลูกจ้างต่อกรมสวัสดิการฯ ก่อน 1 ต.ค. 2569<br>
+        2. ตั้งระบบหักเงินจากค่าจ้างทุกรอบ<br>
+        3. นำส่งภายในวันที่ 15 ของเดือนถัดไปทุกเดือน<br><br>
+        ยกเว้น: นายจ้างที่มีกองทุนสำรองเลี้ยงชีพ (PVD) ตามกฎกระทรวง 2567 อาจยกเว้นได้ — ต้องตรวจสอบกับกรมสวัสดิการฯ
+      </div>
+      <div class="penalty"><strong>บทลงโทษ:</strong> เงินเพิ่ม 5% ต่อเดือนของเงินค้างส่ง</div>
+    </div>
+  </div>
+
+  <div class="section-title">💰 ค่าจ้างขั้นต่ำ — มีผล 1 ก.ค. 2568</div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">ตรวจสอบค่าจ้างขั้นต่ำจังหวัดสมุทรสาคร</div>
+      <div class="badge soon">ต้องตรวจสอบ</div>
+    </div>
+    <div class="card-deadline">มีผล: <span>1 กรกฎาคม 2568</span> — บางพื้นที่ 400 บาท/วัน</div>
+    <div class="card-law">ประกาศคณะกรรมการค่าจ้าง ฉบับที่ 13</div>
+    <div class="card-detail" style="margin-top:8px;">ต้องยืนยันอัตราเฉพาะสมุทรสาคร และตรวจว่าลูกจ้างสายสนับสนุนทุกคนได้รับไม่น้อยกว่าขั้นต่ำ หากต่ำกว่า ต้องปรับทันที</div>
+  </div>
+
+</div>
+
+<!-- TAB: TIMELINE -->
+<div id="tab-timeline" class="hidden">
+
+  <div class="section-title">⏱ Timeline 2569 — กำหนดการสำคัญ</div>
+
+  <div class="tl-row">
+    <div class="tl-date">15 ทุกเดือน</div>
+    <div class="tl-dot blue"></div>
+    <div class="tl-text"><strong>ส่งเงินสมทบประกันสังคม</strong> — ห้ามล่าช้าเด็ดขาด เงินเพิ่ม 2%/เดือน</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-date">ม.ค. 2569</div>
+    <div class="tl-dot orange"></div>
+    <div class="tl-text"><strong>ยื่นแบบแสดงสภาพการจ้าง</strong> ประจำปีต่อกรมสวัสดิการและคุ้มครองแรงงาน</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-date">มิ.ย.–ก.ค. 2569 (ประมาณ)</div>
+    <div class="tl-dot orange"></div>
+    <div class="tl-text"><strong>ประกาศวันหยุดตามประเพณี</strong> ปีการศึกษา / ปีปฏิทินถัดไป</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-date">ก.ค.–ก.ย. 2569</div>
+    <div class="tl-dot orange"></div>
+    <div class="tl-text"><strong>เตรียมระบบกองทุนสงเคราะห์ลูกจ้าง</strong> — ยื่นแบบรายชื่อ ตั้งระบบหัก ก่อน 1 ต.ค.</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-date">1 ต.ค. 2569</div>
+    <div class="tl-dot red"></div>
+    <div class="tl-text"><strong>🔴 กองทุนสงเคราะห์ลูกจ้าง เริ่มบังคับ</strong> — เริ่มหักและส่งเงิน 0.25% ฝ่ายละ ทุกวันที่ 15</div>
+  </div>
+  <div class="tl-row">
+    <div class="tl-date">ธ.ค. 2569</div>
+    <div class="tl-dot orange"></div>
+    <div class="tl-text"><strong>รับแบบสภาพการจ้างจากพนักงานตรวจแรงงาน</strong> สำหรับยื่นปี 2570</div>
+  </div>
+
+  <div class="section-title" style="margin-top: 28px;">🎯 Action Items ด่วน — สิ่งที่ ACEP ต้องทำตอนนี้</div>
+
+  <div class="card red">
+    <div class="card-top">
+      <div class="card-title">1. แก้ข้อบังคับการทำงาน — อัปเดตลาคลอด 120 วัน + ลาดูแลคู่สมรส + ลาตรวจครรภ์</div>
+      <div class="badge urgent">⚡ ด่วนที่สุด — ค้างอยู่</div>
+    </div>
+    <div class="card-detail" style="margin-top:8px;">กฎหมายมีผลแล้วตั้งแต่ 7 ธ.ค. 2568 — ทุกวันที่ข้อบังคับยังไม่อัปเดตถือว่าผิดกฎหมาย ต้องแก้และส่งสำเนาอธิบดีภายใน 7 วัน</div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-top">
+      <div class="card-title">2. ตรวจสอบค่าจ้างขั้นต่ำสมุทรสาคร และปรับให้ถูกต้อง</div>
+      <div class="badge soon">ทำด่วน</div>
+    </div>
+    <div class="card-detail" style="margin-top:8px;">ยืนยันอัตราประกาศฉบับที่ 13 สำหรับสมุทรสาคร ตรวจว่าลูกจ้างสายสนับสนุนทุกคนได้รับไม่น้อยกว่าขั้นต่ำ</div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">3. เตรียมระบบกองทุนสงเคราะห์ลูกจ้าง ก่อน 1 ต.ค. 2569</div>
+      <div class="badge soon">Q3/2569</div>
+    </div>
+    <div class="card-detail" style="margin-top:8px;">ยื่นแบบรายชื่อลูกจ้าง ตั้งระบบหักเงิน 0.25% จากเงินเดือน และเตรียมระบบนำส่งรายเดือน ตรวจสอบว่า ACEP มีกองทุนสำรองเลี้ยงชีพที่ยกเว้นได้หรือไม่</div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-top">
+      <div class="card-title">4. ตรวจสอบและเก็บเอกสารทะเบียนลูกจ้าง / เอกสารค่าจ้างให้ครบ</div>
+      <div class="badge soon">ทำด่วน</div>
+    </div>
+    <div class="card-detail" style="margin-top:8px;">เกี่ยวข้องกับคดีฎีกา ร.315-322/2567 โดยตรง — เอกสารต้องเก็บจนกว่าคำพิพากษาถึงที่สุด (มาตรา 115 วรรคสอง)</div>
+  </div>
+
+</div>
+
+<script>
+function showTab(name, el) {
+  ['monthly','annual','new2568','timeline'].forEach(t => {
+    document.getElementById('tab-' + t).classList.add('hidden');
+  });
+  document.getElementById('tab-' + name).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+function toggleDetail(btn) {
+  var panel = btn.nextElementSibling;
+  if (panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    btn.textContent = btn.textContent.replace('▲','▼');
+  } else {
+    panel.classList.add('open');
+    btn.textContent = btn.textContent.replace('▼','▲');
+  }
+}
+</script>
+</body>
+</html>
