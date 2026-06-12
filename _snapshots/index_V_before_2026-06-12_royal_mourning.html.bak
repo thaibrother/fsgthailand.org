@@ -178,72 +178,6 @@
   .eco-site.current { background: var(--navy); color: var(--white); border-color: var(--navy); }
   .eco-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-  /* ── ROYAL MOURNING · เจ้าฟ้าพัชรกิติยาภา · 12 มิ.ย. 2026 ── */
-  .royal-mourning {
-    background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
-    color: #f4f4f0;
-    padding: 64px 20px;
-    border-top: 3px solid #000;
-    border-bottom: 3px solid var(--gold-dark);
-    position: relative;
-  }
-  .royal-mourning-inner {
-    max-width: 1140px; margin: 0 auto;
-    display: grid; grid-template-columns: 280px 1fr; gap: 48px;
-    align-items: center;
-  }
-  .royal-mourning-img {
-    border-radius: 8px; overflow: hidden;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-    border: 2px solid rgba(244,244,240,0.15);
-    background: #1a1a1a;
-  }
-  .royal-mourning-img img { width: 100%; display: block; }
-  .royal-mourning-text {
-    font-family: 'Sarabun', 'Inter', sans-serif;
-    text-align: center;
-  }
-  .royal-mourning-text .royal-mourning-eyebrow {
-    font-size: 14px; letter-spacing: 4px; text-transform: uppercase;
-    color: #c9a74e; margin-bottom: 20px; opacity: 0.85;
-  }
-  .royal-mourning-text .royal-mourning-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 22px; font-weight: 600; line-height: 1.4;
-    margin-bottom: 24px; color: #f4f4f0;
-  }
-  .royal-mourning-text .royal-mourning-name {
-    font-size: 18px; font-weight: 500; line-height: 1.7;
-    color: #fff; margin-bottom: 24px;
-    padding: 0 20px;
-  }
-  .royal-mourning-text .royal-mourning-event {
-    font-size: 16px; color: #c9a74e;
-    letter-spacing: 2px; margin-bottom: 20px;
-    font-style: italic;
-  }
-  .royal-mourning-text .royal-mourning-tribute {
-    font-size: 17px; line-height: 1.7; color: #e5e5e0;
-    margin-bottom: 32px; font-style: italic;
-  }
-  .royal-mourning-signature {
-    padding-top: 24px; border-top: 1px solid rgba(201,167,78,0.3);
-    font-size: 15px; line-height: 1.8; color: #d4d4cf;
-  }
-  .royal-mourning-signature strong {
-    display: block; font-size: 17px; color: #f4f4f0; margin-top: 4px;
-  }
-  .royal-mourning-signature .en-sub {
-    display: block; font-size: 12px; opacity: 0.7;
-    letter-spacing: 1px; margin-top: 6px; font-style: italic;
-  }
-  @media (max-width: 768px) {
-    .royal-mourning { padding: 48px 16px; }
-    .royal-mourning-inner { grid-template-columns: 1fr; gap: 32px; }
-    .royal-mourning-img { max-width: 240px; margin: 0 auto; }
-    .royal-mourning-text .royal-mourning-name { font-size: 16px; padding: 0; }
-  }
-
   /* ── CELEBRATION (BISHOP APPOINTMENT) ── */
   .celebration {
     background: linear-gradient(135deg, #fdf6e3 0%, #fef9e7 100%);
@@ -606,36 +540,7 @@
   </div>
 </div>
 
-<!-- ═══ ROYAL MOURNING · เจ้าฟ้าพัชรกิติยาภา · 12 มิ.ย. 2026 ═══ -->
-<!-- Replaces Bishop celebration ระหว่างช่วงไว้อาลัย · บราเดอร์ confirm 12 มิ.ย. 69 -->
-<!-- Bishop celebration archived ด้านล่าง (commented · restore เมื่อจบช่วงไว้อาลัย) -->
-<section class="royal-mourning" id="royal-mourning" role="region" aria-label="ถวายความอาลัย">
-  <div class="royal-mourning-inner">
-    <div class="royal-mourning-img">
-      <img src="images/royal/princess_bajrakitiyabha.png"
-           alt="สมเด็จพระเจ้าลูกเธอ เจ้าฟ้าพัชรกิติยาภา นเรนทิราเทพยวดี กรมหลวงราชสาริณีสิริพัชร มหาวัชรราชธิดา"
-           onerror="this.parentElement.style.display='none'">
-    </div>
-    <div class="royal-mourning-text">
-      <p class="royal-mourning-eyebrow">น้อมเกล้าน้อมกระหม่อมถวายอาลัย</p>
-      <p class="royal-mourning-headline">ขอน้อมถวายความอาลัยอย่างหาที่สุดมิได้</p>
-      <p class="royal-mourning-name">สมเด็จพระเจ้าลูกเธอ เจ้าฟ้าพัชรกิติยาภา<br>นเรนทิราเทพยวดี กรมหลวงราชสาริณีสิริพัชร มหาวัชรราชธิดา</p>
-      <p class="royal-mourning-event">เสด็จสู่สวรรคาลัย</p>
-      <p class="royal-mourning-tribute">ด้วยสำนึกในพระกรุณาธิคุณตราบนิจนิรันดร์</p>
-      <div class="royal-mourning-signature">
-        ด้วยเกล้าด้วยกระหม่อม<br>
-        <strong>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</strong>
-        <span class="en-sub">Foundation of the Brothers of Saint Gabriel in Thailand</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--
-  ═══ CELEBRATION — Bishop Appointment 7 May 2026 (ARCHIVED 2026-06-12) ═══
-  Restore เมื่อจบช่วงไว้อาลัย เจ้าฟ้าพัชรกิติยาภา
-  Snapshot: _snapshots/index_V_before_2026-06-12_royal_mourning.html.bak
-
+<!-- ═══ CELEBRATION — Bishop Appointment 7 May 2026 ═══ -->
 <section class="celebration" id="celebration">
   <div class="celebration-inner">
     <div class="celebration-img">
@@ -653,9 +558,6 @@
     </div>
   </div>
 </section>
--->
-
-
 
 <!-- ═══ PRESIDENT BANNER ═══ -->
 <div class="president-banner">
