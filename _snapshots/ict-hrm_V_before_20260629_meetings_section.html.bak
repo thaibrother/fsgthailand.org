@@ -369,38 +369,6 @@
   </div>
 </div>
 
-<!-- ═══ MEETING DOCUMENTS ═══ -->
-<div class="section" id="meetings" style="padding-top:40px;">
-  <div class="sec-head">
-    <div class="eyebrow">Internal · Password Protected</div>
-    <h2>Meeting Documents · เอกสารประชุม</h2>
-    <div class="divider"></div>
-    <p>เอกสารประกอบการประชุมคณะกรรมการฝ่าย · เปิดเฉพาะกรรมการที่ได้รับรหัสผ่าน</p>
-  </div>
-
-  <a href="meetings/2569-01/" style="
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 26px; background:#fff; border:1px solid var(--gold);
-    border-radius:8px; text-decoration:none; color:var(--navy);
-    transition:all .2s; max-width:680px; margin:0 auto;
-    box-shadow:0 2px 8px rgba(0,0,0,0.04);
-  " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(0,0,0,0.08)'"
-     onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,0,0,0.04)'">
-    <div>
-      <strong style="font-family:'Playfair Display',serif; font-size:18px; display:block;">
-        🔒 ครั้งที่ 1 / 2569
-      </strong>
-      <span style="display:block; font-size:13px; color:var(--text-light); margin-top:6px;">
-        วันพฤหัสบดีที่ 2 กรกฎาคม 2569 · 10.00 – 12.00 น. · Zoom Meeting
-      </span>
-      <span style="display:block; font-size:12px; color:var(--text-muted); margin-top:4px;">
-        สาย ICT + สาย HRM · เตรียมการประชุมครั้งแรกของกรรมการชุดใหม่
-      </span>
-    </div>
-    <span style="color:var(--gold); font-size:22px; margin-left:18px;">→</span>
-  </a>
-</div>
-
 <!-- ═══ COMMISSION MEMBERS ═══ -->
 <div class="section" style="padding-top:40px;">
   <div class="sec-head">

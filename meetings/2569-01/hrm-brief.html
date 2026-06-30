@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<script>
+  (function() {
+    var TOKEN_KEY = "fsg_meeting_2569_01_token";
+    var EXPECTED_HASH = "19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0";
+    if (sessionStorage.getItem(TOKEN_KEY) !== EXPECTED_HASH) {
+      window.location.replace("index.html");
+    }
+  })();
+</script>
+
+<meta charset="UTF-8">
+<title>สรุปงาน HRM · เตรียมประชุม คกก. ICT+HRM ครั้งที่ 1/2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1f44;
+    --gold: #c9a74e;
+    --green: #047857;
+    --amber: #b45309;
+    --red: #b91c1c;
+    --gray: #475569;
+    --bg: #f8fafc;
+    --card: #fff;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Sarabun', sans-serif;
+    background: var(--bg);
+    color: #0f172a;
+    line-height: 1.55;
+    padding: 24px 16px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 28px 32px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(10,31,68,0.18);
+  }
+  header h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+  header .meta { font-size: 14px; opacity: 0.92; line-height: 1.8; }
+  header .meta strong { color: #fde68a; }
+
+  /* Card */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .card-title {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+    padding: 14px 22px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-title .agenda {
+    background: var(--navy);
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+  .card-body { padding: 20px 22px; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  th, td {
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.center { text-align: center; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 12px;
+    margin-left: 4px;
+  }
+  .badge-done { background: #d1fae5; color: var(--green); }
+  .badge-progress { background: #fef3c7; color: var(--amber); }
+  .badge-pending { background: #fee2e2; color: var(--red); }
+  .badge-info { background: #dbeafe; color: #1e40af; }
+
+  /* Highlight rows */
+  tr.chair { background: #fffbf0; font-weight: 600; }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    padding: 12px 14px;
+    border-radius: 6px;
+  }
+  .stat .label { font-size: 12px; color: var(--gray); margin-bottom: 3px; }
+  .stat .value { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .stat .sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+
+  /* Lists */
+  ul.training { font-size: 14px; padding-left: 0; list-style: none; }
+  ul.training li {
+    padding: 8px 12px;
+    border-left: 3px solid var(--gold);
+    background: #fffbf0;
+    margin-bottom: 6px;
+    border-radius: 0 4px 4px 0;
+  }
+  ul.training li .mode {
+    font-size: 11px;
+    background: var(--navy);
+    color: #fff;
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+  ul.training li .jobspec {
+    font-size: 11px;
+    color: var(--gray);
+    font-style: italic;
+    margin-left: 4px;
+  }
+
+  /* Source */
+  .source {
+    font-size: 11px;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+  }
+  .source code {
+    background: #f1f5f9;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    color: var(--navy);
+  }
+
+  /* Decision box */
+  .decision {
+    background: #fef3c7;
+    border-left: 4px solid var(--amber);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+
+  /* Section labels */
+  .vara {
+    display: inline-block;
+    background: #1e40af;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .card { break-inside: avoid; box-shadow: none; }
+    header { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============ Header ============ -->
+  <header>
+    <h1>📋 สรุปงาน HRM · เตรียมประชุมคณะกรรมการฝ่าย ICT + HRM ครั้งที่ 1/2569</h1>
+    <div class="meta">
+      <strong>วันที่ประชุม:</strong> วันพฤหัสที่ 2 กรกฎาคม พ.ศ. 2569 · 10:00–12:00 น. · Online Zoom<br>
+      <strong>หนังสือเชิญ:</strong> ที่ สทส. 001/2569 · ลงวันที่ 25 มิถุนายน 2569<br>
+      <strong>ประธานฝ่าย:</strong> ภราดาศุภนันท์ ขันธปรีชา · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>
+      <strong>เอกสารนี้:</strong> สรุปงาน HRM สำหรับประธานใช้เตรียมนำเสนอ (วาระ 1.3 · 4.1 · 4.3 · 5.1)
+    </div>
+  </header>
+
+  <!-- ============ Section 1 — โครงสร้าง 7 กลุ่มงาน ============ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="agenda">วาระ 1.3</span>
+      โครงสร้าง 7 กลุ่มงาน HRM · ยุทธศาสตร์ที่ 3 พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล
+    </div>
+    <div class="card-body">
+      <p style="margin-bottom:12px; font-size:14px; color:var(--gray);">
+        🎯 <strong>แกนกลาง:</strong> Job Specification (C/K/Cp) <strong>137 หัวข้อ</strong> + ระบบ <strong>SWIS</strong> เป็นเครื่องมือติดตาม
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:5%">#</th>
+            <th style="width:35%">กลุ่มงาน (EN)</th>
+            <th>สาระย่อ</th>
+            <th class="center" style="width:13%">เป้าหมาย</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><strong>HRM Administration</strong></td><td>Foundation-wide HR policies, standards alignment, SWIS-based information management</td><td class="center"><strong>14</strong></td></tr>
+          <tr><td>2</td><td><strong>Workforce Planning &amp; Recruitment</strong></td><td>Manpower analysis, recruitment standards, strategic workforce allocation across 15 schools</td><td class="center"><strong>8</strong></td></tr>
+          <tr><td>3</td><td><strong>Onboarding Process</strong></td><td>Preparing new hires with competency readiness aligned to Job Specification</td><td class="center"><strong>6</strong></td></tr>
+          <tr><td>4</td><td><strong>Supervision &amp; Monitoring</strong></td><td>Annual school visits · Quality manuals, PDCA tracking, KRA assessment</td><td class="center"><strong>8</strong></td></tr>
+          <tr><td>5</td><td><strong>HR Development (HRD)</strong></td><td>Continuous professional development · 7-year HRD roadmap since 2562</td><td class="center"><strong>7</strong></td></tr>
+          <tr><td>6</td><td><strong>HR Retention</strong></td><td>Employee welfare, engagement, retention strategies</td><td class="center"><strong>6</strong></td></tr>
+          <tr><td>7</td><td><strong>Succession Planning</strong></td><td>Identifying and developing future leaders for school administration &amp; Foundation roles</td><td class="center"><strong>6</strong></td></tr>
+          <tr style="background:#f1f5f9; font-weight:700;">
+            <td colspan="3" style="text-align:right;">รวมเป้าหมายทั้งหมด</td>
+            <td class="center"><strong style="color:var(--navy); font-size:16px;">55</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="source">
+        Source: <code>updateรายงาน HRM 17-5-69.pdf</code> (canonical update 17 พ.ค. 69) · <code>fsgthailand.org/hrm-quality-gate.html</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 2 — ความคืบหน้า 4 ข้อ ============ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="agenda">วาระ 4.1</span>
+      ความคืบหน้าการดำเนินงาน HRM ปีการศึกษา 2569 (4 ประเด็น)
+    </div>
+    <div class="card-body">
+
+      <!-- 2.1 Confirm loop -->
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:8px;">① สำรวจความพร้อมโครงสร้าง + อัตรากำลัง 2569</h3>
+      <div class="stats">
+        <div class="stat">
+          <div class="label">ยืนยันแล้ว</div>
+          <div class="value" style="color:var(--green);">1</div>
+          <div class="sub">โรงเรียน (ATSN · 13 พ.ค.)</div>
+        </div>
+        <div class="stat" style="border-left-color:var(--amber);">
+          <div class="label">ยังไม่ยืนยัน</div>
+          <div class="value" style="color:var(--amber);">14</div>
+          <div class="sub">โรงเรียน</div>
+        </div>
+        <div class="stat" style="border-left-color:var(--navy);">
+          <div class="label">รวม</div>
+          <div class="value">15</div>
+          <div class="sub">โรงเรียนในเครือ</div>
+        </div>
+        <div class="stat" style="border-left-color:var(--red);">
+          <div class="label">ความคืบหน้า</div>
+          <div class="value" style="color:var(--red);">7%</div>
+          <div class="sub">รอเร่งรัด</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:var(--gray); margin-top:6px;">
+        🔗 <a href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">รายงานสรุป confirm_loop ↗</a>
+      </p>
+
+      <hr style="margin:18px 0; border:none; border-top:1px solid var(--border);">
+
+      <!-- 2.2 Quality Manual -->
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:8px;">② คู่มือคุณภาพหน่วยงาน</h3>
+      <table>
+        <thead>
+          <tr><th>ปีการศึกษา</th><th>สถานะ</th><th>ตัวเลข</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2568</strong></td>
+            <td>ทุกหน่วยงานนำคู่มือฯ ขึ้น SWIS Platform แล้ว <span class="badge badge-done">เสร็จ</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>2569</strong></td>
+            <td>ยังไม่มีโรงเรียนใดยืนยัน · โรงเรียนกำลังปรับ KPI ให้สอดคล้องมาตรฐาน <span class="badge badge-progress">กำลังทำ</span></td>
+            <td><strong style="color:var(--red);">0 / 794</strong> หน่วยงาน · <strong>0%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px; color:var(--gray); margin-top:8px;">
+        ⏰ <strong>กำหนดให้โรงเรียนดำเนินการเสร็จภายในเดือนมิถุนายน 2569</strong>
+      </p>
+
+      <hr style="margin:18px 0; border:none; border-top:1px solid var(--border);">
+
+      <!-- 2.3 Training Plan -->
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:8px;">③ แผนอบรมพัฒนาบุคลากร ตาม Job Spec ปี 2569 · <strong style="color:var(--navy);">8 หัวข้อ</strong></h3>
+      <ul class="training">
+        <li><span class="mode">ONSITE</span>พัฒนาจิตวิญญาณบุคลากรตามจิตตารมณ์นักบุญหลุยส์ มารีย์ฯ (อายุงาน 1-5 ปี)<span class="jobspec">C(B)01-03 · K(B)01 · Cp(B)01</span></li>
+        <li><span class="mode">ONSITE</span>แนวทางการใช้เทคโนโลยีสารสนเทศ SWIS เพื่อยกระดับคุณภาพงาน<span class="jobspec">K(B)02-03 · Cp(B)02-03</span></li>
+        <li><span class="mode">ONSITE</span>การพัฒนาระบบงานทรัพยากรมนุษย์ โรงเรียนในเครือมูลนิธิฯ<span class="jobspec">K(T)247 · Cp(T)247</span></li>
+        <li><span class="mode" style="background:var(--green);">ONLINE</span>การพัฒนาการสื่อสารในการปฏิบัติงานให้มีประสิทธิภาพ<span class="jobspec">K(B)04 · Cp(B)04</span></li>
+        <li><span class="mode">ONSITE</span>การทำวิจัยหน่วยงานเพื่อพัฒนาคุณภาพองค์กร<span class="jobspec">K(T)222 · Cp(T)222</span></li>
+        <li><span class="mode">ONSITE</span>ภาวะผู้นำและทักษะของผู้นำในโลกปัจจุบัน + แนวทางบริหารองค์กรยุคใหม่<span class="jobspec">K(B)09-010 · Cp(B)09-010</span></li>
+        <li><span class="mode">ONSITE</span>แนวทางการเพิ่มประสิทธิภาพงาน + การบริหารความเสี่ยง<span class="jobspec">K(B)011 · K(T)28 · 210-211 · 218-219 · 253-254 · 33 (พร้อม Cp คู่ขนาน)</span></li>
+        <li><span class="mode" style="background:var(--green);">ONLINE</span>การพัฒนาคุณภาพงานอภิบาลโรงเรียนในเครือมูลนิธิฯ<span class="jobspec">K(B)011 · K(T)28 · 210-211 (พร้อม Cp คู่ขนาน)</span></li>
+      </ul>
+      <p style="font-size:13px; color:var(--gray); margin-top:6px;">
+        Online 2 หัวข้อ · Onsite 6 หัวข้อ (อ้างอิงค่าใช้จ่ายปี 2569: Online 1,000 บาท/คน · Onsite 4,000 บาท/คน)
+      </p>
+
+      <hr style="margin:18px 0; border:none; border-top:1px solid var(--border);">
+
+      <!-- 2.4 Performance Framework -->
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:8px;">④ กรอบการประเมินการปฏิบัติหน้าที่ของบุคลากร · เข้าสู่ระบบ SWIS</h3>
+      <p style="font-size:14px;">
+        งาน HRM อยู่ระหว่างดำเนินการนำกรอบการประเมินบุคลากรเข้าสู่ระบบ SWIS <span class="badge badge-progress">กำลังทำ</span>
+      </p>
+      <table style="margin-top:10px;">
+        <thead>
+          <tr><th>หมวดคะแนน</th><th>คะแนน</th><th>หมายเหตุ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>หน้าที่หลัก</td><td class="num"><strong>60</strong></td><td>กำหนดผลการดำเนินงานตามหน้าที่หลัก</td></tr>
+          <tr><td>หน้าที่เสริม / รวม</td><td class="num"><strong>25</strong></td><td>—</td></tr>
+          <tr><td>การปฏิบัติตน</td><td class="num"><strong>15</strong></td><td>—</td></tr>
+          <tr style="background:#f1f5f9; font-weight:700;"><td>รวม</td><td class="num">100</td><td>14 รูปแบบหน้าที่ (T1-T14 · สอน / สอน+แผนงาน / สอน+โครงการ / ... / สอน+หัวหน้า+แผนงาน+กิจกรรม)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="source">
+        Source: <code>updateรายงาน HRM 17-5-69.pdf</code> หน้า 5-8
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 3 — แผน + งบประมาณ ============ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="agenda">วาระ 4.3</span>
+      แผนงาน + งบประมาณงานทรัพยากรมนุษย์ มูลนิธิฯ ปีการศึกษา 2569
+    </div>
+    <div class="card-body">
+      <table>
+        <thead>
+          <tr><th style="width:30%">แผนงาน</th><th>เนื้อหา</th><th class="center" style="width:18%">สถานะ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. นิเทศ 15 โรง</strong> (รวม ACEP)</td><td>ปี 2568 ดำเนินการ 14 โรง · ACEP เลื่อนมารอบ 2569</td><td class="center"><span class="badge badge-progress">รอ schedule</span></td></tr>
+          <tr><td><strong>2. HRD อบรมพัฒนา</strong></td><td>8 หัวข้อ · Online 2 + Onsite 6 (ดู §3 บน)</td><td class="center"><span class="badge badge-done">วางแผนแล้ว</span></td></tr>
+          <tr><td><strong>3. Job Spec rollout ACEP</strong></td><td>จาก 0% (ปี 2568) → ตามมาตรฐาน 15 โรง</td><td class="center"><span class="badge badge-pending">ต้องเร่ง</span></td></tr>
+          <tr><td><strong>4. SWIS HR module</strong></td><td>กรอบการประเมินบุคลากร · 14 รูปแบบหน้าที่ · 100 คะแนน</td><td class="center"><span class="badge badge-progress">กำลังเข้าระบบ</span></td></tr>
+          <tr><td><strong>5. PDCA9 รายหน่วยงาน</strong></td><td>เป้าหมายคุณภาพ + คู่มือมีแล้ว · แต่แผนปฏิบัติ PDCA9 ยังไม่ครบ → กำลังจัดประชุมเดินงาน</td><td class="center"><span class="badge badge-pending">gap หลัก</span></td></tr>
+          <tr><td><strong>6. คู่มือคุณภาพหน่วยงาน 2569</strong></td><td>794 หน่วยงาน · 0/794 ยืนยัน · กำหนดเสร็จในเดือน มิ.ย. 69</td><td class="center"><span class="badge badge-pending">0%</span></td></tr>
+          <tr><td><strong>7. Job Spec ↔ คู่มือคุณภาพ + Head requirement</strong></td><td>cascade จาก ACEP · เกณฑ์หัวหน้าหน่วยงานต้องผ่านประวัติสอนแผนชัดเจน + ทักษะตามคู่มือ</td><td class="center"><span class="badge badge-info">Stage 1 audit</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="decision">
+        💰 <strong>งบประมาณ:</strong> ตัวเลข breakdown ยังไม่อยู่ใน source ที่ผมเข้าถึงได้ · ประธานเตรียมเสนอจากเอกสารแผน HRD 2569 ของฝ่าย
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 4 — กรรมการ ============ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="agenda">วาระ 5.1</span>
+      คณะกรรมการสาย HRM · 11 ท่าน (จาก 15 ท่านใน Commission ICT+HRM)
+    </div>
+    <div class="card-body">
+
+      <div class="decision" style="background:#dbeafe; border-left-color:#1e40af;">
+        ⚠️ <strong>หมายเหตุ:</strong> วาระ 1.2 ของการประชุม = <em>"คำสั่งแต่งตั้งคณะกรรมการฝ่าย ICT+HRM ปี 2569"</em> ที่ประธานจะแจ้งให้ทราบ
+        · รายชื่อด้านล่างคือ canonical ปัจจุบัน (update 26 พ.ค. 69 · จิราพร "เหมย" รวบรวมจากการสำรวจเลือกสายของกรรมการ) · หากคำสั่งแต่งตั้งปี 2569 ปรับเปลี่ยน → จะ update หลังประชุม
+      </div>
+
+      <table style="margin-top:10px;">
+        <thead>
+          <tr>
+            <th style="width:5%">#</th>
+            <th style="width:35%">ภราดา</th>
+            <th>บทบาทใน Commission</th>
+            <th class="center" style="width:18%">สายที่เลือก</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="chair"><td>1</td><td>⭐ <strong>ภราดาศุภนันท์ ขันธปรีชา</strong></td><td><strong>ประธาน Commission</strong></td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>2</td><td>ภราดาสุรสิทธิ์ สุขชัย</td><td>Advisor</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>3</td><td>ภราดามานิต สกนธวัฒน์</td><td>Member · Provincial Bursar (overlap)</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>4</td><td>ภราดาศราวุธ ยุชมภู</td><td>Member · ประธานอนุฯ Onboarding</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>5</td><td>ภราดากุลชาติ จันทะโชโต</td><td>Member · ประธานอนุฯ Supervision</td><td class="center" style="color:var(--green); font-weight:600;">เลือก HRM</td></tr>
+          <tr><td>6</td><td>ภราดาพลากร เพียรพันธ์</td><td>Member</td><td class="center" style="color:var(--green); font-weight:600;">เลือก HRM</td></tr>
+          <tr><td>7</td><td>ภราดาพัชรปกรณ์ ลังบุบผา</td><td>Member</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>8</td><td>ภราดากรกวี ยินดีเวท</td><td>Member</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>9</td><td>ภราดาณัฐธร สุพล "น้อย"</td><td>Member · รอง ผอ. ACEP</td><td class="center" style="color:var(--green); font-weight:600;">เลือก HRM</td></tr>
+          <tr><td>10</td><td>ภราดาภานุวัฒน์ เหมือนทับ</td><td>Member</td><td class="center">ทั้ง 2 สาย</td></tr>
+          <tr><td>11</td><td><strong>ภราดากฤษฎา งามวงศ์ "ทิว"</strong></td><td><strong>เลขานุการสาย HRM</strong></td><td class="center" style="color:var(--green); font-weight:600;">เลือก HRM</td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:13px; color:var(--gray); margin-top:10px;">
+        สรุป: 4 ท่านเลือก HRM โดยตรง + 7 ท่านอยู่ทั้ง 2 สาย (ไม่ได้เลือก) = <strong>11 ท่าน</strong>
+      </p>
+
+      <h3 style="font-size:14px; color:var(--navy); margin-top:18px; margin-bottom:8px;">ประธาน 7 กลุ่มงาน HRM (canonical)</h3>
+      <table>
+        <thead>
+          <tr><th>#</th><th>กลุ่มงาน</th><th>ประธาน</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>HRM Administration</td><td>ภราดาศุภนันท์ ขันธปรีชา (ประธาน Commission)</td></tr>
+          <tr><td>2</td><td>Workforce Planning &amp; Recruitment</td><td>ภราดาสยาม แก้วประสิทธิ์</td></tr>
+          <tr><td>3</td><td>Onboarding</td><td>ภราดาศราวุธ ยุชมภู</td></tr>
+          <tr><td>4</td><td>Supervision &amp; Monitoring</td><td>ภราดากุลชาติ จันทะโชโต</td></tr>
+          <tr><td>5</td><td>HRD</td><td>ภราดานนทชา ศรีวิไล</td></tr>
+          <tr><td>6</td><td>HR Retention</td><td>ภราดาทักษบุตร ไกรประสิทธิ์</td></tr>
+          <tr><td>7</td><td>Succession Planning</td><td>ภราดานนทชา ศรีวิไล <em style="color:var(--amber);">(ซ้ำกับ #5)</em></td></tr>
+        </tbody>
+      </table>
+
+      <div class="source">
+        Source: <code>it_hrm_commission_members_2569.md</code> (update 26 พ.ค. 69 · เหมย · จิราพร ซื่อธนานุวงศ์ รวบรวม) · <code>hrm_framework.md</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Section 5 — ข้อพิจารณา ============ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="agenda">วาระ 5.1</span>
+      ประเด็นเสนอเพื่อพิจารณา + มอบหมายงาน
+    </div>
+    <div class="card-body">
+      <table>
+        <thead>
+          <tr><th style="width:5%">#</th><th>ประเด็น</th><th class="center" style="width:18%">ระดับ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><strong>5/7 กลุ่มงานยังไม่มีแผนประจำปี 2569 ที่เป็นทางการ</strong> — Workforce · Onboarding · Retention · Succession (และครอบ HRM Admin)</td><td class="center"><span class="badge badge-pending">critical</span></td></tr>
+          <tr><td>2</td><td><strong>ภราดานนทชา ดูแลซ้ำ 2 กลุ่ม</strong> (HRD + Succession) — เป็น by design หรือ pending change?</td><td class="center"><span class="badge badge-info">verify</span></td></tr>
+          <tr><td>3</td><td><strong>ACEP นิเทศ 2569</strong> — กำหนดรอบไหน · ใครเป็นทีม?</td><td class="center"><span class="badge badge-progress">เสนอ</span></td></tr>
+          <tr><td>4</td><td><strong>คู่มือคุณภาพ 2569 · 794 หน่วยงาน 0%</strong> — กำหนดเสร็จ มิ.ย. 69 ทันไหม? ขอ list โรงเรียนที่ต้องเร่ง</td><td class="center"><span class="badge badge-pending">เร่ง</span></td></tr>
+          <tr><td>5</td><td><strong>สำรวจอัตรากำลัง 2569 · 7%</strong> — 14 โรงรอยืนยัน · ขอกำหนดวันส่ง</td><td class="center"><span class="badge badge-pending">เร่ง</span></td></tr>
+          <tr><td>6</td><td><strong>PDCA9 รายหน่วย</strong> — เป้าหมายคุณภาพมี · แผนปฏิบัติ PDCA9 ยังไม่ครบ → ขอนัดประชุมเดินงาน</td><td class="center"><span class="badge badge-pending">gap</span></td></tr>
+          <tr><td>7</td><td><strong>Robert · Head of Foreign Department ACEP</strong> — รอ inventory คู่มือคุณภาพ Foreign Dept (QMI) · test case ของหลักการ "หัวหน้าต้องผ่านประวัติสอนแผนชัดเจน + ทักษะตามคู่มือ"</td><td class="center"><span class="badge badge-info">Stage 1</span></td></tr>
+          <tr><td>8</td><td><strong>กรอบการประเมินบุคลากร SWIS</strong> (60+25+15=100) — ขอ confirm version จากที่ประชุม + กำหนดวัน Go-Live</td><td class="center"><span class="badge badge-progress">SWIS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ Footer ============ -->
+  <div style="text-align:center; font-size:12px; color:var(--gray); padding:18px 0;">
+    <p>เอกสารสรุป HRM สำหรับประธาน · ใช้ภายในการประชุม คกก. ICT+HRM ครั้งที่ 1/2569</p>
+    <p>Generated: 28 มิ.ย. 2569 · ห้อง HRM · ภราดาศุภนันท์ ขันธปรีชา</p>
+    <p style="margin-top:6px;">
+      Source canonical: <code>updateรายงาน HRM 17-5-69.pdf</code> ·
+      <code>เชิญประชุม สทส.001/2569</code> ·
+      <code>hrm_framework.md</code> ·
+      <code>it_hrm_commission_members_2569.md</code> ·
+      <code>05_hrm_master.md</code>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
