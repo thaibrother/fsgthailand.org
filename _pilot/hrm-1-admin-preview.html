@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PILOT · HRM 1 · บริหารงาน HRM มูลนิธิฯ (PDCA9 v2 reshape)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a3a5c; --navy-dark: #0d2640; --navy-light: #2c5f8a;
+    --gold: #c9a74e; --gold-dark: #8b6914; --gold-light: #e8d494;
+    --cream: #fafaf7; --white: #ffffff;
+    --gray-100: #f1f3f5; --gray-200: #e9ecef; --gray-600: #6c757d;
+    --text: #2a2a2a; --text-light: #5a5a5a; --text-muted: #8a8a8a;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --radius: 8px;
+    --red-soft: #dc3545; --green-soft: #27ae60; --gold-soft: #d69e2e;
+    --plan-bg: #e8f4f8; --do-bg: #eef6ee; --check-bg: #fef9e7; --act-bg: #fdf2f2;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--text); background: var(--cream); line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', 'Noto Sans Thai', Georgia, serif; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+  /* PILOT banner */
+  .pilot-banner {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-bottom: 2px solid var(--gold);
+    color: #78350f; text-align: center; padding: 10px 20px;
+    font-size: 13px; font-weight: 600;
+  }
+
+  /* HEADER — R1 หมวก sub-group id */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    color: var(--white); padding: 56px 24px 40px; text-align: center;
+  }
+  .page-header .group-label {
+    display: inline-block;
+    background: rgba(201,167,78,0.2); border: 1px solid var(--gold);
+    color: var(--gold-light); padding: 4px 16px; border-radius: 20px;
+    font-size: 0.8rem; margin-bottom: 16px; letter-spacing: 0.5px;
+  }
+  .page-header h1 {
+    color: var(--gold-light); font-size: 2rem; margin-bottom: 8px;
+    font-family: 'Noto Sans Thai', 'Playfair Display', serif;
+  }
+  .page-header .sub-id {
+    display: inline-block; background: var(--gold); color: var(--navy-dark);
+    padding: 3px 14px; border-radius: 4px; font-size: 1.3rem; font-weight: 700;
+    margin-right: 12px; vertical-align: middle;
+  }
+  .page-header .subtitle { color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 300; margin-top: 6px; }
+
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Vision */
+  .vision-section {
+    background: var(--white); border-left: 4px solid var(--gold);
+    padding: 28px 32px; margin: 40px auto; max-width: 1080px;
+    border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow);
+  }
+  .vision-section h2 { font-size: 1.15rem; margin-bottom: 10px; color: var(--gold-dark); }
+  .vision-section p { color: var(--text-light); font-size: 0.95rem; }
+  .vision-section .meta-row {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px;
+    font-size: 0.85rem; color: var(--text-muted);
+  }
+  .vision-section .meta-row strong { color: var(--navy); }
+
+  /* Section heading */
+  .section-heading { text-align: center; padding: 48px 24px 12px; }
+  .section-heading h2 { font-size: 1.5rem; margin-bottom: 6px; }
+  .section-heading .section-desc { color: var(--text-muted); font-size: 0.9rem; }
+
+  /* QG placeholder */
+  .qg-placeholder {
+    max-width: 1080px; margin: 0 auto 40px;
+    background: var(--white); border: 2px dashed var(--gray-200);
+    border-radius: var(--radius); padding: 32px; text-align: center;
+    color: var(--text-muted);
+  }
+  .qg-placeholder h3 { color: var(--navy); margin-bottom: 8px; }
+
+  /* ─── PDCA9 GRID · R2 (4-cell visual · 9-step inside via accordion) ─── */
+  .pdca9-section { padding: 12px 24px 48px; }
+  .pdca9-timeline {
+    max-width: 1080px; margin: 0 auto 20px;
+    background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+    padding: 16px 22px; display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.85rem; color: var(--text-light);
+  }
+  .pdca9-timeline strong { color: var(--navy); }
+
+  .pdca9-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 1080px; margin: 0 auto;
+    border: 2px solid var(--navy-light); border-radius: var(--radius); overflow: hidden;
+    background: var(--white);
+  }
+  .pdca9-cell { display: flex; flex-direction: column; }
+  .pdca9-cell:nth-child(1) { background: var(--plan-bg); border-right: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+  .pdca9-cell:nth-child(2) { background: var(--do-bg); border-bottom: 1px solid var(--gray-200); }
+  .pdca9-cell:nth-child(3) { background: var(--check-bg); border-right: 1px solid var(--gray-200); }
+  .pdca9-cell:nth-child(4) { background: var(--act-bg); }
+
+  .pdca9-head {
+    padding: 20px 22px 12px; display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .pdca9-label {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    padding: 3px 12px; border-radius: 4px; color: var(--white); flex-shrink: 0;
+  }
+  .pdca9-cell:nth-child(1) .pdca9-label { background: var(--navy); }
+  .pdca9-cell:nth-child(2) .pdca9-label { background: var(--green-soft); }
+  .pdca9-cell:nth-child(3) .pdca9-label { background: var(--gold-dark); }
+  .pdca9-cell:nth-child(4) .pdca9-label { background: var(--red-soft); }
+
+  .pdca9-head h3 {
+    font-family: 'Noto Sans Thai', sans-serif; font-size: 1rem; font-weight: 700;
+    color: var(--navy); margin: 0;
+  }
+  .pdca9-head .steps {
+    margin-left: auto; font-size: 0.75rem; color: var(--text-muted); font-weight: 500;
+    padding: 2px 10px; background: rgba(255,255,255,0.6); border-radius: 4px;
+  }
+
+  /* Accordion 9 steps inside each cell */
+  .pdca9-accordion { padding: 8px 14px 16px; }
+  .pdca9-step {
+    background: rgba(255,255,255,0.7); border-radius: 6px; margin-bottom: 6px;
+    border: 1px solid rgba(0,0,0,0.06); overflow: hidden;
+  }
+  .pdca9-step[open] { background: var(--white); }
+  .pdca9-step summary {
+    padding: 10px 14px; cursor: pointer; font-size: 0.88rem; font-weight: 600;
+    color: var(--navy); list-style: none; display: flex; align-items: center; gap: 10px;
+    user-select: none;
+  }
+  .pdca9-step summary::-webkit-details-marker { display: none; }
+  .pdca9-step summary::after {
+    content: '▸'; margin-left: auto; color: var(--text-muted); font-size: 0.8rem;
+    transition: transform 0.15s;
+  }
+  .pdca9-step[open] summary::after { transform: rotate(90deg); }
+  .pdca9-step summary:hover { color: var(--gold-dark); }
+  .pdca9-step .step-id {
+    display: inline-block; background: var(--navy); color: var(--white);
+    font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .pdca9-cell:nth-child(2) .pdca9-step .step-id { background: var(--green-soft); }
+  .pdca9-cell:nth-child(3) .pdca9-step .step-id { background: var(--gold-dark); }
+  .pdca9-cell:nth-child(4) .pdca9-step .step-id { background: var(--red-soft); }
+
+  .pdca9-step .step-body {
+    padding: 12px 16px 14px; font-size: 0.82rem; color: var(--text-light);
+    line-height: 1.7; border-top: 1px solid var(--gray-100);
+  }
+  .pdca9-step .step-body strong { color: var(--navy); }
+  .pdca9-step .step-body ul { margin: 6px 0 0 18px; }
+  .pdca9-step .step-body li { margin: 3px 0; }
+  .pdca9-step .step-body table {
+    width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.78rem;
+  }
+  .pdca9-step .step-body th, .pdca9-step .step-body td {
+    padding: 6px 9px; border: 1px solid var(--gray-200); text-align: left; vertical-align: top;
+  }
+  .pdca9-step .step-body th { background: var(--gray-100); color: var(--navy); font-weight: 600; }
+  .pdca9-step .step-body code {
+    background: var(--gray-100); padding: 1px 6px; border-radius: 3px;
+    font-size: 0.78rem; color: var(--navy-dark);
+  }
+
+  /* R3 · Cross-link */
+  .crosslink-section {
+    max-width: 1080px; margin: 32px auto 48px; padding: 0 24px;
+  }
+  .crosslink-card {
+    background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+    border: 2px solid var(--gold); border-radius: var(--radius);
+    padding: 22px 28px; box-shadow: var(--shadow);
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .crosslink-card .icon { font-size: 2rem; }
+  .crosslink-card .info { flex: 1; min-width: 280px; }
+  .crosslink-card h3 {
+    color: var(--navy); font-size: 1.05rem; font-family: 'Noto Sans Thai', sans-serif;
+    margin-bottom: 4px;
+  }
+  .crosslink-card p { color: var(--text-light); font-size: 0.88rem; margin: 0; }
+  .crosslink-card .cta {
+    background: var(--navy); color: var(--white); padding: 10px 22px;
+    text-decoration: none; border-radius: var(--radius); font-weight: 600;
+    font-size: 0.9rem; transition: background 0.15s;
+  }
+  .crosslink-card .cta:hover { background: var(--navy-dark); }
+
+  /* Note strip */
+  .note-strip {
+    max-width: 1080px; margin: 8px auto 0; padding: 12px 22px;
+    background: #f0f9ff; border-left: 3px solid var(--navy-light);
+    border-radius: 6px; font-size: 0.82rem; color: var(--navy-dark);
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .pdca9-grid { grid-template-columns: 1fr; }
+    .pdca9-cell:nth-child(1), .pdca9-cell:nth-child(2), .pdca9-cell:nth-child(3) {
+      border-right: none; border-bottom: 1px solid var(--gray-200);
+    }
+    .page-header h1 { font-size: 1.5rem; }
+    .page-header .sub-id { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pilot-banner">
+  🔬 PILOT · Framework Owner Preview · Phase 1 mockup — <strong>ยังไม่ deploy บน fsgthailand.org</strong> — รอบราเดอร์ + PDCA9_INSPECTOR review
+</div>
+
+<!-- ═══ R1 · หมวก sub-group id ═══ -->
+<header class="page-header">
+  <div class="group-label">Commission on ICT and HRM · สาย HRM</div>
+  <h1><span class="sub-id">HRM 1</span>บริหารงาน HRM มูลนิธิฯ</h1>
+  <div class="subtitle">HRM Administration · Foundation-wide HR policies + standards alignment + SWIS-based information management</div>
+</header>
+
+<div class="container">
+  <div class="vision-section">
+    <h2>🎯 ยุทธศาสตร์ต้นน้ำ · KRA</h2>
+    <p>ยุทธศาสตร์ที่ 3 · พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล</p>
+    <div class="meta-row">
+      <div>👤 ประธานอนุ: <strong>ภราดาศุภนันท์ ขันธปรีชา</strong></div>
+      <div>👥 คกก. ดำเนินงาน: <strong>11 ท่านสาย HRM</strong></div>
+      <div>🏫 Scope: <strong>15 โรงในเครือ + มูลนิธิฯ</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Quality Goals · เดิม (placeholder · ห้ามลบ · บราเดอร์สั่งชัด) ═══ -->
+<div class="section-heading">
+  <h2>เป้าหมายคุณภาพ · Quality Goals</h2>
+  <div class="section-desc">14 เป้าหมาย · แจกจากต้นน้ำมูลนิธิฯ · verified 17 พ.ค. 69</div>
+</div>
+<div class="container">
+  <div class="qg-placeholder">
+    <h3>📋 Quality Goals Table (คงเนื้อหาเดิมของหน้า hrm-admin-objectives.html)</h3>
+    <p style="margin-top:12px; font-size:0.9rem;">
+      ในหน้าจริง · ส่วนนี้จะเป็นตาราง <code>qg-table</code> เดิม<br>
+      14 เป้าหมาย HRM Administration พร้อม column: id · เป้าหมาย · ตัวชี้วัด · เครื่องมือ · สถานะ<br>
+      <strong>Framework Owner scope:</strong> ✅ คงเนื้อหา QG เดิม 100% · ห้ามแก้/ลบ (บราเดอร์สั่ง "เป้าหมายคุณภาพให้รักษาไว้")
+    </p>
+  </div>
+</div>
+
+<!-- ═══ R2 · PDCA9 reshape (4-cell visual · 9-step accordion inside) ═══ -->
+<div class="section-heading">
+  <h2>กระบวนการ PDCA9 · 9 ขั้นตอน</h2>
+  <div class="section-desc">ตามคู่มือ pdca9_foundation_guide_v2 (1 พ.ค. 69) · เก็บ visual 4 ช่อง · เนื้อในแบ่งครบ 9 ข้อ</div>
+</div>
+
+<div class="pdca9-section">
+  <div class="pdca9-timeline">
+    <div>📅 Timeline: <strong>พ.ค. 69</strong> ────────────────────► <strong>ก.พ. 70</strong></div>
+    <div style="color:var(--gold-dark);">🔗 <strong>แผนฉบับเต็ม</strong>: <code>pdca9_plans/2569_HRM_1_administration_20260628.md</code></div>
+  </div>
+
+  <div class="pdca9-grid">
+
+    <!-- ═══ PLAN cell · ข้อ 1-5 ═══ -->
+    <div class="pdca9-cell">
+      <div class="pdca9-head">
+        <span class="pdca9-label">Plan</span>
+        <h3>วางแผน</h3>
+        <span class="steps">ข้อ 1–5</span>
+      </div>
+      <div class="pdca9-accordion">
+
+        <details class="pdca9-step" open>
+          <summary><span class="step-id">ข้อ 1</span>KRA + คณะกรรมการ + Unit scope</summary>
+          <div class="step-body">
+            <p><strong>KRA:</strong> ยุทธศาสตร์ที่ 3 · พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล</p>
+            <p><strong>ประธานอนุ:</strong> ภราดาศุภนันท์ ขันธปรีชา (id_emp 1046)</p>
+            <p><strong>คกก. ดำเนินงาน:</strong> 11 ท่านสาย HRM (post-26 พ.ค. 69)</p>
+            <p><strong>Unit scope:</strong> วางระบบบริหาร HR มาตรฐานเดียวกัน 15 โรง + Foundation-wide policies + SWIS-based · ครอบทุก sub อนุ 2-7</p>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 2</span>เป้าหมายคุณภาพ (2.1 + 2.2)</summary>
+          <div class="step-body">
+            <p><strong>2.1 (mandatory · lock):</strong><br>
+            "หน่วยงาน HRM Administration ปฏิบัติตามแผน PDCA9 ครบ 9 ขั้นตอน ภายในปีการศึกษา 2569"</p>
+            <p><strong>2.2 (Goal ของอนุ · 14 เป้าหมาย):</strong></p>
+            <ul>
+              <li>2.2.1 คู่มือคุณภาพ 2569 ครบ 794 หน่วยงาน 15 โรง</li>
+              <li>2.2.2 ยืนยันโครงสร้าง+อัตรากำลัง 15/15 โรง</li>
+              <li>2.2.3 Job Spec C/K/Cp 137 หัวข้อ · 15 โรง</li>
+              <li>2.2.4–2.2.14 (จะยืนยันในประชุม 2 ก.ค.)</li>
+            </ul>
+            <p><strong>source_type:</strong> <code>PARENT_AUTHORITY</code> · <strong>source_reference:</strong> คู่มือคุณภาพหน่วยงานมูลนิธิฯ</p>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 3</span>ตัวชี้วัด (3.1 ↔ 2.1 · 3.2 ↔ 2.2)</summary>
+          <div class="step-body">
+            <p><strong>3.1 · 9 KPI ครบ (per PDCA9 step 1-9):</strong></p>
+            <table>
+              <tr><th>KPI</th><th>ตัวชี้วัด</th><th>Target</th></tr>
+              <tr><td>3.1.1 ↔ 1</td><td>แต่งตั้ง คกก. + ระบุ KRA</td><td>มี ✓</td></tr>
+              <tr><td>3.1.2 ↔ 2</td><td>เป้า 2.1+2.2 ครบ</td><td>100%</td></tr>
+              <tr><td>3.1.3 ↔ 3</td><td>KPI 3.1(9)+3.2(N) ผูก 1-to-1 · ไม่มี orphan</td><td>100%</td></tr>
+              <tr><td>3.1.4 ↔ 4</td><td>Activity ผูก 3.2 · ห้ามผูก 3.1</td><td>100%</td></tr>
+              <tr><td>3.1.5 ↔ 5</td><td>Pre-flight ทันเวลา</td><td>100%</td></tr>
+              <tr><td>3.1.6 ↔ 6</td><td>Schedule + mini-PDCA 7 ขั้น/activity</td><td>≥ 95%</td></tr>
+              <tr><td>3.1.7 ↔ 7</td><td>Monitor 3 ครั้ง (ก.ค./ต.ค./ม.ค.)</td><td>100%</td></tr>
+              <tr><td>3.1.8 ↔ 8</td><td>Check 2 ครั้ง (ต.ค./ก.พ.)</td><td>100%</td></tr>
+              <tr><td>3.1.9 ↔ 9</td><td>Action items → รอบใหม่</td><td>≥ 3 ข้อ/ปี</td></tr>
+            </table>
+            <p style="margin-top:10px;"><strong>3.2 · Goal KPI (14 · baseline+target+period):</strong></p>
+            <ul>
+              <li>3.2.1: 0/794 → 794/794 (100%) หน่วยงาน · มิ.ย. 69</li>
+              <li>3.2.2: 1/15 (7%) → 15/15 (100%) โรง · 2569</li>
+              <li>3.2.3: 60%/33%/7% → 100% ทั้ง 15 โรง · 2569</li>
+              <li>3.2.4–14: จะยืนยันในประชุม 2 ก.ค.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 4</span>วางแนวทาง (4.1 กิจกรรม · 4.2 เครื่องมือ · 4.3 lessons)</summary>
+          <div class="step-body">
+            <p><strong>4.1 กิจกรรม (ผูก 3.2 · Multi-tag OK · ห้ามผูก 3.1):</strong></p>
+            <ul>
+              <li><strong>4.1.1 ↔ 3.2.1</strong> เร่งรัดคู่มือคุณภาพ 794 หน่วย
+                <ul>
+                  <li>4.1.1.1 [B · นโยบาย] ออกคำสั่งเร่งรัด · ประธานฝ่าย</li>
+                  <li>4.1.1.2 [C · รายงาน] ติดตาม SWIS dashboard</li>
+                </ul>
+              </li>
+              <li><strong>4.1.2 ↔ 3.2.2</strong> เร่ง confirm_loop 14 โรง
+                <ul><li>4.1.2.1 [A · สำรวจ] Follow-up 14 โรงที่ยังไม่ยืนยัน</li></ul>
+              </li>
+              <li><strong>4.1.3 ↔ 3.2.3</strong> Job Spec rollout ACEP
+                <ul><li>4.1.3.1 [D · เครื่องมือ] SWIS HR module deployment ACEP</li></ul>
+              </li>
+            </ul>
+            <p><strong>📎 Document Catalog · 3-Lens:</strong></p>
+            <table>
+              <tr><th>Lens</th><th>เอกสาร</th></tr>
+              <tr><td>1 · Service Promise</td><td>คู่มือคุณภาพหน่วยงาน · Job Spec 137 · คู่มือพัฒนาตน · คู่มือบริหารโรงเรียน</td></tr>
+              <tr><td>2 · PPPC</td><td>ครูจับยัด/หมุนตำแหน่ง · Apple Teacher case · ACL purge Witthaya</td></tr>
+              <tr><td>3 · Compliance</td><td>ข้อบังคับมูลนิธิ 2553 · ธรรมาภิบาล 2568 · มติ PC 9/2568 (ICT+HRM merger)</td></tr>
+            </table>
+            <p style="margin-top:10px;"><strong>4.2 เครื่องมือประเมิน:</strong> เครื่องมือตรวจคู่มือคุณภาพ 6 ประเภท 82 หัวข้อ · SWIS HR module · confirm_loop dashboard · กรอบประเมิน T1-T14 (60+25+15)</p>
+            <p><strong>4.3 Lessons จาก 2568:</strong> ACEP 0% Job Spec = gap · workload concentration ที่ ภ.นนทชา · 5/7 อนุยังไม่มีแผนประจำปี · Best practice 9 โรงสมบูรณ์ Job Spec</p>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 5</span>Pre-flight Session (soft signal · ไม่ block)</summary>
+          <div class="step-body">
+            <p><strong>กำหนดวัน:</strong> ประชุม คกก. ICT+HRM ครั้งที่ 1/2569 · <strong>2 ก.ค. 69 · 10:00–12:00 · Zoom</strong> (สทส. 001/2569)</p>
+            <p><strong>Agenda 5.1:</strong> วางแผนการดำเนินงาน + มอบหมายงาน (Pre-flight ครอบทั้ง 7 อนุ)</p>
+            <p><strong>Sign-off:</strong> 11 ท่านสาย HRM · soft signal · ไม่ block flow</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- ═══ DO cell · ข้อ 6 ═══ -->
+    <div class="pdca9-cell">
+      <div class="pdca9-head">
+        <span class="pdca9-label">Do</span>
+        <h3>ดำเนินการ · mini-PDCA 7 ขั้น × activity</h3>
+        <span class="steps">ข้อ 6</span>
+      </div>
+      <div class="pdca9-accordion">
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">6.1</span>Activity 4.1.1.1 · นโยบายเร่งรัดคู่มือ [B]</summary>
+          <div class="step-body">
+            <p><strong>Template type B (นโยบาย):</strong> 7 ขั้นในตัว</p>
+            <ol>
+              <li>แต่งตั้งคกก. ดำเนินงาน</li>
+              <li>ศึกษา + ประชุมวางแผน (ศึกษาแนวปฏิบัติ)</li>
+              <li>จัดทำปฏิทิน</li>
+              <li>ดำเนินการ: ร่าง → เสนออนุมัติ → ประกาศใช้</li>
+              <li>นิเทศ กำกับ ติดตาม</li>
+              <li>สรุปผลการดำเนินงาน</li>
+              <li>นำผลไปวางแผนต่อ</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">6.2</span>Activity 4.1.1.2 · รายงาน SWIS dashboard [C]</summary>
+          <div class="step-body">
+            <p><strong>Template type C (รายงาน):</strong> 7 ขั้น: กำหนดรูปแบบ+KPI → ดึงจาก SWIS → วิเคราะห์ → จัดทำ → เสนอ (embedded ใน mini-PDCA 7 ขั้น)</p>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">6.3</span>Activity 4.1.2.1 · สำรวจ 14 โรง [A]</summary>
+          <div class="step-body">
+            <p><strong>Template type A (สำรวจ):</strong> ออกแบบแบบสำรวจ → ส่ง → รวบรวม → วิเคราะห์ → รายงาน (embedded ใน mini-PDCA 7 ขั้น)</p>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">6.4</span>Activity 4.1.3.1 · SWIS HR module ACEP [D]</summary>
+          <div class="step-body">
+            <p><strong>Template type D (เครื่องมือ):</strong> วิเคราะห์ requirements → ออกแบบ → ทดลอง → Deploy (embedded ใน mini-PDCA 7 ขั้น)</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- ═══ CHECK cell · ข้อ 7-8 ═══ -->
+    <div class="pdca9-cell">
+      <div class="pdca9-head">
+        <span class="pdca9-label">Check</span>
+        <h3>ประเมิน</h3>
+        <span class="steps">ข้อ 7–8</span>
+      </div>
+      <div class="pdca9-accordion">
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 7</span>Monitor (in-process · parallel)</summary>
+          <div class="step-body">
+            <ul>
+              <li>7.1 ทบทวนความก้าวหน้า ครั้งที่ 1 · <strong>ก.ค. 69</strong></li>
+              <li>7.2 ทบทวน ครั้งที่ 2 · <strong>ต.ค. 69</strong></li>
+              <li>7.3 ทบทวน ครั้งที่ 3 · <strong>ม.ค. 70</strong></li>
+              <li>7.4 Real-time dashboard + alerts · SWIS HR module + confirm_loop (continuous)</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">ข้อ 8</span>Check (Evaluate + Report)</summary>
+          <div class="step-body">
+            <ul>
+              <li>8.1 ประเมินภาคเรียน 1 · <strong>ต.ค. 69</strong> — เทียบ target 3.2.1-3.2.3</li>
+              <li>8.2 ประเมินภาคเรียน 2 · <strong>ก.พ. 70</strong> — final Met/Missed/Partial + Variance analysis + Report ส่ง คกก.บริหารมูลนิธิ</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- ═══ ACT cell · ข้อ 9 ═══ -->
+    <div class="pdca9-cell">
+      <div class="pdca9-head">
+        <span class="pdca9-label">Act</span>
+        <h3>ปรับปรุง</h3>
+        <span class="steps">ข้อ 9</span>
+      </div>
+      <div class="pdca9-accordion">
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">9.1</span>ระหว่างปี (continuous)</summary>
+          <div class="step-body">
+            <ul>
+              <li>เพิ่มกิจกรรมย่อยใน 4 ได้ทันที · update Master Index + เพิ่ม KPI ใน 3.2 (ถ้าจำเป็น)</li>
+              <li>Route: <strong>A operational</strong> · ผู้รับผิดชอบแก้ · deadline 7 วัน</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="pdca9-step">
+          <summary><span class="step-id">9.2</span>ปลายปี (cycle close)</summary>
+          <div class="step-body">
+            <ul>
+              <li>นำผลประเมิน 8.1+8.2 → วางแผนปี 2570</li>
+              <li>Route: <strong>B governance vote</strong> (ถ้าแตะโครงสร้าง 7 อนุ · เกณฑ์ · นิยาม)</li>
+              <li>Feed กลับเข้าข้อ 1 (next cycle)</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ R3 · Cross-link → แผน PDCA9 canonical ═══ -->
+<div class="crosslink-section">
+  <div class="crosslink-card">
+    <div class="icon">📋</div>
+    <div class="info">
+      <h3>ดูแผน PDCA9 ฉบับเต็ม (Source of Truth)</h3>
+      <p>ยกร่างโดยห้อง HRM · 28 มิ.ย. 69 · รอ PDCA9_INSPECTOR audit round 1 · เอกสารต้นทางที่หน้านี้ dereferences</p>
+    </div>
+    <a href="#" class="cta">📥 เปิดแผน HRM 1</a>
+  </div>
+  <div class="note-strip">
+    <strong>Note:</strong> Cross-link path จริงจะ resolve หลัง Foundation ตัดสิน render mechanism (embed HTML · หรือ MD → HTML pipeline · หรือ SWIS module) — Framework Owner รอ decision · placeholder ตอนนี้
+  </div>
+</div>
+
+<footer style="background: var(--navy-dark); color: rgba(255,255,255,0.7); padding: 40px 24px 24px; text-align: center;">
+  <p style="font-size: 0.85rem; margin-bottom: 8px;">🔬 <strong>PILOT</strong> · Framework Owner (FSGTHAILAND_WEB) · Phase 1 mockup · 1 ก.ค. 69</p>
+  <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4);">
+    R1 หมวก sub-group id · R2 PDCA9 reshape (4-cell visual + 9-step accordion) · R3 Cross-link<br>
+    canonical: pdca9_foundation_guide_v2.md · plan source: 2569_HRM_1_administration_20260628.md
+  </p>
+</footer>
+
+</body>
+</html>
