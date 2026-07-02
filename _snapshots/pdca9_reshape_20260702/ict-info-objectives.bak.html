@@ -185,54 +185,6 @@
     .rel-flow { flex-direction: column; }
     .rel-arrow { transform: rotate(90deg); }
   }
-
-  /* ─── PDCA9 v2 pattern (2 ก.ค. 69) ─── */
-  .pdca9-timeline { max-width:960px; margin:16px auto 12px; padding:12px 20px; background:#fff; border-radius:8px;
-    box-shadow:0 2px 12px rgba(0,0,0,0.06); font-size:0.82rem; color:var(--text-light);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
-  .pdca9-timeline strong { color:var(--navy); }
-  .pdca9-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:960px; margin:0 auto;
-    border:2px solid var(--navy-light, #2c5f8a); border-radius:8px; overflow:hidden; background:#fff; }
-  .pdca9-cell { display:flex; flex-direction:column; }
-  .pdca9-cell:nth-child(1){ background:#e8f4f8; border-right:1px solid #e9ecef; border-bottom:1px solid #e9ecef; }
-  .pdca9-cell:nth-child(2){ background:#eef6ee; border-bottom:1px solid #e9ecef; }
-  .pdca9-cell:nth-child(3){ background:#fef9e7; border-right:1px solid #e9ecef; }
-  .pdca9-cell:nth-child(4){ background:#fdf2f2; }
-  .pdca9-head { padding:16px 20px 10px; display:flex; align-items:baseline; gap:10px; border-bottom:1px solid rgba(0,0,0,0.06); }
-  .pdca9-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; padding:3px 11px;
-    border-radius:4px; color:#fff; flex-shrink:0; }
-  .pdca9-cell:nth-child(1) .pdca9-label { background:#1a3a5c; }
-  .pdca9-cell:nth-child(2) .pdca9-label { background:#27ae60; }
-  .pdca9-cell:nth-child(3) .pdca9-label { background:#8b6914; }
-  .pdca9-cell:nth-child(4) .pdca9-label { background:#dc3545; }
-  .pdca9-head h3 { font-family:'Noto Sans Thai','Inter',sans-serif; font-size:0.95rem; font-weight:700; color:#1a3a5c; margin:0; }
-  .pdca9-head .steps { margin-left:auto; font-size:0.72rem; color:#8a8a8a; font-weight:500; padding:2px 10px;
-    background:rgba(255,255,255,0.6); border-radius:4px; white-space:nowrap; }
-  .pdca9-accordion { padding:6px 12px 14px; }
-  .pdca9-step { background:rgba(255,255,255,0.7); border-radius:6px; margin-bottom:5px; border:1px solid rgba(0,0,0,0.06); overflow:hidden; }
-  .pdca9-step[open] { background:#fff; }
-  .pdca9-step summary { padding:9px 13px; cursor:pointer; font-size:0.85rem; font-weight:600; color:#1a3a5c;
-    list-style:none; display:flex; align-items:center; gap:9px; user-select:none; }
-  .pdca9-step summary::-webkit-details-marker { display:none; }
-  .pdca9-step summary::after { content:'▸'; margin-left:auto; color:#8a8a8a; font-size:0.75rem; transition:transform 0.15s; }
-  .pdca9-step[open] summary::after { transform:rotate(90deg); }
-  .pdca9-step summary:hover { color:#8b6914; }
-  .pdca9-step .step-id { display:inline-block; background:#1a3a5c; color:#fff; font-size:0.68rem; padding:2px 7px; border-radius:4px; font-weight:700; letter-spacing:0.5px; }
-  .pdca9-cell:nth-child(2) .pdca9-step .step-id { background:#27ae60; }
-  .pdca9-cell:nth-child(3) .pdca9-step .step-id { background:#8b6914; }
-  .pdca9-cell:nth-child(4) .pdca9-step .step-id { background:#dc3545; }
-  .pdca9-step .step-body { padding:11px 15px 13px; font-size:0.8rem; color:#5a5a5a; line-height:1.7; border-top:1px solid #f1f3f5; }
-  .pdca9-step .step-body strong { color:#1a3a5c; }
-  .pdca9-step .step-body ul { margin:6px 0 0 18px; }
-  .pdca9-step .step-body li { margin:3px 0; }
-  .pdca9-crosslink { max-width:960px; margin:20px auto 40px; padding:14px 20px; background:#fef3c7;
-    border-left:4px solid #d97706; border-radius:6px; font-size:0.82rem; color:#78350f; }
-  .pdca9-crosslink strong { color:#78350f; }
-  @media (max-width: 720px) {
-    .pdca9-grid { grid-template-columns:1fr; }
-    .pdca9-cell:nth-child(1), .pdca9-cell:nth-child(2), .pdca9-cell:nth-child(3) { border-right:none; border-bottom:1px solid #e9ecef; }
-  }
-
 </style>
 </head>
 <body>
@@ -562,38 +514,6 @@
   เอกสารภายใน — Commission on ICT and HRM · งาน 2.1 สารสนเทศระดับมูลนิธิฯ<br>
   มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ฉบับ 24 เมษายน 2569
 </div>
-
-
-<!-- ═══════════ PDCA9 v2 · Appended 2 ก.ค. 69 ═══════════ -->
-<div class="section-heading">
-  <h2>กระบวนการ PDCA9 · 9 ขั้นตอน — ICT 2.1 · สารสนเทศระดับมูลนิธิฯ (SIS)</h2>
-  <div class="section-desc">ตามคู่มือ pdca9_foundation_guide_v2 (มูลนิธิฯ · 1 พ.ค. 2569) · 4 ช่อง visual · 9 ขั้นเนื้อใน</div>
-</div>
-<div class="pdca9-timeline">
-  <div>📅 Timeline: <strong>พ.ค. 69</strong> ─────────► <strong>ก.พ. 70</strong></div>
-  <div style="color:#8b6914;">🔗 แผน PDCA9 ของหน่วยกำลังยกร่าง (deadline 8+15 ก.ค.)</div>
-</div>
-<div class="pdca9-grid">
-  <div class="pdca9-cell"><div class="pdca9-head"><span class="pdca9-label">Plan</span><h3>วางแผน</h3><span class="steps">ข้อ 1–5</span></div><div class="pdca9-accordion">
-    <details class="pdca9-step" open><summary><span class="step-id">ข้อ 1</span>KRA + คณะกรรมการ + Unit scope</summary><div class="step-body"><ul><li>KRA เชื่อมโยงยุทธ์ → หน่วยงาน</li><li>คณะกรรมการดำเนินงาน</li><li>หน้าที่หลักของหน่วย</li></ul></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">ข้อ 2</span>เป้าหมายคุณภาพ (2.1 mandatory · 2.2 goal)</summary><div class="step-body"><p><strong>2.1 lock:</strong> ปฏิบัติตาม PDCA9 ครบ 9 ขั้น</p><p><strong>2.2:</strong> เป้าเฉพาะ + source_type</p></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">ข้อ 3</span>ตัวชี้วัด (3.1 · 3.2 · strict 1-to-1)</summary><div class="step-body"><p>3.1 = 9 KPI (per step) · 3.2 = goal KPI + baseline + target</p></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">ข้อ 4</span>วางแนวทาง (4.1 · 4.2 · 4.3)</summary><div class="step-body"><p>4.1 กิจกรรม + 3-Lens Catalog · 4.2 เครื่องมือ · 4.3 lessons</p></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">ข้อ 5</span>Pre-flight Session</summary><div class="step-body"><p>ทบทวน 1-4 · วาด 6-9 · soft signal</p></div></details>
-  </div></div>
-  <div class="pdca9-cell"><div class="pdca9-head"><span class="pdca9-label">Do</span><h3>ดำเนินการ · mini-PDCA</h3><span class="steps">ข้อ 6</span></div><div class="pdca9-accordion">
-    <details class="pdca9-step" open><summary><span class="step-id">ข้อ 6</span>Do · mini-PDCA 7 ขั้น × activity</summary><div class="step-body"><ul><li>1. แต่งตั้ง คกก.</li><li>2. ศึกษา+ประชุม</li><li>3. ปฏิทิน</li><li>4. ดำเนินการ (A/B/C/D)</li><li>5. นิเทศ</li><li>6. สรุปผล</li><li>7. นำผลไปวางแผนต่อ</li></ul></div></details>
-  </div></div>
-  <div class="pdca9-cell"><div class="pdca9-head"><span class="pdca9-label">Check</span><h3>ประเมิน</h3><span class="steps">ข้อ 7–8</span></div><div class="pdca9-accordion">
-    <details class="pdca9-step" open><summary><span class="step-id">ข้อ 7</span>Monitor (3 รอบ)</summary><div class="step-body"><ul><li>7.1 ก.ค. · 7.2 ต.ค. · 7.3 ม.ค. · 7.4 dashboard continuous</li></ul></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">ข้อ 8</span>Check (2 รอบ + Variance)</summary><div class="step-body"><ul><li>8.1 ต.ค. · 8.2 ก.พ. + Report</li></ul></div></details>
-  </div></div>
-  <div class="pdca9-cell"><div class="pdca9-head"><span class="pdca9-label">Act</span><h3>ปรับปรุง</h3><span class="steps">ข้อ 9</span></div><div class="pdca9-accordion">
-    <details class="pdca9-step" open><summary><span class="step-id">9.1</span>ระหว่างปี</summary><div class="step-body"><p>+ activity · + KPI · Route A operational</p></div></details>
-    <details class="pdca9-step"><summary><span class="step-id">9.2</span>ปลายปี</summary><div class="step-body"><p>Feed → 2570 · Route B governance</p></div></details>
-  </div></div>
-</div>
-<div class="pdca9-crosslink">💡 <strong>หมายเหตุ:</strong> canonical spec · แผน PDCA9 ของ <strong>ICT 2.1 · สารสนเทศระดับมูลนิธิฯ (SIS)</strong> กำลังยกร่าง</div>
 
 </body>
 </html>
