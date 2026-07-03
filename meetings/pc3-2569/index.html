@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569 — FSG Thailand</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d2640; --navy-light:#1a3a5c; --gold:#c9a74e; --bg:#fafaf7; --card:#fff; --border:#e2e8f0; --text:#2a2a2a; --muted:#6b7280; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .gate { position:fixed; inset:0; background:var(--navy); display:flex; align-items:center; justify-content:center; z-index:9999; padding:20px; }
+  .gate-box { background:var(--card); padding:40px 32px; border-radius:12px; max-width:420px; width:100%; text-align:center; box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+  .gate-box .lock { font-size:36px; margin-bottom:12px; }
+  .gate-box h1 { color:var(--navy); font-size:20px; margin-bottom:6px; }
+  .gate-box .sub { color:var(--muted); font-size:13px; margin-bottom:24px; }
+  .gate-box input { width:100%; padding:12px 14px; font-size:15px; border:1px solid var(--border); border-radius:8px; margin-bottom:12px; font-family:inherit; text-align:center; letter-spacing:1px; }
+  .gate-box input:focus { outline:none; border-color:var(--gold); }
+  .gate-box button { width:100%; padding:12px; font-size:15px; font-weight:600; background:var(--navy); color:#fff; border:none; border-radius:8px; cursor:pointer; font-family:inherit; }
+  .gate-box button:hover { background:var(--navy-light); }
+  .gate-box .err { color:#b91c1c; font-size:13px; margin-top:8px; min-height:18px; }
+
+  .container { max-width:900px; margin:0 auto; padding:40px 20px; display:none; }
+  .container.visible { display:block; }
+  header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); color:#fff; padding:32px; border-radius:12px; margin-bottom:24px; }
+  header .eyebrow { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  header h1 { font-size:24px; font-weight:700; margin-bottom:8px; }
+  header .meta { font-size:14px; opacity:0.92; line-height:1.9; }
+  header .meta strong { color:#fde68a; }
+
+  .section-title { font-size:15px; font-weight:700; color:var(--navy); padding:20px 4px 10px; letter-spacing:0.5px; border-bottom:2px solid var(--gold); margin-bottom:14px; }
+
+  .agenda-item { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin-bottom:8px; display:flex; align-items:flex-start; gap:14px; }
+  .agenda-item .num { background:var(--navy); color:#fff; width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .agenda-item .num.hilite { background:var(--gold); }
+  .agenda-item .info h3 { color:var(--navy); font-size:15px; margin-bottom:4px; }
+  .agenda-item .info p { color:var(--muted); font-size:13px; line-height:1.5; margin:2px 0; }
+  .agenda-item .info .owner { color:var(--gold); font-weight:600; font-size:12px; }
+
+  .doc-card { background:var(--card); border:1px solid var(--gold); border-left:4px solid var(--gold); border-radius:8px; padding:20px 24px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:inherit; transition:all 0.2s; }
+  .doc-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.06); transform:translateY(-1px); }
+  .doc-card h2 { color:var(--navy); font-size:16px; margin-bottom:4px; }
+  .doc-card p { color:var(--muted); font-size:13px; }
+  .doc-card .arrow { color:var(--gold); font-size:22px; }
+
+  footer { text-align:center; color:#9ca3af; font-size:12px; padding:28px 0 8px; line-height:1.8; }
+  footer a { color:var(--gold); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="lock">🔒</div>
+    <h1>เอกสารประชุมภายใน</h1>
+    <p class="sub">PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <input type="password" id="pw" placeholder="รหัสผ่าน" autofocus onkeydown="if(event.key==='Enter')check()">
+    <button onclick="check()">เข้าสู่ระบบ</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<div class="container" id="content">
+  <header>
+    <div class="eyebrow">Foundation of the Brothers of Saint Gabriel in Thailand</div>
+    <h1>📋 การประชุม PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569</h1>
+    <div class="meta">
+      <strong>วันอังคารที่ 7 กรกฎาคม 2569</strong> · เวลา 09.00 น. เป็นต้นไป<br>
+      📍 ห้องประชุมชั้น G · อาคารมูลนิธิคณะเซนต์คาเบรียลฯ · ทองหล่อ · กรุงเทพฯ<br>
+      🗓️ หนังสือเชิญ 30 มิ.ย. 2569
+    </div>
+  </header>
+
+  <div class="section-title">📎 เอกสารประกอบวาระ (ที่ห้องเตรียมไว้)</div>
+
+  <a href="4.1.4-ict-hrm-report.html" class="doc-card">
+    <div>
+      <h2>📘 วาระ 4.1.4 · รายงานฝ่ายเทคโนโลยีสารสนเทศและงานทรัพยากรมนุษย์</h2>
+      <p>สรุปความคืบหน้า ICT (5 กลุ่ม + 8 sub) + HRM (7 อนุ) · pilot PDCA9 · reshape 13 หน้าเว็บ · outcome ประชุม 1/2569 · <strong>ประธาน: ภราดาศุภนันท์ ขันธปรีชา</strong></p>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <a href="../2569-01/" class="doc-card">
+    <div>
+      <h2>📁 เอกสารประชุม คกก. ICT+HRM 1/2569 (2 ก.ค.) — cross-link</h2>
+      <p>ICT brief + HRM brief · Quick Links 13 หน้าเว็บ · ประชุมที่ผ่านมา 2 ก.ค. 10:00–12:00 Zoom</p>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <div class="section-title">📋 วาระประชุม 6 หัวข้อ (จากหนังสือเชิญ 30 มิ.ย.)</div>
+
+  <div class="agenda-item">
+    <div class="num">1</div>
+    <div class="info">
+      <h3>เรื่องประธานแจ้งให้ทราบ (6 ข้อ)</h3>
+      <p>1.1 สหพันธ์อธิการเจ้าคณะฯ 5 ส.ค. · 1.2 Bro. Michael Mathew (การเงิน) · 1.3 สภาพระสังฆราชคาทอลิก (เงินถุงทาน) · 1.4 นวกสถาน 19 ก.ค. · 1.5 Central Admin รับรอง PC 9-10 · 1.6 Rome · Missionary Dynamism</p>
+    </div>
+  </div>
+
+  <div class="agenda-item">
+    <div class="num">2</div>
+    <div class="info">
+      <h3>รับรองรายงาน PC 2/2569 (ครั้งที่ 11 ตาม Mandate)</h3>
+      <p class="owner">→ เลขานุการดำเนินการ</p>
+    </div>
+  </div>
+
+  <div class="agenda-item">
+    <div class="num">3</div>
+    <div class="info">
+      <h3>สืบเนื่อง 4 เรื่อง</h3>
+      <p>3.1 ลาออก ภ.จรัญ ศรีหล้า (อธิการเจ้าคณะฯ/ภ.พิสูตร) · 3.2 Provincial Assembly 30-31 พ.ค. · 3.3 Questionnaire Poverty · 3.4 22nd Provincial Chapter Follow-up</p>
+    </div>
+  </div>
+
+  <div class="agenda-item">
+    <div class="num hilite">4</div>
+    <div class="info">
+      <h3>รายงานฝ่าย 6 ฝ่าย + การเงิน (เพื่อทราบ)</h3>
+      <p>4.1.1 สำนักบริหารมูลนิธิ+แขวง · 4.1.2 การเงิน+ทรัพย์สิน · 4.1.3 การศึกษา · <strong style="color:var(--gold);">4.1.4 ICT+HRM ← บราเดอร์เป็นประธาน</strong> · 4.1.5 กิจกรรม ยุติธรรม สันติ · 4.1.6 ฝึกอบรม+กระแสเรียก · 4.2 การเงิน</p>
+    </div>
+  </div>
+
+  <div class="agenda-item">
+    <div class="num hilite">5</div>
+    <div class="info">
+      <h3>เรื่องเสนอเพื่อพิจารณา (5 หนังสือ)</h3>
+      <p><strong style="color:var(--gold);">5.1 ภ.ศุภนันท์ · ขอกู้ยืมเงินโรงเรียนอัสสัมชัญ EP 2569</strong></p>
+      <p>5.2 อสช.นครราชสีมา · พักชำระหนี้</p>
+      <p>5.3 ภ.วิทยา · อสช.ลำปาง · ปรับปรุงพื้นที่เรียนรู้/สุขภาวะ</p>
+      <p>5.4 ภ.ภาคภูมิ · ไปเทียนจิน 15-19 มิ.ย.</p>
+      <p>5.5 ภ.ศราวุธ · ไปยูนนาน 20-24 ก.ย.</p>
+    </div>
+  </div>
+
+  <div class="agenda-item">
+    <div class="num">6</div>
+    <div class="info">
+      <h3>เรื่องอื่น ๆ</h3>
+      <p>6.1 นัด PC ครั้งที่ 4/2569 (ตามปฏิทินคณะฯ)</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · เอกสารภายใน</p>
+    <p style="margin-top:8px;"><a href="../../ict-hrm.html">← กลับไป Commission ICT and HRM</a> · <a href="../../index.html">หน้าหลัก</a></p>
+  </footer>
+</div>
+
+<script>
+  const EXPECTED_HASH='19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0';
+  const TOKEN_KEY='fsg_pc3_2569_token';
+  async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
+  async function check(){const pw=document.getElementById('pw').value;if(!pw){document.getElementById('err').textContent='กรุณากรอกรหัสผ่าน';return;}const h=await sha256(pw);if(h===EXPECTED_HASH){sessionStorage.setItem(TOKEN_KEY,h);document.getElementById('gate').style.display='none';document.getElementById('content').classList.add('visible');}else{document.getElementById('err').textContent='รหัสผ่านไม่ถูกต้อง';document.getElementById('pw').value='';document.getElementById('pw').focus();}}
+  if(sessionStorage.getItem(TOKEN_KEY)===EXPECTED_HASH){document.getElementById('gate').style.display='none';document.getElementById('content').classList.add('visible');}
+</script>
+
+</body>
+</html>
