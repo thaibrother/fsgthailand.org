@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<script>
+  (function(){
+    var TOKEN_KEY = "fsg_pc3_2569_token";
+    var EXPECTED_HASH = "19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0";
+    if (sessionStorage.getItem(TOKEN_KEY) !== EXPECTED_HASH) {
+      window.location.replace("index.html");
+    }
+  })();
+</script>
+
+<meta charset="UTF-8">
+<title>แนวทางปรับการเรียนการสอน ม.ต้น-ม.ปลาย · ACEP ปี 2569 · หลัง ผปค. ปฏิเสธข้อเสนอย้าย AC/ACT</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Sarabun", "Cordia New", "Tahoma", sans-serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+    font-size: 13px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #fff;
+  }
+  h1 {
+    font-size: 17px;
+    color: #6B0F1A;
+    border-bottom: 3px double #6B0F1A;
+    padding-bottom: 6px;
+    margin: 0 0 4px;
+  }
+  .subtitle { font-size: 11.5px; color: #555; margin-bottom: 12px; }
+  h2 {
+    font-size: 13.5px;
+    color: #6B0F1A;
+    margin: 12px 0 5px;
+    padding: 4px 8px;
+    background: #FDF4E8;
+    border-left: 4px solid #C9A961;
+  }
+  .headline {
+    background: #6B0F1A; color: #fff;
+    padding: 10px 14px; border-radius: 6px;
+    margin: 6px 0 12px; font-weight: 500; font-size: 13px;
+    line-height: 1.55;
+  }
+  .headline b { color: #FFD700; }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 4px 0 8px; font-size: 12px;
+  }
+  th, td {
+    border: 1px solid #ccc; padding: 5px 8px; text-align: left;
+    vertical-align: top;
+  }
+  th { background: #FDF4E8; color: #6B0F1A; font-weight: 600; }
+  td.num { text-align: right; font-family: "Menlo", monospace; white-space: nowrap; }
+  tr.total td { background: #6B0F1A; color: #fff; font-weight: 700; }
+  tr.pending td { background: #FFF9E0; }
+  ol.reasons { margin: 4px 0; padding-left: 22px; }
+  ol.reasons > li { margin-bottom: 6px; }
+  ol.reasons strong { color: #6B0F1A; }
+  .pill {
+    display: inline-block; padding: 1px 7px; border-radius: 999px;
+    font-size: 10.5px; font-weight: 600; margin-right: 3px;
+  }
+  .p-stay { background: #4CAF50; color: #fff; }
+  .p-transfer { background: #F5B342; color: #fff; }
+  .p-graduate { background: #4A90E2; color: #fff; }
+  .warn {
+    background: #fff5f5;
+    border: 1px solid #d32f2f;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12.5px;
+  }
+  .warn b { color: #d32f2f; }
+  footer {
+    border-top: 1px solid #ccc;
+    padding-top: 5px; margin-top: 10px;
+    font-size: 10px; color: #666; text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<h1>แนวทางปรับการเรียนการสอน ม.ต้น–ม.ปลาย · หลังผู้ปกครองยืนยันขออยู่ต่อ · ACEP ปีการศึกษา 2569</h1>
+<div class="subtitle">
+  เอกสารชี้แจงคณะกรรมการบริหารมูลนิธิฯ · หลังผลการพิจารณา คกก.แก้ปัญหาวิชาการ (มูลนิธิแต่งตั้ง) + มติหยุด Y7–Y12 · ประชุมผู้ปกครอง 27 มิ.ย. 69 · ณ 3 ก.ค. 69
+</div>
+
+<div class="headline">
+  <b>สถานการณ์:</b> ผปค. Y7–Y11 <b>ปฏิเสธข้อเสนอย้าย AC (บางรัก) และ ACT (ธนบุรี)</b> ที่ คกก.แก้ปัญหาวิชาการ (มูลนิธิแต่งตั้ง) อนุมัติแนวทาง · <b>ยืนยันขออยู่ต่อจนจบปีการศึกษา 2569 ที่ ACEP</b> · จำเป็นต้อง <b>ปรับการเรียนการสอน + ชดเชย + ติวเสริม</b> · <b>ปฏิเสธการผลักดันออก = ความเสี่ยงต่อชื่อเสียงโรงเรียน</b> ในวาระสุดท้ายที่เหลือนี้
+</div>
+
+<h2>1 · จำนวนนักเรียนทั้งโรงเรียน · มีกี่คน · อยู่ต่อกี่คน · <span style="color:#4CAF50;">สมัครใหม่กี่คน</span></h2>
+<table>
+  <tr>
+    <th>ระดับชั้น</th>
+    <th class="num">มีกี่คน<br>(ปัจจุบัน)</th>
+    <th class="num">ผปค.เข้า<br>ปฐมนิเทศ</th>
+    <th class="num">อยู่ต่อ<br>AY 2569</th>
+    <th>หมายเหตุ</th>
+  </tr>
+  <tr><td>KG.1</td><td class="num">5</td><td class="num">9</td><td class="num">5</td><td>คงเดิม</td></tr>
+  <tr><td>KG.2</td><td class="num">10</td><td class="num">12</td><td class="num">10</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 1 (Y1)</td><td class="num">6</td><td class="num">11</td><td class="num">6</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 2 (Y2)</td><td class="num">11</td><td class="num">15</td><td class="num">11</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 3 (Y3)</td><td class="num">8</td><td class="num">12</td><td class="num">8</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 4 (Y4)</td><td class="num">15</td><td class="num">16</td><td class="num">15</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 5 (Y5)</td><td class="num">8</td><td class="num">3</td><td class="num">8</td><td>คงเดิม</td></tr>
+  <tr><td>ประถม 6 (Y6)</td><td class="num">8</td><td class="num">9</td><td class="num">8</td><td>คงเดิม</td></tr>
+  <tr><td>ม.1 (Y7)</td><td class="num">5</td><td class="num">4</td><td class="num">5</td><td><span class="pill p-stay">ต้องคง</span> เดิมย้าย AC/ACT</td></tr>
+  <tr><td>ม.2 (Y8)</td><td class="num">10</td><td class="num">9</td><td class="num">10</td><td><span class="pill p-stay">ต้องคง</span></td></tr>
+  <tr><td>ม.3 (Y9)</td><td class="num">10</td><td class="num">7</td><td class="num">10</td><td><span class="pill p-stay">ต้องคง</span></td></tr>
+  <tr><td>ม.4 (Y10)</td><td class="num">†</td><td class="num">—</td><td class="num">†</td><td><span class="pill p-stay">ต้องคง</span></td></tr>
+  <tr><td>ม.5 (Y11)</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td><span class="pill p-stay">ต้องคง</span></td></tr>
+  <tr><td>ม.6 (Y12)</td><td class="num">22</td><td class="num">5</td><td class="num">22</td><td><span class="pill p-graduate">เดิม</span> Road to Uni + Internship</td></tr>
+  <tr class="total">
+    <td>รวมนักเรียนปัจจุบัน</td>
+    <td class="num">120+</td>
+    <td class="num">113</td>
+    <td class="num">120+</td>
+    <td>ตรงกับตัวเลข canonical จากงบประมาณ 2569 (± Y10 †)</td>
+  </tr>
+</table>
+
+<div style="background:linear-gradient(135deg, #E8F5E8, #C8E6C9); border-left:5px solid #2E7D32; padding:12px 16px; border-radius:6px; margin:12px 0 6px;">
+  <div style="font-size:14px; font-weight:700; color:#1B5E20; margin-bottom:6px;">
+    ✨ ยอดผู้ปกครองที่แสดงความสนใจสมัคร · <u>ความหวังของการฟื้นฟู</u> (Recovery Momentum)
+  </div>
+  <table style="margin:4px 0 6px;">
+    <tr>
+      <th>รายการ</th>
+      <th class="num">จำนวน</th>
+      <th>ปีการศึกษา</th>
+      <th>ความหมาย</th>
+    </tr>
+    <tr style="background:#FFF9E0;">
+      <td><b>🌱 Nursery (เตรียมอนุบาล)</b> · เด็กอายุประมาณ 2 ปี</td>
+      <td class="num" style="color:#2E7D32; font-size:16px;"><b>30</b></td>
+      <td class="num">2570</td>
+      <td><b>ครบ 2 ห้อง</b> · ผปค.ติดต่อขอคิว = <u>สัญญาณตลาดยืนยันการฟื้นฟู</u></td>
+    </tr>
+    <tr style="background:#FFF9E0;">
+      <td><b>🎨 KG.1 (อนุบาล 1)</b></td>
+      <td class="num" style="color:#2E7D32; font-size:16px;"><b>15</b></td>
+      <td class="num">2570</td>
+      <td>ผปค.แสดงความสนใจ · <u>ฐาน feeder ต่อประถม 1</u></td>
+    </tr>
+    <tr style="background:#FFF9E0;">
+      <td><b>📚 ประถม 5 (Y5)</b></td>
+      <td class="num" style="color:#2E7D32; font-size:16px;"><b>1</b></td>
+      <td class="num">2570</td>
+      <td>ผปค.แสดงความสนใจสมัคร</td>
+    </tr>
+    <tr style="background:#FFF9E0;">
+      <td><b>🎓 มัธยม 2 (Y8)</b></td>
+      <td class="num" style="color:#2E7D32; font-size:16px;"><b>1</b></td>
+      <td class="num">2569 (ทันที)</td>
+      <td>ผปค.พร้อมสมัครทันที = <u>ตลาดยังเชื่อว่า ACEP เดินต่อได้แม้อยู่ระหว่างวาระการปรับ</u></td>
+    </tr>
+    <tr class="total">
+      <td>รวมยอดผู้แสดงความสนใจ · ยืนยันแล้ว</td>
+      <td class="num" style="color:#FFD700; font-size:16px;"><b>47</b></td>
+      <td class="num">—</td>
+      <td><b>ก่อนเปิดปีการศึกษาใหม่ · ก่อน marketing เต็มรูปแบบ</b></td>
+    </tr>
+  </table>
+  <div style="font-size:10.5px; color:#4E342E; margin-top:2px;">
+    แหล่งอ้างอิง: รายงานสรุปข้อมูลผู้ปกครองที่แสดงความสนใจ · งานธุรการโรงเรียน (คุณเอ้) · Google Drive · <b>6 ก.ค. 69 · 12:20 น.</b>
+  </div>
+</div>
+
+<h3 style="font-size:12.5px; color:#6B0F1A; margin:10px 0 4px;">📈 ตารางโอกาสของการฟื้นฟู · ประมาณการปีการศึกษาต่อไป (จากฐาน Nursery + ประถม)</h3>
+<table>
+  <tr>
+    <th>ปีการศึกษา</th>
+    <th class="num">Nursery<br>(2 ห้อง · 30/รุ่น)</th>
+    <th class="num">KG–ประถม<br>(feeder + เดิม)</th>
+    <th class="num">มัธยม<br>(เหลือ Y12 · แล้วปิด)</th>
+    <th class="num" style="color:#2E7D32;">รวม<br>(โอกาส)</th>
+    <th>สมมติฐาน</th>
+  </tr>
+  <tr>
+    <td><b>2569 (ปัจจุบัน)</b></td>
+    <td class="num">—</td>
+    <td class="num">85 (เดิม) + ม.2 สมัคร 1</td>
+    <td class="num">49 คง</td>
+    <td class="num"><b>~ 135+</b></td>
+    <td>นักเรียนปัจจุบัน 120+ · ม.2 สมัครทันที 1</td>
+  </tr>
+  <tr>
+    <td>2570</td>
+    <td class="num">30 (รุ่นใหม่)</td>
+    <td class="num">130+ (KG.1 สนใจ 15 + ประถม 5 สนใจ 1 + 85 เดิม)</td>
+    <td class="num">Y7–Y11 คง · Y12 จบ</td>
+    <td class="num"><b>~ 190+</b></td>
+    <td>Nursery เปิดปีแรก · KG.1 + ประถม รับใหม่</td>
+  </tr>
+  <tr>
+    <td>2571</td>
+    <td class="num">30 (รุ่นใหม่)</td>
+    <td class="num">160+ (Nursery ต่อ KG + KG ต่อประถม + รับใหม่)</td>
+    <td class="num">Y8–Y12 คง</td>
+    <td class="num"><b>~ 220+</b></td>
+    <td>Feeder ทำงาน · Y7 เก่าเลื่อนขึ้น</td>
+  </tr>
+  <tr style="background:#E8F5E8;">
+    <td><b>2573 (3 ปี)</b></td>
+    <td class="num">30/ปี</td>
+    <td class="num">~ 210 (Early Years + ประถมเต็ม)</td>
+    <td class="num">Y12 คนสุดท้ายจบ</td>
+    <td class="num" style="color:#2E7D32; font-size:15px;"><b>~ 240+</b></td>
+    <td><b>ปิด Y7–Y12 สำเร็จ · โครงสร้าง KG + ประถมเต็ม</b></td>
+  </tr>
+  <tr class="total">
+    <td colspan="6">💡 <b>โอกาส:</b> จาก 120 (ปัจจุบัน) → <b>240+ ภายใน 3 ปี</b> · Trajectory ฟื้นตัวจริง · <u>Nursery 30 + KG.1 สนใจ 15 = ตัวจุดไฟให้ momentum</u></td>
+  </tr>
+</table>
+<div style="font-size:11px; color:#666; margin-top:2px;">
+  ✳️ แหล่งอ้างอิง: เอกสาร e-office <b>2569-00255</b> (จดหมายเชิญปฐมนิเทศ · 19 มิ.ย. 69) · <b>รายงานสรุปข้อมูลผู้ปกครองที่แสดงความสนใจ · งานธุรการโรงเรียน · 6 ก.ค. 69 · 12:20 น.</b> (Nursery 30 · KG.1 15 · ป.5 1 · ม.2 1 · รวม 47) · Executive Summary v3 (13 มิ.ย.) หมวด 4
+</div>
+
+<div style="background:#F5F5F5; border:1px dashed #999; padding:8px 12px; border-radius:4px; margin:6px 0; font-size:11.5px;">
+  <b>📋 ข้อมูลที่อยู่ระหว่างจัดทำ (Pending Inputs) — สำหรับ finalize ก่อนวันประชุม:</b>
+  <ul style="margin:4px 0 2px 0; padding-left:20px;">
+    <li>† <b>จำนวนนักเรียน ม.4 (Y10)</b> — ไม่ปรากฏใน 2569-00255 · <u>รายงานเพิ่มเติมจากงานธุรการโรงเรียน</u></li>
+    <li>§ <b>รายละเอียดโครงการร่วมทุน (สถาบันติว ม.ปลาย + โรงเรียนอาชีวะเน้นภาษาและเครือข่าย)</b> — จะได้รับการนำเสนอในการเข้าพบของผู้ปกครอง ณ วันที่ 8 ก.ค. 69</li>
+  </ul>
+</div>
+
+<div style="background:linear-gradient(135deg, #FFF3E0, #FFE0B2); border-left:5px solid #E65100; padding:12px 16px; border-radius:6px; margin:14px 0 6px;">
+  <div style="font-size:14px; font-weight:700; color:#BF360C; margin-bottom:6px;">
+    🤝 พันธมิตรใหม่ · โอกาสร่วมทุน · <span style="color:#E65100;">Nurturing Business Partnership (นัด 8 ก.ค. 69)</span>
+  </div>
+  <table style="margin:4px 0 6px;">
+    <tr>
+      <th style="width:28%;">พันธมิตร</th>
+      <th>Profile · ศักยภาพ</th>
+      <th style="width:38%;">โครงการร่วมทุนที่จะเสนอ</th>
+    </tr>
+    <tr style="background:#FFF8E1;">
+      <td><b>ผู้ปกครองพม่า (นักธุรกิจ)</b><br>ลูกเรียน ACEP 10 ปี</td>
+      <td>
+        · เจ้าของ<b>โรงเรียนติวหลายแห่ง</b> (มีเครือข่ายการศึกษาอยู่แล้ว)<br>
+        · เจ้าของ<b>บริษัทนำเข้าแรงงานพม่า</b> (มี demand แรงงานเข้าธุรกิจ)<br>
+        · <u>ครอบครัวภักดี</u> · ลูกเรียนต่อเนื่อง 10 ปี = trust ระดับ founder-partner
+      </td>
+      <td>
+        (1) 🎓 <b>สถาบันติวระดับ ม.ปลาย</b> — ร่วมทุนกับ ACEP<br>
+        (2) 🔧 <b>โรงเรียนอาชีวะ</b> เน้น<u>ภาษา + เครือข่าย</u> — ป้อนแรงงานเข้าธุรกิจ<br>
+        · <b>มีใบรับรอง + application ชัดเจน</b><br>
+        · ประกอบกับ ATSN (อสช.เทคนิคนครพนม) + Foundation network 15 โรง
+      </td>
+    </tr>
+    <tr class="total">
+      <td colspan="3" style="text-align:left;">
+        <b>📅 นัดเสนอโครงการที่โรงเรียน · วันจันทร์ 8 กรกฎาคม 2569</b> · =
+        <u>โอกาสฟื้นฟู "Strategic Partnership" · ไม่ใช่แค่รับสมัคร นร. เพิ่ม</u>
+      </td>
+    </tr>
+  </table>
+  <div style="font-size:11.5px; color:#4E342E; margin-top:4px;">
+    ⭐ <b>Insight เชิงระบบ:</b> ครอบครัวที่ ACEP "พยายามเทออก" (ตามมติ คกก.แก้ปัญหาวิชาการ 5 มิ.ย.) กลับเป็นครอบครัว<u>ที่มีทั้ง capital + network + demand</u> ที่จะช่วยฟื้นฟู · หลักฐานตรงว่า<b>การเทกลุ่มภักดี = สูญเสียโอกาสฟื้นฟูจริง</b>
+  </div>
+</div>
+
+<h2>2 · เหตุผล/เสียงจริงของผู้ปกครอง · ทำไมต้องอยู่ต่อ (จากการเข้าพบ + ประชุม 27 มิ.ย. 69)</h2>
+<div style="background:#FDF4E8; border-left:4px solid #C9A961; padding:8px 12px; font-size:11.8px; margin-bottom:6px;">
+  รวบรวมจากประชุมผู้ปกครอง 27 มิ.ย. 69 + การเข้าพบผู้อำนวยการของผู้ปกครองมัธยม (หลังการนำเสนอทางเลือกย้าย AC/ACT ตามมติ คกก.แก้ปัญหาวิชาการที่มูลนิธิแต่งตั้ง)
+</div>
+<ol class="reasons" style="font-size:12.3px;">
+  <li><b>ความต่อเนื่องของครอบครัว 12 ปี</b> — มีบุตรหลายคนเรียนตั้งแต่ประถม 1 · เรียนมาแล้ว 12 ปี · <u>ไม่สะดวกในการแยกที่เรียนลูกชายและลูกหญิง</u></li>
+  <li><b>เลือก ACEP อย่างตั้งใจตั้งแต่แรก · หนีจาก AC/ACT มาแล้ว</b> — บางท่านเพิ่งย้ายออกมาจาก AC (บางรัก) และ ACT (ธนบุรี) · บางท่าน<u>ตัดตัวเลือกทั้ง 2 แห่งเพื่อมาที่ ACEP</u> · ถ้าเลือกเรียนใน กทม. แต่แรก ก็จะไม่มาสมัครที่นี่ · การกลับเข้าไปอีก 1 เทอม จะกระทบจิตใจเด็ก · ปัญหาการเข้าสังคมและ transition ที่ ผปค. เดินทางออกมาแก้ไว้แต่แรก</li>
+  <li><b>ยืนยันไม่กลับ กทม.</b> — ถ้าจำเป็นต้องออก จะเลือก<u>โรงเรียนอินเตอร์แทน</u> · เพราะเพิ่มค่าใช้จ่ายจากปัจจุบันอีกไม่มาก (เมื่อเทียบกับต้นทุนย้ายกลับ + ปรับตัว + ชุดใหม่)</li>
+  <li><b>ชุดฟอร์ม + อุปกรณ์เทอมเดียว = ไม่รับได้</b> — สิ้นเปลืองเชิงเศรษฐกิจ · เพราะไม่ได้ตั้งใจให้บุตรต่อโรงเรียนที่ ACEP เสนอทางเลือกให้</li>
+  <li><b>สภาพเป็น "นักเรียนคนที่ 49–51"</b> — บุตรต้อง<u>โผล่กลายเป็นคนที่ 49 / 50 / 51 ของโรงเรียน</u> ในชุดฟอร์มใหม่ · สภาพแวดล้อมแบบที่<u>ปฏิเสธมาแล้วตั้งแต่แรก</u> · <u>ห้องที่มีจำนวนแน่นอยู่แล้ว</u></li>
+  <li><b>Lifestyle นอกเมือง</b> — เลือกออกมาใช้ชีวิตนอกเมือง · การกลับไปโรงเรียนที่<u>ไม่มีพื้นที่ ไม่มีดินหญ้า</u> = <u>ปรับตัวรับไม่ได้</u></li>
+  <li><b>ACEP พร้อมทุกอย่าง · ยกเว้นการบริหารจัดการ</b> — ที่นี่มีทุกอย่างพร้อม · ยกเว้น<u>การบริหารจัดการให้เกิดคุณภาพในการเรียนการสอนตามหลักสูตรที่เก็บเงินไป</u> · <b>"ทำไมไม่รับผิดชอบกับเงินที่เก็บไปและของที่ขายมา · หลักสูตรการสอนไม่ตรงปก"</b></li>
+  <li><b>วิสัยทัศน์การบริหารที่ตัด/ไล่กลุ่มภักดี</b> — <u>ตัด · ไล่กลุ่ม ผปค. ที่เลือกอยู่กับโรงเรียน</u> · <b>เป็นกลุ่มที่เหลือ · เหนียวแน่นที่สุด · จงรักภักดีต่อโรงเรียน</b> · เป็น<u>ผลลัพธ์สุดท้าย</u>ที่ให้กับคนที่<u>ต่อสู้เคียงข้างโรงเรียนมาตลอด</u> · การผลักดันออก = ปัญหาชื่อเสียงในวาระสุดท้ายอย่างแน่นอนที่สุด</li>
+  <li><b>คำเตือนอนาคต</b> — การตัด/เทกลางคันแบบนี้ <u>จะส่งผลลัพธ์กับโรงเรียน + มูลนิธิฯ + ผปค. ที่จะเข้าใหม่ในอนาคตแน่นอน</u></li>
+  <li><b>มีกฎหมายคุ้มครองชัดเจน</b> — โรงเรียน<u>รับนักเรียนเข้ามาแล้ว</u> · <u>เก็บค่าแรกเข้า</u> (แม้ยังไม่ได้เก็บค่าเทอมภาค 2) · <u>โรงเรียนยังไม่ได้ปิดกิจการ</u> · <u>ไม่ได้แจ้งล่วงหน้าก่อนเปิดภาคเรียน</u> ว่าจะยุติการเรียนการสอน · การผลักดันออกกลางปี = <b>ละเมิดสัญญาการศึกษา + สิทธิผู้บริโภค</b> ตาม พรบ.โรงเรียนเอกชน 2550 · พรบ.คุ้มครองผู้บริโภค · ระเบียบ ศธ. · <b>ผปค. มีสิทธิเรียกร้องตามกฎหมายได้เต็มที่</b></li>
+</ol>
+
+<h2>3 · ข้อจำกัดทางกฎหมาย · ความชัดเจนที่มูลนิธิฯ ต้องตัดสินใจ</h2>
+<table>
+  <tr><th style="width:32%;">ประเด็น</th><th>รายละเอียด</th></tr>
+  <tr>
+    <td><b>(ก) การปิดระดับมัธยม<br>ทำทันทีไม่ได้</b></td>
+    <td>ตาม <b>พรบ.โรงเรียนเอกชน 2550</b> และระเบียบกระทรวงศึกษาธิการ · การปิด/ยุติการเรียนการสอนในระดับใดระดับหนึ่ง <b>ต้องยื่นเรื่องขออนุญาตล่วงหน้าไม่น้อยกว่า 1 ปีการศึกษา</b> ต่อสำนักงานคณะกรรมการส่งเสริมการศึกษาเอกชน (สช.) · <u>ไม่สามารถประกาศปิดกลางปีการศึกษาได้</u> · ทำได้เร็วที่สุด = ยื่นตอนนี้ · มีผลปี 2570 · ไม่ใช่ 2569
+  </td>
+  </tr>
+  <tr>
+    <td><b>(ข) มติเดิมของผู้นำมูลนิธิฯ = <span style="color:#4CAF50;">พลิกฟื้น · ไปต่อ</span></b></td>
+    <td>ในการเจรจาก่อนรับตำแหน่ง ผอ. · <b>มีการตัดสินใจที่ชัดเจนระดับผู้นำมูลนิธิฯ ให้พลิกฟื้น ACEP เพื่อไปต่อ</b> · ผอ. ปัจจุบันได้รับมอบภารกิจภายใต้เจตนารมณ์นี้ · <u>ไม่ใช่เจตนารมณ์ปิดกิจการ</u>
+      <br><br>
+      แผนฟื้นฟู (Executive Summary v3 · หมวด 1–4) + Early Years 2570 + ประถม + <b>Nursery จองเต็ม 2 ห้อง (30 คน)</b> = การเดินตามมติเดิม · <u>ตลาดยืนยันว่าฟื้นได้จริง</u>
+  </td>
+  </tr>
+  <tr style="background:#fff5f5;">
+    <td><b>(ค) ความขัดแย้งที่เกิดขึ้น = <span style="color:#d32f2f;">drift จากมติเดิม</span></b></td>
+    <td>เมื่อลงสนามแก้ปัญหา · เกิด <b>ความขัดแย้งกับมติผู้นำมูลนิธิฯ</b>:
+      <ol style="margin:4px 0; padding-left:20px;">
+        <li>คกก.แก้ปัญหาวิชาการ (มูลนิธิแต่งตั้ง · มติ 5 มิ.ย. 69) → ตัด/ปิด Y7–Y12 · ให้ย้าย AC/ACT</li>
+        <li>ผลปฏิบัติ = <b>"พยายามเทกลุ่มที่ทุ่มเทภักดี · มีปรารถนาจะอยู่ต่อ · เพื่อไปเริ่มกับคนกลุ่มใหม่"</b></li>
+        <li>ขัดกับเจตนารมณ์เดิม (พลิกฟื้น) · ขัดกับหลักการรักษากลุ่มที่ยังศรัทธา</li>
+      </ol>
+      <b>ผลลัพธ์ที่ ผปค. เห็น:</b> "ผู้นำสัญญาไปต่อ · แต่พฤติกรรมเทกลุ่มภักดี" = <u>เสีย trust ทั้งกลุ่มเดิมและกลุ่มใหม่</u>
+  </td>
+  </tr>
+  <tr class="pending">
+    <td><b>(ง) ข้อเสนอต่อ<br>คกก.บริหารมูลนิธิฯ</b></td>
+    <td><b>ยืนยันมติเดิม · ให้ผู้นำมูลนิธิฯ กลับสู่จุดยืนเริ่มต้น</b>:
+      <ol style="margin:4px 0; padding-left:20px;">
+        <li><b>เดินตามมติพลิกฟื้น</b> — Executive Summary v3 หมวด 1–4 + Early Years 2570 + ประถม + <b>รักษากลุ่มมัธยมที่ภักดี</b> ให้เรียนจนจบปีการศึกษา 2569 อย่างมีคุณภาพ</li>
+        <li><b>ไม่เริ่มใหม่บนซากของคนภักดี</b> — ฐานลูกค้าใหม่ (Nursery 30) ไม่สามารถทดแทน trust ที่เสียกับกลุ่ม 49+3 มัธยมที่ต่อสู้เคียงข้าง</li>
+        <li><b>ทบทวนมติ คกก.แก้ปัญหาวิชาการ 5 มิ.ย.</b> — เพราะขัดกับมติผู้นำ + ก่อ Legal Risk + Reputation Risk</li>
+        <li>ปิด Y7–Y12 เฉพาะ<b>รับใหม่ AY 2570</b> ตามข้อจำกัดกฎหมาย (ยื่น สช. ล่วงหน้า 1 ปี) · <u>ไม่ผลักดันกลุ่มปัจจุบันออก</u></li>
+      </ol>
+      <b>ไม่ว่าตัดสินใจใด</b> — มัธยม ม.ต้น–ม.5 ปีการศึกษา 2569 ยังคงอยู่ที่ ACEP (ตามข้อจำกัดทางกฎหมาย + เหตุผลผปค.)
+    </td>
+  </tr>
+</table>
+
+<h2>4 · แนวทางปรับการเรียนการสอน · ชดเชย · ติวเสริม (สำหรับ ม.ต้น–ม.5 ที่คงอยู่ + ม.6 เดิม)</h2>
+<table>
+  <tr><th style="width:22%;">ประเด็น</th><th>รายละเอียด</th></tr>
+  <tr>
+    <td><b>รูปแบบการเรียน</b></td>
+    <td>คงหลักสูตร S-EP ปัจจุบัน · <b>ยุบห้องเรียนตามความจำเป็น</b> เพื่อบริหารครูให้มีประสิทธิภาพ · แต่ละระดับชั้นเรียนรวมกันหรือคละระดับใน core subjects ตามคำแนะนำวิชาการ</td>
+  </tr>
+  <tr>
+    <td><b>ชดเชยการเรียน</b></td>
+    <td>ครูประจำวิชาหลัก (English · Math · Science · Chinese) เพิ่ม tutorial hours นอกตารางปกติ · <b>สัปดาห์ละ 2 คาบ/วิชา</b> · โดยไม่คิดค่าเรียนเพิ่ม (ค่าเทอมเดิมครอบคลุม)</td>
+  </tr>
+  <tr>
+    <td><b>ติวเสริม (สำหรับ ม.3 + ม.6)</b></td>
+    <td><b>ม.3</b> เตรียมสอบเข้า ม.4 (โรงเรียนอื่น หรือ ACEP ถ้ามีการเปิดต่อ) · <b>ม.6</b> Road to University + Internship + ติวเข้มตุลาคม–กุมภาพันธ์</td>
+  </tr>
+  <tr>
+    <td><b>ครูผู้สอน</b></td>
+    <td>ใช้ครู Native + Thai ที่คงอยู่ (ตามโครงสร้างครูใหม่หลังคำสั่งเลิกจ้าง 15/2569) · ไม่รับครูใหม่เพิ่มสำหรับมัธยม · <b>Rebalance workload</b> ให้ครูปฏิบัติงานเต็มเวลา</td>
+  </tr>
+  <tr>
+    <td><b>สนามและกิจกรรม</b></td>
+    <td>Football/Tennis Academy + สนามจักรยาน (หมวด 3 เร่งด่วน) เปิดให้ ม.ต้น–ม.6 ใช้ full-access · เพิ่มคุณค่าโรงเรียนในช่วงเปลี่ยนผ่าน</td>
+  </tr>
+  <tr>
+    <td><b>ค่าใช้จ่าย (Financial Impact)</b></td>
+    <td>ตามงบ v3 (13 มิ.ย.) หมวด 2 ประคอง Payroll ครอบคลุมอยู่แล้ว · <b>tutorial hours ไม่มีต้นทุนแฝง</b> · Return 10% จาก AC/ACT (~921K) หายไป · <u>รายรับค่าเทอมมัธยม 50 คนเก็บได้เต็มที่ ACEP</u> (~11–12M แทน 921K)</td>
+  </tr>
+</table>
+
+<h2>5 · ผลกระทบ (ทางบวก) · ต่อ ACEP ปีการศึกษา 2569</h2>
+<table>
+  <tr><th style="width:34%;">ประเด็น</th><th>ก่อน (แผน ย้าย Y7–11)</th><th>หลัง (คงอยู่จนจบ AY 2569)</th></tr>
+  <tr>
+    <td>รายรับค่าเทอมมัธยม ม.ต้น–ม.5</td>
+    <td>Return จาก AC/ACT ~921,415</td>
+    <td><b>~11–12M</b> (จ่ายเต็มที่ ACEP)</td>
+  </tr>
+  <tr>
+    <td>จำนวนนักเรียนรวมทั้งโรงเรียน</td>
+    <td>Y12 ~22 + KG 15 + ประถม 56 = ~93</td>
+    <td><b>121 คน</b> (คง 28 คนที่จะย้าย)</td>
+  </tr>
+  <tr>
+    <td>ความเชื่อมั่นในโรงเรียน</td>
+    <td>คำถามในสังคม: "โรงเรียนผลักไล่ผู้ปกครอง?"</td>
+    <td><b>สื่อสารได้ว่า</b> "ACEP ยึดคำมั่นให้ผู้ที่เลือกอยู่จบปีอย่างมีคุณภาพ"</td>
+  </tr>
+  <tr>
+    <td>ครู native เต็มเวลา</td>
+    <td>คงเป้าให้เต็มเวลาอยู่แล้ว</td>
+    <td>เต็มเวลาทุกคน + workload balance ดีขึ้น</td>
+  </tr>
+</table>
+
+<h2>6 · ความเสี่ยง · ถ้าไม่ยอมและผลักดันออก (ตามเหตุผลผปค. ข้อ 7–10)</h2>
+<div class="warn">
+  <b>(ก) Legal Risk (แน่นอน · ผูกมัดตามกฎหมาย):</b> ผปค.<u>ชำระค่าแรกเข้าแล้ว</u> · โรงเรียน<u>รับเข้ามาแล้ว</u> · โรงเรียน<u>ยังไม่ได้ปิดกิจการ</u> · <u>ไม่ได้แจ้งล่วงหน้าก่อนเปิดเทอม</u> · การให้ออกกลางปี = <b>ละเมิดสัญญาการศึกษา</b> · ผปค.สามารถ<b>ฟ้องเรียกค่าเสียหาย + คืนค่าแรกเข้า + ค่าเสียโอกาส</b> ตาม พรบ.โรงเรียนเอกชน 2550 + พรบ.คุ้มครองผู้บริโภค · โอกาสแพ้คดีสูง · ค่าเสียหายอาจสูงกว่า Return 921K จาก AC/ACT มาก
+  <br><br>
+  <b>(ข) Reputation Risk (สูงมาก · ในวาระสุดท้าย):</b> กลุ่มที่เหลือคือกลุ่มที่ <u>เหนียวแน่นภักดีที่สุด</u> · การผลักดันออกโดยไม่สมยอม = สร้างศัตรูในกลุ่มที่ควรเป็นเสียงบวก · จะแพร่กระจายผ่าน <b>ปากต่อปาก · social media · ชุมชนอัสสัมชัญเก่า</b> ในช่วงเดียวกับที่ ACEP กำลังฟื้นฟู + เปิด Early Years 2570 + Rebranding · <u>ทำลาย narrative การฟื้นฟูปีการศึกษา 2570 ของโรงเรียน</u>
+  <br><br>
+  <b>สรุป:</b> ประโยชน์ระยะสั้น (Return 921K) <u>ไม่คุ้ม</u> กับ (a) ค่าเสียหายทางกฎหมาย + (b) reputation damage
+</div>
+
+<h2>7 · สรุป · เพื่อพิจารณา</h2>
+<ol style="margin:4px 0; padding-left:22px;">
+  <li><b>อนุมัติให้ ม.ต้น–ม.5 ที่ปฏิเสธข้อเสนอย้าย · คงอยู่จนจบปีการศึกษา 2569 ที่ ACEP</b></li>
+  <li>เพิ่ม tutorial hours + ติวเข้ม ม.3 + ม.6 · โดยไม่คิดค่าเรียนเพิ่ม</li>
+  <li>Rebalance workload ครูปัจจุบัน · ไม่รับครูใหม่มัธยม</li>
+  <li>ปิดรับใหม่ Y7–Y12 ตั้งแต่ AY 2570 (ตามมติเดิม) · เดินหน้าเน้น KG + Early Years + ประถม</li>
+  <li>สื่อสารกับสาธารณะและชุมชนอัสสัมชัญเก่าว่า "ACEP ให้เกียรติผู้ที่เลือกอยู่" — protect reputation</li>
+  <li>ขอ<b>ยอดสมัครใหม่จากธุรการ</b>เพิ่มเติมประกอบเข้าที่ประชุมกรรมการบริหารมูลนิธิฯ</li>
+</ol>
+
+<footer>
+  แนวทางปรับการเรียนการสอนหลังผู้ปกครองปฏิเสธข้อเสนอย้าย · เตรียมสำหรับ คกก.บริหารมูลนิธิฯ · อ้าง Executive Summary v3 (13 มิ.ย.) + มติ คกก.แก้ปัญหาวิชาการ (5 มิ.ย.) + ประชุม ผปค. (27 มิ.ย.) · ณ 3 ก.ค. 69
+</footer>
+
+</body>
+</html>

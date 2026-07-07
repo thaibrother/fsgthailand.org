@@ -3,160 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569 — FSG Thailand</title>
-<meta name="robots" content="noindex, nofollow">
+<title>PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569 · Presentation Index (7 ก.ค. 2569)</title>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#0d2640; --navy-light:#1a3a5c; --gold:#c9a74e; --bg:#fafaf7; --card:#fff; --border:#e2e8f0; --text:#2a2a2a; --muted:#6b7280; }
+  :root { --navy:#0a1f44; --navy-l:#1e3a8a; --gold:#c9a74e; --green:#047857; --amber:#b45309; --red:#b91c1c; --bg:#f8fafc; --card:#fff; --border:#e2e8f0; --text:#0f172a; --muted:#64748b; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-  .gate { position:fixed; inset:0; background:var(--navy); display:flex; align-items:center; justify-content:center; z-index:9999; padding:20px; }
-  .gate-box { background:var(--card); padding:40px 32px; border-radius:12px; max-width:420px; width:100%; text-align:center; box-shadow:0 8px 32px rgba(0,0,0,0.3); }
-  .gate-box .lock { font-size:36px; margin-bottom:12px; }
-  .gate-box h1 { color:var(--navy); font-size:20px; margin-bottom:6px; }
-  .gate-box .sub { color:var(--muted); font-size:13px; margin-bottom:24px; }
-  .gate-box input { width:100%; padding:12px 14px; font-size:15px; border:1px solid var(--border); border-radius:8px; margin-bottom:12px; font-family:inherit; text-align:center; letter-spacing:1px; }
-  .gate-box input:focus { outline:none; border-color:var(--gold); }
-  .gate-box button { width:100%; padding:12px; font-size:15px; font-weight:600; background:var(--navy); color:#fff; border:none; border-radius:8px; cursor:pointer; font-family:inherit; }
-  .gate-box button:hover { background:var(--navy-light); }
-  .gate-box .err { color:#b91c1c; font-size:13px; margin-top:8px; min-height:18px; }
+  body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; padding:24px 16px; }
+  .container { max-width:1080px; margin:0 auto; }
 
-  .container { max-width:900px; margin:0 auto; padding:40px 20px; display:none; }
-  .container.visible { display:block; }
-  header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); color:#fff; padding:32px; border-radius:12px; margin-bottom:24px; }
-  header .eyebrow { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-  header h1 { font-size:24px; font-weight:700; margin-bottom:8px; }
-  header .meta { font-size:14px; opacity:0.92; line-height:1.9; }
+  header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-l) 100%); color:#fff; padding:30px 34px; border-radius:14px; margin-bottom:26px; box-shadow:0 4px 20px rgba(10,31,68,0.22); }
+  header .eyebrow { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+  header h1 { font-size:26px; font-weight:700; margin-bottom:8px; line-height:1.35; }
+  header .meta { font-size:14px; opacity:0.94; line-height:2; }
   header .meta strong { color:#fde68a; }
+  header .badge { display:inline-block; background:rgba(255,255,255,0.14); padding:3px 12px; border-radius:12px; font-size:11.5px; margin-right:6px; margin-top:6px; }
 
-  .section-title { font-size:15px; font-weight:700; color:var(--navy); padding:20px 4px 10px; letter-spacing:0.5px; border-bottom:2px solid var(--gold); margin-bottom:14px; }
+  .section-title { font-size:16px; font-weight:700; color:var(--navy); padding:22px 6px 12px; letter-spacing:0.5px; border-bottom:2px solid var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .section-title .count { background:var(--gold); color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:12px; }
 
-  .agenda-item { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin-bottom:8px; display:flex; align-items:flex-start; gap:14px; }
-  .agenda-item .num { background:var(--navy); color:#fff; width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
-  .agenda-item .num.hilite { background:var(--gold); }
-  .agenda-item .info h3 { color:var(--navy); font-size:15px; margin-bottom:4px; }
-  .agenda-item .info p { color:var(--muted); font-size:13px; line-height:1.5; margin:2px 0; }
-  .agenda-item .info .owner { color:var(--gold); font-weight:600; font-size:12px; }
+  .doc-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px 24px; margin-bottom:12px; text-decoration:none; color:inherit; transition:all 0.2s; display:flex; align-items:center; justify-content:space-between; gap:18px; border-left:5px solid var(--border); }
+  .doc-card:hover { border-color:var(--gold); border-left-color:var(--gold); box-shadow:0 4px 20px rgba(0,0,0,0.08); transform:translateY(-2px); }
+  .doc-card.master { border-left-color:var(--navy); background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%); }
+  .doc-card.ict { border-left-color:#1e40af; }
+  .doc-card.hrm { border-left-color:var(--green); }
+  .doc-card.swis { border-left-color:#7c3aed; }
+  .doc-card.acep { border-left-color:var(--amber); }
+  .doc-card.critical { border-left-color:var(--red); background:linear-gradient(135deg,#fef2f2 0%,#fee2e2 100%); }
+  .doc-card .info { flex:1; }
+  .doc-card .num { background:var(--navy); color:#fff; width:38px; height:38px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; flex-shrink:0; }
+  .doc-card.master .num { background:var(--navy); }
+  .doc-card.ict .num { background:#1e40af; }
+  .doc-card.hrm .num { background:var(--green); }
+  .doc-card.swis .num { background:#7c3aed; }
+  .doc-card.acep .num { background:var(--amber); }
+  .doc-card.critical .num { background:var(--red); }
+  .doc-card h2 { color:var(--navy); font-size:17px; font-weight:700; margin-bottom:4px; }
+  .doc-card .sub { color:var(--muted); font-size:13px; line-height:1.55; }
+  .doc-card .meta-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }
+  .doc-card .tag { font-size:11px; padding:2px 9px; border-radius:4px; background:#f1f5f9; color:var(--navy); font-weight:600; }
+  .doc-card .tag.gold { background:#fef3c7; color:#78350f; }
+  .doc-card .tag.red { background:#fee2e2; color:#991b1b; }
+  .doc-card .arrow { color:var(--gold); font-size:26px; font-weight:bold; flex-shrink:0; }
 
-  .doc-card { background:var(--card); border:1px solid var(--gold); border-left:4px solid var(--gold); border-radius:8px; padding:20px 24px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; text-decoration:none; color:inherit; transition:all 0.2s; }
-  .doc-card:hover { box-shadow:0 4px 16px rgba(0,0,0,0.06); transform:translateY(-1px); }
-  .doc-card h2 { color:var(--navy); font-size:16px; margin-bottom:4px; }
-  .doc-card p { color:var(--muted); font-size:13px; }
-  .doc-card .arrow { color:var(--gold); font-size:22px; }
+  .callout { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); border-left:4px solid var(--amber); padding:16px 22px; border-radius:8px; margin:20px 0; color:#78350f; font-size:14px; line-height:1.75; }
+  .callout strong { color:#78350f; }
 
-  footer { text-align:center; color:#9ca3af; font-size:12px; padding:28px 0 8px; line-height:1.8; }
-  footer a { color:var(--gold); text-decoration:none; }
+  footer { text-align:center; color:var(--muted); font-size:12px; padding:28px 0 8px; line-height:1.8; }
 </style>
 </head>
 <body>
-
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <div class="lock">🔒</div>
-    <h1>เอกสารประชุมภายใน</h1>
-    <p class="sub">PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
-    <input type="password" id="pw" placeholder="รหัสผ่าน" autofocus onkeydown="if(event.key==='Enter')check()">
-    <button onclick="check()">เข้าสู่ระบบ</button>
-    <div class="err" id="err"></div>
+<div class="gate" id="gate" style="position:fixed;inset:0;background:#0a1f44;display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;">
+  <div style="background:#fff;padding:40px 32px;border-radius:12px;max-width:420px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.3);font-family:'Sarabun',sans-serif;">
+    <div style="font-size:36px;margin-bottom:12px;">🔒</div>
+    <h1 style="color:#0a1f44;font-size:20px;margin-bottom:6px;">เอกสารประชุมภายใน</h1>
+    <p style="color:#6b7280;font-size:13px;margin-bottom:24px;">PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <input type="password" id="pw" placeholder="รหัสผ่าน" autofocus onkeydown="if(event.key==='Enter')pcCheck()" style="width:100%;padding:12px 14px;font-size:15px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:12px;font-family:inherit;text-align:center;letter-spacing:1px;">
+    <button onclick="pcCheck()" style="width:100%;padding:12px;font-size:15px;font-weight:600;background:#0a1f44;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;">เข้าสู่ระบบ</button>
+    <div id="err" style="color:#b91c1c;font-size:13px;margin-top:8px;min-height:18px;"></div>
   </div>
 </div>
-
-<div class="container" id="content">
-  <header>
-    <div class="eyebrow">Foundation of the Brothers of Saint Gabriel in Thailand</div>
-    <h1>📋 การประชุม PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569</h1>
-    <div class="meta">
-      <strong>วันอังคารที่ 7 กรกฎาคม 2569</strong> · เวลา 09.00 น. เป็นต้นไป<br>
-      📍 ห้องประชุมชั้น G · อาคารมูลนิธิคณะเซนต์คาเบรียลฯ · ทองหล่อ · กรุงเทพฯ<br>
-      🗓️ หนังสือเชิญ 30 มิ.ย. 2569
-    </div>
-  </header>
-
-  <div class="section-title">📎 เอกสารประกอบวาระ (ที่ห้องเตรียมไว้)</div>
-
-  <a href="4.1.4-ict-hrm-report.html" class="doc-card">
-    <div>
-      <h2>📘 วาระ 4.1.4 · รายงานฝ่ายเทคโนโลยีสารสนเทศและงานทรัพยากรมนุษย์</h2>
-      <p>สรุปความคืบหน้า ICT (5 กลุ่ม + 8 sub) + HRM (7 อนุ) · pilot PDCA9 · reshape 13 หน้าเว็บ · outcome ประชุม 1/2569 · <strong>ประธาน: ภราดาศุภนันท์ ขันธปรีชา</strong></p>
-    </div>
-    <div class="arrow">→</div>
-  </a>
-
-  <a href="../2569-01/" class="doc-card">
-    <div>
-      <h2>📁 เอกสารประชุม คกก. ICT+HRM 1/2569 (2 ก.ค.) — cross-link</h2>
-      <p>ICT brief + HRM brief · Quick Links 13 หน้าเว็บ · ประชุมที่ผ่านมา 2 ก.ค. 10:00–12:00 Zoom</p>
-    </div>
-    <div class="arrow">→</div>
-  </a>
-
-  <div class="section-title">📋 วาระประชุม 6 หัวข้อ (จากหนังสือเชิญ 30 มิ.ย.)</div>
-
-  <div class="agenda-item">
-    <div class="num">1</div>
-    <div class="info">
-      <h3>เรื่องประธานแจ้งให้ทราบ (6 ข้อ)</h3>
-      <p>1.1 สหพันธ์อธิการเจ้าคณะฯ 5 ส.ค. · 1.2 Bro. Michael Mathew (การเงิน) · 1.3 สภาพระสังฆราชคาทอลิก (เงินถุงทาน) · 1.4 นวกสถาน 19 ก.ค. · 1.5 Central Admin รับรอง PC 9-10 · 1.6 Rome · Missionary Dynamism</p>
-    </div>
-  </div>
-
-  <div class="agenda-item">
-    <div class="num">2</div>
-    <div class="info">
-      <h3>รับรองรายงาน PC 2/2569 (ครั้งที่ 11 ตาม Mandate)</h3>
-      <p class="owner">→ เลขานุการดำเนินการ</p>
-    </div>
-  </div>
-
-  <div class="agenda-item">
-    <div class="num">3</div>
-    <div class="info">
-      <h3>สืบเนื่อง 4 เรื่อง</h3>
-      <p>3.1 ลาออก ภ.จรัญ ศรีหล้า (อธิการเจ้าคณะฯ/ภ.พิสูตร) · 3.2 Provincial Assembly 30-31 พ.ค. · 3.3 Questionnaire Poverty · 3.4 22nd Provincial Chapter Follow-up</p>
-    </div>
-  </div>
-
-  <div class="agenda-item">
-    <div class="num hilite">4</div>
-    <div class="info">
-      <h3>รายงานฝ่าย 6 ฝ่าย + การเงิน (เพื่อทราบ)</h3>
-      <p>4.1.1 สำนักบริหารมูลนิธิ+แขวง · 4.1.2 การเงิน+ทรัพย์สิน · 4.1.3 การศึกษา · <strong style="color:var(--gold);">4.1.4 ICT+HRM ← บราเดอร์เป็นประธาน</strong> · 4.1.5 กิจกรรม ยุติธรรม สันติ · 4.1.6 ฝึกอบรม+กระแสเรียก · 4.2 การเงิน</p>
-    </div>
-  </div>
-
-  <div class="agenda-item">
-    <div class="num hilite">5</div>
-    <div class="info">
-      <h3>เรื่องเสนอเพื่อพิจารณา (5 หนังสือ)</h3>
-      <p><strong style="color:var(--gold);">5.1 ภ.ศุภนันท์ · ขอกู้ยืมเงินโรงเรียนอัสสัมชัญ EP 2569</strong></p>
-      <p>5.2 อสช.นครราชสีมา · พักชำระหนี้</p>
-      <p>5.3 ภ.วิทยา · อสช.ลำปาง · ปรับปรุงพื้นที่เรียนรู้/สุขภาวะ</p>
-      <p>5.4 ภ.ภาคภูมิ · ไปเทียนจิน 15-19 มิ.ย.</p>
-      <p>5.5 ภ.ศราวุธ · ไปยูนนาน 20-24 ก.ย.</p>
-    </div>
-  </div>
-
-  <div class="agenda-item">
-    <div class="num">6</div>
-    <div class="info">
-      <h3>เรื่องอื่น ๆ</h3>
-      <p>6.1 นัด PC ครั้งที่ 4/2569 (ตามปฏิทินคณะฯ)</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · เอกสารภายใน</p>
-    <p style="margin-top:8px;"><a href="../../ict-hrm.html">← กลับไป Commission ICT and HRM</a> · <a href="../../index.html">หน้าหลัก</a></p>
-  </footer>
-</div>
-
 <script>
-  const EXPECTED_HASH='19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0';
-  const TOKEN_KEY='fsg_pc3_2569_token';
-  async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
-  async function check(){const pw=document.getElementById('pw').value;if(!pw){document.getElementById('err').textContent='กรุณากรอกรหัสผ่าน';return;}const h=await sha256(pw);if(h===EXPECTED_HASH){sessionStorage.setItem(TOKEN_KEY,h);document.getElementById('gate').style.display='none';document.getElementById('content').classList.add('visible');}else{document.getElementById('err').textContent='รหัสผ่านไม่ถูกต้อง';document.getElementById('pw').value='';document.getElementById('pw').focus();}}
-  if(sessionStorage.getItem(TOKEN_KEY)===EXPECTED_HASH){document.getElementById('gate').style.display='none';document.getElementById('content').classList.add('visible');}
+  const EXPECTED_HASH_PC='19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0';
+  const TOKEN_KEY_PC='fsg_pc3_2569_token';
+  async function sha256pc(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
+  async function pcCheck(){const pw=document.getElementById('pw').value;if(!pw){document.getElementById('err').textContent='กรุณากรอกรหัสผ่าน';return;}const h=await sha256pc(pw);if(h===EXPECTED_HASH_PC){sessionStorage.setItem(TOKEN_KEY_PC,h);document.getElementById('gate').style.display='none';}else{document.getElementById('err').textContent='รหัสผ่านไม่ถูกต้อง';document.getElementById('pw').value='';document.getElementById('pw').focus();}}
+  if(sessionStorage.getItem(TOKEN_KEY_PC)===EXPECTED_HASH_PC){setTimeout(()=>{var g=document.getElementById('gate');if(g)g.style.display='none';},0);}
 </script>
 
+<div class="container">
+
+<header>
+  <div class="eyebrow">Foundation of the Brothers of Saint Gabriel · Presentation Index</div>
+  <h1>📋 PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569</h1>
+  <div class="meta">
+    <strong>วันอังคารที่ 7 กรกฎาคม 2569</strong> · เวลา 09.00 น.<br>
+    📍 ห้องประชุมชั้น G · อาคารมูลนิธิคณะเซนต์คาเบรียลฯ · ทองหล่อ<br>
+    รวมเอกสาร <strong>7 ฉบับ</strong> · standalone offline · เปิดจาก folder เดียวกันได้
+    <div>
+      <span class="badge">Rollup Master</span>
+      <span class="badge">ICT brief</span>
+      <span class="badge">HRM brief</span>
+      <span class="badge">SWIS Plus</span>
+      <span class="badge">ACEP × 3</span>
+    </div>
+  </div>
+</header>
+
+<div class="callout">
+  💡 <strong>วิธีใช้:</strong> คลิกการ์ดใดๆ เพื่อเปิดรายงานฉบับเต็ม · กด <strong>Back (←)</strong> ใน browser กลับหน้านี้ · ทุกไฟล์อยู่ใน folder เดียวกัน · ไม่ต้องมี internet
+</div>
+
+<div class="section-title">📘 Master Rollup <span class="count">1</span></div>
+
+<a href="1-rollup-master.html" class="doc-card master">
+  <div class="num">1</div>
+  <div class="info">
+    <h2>Rollup Master · เอกสารประกอบวาระ ICT+HRM และ ACEP</h2>
+    <div class="sub">รวมเอกสารประกอบวาระประชุม PC + คกก.บริหารมูลนิธิฯ ครั้งที่ 3/2569 · สายงาน ICT+HRM + ACEP · <strong>updated 7 ก.ค. 09:50 น. (ก่อนประชุม)</strong></div>
+    <div class="meta-row"><span class="tag">30 KB</span><span class="tag gold">Master document</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<div class="section-title">📗 สาย ICT + HRM (วาระ 4.1.4) <span class="count">2 ฉบับ</span></div>
+
+<a href="2-ict-brief.html" class="doc-card ict">
+  <div class="num">2</div>
+  <div class="info">
+    <h2>ICT · สรุปฝ่ายเข้าวาระประชุม คกก. ICT+HRM 1/2569</h2>
+    <div class="sub">5 กลุ่ม + 8 sub-groups · 91 เป้าหมาย · KPI · กรรมการ 11 ท่าน · วาระ 1.3 · 4.1 · 4.2 · 5.1 · updated 7 ก.ค. 07:34</div>
+    <div class="meta-row"><span class="tag">69 KB</span><span class="tag">ICT canonical</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<a href="3-hrm-brief.html" class="doc-card hrm">
+  <div class="num">3</div>
+  <div class="info">
+    <h2>HRM · สรุปงานเข้าวาระประชุม คกก. ICT+HRM 1/2569</h2>
+    <div class="sub">7 อนุกรรมการ · 55 เป้าหมาย · โครงสร้าง+อัตรากำลัง · คู่มือคุณภาพหน่วยงาน · แผนอบรม · กรอบประเมิน SWIS T1-T14</div>
+    <div class="meta-row"><span class="tag">30 KB</span><span class="tag">HRM canonical</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<div class="section-title">📙 SWIS Plus <span class="count">1 ฉบับ</span></div>
+
+<a href="4-swis-progress.html" class="doc-card swis">
+  <div class="num">4</div>
+  <div class="info">
+    <h2>SWIS Plus · Progress Report 2569</h2>
+    <div class="sub">รายงานความคืบหน้าบริษัท SWIS Plus จำกัด · 220 ฟังก์ชัน · 15 โรงในเครือ + ลูกค้านอกเครือ · roadmap</div>
+    <div class="meta-row"><span class="tag">44 KB</span><span class="tag gold">Commercial arm</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<div class="section-title">📕 ACEP (วาระ 5.1 กู้ยืม + intel) <span class="count">3 ฉบับ</span></div>
+
+<a href="7-acep-loan-defense.html" class="doc-card critical">
+  <div class="num">🔥</div>
+  <div class="info">
+    <h2>ACEP · Loan Defense 1-page (วาระ 5.1)</h2>
+    <div class="sub">สรุปสู้เรื่องขอกู้ยืมเงินโรงเรียนอัสสัมชัญ EP 2569 · <strong>วาระ 5.1 · บราเดอร์เสนอ</strong> · 1-page defense · updated 4 ก.ค.</div>
+    <div class="meta-row"><span class="tag red">🚨 วาระ 5.1</span><span class="tag">17 KB</span><span class="tag red">Critical · defend</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<a href="6-acep-retention-plan.html" class="doc-card acep">
+  <div class="num">6</div>
+  <div class="info">
+    <h2>ACEP · Secondary Retention Plan</h2>
+    <div class="sub">แผนพลานพัฒนามัธยม ACEP · หลักสูตร Secondary · retention strategy · updated 6 ก.ค. 19:06 (เมื่อคืน)</div>
+    <div class="meta-row"><span class="tag">38 KB</span><span class="tag gold">Latest edit</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<a href="5-acep-pulse.html" class="doc-card acep">
+  <div class="num">5</div>
+  <div class="info">
+    <h2>ACEP · Pulse Report</h2>
+    <div class="sub">Pulse ACEP วันนี้ · สถานการณ์ต้นเทอม · workforce · finance · academy · updated 3 ก.ค.</div>
+    <div class="meta-row"><span class="tag">17 KB</span><span class="tag">Status snapshot</span></div>
+  </div>
+  <div class="arrow">→</div>
+</a>
+
+<div class="callout" style="background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%); border-left-color:var(--navy-l); color:#1e3a8a;">
+  📊 <strong>ลำดับการรายงาน (ที่แนะนำ):</strong><br>
+  1️⃣ เปิด <strong>Rollup Master (#1)</strong> เป็นแผนที่นำทาง<br>
+  2️⃣ วาระ 4.1.4 → เปิด <strong>ICT brief (#2)</strong> + <strong>HRM brief (#3)</strong> + <strong>SWIS Plus (#4)</strong><br>
+  3️⃣ วาระ 5.1 → เปิด <strong>ACEP Loan Defense (#7 · 🔥 critical)</strong><br>
+  4️⃣ อ้างอิงพร้อม → <strong>ACEP Retention (#6)</strong> + <strong>ACEP Pulse (#5)</strong>
+</div>
+
+<footer>
+  <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · Foundation of the Brothers of Saint Gabriel in Thailand</p>
+  <p style="margin-top:8px;">Presentation Index · 7 ก.ค. 2569 · standalone offline</p>
+</footer>
+
+</div>
 </body>
 </html>

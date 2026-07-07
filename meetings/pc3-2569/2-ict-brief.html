@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<script>
+  (function(){
+    var TOKEN_KEY = "fsg_pc3_2569_token";
+    var EXPECTED_HASH = "19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0";
+    if (sessionStorage.getItem(TOKEN_KEY) !== EXPECTED_HASH) {
+      window.location.replace("index.html");
+    }
+  })();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สรุปฝ่าย ICT เข้าวาระประชุม ครั้งที่ 1/2569 · 2 ก.ค. 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #14213d;
+    --navy-light: #1f3253;
+    --gold-dark: #b08a3e;
+    --gold-light: #e6c989;
+    --green-soft: #4d7c3a;
+    --red-soft: #b65151;
+    --cream: #faf6ee;
+    --white: #ffffff;
+    --gray-50: #f7f7f7;
+    --gray-100: #ececec;
+    --gray-200: #dcdcdc;
+    --gray-600: #6b6b6b;
+    --text: #232323;
+    --text-light: #5f5f5f;
+    --text-muted: #8f8f8f;
+    --radius: 6px;
+    --shadow: 0 2px 6px rgba(20,33,61,0.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Sarabun', 'Inter', system-ui, sans-serif; color: var(--text); background: var(--gray-50); line-height: 1.65; font-size: 0.94rem; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 32px 22px; }
+
+  .page-header { background: var(--navy); color: var(--gold-light); padding: 38px 32px; border-radius: var(--radius); text-align: center; margin-bottom: 24px; box-shadow: var(--shadow); }
+  .page-header .doc-ref { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 2px; color: var(--gold-light); margin: 0 0 12px; opacity: 0.85; }
+  .page-header h1 { font-family: 'Sarabun', serif; font-weight: 600; font-size: 1.45rem; margin: 0 0 6px; color: var(--white); line-height: 1.45; }
+  .page-header .division-name { font-size: 0.95rem; color: var(--gold-light); margin: 8px 0 14px; font-weight: 500; line-height: 1.5; }
+  .page-header .meeting-meta { font-size: 0.9rem; color: var(--gold-light); margin: 6px 0 4px; font-weight: 500; }
+  .page-header .meeting-meta .badge { background: rgba(230,201,137,0.15); padding: 2px 10px; border-radius: 12px; margin: 0 4px; font-size: 0.82rem; }
+  .page-header .sub-title { font-size: 0.78rem; color: var(--gold-light); opacity: 0.8; margin: 10px 0 0; }
+
+  .agenda-bar { background: var(--cream); border: 1px solid var(--gold-dark); border-radius: var(--radius); padding: 14px 22px; margin-bottom: 26px; font-size: 0.86rem; }
+  .agenda-bar strong { color: var(--gold-dark); display: block; margin-bottom: 6px; font-family: 'Cinzel', serif; letter-spacing: 1px; font-size: 0.78rem; }
+  .agenda-bar ol { margin: 0; padding-left: 22px; line-height: 1.85; color: var(--text); }
+  .agenda-bar li.this-doc { background: rgba(230,201,137,0.25); padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
+  section { background: var(--white); border-radius: var(--radius); padding: 26px 28px; margin-bottom: 22px; box-shadow: var(--shadow); }
+  section h2 { font-family: 'Sarabun', serif; color: var(--navy); border-bottom: 2px solid var(--gold-light); padding-bottom: 8px; margin: 0 0 18px; font-size: 1.18rem; font-weight: 600; }
+  section h2 .agenda-tag { background: var(--gold-dark); color: var(--white); font-family: 'Cinzel', serif; font-size: 0.72rem; padding: 3px 10px; border-radius: 4px; margin-right: 10px; vertical-align: middle; letter-spacing: 1px; }
+  section h3 { color: var(--navy-light); font-size: 1.02rem; margin: 18px 0 10px; font-weight: 600; }
+  section p { margin: 8px 0; }
+  section .lead { font-size: 0.96rem; color: var(--text); }
+
+  .key-numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; margin: 14px 0; }
+  .num-card { background: var(--cream); border-left: 3px solid var(--gold-dark); border-radius: 4px; padding: 12px 14px; text-align: center; }
+  .num-card strong { display: block; font-family: 'Cinzel', serif; font-size: 1.55rem; color: var(--navy); line-height: 1.2; }
+  .num-card span { display: block; font-size: 0.74rem; color: var(--text-light); margin-top: 4px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 8px 0; }
+  thead th { background: var(--navy); color: var(--gold-light); padding: 10px 12px; text-align: left; font-family: 'Sarabun', serif; font-weight: 600; }
+  tbody td { padding: 10px 12px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  tbody tr:nth-child(even) { background: var(--gray-50); }
+  tbody td strong { color: var(--navy); }
+
+  .paradigm-callout { background: linear-gradient(135deg, #fefae9 0%, var(--cream) 100%); border-left: 4px solid var(--gold-dark); border-radius: var(--radius); padding: 18px 22px; margin: 16px 0; }
+  .paradigm-callout h3 { margin-top: 0; color: var(--gold-dark); font-weight: 600; }
+  .paradigm-callout em { color: var(--gold-dark); font-style: normal; font-weight: 600; }
+
+  .members-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; margin: 12px 0; }
+  .member-row { background: var(--cream); border-radius: 4px; padding: 8px 12px; font-size: 0.88rem; display: flex; gap: 10px; align-items: center; }
+  .member-row .role-tag { font-family: 'Cinzel', serif; font-size: 0.66rem; padding: 2px 8px; border-radius: 10px; background: var(--navy); color: var(--gold-light); letter-spacing: 0.5px; white-space: nowrap; }
+  .member-row .role-chair { background: var(--gold-dark); }
+  .member-row .role-secretary { background: var(--green-soft); }
+  .member-row .role-advisor { background: var(--navy-light); }
+
+  .sg-card { background: var(--white); border: 1px solid var(--gray-200); border-left: 4px solid var(--navy); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; }
+  .sg-card.active { border-left-color: var(--green-soft); }
+  .sg-card.pending { border-left-color: #c89a3a; background: #fffdf5; }
+  .sg-card.placeholder { border-left-color: var(--gray-200); background: var(--gray-50); opacity: 0.9; }
+  .sg-header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+  .sg-id { font-family: 'Cinzel', serif; font-size: 1.15rem; color: var(--gold-dark); font-weight: 700; background: var(--cream); border-radius: 4px; padding: 4px 12px; min-width: 60px; text-align: center; }
+  .sg-header h3 { margin: 0; flex: 1; color: var(--navy); font-size: 1.02rem; }
+  .sg-status { font-size: 0.72rem; padding: 4px 10px; border-radius: 12px; font-weight: 600; white-space: nowrap; }
+  .status-active { background: #e1f1d8; color: #2f5e1a; }
+  .status-pending { background: #fef0d4; color: #856107; }
+  .status-todo { background: var(--gray-100); color: var(--gray-600); }
+  .sg-body { font-size: 0.9rem; color: var(--text); }
+  .sg-body p { margin: 4px 0; }
+  .sg-body .progress-note { color: var(--navy-light); font-weight: 600; }
+  .sg-body .gap-note { color: var(--red-soft); font-weight: 600; }
+
+  .swis-table { font-size: 0.85rem; }
+  .swis-rank-top { background: #e1f1d8; color: #2f5e1a; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+  .swis-rank-mid { background: #fef0d4; color: #856107; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+  .swis-rank-low { background: #fdf2f2; color: #991b1b; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+
+  .plan-focus { background: var(--cream); border-radius: var(--radius); padding: 14px 18px; margin: 10px 0; border-left: 3px solid var(--gold-dark); }
+  .plan-focus h4 { margin: 0 0 6px; color: var(--gold-dark); font-size: 0.95rem; }
+  .plan-focus ul { margin: 4px 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.75; }
+
+  .footer-card { background: var(--navy); color: var(--gold-light); padding: 22px 28px; border-radius: var(--radius); margin-top: 22px; }
+  .footer-card h3 { color: var(--gold-light); margin-top: 0; border-bottom: 1px solid rgba(230,201,137,0.3); padding-bottom: 8px; }
+  .footer-card p { color: rgba(255,255,255,0.85); font-size: 0.88rem; margin: 6px 0; }
+  .footer-card .credit { font-size: 0.74rem; color: rgba(230,201,137,0.7); margin-top: 14px; text-align: center; font-family: 'Cinzel', serif; letter-spacing: 1px; }
+
+  .scope-note { background: #fff7e5; border-left: 3px solid var(--gold-dark); padding: 10px 16px; margin: 14px 0; font-size: 0.85rem; color: var(--text); border-radius: 4px; }
+
+  @media (max-width: 640px) {
+    .members-grid { grid-template-columns: 1fr; }
+    .key-numbers { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============= COVER ============= -->
+  <header class="page-header">
+    <p class="doc-ref">ที่ สทส. 001/2569 · 25 มิถุนายน 2569</p>
+    <h1>รายงานความคืบหน้าฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร ประกอบวาระประชุมคณะกรรมการฝ่ายฯ ครั้งที่ 2/2569</h1>
+    <p class="division-name">ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  </header>
+
+  <!-- ============= AGENDA BAR (VERBATIM PDF) ============= -->
+  <div class="agenda-bar">
+    <strong>ระเบียบวาระการประชุม (ตามหนังสือเชิญ ที่ สทส. 001/2569)</strong>
+    <ol>
+      <li><strong>ประธานแจ้งให้ทราบ</strong>
+        <ul style="margin:4px 0; padding-left:20px;">
+          <li>1.1 โครงสร้างมูลนิธิ ปี 2569</li>
+          <li>1.2 คำสั่งแต่งตั้งคณะกรรมการฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์ ปี 2569</li>
+          <li class="this-doc">1.3 โครงสร้างและบทบาทหน้าที่ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์</li>
+        </ul>
+      </li>
+      <li>รับรองรายงานการประชุม — ไม่มี (เป็นครั้งแรกของชุดนี้)</li>
+      <li>เรื่องสืบเนื่องและติดตาม — ไม่มี</li>
+      <li><strong>เรื่องแจ้งเพื่อทราบ</strong>
+        <ul style="margin:4px 0; padding-left:20px;">
+          <li class="this-doc">4.1 รายงานผลการดำเนินงานฝ่าย ปี 2568</li>
+          <li class="this-doc">4.2 แผนงาน งบประมาณงานเทคโนโลยีสารสนเทศและการสื่อสาร มูลนิธิฯ ปีการศึกษา 2569</li>
+          <li>4.3 แผนงาน งบประมาณงานทรัพยากรมนุษย์ มูลนิธิฯ ปีการศึกษา 2569</li>
+        </ul>
+      </li>
+      <li><strong>เสนอเพื่อพิจารณา</strong>
+        <ul style="margin:4px 0; padding-left:20px;">
+          <li class="this-doc">5.1 วางแผนการดำเนินงานและมอบหมายงาน</li>
+        </ul>
+      </li>
+      <li>อื่นๆ
+        <ul style="margin:4px 0; padding-left:20px;">
+          <li>6.1 นัดหมายการประชุมครั้งถัดไป</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+
+  <!-- ============= SECTION A · ภาพรวม ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 1.3</span>โครงสร้างและบทบาทหน้าที่ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</h2>
+
+    <p class="lead">ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์ เกิดจากมติ Provincial Council ครั้งที่ 9/2568 ลงวันที่ 10 มีนาคม 2569 รวมคณะกรรมการเทคโนโลยีสารสนเทศ และคณะกรรมการบริหารทรัพยากรมนุษย์ เข้าเป็น 1 ฝ่าย · 2 งาน โดยมีกรรมการรวม 15 ท่าน · ประธานฝ่ายคือภราดาศุภนันท์ ขันธปรีชา</p>
+
+    <div class="key-numbers">
+      <div class="num-card"><strong>5</strong><span>กลุ่มงาน ICT (Tier-0)</span></div>
+      <div class="num-card"><strong>8</strong><span>กลุ่มย่อย</span></div>
+      <div class="num-card"><strong>220</strong><span>ฟังก์ชัน SWIS</span></div>
+      <div class="num-card"><strong>15</strong><span>โรงเรียนในเครือ</span></div>
+      <div class="num-card"><strong>11</strong><span>กรรมการสาย ICT</span></div>
+      <div class="num-card"><strong>ยุทธ์ 3</strong><span>ของแผน 6 ปี มูลนิธิ</span></div>
+    </div>
+
+    <div class="paradigm-callout">
+      <h3>หลักคิดสำคัญ · ICT คือเครื่องมือต้นน้ำ-ปลายน้ำ</h3>
+      <p>งานเทคโนโลยีสารสนเทศและการสื่อสารเป็นเครื่องมือสำหรับ <em>ทุกเรื่อง</em> ของมูลนิธิ ครอบ workflow ตั้งแต่บริหาร/governance ส่วนกลางลงไปจนถึงระดับโรงเรียน · <strong>SWIS เป็นเพียง 1 ใน 8 กลุ่มย่อย</strong> (กลุ่ม 2.2 ระดับโรงเรียน) ไม่ใช่ centerpiece ของฝ่าย — เวลามองภาพรวมต้องให้ 5 กลุ่มเด่นเท่ากัน</p>
+    </div>
+
+    <h3>ความสอดคล้องเชิงยุทธศาสตร์</h3>
+    <p>ยุทธศาสตร์ที่ 3 ของแผน 6 ปี มูลนิธิฯ (พัฒนากระบวนการบริหารจัดการสู่มาตรฐานสากล) → เป้าประสงค์ 3.3 (พัฒนาระบบเทคโนโลยีสารสนเทศและการสื่อสาร) → มาตรฐาน 3.3.1 (สารสนเทศเพื่อการบริหารและจัดการเรียนรู้) + 3.3.3 (สื่อสารที่มีประสิทธิภาพ) → 5 กลุ่มงาน → แผนงาน · KPI · งบประมาณ · SWIS</p>
+  </section>
+
+  <!-- ============= SECTION B · โครงสร้าง 5+8 ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 1.3</span>โครงสร้าง 5 กลุ่มงาน + 8 กลุ่มย่อย</h2>
+
+    <table>
+      <thead>
+        <tr><th style="width:60px;">กลุ่ม</th><th>ชื่อ (TH · EN)</th><th>กลุ่มย่อย</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>บริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร · <em>Administration</em></td><td>ร่มใหญ่ (ไม่มีกลุ่มย่อย)</td></tr>
+        <tr><td><strong>2</strong></td><td>พัฒนาโปรแกรมและสารสนเทศ · <em>Software Development</em></td><td><strong>2.1</strong> SIS (มูลนิธิ · ภาพรวมระดับมูลนิธิฯ) · <strong>2.2</strong> SWIS (โรงเรียน 15 โรง)</td></tr>
+        <tr><td><strong>3</strong></td><td>สื่อสารมวลชน · <em>Media Communications</em></td><td><strong>3.1</strong> Digital Media · <strong>3.2</strong> Non-Digital Media</td></tr>
+        <tr><td><strong>4</strong></td><td>เครือข่ายและอุปกรณ์ · <em>Network &amp; Engineering Technologies</em></td><td><strong>4.1</strong> เพื่อการบริหารบริการ · <strong>4.2</strong> เพื่อการเรียนการสอน</td></tr>
+        <tr><td><strong>5</strong></td><td>พัฒนาบุคลากร ICT · <em>Personnel Development</em></td><td><strong>5.1</strong> บุคลากร ICT · <strong>5.2</strong> ผู้ใช้งานทั่วไปในโรงเรียน</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============= SECTION C · กรรมการสาย ICT ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 1.2</span>คณะกรรมการสาย ICT · 11 ท่าน</h2>
+
+    <p>ตามประกาศแต่งตั้งคณะกรรมการฝ่ายฯ โดยภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ อธิการเจ้าคณะแขวงประเทศไทย ลงวันที่ 17 พฤษภาคม 2569 · ในจำนวน 15 ท่าน มีผู้อยู่ในกรอบสาย ICT รวม 11 ท่าน</p>
+
+    <div class="members-grid">
+      <div class="member-row"><span class="role-tag role-chair">ประธาน</span>ภราดาศุภนันท์ ขันธปรีชา</div>
+      <div class="member-row"><span class="role-tag role-advisor">Advisor</span>ภราดาสุรสิทธิ์ สุขชัย</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดา ดร.อาวุธ ศิลาเกษ</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดามานิต สกนธวัฒน์</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดาศราวุธ ยุชมภู</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดาศิริชัย ผังรักษ์</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดาพัชรปกรณ์ ลังบุบผา</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดากรกวี ยินดีเวท</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดาภานุวัฒน์ เหมือนทับ</div>
+      <div class="member-row"><span class="role-tag role-secretary">เลขา</span>ภราดาอภิสิทธิ์ งามวงศ์</div>
+      <div class="member-row"><span class="role-tag">กก.</span>ภราดาธนภูมิ สายพรหม</div>
+    </div>
+  </section>
+
+  <!-- ============= SECTION D · แต่ละส่วนทำอะไรไปถึงไหน ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 4.1</span>รายงานผลการดำเนินงานฝ่าย ปี 2568 · แต่ละกลุ่มย่อยทำอะไรไปถึงไหน</h2>
+
+    <article class="sg-card active">
+      <div class="sg-header">
+        <span class="sg-id">1</span>
+        <h3>บริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร (ร่มใหญ่)</h3>
+        <span class="sg-status status-active">มีคณะบริหารฝ่าย</span>
+      </div>
+      <div class="sg-body">
+        <p>ตามคำสั่งฝ่ายฯ 2568 มีคณะกรรมการบริหารฝ่ายชุดเก่า 9 ท่าน · ปี 2569 ปรับเข้ากรอบฝ่ายฯ ใหม่ตามคำสั่งแต่งตั้ง 17 พ.ค. 2569</p>
+        <p class="progress-note">ดำเนินการ: ประชุมรายเดือน · ติดตาม SWIS ตามโรงเรียนต่างๆ ตลอดปี · มีปฏิทินกิจกรรมเยี่ยมรายโรงเรียน</p>
+        <p class="gap-note">⚠ จะเสนอวาระ 5.1 เรื่องการจัดตั้งคณะอนุกรรมการรายกลุ่มงาน 1–5 ภายใต้กรอบฝ่ายปี 2569</p>
+      </div>
+    </article>
+
+    <article class="sg-card pending">
+      <div class="sg-header">
+        <span class="sg-id">2.1</span>
+        <h3>SIS · สารสนเทศระดับมูลนิธิ</h3>
+        <span class="sg-status status-pending">มีทีมเล็ก · รอเสริม</span>
+      </div>
+      <div class="sg-body">
+        <p>Saint Gabriel Information System (SIS) เป็นโปรแกรมระดับมูลนิธิที่เห็นและบริหารภาพรวมจาก 15 โรงเรียน · ปัจจุบันมีบุคลากรหลัก 5 คน (ภราดา 2 + บุคลากร 3) ที่ได้รับมอบหมายตามคำสั่ง 2568</p>
+        <p class="progress-note">ดำเนินการ: ดัดแปลงจาก SWIS มาทำหน้ารายงานสำหรับมูลนิธิหลายส่วน · ยังไม่เกิดเป็นโมดูลเฉพาะที่จริงจัง</p>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดามานิต สกนธวัฒน์ (หลัก) · คณะทำงาน: ภราดากรกวี ยินดีเวท</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>pdca9_plans/2569_ICT_2_1_sis_20260701.md</code></p>
+      </div>
+    </article>
+
+    <article class="sg-card active">
+      <div class="sg-header">
+        <span class="sg-id">2.2</span>
+        <h3>SWIS · ระบบสารสนเทศโรงเรียน (15 โรง)</h3>
+        <span class="sg-status status-active">มีทีมจริง</span>
+      </div>
+      <div class="sg-body">
+        <p>School Web-based Information System (SWIS) · 220 ฟังก์ชัน · 27 โมดูล · บริษัท SWIS Plus จำกัด รับจ้างพัฒนาตามสัญญาเดิม ครอบเฉพาะกลุ่ม 2.2</p>
+        <p class="progress-note">เป้าหมายคุณภาพ 23 ข้อ ใน 6 หมวด (ฐานข้อมูล · ลดภาระครู · Management Info · Benchmark · R&amp;D · ฐานราก)</p>
+        <p class="progress-note"><strong>สถานะ adoption ปี 2568:</strong></p>
+        <table class="swis-table">
+          <thead><tr><th>กลุ่ม</th><th>โรงเรียน</th><th>จำนวน</th></tr></thead>
+          <tbody>
+            <tr><td><span class="swis-rank-top">Top tier ≥80%</span></td><td>MCP · ACP · SLC · ACL</td><td>4 โรง</td></tr>
+            <tr><td><span class="swis-rank-mid">Mid 50–80%</span></td><td>ACT · ACS · MCS · ACN · ACR · ACU · SG</td><td>7 โรง</td></tr>
+            <tr><td><span class="swis-rank-low">Low &lt;50%</span></td><td>AC · ACSP · ATSN</td><td>3 โรง</td></tr>
+            <tr><td><span class="swis-rank-low">0%</span></td><td>ACEP (เลื่อนปี 2569)</td><td>1 โรง</td></tr>
+          </tbody>
+        </table>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดามานิต สกนธวัฒน์ (หลัก) · คณะทำงาน: ภราดากฤษฎา งามวงศ์ 'ทิว'</p>
+        <p class="progress-note"><strong>SWIS Plus (Vendor) รายงานล่าสุด มิ.ย. 69:</strong> 444 commits (พ.ค.-มิ.ย. · 6 programmers) · Deploy AWS 15 โรงในเครือ + 10 โรงนอกเครือ · 4 Applications (Student · Teacher · Executive + <strong>Parent ใหม่</strong>) · ระบบใหม่: ห้องสมุด · ลาออนไลน์นักเรียน · ชมรม · อยู่เวรครู · POS มินิมาร์ท · วัดผลอนุบาล · Provincial/Council Dashboard (สำหรับ คกก.บริหารมูลนิธิ)</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>pdca9_plans/2569_ICT_2_2_swis_20260701.md</code></p>
+      </div>
+    </article>
+
+    <article class="sg-card placeholder">
+      <div class="sg-header">
+        <span class="sg-id">3.1</span>
+        <h3>Digital Media · สื่อดิจิทัล</h3>
+        <span class="sg-status status-active">มอบหมายผู้รับผิดชอบแล้ว</span>
+      </div>
+      <div class="sg-body">
+        <p>สื่อดิจิทัล (เว็บไซต์ · social · video) ระดับมูลนิธิและเครือโรงเรียน</p>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดาศราวุธ ยุชมภู (หลัก · ครอบทั้งกลุ่ม 3) · คณะทำงาน: ภราดาภานุวัฒน์ เหมือนทับ · ภราดาพัชรปกรณ์ ลังบุบผา</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>2569_ICT_3_1_digital_media_20260701.md</code></p>
+      </div>
+    </article>
+
+    <article class="sg-card placeholder">
+      <div class="sg-header">
+        <span class="sg-id">3.2</span>
+        <h3>Non-Digital Media · สื่อแบบดั้งเดิม</h3>
+        <span class="sg-status status-active">มอบหมายผู้รับผิดชอบแล้ว</span>
+      </div>
+      <div class="sg-body">
+        <p>ป้ายประชาสัมพันธ์ · เอกสาร · แผ่นพับ · การประชาสัมพันธ์ภายในสถานศึกษา</p>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดาศราวุธ ยุชมภู (หลัก · shared กับ 3.1) · คณะทำงาน: ภราดาภานุวัฒน์ · ภราดาพัชรปกรณ์</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>2569_ICT_3_2_non_digital_media_20260701.md</code></p>
+      </div>
+    </article>
+
+    <article class="sg-card pending">
+      <div class="sg-header">
+        <span class="sg-id">4.1 / 4.2</span>
+        <h3>เครือข่ายและอุปกรณ์</h3>
+        <span class="sg-status status-active">มอบหมายผู้รับผิดชอบแล้ว</span>
+      </div>
+      <div class="sg-body">
+        <p>4.1 เพื่อการบริหารบริการ · 4.2 เพื่อการเรียนการสอนและกิจกรรมตามหลักสูตร</p>
+        <p class="progress-note">ดำเนินการ: แบบสำรวจงานเทคโนฯ 2568 ครบ 15 โรง · 6 หมวด (บุคลากร · แผนผังเครือข่าย · Firewall · Internet · WiFi · ค่าใช้จ่าย)</p>
+        <p class="progress-note">เป้าหมายคุณภาพ 21 ข้อ ใน 6 หมวด · มีเครื่องมือวัดผลแล้ว 4 ข้อ · มีบางส่วน 11 ข้อ · ยังไม่มี 1 ข้อ · รอ Phase 5 ข้อ</p>
+        <p class="gap-note">⚠ ความเสี่ยง: ความเหลื่อมล้ำโครงสร้างพื้นฐานระหว่างโรงเรียน · ขาด Network Monitoring กลาง · ไม่มีมาตรฐาน Bandwidth/WiFi ขั้นต่ำ</p>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดาอภิสิทธิ์ งามวงศ์ 'ทัช' (หลัก · ครอบทั้ง 4.1+4.2) · คณะทำงาน: ภราดาธนภูมิ สายพรหม</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>2569_ICT_4_1_network_admin_services_20260701.md</code> · <code>2569_ICT_4_2_network_learning_curricular_20260701.md</code></p>
+      </div>
+    </article>
+
+    <article class="sg-card pending">
+      <div class="sg-header">
+        <span class="sg-id">5.1 / 5.2</span>
+        <h3>พัฒนาบุคลากร ICT</h3>
+        <span class="sg-status status-active">มอบหมายผู้รับผิดชอบแล้ว</span>
+      </div>
+      <div class="sg-body">
+        <p>5.1 บุคลากร ICT (ทีม ICT ส่วนกลาง + ฝ่ายเทคโนฯ 15 โรง) · 5.2 ผู้ใช้งานทั่วไปในโรงเรียน (อบรมครู · Security Awareness · Job Spec mapping)</p>
+        <p class="progress-note">เป้าหมายคุณภาพ 15 ข้อ ใน 4 หมวด · มีระบบอบรม SWIS ตลอดปี · ระดับความเชี่ยวชาญบุคลากร 5 ระดับ</p>
+        <p class="progress-note">สิ่งที่ต้องสร้างใหม่ 3 รายการ: (1) คู่มือ SOP ตามโรงเรียน · (2) Mapping ตำแหน่ง × โมดูล SWIS × Job Spec HRD · (3) หลักสูตร Security Awareness</p>
+        <p class="progress-note"><strong>ผู้รับผิดชอบ:</strong> ภราดา ดร.อาวุธ ศิลาเกษ (หลัก · ครอบทั้ง 5.1+5.2) · คณะทำงาน: ภราดาศิริชัย ผังรักษ์</p>
+        <p class="progress-note">แผน PDCA9 ประกอบ: <code>2569_ICT_5_1_ict_personnel_20260701.md</code> · <code>2569_ICT_5_2_general_users_20260701.md</code></p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============= SECTION E · สรุปสถานะรวม ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 4.1</span>สรุปสถานะรวม · จุดแข็ง / ช่องว่างที่ต้องเสริม</h2>
+
+    <h3>จุดแข็ง</h3>
+    <ul>
+      <li>SWIS 220 ฟังก์ชัน พัฒนาเสร็จ · 4 โรงเรียนใช้งาน ≥ 80% (MCP · ACP · SLC · ACL)</li>
+      <li>กลไกครบ 3 องค์ประกอบ: คู่มือคุณภาพหน่วยงาน + แผนงาน PDCA + SWIS</li>
+      <li>แบบสำรวจงานเทคโนฯ 2568 ครอบคลุม 15 โรง · มีข้อมูลพื้นฐานสำหรับวางแผน 4 ปีข้างหน้า</li>
+      <li>ICT + HRM รวมเป็นฝ่ายเดียวกันแล้ว (มติ PC 9/2568) — โอกาสบูรณาการ Job Spec ↔ SWIS</li>
+    </ul>
+
+    <h3>ช่องว่างที่ต้องเสริม</h3>
+    <ul>
+      <li><strong>กำลังคน ICT:</strong> ประชุมครั้งที่ 1/2569 มอบหมายผู้รับผิดชอบครบ 5 กลุ่มงาน — รายละเอียดในวาระ 5.1</li>
+      <li><strong>SWIS adoption variance สูง:</strong> 0%–86% ระหว่างโรงเรียน · 4 โรงต่ำกว่า 50% (AC · ACSP · ATSN · ACEP)</li>
+      <li><strong>Anti-overlap rule:</strong> SWIS Plus = บริษัทรับจ้าง สัญญาเดิมครอบเฉพาะกลุ่ม 2.2 · ขอบเขตงานอื่นต้องเพิ่มสัญญา</li>
+      <li><strong>เครื่องมือใหม่ที่จำเป็น:</strong> Network Monitoring กลาง · มาตรฐาน Bandwidth/WiFi ขั้นต่ำ · SOP ICT ตามโรงเรียน · Mapping Job Spec ↔ SWIS · หลักสูตร Security Awareness</li>
+    </ul>
+  </section>
+
+  <!-- ============= SECTION F · แผน + งบ 2569 ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 4.2</span>แผนงาน งบประมาณงานเทคโนโลยีสารสนเทศและการสื่อสาร มูลนิธิฯ ปีการศึกษา 2569 · สาระหลัก</h2>
+
+    <p class="lead">แผน 2569 ใช้ <strong>PDCA 9 ขั้น</strong> เป็นโครงร่าง โดยมีตัวชี้วัด (KPI) ที่ทำไว้ในเอกสารวัตถุประสงค์รายกลุ่มเป็น input แต่ละกลุ่มย่อย</p>
+
+    <div class="plan-focus">
+      <h4>กลุ่ม 2.2 SWIS · Focus ปี 2569</h4>
+      <ul>
+        <li>ยกระดับ adoption ของ 11 โรงเรียนที่ยังไม่ถึง 80% โดยเฉพาะ ATSN (25%) · ACSP/AC (48%)</li>
+        <li>ACEP เริ่ม onboard SWIS ในปีการศึกษา 2569</li>
+        <li>เพิ่มระบบสำรวจความพึงพอใจรายโมดูล (ปัจจุบันยังไม่มี) · พิสูจน์ว่า SWIS ลดภาระครูจริง</li>
+        <li>จัดประเภทฟังก์ชัน 27 โมดูล แยก "บริหาร/บริการ" vs "วิชาการ/กิจกรรม"</li>
+        <li>SWIS procurement workflow (ระบบจัดซื้อตรวจสอบได้) — Plan B Stage 1 spec ทำเสร็จแล้ว · รอ Stage 2 ที่ SWIS Plus implement</li>
+      </ul>
+    </div>
+
+    <div class="plan-focus">
+      <h4>กลุ่ม 4 เครือข่ายและอุปกรณ์ · Focus ปี 2569</h4>
+      <ul>
+        <li>วิเคราะห์ข้อมูลแบบสำรวจงานเทคโนฯ 2568 · กำหนดเกณฑ์ Bandwidth/WiFi ขั้นต่ำตามขนาดโรง</li>
+        <li>ออกแบบ Network Monitoring System รวมศูนย์</li>
+        <li>Network Assessment โรงเรียนอัสสัมชัญพระราม 2 (Trinity refresh) · audit + budget plan</li>
+        <li>เร่งงาน 4.1 บริหาร/บริการ ก่อน · 4.2 วิชาการ ตามหลัง</li>
+      </ul>
+    </div>
+
+    <div class="plan-focus">
+      <h4>กลุ่ม 5 พัฒนาบุคลากร · Focus ปี 2569</h4>
+      <ul>
+        <li>ออกแบบ SOP ICT กลาง · กระจายให้ 15 โรงเรียน</li>
+        <li>ทำ Mapping ตำแหน่ง × โมดูล SWIS × รหัส Job Spec HRD (เชื่อม ICT ↔ HRM ผ่านมติ PC 9/2568)</li>
+        <li>พัฒนาหลักสูตร Security Awareness</li>
+        <li>Feedback ฝ่ายงานทรัพยากรมนุษย์ให้ปรับ Job Spec K(B)02-03 / Cp(B)02-03 ให้ละเอียดและสมรรถนะตามกลุ่มงาน</li>
+      </ul>
+    </div>
+
+    <div class="plan-focus">
+      <h4>กลุ่ม 1 บริหารฝ่าย · Focus ปี 2569</h4>
+      <ul>
+        <li>แต่งตั้งคณะอนุกรรมการรายกลุ่มงาน (2.1 · 2.2 · 3 · 4 · 5)</li>
+        <li>ปรับปฏิทินประชุมคณะกรรมการฝ่ายรายเดือน · เยี่ยมโรงเรียนรายโรง · ประชุมรายกลุ่มย่อย</li>
+        <li>รายงานความคืบหน้ารายไตรมาสต่อคณะกรรมการมูลนิธิฯ</li>
+      </ul>
+    </div>
+
+    <p style="font-size:0.86rem;color:var(--text-light);margin-top:14px;">
+      💰 <strong>งบประมาณ:</strong> รายละเอียดงบประมาณรายกลุ่ม จะเสนอที่ประชุมในรอบถัดไป หลังคณะอนุกรรมการรายกลุ่มได้รับการแต่งตั้งและจัดทำแผนงบของตน
+    </p>
+  </section>
+
+  <!-- ============= SECTION F-PDCA9 · pattern แผน PDCA 9 ขั้น · ทุกกลุ่มย่อย ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 4.2</span>โครงสร้างแผน PDCA 9 ขั้น เพื่อบรรลุเป้าหมายคุณภาพแต่ละกลุ่มย่อย</h2>
+
+    <p class="lead">ยึดตามคู่มือเขียนแผนงาน PDCA 9 ขั้น ฉบับมูลนิธิฯ v2 (1 พฤษภาคม 2569)</p>
+
+    <h3>โครงสร้าง 9 ข้อ canonical (ใช้กับทุก sub-group)</h3>
+    <table style="font-size:0.85rem;">
+      <thead><tr><th style="width:60px;">ข้อ</th><th>ชื่อ</th><th>สาระ</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1</strong></td><td>KRA + ขอบข่ายและคณะกรรมการ</td><td>ยุทธ์ 3.3.x · scope · ทีมรับผิดชอบ · Project Lead รายกิจกรรม · ที่ปรึกษาเฉพาะทาง</td></tr>
+        <tr><td><strong>2</strong></td><td>เป้าหมายคุณภาพ</td><td><strong>2.1</strong> PDCA9 mandatory (auto-gen) + <strong>2.2</strong> เป้าหมายระดับสากล (source_type + reference)</td></tr>
+        <tr><td><strong>3</strong></td><td>ตัวชี้วัด (KPI)</td><td><strong>3.1 ↔ 2.1</strong> 9 KPIs canonical (one per step) + <strong>3.2 ↔ 2.2</strong> · 1-to-1 · ไม่มี orphan</td></tr>
+        <tr><td><strong>4</strong></td><td>วางแนวทาง</td><td>4.1 กิจกรรม+Doc Catalog (3-Lens: Service·PPPC·Compliance) · 4.2 เครื่องมือประเมิน · 4.3 lessons learned+benchmark · ผูก KPI 3.2 เท่านั้น</td></tr>
+        <tr><td><strong>5</strong></td><td>Pre-flight Session</td><td>ทวน 1–4 · วาด 6–9 · sign-off · soft signal</td></tr>
+        <tr><td><strong>6</strong></td><td>Do (Execute)</td><td>ทุกกิจกรรม → mini-PDCA 7 ขั้น (แต่งตั้ง·ศึกษา·ปฏิทิน·ดำเนินการ·นิเทศ·สรุป·นำผลไปวางแผนต่อ) · Template A/B/C/D</td></tr>
+        <tr><td><strong>7</strong></td><td>Monitor</td><td>3 ครั้ง/ปี (ก.ค.·ต.ค.·ม.ค.) + real-time dashboard</td></tr>
+        <tr><td><strong>8</strong></td><td>Check</td><td>2 ครั้ง/ปี (ต.ค.·ก.พ.) · Met/Missed/Partial + Variance</td></tr>
+        <tr><td><strong>9</strong></td><td>Act</td><td>9.1 continuous ระหว่างปี + 9.2 cycle close · feed เข้าข้อ 1 ปีถัดไป</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:20px;">Pattern PDCA9 · ราย sub-group (พร้อม "🔴 รอ [source]")</h3>
+
+    <p style="font-size:0.87rem;color:var(--text-light);">แต่ละ sub ใช้โครงเดียวกัน · ข้อมูลใน "🔴 รอ [source]" คือสิ่งที่ที่ประชุมช่วยกันหามาเติม · ห้อง PDCA9_INSPECTOR ยกร่าง template เต็มของ <strong>4.1</strong> แล้ว (585 บรรทัด · <code>pdca9_plans/2569_ICT_4_1_admin_services_template_20260701.md</code>) · ที่เหลือขยายตาม pattern</p>
+
+    <!-- 2.1 SIS -->
+    <div class="plan-focus" style="border-left-color:var(--navy);">
+      <h4 style="color:var(--navy);">2.1 · SIS สารสนเทศระดับมูลนิธิฯ</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1+3.3.3 ✅ · ปธ. ภราดาศุภนันท์ + เลขา ภราดาอภิสิทธิ์ + Advisor + กก. 8 ท่าน ✅ · <strong>Project Lead · ทีม · ที่ปรึกษา:</strong> 🔴 รอ อนุกรรมการ 2.1 ที่จะแต่งตั้ง (ประชุม 2 ก.ค.)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢 (auto-gen)</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>ระบบ SIS ตอบสนอง 6 Commission ตาม 6 มิติคุณภาพ (ครบ·ถูก·ทัน·เข้าถึง·เปรียบเทียบ·ตัดสินใจ) · source: <a href="https://fsgthailand.org/ict-info-objectives.html">ict-info-objectives.html</a> ✅</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical (target 100% · ยกเว้น 3.1.6 ≥95% · 3.1.9 ≥3 ข้อ/ปี) 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>KPI ความครบ PDCA + Dashboard พื้นฐาน 6 Commission · จำนวน fn เฉพาะทางที่พัฒนา · <strong>baseline+target:</strong> 🔴 รอ แบบสำรวจสถานะเครื่องมือ SIS ของ 6 Commission (ทำ พ.ค.-มิ.ย. 69)</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>4.1 พัฒนา fn ตามคำร้องขอ 6 Commission · 4.2 acceptance test · 4.3 lessons learned · <strong>responsible · team · budget · equipment:</strong> 🔴 รอ Project Lead แต่ละ activity หลังแต่งตั้งอนุ 2.1</td></tr>
+          <tr><td><strong>ข้อ 5</strong></td><td>Pre-flight ก่อนปีการศึกษา · <strong>วัน · attendees:</strong> 🔴 รอ ประธานกำหนด (เสนอ พ.ค. 69 ปลายเดือน)</td></tr>
+          <tr><td><strong>ข้อ 6</strong></td><td>mini-PDCA 7 ขั้น × activity (Template D dev) · <strong>คกก. ย่อยแต่ละ mini-PDCA:</strong> 🔴 รอ Project Lead</td></tr>
+          <tr><td><strong>ข้อ 7-9</strong></td><td>Monitor 3 ครั้ง (ก.ค./ต.ค./ม.ค.) · Check ต.ค.+ก.พ. · Act 9.1 continuous + 9.2 ปลายปี 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2.2 SWIS -->
+    <div class="plan-focus" style="border-left-color:var(--green-soft);">
+      <h4 style="color:var(--green-soft);">2.2 · SWIS ระบบสารสนเทศโรงเรียน 15 โรง</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1 ✅ · ปธ.ศุภนันท์ + เลขา ทัช + Advisor + กก. ✅ · <strong>Project Lead · ทีม (รวม SWIS Plus dev · ทีมเลขา):</strong> 🔴 รอ อนุ 2.2 ที่จะแต่งตั้ง (บราเดอร์เสนอ ภ.ทิว เป็น ปธ.)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>SWIS Pyramid 5 ชั้น · adoption ≥80% ครบ 15 โรง ภายในปี 2570 · source: คู่มือธรรมาภิบาล 2568 เกณฑ์ 5.1 + <a href="https://fsgthailand.org/ict-swis-objectives.html">ict-swis-objectives.html</a> ✅</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>23 KPI ใน 6 หมวด (ชั้น 1-5 + ฐานราก) ✅ · <strong>baseline+target ปี 2569:</strong> 🔴 รอ ตารางตรวจติดตาม SWIS ปีการศึกษา 2568 (บริษัท SWIS Plus + ทีมเลขา)</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>ยก adoption 11 โรง · จัดประเภท 27 modules · procurement workflow · แบบสำรวจความพึงพอใจรายโมดูล · <strong>responsible · budget · equipment:</strong> 🔴 รอ Project Lead + SWIS Plus + งบสัญญาเดิม</td></tr>
+          <tr><td><strong>ข้อ 5</strong></td><td>Pre-flight กับ SWIS Plus + ทีมเลขา · <strong>วัน:</strong> 🔴 รอ ประธานกำหนด</td></tr>
+          <tr><td><strong>ข้อ 6</strong></td><td>แต่ละ module rollout = mini-PDCA 7 ขั้น (Template D) 🟢</td></tr>
+          <tr><td><strong>ข้อ 7-9</strong></td><td>Monitor 3 ครั้ง + Dashboard adoption real-time (🔴 รอ พัฒนา · จากกลุ่ม 1) · Check 2 ครั้ง · Act continuous 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3.1 Digital -->
+    <div class="plan-focus" style="border-left-color:#1f6feb;">
+      <h4 style="color:#1f6feb;">3.1 · Digital Media</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.3 ✅ · <strong>อนุกรรมการ 3 · Project Lead · ทีม:</strong> 🔴 รอ แต่งตั้ง (วาระ 5.1 · ประชุม 2 ก.ค.)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>ทุกโรงมีเว็บ+สื่อสังคมออนไลน์ที่ถูกต้อง+เป็นปัจจุบัน · ข่าวเผยแพร่ ≤3 วันทำการ · source: <a href="https://fsgthailand.org/ict-media-objectives.html">ict-media-objectives.html</a> ✅</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>5 KPI (3.1.1 เว็บถูกต้อง · 3.1.2 ทันเวลา · 3.1.3 engagement · 3.1.4 บุคลากร · 3.1.5 SWIS↔เว็บ) ✅ · <strong>baseline+target:</strong> 🔴 รอ Google Analytics + Facebook Insights + LINE OA Dashboard (ทีม 15 โรง)</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>Checklist ตรวจเว็บภาคเรียนละ 1 · ติดตั้ง Analytics · Brand Guidelines · <strong>responsible · budget · equipment:</strong> 🔴 รอ อนุ 3 หลังแต่งตั้ง</td></tr>
+          <tr><td><strong>ข้อ 5</strong></td><td>Pre-flight · <strong>วัน · attendees:</strong> 🔴 รอ ประธาน</td></tr>
+          <tr><td><strong>ข้อ 6-9</strong></td><td>mini-PDCA · Monitor · Check · Act pattern มาตรฐาน 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3.2 Non-Digital -->
+    <div class="plan-focus" style="border-left-color:#8b5cf6;">
+      <h4 style="color:#8b5cf6;">3.2 · Non-Digital Media</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.3 ✅ · <strong>อนุกรรมการ 3 (ร่วมกับ 3.1) · Project Lead:</strong> 🔴 รอ แต่งตั้ง (วาระ 5.1)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>สื่อสิ่งพิมพ์/ป้ายมีคุณภาพ+อัตลักษณ์เครือ · ปรับปรุงเป็นรอบ · source: <a href="https://fsgthailand.org/ict-media-objectives.html">ict-media-objectives.html</a> + <strong>Brand Guidelines:</strong> 🔴 รอ จัดทำ</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>4 KPI (อัตลักษณ์ · บุคลากร · ค่าใช้จ่าย · ปรับปรุงปีละ 1) ✅ · <strong>baseline+target:</strong> 🔴 รอ แบบสำรวจงานเทคโนฯ 2569 (หมวด 3.2)</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>Checklist สื่อ Non-digital · Brand Guidelines · ระบบบันทึกค่าใช้จ่าย · <strong>responsible · budget:</strong> 🔴 รอ อนุ 3</td></tr>
+          <tr><td><strong>ข้อ 5-9</strong></td><td>Pre-flight · mini-PDCA · Monitor · Check · Act pattern มาตรฐาน 🟢 · <strong>วัน pre-flight:</strong> 🔴 รอ ประธาน</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4.1 -->
+    <div class="plan-focus" style="border-left-color:#c89a3a;">
+      <h4 style="color:#c89a3a;">4.1 · เครือข่ายและอุปกรณ์ เพื่อการบริหารบริการ 🔵 <em style="font-size:0.85rem;">(template รายละเอียด 585 บรรทัด · <a href="pdca9_plans/2569_ICT_4_1_admin_services_template_20260701.md">pdca9_plans/2569_ICT_4_1_admin_services_template_20260701.md</a>)</em></h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1 ✅ · คกก. 11 ท่านสาย ICT ✅ · <strong>Project Lead 14 activities · ทีมปฏิบัติ · ที่ปรึกษาเฉพาะทาง (PDPA · Cybersec · DR):</strong> 🔴 รอ อนุกรรมการ 4 ที่จะแต่งตั้ง (วาระ 5.1)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>4 targets ✅ (ยุทธ์มูลนิธิ 3.3.1+3.3.3 · PDPA · Cyber+ISO 27001 · Backup+DR ISO 22301)</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>11 KPIs (3.2.1-5 เครือข่าย · 3.2.6-8 Capacity · 3.2.9-11 Security) ✅ · <strong>3.2.5 downtime target · 3.2.6-8 Capacity target · 3.2.9-11 % ปัจจุบัน:</strong> 🔴 รอ ที่ประชุม คกก. กำหนด + แบบสำรวจ 2569</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>14 activities (5 หมวด: เครือข่าย · Capacity · PDPA · Cyber · Backup+DR) · <strong>responsible · team · budget · equipment × 14:</strong> 🔴 รอ อนุ 4 หลังแต่งตั้ง · <strong>Pilot 5 โรง (4.1.2.4):</strong> 🔴 รอ ประชุม คกก. เลือก · <strong>PPPC pain points +2:</strong> 🔴 รอ ห้อง ICT รวบรวมจาก incident log 2568 · <strong>Benchmark:</strong> 🔴 รอ case study จากโรงที่ทำ Network Diagram/DR/security ดี · <strong>Lessons learned +1:</strong> 🔴 รอ รายงานประจำปี ICT 2568 ฉบับเต็ม</td></tr>
+          <tr><td><strong>ข้อ 5</strong></td><td>Pre-flight · <strong>วัน (เสนอ พ.ค. 69 ปลายเดือน) · attendees + reps 15 โรง:</strong> 🔴 รอ ประธานกำหนด</td></tr>
+          <tr><td><strong>ข้อ 6</strong></td><td>17 mini-PDCAs × 7 ขั้น = 119 sub-steps 🟢 · <strong>คกก. ย่อยแต่ละ mini-PDCA:</strong> 🔴 รอ Project Lead 14 activities</td></tr>
+          <tr><td><strong>ข้อ 7-9</strong></td><td>Monitor 3 ครั้ง (ก.ค.·ต.ค.·ม.ค.) · Check 2 ครั้ง (ต.ค.·ก.พ.) · Act 9.1+9.2 🟢 · <strong>Dashboard สำหรับ 7.4:</strong> 🔴 รอ กลุ่ม 1 จัดทำ ICT Dashboard รวมศูนย์</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4.2 -->
+    <div class="plan-focus" style="border-left-color:#c89a3a;">
+      <h4 style="color:#c89a3a;">4.2 · เครือข่ายและอุปกรณ์ เพื่อการเรียนการสอน</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1 ✅ · <strong>อนุกรรมการ 4 (ร่วมกับ 4.1) · Project Lead:</strong> 🔴 รอ แต่งตั้ง (วาระ 5.1)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>ทุกโรงมีอุปกรณ์ Lab · ห้องเรียน · ห้องสมุด เพียงพอ+ตอบโจทย์หลักสูตร · <strong>source (มาตรฐาน EdTech มูลนิธิ):</strong> 🔴 รอ ฝ่ายการศึกษายกร่าง</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>ส่วนของ 4.2 ใน 21 KPI ของกลุ่ม 4 (อุปกรณ์วิชาการ 2 + ภาพรวม 2 + shared กับ 4.1) · เร่ง 4.1 ก่อน · 4.2 ตามหลัง · <strong>baseline+target:</strong> 🔴 รอ สำรวจอุปกรณ์ Lab/ห้องเรียน 15 โรง</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>สำรวจอุปกรณ์ + แผนจัดซื้อตาม curriculum · <strong>responsible · budget · equipment:</strong> 🔴 รอ อนุ 4</td></tr>
+          <tr><td><strong>ข้อ 5-9</strong></td><td>Pre-flight ร่วมฝ่ายวิชาการโรงเรียน · mini-PDCA · Monitor · Check · Act pattern มาตรฐาน 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5.1 -->
+    <div class="plan-focus" style="border-left-color:var(--red-soft);">
+      <h4 style="color:var(--red-soft);">5.1 · บุคลากร ICT (ทีม ICT ส่วนกลาง + ฝ่ายเทคโนฯ 15 โรง)</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1 ✅ · <strong>อนุกรรมการ 5 · Project Lead:</strong> 🔴 รอ แต่งตั้ง (วาระ 5.1)</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>ทีม ICT มีระดับความเชี่ยวชาญ 5 ระดับ + SOP ครบทุกโรง · source: <a href="https://fsgthailand.org/ict-personnel-objectives.html">ict-personnel-objectives.html</a> ✅</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>ส่วนของ 5.1 ใน 15 KPI ของกลุ่ม 5 (5.1 ICT ส่วนกลาง 2 + ICT-โรงเรียน 4 + ฐานราก 2) ✅ · <strong>baseline+target:</strong> 🔴 รอ แบบสำรวจงานเทคโนฯ 2569 (หมวดบุคลากร)</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>ออกแบบ SOP ICT กลาง · Mapping ตำแหน่ง×โมดูล SWIS×Job Spec HRD · <strong>responsible · budget · equipment:</strong> 🔴 รอ อนุ 5 + ฝ่าย HRM</td></tr>
+          <tr><td><strong>ข้อ 5-9</strong></td><td>Pre-flight · mini-PDCA · Monitor · Check · Act 9.1 Feedback HRM ปรับ Job Spec K(B)02-03 · 9.2 ปลายปี pattern มาตรฐาน 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5.2 -->
+    <div class="plan-focus" style="border-left-color:var(--red-soft);">
+      <h4 style="color:var(--red-soft);">5.2 · ผู้ใช้งานทั่วไปในโรงเรียน (ครู · บุคลากรทุกคน)</h4>
+      <table style="font-size:0.82rem;">
+        <tbody>
+          <tr><td style="width:70px;"><strong>ข้อ 1</strong></td><td>ยุทธ์ 3.3.1 ✅ · <strong>อนุกรรมการ 5 (ร่วมกับ 5.1) · Project Lead:</strong> 🔴 รอ แต่งตั้ง</td></tr>
+          <tr><td><strong>ข้อ 2.1</strong></td><td>mandatory 🟢</td></tr>
+          <tr><td><strong>ข้อ 2.2</strong></td><td>ครู/บุคลากรทุกคนใช้ SWIS ได้ตามตำแหน่ง + ผ่านอบรม Security Awareness · source: คู่มือคุณภาพหน่วยงาน + PDPA · <strong>หลักสูตร Security Awareness:</strong> 🔴 รอ จัดทำ</td></tr>
+          <tr><td><strong>ข้อ 3.1</strong></td><td>9 KPIs canonical 🟢</td></tr>
+          <tr><td><strong>ข้อ 3.2</strong></td><td>ส่วนของ 5.2 ใน 15 KPI (ผู้ใช้ SWIS 4 + Security Awareness 1 + ภาพรวม 2) ✅ · <strong>baseline+target:</strong> 🔴 รอ SWIS log stats + post-training survey</td></tr>
+          <tr><td><strong>ข้อ 4</strong></td><td>หลักสูตร Security Awareness + ตารางอบรม SWIS รายโมดูล · <strong>responsible · budget · equipment (LMS · ห้องประชุม):</strong> 🔴 รอ อนุ 5</td></tr>
+          <tr><td><strong>ข้อ 5-9</strong></td><td>Pre-flight · mini-PDCA · Monitor active users post-training · Check · Act pattern มาตรฐาน 🟢</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- กลุ่ม 1 overlay -->
+    <div class="paradigm-callout" style="margin-top:24px;">
+      <h3>1 · บริหารฝ่าย ICT (ร่มใหญ่ · Overlay ครอบทุก sub-group 2–5)</h3>
+      <p>กลุ่ม 1 ทำหน้าที่ <strong>ติดตามและกำกับทุกด้าน</strong> — ไม่ทำแผน PDCA9 ของตัวเอง · มีเป้าหมายคุณภาพ <strong>22 ข้อ</strong> ใน 5 หมวด (วางแผน 4 · กำกับ/นิเทศ 4 · ภาพรวม 3 · นโยบาย/ระเบียบ 8 · ฐานราก 3) · source: <a href="https://fsgthailand.org/ict-admin-objectives.html">ict-admin-objectives.html</a> ✅</p>
+      <ul style="margin:8px 0; font-size:0.9rem;">
+        <li><strong>ภารกิจ 3 ด้าน:</strong> วางแผนและกำหนดทิศทาง · กำกับ ติดตาม นิเทศ · รายงานและเสนอแนะ</li>
+        <li><strong>เครื่องมือกำกับ:</strong> ประชุม คกก. รายเดือน ✅ · เยี่ยมโรงเรียนรายเดือน ✅ · แบบสำรวจงานเทคโนฯ ✅ · <strong>ICT Dashboard รวมศูนย์:</strong> 🔴 รอ พัฒนา (เชื่อม 8 sub-groups)</li>
+        <li><strong>3 เครื่องมือใหม่ที่ต้องสร้าง:</strong> ICT Quality Framework · แบบฟอร์มนิเทศมาตรฐาน · ICT Dashboard — <strong>Project Lead 3 เครื่องมือ:</strong> 🔴 รอ คกก. บริหารฝ่าย (คำสั่ง ICT 2568 9 ท่าน)</li>
+      </ul>
+    </div>
+
+    <p style="font-size:0.84rem;color:var(--text-light);margin-top:14px;">
+      📘 <strong>อ้างอิง:</strong> คู่มือเขียนแผนงาน PDCA 9 ขั้น ฉบับมูลนิธิฯ v2 (1 พ.ค. 69) · Specialty Hub PDCA9_INSPECTOR ยกร่าง template เต็มของ 4.1 (585 บรรทัด) เป็นตัวอย่างแรก · sub-group อื่นขยายตาม pattern เดียวกัน · <em>ที่ประชุม 2 ก.ค. ช่วยกันเติมข้อมูลใน "🔴 รอ [source]" ทั้งหมด</em>
+    </p>
+  </section>
+
+  <!-- ============= SECTION G · วาระ 5.1 มอบหมายงาน · POST-MEETING VERBATIM ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 5.1</span>ตารางมอบหมายงาน สายเทคโนโลยีสารสนเทศและการสื่อสาร</h2>
+
+    <p>ที่ประชุมพิจารณาและมอบหมายผู้รับผิดชอบหลักในแต่ละกลุ่มงาน เพื่อให้การขับเคลื่อนงานเป็นไปตามแผน PDCA และเกิดผลสัมฤทธิ์ที่วัดผลได้ ดังนี้</p>
+
+    <table>
+      <thead>
+        <tr><th>กลุ่มงาน (verbatim)</th><th>ผู้รับผิดชอบหลัก</th><th>คณะทำงาน</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1. การบริหารงาน ICT</strong></td><td>ภราดาศุภนันท์</td><td>ภราดาอภิสิทธิ์ (ทัช)</td></tr>
+        <tr><td><strong>2.1 ระบบสารสนเทศและซอฟต์แวร์ระดับมูลนิธิฯ</strong></td><td>ภราดามานิต</td><td>ภราดากรกวี</td></tr>
+        <tr><td><strong>2.2 ระบบสารสนเทศและซอฟต์แวร์ระดับโรงเรียนในเครือมูลนิธิฯ</strong></td><td>ภราดามานิต</td><td>ภราดากฤษฎา (ทิว)</td></tr>
+        <tr><td><strong>3. สื่อและการสื่อสาร</strong></td><td>ภราดาศราวุธ</td><td>ภราดาภานุวัฒน์ · ภราดาพัชรปกรณ์</td></tr>
+        <tr><td><strong>4. เครือข่ายและอุปกรณ์</strong></td><td>ภราดาอภิสิทธิ์ (ทัช)</td><td>ภราดาธนภูมิ</td></tr>
+        <tr><td><strong>5. การพัฒนาบุคลากรด้าน ICT</strong></td><td>ภราดาอาวุธ</td><td>ภราดาศิริชัย</td></tr>
+      </tbody>
+    </table>
+
+    <div class="paradigm-callout" style="margin-top:16px;">
+      <h3>ทิศทางการดำเนินงานในอนาคตที่ที่ประชุมให้ความเห็นชอบ</h3>
+      <ol style="margin:8px 0; padding-left:24px;">
+        <li><strong>Data Driven Leadership:</strong> ผลักดันการใช้ข้อมูลประกอบการตัดสินใจขององค์กร โดยเชื่อมโยงระบบบัญชีและผลสัมฤทธิ์ทางการเรียนของทุกโรงเรียนในเครือเข้าด้วยกัน</li>
+        <li><strong>การกำหนดมาตรฐาน:</strong> ทุกโรงเรียนต้องจัดทำ "คู่มือคุณภาพ" และกำหนดสเปคการทำงานให้ชัดเจนตามระบบ SWIS เพื่อแก้ปัญหาการทำงานที่ขาดทิศทางร่วมกัน</li>
+        <li><strong>ความเป็นมืออาชีพ:</strong> คณะกรรมการแต่ละกลุ่มงานต้องจัดทำรายงานผลการตรวจสอบการทำงานตามตำแหน่งหน้าที่ พร้อม<strong>แผน PDCA ที่ชัดเจน</strong>ของแต่ละกลุ่มงาน เพื่อให้เกิดการพัฒนาที่วัดผลได้จริง</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============= SECTION H · นัดหมาย · verbatim Minutes ============= -->
+  <section>
+    <h2><span class="agenda-tag">วาระ 6.1</span>นัดหมายการประชุมครั้งถัดไป</h2>
+
+    <p>ที่ประชุมมอบหมายให้แต่ละกลุ่มงานเตรียมแผนปฏิบัติการ (Action Plan) ของตนเพื่อนำเสนอในการประชุมครั้งถัดไป โดยจะมีการนัดหมายวัน เวลา และสถานที่ประชุมอย่างเป็นทางการอีกครั้ง</p>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer class="footer-card">
+    <h3>แหล่งอ้างอิง</h3>
+    <p>• หนังสือเชิญประชุม ที่ สทส. 001/2569 ลงวันที่ 25 มิถุนายน 2569<br>
+    • คำสั่งฝ่ายฯ 2568 · ประกาศแต่งตั้งคณะกรรมการฝ่าย 17 พฤษภาคม 2569<br>
+    • มติ Provincial Council ครั้งที่ 9/2568 ลงวันที่ 10 มีนาคม 2569 (รวม ICT–HRM)<br>
+    • แผนยุทธศาสตร์ 6 ปี มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ยุทธศาสตร์ที่ 3<br>
+    • คู่มือคุณภาพหน่วยงาน · คู่มือธรรมาภิบาล 2568<br>
+    • เอกสารวัตถุประสงค์รายกลุ่มงาน (fsgthailand.org) · แบบสำรวจงานเทคโนโลยีสารสนเทศ 2568<br>
+    • รายงานฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร ปีการศึกษา 2568 · ตารางตรวจติดตาม SWIS<br>• รายงานการประชุมคณะกรรมการฝ่ายฯ ครั้งที่ 1/2569 · 2 กรกฎาคม 2569<br>• รายงานการดำเนินงานของทีมงาน SWIS เดือนมิถุนายน 2569<br>• แผนงาน PDCA 9 ขั้น รายกลุ่มงาน สาย ICT · ปีการศึกษา 2569</p>
+    <p class="credit">ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์ · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  </footer>
+
+</div>
+</body>
+</html>

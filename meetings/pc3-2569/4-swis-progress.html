@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<script>
+  (function(){
+    var TOKEN_KEY = "fsg_pc3_2569_token";
+    var EXPECTED_HASH = "19b1ae6cf8ef010442534934ec62670e45df34d70538821ecbd443d79e0aa8c0";
+    if (sessionStorage.getItem(TOKEN_KEY) !== EXPECTED_HASH) {
+      window.location.replace("index.html");
+    }
+  })();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รายงานความคืบหน้าระบบ SWIS · บริษัท SWIS Plus | ปีการศึกษา 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#1a2f5a; --gold:#b8860b; --red:#c0392b; --redbg:#fdeaea; --green:#1e7d46; --greenbg:#e9f7ef; --amber:#9a6700; --amberbg:#fff8e1; --line:#d9dee8; --soft:#f4f6fa; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Sarabun',sans-serif; color:#222; line-height:1.55; background:#fff; max-width:1080px; margin:0 auto; padding:32px 40px;}
+  header{text-align:center; border-bottom:3px double var(--navy); padding-bottom:18px; margin-bottom:22px;}
+  header .org{color:var(--gold); font-weight:600; letter-spacing:1px; font-size:.9rem;}
+  header h1{color:var(--navy); font-size:1.5rem; margin:6px 0 2px;}
+  header .present-to{font-weight:600; font-size:1.05rem;}
+  header .meta{color:#555; font-size:.9rem; margin-top:6px;}
+  h2{color:var(--navy); font-size:1.15rem; border-left:6px solid var(--gold); padding-left:10px; margin:30px 0 10px;}
+  h3{color:var(--navy); font-size:1rem; margin:18px 0 6px;}
+  table{width:100%; border-collapse:collapse; font-size:.86rem; margin:8px 0 4px;}
+  th{background:var(--navy); color:#fff; padding:7px 8px; text-align:left; font-weight:600;}
+  td{border:1px solid var(--line); padding:6px 8px; vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .pct{text-align:center; font-weight:600; white-space:nowrap;}
+  .ok{color:var(--green); font-weight:600;}
+  .okbg td{background:var(--greenbg)!important;}
+  .partial{color:var(--amber); font-weight:600;}
+  .red, .need-update{color:var(--red); font-weight:600;}
+  td.need-update, .need-update td{background:var(--redbg)!important;}
+  .tag-red{display:inline-block; background:var(--red); color:#fff; border-radius:4px; padding:0 6px; font-size:.75rem; font-weight:600; margin-right:4px;}
+  .tag-green{display:inline-block; background:var(--green); color:#fff; border-radius:4px; padding:0 6px; font-size:.75rem; font-weight:600; margin-right:4px;}
+  .legend{background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:10px 14px; font-size:.88rem; margin-bottom:6px;}
+  .note{font-size:.8rem; color:#555; margin:4px 0 0;}
+  a{color:var(--navy);}
+  .ask-box{background:var(--redbg); border:2px solid var(--red); border-radius:10px; padding:16px 20px; margin-top:14px;}
+  .ask-box h3{color:var(--red); margin-top:0;}
+  .ask-box ol{margin-left:20px;}
+  .ask-box li{margin-bottom:5px;}
+  .draft{background:#fff; border:1px dashed var(--red); border-radius:8px; padding:12px 14px; margin-top:10px; font-size:.9rem; white-space:pre-line;}
+  footer{margin-top:34px; border-top:2px solid var(--navy); padding-top:10px; font-size:.8rem; color:#555;}
+  @media print{ body{padding:10mm;} .ask-box{page-break-inside:avoid;} h2{page-break-after:avoid;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="org">LABOR OMNIA VINCIT · วิริยะ อุตสาหะ นำมาซึ่งความสำเร็จ</div>
+  <h1>รายงานความคืบหน้าการพัฒนาและการปรับใช้ระบบ SWIS</h1>
+  <div class="present-to">นำเสนอที่ประชุม <span class="red">[ระบุชื่อที่ประชุม/วันที่ประชุม]</span></div>
+  <div class="meta">จัดทำโดย บริษัท SWIS Plus จำกัด · ข้อมูล ณ วันที่ 7 มิถุนายน พ.ศ. 2569 (ปีการศึกษา 2569)</div>
+</header>
+
+<div class="legend">
+  <span class="tag-green">ล่าสุด</span> ข้อมูล verify แล้วจาก source ปัจจุบัน &nbsp;·&nbsp;
+  <span class="tag-red">รออัพเดท</span> <span class="red">ข้อมูลยังไม่ล่าสุด/ยังขาด — รวบรวมคำถามไว้ส่วนที่ ๔ เพื่อส่งขออัพเดทจากเหมย (เลขางาน SWIS)</span>
+  <div class="note">ฐานตัวเลข canonical: SWIS <b>27 โมดูล · 220 ฟังก์ชัน</b> (ฐานตรวจติดตามปี 2568 · ยังไม่รวมโมดูลห้องสมุด + บัตร RFID 3 ฟังก์ชัน = อย่างน้อย 223 · รอนับรวมใหม่กับทีม)</div>
+</div>
+
+<!-- ═══════════ ส่วนที่ 1 ═══════════ -->
+<h2>ส่วนที่ ๑ · ความคืบหน้าโปรแกรมและทีมพัฒนา (เพิ่มฟังก์ชั่น / แก้บัก รายโมดูล)</h2>
+<p class="note"><span class="tag-green">ล่าสุด</span> ข้อมูลจริงจาก Bitbucket Repository <b>swiscenter/admin</b> · ช่วง <b>10 พ.ค. – 6 มิ.ย. 2569</b> · ผู้ส่งงาน 6 คน · รวม <b>170 commits</b></p>
+
+<h3>1.1 สรุปจำนวน Commits รายคน (10 พ.ค. – 6 มิ.ย. 69)</h3>
+<table>
+  <tr><th style="width:26%">ผู้ส่งงาน</th><th style="width:12%">Commits</th><th>ลักษณะงานเด่นในรอบนี้ (สรุปจาก commit log)</th></tr>
+  <tr><td><b>KRC Toon PRO Tor</b> <span class="red">(ขอชื่อจริง-นามสกุล)</span></td><td class="pct"><b>85</b></td><td>กว้างสุด: แผนงาน/โครงการ (คัดลอกแผน · กระดิ่งแจ้งเตือนอนุมัติ) · รับสมัคร นร ออนไลน์ (ACP/MCP/MCS/SJ) · ห้องพยาบาล+แจ้งเตือนผู้บริหาร · ขอใช้บริการหน่วยงาน v2 · คำสั่งแต่งตั้ง · เงินเดือน · ปฏิทิน/ตรวจเวร · ข้อมูล นร รายบุคคล/โอนข้อมูล</td></tr>
+  <tr><td>banjong piyostip (บรรจง ปิยศทิพย์ · MCP)</td><td class="pct">25</td><td>Confirm loop ยืนยันข้อมูล (โครงสร้าง รร · บุคลากร · ตำแหน่ง · คู่มือคุณภาพ · สเปก) · e-office (+เชื่อม fsg · mcp server) · ACEP pickup · RFID scan · ระบบหลังบ้าน (session · cache · redis · log เปลี่ยนรหัสผ่าน)</td></tr>
+  <tr><td>ดนุพร เห็นพร้อม</td><td class="pct">24</td><td>โมดูลเก่า: คอร์สพิเศษ (สถานะชำระ/limit/ยกเลิก/จัดห้อง) · ฟอร์ม ปพ7 SJ ไทย-Eng · ใบสำคัญ/เงินอุดหนุน PDF + รันเลขที่เอกสารรายปี · ยืม-คืนหนังสือ (+ปุ่มแลกรางวัล)</td></tr>
+  <tr><td>Nuttanun Supava <span class="red">(ขอชื่อไทย)</span></td><td class="pct">20</td><td>โมดูลเก่า: เช็กชื่อ/รายงานสถิติการมาเรียนรายคาบ (%) · ปริ้นบัตร SJ/ACEP · ระบบสแกนบัตร (เพิ่ม imppc · impps) · รายงาน ACL · แก้บักใบบุญ (biboon)</td></tr>
+  <tr><td>Songkan Kuangkam (ม.สงกรานต์ กวงคำ)</td><td class="pct">9</td><td>โอนข้อมูลนักเรียนใหม่ + รายงานสรุปการโอน · กำหนดวันเปิด-ปิดภาคเรียนแบบละเอียด</td></tr>
+  <tr><td>Patiwat Sanchirang <span class="red">(ขอชื่อไทย)</span></td><td class="pct">7</td><td>Minimart (dashboard · ใบเสร็จรายสาขา · ยอดขาย) · เช็คชื่อแสดงรูปเด็ก (SJ/MCS) · แก้บักสำเนาใบเสร็จ</td></tr>
+  <tr><td><b>รวม</b></td><td class="pct"><b>170</b></td><td>—</td></tr>
+</table>
+<p class="note"><span class="red">ที่ยังขาด: % ความคืบหน้ารายโมดูล/รายฟังก์ชัน (commit log บอก "ทำอะไร" แต่ไม่บอก "เหลือเท่าไร") — รอเหมย</span></p>
+
+<details style="margin:8px 0; font-size:.85rem;">
+<summary style="cursor:pointer; font-weight:600; color:var(--navy);">📋 ภาคผนวก — รายละเอียด Commits รายวัน 10 พ.ค. – 6 มิ.ย. 2569 (กดเพื่อขยาย)</summary>
+<div style="padding:10px 14px; border:1px solid var(--line); border-radius:8px; margin-top:6px;">
+<p><b>10 พ.ค. 69</b> — banjong: เพิ่ม script confirm loop · แก้ e-office แสดงข้อความจาก fsg | Nuttanun: แก้ script โมดูลเก่า เพิ่ม imppc, impps ระบบสแกนบัตร</p>
+<p><b>11 พ.ค. 69</b> — banjong: script ยืนยันโครงสร้างโรงเรียน · แก้ดึงรายชื่อภราดา · เพิ่ม session/แก้อัพโหลดไฟล์ | Toon: แก้แสดงประเภทนักเรียน · เพิ่มดึงวุฒิการศึกษาผู้ปกครอง</p>
+<p><b>15 พ.ค. 69</b> — Toon: ตัวเลือกวันที่หน้าตรวจเวร · ฟิกเลือกไฟล์ 1 ไฟล์หน้าโปรไฟล์บุคลากร · ปรับตัวเลือก advance นักเรียน + loading · ปุ่มแจ้งเพื่อทราบ/ฉุกเฉิน แจ้งเตือนหัวหน้าฝ่าย+หัวหน้าระดับชั้น (ห้องพยาบาล) | ดนุพร: แก้ฟอร์มรายงานสรุปข้อมูลนักเรียนรายบุคคล | Patiwat: หน้าเช็คชื่อ sj/mcs แสดงรูปเด็ก</p>
+<p><b>16 พ.ค. 69</b> — banjong: ยืนยันข้อมูลบุคลากร · แก้พิมพ์ pdf · confirm_loop ยืนยันตำแหน่งตนเอง | Toon: แก้หน้ากำหนดคณะกรรมการ (เข้ารหัสพารามิเตอร์) · หน้าขาว acep บันทึกข้อมูล พฐ นร</p>
+<p><b>18 พ.ค. 69</b> — Toon (13 รายการ): จัดกลุ่มปฏิทินแบบใหม่ · ปรับวันที่ตรวจเวร · บันทึกส่งต่อขอใช้บริการ · จัดการสาระน่ารู้ใหม่ · export ข้อมูล นร · เก็บ log ลบกำหนดการ · ปรับรายงาน · ดึงเฉพาะบุคลากรยกเว้นพนักงาน · where deleted แผนงาน · sql ประวัติแก้สถานะการเรียน · วันที่ในช่วงปีการศึกษา · ข้อความแผนงานถูกลบ | banjong: แก้ดึงเช็คชื่อนักเรียน | Nuttanun: เพิ่มปริ้นบัตร SJ</p>
+<p><b>19 พ.ค. 69</b> — Toon (9): ตัวอัปเดทรายการขอใช้บริการ · acp แจ้งเตือนผู้บริหารห้องพยาบาล · ตัวเลือกประเภทแบบสอบถามในแผนงาน · คัดลอกกำหนดการเฉพาะที่แสดงปฏิทิน · ดึงหัวหน้าฝ่ายแจ้งเตือนพยาบาล · ชื่อเล่น eng โอนข้อมูล นร · ibs ดีฟอลต์แจ้งผู้บริหาร · คำนำหน้า eng หน้า export · กระดิ่งแจ้งเตือนขอใช้บริการ | ดนุพร: ปุ่มรายละเอียดรหัสอ้างอิง · เช็ค limit นักเรียนคอร์สพิเศษ</p>
+<p><b>20 พ.ค. 69</b> — Toon (10): ปรับหน้าแผนงาน · ตรวจจับตำแหน่ง safari · mcs ฟอร์มสมัครย่อ 1 แผนการเรียน · โอนอีเมล์ นร ใหม่ · อัปโหลดสลิปค่าสมัคร sj · เงินเดือนโชว์ตามสถานะ · โรคประจำตัวเบื้องต้น · ป้องกันกดปุ่มซ้ำ · แก้ระบบสับเปลี่ยนเวร | banjong: ยืนยันข้อมูลตนเอง+ลิงก์คู่มือคุณภาพ · acep pickup · ลิงก์ดูรหัส | ดนุพร: ฟอร์มรายงานคอร์สพิเศษ · ปพ7 SJ ไทย-eng | Songkan: แก้โอนนักเรียนใหม่ | Patiwat: แก้บัคสำเนาใบเสร็จ</p>
+<p><b>21 พ.ค. 69</b> — Toon: รูปประจำตัว นร รายบุคคล · ดึงกำหนดการหน้าตรวจติดตาม · ตัวอย่างฟิลรหัสประเภท นร | Songkan: default วันที่เข้าเรียน · รายงานสรุปโอนข้อมูล นร + ฟิลเตอร์วันที่ | Nuttanun: รายงานกิจกรรมพิเศษ | ดนุพร: คอลัมน์สถานะชำระเงินจัดห้องคอร์สพิเศษ | banjong: ยืนยันคู่มือคุณภาพ · query db · นักเรียนในความรับผิดชอบ</p>
+<p><b>22 พ.ค. 69</b> — Toon (5): เลขที่สมัครเรียน acp · คิวรี่แผนงาน · ชื่อเล่น นร · ปุ่มเปลี่ยนขั้นตอนคำสั่งแต่งตั้ง · ตัวอย่างนำเข้าเงินเดือนแนวตั้ง | Nuttanun (5): "เช็คชื่อ"→"เช็กชื่อ" · แก้ import subject · ปริ้น ACEP · เอาคำนำหน้าออกตอนปริ้นบัตร · คืนคอร์สพิเศษตามวันที่ลง | ดนุพร: ปิด auto script ดีดนักเรียนออกห้อง</p>
+<p><b>25 พ.ค. 69</b> — ดนุพร: แก้ syntax error | Toon (5): ตัวเลือกปีการศึกษาขอใช้บริการ · ข้อความ mcp รับสมัครออนไลน์ · sql แปลภาษาสถานะสมัคร mcp · คลังสินค้าเบเกอรี่ · คัดลอก id_product แผนงาน | banjong: redirect คิวส่งนักเรียน acep · clear cache | Nuttanun: แก้ให้ SJ | Songkan: แก้คำ · เพิ่มเคส act</p>
+<p><b>26 พ.ค. 69</b> — Toon (4): รันไอดี acp รับสมัคร · เรียงเลขที่ นร ตามรหัส · กำหนดการปฐมนิเทศ acp · เจนรอบสอบ auto mcp | ดนุพร: ปพ7 sj | banjong: แก้เรียก noti · ดึงบุคลากรโครงสร้าง 3 ชั้น</p>
+<p><b>27 พ.ค. 69</b> — Toon (4): หัวข้อประเภท/กลุ่มงานวิจัย · ปพ7 slc · ปุ่มพิมพ์เงื่อนไขเช่ารถ (ขอบริการรถ v2) · ย้ายห้องเรียน | Patiwat (3): ชื่อสาขาใบเสร็จ minimart · dashboard minimart · สาขายอดขายน้อยสุด | ดนุพร: ปพ7 sj | banjong: ยืนยันสเปก · บันทึกนักเรียนสาย</p>
+<p><b>28 พ.ค. 69</b> — Toon (4): คัดลอกแผน/โครงการ · แผนงานแสดงหน่วยงาน · โอนข้อมูล · select2 | Nuttanun (3): รายงานเช็คชื่อแบบเลือกวันแยกชั้น · คืนทั้งเดือนกรณีลงทะเบียนเดือนผิด · แก้วันหยุด | Patiwat (2): minimart ปิด debug/แก้ dpk · page_menu dashboard | banjong: แก้ส่วนลด</p>
+<p><b>29 พ.ค. 69</b> — Songkan: กำหนดวันเปิดปิดภาคเรียนละเอียด | Toon: คอลัมน์สถานที่+เวลา ขอใช้บริการ (ทุก รร)</p>
+<p><b>1 มิ.ย. 69</b> — banjong (4): ยืนยันข้อมูล · mcp server eoffice · rfid scan · ลบ alert</p>
+<p><b>2 มิ.ย. 69</b> — Toon: แท็บ พฐ ข้อมูล นร · กระดิ่งแจ้งเตือนอนุมัติแผนงาน | Nuttanun: แก้วิชาคาบ 0</p>
+<p><b>4 มิ.ย. 69</b> — ดนุพร (5): เลขที่เอกสารรายปี · ปุ่ม set วันที่วันนี้คอร์สพิเศษ · พิมพ์ใบสำคัญทีละใบ · กรอง นร ไม่ได้รับเงินอุดหนุน+รันเลขใบสำคัญ · สถานะรอตรวจสอบคอร์สพิเศษ | Toon (4): หน้ารายการขอใช้บริการ · แท็บบุคลากรยังไม่ระบุกลุ่ม · ลดขนาดลายเซ็น ผอ คำสั่งแต่งตั้ง · ฟังก์ชั่นไม่คิดค่าบริการขอเอกสารออนไลน์ | Nuttanun (3): รายงานสถิติเรียนรายคาบ · % การมาเรียนรายคาบ · ยอดเงินในบัญชี | banjong: call db/cache/redis · log เปลี่ยนรหัสผ่าน</p>
+<p><b>5 มิ.ย. 69</b> — Toon (8): หน้าสร้างคำสั่งแต่งตั้ง · ชื่อหน้าพิมพ์ออเดอร์อาหาร mcp · ลิงก์เงินเดือนพนักงาน · sj ซ่อนเลขบัญชี · คิวรี่หน้าเขียนโครงการ · อนุญาตขอดูพฤติกรรม · กระดิ่งแจ้งเตือนรายงานอบรม/สัมมนา · สถานะส่งงานวิจัย | ดนุพร (8): ปุ่มแลกรางวัลยืม-คืนหนังสือ · ยกเลิกค้างจ่ายจัดห้องแล้ว · ช่องลายมือผู้รับเงิน · sql รายงาน · ฟอร์มใบสำคัญอุดหนุน PDF · คอลัมน์คอร์สพิเศษ | Songkan: ชื่อชั้นย่อ · โค้ดแผน→ชื่อแผน</p>
+<p><b>6 มิ.ย. 69</b> — Nuttanun (3): ACL เพิ่มหมายเหตุในรายงาน + excel · biboon เรียงเลขห้องผิด</p>
+</div>
+</details>
+
+<h3>1.2 ความคืบหน้ารายโมดูล (% · รออัพเดท)</h3>
+
+<table>
+  <tr><th style="width:18%">โมดูล</th><th style="width:22%">งานรอบนี้ (เพิ่มฟังก์ชั่น / แก้บัก)</th><th style="width:14%">ผู้รับผิดชอบ</th><th style="width:10%">ความคืบหน้า (%)</th><th>หมายเหตุ</th></tr>
+  <tr><td>ระบบงบประมาณ / แผนงาน-โครงการ</td><td class="need-update">รออัพเดท</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">ACEP รอลงแผนงาน/โครงการ 2569 เพื่อปลดล็อค (จากรายงาน ACEP 4 มิ.ย. 69)</td></tr>
+  <tr><td>Face Scan</td><td class="need-update">รออัพเดท — ส่วนกลางนัดรีโมทระบบที่ ACEP</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">เชื่อมระบบเดิมกับ SWIS แล้ว เหลือลงทะเบียนใบหน้า+ทดสอบ (ACEP 4 มิ.ย. 69)</td></tr>
+  <tr><td>บัตร RFID</td><td class="need-update">รออัพเดท</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">3 ฟังก์ชัน (ลงทะเบียน/พิมพ์บัตร/ค่าปรับ) · ยังไม่รวมในฐาน 220</td></tr>
+  <tr><td>การเงินบัญชี / E-payment / Kpayment</td><td class="need-update">รออัพเดท</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">ACEP กำลังสมัคร Kpayment (ประสานภราดาณัฐธร)</td></tr>
+  <tr><td>SWIS Canteen / มินิมาร์ท / คาเฟ่</td><td class="need-update">รออัพเดท</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">ตั้งค่าร้าน+เมนูแล้ว รอ RFID ครบจึงเปิดใช้จริง</td></tr>
+  <tr><td>ระบบห้องสมุด</td><td class="need-update">รออัพเดท</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">พัฒนาเสร็จปี 68 · ยังไม่รวมในฐาน 220 · ยังไม่เข้ารอบตรวจ</td></tr>
+  <tr><td>โมดูลจัดซื้อ (Procurement workflow + 3 ใบเสนอราคา + audit trail)</td><td class="need-update">งานใหม่ — รอ spec จากฝ่าย ICT มูลนิธิฯ ก่อนเริ่มพัฒนา</td><td class="need-update">รอมอบหมาย</td><td class="pct need-update">0</td><td>test case แรก = ACEP · อยู่ระหว่างพิจารณาขอบเขตสัญญา (school-level = สัญญาเดิม 2.2)</td></tr>
+  <tr><td>โมดูลอื่น ๆ (รวม 27 โมดูล)</td><td class="need-update">รออัพเดทรายการเพิ่มฟังก์ชั่น/แก้บัก รอบ มี.ค.–มิ.ย. 69</td><td class="need-update">รออัพเดท</td><td class="pct need-update">—</td><td class="need-update">ขอตารางรายฟังก์ชันฉบับปัจจุบันจากทีม</td></tr>
+</table>
+
+<h3>1.3 ทีมงานนอกเหนือจาก commit log (รอยืนยันบทบาทปัจจุบัน)</h3>
+<table>
+  <tr><th style="width:30%">ทีมงาน</th><th>สถานะข้อมูล</th></tr>
+  <tr><td>ธนาวุธ ตอรบรัมย์ (SL)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ไม่ปรากฏใน commits repo admin รอบนี้ — ทำ repo อื่น/งานอื่น?</td></tr>
+  <tr><td>เหมย · จิราพร ซื่อธนานุวงศ์ (เลขางาน SWIS)</td><td>ประสานงาน/เลขางาน SWIS</td></tr>
+  <tr><td>แชมป์ · ณัจฉรียา คณิสาร (เลขางาน SWIS)</td><td>ประสานงาน/เลขางาน SWIS</td></tr>
+  <tr><td class="need-update">ทีมร่วมพัฒนาจากโรงเรียนในเครือฯ (ม.รังสรรค์ MC · ม.เฉลิมพล ACSP)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ยังร่วมงานอยู่หรือไม่ · ทำส่วนไหน</td></tr>
+</table>
+
+<!-- ═══════════ ส่วนที่ 2 ═══════════ -->
+<h2>ส่วนที่ ๒ · การตรวจติดตามการปรับใช้ (Implement) — โรงเรียนในเครือมูลนิธิฯ 15 โรง</h2>
+<p class="note">รอบตรวจติดตามล่าสุดที่มีหลักฐาน = รอบปีการศึกษา 2568 (ก.ค.–ก.ย. 2568) · <span class="red">ปีการศึกษา 2569 ยังไม่มีรอบตรวจ/ยังไม่มีรายงานรายโรง — รออัพเดทแผนรอบตรวจ + ผลรายโรงจากเหมย</span></p>
+
+<table>
+  <tr><th style="width:6%">โรง</th><th style="width:22%">ตรวจติดตามครั้งล่าสุด (มีหลักฐาน)</th><th style="width:36%">สถานะ / สิ่งที่ต้องติดตาม ปี 2569</th><th>เอกสารอ้างอิง</th></tr>
+  <tr><td>AC</td><td>รอบปี 2568 (อัลบั้ม id 504)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=121sIVP1tDJfr17565357402758">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACP</td><td class="need-update">ไม่พบรายงานรอบ 2568</td><td class="need-update"><span class="tag-red">รออัพเดท</span> สถานะ + กำหนดรอบตรวจ</td><td>—</td></tr>
+  <tr><td>ACS</td><td>09–10/09/2568 (อัลบั้ม id 519)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=1344RhgvMdK1b17589663811494">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACT</td><td>26–27/08/2568 (อัลบั้ม id 518)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=127dkZKgkgCL21756535778408">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACR</td><td>29–30/07/2568 (อัลบั้ม id 516)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=1240ESa69gEsg17565357661371">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACN</td><td>08–09/07/2568 (อัลบั้ม id 510)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=122l8Sws7Qdnv17565357548955">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACSP</td><td>15–16/07/2568 (อัลบั้ม id 515)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=123HDOnm9aChC17565357608572">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACL</td><td>22–23/09/2568 (อัลบั้ม id 522)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=136CJneD7ObmZ17589663934520">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ACU</td><td class="need-update">ไม่พบรายงานรอบ 2568</td><td class="need-update"><span class="tag-red">รออัพเดท</span> สถานะ + กำหนดรอบตรวจ</td><td>—</td></tr>
+  <tr><td>ACC</td><td class="need-update">ไม่พบรายงานรอบ 2568</td><td class="need-update"><span class="tag-red">รออัพเดท</span> สถานะ + กำหนดรอบตรวจ</td><td>—</td></tr>
+  <tr><td>SG</td><td>14–15/08/2568 (อัลบั้ม id 517)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=126St6tZfie5H17565357733703">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>SLC</td><td class="need-update">ไม่พบรายงานรอบ 2568</td><td class="need-update"><span class="tag-red">รออัพเดท</span> สถานะ + กำหนดรอบตรวจ</td><td>—</td></tr>
+  <tr><td>MC (MCS)</td><td>15–16/09/2568 (อัลบั้ม id 520)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=1344RhgvMdK1b17589663811494">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>MCP</td><td>18–19/09/2568 (อัลบั้ม id 521)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=138IyEXzZDhmV1758966893381">สรุปผลตรวจ 2568</a></td></tr>
+  <tr><td>ATSN</td><td>01–02/07/2568 (อัลบั้ม id 506)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> ผลรายโมดูลปี 2569</td><td><a href="https://www.thaibrothers.net/lib/databank.php?id=128LKUa72i6mh17565460012297">สรุปผลตรวจ 2568</a></td></tr>
+</table>
+<p class="note">ภาพรวมรอบ 2568: <a href="https://www.thaibrothers.net/lib/databank.php?id=146b68iqU4BVH17618277634289">รายงานสรุปผลตรวจติดตามการปรับใช้ระบบ SWIS Plus โรงเรียนในเครือฯ ปีการศึกษา 2568</a> · เครื่องมือติดตามรายโมดูล: <a href="https://docs.google.com/spreadsheets/d/1_61_HD1T9nUDy1n339xTh87mRszrDCTnzH_Xbt5utzY/edit">รายงานสารสนเทศตรวจติดตาม SWIS 2569</a></p>
+
+<h3><span class="tag-green">ล่าสุด</span> ACEP — รายงานการใช้งานรายโมดูล (ทีม SWIS · 4 มิ.ย. 2569)</h3>
+<table>
+  <tr><th style="width:34%">โมดูล / ฟังก์ชัน</th><th style="width:16%">สถานะ</th><th>สิ่งที่ต้องติดตาม</th></tr>
+  <tr class="okbg"><td>ข้อมูลพื้นฐาน (นักเรียน ครู โรงเรียน) · Mobile App 4 ตัว · SWIS Logistic Assistant · ระบบเงินเดือน</td><td class="ok">ใช้งาน 100% (4 โมดูล)</td><td>ข้อมูลพื้นฐานยังไม่ครบถ้วนสมบูรณ์ — เติมต่อเนื่อง</td></tr>
+  <tr><td>บัตร RFID · การเงินและบัญชี</td><td class="partial">บางส่วน 75% (2 โมดูล)</td><td>ลงทะเบียนบัตร RFID นักเรียน · สมัคร Kpayment เปิด E-payment</td></tr>
+  <tr><td>วิชาการวัดผล (55%) · จัดการเรียนการสอน (40%) · Canteen (35%) · E-Office (30%)</td><td class="partial">บางส่วน 55–30% (4–5 โมดูล)</td><td>โครงสร้างคะแนนวัดผล · เช็ครายคาบ+การบ้านออนไลน์ · เปิด Canteen หลัง RFID ครบ · ขยาย E-Office เกินหนังสือเข้า/ประกาศ</td></tr>
+  <tr><td>งบประมาณ · Face Scan · พฤติกรรม นร. · ห้องพยาบาล · รับสมัคร · สินทรัพย์ · บริการหน่วยงาน · ประกันคุณภาพ · Pushing Knowledge · สื่อสารมวลชน · วิจัย · ห้องสมุด · ขาดลามาสายครู ฯลฯ</td><td class="red">ยังไม่ใช้งาน (16 โมดูล)</td><td>ลงแผนงาน/โครงการ 2569 ปลดล็อคงบประมาณ+ประกันคุณภาพ · ลงทะเบียนใบหน้า Face Scan · เริ่มบันทึกพฤติกรรม+ห้องพยาบาล</td></tr>
+</table>
+<p class="note">ที่มา: <a href="https://drive.google.com/file/d/1SkeLWz5EspHhI9Xd2N-WGfOLuv3q73Lm/view">รายงานการใช้งานระบบ SWIS ACEP.pdf (4 มิ.ย. 69)</a> — โรงอื่นอีก 14 โรง <span class="red">ขอรายงานรูปแบบเดียวกันนี้จากเหมย</span></p>
+
+<!-- ═══════════ ส่วนที่ 3 ═══════════ -->
+<h2>ส่วนที่ ๓ · ลูกค้าโรงเรียนนอกเครือฯ (Commercial)</h2>
+
+<table>
+  <tr><th style="width:4%">#</th><th style="width:28%">โรงเรียน</th><th style="width:14%">ใช้งานปีที่</th><th style="width:24%">สถานะ Implement ปัจจุบัน</th><th>สิ่งที่ต้องติดตาม</th></tr>
+  <tr><td>1</td><td>เรยีนาเชลี (เชียงใหม่)</td><td>ปีที่ 5 ← นานสุด</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">โมดูลที่ใช้/ปัญหาค้าง · เหมาะทำ case study พิสูจน์ value</td></tr>
+  <tr><td>2</td><td>มาลาสวรรค์พิทยา</td><td>ปีที่ 4</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">โมดูลที่ใช้/ปัญหาค้าง · case study ตัวที่ 2</td></tr>
+  <tr><td>3</td><td>เด่นหล้า พระราม 5</td><td>ปีที่ 3</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>4</td><td>เด่นหล้า เพชรเกษม</td><td>ปีที่ 2</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>5</td><td>ใบบุญ ลำพูน</td><td>ปีที่ 3</td><td><span class="tag-green">active</span> มีงานแก้บักล่าสุด 6 มิ.ย. 69 (biboon · เรียงเลขห้อง)</td><td class="need-update">ภาพรวมโมดูลที่ใช้ — รออัพเดท</td></tr>
+  <tr><td>6</td><td>นุชนาถอนุสรณ์ เชียงราย</td><td class="need-update">รอยืนยัน</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>7</td><td>อิมพีเรียล พิจิตร</td><td class="need-update">รอยืนยัน</td><td>มีงานเพิ่มระบบสแกนบัตร 10 พ.ค. 69 (รหัส imppc <span class="red">— รอยืนยันว่าคือโรงนี้</span>)</td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>8</td><td>อิมพีเรียล พิษณุโลก</td><td class="need-update">รอยืนยัน</td><td>มีงานเพิ่มระบบสแกนบัตร 10 พ.ค. 69 (รหัส impps <span class="red">— รอยืนยันว่าคือโรงนี้</span>)</td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>9</td><td>สารสิทธิ์พิทยา</td><td class="need-update">รอยืนยัน</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">รออัพเดท</td></tr>
+  <tr><td>10</td><td>เอกบรูพา</td><td class="need-update">รอยืนยัน</td><td class="need-update"><span class="tag-red">รออัพเดท</span></td><td class="need-update">รออัพเดท</td></tr>
+</table>
+
+<h3>Pipeline</h3>
+<table>
+  <tr><th style="width:32%">รายการ</th><th style="width:28%">สถานะ</th><th>สิ่งที่ต้องติดตาม</th></tr>
+  <tr><td>LCT — คณะภคิณีรักกางเขนแห่งท่าแร่ (5 โรง: SMP/SJN/NRW/MPK/MPS)</td><td>เริ่มงาน 20 เม.ย. 69 · priority รอง (งานมูลนิธิฯ มาก่อน)</td><td class="need-update"><span class="tag-red">รออัพเดท</span> รอข้อมูลโรงเรียน/โครงสร้าง/บุคลากรจากคณะฯ · ความคืบหน้า implement</td></tr>
+  <tr><td>IBM × St.Gabriel (ผ่านคุณอโณทัย)</td><td>MOU + AI projects pipeline</td><td class="need-update"><span class="tag-red">รออัพเดท</span> สถานะ MOU ปัจจุบัน</td></tr>
+</table>
+
+<!-- ═══════════ ส่วนที่ 4 ═══════════ -->
+<div class="ask-box">
+  <h3>ส่วนที่ ๔ · 🔴 รายการข้อมูลที่ต้องขออัพเดทจากเหมย (ก่อนใช้รายงานนี้นำเสนอ)</h3>
+  <ol>
+    <li><b>% ความคืบหน้ารายโมดูล/รายฟังก์ชัน</b> — ได้ commit log 10 พ.ค.–6 มิ.ย. แล้ว ✅ · เหลือตัวเลข % คงค้างรายโมดูล (เหลือเท่าไร · ติดอะไร)</li>
+    <li><b>ชื่อจริง-นามสกุลไทยของทีม:</b> KRC Toon PRO Tor · Nuttanun Supava · Patiwat Sanchirang + บทบาทธนาวุธ (ไม่ปรากฏใน repo admin รอบนี้) + สถานะทีมร่วมพัฒนาในเครือ (ม.รังสรรค์ MC · ม.เฉลิมพล ACSP)</li>
+    <li><b>แผนรอบตรวจติดตาม 15 โรงในเครือ ปีการศึกษา 2569</b> + ผลตรวจรายโมดูลรายโรง (ถ้าเริ่มแล้ว) — รอบล่าสุดที่มีหลักฐานคือ ก.ค.–ก.ย. 2568 · และยืนยันสถานะ ACP/ACU/ACC/SLC ที่ไม่พบรายงานรอบ 2568</li>
+    <li><b>รายงานการใช้งานรายโมดูลของโรงในเครืออีก 14 โรง</b> รูปแบบเดียวกับรายงาน ACEP (4 มิ.ย. 69)</li>
+    <li><b>สถานะ implement ลูกค้านอกเครือ 10 โรง</b> (โมดูลที่ใช้ · ปัญหาค้าง · สิ่งที่ต้องติดตาม) + ยืนยันปีที่ใช้งานของโรงที่ 6–10 (นุชนาถ · อิมพีเรียล ×2 · สารสิทธิ์ · เอกบรูพา)</li>
+    <li><b>ความคืบหน้า LCT 5 โรง + สถานะ IBM MOU</b></li>
+    <li><b>ยอดฟังก์ชันรวมใหม่</b> (220 + ห้องสมุด + RFID 3 = อย่างน้อย 223 — นับรวมอย่างเป็นทางการ)</li>
+  </ol>
+  <div class="draft"><b>ร่างข้อความถึงเหมย (บราเดอร์ตรวจ/ปรับก่อนส่ง):</b>
+เหมย ขอความคืบหน้าข้อมูลสำหรับรายงาน SWIS ต่อที่ประชุม 7 รายการ — ๑) ตารางความคืบหน้าทีมพัฒนารายโมดูล/ฟังก์ชันฉบับปัจจุบัน (% + เพิ่มฟังก์ชั่น/แก้บักรอบล่าสุด) ๒) รายชื่อทีมปี 2569 + มอบหมายโมดูล ๓) แผนรอบตรวจติดตาม 15 โรงปี 2569 + ผลที่มีแล้ว ๔) รายงานใช้งานรายโมดูลของโรงในเครือแบบเดียวกับชุด ACEP ๕) สถานะลูกค้านอกเครือ 10 โรง + ปีที่ใช้งานโรงที่ 6–10 ๖) ความคืบหน้า LCT + IBM ๗) ยอดฟังก์ชันรวมใหม่หลังรวมห้องสมุด+RFID</div>
+</div>
+
+<footer>
+  จัดทำโดยทีม SWIS Plus · ร่างเอกสาร AI ช่วยเตรียม — บราเดอร์ตรวจประโยคต่อประโยคก่อนใช้นำเสนอ<br>
+  แหล่งข้อมูลที่ใช้: Bitbucket swiscenter/admin commit log 10 พ.ค.–6 มิ.ย. 69 (170 commits · 6 คน) · รายงานการใช้งานระบบ SWIS ACEP (4 มิ.ย. 69) · สรุปความคืบหน้าตามแผนงาน HRM และ SWIS (พ.ย. 68) · รายงานความคืบหน้าระบบ SWIS ทีมพัฒนา (2562 · โครงตาราง) · 07_clients_external_master.md · 06_swis_master.md · swis_module_count.md (canonical 27/220)
+</footer>
+
+</body>
+</html>
