@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คู่มือคุณภาพหน่วยงาน · งาน SIS · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1e1e1e; --ink-light: #444; --muted: #7a7a7a;
+    --page: #ffffff; --panel: #f7f6f3; --rule: #d0cec8;
+    --accent: #1a3a5c; --accent-light: #2c5f8a;
+    --pending: #b02323;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Sarabun', 'Tahoma', sans-serif; color: var(--ink); background: #e5e4de; line-height: 1.7; font-size: 16px; }
+  .page { max-width: 800px; margin: 24px auto; background: var(--page); padding: 60px 70px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  h1 { font-size: 1.6rem; text-align: center; margin-bottom: 4px; color: var(--accent); font-weight: 700; }
+  h1 + .subtitle { font-size: 1.15rem; text-align: center; color: var(--accent-light); font-weight: 600; margin-bottom: 24px; }
+  h2 { font-size: 1.25rem; color: var(--accent); font-weight: 700; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  h3 { font-size: 1.08rem; font-weight: 600; color: var(--ink); margin: 20px 0 8px; }
+  h4 { font-size: 1rem; font-weight: 600; color: var(--ink-light); margin: 14px 0 6px; }
+  p { margin-bottom: 10px; text-indent: 0; }
+  ul, ol { padding-left: 28px; margin-bottom: 10px; }
+  li { margin-bottom: 4px; }
+  .cover-meta { text-align: center; color: var(--ink-light); margin-bottom: 6px; }
+  .cover-year { font-size: 1.15rem; font-weight: 600; color: var(--accent); text-align: center; margin: 16px 0 8px; }
+  hr.section-break { border: none; border-top: 1px solid var(--rule); margin: 36px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.96rem; }
+  th, td { padding: 8px 12px; border: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  th { background: var(--panel); font-weight: 600; }
+  .pending { color: var(--pending); font-weight: 500; }
+  blockquote { background: var(--panel); border-left: 4px solid var(--accent); padding: 12px 18px; margin: 12px 0; }
+  code { background: var(--panel); padding: 1px 5px; border-radius: 2px; font-size: 0.85em; font-family: 'Consolas', monospace; color: var(--accent); }
+  .toc { background: var(--panel); padding: 20px 28px; margin: 20px 0 30px; border: 1px solid var(--rule); }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc ul li { padding: 3px 0; }
+  .toc ul ul { padding-left: 20px; }
+  .part-heading { text-align: center; margin: 40px 0 24px; }
+  .part-heading .part-label { display: block; color: var(--accent-light); font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 4px; }
+  .part-heading .part-title { font-size: 1.3rem; color: var(--accent); font-weight: 700; }
+  .colophon { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
+  @media (max-width: 720px) { .page { padding: 30px 20px; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<!-- ปก -->
+<div style="text-align:center; padding: 40px 0;">
+  <h1>คู่มือคุณภาพหน่วยงาน</h1>
+  <div class="subtitle">งานระบบสารสนเทศและซอฟต์แวร์ระดับมูลนิธิฯ (SIS)</div>
+  <p class="cover-meta">ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และงานทรัพยากรมนุษย์</p>
+  <p class="cover-meta">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+  <p class="cover-year">ปีการศึกษา ๒๕๖๙</p>
+</div>
+
+<hr class="section-break">
+
+<!-- คำนำ -->
+<h2>คำนำ</h2>
+<p>คู่มือคุณภาพหน่วยงานฉบับนี้จัดทำขึ้นเพื่อกำหนดกรอบการดำเนินงานของงานระบบสารสนเทศและซอฟต์แวร์ระดับมูลนิธิฯ (School Information System · SIS) กลุ่มย่อยที่ ๒.๑ ของฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย ให้สอดคล้องกับแผนยุทธศาสตร์ของมูลนิธิฯ และเป็นเครื่องมือให้กรรมการฝ่ายฯ ผู้รับผิดชอบงาน และผู้เกี่ยวข้องใช้ในการกำกับติดตามการดำเนินงานให้บรรลุเป้าหมายคุณภาพที่วางไว้</p>
+<p>คู่มือฉบับนี้จัดทำในรูปแบบมาตรฐานที่ ๑๕ โรงเรียนในเครือมูลนิธิฯ ใช้ร่วมกัน โดยปรับให้เหมาะกับบริบทของหน่วยงานระดับมูลนิธิฯ ตามแนวทางในภาคผนวก ฉ (Roll-up ๑๕ โรงเรียน)</p>
+
+<!-- สารบัญ -->
+<h2>สารบัญ</h2>
+<div class="toc">
+<ul>
+  <li>คำนำ</li>
+  <li>ภาพประกอบความเข้าใจการจัดทำคู่มือคุณภาพหน่วยงานและคู่มือพัฒนาตนเอง</li>
+  <li>องค์ประกอบในเล่ม</li>
+  <li>ส่วนที่ ๑ · การเชื่อมโยงแผนยุทธศาสตร์ของมูลนิธิสู่แผนงานของฝ่าย โครงสร้างการบริหาร และหน้าที่หลักของงาน (KRA)</li>
+  <li>ส่วนที่ ๒ · ขอบข่ายงานตามโครงสร้างการบริหารงานฝ่าย ICT มูลนิธิฯ (KRA)</li>
+  <li>ส่วนที่ ๓ · ตัวชี้วัดความสำเร็จ (KPI) ของหน่วยงาน SIS</li>
+  <li>ส่วนที่ ๔ · คุณสมบัติของผู้ปฏิบัติหน้าที่ในหน่วยงาน (Job Spec) อัตรากำลัง และตารางอบรม/พัฒนา</li>
+  <li>ส่วนที่ ๕ · เครื่องมือด้านกายภาพสนับสนุนการปฏิบัติหน้าที่ (Facilities: Hardware/Software)</li>
+  <li>ส่วนที่ ๖ · ภาคผนวก
+    <ul>
+      <li>ภาคผนวก ก · ข้อมูลบริหารของฝ่าย</li>
+      <li>ภาคผนวก ข · แผนงานฝ่าย ICT / แผน PDCA9 ของ sub-group</li>
+      <li>ภาคผนวก ค · แผนยุทธศาสตร์ของมูลนิธิฯ</li>
+      <li>ภาคผนวก ง · การศึกษามงฟอร์ต (Montfortian Education Charter)</li>
+      <li>ภาคผนวก จ · เอกสารอ้างอิงด้านการศึกษา</li>
+      <li>ภาคผนวก ฉ · มิติการกำกับติดตามระดับมูลนิธิฯ (Roll-up ๑๕ โรงเรียน)</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<!-- ภาพประกอบ -->
+<h2>ภาพประกอบความเข้าใจการจัดทำคู่มือคุณภาพหน่วยงานและคู่มือพัฒนาตนเอง</h2>
+<p style="text-align:center;color:var(--muted);font-style:italic;">(ใส่ภาพ Pyramid: แผนยุทธศาสตร์มูลนิธิฯ ๖ ปี → คู่มือคุณภาพหน่วยงาน → แผนงานหน่วยงาน + Job Spec + KPI → คู่มือพัฒนาตนเอง · ดึงจากไฟล์กลาง)</p>
+
+<!-- องค์ประกอบในเล่ม -->
+<h2>องค์ประกอบในเล่ม</h2>
+<p>เล่มนี้ประกอบด้วย ๖ ส่วนตามมาตรฐานคู่มือคุณภาพหน่วยงานของเครือมูลนิธิฯ พร้อมภาคผนวก ก–ฉ · ทุกส่วนอ้างอิงเอกสารต้นทางที่ระบุใน frontmatter ของไฟล์ต้นทาง · ส่วนที่ ๑–๓ ห่อจากแผน PDCA9 ที่มีอยู่แล้ว (<code>pdca9_plans/2569_ICT_2_1_sis_20260701.md</code>) · ส่วนที่ ๔–๖ เติมเพิ่มตามที่แผน PDCA9 ไม่ครอบ</p>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๑ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๑</span>
+  <span class="part-title">การเชื่อมโยงแผนยุทธศาสตร์ของมูลนิธิสู่แผนงานของฝ่าย โครงสร้างการบริหาร และหน้าที่หลักของงาน (KRA)</span>
+</div>
+
+<h3>๑.๑ การเชื่อมโยง (Pyramid)</h3>
+<blockquote>แผนยุทธศาสตร์ของมูลนิธิ ๖ ปี (พ.ศ. ๒๕๖๘–๒๕๗๓) → ยุทธศาสตร์ที่ ๓ · พัฒนากระบวนการบริหารจัดการองค์กรสู่มาตรฐานสากล → เป้าประสงค์ ๓.๓ · ระบบสารสนเทศเพื่อการบริหารและการจัดการเรียนรู้ → มาตรฐาน ๓.๓.๑ (ระบบสารสนเทศเพื่อการบริหาร) + ๓.๓.๓ (ระบบการสื่อสารที่มีประสิทธิภาพ) → <strong>หน่วยงาน SIS</strong></blockquote>
+
+<h3>๑.๒ โครงสร้างการบริหารและหน้าที่หลักของหน่วยงาน SIS</h3>
+<ul>
+  <li>ประธานฝ่าย ICT and HRM · <strong>ภราดาศุภนันท์ ขันธปรีชา</strong></li>
+  <li>ผู้รับผิดชอบหลักกลุ่ม ๒.๑ SIS · <strong>ภราดามานิต สกนธวัฒน์</strong> (per Minutes ประชุมครั้งที่ ๑/๒๕๖๙ · ๒ กรกฎาคม ๒๕๖๙)</li>
+  <li>คณะทำงาน · <strong>ภราดากรกวี ยินดีเวท</strong></li>
+</ul>
+
+<p><strong>หน้าที่หลัก (KRA):</strong> พัฒนา บำรุง และกำกับ <strong>ระบบสารสนเทศส่วนกลางของมูลนิธิฯ (SIS)</strong> ที่รวบรวมข้อมูลจากโรงเรียนในเครือ ๑๕ แห่ง เพื่อให้ผู้บริหารระดับมูลนิธิใช้ประกอบการตัดสินใจ (Executive/Governance View) และใช้เป็นฐานของ Plan Module สำหรับ PDCA universal ในทุกโรงเรียนในเครือ</p>
+
+<p><strong>Flow:</strong> SWIS (๒.๒ · ข้อมูลจาก ๑๕ โรง) → <strong>SIS (๒.๑ · ภาพรวม + ตัดสินใจระดับมูลนิธิ)</strong><br>
+<strong>หลักการวัด:</strong> วัด "ระบบ" ไม่ใช่ "เนื้อหา" — ระบบมีข้อมูลให้ใช้บริหารได้จริงหรือไม่ (<code>ict21_quality_principle.md</code>)</p>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๒ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๒</span>
+  <span class="part-title">ขอบข่ายงานแต่ละงานตามโครงสร้างการบริหารงานฝ่าย ICT มูลนิธิฯ (๕ กลุ่ม · ๘ กลุ่มย่อย) (KRA)</span>
+</div>
+
+<h3>๑. งานระบบสารสนเทศและซอฟต์แวร์ระดับมูลนิธิฯ (SIS)</h3>
+<p>จัดทำแผนพัฒนาเพื่อยกระดับคุณภาพงาน SIS ให้สอดคล้องกับนโยบายแผนยุทธศาสตร์ของมูลนิธิฯ แผนงานของฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร และดำเนินการให้บรรลุเป้าหมายคุณภาพตามแผนที่วางไว้</p>
+
+<h3>๒. เป้าหมายคุณภาพงาน SIS</h3>
+<p><strong>๒.๑</strong> วางแผนบริหารด้วยขั้นตอน <strong>PDCA ๙ ขั้นตอนของมูลนิธิฯ</strong> และดำเนินการพัฒนางาน SIS ให้สอดคล้องตามนโยบายแผนยุทธศาสตร์ของมูลนิธิฯ แผนงานของฝ่ายฯ และบรรลุเป้าหมายคุณภาพตามแผนที่วางไว้</p>
+<p style="color:var(--muted);font-size:0.92rem;">อ้างอิงแผน PDCA9: <code>pdca9_plans/2569_ICT_2_1_sis_20260701.md</code> · สถานะ: รอ PDCA9_INSPECTOR audit round 1</p>
+
+<p><strong>๒.๒</strong> มีแผนพัฒนางาน SIS ตาม <strong>มาตรฐานที่อิงไว้ทั้งหมด จำนวน ๕ มาตรฐาน</strong></p>
+<table>
+  <thead><tr><th style="width:80px;">รหัส</th><th>มาตรฐาน / แหล่งอ้าง</th></tr></thead>
+  <tbody>
+    <tr><td>M-01</td><td>แผนยุทธศาสตร์มูลนิธิฯ · ยุทธศาสตร์ที่ ๓ · เป้าประสงค์ ๓.๓ · <strong>มาตรฐาน ๓.๓.๑</strong> ระบบสารสนเทศเพื่อการบริหาร</td></tr>
+    <tr><td>M-02</td><td>แผนยุทธศาสตร์มูลนิธิฯ · ยุทธศาสตร์ที่ ๓ · เป้าประสงค์ ๓.๓ · <strong>มาตรฐาน ๓.๓.๓</strong> ระบบการสื่อสารที่มีประสิทธิภาพ</td></tr>
+    <tr><td>M-03</td><td><strong>๖ มิติคุณภาพข้อมูล</strong> (ครบ · ถูก · ทัน · เข้าถึงได้ · เปรียบเทียบได้ · นำไปตัดสินใจได้) — <code>ict21_quality_principle.md</code> · เฉพาะงาน ๒.๑ (วัดระบบไม่ใช่เนื้อหา)</td></tr>
+    <tr><td>M-04</td><td><strong>ข้อบังคับมูลนิธิ ๒๕๕๓</strong> และประกาศ/ระเบียบด้าน ICT ที่มูลนิธิฯ ประกาศใช้</td></tr>
+    <tr><td>M-05</td><td><strong>คู่มือธรรมาภิบาลมูลนิธิ ๒๕๖๘</strong> (๕ หลัก · ๑๕ เกณฑ์ · ๕ ระดับ · ๑๐๐ คะแนน) — ส่วนที่เกี่ยวข้องกับระบบสารสนเทศเพื่อการกำกับติดตาม</td></tr>
+  </tbody>
+</table>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๓ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๓</span>
+  <span class="part-title">ตัวชี้วัดความสำเร็จ (KPI) ของหน่วยงาน SIS</span>
+</div>
+
+<h3>๓.๑ มีแผนงานบริหารคุณภาพงาน SIS (มาตรฐานการปฏิบัติงาน PDCA ๙ ขั้นตอนของมูลนิธิฯ)</h3>
+<ol>
+  <li>๓.๑.๑ มีการวางแผนแต่งตั้งผู้รับผิดชอบทุกกิจกรรม และดำเนินการแต่งตั้ง</li>
+  <li>๓.๑.๒ มีการวางแผนการประชุมทุกครั้ง เพื่อศึกษาข้อมูลที่เกี่ยวข้อง</li>
+  <li>๓.๑.๓ มีการวางแผนการกำหนดเป้าหมายคุณภาพตามภาระงานที่รับผิดชอบ</li>
+  <li>๓.๑.๔ มีการวางแผนการกำหนดกิจกรรม ให้สอดคล้องและบรรลุเป้าหมายของแผนงาน</li>
+  <li>๓.๑.๕ มีการวางแผนการประชุมคณะกรรมการดำเนินงานเพื่อสื่อสารและมอบหมายงาน</li>
+  <li>๓.๑.๖ มีการวางแผนดำเนินงานตามแผน และดำเนินงานตามแผน</li>
+  <li>๓.๑.๗ มีการวางแผนรับการกำกับติดตามการดำเนินงาน และดำเนินงานกำกับติดตาม</li>
+  <li>๓.๑.๘ มีการวางแผนประเมินผลการดำเนินงาน และดำเนินการประเมินผล</li>
+  <li>๓.๑.๙ มีการวางแผนสรุปรายงานผล และดำเนินการสรุปรายงานผลเพื่อเสนอแนะแนวทาง</li>
+</ol>
+
+<h3>๓.๒ มีการดำเนินงานตามแผนพัฒนางาน SIS ตามมาตรฐานที่อิงไว้ จำนวน ๕ มาตรฐาน</h3>
+<p style="font-style:italic;color:var(--ink-light);">🎩 KPI หมวกบน · Foundation-level roll-up · ตอบเรื่องเดียวกับที่โรงเรียนทำ แต่วัดข้ามโรง (n/๑๕)</p>
+<table>
+  <thead><tr><th style="width:60px;">KPI</th><th style="width:100px;">ผูกมาตรฐาน</th><th>ตัวชี้วัด</th><th style="width:150px;">เกณฑ์ปี ๒๕๖๙</th></tr></thead>
+  <tbody>
+    <tr><td>๓.๒.๑</td><td>M-01 (๓.๓.๑)</td><td>ร้อยละของโรงเรียน (n/๑๕) ที่ Plan Module on SIS พร้อมใช้ และรายงานผลกลับ SIS ครบตามรอบ</td><td>≥ ๑๐๐% (๑๕/๑๕)</td></tr>
+    <tr><td>๓.๒.๒</td><td>M-01 (๓.๓.๑)</td><td>ร้อยละของโรงเรียน (n/๑๕) ที่ SWIS ↔ SIS pipeline ทำงานสม่ำเสมอ (real-time · latency ≤ ๕ นาที)</td><td>≥ ๑๐๐%</td></tr>
+    <tr><td>๓.๒.๓</td><td>M-02 (๓.๓.๓)</td><td>จำนวนชั้นของ Chain of Alignment dashboard พร้อมให้กรรมการมูลนิธิใช้</td><td>๖/๖ ชั้น ภายในตุลาคม ๒๕๖๙</td></tr>
+    <tr><td>๓.๒.๔</td><td>M-03 (๖ มิติ)</td><td>ร้อยละของฟีเจอร์ SIS ที่มี Label Ownership ครบ</td><td>๑๐๐%</td></tr>
+    <tr><td>๓.๒.๕</td><td>M-04 · M-05</td><td>จำนวนครั้งของการประชุมสื่อสารกับฝ่ายที่ต่อต้าน + เอกสารเหตุผลการใช้แพลตฟอร์มเดียว</td><td>≥ ๓ ครั้ง · มีเอกสารครบ</td></tr>
+  </tbody>
+</table>
+
+<h3>๓.๓ ร้อยละ ๘๐ ของผู้รับบริการและผู้มีส่วนเกี่ยวข้องมีความพึงพอใจ</h3>
+<p>ผู้รับบริการและผู้มีส่วนเกี่ยวข้อง = ๑๕ โรงเรียน · กรรมการบริหารมูลนิธิฯ · ผู้ใช้ระบบทั้งภายในและภายนอก</p>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๔ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๔</span>
+  <span class="part-title">คุณสมบัติของผู้ปฏิบัติหน้าที่ในหน่วยงาน (Job Spec) อัตรากำลัง และตารางอบรม/พัฒนา</span>
+</div>
+
+<h3>๔.๑ คุณสมบัติของผู้ปฏิบัติหน้าที่ และรายละเอียดการอบรมพัฒนา</h3>
+
+<h4>๔.๑.๑ ขั้นพื้นฐาน (Basic)</h4>
+<table>
+  <thead><tr><th style="width:100px;">รหัส</th><th>หัวข้อ Job Spec</th></tr></thead>
+  <tbody>
+    <tr><td>C(B)๐๑ – C(B)๐๓</td><td class="pending">🔴 รอ HRM · Competency พื้นฐาน ๓ ข้อ</td></tr>
+    <tr><td>K(B)๐๑ – K(B)๐๘</td><td class="pending">🔴 รอ HRM · Knowledge พื้นฐาน ๘ ข้อ (แผนยุทธศาสตร์มูลนิธิ · คู่มือคุณภาพหน่วยงาน · ฯลฯ)</td></tr>
+    <tr><td>Cp(B)๐๑ – Cp(B)๐๓</td><td class="pending">🔴 รอ HRM · Competency plus พื้นฐาน ๓ ข้อ</td></tr>
+  </tbody>
+</table>
+
+<h4>๔.๑.๒ เฉพาะทาง (Technical)</h4>
+<table>
+  <thead><tr><th style="width:100px;">รหัส</th><th>หัวข้อ</th></tr></thead>
+  <tbody>
+    <tr><td>K(T)๐๑</td><td>ความรู้เรื่องสถาปัตยกรรม SIS + SWIS <span class="pending">(🔴 รอ HRM)</span></td></tr>
+    <tr><td>K(T)๐๒</td><td>ความรู้เรื่อง Chain of Alignment 6 layer + Data Integration <span class="pending">(🔴 รอ HRM)</span></td></tr>
+    <tr><td>Cp(T)๐๑</td><td>ทักษะออกแบบ dashboard สำหรับผู้บริหารระดับมูลนิธิ <span class="pending">(🔴 รอ HRM)</span></td></tr>
+    <tr><td>Cp(T)๐๒</td><td>ทักษะบริหาร Label Ownership + Platform Politics <span class="pending">(🔴 รอ HRM)</span></td></tr>
+  </tbody>
+</table>
+
+<h3>๔.๒ แนวทางการประเมินบุคลากรในหน่วยงาน และการประเมินหน้าที่ของฉัน</h3>
+<p class="pending">🔴 รอ HRM · เชื่อมกับกรอบการประเมินบุคลากร SWIS T1–T14 (๖๐+๒๕+๑๕ = ๑๐๐ คะแนน) และ HRD ๑๕ หัวข้อของ HRM</p>
+
+<h3>อัตรากำลังบุคลากรในหน่วยงาน SIS · รวม ๒ คน (per Minutes ๒ ก.ค.)</h3>
+<table>
+  <thead><tr><th>ตำแหน่ง</th><th>ผู้ปฏิบัติ</th></tr></thead>
+  <tbody>
+    <tr><td>ผู้รับผิดชอบหลัก</td><td>ภราดามานิต สกนธวัฒน์</td></tr>
+    <tr><td>คณะทำงาน</td><td>ภราดากรกวี ยินดีเวท</td></tr>
+  </tbody>
+</table>
+<p style="color:var(--muted);font-size:0.92rem;">ทีมสนับสนุนจาก SWIS Plus (บริษัทรับจ้าง · scope ๒.๒) ประสานงานเมื่อ pipeline SWIS→SIS ต้องพัฒนาเพิ่ม</p>
+
+<h3>ตารางอบรม/พัฒนาของหน่วยงาน ปีการศึกษา ๒๕๖๙</h3>
+<p class="pending">🔴 รอ HRM ประสาน (align กับ HRD ๑๕ หัวข้อของ HRM)</p>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๕ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๕</span>
+  <span class="part-title">เครื่องมือด้านกายภาพสนับสนุนการปฏิบัติหน้าที่ (Facilities: Hardware/Software)</span>
+</div>
+
+<p style="color:var(--muted);font-style:italic;">ชั้น ๑ ตาม §D · เครื่องมือที่หน่วย SIS ใช้ปฏิบัติหน้าที่ของตัวเอง · ดึงบัญชีจากระบบทรัพย์สิน SWIS · ไม่พิมพ์เอง</p>
+
+<h3>๑. ห้องฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</h3>
+<p class="pending">🔴 รอ ดึงข้อมูลจากระบบทรัพย์สิน SWIS</p>
+
+<h3>๒. Hardware (ที่ทีม SIS ใช้ปฏิบัติงาน)</h3>
+<p class="pending">🔴 รอ ดึงข้อมูลจากระบบทรัพย์สิน SWIS</p>
+<p>ครอบคลุม: server/infrastructure host SIS · hardware ทีมพัฒนา · storage/backup · network devices</p>
+
+<h3>๓. Software (ที่ทีม SIS ใช้ปฏิบัติงาน)</h3>
+<p class="pending">🔴 รอ ดึงข้อมูลจากระบบทรัพย์สิน SWIS</p>
+<p>ครอบคลุม: license พัฒนา · dashboard tools · integration middleware</p>
+
+<blockquote style="font-size:0.92rem;">
+<em>หมายเหตุ:</em> เครื่องมือ/โครงข่าย/อินเทอร์เน็ตที่เป็น "เนื้องาน" ที่ต้องสำรวจ · วางแผน · จัดหา · ติดตาม เพื่อสนองงานทุกฝ่ายทุกหน่วยทั้งระดับมูลนิธิและระดับโรงเรียน = <strong>ชั้น ๒</strong> อยู่ในขอบข่ายและ KPI ของกลุ่ม ๔ (๔.๑/๔.๒) · ไม่อยู่ในส่วน ๕ ของ SIS
+</blockquote>
+
+<hr class="section-break">
+
+<!-- ส่วนที่ ๖ -->
+<div class="part-heading">
+  <span class="part-label">ส่วนที่ ๖</span>
+  <span class="part-title">ภาคผนวก</span>
+</div>
+
+<h3>ภาคผนวก ก · ข้อมูลบริหารของฝ่าย ได้แก่ ทิศทาง เป้าหมาย แผนงานของฝ่าย นโยบาย</h3>
+<p>อ้าง: <code>_MASTER_FRAMEWORK_BLUEPRINT.md</code> · Minutes ประชุมคณะกรรมการฝ่ายฯ ครั้งที่ ๑/๒๕๖๙ · ๒ กรกฎาคม ๒๕๖๙ · ทิศทาง ๓ ข้อ (Data Driven Leadership · การกำหนดมาตรฐาน · ความเป็นมืออาชีพ)</p>
+
+<h3>ภาคผนวก ข · แผนงานฝ่าย ICT / แผน PDCA9 ของ sub-group</h3>
+<p>อ้าง: <code>pdca9_plans/2569_ICT_2_1_sis_20260701.md</code> (แผน PDCA9 หน่วยงาน SIS · ๙ ขั้น · ครบ)</p>
+
+<h3>ภาคผนวก ค · แผนยุทธศาสตร์ของมูลนิธิ</h3>
+<p>อ้าง: แผนยุทธศาสตร์ ๖ ปี มูลนิธิฯ (พ.ศ. ๒๕๖๘–๒๕๗๓) · ยุทธ์ ๓ + เป้าประสงค์ ๓.๓ + มาตรฐาน ๓.๓.๑/๓.๓.๓</p>
+
+<h3>ภาคผนวก ง · การศึกษามงฟอร์ต (Montfortian Education Charter)</h3>
+<p>อ้าง: MEC canonical · ๘ หลักการ · เด็กเป็นศูนย์กลาง</p>
+
+<h3>ภาคผนวก จ · เอกสารอ้างอิงด้านการศึกษา (ทุกรูปแบบ)</h3>
+<ul>
+  <li>ข้อบังคับมูลนิธิ ๒๕๕๓ · คู่มือธรรมาภิบาลมูลนิธิ ๒๕๖๘</li>
+  <li><code>sis_pdca_universal_base.md</code> · <code>06_swis_master.md</code></li>
+  <li><code>ict21_quality_principle.md</code> · <code>ict_swisplus_overlap.md</code></li>
+  <li><code>feedback_label_ownership.md</code> · <code>ict21_platform_politics.md</code></li>
+</ul>
+
+<h3>ภาคผนวก ฉ · มิติการกำกับติดตามระดับมูลนิธิฯ (Roll-up ๑๕ โรงเรียน)</h3>
+<p style="font-style:italic;color:var(--muted);">ภาคผนวกนี้มีเฉพาะในเล่มระดับมูลนิธิฯ (§E)</p>
+
+<h4>๑) ตาราง mapping · KPI หมวกบนของฝ่าย ↔ KPI/มาตรฐานในคู่มือคุณภาพของหน่วยงานในโรงเรียน ↔ แหล่งข้อมูลใน SWIS/SIS</h4>
+<table>
+  <thead><tr><th>KPI หมวกบน (๓.๒)</th><th>เชื่อมกับ KPI ในคู่มือคุณภาพของโรงเรียน</th><th>แหล่งข้อมูล</th></tr></thead>
+  <tbody>
+    <tr><td>๓.๒.๑ Plan Module ครบ n/๑๕</td><td>คู่มือคุณภาพหน่วยงานของแต่ละโรง (ส่วน ๒.๑ PDCA ๙ ขั้น)</td><td>Plan Module on SIS + SWIS ของแต่ละโรง</td></tr>
+    <tr><td>๓.๒.๒ Pipeline real-time n/๑๕</td><td>ระบบสารสนเทศของแต่ละโรง (SWIS)</td><td>SWIS pipeline monitor</td></tr>
+    <tr><td>๓.๒.๓ Dashboard 6 layer</td><td>Chain of Alignment ของแต่ละโรง</td><td>SIS + แผนพัฒนาโรงเรียน</td></tr>
+    <tr><td>๓.๒.๔ Label Ownership</td><td>(ระดับมูลนิธิเท่านั้น · ไม่มีเทียบที่โรง)</td><td>SIS internal audit</td></tr>
+    <tr><td>๓.๒.๕ Platform Politics meetings</td><td>(ระดับมูลนิธิเท่านั้น)</td><td>บันทึกการประชุม</td></tr>
+  </tbody>
+</table>
+
+<h4>๒) รายงาน/Dashboard ที่ฝ่ายใช้ติดตาม ๑๕ โรง</h4>
+<ul>
+  <li>Chain of Alignment Dashboard (๖ layer)</li>
+  <li>SWIS Plus reporting</li>
+  <li>SIS deployment tracker</li>
+</ul>
+
+<h4>๓) รอบการติดตาม (ผูกกับ ๓.๑.๗ กำกับติดตาม · ๓.๑.๘ ประเมินผล)</h4>
+<ul>
+  <li>Monitor: กรกฎาคม ๒๕๖๙ · ตุลาคม ๒๕๖๙ · มกราคม ๒๕๗๐</li>
+  <li>Check: ตุลาคม ๒๕๖๙ (ภาคเรียน ๑) · กุมภาพันธ์ ๒๕๗๐ (ประจำปี)</li>
+</ul>
+
+<!-- Colophon -->
+<div class="colophon">
+  <p><strong>ผู้จัดทำ:</strong> ห้อง ICT (Content Executor · Golden Sample ตาม <code>quality_manual_writing_process_for_ict.md</code> v4)</p>
+  <p><strong>ผู้ตรวจสอบ:</strong> ห้อง QUALITY_MANUAL_INSPECTOR — pending</p>
+  <p><strong>ผู้เห็นชอบ:</strong> ประธาน Commission on ICT and HRM · ภราดาศุภนันท์ ขันธปรีชา</p>
+  <p><strong>สถานะ:</strong> Golden Sample draft · รอบราเดอร์ตรวจก่อนใช้เป็นแม่แบบขยายสู่ ๗ sub ที่เหลือ</p>
+  <p>v4 · ๑๐ กรกฎาคม ๒๕๖๙ · ยึด format verbatim ตาม <code>quality_manual_format_canonical.md</code></p>
+</div>
+
+</div>
+
+</body>
+</html>
