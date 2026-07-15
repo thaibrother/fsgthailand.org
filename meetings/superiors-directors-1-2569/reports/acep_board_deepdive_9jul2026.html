@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ACEP · เอกสารประกอบเพิ่มเติม (Reference · Deep-dive) · คกก.บริหารโรงเรียน 1/2569</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Sarabun", "Cordia New", "Tahoma", sans-serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+    font-size: 13px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    background: #fff;
+  }
+  h1 {
+    font-size: 18px;
+    color: #6B0F1A;
+    border-bottom: 3px double #6B0F1A;
+    padding-bottom: 6px;
+    margin: 0 0 4px;
+  }
+  .subtitle { font-size: 11.5px; color: #555; margin-bottom: 14px; }
+  h2 {
+    font-size: 14px;
+    color: #6B0F1A;
+    margin: 16px 0 6px;
+    padding: 5px 10px;
+    background: #FDF4E8;
+    border-left: 5px solid #C9A961;
+  }
+  h3 {
+    font-size: 12.5px;
+    color: #6B0F1A;
+    margin: 10px 0 4px;
+    border-bottom: 1px dashed #C9A961;
+    padding-bottom: 3px;
+  }
+  p { margin: 4px 0 8px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 4px 0 8px; font-size: 12px;
+  }
+  th, td {
+    border: 1px solid #ccc; padding: 5px 8px; text-align: left;
+    vertical-align: top;
+  }
+  th { background: #FDF4E8; color: #6B0F1A; font-weight: 600; font-size: 11.5px; }
+  td.num { text-align: right; font-family: "Menlo", monospace; white-space: nowrap; }
+  tr.total td { background: #6B0F1A; color: #fff; font-weight: 700; }
+  .toc {
+    background: #FDF4E8;
+    border: 1px solid #C9A961;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 8px 0 16px;
+    font-size: 12px;
+  }
+  .toc h4 { color: #6B0F1A; margin: 0 0 6px; font-size: 12.5px; }
+  .toc ol { margin: 4px 0; padding-left: 20px; }
+  .toc a { color: #333; text-decoration: none; }
+  .toc a:hover { color: #6B0F1A; text-decoration: underline; }
+  .code {
+    font-family: "Menlo", monospace;
+    background: #f0f0f0;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
+  ul { margin: 4px 0 8px; padding-left: 22px; }
+  li { margin-bottom: 3px; }
+  .ref-link {
+    font-size: 11px; color: #666;
+    background: #f9f9f9; padding: 6px 10px;
+    border-left: 3px solid #999;
+    margin: 4px 0;
+  }
+  .footer-link {
+    font-size: 11px;
+    color: #6B0F1A;
+    text-align: right;
+    margin-top: 20px;
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+  }
+  .footer-link a { color: #6B0F1A; text-decoration: none; }
+  .footer-link a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>เอกสารประกอบเพิ่มเติม (Reference · Deep-dive)</h1>
+<div class="subtitle">
+  สำหรับใช้ตอบข้อซักถามคณะกรรมการบริหารโรงเรียน ครั้งที่ 1/2569 · วันที่ 9 กรกฎาคม 2569 · จัดทำโดย ภราดาศุภนันท์ ขันธปรีชา · ผู้อำนวยการ ACEP
+</div>
+
+<div class="toc">
+  <h4>สารบัญ</h4>
+  <ol>
+    <li><a href="#legal">Legal &amp; Governance — ตราสาร · ที่ดิน · Governance · คดี</a></li>
+    <li><a href="#financial">Financial — Executive v3 · 4 หมวด · Loan Defense · บัญชี B</a></li>
+    <li><a href="#legacy">Legacy — ประเด็นสะสมจากวาระบริหารชุดก่อน (2565–2569)</a></li>
+    <li><a href="#academic">Academic &amp; HR — หลักสูตร · ครู · โครงสร้างใหม่ · คำสั่ง 15/2569</a></li>
+    <li><a href="#operations">Operations — อาคาร · สนาม · สัญญา · งานระบบค้าง · SWIS</a></li>
+    <li><a href="#retention">Secondary Retention — แนวทาง ม.ต้น–ม.ปลาย + เหตุผลผู้ปกครอง</a></li>
+    <li><a href="#partnership">Partnership Pipeline — พันธมิตร Nursery + สถาบันติว + อาชีวะ</a></li>
+    <li><a href="#roadmap">Roadmap 3–5 ปี — Trajectory การพึ่งตนเอง</a></li>
+    <li><a href="#refs">แหล่งอ้างอิงเอกสารทั้งหมด</a></li>
+  </ol>
+</div>
+
+<!-- 1. Legal -->
+<h2 id="legal">1 · Legal &amp; Governance</h2>
+
+<h3>1.1 ตราสารจัดตั้งโรงเรียน</h3>
+<ul>
+  <li>ตราสารจัดตั้งโรงเรียน · <b>ฉบับที่ 6/2568</b> (ปรับปรุงจากฉบับที่ 5) · กำหนดความจุห้องเรียน: KG 6 ห้อง × 25 คน + ประถม 36 ห้อง × 30 คน + มัธยม 36 ห้อง × 30 คน (= ฐานคำนวณจุดคุ้มทุน)</li>
+  <li>ตราสารฉบับ 1, 4, 5, 6 มีสำเนาครบใน <span class="code">Downloads/ตราสารจัดตั้งโรงเรียนฉบับที่ *.pdf</span></li>
+</ul>
+
+<h3>1.2 ผังโฉนดที่ดิน (3 พฤษภาคม 2569)</h3>
+<table>
+  <tr><th>ประเภท</th><th class="num">แปลง</th><th class="num">เนื้อที่</th><th>สถานะ</th></tr>
+  <tr><td>ของมูลนิธิฯ</td><td class="num">12</td><td class="num">195.85 ไร่ (93.4%)</td><td>โอนเข้ามูลนิธิเรียบร้อย · 22 ก.พ. 2554 + 6 ก.ย. 2554 + 29 ม.ค. 2554</td></tr>
+  <tr><td>ของ นายศิริชัย ฟ่อนซีกา</td><td class="num">3</td><td class="num">13.81 ไร่ (6.6%)</td><td><b>ยังไม่ได้โอนเข้ามูลนิธิ</b> · แปลง #1, #5, #15 · 15 ธ.ค. 2551 / 8 ธ.ค. 2554 / 8 ธ.ค. 2566</td></tr>
+  <tr class="total"><td>รวม</td><td class="num">15</td><td class="num">209.66 ไร่</td><td>รวมทั้งหมด</td></tr>
+</table>
+<div class="ref-link">
+  📎 เอกสารต้นฉบับ: <span class="code">ผังโฉนดที่ดิน ACEP — โครงการอัสสัมชัญแคมปัส พระราม 2.pdf</span> (Council meeting docs · 3 พ.ค. 69)
+</div>
+
+<h3>1.3 คดีความ (ระบบศาลแรงงาน)</h3>
+<ul>
+  <li><b>คดีเก่า 5 คดี</b> ครูต่างชาติ + ดอกเบี้ย · <b>~2.83 M</b> · คำพิพากษาแล้ว · คดี ร.315–322/2567 ศาลแรงงานภาค 7</li>
+  <li><b>คดีใหม่ 8 ราย</b> · รอสำเนาคำพิพากษา · ยังไม่รวมยอดในหมวด 1 · จะทราบยอดรวมภายในไตรมาสถัดไป</li>
+</ul>
+
+<!-- 2. Financial -->
+<h2 id="financial">2 · Financial · Executive Summary v3 + Loan Defense</h2>
+
+<h3>2.1 ยอดขอกู้ยืม 56.26 ล้านบาท · แบ่ง 4 หมวด</h3>
+<table>
+  <tr><th>หมวด</th><th class="num">ยอด (บาท)</th><th>เนื้องานหลัก</th></tr>
+  <tr><td>🟥 หมวด 1 · ปิดจบ</td><td class="num">4,894,840</td><td>ชดเชยเลิกจ้าง + คดีเก่า + ยกเลิก Kyocera</td></tr>
+  <tr><td>🟧 หมวด 2 · ประคอง</td><td class="num">40,412,005</td><td>Payroll 25.28M + งานระบบค้าง 3.11M + BOND 3.53M + ถนน 3.34M + งานอื่นๆ</td></tr>
+  <tr><td>🟨 หมวด 3 · เร่งด่วน</td><td class="num">9,550,631</td><td>Football 2.47M + Tennis 3.94M + จักรยาน 2.80M + สระ + Rebranding</td></tr>
+  <tr><td>🟦 หมวด 4 · เตรียม 2570</td><td class="num">1,400,000</td><td>Early Years Center + Nursery + ครู Native อนุบาล</td></tr>
+  <tr class="total"><td>รวม · งวดเดียว</td><td class="num">56,257,476</td><td>~56.26 ล้านบาท</td></tr>
+</table>
+
+<h3>2.2 หลักการแยกบัญชี + แหล่งคืน</h3>
+<ul>
+  <li><b>บัญชี A</b> · เงินกู้ 56.26M · ใช้ตาม 4 หมวด</li>
+  <li><b>บัญชี B</b> · ค่าเทอม 2569 (นักเรียน ~153 คน) · <b>28.35M</b> · <u>แยกไม่ปะปน</u> · คืนงวดแรก 12 เดือน</li>
+  <li>สุทธิงบดำเนินการ = 40.41 − 28.35 = <b>~12 M/ปี</b> (เทียบวาระก่อน ~150 M/ปี)</li>
+  <li>คืนครบทุกแหล่งภายใน 3–5 ปี ตามแผนฟื้นฟู · เข้าสู่ trajectory การพึ่งตนเอง</li>
+</ul>
+
+<h3>2.3 หลักฐานตัวเลข (Audit ผ่าน 5/5 มิติ · 16 มิ.ย. 69)</h3>
+<div class="ref-link">
+  Executive Summary v3 (13 มิ.ย. 69) ผ่าน Pre-Submit 8 ทั้ง 5 มิติ (ชื่อ · ตัวเลข · Tone · Format · Audience) · ตัวเลข canonical 11 จุดตรงทั้งหมด: 153/121/93/188/56.26M/28.35M/16.96M/921K/4.92M/30M/ตราสาร 6/2568
+</div>
+
+<!-- 3. Legacy -->
+<h2 id="legacy">3 · Legacy · ประเด็นสะสมจากวาระบริหารชุดก่อน (2565–2569)</h2>
+<table>
+  <tr><th>ประเด็น</th><th>รายละเอียด</th></tr>
+  <tr><td>งบใช้จ่ายรวม 4 ปี</td><td>~610 ล้านบาท · เฉลี่ยปีละ ~150 ล้านบาท · ไม่พบแผนฟื้นฟูเป็นระบบ</td></tr>
+  <tr><td>กู้ยืมมูลนิธิเพิ่ม 6 ฉบับ</td><td>รวม ~49.8 M ในช่วง 2566–2569 · ก้อนล่าสุด <b>จม. 338/2568 · 15.67M</b> (22 เม.ย. 69) + Bond ก่อสร้าง 3.2M (30 เม.ย. 69) — วันก่อนบราเดอร์รับตำแหน่ง</td></tr>
+  <tr><td>BOND คงค้างคืน ผปค.</td><td>28 คน · 2,360,000 + เช็คค้าง 13 คน · 1,169,398 = <b>3.53 M</b> · Payment Approval PA 6808-0013 → PA 6905-0013</td></tr>
+  <tr><td>คดีความ</td><td>คดีเก่า 5 คดี ครูต่างชาติ + ดอกเบี้ย 2.83M · คดีใหม่ 8 ราย รอสำเนาคำพิพากษา</td></tr>
+  <tr><td>สัญญาบริการที่ต้องยกเลิก</td><td>Kyocera 107K/เดือน (~1.28M/ปี) และรายการอื่นๆ</td></tr>
+  <tr><td>งานระบบค้าง 3 ปี (66–68)</td><td>ลิฟต์ 1.55M + ชิลเลอร์ 513K + CCTV 65.5K + คูลลิ่งทาวเวอร์ 590K + ตู้ Capacitor 200K + บำบัดน้ำเสีย 122K + ห้องปั้มสระ 75K = <b>3.11 M</b></td></tr>
+  <tr><td>เงินสดคงเหลือ 1 พ.ค. 69</td><td>เพียงเล็กน้อย · หลังใช้เงินกู้ก้อน 15.67M เกือบหมดกับเงินเดือนและรายจ่ายค้าง</td></tr>
+</table>
+
+<!-- 4. Academic + HR -->
+<h2 id="academic">4 · Academic &amp; HR · โครงสร้างครู · หลักสูตร</h2>
+
+<h3>4.1 บุคลากรครู (พ.ค. 69)</h3>
+<ul>
+  <li>ครูไทย 27 คน · ครูต่างชาติ 18 คน + จีน 1 คน = ครูรวม 46 คน</li>
+  <li>ผู้บริหาร 3 · พนักงานสนับสนุน 92</li>
+  <li><b>คำสั่ง 15/2569</b> · เลิกจ้าง 9 ราย · ตามผลทบทวนโครงสร้างใหม่ · อยู่ระหว่างพิจารณาคำสั่งแต่งตั้งฝ่ายใหม่</li>
+  <li>Payroll จริง พ.ค. 69 · <b>2.11 M/เดือน</b> (เทียบเล่มงบเดิม ตั้งฐาน 45 คน · ~36 M/ปี — ต่างจากจริง ~11 M/ปี)</li>
+</ul>
+
+<h3>4.2 หลักสูตรและมาตรฐาน</h3>
+<ul>
+  <li>หลักสูตร S-EP (Standard English Programme) · KG 1–3 · ประถม 1–6 · มัธยม 1–6</li>
+  <li>Cambridge English Teaching Framework · CELT-P (Primary) · TEFL/CELTA/PGCE</li>
+  <li>Chinese English Program (CEP) · เริ่ม 2018 · 8 ปีที่มา</li>
+  <li>คู่มือคุณภาพหน่วยงาน · <b>33 หน่วยงาน</b> · Keyman A.ดรุณี · Chain of Alignment กับแผนพัฒนา 2569</li>
+</ul>
+
+<!-- 5. Operations -->
+<h2 id="operations">5 · Operations · อาคาร · สนาม · สัญญา · SWIS</h2>
+
+<h3>5.1 สนามและกิจกรรม (Recovery Program)</h3>
+<ul>
+  <li>สระว่ายน้ำ 6-lane + บ่อ Early Childhood · <b>Salt Chlorinator × 3</b> (144K · ก.ค. 69)</li>
+  <li>สนามฟุตบอลหญ้าเทียม (มีอยู่) + <b>Football Academy สนามหญ้าจริง + ไฟหญ้าเทียม</b> · 2.47M · คืนทุน 2 ปี</li>
+  <li><b>Tennis 4 สนาม + Basketball 6 สนาม</b> · 3.94M · คืนทุน 3 ปี</li>
+  <li><b>Pickleball</b> · <b>ฟิตเนส</b></li>
+  <li><b>สนามจักรยานลาดยาง 2 กม.</b> · 2.80M</li>
+  <li>Playground Castle Crown · 425K · LED + ระบบตู้ขายน้ำ SWIS · 247K</li>
+</ul>
+
+<h3>5.2 ระบบสารสนเทศ (SWIS)</h3>
+<ul>
+  <li>ระบบ SWIS · 5 กลุ่มงาน · 220 ฟังก์ชัน (ระดับโรงเรียน) · พัฒนาโดย SWIS Plus (บริษัทลูกของมูลนิธิ)</li>
+  <li>Firewall · หมดอายุ 19 ก.ค. 69 · อยู่ระหว่างเปรียบเทียบราคา 3 ราย</li>
+  <li>K-Payment Gateway ผ่าน SWIS · อยู่ระหว่างพิจารณา</li>
+</ul>
+
+<!-- 6. Secondary Retention -->
+<h2 id="retention">6 · Secondary Retention · แนวทาง ม.ต้น–ม.ปลาย</h2>
+<p>
+  ผู้ปกครอง ม.ต้น–ม.5 <b>ปฏิเสธข้อเสนอย้าย AC (บางรัก) และ ACT (ธนบุรี)</b> ตามมติ คกก.แก้ปัญหาวิชาการ 5 มิ.ย. 69 · ยืนยันขออยู่ต่อจนจบปีการศึกษา 2569 ที่ ACEP
+</p>
+
+<h3>6.1 จำนวนนักเรียนมัธยม (แหล่ง: e-office 2569-00255)</h3>
+<table>
+  <tr><th>ระดับ</th><th class="num">คน</th><th>สถานะใหม่</th></tr>
+  <tr><td>ม.1 (Y7)</td><td class="num">5</td><td>ต้องคง</td></tr>
+  <tr><td>ม.2 (Y8)</td><td class="num">10</td><td>ต้องคง</td></tr>
+  <tr><td>ม.3 (Y9)</td><td class="num">10</td><td>ต้องคง</td></tr>
+  <tr><td>ม.4 (Y10)</td><td class="num">รอยืนยัน</td><td>ต้องคง</td></tr>
+  <tr><td>ม.5 (Y11)</td><td class="num">2</td><td>ต้องคง</td></tr>
+  <tr><td>ม.6 (Y12)</td><td class="num">22</td><td>Road to Uni · เดิม</td></tr>
+  <tr class="total"><td>รวม</td><td class="num">49+</td><td>คงอยู่ที่ ACEP จนจบ AY 2569</td></tr>
+</table>
+
+<h3>6.2 เหตุผลผู้ปกครอง (สรุป 10 ข้อ)</h3>
+<ol>
+  <li>ความต่อเนื่องของครอบครัว 12 ปี · ไม่แยกลูกชาย/ลูกหญิง</li>
+  <li>เลือก ACEP อย่างตั้งใจ · หนี AC/ACT มาแล้ว</li>
+  <li>ไม่กลับ กทม. · ถ้าออกจะเลือกอินเตอร์แทน</li>
+  <li>ชุด+อุปกรณ์ 1 เทอม = สิ้นเปลือง</li>
+  <li>สภาพ "นักเรียนคนที่ 49–51"</li>
+  <li>Lifestyle นอกเมือง · ไม่มีดินหญ้า</li>
+  <li>ACEP พร้อมทุกอย่าง · ยกเว้นการบริหารจัดการ</li>
+  <li>วิสัยทัศน์การบริหารที่ตัด/ไล่กลุ่มภักดี</li>
+  <li>คำเตือนอนาคต · จะกระทบชื่อเสียงโรงเรียนและมูลนิธิ</li>
+  <li><b>มีกฎหมายคุ้มครองชัดเจน</b> · พรบ.โรงเรียนเอกชน 2550 + พรบ.คุ้มครองผู้บริโภค · ผปค. มีสิทธิเรียกร้อง</li>
+</ol>
+
+<h3>6.3 แนวทางปรับ + Risk</h3>
+<ul>
+  <li>Tutorial hours + ติวเข้ม ม.3 + ม.6 · ไม่คิดค่าเรียนเพิ่ม</li>
+  <li>Rebalance workload ครูปัจจุบัน · ไม่รับใหม่มัธยม</li>
+  <li>ปิดรับใหม่ Y7–Y12 ตั้งแต่ AY 2570 (ยื่น สช. ล่วงหน้า 1 ปี)</li>
+  <li>Reputation Risk + Legal Risk (ถ้าผลักดันออกกลางปี) &gt;&gt; Return 921K จาก AC/ACT</li>
+</ul>
+<div class="ref-link">
+  📎 เอกสารต้นฉบับ: <span class="code">acep_secondary_retention_plan_3jul2026.html</span>
+</div>
+
+<!-- 7. Partnership -->
+<h2 id="partnership">7 · Partnership Pipeline · โอกาสร่วมทุน</h2>
+<table>
+  <tr><th>รายการ</th><th class="num">จำนวน</th><th>AY</th><th>ที่มา</th></tr>
+  <tr><td>🌱 Nursery (เด็ก ~2 ปี)</td><td class="num">30</td><td>2570</td><td>ผปค.ติดต่อขอคิว · 2 ห้องเต็ม</td></tr>
+  <tr><td>🎨 KG.1</td><td class="num">15</td><td>2570</td><td>ผปค.แสดงความสนใจ</td></tr>
+  <tr><td>📚 ประถม 5</td><td class="num">1</td><td>2570</td><td>ผปค.แสดงความสนใจสมัคร</td></tr>
+  <tr><td>🎓 มัธยม 2</td><td class="num">1</td><td>2569</td><td>ผปค.พร้อมสมัครทันที</td></tr>
+  <tr class="total"><td>รวม · ยืนยันแล้ว</td><td class="num">47</td><td>—</td><td>ก่อนเปิดปีการศึกษาใหม่ · ก่อนทำ marketing เต็ม</td></tr>
+</table>
+
+<h3>7.1 พันธมิตรผู้ปกครองพม่า · นัด 8 ก.ค. 69</h3>
+<ul>
+  <li>เจ้าของโรงเรียนติวหลายแห่ง (มีเครือข่ายการศึกษา)</li>
+  <li>เจ้าของบริษัทนำเข้าแรงงานพม่า (มี demand แรงงานเข้าธุรกิจ)</li>
+  <li>ลูกเรียน ACEP 10 ปี · trust ระดับ founder-partner</li>
+  <li>เสนอโครงการร่วมทุน:
+    <ul>
+      <li>🎓 <b>สถาบันติวระดับ ม.ปลาย</b> · ร่วมทุน ACEP</li>
+      <li>🔧 <b>โรงเรียนอาชีวะ</b> · เน้นภาษา + เครือข่าย · ป้อนแรงงานเข้าธุรกิจ · มีใบรับรอง + application ชัดเจน · cross-link กับ <b>ATSN (อสช.เทคนิคนครพนม)</b> + Foundation network 15 โรง</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- 8. Roadmap -->
+<h2 id="roadmap">8 · Roadmap 3–5 ปี</h2>
+<table>
+  <tr><th>ปี</th><th class="num">Nursery</th><th class="num">KG–ประถม</th><th class="num">มัธยม</th><th class="num">รวม</th><th>Milestone</th></tr>
+  <tr><td>2569</td><td class="num">—</td><td class="num">86</td><td class="num">49</td><td class="num">~135+</td><td>Recovery ดำเนินการ · ปิดปัญหาสะสม</td></tr>
+  <tr><td>2570</td><td class="num">30</td><td class="num">130+</td><td class="num">Y8–12 คง</td><td class="num">~190+</td><td>Nursery เปิดปีแรก · Rebranding + Cambridge partnership</td></tr>
+  <tr><td>2571</td><td class="num">30</td><td class="num">160+</td><td class="num">Y9–12 คง</td><td class="num">~220+</td><td>Feeder ทำงาน · โครงการ commercial คืนทุน</td></tr>
+  <tr><td>2572</td><td class="num">30</td><td class="num">190+</td><td class="num">Y10–12 คง</td><td class="num">~230+</td><td>เข้าสู่ trajectory การพึ่งตนเอง</td></tr>
+  <tr class="total"><td><b>2573</b></td><td class="num">30/ปี</td><td class="num">~210</td><td class="num">Y12 คนสุดท้าย</td><td class="num"><b>~240+</b></td><td><b>ปิด Y7–Y12 สำเร็จ · โครงสร้าง KG + ประถมเต็ม</b></td></tr>
+</table>
+
+<!-- 9. Refs -->
+<h2 id="refs">9 · แหล่งอ้างอิงเอกสารทั้งหมด · คลิกเปิดไฟล์ HTML (นำเสนอมูลนิธิ)</h2>
+
+<style>
+  .ref-doc {
+    display: block;
+    background: #FDF4E8;
+    border-left: 4px solid #C9A961;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 6px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+  .ref-doc:hover { background: #F5E9CE; border-left-color: #6B0F1A; }
+  .ref-doc .rt {
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #6B0F1A;
+    margin-bottom: 2px;
+  }
+  .ref-doc .rd {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+  }
+  .ref-doc .rp {
+    font-family: "Menlo", monospace;
+    font-size: 10px;
+    color: #999;
+    margin-top: 3px;
+    word-break: break-all;
+  }
+  .ref-group {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    color: #6B0F1A;
+    font-weight: 700;
+    margin: 12px 0 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="ref-group">🎯 แผนฟื้นฟูและพัฒนา (Recovery Plan)</div>
+
+<a class="ref-doc" href="acep_recovery_plan_v3_13jun2026.html" target="_blank">
+  <div class="rt">📘 แผนฟื้นฟูและพัฒนา ACEP · ฉบับ v3.0 (13 มิ.ย. 69)</div>
+  <div class="rd">3 ส่วน · 11 บท · ภาคผนวก ก–ช · Competitor Analysis + Chinese Segments + 5 ทางเลือกนโยบาย (ก–จ) + KPI · <b>ยุทธศาสตร์ 3 ขา "ทำน้อยแต่ทำจริง"</b> · เป็นเอกสารต้นฉบับที่ Overview + Deep-dive นี้อ้างอิง</div>
+  <div class="rp">📄 acep_recovery_plan_v3_13jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_recovery_plan_v3_background_appendix.html" target="_blank">
+  <div class="rt">📘 แผนฟื้นฟู v3 · ภาคผนวก Background</div>
+  <div class="rd">Contextual background · ประวัติศาสตร์ + Trend Analysis + ข้อมูลประกอบ</div>
+  <div class="rp">📄 acep_recovery_plan_v3_background_appendix.html</div>
+</a>
+
+<div class="ref-group">💰 หนังสือขอกู้ยืม + ข้อเสนอทางการเงิน</div>
+
+<a class="ref-doc" href="acep_budget_proposal_urgent_2569_executive_summary_v3_13jun2026.html" target="_blank">
+  <div class="rt">📄 Executive Summary v3 · หนังสือขอกู้ยืม 56.26 M · 4 หมวด (13 มิ.ย. 69)</div>
+  <div class="rd">Audit ผ่าน 5/5 มิติ · ตัวเลข canonical 11 จุด · ปิด · ประคอง · เร่งด่วน · เตรียม 2570</div>
+  <div class="rp">📄 acep_budget_proposal_urgent_2569_executive_summary_v3_13jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_budget_proposal_urgent_2569_consolidated.html" target="_blank">
+  <div class="rt">📄 หนังสือขอกู้ยืม · ฉบับรวม (Consolidated)</div>
+  <div class="rd">รวมทุกส่วน · ครบทุกหมวด · เนื้อหาแบบเต็ม</div>
+  <div class="rp">📄 acep_budget_proposal_urgent_2569_consolidated.html</div>
+</a>
+
+<a class="ref-doc" href="acep_budget_proposal_urgent_2569_brother_letter_v2.html" target="_blank">
+  <div class="rt">📄 จดหมาย ผอ. เรียนกรรมการ · ฉบับ v2</div>
+  <div class="rd">เนื้อความจดหมาย ผอ. เขียนถึงคณะกรรมการมูลนิธิ</div>
+  <div class="rp">📄 acep_budget_proposal_urgent_2569_brother_letter_v2.html</div>
+</a>
+
+<a class="ref-doc" href="acep_loan_request_letter_16jun2026.html" target="_blank">
+  <div class="rt">📄 จดหมายขอกู้ยืม · ฉบับ 16 มิ.ย. 69</div>
+  <div class="rd">Loan Request Letter · ฉบับเต็ม</div>
+  <div class="rp">📄 acep_loan_request_letter_16jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_loan_request_letter_short_19jun2026.html" target="_blank">
+  <div class="rt">📄 จดหมายขอกู้ยืม · ฉบับสั้น (19 มิ.ย. 69)</div>
+  <div class="rd">Short version · เหมาะสำหรับ handout</div>
+  <div class="rp">📄 acep_loan_request_letter_short_19jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_loan_request_appendix_16jun2026.html" target="_blank">
+  <div class="rt">📄 ภาคผนวกจดหมายขอกู้ยืม (16 มิ.ย. 69)</div>
+  <div class="rd">Supporting Appendix · เอกสารประกอบ Loan Request</div>
+  <div class="rp">📄 acep_loan_request_appendix_16jun2026.html</div>
+</a>
+
+<div class="ref-group">📮 จดหมายนำและตอบสนอง (Cover Letters &amp; Responses)</div>
+
+<a class="ref-doc" href="acep_cover_letter_v2_financial_focus_16jun2026.html" target="_blank">
+  <div class="rt">📄 Cover Letter v2 · Financial Focus (16 มิ.ย. 69)</div>
+  <div class="rd">จดหมายนำเสนอ · เน้นเรื่องการเงิน · เขียนถึงกรรมการมูลนิธิ</div>
+  <div class="rp">📄 acep_cover_letter_v2_financial_focus_16jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_cover_letter_budget_recovery_14jun2026.html" target="_blank">
+  <div class="rt">📄 Cover Letter · Budget Recovery (14 มิ.ย. 69)</div>
+  <div class="rd">จดหมายนำเสนอ · ฟื้นฟูงบประมาณ</div>
+  <div class="rp">📄 acep_cover_letter_budget_recovery_14jun2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_response_to_meeting_18jun2026.html" target="_blank">
+  <div class="rt">📄 การตอบสนองข้อสังเกตจากประชุม 18 มิ.ย. 69</div>
+  <div class="rd">Response to Meeting Comments · ต่อประเด็นที่ยกในประชุม</div>
+  <div class="rp">📄 acep_response_to_meeting_18jun2026.html</div>
+</a>
+
+<div class="ref-group">🎓 แนวทางการเรียนการสอน (Retention &amp; Defense)</div>
+
+<a class="ref-doc" href="acep_secondary_retention_plan_3jul2026.html" target="_blank">
+  <div class="rt">📄 แนวทางปรับการเรียนการสอน ม.ต้น–ม.ปลาย (3 ก.ค. 69)</div>
+  <div class="rd">หลังผู้ปกครองปฏิเสธข้อเสนอย้าย AC/ACT · 10 เหตุผลผปค. · Legal + Reputation Risk · โอกาสฟื้นฟู</div>
+  <div class="rp">📄 acep_secondary_retention_plan_3jul2026.html</div>
+</a>
+
+<a class="ref-doc" href="acep_loan_defense_1page_2jul2026.html" target="_blank">
+  <div class="rt">📄 ข้อโต้แย้งขอกู้ยืม 56.26 M · 1 หน้า (2 ก.ค. 69)</div>
+  <div class="rd">สำหรับตอบซักถามในห้องประชุม · เหตุผลหลักในตารางเดียว</div>
+  <div class="rp">📄 acep_loan_defense_1page_2jul2026.html</div>
+</a>
+
+<div class="ref-group">📊 Pulse &amp; Update</div>
+
+<a class="ref-doc" href="acep_pulse_report_3jul2026.html" target="_blank">
+  <div class="rt">📄 Pulse Report · สถานการณ์ล่าสุด ACEP (3 ก.ค. 69)</div>
+  <div class="rd">งานที่ค้าง · งานเข้าใหม่ · Priority · ครอบคลุม 4 sources (Downloads + Drive + inbox + e-Office)</div>
+  <div class="rp">📄 acep_pulse_report_3jul2026.html</div>
+</a>
+
+<div style="background:#F1F8E9; border:1px dashed #2E7D32; padding:8px 14px; border-radius:4px; margin-top:16px; font-size:11px; color:#1B5E20;">
+  <b>หมายเหตุ:</b> เอกสารทั้งหมดข้างต้นเป็นฉบับ HTML ที่จัดทำขึ้นเพื่อนำเสนอต่อคณะกรรมการมูลนิธิฯ · อยู่ในโฟลเดอร์เดียวกับ Overview + Deep-dive นี้ · <b>คลิกเปิดได้ทันทีในห้องประชุม</b> (relative link · portable)
+</div>
+
+<div class="footer-link">
+  🔙 <a href="acep_board_overview_9jul2026.html">กลับสู่ ภาพรวม (Overview)</a>
+</div>
+
+</body>
+</html>

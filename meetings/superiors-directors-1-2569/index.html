@@ -118,9 +118,12 @@
     <div class="lock">🔒</div>
     <h1>เอกสารประชุมภายใน</h1>
     <p class="sub">อธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือ<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
-    <input type="password" id="pw" placeholder="รหัสผ่าน" autofocus onkeydown="if(event.key==='Enter')check()">
-    <button onclick="check()">เข้าสู่ระบบ</button>
-    <div class="err" id="err"></div>
+    <form id="loginForm" onsubmit="check(event)" autocomplete="on" action="#" method="post">
+      <input type="text" id="username" name="username" value="superiors-1-2569" autocomplete="username" style="display:none;" readonly>
+      <input type="password" id="pw" name="password" placeholder="รหัสผ่าน" autofocus autocomplete="current-password" required>
+      <button type="submit">เข้าสู่ระบบ</button>
+      <div class="err" id="err"></div>
+    </form>
   </div>
 </div>
 
@@ -169,20 +172,16 @@
   <h2 class="section-title">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ (ACEP)</h2>
   <p class="section-desc">รายงานประจำสำหรับคณะกรรมการบริหารโรงเรียน + วาระ ๕.๑ ขอกู้ยืมเงิน (PC/Foundation Board ๓/๒๕๖๙)</p>
 
-  <div class="doc-card pending"><div class="left"><span class="num">Board</span><h2>ACEP Board Overview · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
-  <div class="doc-card pending"><div class="left"><span class="num">Board</span><h2>ACEP Board Deep-Dive · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
-  <div class="doc-card pending"><div class="left"><span class="num">แผน</span><h2>แผนการรักษามัธยม · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
-  <div class="doc-card pending"><div class="left"><span class="num">Pulse</span><h2>Pulse Report · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
-  <div class="doc-card pending"><div class="left"><span class="num">Loan</span><h2>Loan Defense (๑ หน้า) · ๒ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+  <a href="reports/acep_board_overview_9jul2026.html" class="doc-card"><div class="left"><span class="num">Board</span><h2>ACEP Board Overview · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">→</div></a>
+  <a href="reports/acep_board_deepdive_9jul2026.html" class="doc-card"><div class="left"><span class="num">Board</span><h2>ACEP Board Deep-Dive · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">→</div></a>
+  <a href="reports/acep_secondary_retention_plan_3jul2026.html" class="doc-card"><div class="left"><span class="num">แผน</span><h2>แผนการรักษามัธยม · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">→</div></a>
+  <a href="reports/acep_pulse_report_3jul2026.html" class="doc-card"><div class="left"><span class="num">Pulse</span><h2>Pulse Report · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">→</div></a>
+  <a href="reports/acep_loan_defense_1page_2jul2026.html" class="doc-card"><div class="left"><span class="num">Loan</span><h2>Loan Defense (๑ หน้า) · ๒ กรกฎาคม ๒๕๖๙</h2></div><div class="right">→</div></a>
 
-  <h2 class="section-title">SWIS · School-Wide Information System</h2>
+  <h2 class="section-title">งานพัฒนาซอฟต์แวร์เพื่อสถานศึกษา (SWIS)</h2>
   <p class="section-desc">รายงานความคืบหน้าทีมพัฒนา SWIS · ๒๗ โมดูล / ๒๒๐ ฟังก์ชัน · ๑๕ โรงในเครือฯ</p>
 
-  <div class="doc-card pending"><div class="left"><span class="num">รายงาน</span><h2>รายงานการดำเนินงานทีมงาน SWIS · เดือนมิถุนายน ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
-
-  <div class="info-box">
-    <strong>หมายเหตุ:</strong> เอกสารเตรียมประชุม · เผยแพร่เฉพาะภายในสำหรับผู้เข้าประชุม · เอกสารบางรายการอยู่ระหว่างการเตรียม upload · จะสามารถเข้าถึงได้ก่อนถึงวันประชุม
-  </div>
+  <a href="reports/swis-team-operations-jun2569.pdf" class="doc-card"><div class="left"><span class="num">รายงาน</span><h2>รายงานการดำเนินงานทีมงาน SWIS · เดือนมิถุนายน ๒๕๖๙</h2></div><div class="right">→</div></a>
 
   <footer>
     <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
@@ -203,7 +202,8 @@
     return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
-  async function check() {
+  async function check(event) {
+    if (event) event.preventDefault();
     const pw = document.getElementById('pw').value;
     if (!pw) { document.getElementById('err').textContent = 'กรุณากรอกรหัสผ่าน'; return; }
     const h = await sha256(pw);

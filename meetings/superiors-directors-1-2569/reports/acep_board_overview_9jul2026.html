@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>ACEP · ภาพรวมสำหรับคณะกรรมการบริหารโรงเรียน · ครั้งที่ 1/2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Sarabun", "Cordia New", sans-serif;
+    color: #1a1a1a;
+    background: #f0f0f0;
+    line-height: 1.5;
+  }
+  .slide {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    padding: 22mm 18mm;
+    page-break-after: always;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  /* === COVER === */
+  .cover {
+    background: linear-gradient(135deg, #6B0F1A 0%, #4A0A12 50%, #2C0509 100%);
+    color: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .cover .badge {
+    display: inline-block;
+    padding: 8px 22px;
+    background: rgba(201,169,97,0.25);
+    border: 1px solid #C9A961;
+    border-radius: 999px;
+    color: #FFD700;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .cover h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .cover .th-name {
+    font-size: 22px;
+    color: #FFD700;
+    margin-bottom: 60px;
+    font-weight: 500;
+  }
+  .cover .meeting-info {
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 6px;
+  }
+  .cover .date {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    color: #FFD700;
+    margin-bottom: 60px;
+    font-weight: 600;
+  }
+  .cover .presenter {
+    border-top: 1px solid rgba(255,215,0,0.3);
+    padding-top: 24px;
+    max-width: 400px;
+  }
+  .cover .presenter .name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .cover .presenter .title {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+  }
+
+  /* === SECTION HEADER === */
+  .section-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    background: #FDF4E8;
+    border-left: 4px solid #C9A961;
+    color: #6B0F1A;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .slide h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #6B0F1A;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .slide h2 + .sub {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 720px;
+  }
+
+  /* === STAT CARDS === */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+  .stat-card {
+    background: #FDF4E8;
+    border-top: 4px solid #C9A961;
+    padding: 20px 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .stat-card .n {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #6B0F1A;
+    line-height: 1;
+  }
+  .stat-card .l {
+    font-size: 12px;
+    color: #333;
+    margin-top: 8px;
+    line-height: 1.35;
+  }
+  .stat-card.green { background: linear-gradient(135deg, #E8F5E8, #C8E6C9); border-top-color: #2E7D32; }
+  .stat-card.green .n { color: #1B5E20; }
+
+  /* === TIMELINE (Section 2) === */
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 30px 0 20px;
+  }
+  .time-card {
+    padding: 20px 18px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .time-card .era {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .time-card .period {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .time-card .desc {
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .time-past { background: #ECEFF1; }
+  .time-past .era { color: #607D8B; }
+  .time-past .period { color: #263238; }
+  .time-now { background: #E3F2FD; border: 2px solid #1976D2; }
+  .time-now .era { color: #1565C0; }
+  .time-now .period { color: #0D47A1; }
+  .time-next { background: linear-gradient(135deg, #E8F5E8, #C8E6C9); }
+  .time-next .era { color: #2E7D32; }
+  .time-next .period { color: #1B5E20; }
+
+  /* === PLAN CARDS (Section 3) === */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .plan-card {
+    padding: 16px 14px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+  }
+  .plan-card .cat {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .plan-card .num {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .plan-card .num small { font-size: 15px; font-weight: 400; opacity: 0.85; }
+  .plan-card .desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .plan-1 { background: linear-gradient(135deg, #C62828, #B71C1C); }
+  .plan-2 { background: linear-gradient(135deg, #E65100, #BF360C); }
+  .plan-3 { background: linear-gradient(135deg, #F9A825, #F57F17); color: #4A2600; }
+  .plan-3 .cat { color: #6D4C0F; }
+  .plan-4 { background: linear-gradient(135deg, #1565C0, #0D47A1); }
+  .plan-total {
+    background: #FDF4E8;
+    border-left: 5px solid #6B0F1A;
+    padding: 14px 20px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    margin: 14px 0;
+    font-size: 13.5px;
+  }
+  .plan-total b { color: #6B0F1A; }
+  .plan-total .big {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    color: #6B0F1A;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .plan-total .big small { font-size: 14px; }
+
+  /* === HOPE (Section 4) === */
+  .hope-hero {
+    background: linear-gradient(135deg, #2E7D32, #1B5E20);
+    color: #fff;
+    padding: 30px 24px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 14px 0;
+  }
+  .hope-hero .label {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+  .hope-hero .huge {
+    font-family: "Playfair Display", serif;
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    color: #FFD700;
+    margin-bottom: 10px;
+  }
+  .hope-hero .huge small { font-size: 26px; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .hope-hero .desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.95);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .hope-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .hope-item {
+    padding: 14px 12px;
+    background: #F1F8E9;
+    border-left: 4px solid #66BB6A;
+    border-radius: 6px;
+  }
+  .hope-item .n {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1B5E20;
+    line-height: 1;
+  }
+  .hope-item .l {
+    font-size: 11.5px;
+    color: #33691E;
+    margin-top: 5px;
+  }
+  .hope-item .ay {
+    display: inline-block;
+    font-size: 10px;
+    background: #66BB6A;
+    color: #fff;
+    padding: 1px 8px;
+    border-radius: 999px;
+    margin-top: 4px;
+  }
+  .partnership {
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border-left: 5px solid #E65100;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 14px 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .partnership b { color: #BF360C; }
+  .partnership .title {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    color: #BF360C;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  /* === TRAJECTORY (Section 5) === */
+  .traj-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .traj-card {
+    padding: 20px 14px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+  }
+  .traj-year {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .traj-count {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: #6B0F1A;
+    margin-bottom: 4px;
+  }
+  .traj-plus { font-size: 24px; }
+  .traj-label {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
+  }
+  .traj-1 { background: #FDF4E8; }
+  .traj-2 { background: #FFF3E0; }
+  .traj-3 { background: #E3F2FD; }
+  .traj-3 .traj-count { color: #0D47A1; }
+  .traj-4 { background: linear-gradient(135deg, #C8E6C9, #A5D6A7); }
+  .traj-4 .traj-count { color: #1B5E20; }
+  .traj-arrow {
+    text-align: center;
+    font-size: 32px;
+    color: #C9A961;
+    margin: 6px 0 10px;
+    font-weight: 700;
+  }
+
+  /* === DECISIONS (Section 6) === */
+  .decisions {
+    counter-reset: dec;
+  }
+  .decision {
+    counter-increment: dec;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 18px 20px;
+    background: #FDF4E8;
+    border-left: 5px solid #C9A961;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    align-items: start;
+  }
+  .decision::before {
+    content: counter(dec);
+    font-family: "Playfair Display", serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #6B0F1A;
+    line-height: 1;
+    text-align: center;
+  }
+  .decision .body { padding-top: 4px; }
+  .decision .title {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #6B0F1A;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+  .decision .desc {
+    font-size: 12.5px;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  /* === FOOTER === */
+  .foot {
+    position: absolute;
+    bottom: 12mm;
+    left: 18mm;
+    right: 18mm;
+    font-size: 10px;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px dashed #ddd;
+    padding-top: 8px;
+  }
+  .foot a {
+    color: #6B0F1A;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 2px 8px;
+    border: 1px solid #C9A961;
+    border-radius: 999px;
+    background: #FDF4E8;
+    margin-left: 6px;
+    font-size: 10px;
+  }
+  .foot a:hover { background: #C9A961; color: #fff; }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .slide { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     SLIDE 1 · COVER
+================================================================ -->
+<section class="slide cover">
+  <div class="badge">คณะกรรมการบริหารโรงเรียน · ครั้งที่ 1 / 2569</div>
+  <h1>ACEP</h1>
+  <div class="th-name">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ</div>
+  <div class="meeting-info">ภาพรวมโรงเรียนสำหรับคณะกรรมการวันแรก</div>
+  <div class="date">9 กรกฎาคม 2569</div>
+  <div class="presenter">
+    <div class="name">ภราดาศุภนันท์ ขันธปรีชา</div>
+    <div class="title">ผู้อำนวยการ ACEP · รับตำแหน่ง 1 พฤษภาคม 2569</div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 2 · RAKAAN (Foundation)
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">01 · Foundation</div>
+  <h2>รากฐาน · ACEP ในเครือมูลนิธิ 125 ปี</h2>
+  <p class="sub">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ปรัชญาการศึกษามงฟอร์ต · เด็กเป็นศูนย์กลาง</p>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="n">125</div><div class="l">ปี · มูลนิธิเซนต์คาเบรียล<br>แห่งประเทศไทย</div></div>
+    <div class="stat-card"><div class="n">15</div><div class="l">โรงเรียน<br>เครือข่ายทั่วประเทศ</div></div>
+    <div class="stat-card"><div class="n">209.66</div><div class="l">ไร่ · โครงการ<br>อัสสัมชัญแคมปัส พระราม 2</div></div>
+    <div class="stat-card"><div class="n">6/2568</div><div class="l">ตราสารจัดตั้ง<br>ฉบับล่าสุด</div></div>
+  </div>
+
+  <div style="margin-top: 22px; background: #FDF4E8; padding: 18px 22px; border-radius: 8px; border-left: 5px solid #C9A961;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: #6B0F1A; font-weight: 700; margin-bottom: 8px;">
+      เครือข่ายอัสสัมชัญ · โอกาสข้ามโรงเรียน
+    </div>
+    <div style="font-size: 12.5px; line-height: 1.7;">
+      <b>ในเครือ:</b> AC (บางรัก) · ACT (ธนบุรี) · ACR (ระยอง) · ACS (ศรีราชา) · ACP (สามเสน) · ACL (ลำปาง) · ACSP (สมุทรปราการ) · <b>ATSN (เทคนิคนครพนม)</b> · MCP (มงฟอร์ตเชียงใหม่ประถม) · SL (เซนต์หลุยส์ ฉะเชิงเทรา) · SG (เซนต์คาเบรียล) และอื่นๆ<br>
+      → ACEP อยู่ในเครือข่ายเดียวกัน · ใช้ยุทธศาสตร์ 6 ปี · 47 KPI ร่วมกัน
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>หน้า 2 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 3 · TIMELINE (Before / Now / Next)
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">02 · Timeline</div>
+  <h2>จุดยืนวันนี้ · จากอดีต ผ่านปัจจุบัน สู่อนาคต</h2>
+  <p class="sub">แบ่งเป็น 3 ยุค · แสดงบริบทที่คณะกรรมการควรทราบ · รายละเอียดพร้อมนำเสนอเพิ่มเติมเมื่อต้องการ</p>
+
+  <div class="timeline">
+    <div class="time-card time-past">
+      <div class="era">Legacy</div>
+      <div class="period">ก่อน<br>1 พ.ค. 69</div>
+      <div class="desc">
+        <b>วาระบริหารชุดก่อน 2565–2569 · 4 ปี</b><br><br>
+        มีประเด็นเชิงระบบที่สะสม ทั้งด้านการเงิน คดีความ สัญญาบริการ งานระบบค้าง โครงสร้างบุคลากร ซึ่งต้องได้รับการสะสางจนสามารถเข้าสู่แผนฟื้นฟูใหม่
+      </div>
+    </div>
+    <div class="time-card time-now">
+      <div class="era">Recovery Phase</div>
+      <div class="period">1 พ.ค. 69<br>→ ปัจจุบัน</div>
+      <div class="desc">
+        <b>วาระฟื้นฟูใหม่</b><br><br>
+        เข้ารับตำแหน่งภายใต้เจตนารมณ์ผู้นำมูลนิธิที่ให้ <b>"พลิกฟื้น"</b> · ดำเนินงานตาม Executive Summary v3 (13 มิ.ย. 69) · จัดโครงสร้างครูใหม่ · ปรับหลักสูตร · จัดตั้ง Nursery + Early Years
+      </div>
+    </div>
+    <div class="time-card time-next">
+      <div class="era">Roadmap</div>
+      <div class="period">2570<br>→ 2573</div>
+      <div class="desc">
+        <b>แผนฟื้นฟู 3–5 ปี</b><br><br>
+        Nursery + Early Years + ประถมเต็ม · Rebranding + Cambridge partnership · <b>เข้าสู่ trajectory การพึ่งตนเอง</b> · ค่อยพิจารณามัธยมหลัง 3–5 ปี
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>หน้า 3 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 3.5 · CRISIS CONTEXT · จากแผนฟื้นฟู v3
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">02.5 · Crisis Context</div>
+  <h2>บริบทวิกฤต 4 มิติ · จากแผนฟื้นฟูและพัฒนา v3</h2>
+  <p class="sub">อ้าง: แผนฟื้นฟูและพัฒนา ACEP (ร่าง v3.0) · เมษายน 2569 · เสนอต่อ คกก.บริหารมูลนิธิ · จัดทำโดย ผอ.ACEP</p>
+
+  <style>
+    .crisis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .crisis-card {
+      padding: 16px 18px;
+      border-radius: 8px;
+      background: #FAFAFA;
+      border-top: 5px solid;
+      position: relative;
+    }
+    .crisis-card .icon {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+    .crisis-card .name {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #263238;
+      margin-bottom: 8px;
+    }
+    .crisis-card .val {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .crisis-card .val small { font-size: 13px; font-weight: 500; color: #555; }
+    .crisis-card .note {
+      font-size: 11.5px;
+      color: #455A64;
+      line-height: 1.5;
+    }
+    .c-money { border-top-color: #C62828; } .c-money .val { color: #B71C1C; }
+    .c-students { border-top-color: #1565C0; } .c-students .val { color: #0D47A1; }
+    .c-legal { border-top-color: #6A1B9A; } .c-legal .val { color: #4A148C; }
+    .c-cash { border-top-color: #E65100; } .c-cash .val { color: #BF360C; }
+
+    .trend {
+      background: #FDF4E8;
+      border-left: 5px solid #C9A961;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 14px 0;
+      font-size: 12px;
+    }
+    .trend-title {
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #6B0F1A;
+      margin-bottom: 6px;
+    }
+    .trend-row {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .trend-col {
+      text-align: center;
+      background: #fff;
+      padding: 6px 2px;
+      border-radius: 4px;
+      font-size: 10.5px;
+    }
+    .trend-col .y { font-weight: 700; color: #6B0F1A; font-size: 11px; }
+    .trend-col .n {
+      font-family: "Playfair Display", serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #263238;
+      line-height: 1;
+      margin: 3px 0;
+    }
+    .trend-col.peak { background: #E3F2FD; border: 1px solid #1565C0; }
+    .trend-col.low { background: #FFEBEE; border: 1px solid #C62828; }
+    .trend-col.rec { background: #E8F5E8; border: 1px solid #2E7D32; }
+  </style>
+
+  <div class="crisis-grid">
+    <div class="crisis-card c-money">
+      <div class="icon">💰</div>
+      <div class="name">วิกฤตการเงิน</div>
+      <div class="val">ขาดดุล ~77 M<small>/ปี</small></div>
+      <div class="note">
+        หนี้สินสะสมกับมูลนิธิ <b>&gt; 110 M</b> · รูปแบบพึ่งพาการกู้ยืมต่อเนื่อง 6 ฉบับ ~49.8 M (2566–2569) · ค่าไฟฟ้าอย่างเดียว 6.5 M/ปี
+      </div>
+    </div>
+
+    <div class="crisis-card c-students">
+      <div class="icon">🎓</div>
+      <div class="name">วิกฤตจำนวนนักเรียน</div>
+      <div class="val">909 → 227<small> (ลด ~75%)</small></div>
+      <div class="note">
+        จากจุดสูงสุด <b>909 คน (2558)</b> ลดลงต่อเนื่อง 10 ปี · <b>227 คน (มี.ค. 69)</b> · เปิดภาคเรียน 2569 คงเหลือ ~120 คน · เริ่มพยุงด้วย Nursery 30 + สนใจใหม่ 47
+      </div>
+    </div>
+
+    <div class="crisis-card c-legal">
+      <div class="icon">⚖️</div>
+      <div class="name">สถานการณ์คดีความ</div>
+      <div class="val">~8.9 M<small> (ค่าทนาย + ชดเชย)</small></div>
+      <div class="note">
+        คดีเก่า 5 คดี ครูต่างชาติ · ค่าทนาย <b>955,000</b> + ชดเชย <b>~7.94 M</b> · คดีใหม่อีก <b>8 ราย</b> รอสำเนาคำพิพากษา · ประเด็นการตีความค่าจ้าง vs สวัสดิการ
+      </div>
+    </div>
+
+    <div class="crisis-card c-cash">
+      <div class="icon">🏦</div>
+      <div class="name">สภาพคล่อง · Cashflow</div>
+      <div class="val">741,778 บ.<small> (ณ 8 พ.ค. 68)</small></div>
+      <div class="note">
+        เงินคงเหลือในบัญชี ณ ก่อนสิ้นปีการศึกษา 2568 · BOND ผปค. รอคืน 3.53 M · งานระบบค้าง 66–68 อีก 3.11 M · <u>สภาพคล่องขาดแคลนต่อเนื่อง</u>
+      </div>
+    </div>
+  </div>
+
+  <div class="trend">
+    <div class="trend-title">📉 แนวโน้มจำนวนนักเรียน · 10 ปี (แผน v3 · ส่วนที่ 1 · บทที่ 1)</div>
+    <div class="trend-row">
+      <div class="trend-col"><div class="y">2555</div><div class="n">255</div><div>เริ่ม</div></div>
+      <div class="trend-col peak"><div class="y">2558</div><div class="n">909</div><div>สูงสุด</div></div>
+      <div class="trend-col"><div class="y">2562</div><div class="n">755</div><div>เริ่มลด</div></div>
+      <div class="trend-col"><div class="y">2566</div><div class="n">454</div><div>−40%</div></div>
+      <div class="trend-col"><div class="y">2567</div><div class="n">294</div><div>−35%</div></div>
+      <div class="trend-col low"><div class="y">2568</div><div class="n">182</div><div>ต่ำสุด</div></div>
+      <div class="trend-col rec"><div class="y">มี.ค. 69</div><div class="n">227</div><div>เริ่มฟื้น</div></div>
+      <div class="trend-col rec"><div class="y">ก.ค. 69</div><div class="n">~120<sup>*</sup></div><div>+ สนใจ 47</div></div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, #FDF4E8, #F5E9CE); border-left: 5px solid #C9A961; padding: 14px 20px; border-radius: 6px; margin-top: 12px;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 16px; color: #6B0F1A; font-weight: 700; margin-bottom: 4px;">
+      💡 หลักการฟื้นฟู · จากแผน v3 · บทที่ 3
+    </div>
+    <div style="font-size: 13.5px; line-height: 1.6; color: #4A2600;">
+      <b>"ทำน้อยแต่ทำจริง"</b> — <u>ไม่ทำทุกอย่างพร้อมกัน · ทำสิ่งที่ส่งผลสูงสุดก่อน · เริ่มจากอนุบาลขึ้นมา</u> · เชื่อมกับ<b>ยุทธศาสตร์ 3 ขา</b> ที่จะนำเสนอในสไลด์ถัดไป
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569 · อ้างแผน v3</span>
+    <span>หน้า 4 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 4 · RECOVERY PLAN
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">03 · Recovery Plan</div>
+  <h2>แผนฟื้นฟู · 4 หมวด · งวดเดียว</h2>
+  <p class="sub">Executive Summary v3 · 13 มิถุนายน 2569 · ผ่าน Pre-Submit Audit 5/5 มิติ</p>
+
+  <div class="plan-grid">
+    <div class="plan-card plan-1">
+      <div class="cat">หมวด 1</div>
+      <div class="num">4.89<small>M</small></div>
+      <div style="font-weight:700; margin-bottom:4px;">ปิดจบ</div>
+      <div class="desc">ปิดปัญหาสะสมของเก่า · ทำครั้งเดียว</div>
+    </div>
+    <div class="plan-card plan-2">
+      <div class="cat">หมวด 2</div>
+      <div class="num">40.41<small>M</small></div>
+      <div style="font-weight:700; margin-bottom:4px;">ประคอง</div>
+      <div class="desc">Payroll · งานระบบค้าง · BOND ผปค.</div>
+    </div>
+    <div class="plan-card plan-3">
+      <div class="cat">หมวด 3</div>
+      <div class="num">9.55<small>M</small></div>
+      <div style="font-weight:700; margin-bottom:4px;">เร่งด่วน</div>
+      <div class="desc">Football/Tennis + จักรยาน · คืนทุน 2–3 ปี</div>
+    </div>
+    <div class="plan-card plan-4">
+      <div class="cat">หมวด 4</div>
+      <div class="num">1.40<small>M</small></div>
+      <div style="font-weight:700; margin-bottom:4px;">เตรียม 2570</div>
+      <div class="desc">Early Years + Nursery</div>
+    </div>
+  </div>
+
+  <div class="plan-total">
+    <div>
+      <b>รวมยอดขอกู้ยืม · งวดเดียว</b><br>
+      <span style="font-size:12px; color:#666;">หัก บัญชี B ค่าเทอม 2569 (28.35M) คืนงวดแรก 12 เดือน = สุทธิดำเนินการ ~12 M/ปี</span>
+    </div>
+    <div class="big">56.26<small> M</small></div>
+  </div>
+
+  <div style="background: #E8F5E8; border-left: 5px solid #2E7D32; padding: 14px 20px; border-radius: 6px; margin-top: 14px;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 15px; color: #1B5E20; font-weight: 700; margin-bottom: 4px;">
+      💡 เทียบวาระบริหารชุดก่อน
+    </div>
+    <div style="font-size: 13px;">
+      งบดำเนินการ 2565–2569 = ~150 M/ปี × 4 ปี = <b>~610 M</b> · ปัจจุบันสุทธิเพียง <b>~12 M/ปี</b> = <span style="color:#1B5E20; font-weight:700;">ประหยัด ~92%</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>หน้า 5 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 5 · HOPE (Momentum)
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">04 · Momentum</div>
+  <h2>ความหวังของการฟื้นฟู</h2>
+  <p class="sub">ยอดผู้ปกครองที่แสดงความสนใจสมัคร · แหล่ง: งานธุรการโรงเรียน · 6 กรกฎาคม 2569</p>
+
+  <div class="hope-hero">
+    <div class="label">ยอดผู้แสดงความสนใจ · ยืนยันแล้ว</div>
+    <div class="huge">47<small> คน</small></div>
+    <div class="desc">ก่อนเปิดปีการศึกษาใหม่ · <b>ก่อนทำ marketing เต็มรูปแบบ</b> = สัญญาณตลาดยืนยันการฟื้นฟู</div>
+  </div>
+
+  <div class="hope-grid">
+    <div class="hope-item">
+      <div class="n">30</div>
+      <div class="l">🌱 Nursery · เด็ก ~2 ปี · <b>2 ห้องเต็ม</b></div>
+      <div class="ay">AY 2570</div>
+    </div>
+    <div class="hope-item">
+      <div class="n">15</div>
+      <div class="l">🎨 KG.1 · feeder ต่อประถม</div>
+      <div class="ay">AY 2570</div>
+    </div>
+    <div class="hope-item">
+      <div class="n">1</div>
+      <div class="l">📚 ประถม 5 · ผปค.สนใจ</div>
+      <div class="ay">AY 2570</div>
+    </div>
+    <div class="hope-item">
+      <div class="n">1</div>
+      <div class="l">🎓 ม.2 · พร้อมสมัครทันที</div>
+      <div class="ay">AY 2569</div>
+    </div>
+  </div>
+
+  <div class="partnership">
+    <div class="title">🤝 พันธมิตรใหม่ · โอกาสร่วมทุน</div>
+    <b>ผู้ปกครองพม่า</b> (ลูกเรียน ACEP 10 ปี · เจ้าของโรงเรียนติวหลายแห่ง + บริษัทนำเข้าแรงงาน) · เสนอโครงการร่วมทุน <b>สถาบันติวระดับ ม.ปลาย + โรงเรียนอาชีวะเน้นภาษาและเครือข่าย</b> · เชื่อมกับ <b>ATSN (อสช.เทคนิคนครพนม)</b> + Foundation network 15 โรง · <b>นัดเข้าพบ 8 กรกฎาคม 2569</b>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>หน้า 6 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 6 · TRAJECTORY
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">05 · Trajectory</div>
+  <h2>เส้นทางการฟื้นฟู · 3 ปีข้างหน้า</h2>
+  <p class="sub">ประมาณการนักเรียนรวมทั้งโรงเรียน · สมมติฐาน: Nursery รับ 30/รุ่น · Feeder ต่อ KG + ประถม</p>
+
+  <div class="traj-grid">
+    <div class="traj-card traj-1">
+      <div class="traj-year">2569</div>
+      <div class="traj-count">~135<span class="traj-plus">+</span></div>
+      <div class="traj-label">คน · ปัจจุบัน</div>
+    </div>
+    <div class="traj-card traj-2">
+      <div class="traj-year">2570</div>
+      <div class="traj-count">~190<span class="traj-plus">+</span></div>
+      <div class="traj-label">คน · Nursery เปิดปีแรก</div>
+    </div>
+    <div class="traj-card traj-3">
+      <div class="traj-year">2571</div>
+      <div class="traj-count">~220<span class="traj-plus">+</span></div>
+      <div class="traj-label">คน · Feeder ทำงาน</div>
+    </div>
+    <div class="traj-card traj-4">
+      <div class="traj-year">2573</div>
+      <div class="traj-count">~240<span class="traj-plus">+</span></div>
+      <div class="traj-label">คน · โครงสร้างเต็ม</div>
+    </div>
+  </div>
+
+  <div class="traj-arrow">↗</div>
+
+  <div style="background: linear-gradient(135deg, #FDF4E8, #F5E9CE); padding: 20px 24px; border-radius: 10px; text-align: center; border: 2px solid #C9A961;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #6B0F1A; font-weight: 700; margin-bottom: 6px;">
+      จาก 120 → 240+ ภายใน 3 ปี
+    </div>
+    <div style="font-size: 13.5px; color: #4A2600;">
+      Trajectory ฟื้นตัวจริง · <b>Nursery 30 + KG.1 สนใจ 15</b> = ตัวจุดไฟให้ momentum · เข้าสู่การพึ่งตนเอง
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>หน้า 7 / 8 · <a href="acep_board_deepdive_9jul2026.html">📖 Reference</a></span>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SLIDE 7 · BOARD DECISIONS
+================================================================ -->
+<section class="slide">
+  <div class="section-tag">06 · Board Decisions</div>
+  <h2>มติที่ขอพิจารณา</h2>
+  <p class="sub">4 มติหลัก · เพื่อความชัดเจนของการดำเนินงาน ACEP ปีการศึกษา 2569 และเป็นทิศทางสู่ 2570</p>
+
+  <div class="decisions">
+    <div class="decision">
+      <div class="body">
+        <div class="title">ยืนยันเจตนารมณ์ "พลิกฟื้น ACEP"</div>
+        <div class="desc">เพื่อความชัดเจนต่อผู้ปกครอง ครู บุคลากร และคู่ค้า · เดินตามแผนฟื้นฟูตาม Executive Summary v3</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="body">
+        <div class="title">อนุมัติกู้ยืมเงิน 56.26 ล้านบาท งวดเดียว</div>
+        <div class="desc">สำหรับการดำเนินงานปีการศึกษา 2569 · แบบและเงื่อนไขเดียวกับสัญญากู้ 6 ฉบับเดิม · แหล่งคืนงวดแรก 12 เดือนจากบัญชี B</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="body">
+        <div class="title">อนุมัติแนวทางปรับการเรียนการสอน ม.ต้น–ม.ปลาย</div>
+        <div class="desc">ให้ผู้ปกครองที่ปฏิเสธข้อเสนอย้าย AC/ACT ยังคงเรียนต่อจนจบปีการศึกษา 2569 ที่ ACEP · พร้อม tutorial hours + ติวเข้ม · ตามข้อจำกัดทางกฎหมายและเจตนารมณ์ผู้ปกครองที่แสดงความภักดี</div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="body">
+        <div class="title">รับทราบและสนับสนุนโครงการร่วมทุน Nursery + Partnership</div>
+        <div class="desc">เตรียมนำเสนอรายละเอียดหลังการเข้าพบผู้ปกครองผู้เสนอโครงการวันที่ 8 กรกฎาคม 2569</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>ACEP · ภาพรวมสำหรับคณะกรรมการ · 1/2569</span>
+    <span>รายละเอียดเจาะลึกพร้อมนำเสนอเมื่อคณะกรรมการต้องการ · <a href="acep_board_deepdive_9jul2026.html">Reference »</a></span>
+  </div>
+</section>
+
+</body>
+</html>
