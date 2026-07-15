@@ -3,267 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เอกสารประกอบการประชุม · อธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือมูลนิธิฯ · ครั้งที่ ๑/๒๕๖๙</title>
+<title>เอกสารประชุม อธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือมูลนิธิฯ ครั้งที่ ๑/๒๕๖๙ — FSG Thailand</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #1e3a8a;
-    --navy-dark: #172554;
-    --gray-50: #f8fafc;
-    --gray-200: #e2e8f0;
-    --gray-500: #64748b;
-    --gray-900: #0f172a;
+    --navy: #0d2640;
+    --navy-light: #1a3a5c;
+    --gold: #c9a74e;
+    --bg: #fafaf7;
+    --card: #fff;
+    --border: #e2e8f0;
+    --text: #2a2a2a;
+    --text-muted: #6b7280;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "Sarabun", "TH Sarabun New", Tahoma, sans-serif;
-    background: var(--gray-50);
-    color: var(--gray-900);
-    line-height: 1.7;
-    padding: 24px 16px;
-  }
-  .container { max-width: 900px; margin: 0 auto; }
+  body { font-family: 'Sarabun', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
+  .gate {
+    position: fixed; inset: 0; background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999; padding: 20px;
+  }
+  .gate-box {
+    background: var(--card); padding: 40px 32px; border-radius: 12px;
+    max-width: 420px; width: 100%; text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .gate-box .lock { font-size: 36px; margin-bottom: 12px; }
+  .gate-box h1 { color: var(--navy); font-size: 20px; margin-bottom: 6px; }
+  .gate-box .sub { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+  .gate-box input {
+    width: 100%; padding: 12px 14px; font-size: 15px;
+    border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px;
+    font-family: inherit; text-align: center; letter-spacing: 1px;
+  }
+  .gate-box input:focus { outline: none; border-color: var(--gold); }
+  .gate-box button {
+    width: 100%; padding: 12px; font-size: 15px; font-weight: 600;
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    cursor: pointer; font-family: inherit; transition: background 0.2s;
+  }
+  .gate-box button:hover { background: var(--navy-light); }
+  .gate-box .err { color: #b91c1c; font-size: 13px; margin-top: 8px; min-height: 18px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; display: none; }
+  .container.visible { display: block; }
   header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    color: white;
-    padding: 40px 32px;
-    border-radius: 12px;
-    margin-bottom: 32px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: #fff; padding: 32px; border-radius: 12px; margin-bottom: 24px;
   }
-  header .org {
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    color: #cbd5e1;
-    margin-bottom: 10px;
+  header .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
   }
-  header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 12px;
+  header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+  header .meta { font-size: 14px; opacity: 0.92; line-height: 1.8; margin-top: 8px; }
+  header .meta strong { color: #fde68a; }
+
+  h2.section-title {
+    color: var(--navy); font-size: 18px; font-weight: 700;
+    margin: 28px 0 12px 4px; padding-bottom: 6px;
+    border-bottom: 2px solid var(--gold);
   }
-  header .meta {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    font-size: 14px;
-    color: #e0e7ff;
-    padding-top: 14px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    margin-top: 14px;
+  .section-desc { color: var(--text-muted); font-size: 13px; margin: 0 4px 14px 4px; }
+
+  .doc-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 22px; margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .doc-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+  }
+  .doc-card .left { flex-grow: 1; }
+  .doc-card .left .num {
+    font-size: 11px; font-weight: 700; color: var(--gold);
+    letter-spacing: 1px; margin-bottom: 3px; display: block;
+  }
+  .doc-card .left h2 { color: var(--navy); font-size: 15px; font-weight: 700; margin: 0; }
+  .doc-card .right { color: var(--gold); font-size: 20px; font-weight: bold; margin-left: 16px; }
+
+  .doc-card.pending {
+    background: #fef3c7; border-color: #d97706;
+    cursor: default; pointer-events: none;
+  }
+  .doc-card.pending .left h2 { color: #78350f; }
+  .doc-card.pending .right { color: #78350f; font-size: 13px; font-weight: normal; }
+
+  .info-box {
+    background: #fef3c7; border-left: 4px solid #d97706;
+    padding: 14px 18px; border-radius: 6px; margin: 20px 0;
+    font-size: 13px; color: #78350f;
   }
 
-  .intro {
-    background: white;
-    padding: 20px 24px;
-    border-radius: 10px;
-    margin-bottom: 28px;
-    border-left: 4px solid var(--navy);
-    font-size: 15px;
-  }
+  footer { text-align: center; color: #9ca3af; font-size: 12px; padding: 28px 0 8px; line-height: 1.8; }
+  footer .home { color: var(--gold); text-decoration: none; }
+  footer .home:hover { text-decoration: underline; }
 
-  section {
-    background: white;
-    border-radius: 10px;
-    padding: 24px 28px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    border-top: 4px solid var(--navy);
-  }
-  section h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--navy-dark);
-    margin-bottom: 6px;
-  }
-  section .desc {
-    font-size: 13px;
-    color: var(--gray-500);
-    margin-bottom: 16px;
-  }
-
-  ul.toc {
-    list-style: none;
-    display: grid;
-    gap: 6px;
-  }
-  ul.toc li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: 6px;
-  }
-  ul.toc li:hover { background: white; border-color: var(--navy); }
-  ul.toc .num {
-    flex-shrink: 0;
-    font-weight: 700;
-    color: var(--gray-500);
-    font-size: 13px;
-    min-width: 44px;
-  }
-  ul.toc a {
-    color: var(--gray-900);
-    text-decoration: none;
-    font-weight: 500;
-    flex-grow: 1;
-    font-size: 14px;
-  }
-  ul.toc a:hover { color: var(--navy); text-decoration: underline; }
-  ul.toc .tag {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-  }
-  .tag.live { background: #d1fae5; color: #047857; }
-  .tag.local { background: #fef3c7; color: #78350f; }
-
-  .note {
-    background: #fef3c7;
-    padding: 12px 16px;
-    border-radius: 6px;
-    font-size: 13px;
-    color: #78350f;
-    margin-top: 14px;
-    border-left: 3px solid #b45309;
-  }
-
-  footer {
-    text-align: center;
-    padding: 24px 0;
-    color: var(--gray-500);
-    font-size: 13px;
-    border-top: 1px solid var(--gray-200);
-    margin-top: 32px;
+  @media (max-width: 600px) {
+    header { padding: 24px 20px; }
+    header h1 { font-size: 20px; }
+    .doc-card { padding: 14px 18px; flex-wrap: wrap; }
   }
 </style>
 </head>
 <body>
-<div class="container">
 
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="lock">🔒</div>
+    <h1>เอกสารประชุมภายใน</h1>
+    <p class="sub">อธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือ<br>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <input type="password" id="pw" placeholder="รหัสผ่าน" autofocus onkeydown="if(event.key==='Enter')check()">
+    <button onclick="check()">เข้าสู่ระบบ</button>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<div class="container" id="content">
   <header>
-    <div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
-    <h1>เอกสารประกอบการประชุมอธิการบ้าน<br>และผู้อำนวยการโรงเรียนในเครือมูลนิธิฯ</h1>
-    <div style="font-size:17px; color:#e0e7ff; margin-top:8px;">ครั้งที่ ๑/๒๕๖๙</div>
+    <div class="eyebrow">Foundation of the Brothers of Saint Gabriel in Thailand</div>
+    <h1>📋 เอกสารประกอบการประชุม<br>อธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือมูลนิธิฯ · ครั้งที่ ๑/๒๕๖๙</h1>
     <div class="meta">
-      <span>📅 กำหนดการประชุม · ตามหนังสือเชิญ ที่ สทส. ๐๐๑/๒๕๖๙</span>
+      ตามหนังสือเชิญประชุม ที่ สทส. ๐๐๑/๒๕๖๙<br>
+      <strong>ณ อาคารมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ทองหล่อ กรุงเทพมหานคร</strong>
     </div>
   </header>
 
-  <div class="intro">
-    เอกสารรายงานความคืบหน้าและผลการดำเนินงานที่นำเสนอต่อที่ประชุม · จำแนกตามฝ่าย/หน่วยงานภายใต้โครงสร้างมูลนิธิฯ · โดยแต่ละหัวข้อเชื่อมโยงไปยังเอกสารต้นฉบับที่เผยแพร่บนเว็บไซต์ <strong>fsgthailand.org</strong> และรายงานภายในของโรงเรียน
+  <h2 class="section-title">ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร (ICT)</h2>
+  <p class="section-desc">โครงสร้าง ๕ กลุ่มงาน · ๒๒๐ ฟังก์ชัน · ๑๕ โรงในเครือฯ</p>
+
+  <a href="../../ict-admin-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 1</span><h2>งานบริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</h2></div><div class="right">→</div></a>
+  <a href="../../ict-info-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 2.1</span><h2>2.1 สารสนเทศระดับมูลนิธิฯ</h2></div><div class="right">→</div></a>
+  <a href="../../ict-swis-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 2.2</span><h2>งานพัฒนาซอฟต์แวร์เพื่อสถานศึกษา (SWIS)</h2></div><div class="right">→</div></a>
+  <a href="../../ict-media-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 3</span><h2>งานสื่อสารมวลชน Digital / Non-digital</h2></div><div class="right">→</div></a>
+  <a href="../../ict-network-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 4</span><h2>งานเครือข่ายและอุปกรณ์</h2></div><div class="right">→</div></a>
+  <a href="../../ict-personnel-objectives.html" class="doc-card"><div class="left"><span class="num">ICT 5</span><h2>งานพัฒนาบุคลากร ICT</h2></div><div class="right">→</div></a>
+  <a href="../../ict-hrm.html" class="doc-card"><div class="left"><span class="num">ภาพรวม</span><h2>Information Technology &amp; Human Resources</h2></div><div class="right">→</div></a>
+  <a href="../../ict-hrm-timeline.html" class="doc-card"><div class="left"><span class="num">Timeline</span><h2>Timeline — จากรากเหง้าสู่เป้าหมายคุณภาพ</h2></div><div class="right">→</div></a>
+  <a href="../../ict-2-1-sis-quality-manual.html" class="doc-card"><div class="left"><span class="num">คู่มือ</span><h2>คู่มือคุณภาพหน่วยงาน (Golden Sample · ICT 2.1 SIS)</h2></div><div class="right">→</div></a>
+
+  <h2 class="section-title">งานทรัพยากรมนุษย์ (HRM)</h2>
+  <p class="section-desc">โครงสร้าง ๗ อนุกรรมการ · Job Spec C/K/Cp · ๑๔ โรงในเครือฯ</p>
+
+  <a href="../../hrm-admin-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 1</span><h2>บริหารงาน HRM มูลนิธิฯ</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-workforce-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 2</span><h2>สรรหา วางแผนและวิเคราะห์อัตรากำลัง</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-onboarding-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 3</span><h2>เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-supervision-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 4</span><h2>นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-hrd-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 5</span><h2>พัฒนาคุณภาพทรัพยากรมนุษย์</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-retention-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 6</span><h2>ระบบการรักษาบุคลากร</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-succession-objectives.html" class="doc-card"><div class="left"><span class="num">HRM 7</span><h2>ระบบการสืบทอดตำแหน่ง</h2></div><div class="right">→</div></a>
+  <a href="../../hrm-quality-gate.html" class="doc-card"><div class="left"><span class="num">Gate</span><h2>คู่มือบริหารคุณภาพ HRM</h2></div><div class="right">→</div></a>
+
+  <h2 class="section-title">รายงานประชุมคณะกรรมการฝ่าย ICT + HRM ครั้งที่ ๑/๒๕๖๙</h2>
+  <p class="section-desc">สรุปสาระสำคัญและมติที่ประชุมเมื่อวันที่ ๒ กรกฎาคม ๒๕๖๙</p>
+
+  <a href="../2569-01/ict-brief.html" class="doc-card"><div class="left"><span class="num">ICT</span><h2>สรุปฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร เข้าวาระประชุมคณะกรรมการฝ่าย ครั้งที่ 1/2569</h2></div><div class="right">→</div></a>
+  <a href="../2569-01/hrm-brief.html" class="doc-card"><div class="left"><span class="num">HRM</span><h2>📋 สรุปงาน HRM · เตรียมประชุมคณะกรรมการฝ่าย ICT + HRM ครั้งที่ 1/2569</h2></div><div class="right">→</div></a>
+  <a href="../2569-01/" class="doc-card"><div class="left"><span class="num">Index</span><h2>เอกสารประชุมภายใน · สารบัญประชุม ๑/๒๕๖๙</h2></div><div class="right">→</div></a>
+
+  <h2 class="section-title">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ (ACEP)</h2>
+  <p class="section-desc">รายงานประจำสำหรับคณะกรรมการบริหารโรงเรียน + วาระ ๕.๑ ขอกู้ยืมเงิน (PC/Foundation Board ๓/๒๕๖๙)</p>
+
+  <div class="doc-card pending"><div class="left"><span class="num">Board</span><h2>ACEP Board Overview · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+  <div class="doc-card pending"><div class="left"><span class="num">Board</span><h2>ACEP Board Deep-Dive · ๙ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+  <div class="doc-card pending"><div class="left"><span class="num">แผน</span><h2>แผนการรักษามัธยม · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+  <div class="doc-card pending"><div class="left"><span class="num">Pulse</span><h2>Pulse Report · ๓ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+  <div class="doc-card pending"><div class="left"><span class="num">Loan</span><h2>Loan Defense (๑ หน้า) · ๒ กรกฎาคม ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+
+  <h2 class="section-title">SWIS · School-Wide Information System</h2>
+  <p class="section-desc">รายงานความคืบหน้าทีมพัฒนา SWIS · ๒๗ โมดูล / ๒๒๐ ฟังก์ชัน · ๑๕ โรงในเครือฯ</p>
+
+  <div class="doc-card pending"><div class="left"><span class="num">รายงาน</span><h2>รายงานการดำเนินงานทีมงาน SWIS · เดือนมิถุนายน ๒๕๖๙</h2></div><div class="right">รอ upload</div></div>
+
+  <div class="info-box">
+    <strong>หมายเหตุ:</strong> เอกสารเตรียมประชุม · เผยแพร่เฉพาะภายในสำหรับผู้เข้าประชุม · เอกสารบางรายการอยู่ระหว่างการเตรียม upload · จะสามารถเข้าถึงได้ก่อนถึงวันประชุม
   </div>
 
-  <!-- ============ ICT ============ -->
-  <section>
-    <h2>ฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร (ICT)</h2>
-    <p class="desc">โครงสร้าง ๕ กลุ่มงาน · ๒๒๐ ฟังก์ชัน · ๑๕ โรงในเครือฯ</p>
-
-    <ul class="toc">
-      <li><span class="num">ICT 1</span><a href="https://fsgthailand.org/ict-admin-objectives.html" target="_blank">งานบริหารฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ICT 2.1</span><a href="https://fsgthailand.org/ict-info-objectives.html" target="_blank">2.1 สารสนเทศระดับมูลนิธิฯ</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ICT 2.2</span><a href="https://fsgthailand.org/ict-swis-objectives.html" target="_blank">งานพัฒนาซอฟต์แวร์เพื่อสถานศึกษา (SWIS)</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ICT 3</span><a href="https://fsgthailand.org/ict-media-objectives.html" target="_blank">งานสื่อสารมวลชน Digital / Non-digital</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ICT 4</span><a href="https://fsgthailand.org/ict-network-objectives.html" target="_blank">งานเครือข่ายและอุปกรณ์</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ICT 5</span><a href="https://fsgthailand.org/ict-personnel-objectives.html" target="_blank">งานพัฒนาบุคลากร ICT</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">ภาพรวม</span><a href="https://fsgthailand.org/ict-hrm.html" target="_blank">Information Technology &amp; Human Resources</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">Timeline</span><a href="https://fsgthailand.org/ict-hrm-timeline.html" target="_blank">Timeline — จากรากเหง้าสู่เป้าหมายคุณภาพ</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">คู่มือ</span><a href="https://fsgthailand.org/ict-2-1-sis-quality-manual.html" target="_blank">คู่มือคุณภาพหน่วยงาน</a><span class="tag local">LOCAL · ยังไม่ upload</span></li>
-    </ul>
-
-    <div class="note">
-      ⚠️ <strong>อัปเดตล่าสุดที่ยังไม่ได้เผยแพร่:</strong> คู่มือคุณภาพ ICT 2.1 SIS (Golden Sample) เตรียมเสร็จวันที่ ๑๓ กรกฎาคม · อยู่ระหว่างรอ upload เข้าเว็บไซต์
-    </div>
-  </section>
-
-  <!-- ============ HRM ============ -->
-  <section>
-    <h2>งานทรัพยากรมนุษย์ (HRM)</h2>
-    <p class="desc">โครงสร้าง ๗ อนุกรรมการ · Job Spec C/K/Cp · ๑๔ โรงในเครือฯ</p>
-
-    <ul class="toc">
-      <li><span class="num">HRM 1</span><a href="https://fsgthailand.org/hrm-admin-objectives.html" target="_blank">บริหารงาน HRM มูลนิธิฯ</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 2</span><a href="https://fsgthailand.org/hrm-workforce-objectives.html" target="_blank">สรรหา วางแผนและวิเคราะห์อัตรากำลัง</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 3</span><a href="https://fsgthailand.org/hrm-onboarding-objectives.html" target="_blank">เตรียมศักยภาพทรัพยากรมนุษย์เข้าสู่งาน</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 4</span><a href="https://fsgthailand.org/hrm-supervision-objectives.html" target="_blank">นิเทศและกำกับติดตามคุณภาพทรัพยากรมนุษย์</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 5</span><a href="https://fsgthailand.org/hrm-hrd-objectives.html" target="_blank">พัฒนาคุณภาพทรัพยากรมนุษย์</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 6</span><a href="https://fsgthailand.org/hrm-retention-objectives.html" target="_blank">ระบบการรักษาบุคลากร</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM 7</span><a href="https://fsgthailand.org/hrm-succession-objectives.html" target="_blank">ระบบการสืบทอดตำแหน่ง</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">Gate</span><a href="https://fsgthailand.org/hrm-quality-gate.html" target="_blank">คู่มือบริหารคุณภาพ HRM</a><span class="tag live">LIVE</span></li>
-    </ul>
-  </section>
-
-  <!-- ============ ประชุมล่าสุด ============ -->
-  <section>
-    <h2>รายงานประชุมคณะกรรมการฝ่าย ICT + HRM ครั้งที่ ๑/๒๕๖๙ (๒ กรกฎาคม ๒๕๖๙)</h2>
-    <p class="desc">สรุปสาระสำคัญและมติที่ประชุมเสนอต่อที่ประชุมอธิการฯ + ผอ.</p>
-
-    <ul class="toc">
-      <li><span class="num">ICT</span><a href="https://fsgthailand.org/meetings/2569-01/ict-brief.html" target="_blank">สรุปฝ่ายเทคโนโลยีสารสนเทศและการสื่อสาร เข้าวาระประชุมคณะกรรมการฝ่าย ครั้งที่ 1/2569</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">HRM</span><a href="https://fsgthailand.org/meetings/2569-01/hrm-brief.html" target="_blank">📋 สรุปงาน HRM · เตรียมประชุมคณะกรรมการฝ่าย ICT + HRM ครั้งที่ 1/2569</a><span class="tag live">LIVE</span></li>
-      <li><span class="num">Index</span><a href="https://fsgthailand.org/meetings/2569-01/index.html" target="_blank">เอกสารประชุมภายใน</a><span class="tag live">LIVE</span></li>
-    </ul>
-  </section>
-
-  <!-- ============ SWIS ============ -->
-  <section>
-    <h2>SWIS · School-Wide Information System</h2>
-    <p class="desc">รายงานการดำเนินงานทีมพัฒนา SWIS · ๒๗ โมดูล / ๒๒๐ ฟังก์ชัน · ๑๕ โรงในเครือฯ</p>
-
-    <ul class="toc">
-      <li><span class="num">รายงาน</span><a href="./03_SWIS_operations_jun2569.pdf" target="_blank">รายงานการดำเนินงานทีมงาน SWIS · เดือนมิถุนายน ๒๕๖๙</a><span class="tag local">PDF</span></li>
-    </ul>
-
-    <div class="note">
-      ⚠️ SWIS ยังไม่มีหน้ารายงานเฉพาะบนเว็บไซต์ · เอกสารอยู่ในรูปแบบ PDF · หากต้องการเผยแพร่บนเว็บ ต้องมอบหมายให้ทำหน้าเว็บสาย SWIS
-    </div>
-  </section>
-
-  <!-- ============ ACEP ============ -->
-  <section>
-    <h2>โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ (ACEP)</h2>
-    <p class="desc">รายงานประจำ (สำหรับที่ประชุมคณะกรรมการบริหารโรงเรียน + กู้ยืมเงิน วาระ ๕.๑ ของ PC/Foundation Board ๓/๒๕๖๙)</p>
-
-    <ul class="toc">
-      <li><span class="num">Board</span><a href="./04_ACEP_board_overview_9jul2026.html" target="_blank">ACEP Board Overview · ๙ กรกฎาคม ๒๕๖๙</a><span class="tag local">LOCAL</span></li>
-      <li><span class="num">Board</span><a href="./04_ACEP_board_deepdive_9jul2026.html" target="_blank">ACEP Board Deep-Dive · ๙ กรกฎาคม ๒๕๖๙</a><span class="tag local">LOCAL</span></li>
-      <li><span class="num">แผน</span><a href="./04_ACEP_secondary_retention_plan_3jul2026.html" target="_blank">แผนการรักษามัธยม · ๓ กรกฎาคม ๒๕๖๙</a><span class="tag local">LOCAL</span></li>
-      <li><span class="num">Pulse</span><a href="./04_ACEP_pulse_report_3jul2026.html" target="_blank">Pulse Report · ๓ กรกฎาคม ๒๕๖๙</a><span class="tag local">LOCAL</span></li>
-      <li><span class="num">Loan</span><a href="./04_ACEP_loan_defense_1page_2jul2026.html" target="_blank">Loan Defense (๑ หน้า) · ๒ กรกฎาคม ๒๕๖๙</a><span class="tag local">LOCAL</span></li>
-    </ul>
-
-    <div class="note">
-      ⚠️ ACEP ยังไม่มีเว็บไซต์แยก (acep.ac.th อยู่ระหว่าง rebuild) · เอกสารเก็บใน local · หากต้องการเผยแพร่ต่อ ต้องเลือกไฟล์ที่จะ upload
-    </div>
-  </section>
-
-  <!-- ============ หมายเหตุ ============ -->
-  <section>
-    <h2>หมายเหตุประกอบ (Master Framework Audit · ๑๔ กรกฎาคม ๒๕๖๙)</h2>
-    <ul class="toc">
-      <li style="display:block; padding:14px;">
-        <strong>Framework Alignment:</strong> โครงสร้าง ICT ๕ กลุ่มงาน (SIS + SWIS นับเป็น ICT 2 sub-groups) + HRM ๗ อนุกรรมการ · ตรงตามธรรมนูญและ Job Spec canonical
-      </li>
-      <li style="display:block; padding:14px;">
-        <strong>ตัวเลขหลัก:</strong> ๒๒๐ ฟังก์ชัน SWIS · ๒๗ โมดูล adoption · ๑๕ โรงในเครือฯ (ICT) · ๑๔ โรงในเครือฯ (HRM) — ตรงตาม canonical
-      </li>
-      <li style="display:block; padding:14px;">
-        <strong>ที่ต้องอัปเดตต่อไป:</strong> เว็บไซต์ยังไม่สะท้อนความคืบหน้าหลังประชุม ICT+HRM ๒ กรกฎาคม (แผน PDCA9 ๙ แผน ICT · คู่มือคุณภาพ ICT 2.1 SIS · Golden Sample) — ห้อง ICT + FSGTHAILAND_WEB ดำเนินการอัปเดต
-      </li>
-      <li style="display:block; padding:14px;">
-        <strong>Deep Audit ที่ยังค้าง:</strong> ตรวจตัวชี้วัด KPI ทั้งหมด ๙ ขั้น PDCA9 · Job Spec C/K/Cp ๑๓๗ หัวข้อ ที่ระบุในหน้าเว็บ HRM · ๖ มิติคุณภาพข้อมูลของ ICT — มอบหมายให้ QMI + PDCA9 Inspector ตรวจสอบก่อนเผยแพร่ต่อประชุมครั้งต่อไป
-      </li>
-    </ul>
-  </section>
-
   <footer>
-    <div>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</div>
-    <div>เอกสารประกอบการประชุมอธิการบ้าน + ผู้อำนวยการโรงเรียนในเครือมูลนิธิฯ · ครั้งที่ ๑/๒๕๖๙</div>
+    <p>มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</p>
+    <p>Foundation of the Brothers of Saint Gabriel in Thailand</p>
+    <p style="margin-top:12px;">© ๒๕๖๙ · เอกสารภายใน · ห้ามเผยแพร่ภายนอกโดยไม่ได้รับอนุญาต</p>
+    <p style="margin-top:8px;"><a href="../../ict-hrm.html" class="home">← กลับไป Commission on ICT and HRM</a></p>
   </footer>
-
 </div>
+
+<script>
+  // SHA-256 hash ของ password "superiors2569"
+  // เปลี่ยน password: คำนวณใหม่ใน terminal: echo -n "newpassword" | shasum -a 256 | awk '{print $1}'
+  const EXPECTED_HASH = '98655a71baeaf3a2f762ba42971bd126ea01f21f40d7e15df7b985858f7cedb2';
+  const TOKEN_KEY = 'fsg_superiors_1_2569_token';
+
+  async function sha256(s) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function check() {
+    const pw = document.getElementById('pw').value;
+    if (!pw) { document.getElementById('err').textContent = 'กรุณากรอกรหัสผ่าน'; return; }
+    const h = await sha256(pw);
+    if (h === EXPECTED_HASH) {
+      sessionStorage.setItem(TOKEN_KEY, h);
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('content').classList.add('visible');
+    } else {
+      document.getElementById('err').textContent = 'รหัสผ่านไม่ถูกต้อง';
+      document.getElementById('pw').value = '';
+      document.getElementById('pw').focus();
+    }
+  }
+
+  if (sessionStorage.getItem(TOKEN_KEY) === EXPECTED_HASH) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('content').classList.add('visible');
+  }
+</script>
+
 </body>
 </html>
