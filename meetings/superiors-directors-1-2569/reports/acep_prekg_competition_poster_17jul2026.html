@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ประกวดออกแบบห้องเรียนเตรียมอนุบาล ACEP · ๒๓ ก.ค. ๒๕๖๙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Prompt', 'Sarabun', -apple-system, sans-serif;
+    background: #f0e6d2;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .draft-notice {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    background: #FEF3E0;
+    border: 1px dashed #D97706;
+    color: #92400E;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    z-index: 100;
+    max-width: 300px;
+    line-height: 1.4;
+  }
+
+  .poster {
+    width: 1123px;
+    height: 794px;
+    background: linear-gradient(135deg, #fbf7ef 0%, #f5ede0 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(47, 107, 94, 0.2);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* Header strip */
+  .header {
+    background: linear-gradient(135deg, #234f45 0%, #2f6b5e 100%);
+    color: #fff;
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-placeholder {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #234f45;
+    color: #d9a441;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1;
+    border: 2px solid #d9a441;
+    flex-shrink: 0;
+  }
+  .brand-text .th {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .brand-text .en {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+  }
+  .header .doc-tag {
+    color: #d9a441;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Main body */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    padding: 30px 40px;
+  }
+
+  .left h1 {
+    font-family: 'Prompt', serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: #234f45;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .left h1 .accent { color: #d9a441; }
+  .left .sub {
+    font-size: 14px;
+    color: #6f6b62;
+    margin-bottom: 18px;
+  }
+
+  /* Room photos grid */
+  .photos-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #234f45;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .photo {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #d4e8dc, #f6d9c6);
+    border-radius: 10px;
+    border: 2px dashed rgba(47, 107, 94, 0.35);
+    display: grid;
+    place-items: center;
+    color: #6f6b62;
+    font-size: 10.5px;
+    text-align: center;
+    padding: 6px;
+    line-height: 1.3;
+  }
+  .photo .p-icon { font-size: 20px; margin-bottom: 3px; }
+  .photo b { color: #234f45; }
+
+  /* Specs box */
+  .specs {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .specs-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #234f45;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .specs dl {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 4px 14px;
+    font-size: 12.5px;
+  }
+  .specs dt { color: #6f6b62; }
+  .specs dd { color: #234f45; font-weight: 600; margin: 0; }
+
+  /* Right column */
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .date-card {
+    background: linear-gradient(135deg, #fff9e9 0%, #fef3d0 100%);
+    border-left: 5px solid #d9a441;
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .date-card .label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6f6b62;
+    margin-bottom: 4px;
+  }
+  .date-card .date {
+    font-family: 'Prompt', serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #234f45;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .date-card .time {
+    font-size: 14px;
+    color: #6B0F1A;
+    font-weight: 600;
+  }
+
+  .info-list {
+    background: #fff;
+    border: 1px solid #e7e0d3;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 12.5px;
+    line-height: 1.9;
+    color: #33322e;
+  }
+  .info-list li {
+    list-style: none;
+    padding-left: 20px;
+    position: relative;
+  }
+  .info-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #d9a441;
+    font-weight: 700;
+  }
+  .info-list li b { color: #234f45; }
+
+  .prize-note {
+    background: rgba(224, 122, 84, 0.1);
+    border: 1px solid rgba(224, 122, 84, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #c9633f;
+  }
+  .prize-note b { color: #c9633f; }
+
+  /* Bottom strip */
+  .footer {
+    background: #234f45;
+    color: #fff;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .qr-box {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: #234f45;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px;
+    line-height: 1.2;
+  }
+  .scan-msg {
+    flex: 1;
+    padding-left: 18px;
+  }
+  .scan-msg .label {
+    color: #d9a441;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .scan-msg .text {
+    font-size: 13px;
+  }
+  .contact-right {
+    text-align: right;
+    font-size: 12.5px;
+  }
+  .contact-right .email {
+    color: #d9a441;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .contact-right .subject {
+    color: rgba(255,255,255,0.7);
+    font-size: 10.5px;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-notice">
+  <b>📝 Draft สำหรับ Designer</b><br>
+  โครง layout + copy · Designer เติมภาพห้องจริง/โลโก้/QR
+</div>
+
+<div class="poster">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="logo-placeholder">LOGO<br>ACEP</div>
+      <div class="brand-text">
+        <div class="th">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ</div>
+        <div class="en">ASSUMPTION COLLEGE ENGLISH PROGRAM</div>
+      </div>
+    </div>
+    <div class="doc-tag">Design Competition · Invitation</div>
+  </div>
+
+  <!-- Body -->
+  <div class="body-grid">
+    <div class="left">
+      <h1>ประกวดออกแบบและตกแต่ง<br><span class="accent">ห้องเรียนเตรียมอนุบาล</span></h1>
+      <div class="sub">ระดับผู้เชี่ยวชาญด้านพื้นที่การเรียนรู้เด็กปฐมวัย · เด็กอายุ ๒–๓ ปี</div>
+
+      <div class="photos-title">📷 สภาพห้องปัจจุบัน · ๔ มุม</div>
+      <div class="photos">
+        <div class="photo"><div><div class="p-icon">📷</div><b>มุมประตูทางเข้า</b><br>(เติมภาพจริง)</div></div>
+        <div class="photo"><div><div class="p-icon">📷</div><b>มุมหน้าต่าง</b><br>(เติมภาพจริง)</div></div>
+        <div class="photo"><div><div class="p-icon">📷</div><b>ห้องน้ำในตัว</b><br>(เติมภาพจริง)</div></div>
+      </div>
+
+      <div class="specs">
+        <div class="specs-title">📐 รายละเอียดพื้นที่</div>
+        <dl>
+          <dt>สถานที่</dt><dd>ชั้น ๑ อาคาร Ave Maria</dd>
+          <dt>ขนาด</dt><dd>๘.๒๖ × ๑๓.๘๐ ม. = ๑๑๓.๙๙ ตร.ม.</dd>
+          <dt>สภาพ</dt><dd>สะอาด · โปร่งแสง · โล่ง · ประตู ๒ ทาง · ห้องน้ำในตัว แยกชาย-หญิง · ไม่ต้องรื้อโครงสร้าง</dd>
+          <dt>ผู้เรียน</dt><dd>เด็ก ๒–๓ ปี · ไม่เกิน ๑๕ คน · ครูประจำชั้น ๑ + พี่เลี้ยง ๑</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="date-card">
+        <div class="label">วันประกวด</div>
+        <div class="date">๒๓ กรกฎาคม ๒๕๖๙</div>
+        <div class="time">๐๙.๐๐ น. เป็นต้นไป · ส่งแบบและนำเสนอ</div>
+      </div>
+
+      <ul class="info-list">
+        <li><b>ปรัชญา:</b> การศึกษามงฟอร์ต · ผสมผสานทฤษฎีปฐมวัยสากล</li>
+        <li><b>มาตรฐาน:</b> สถานพัฒนาเด็กปฐมวัยแห่งชาติ พ.ศ.๒๕๖๒</li>
+        <li><b>ต้องออกแบบรวม:</b> CCTV + Parent Portal · ระบบฟอกอากาศ HEPA · ม่านนอน · Sightlines เปิด · Intercom</li>
+        <li><b>ประกาศผล:</b> แจ้งบริษัทโดยตรงภายใน ๓ วันหลังประกวด</li>
+        <li><b>ระยะเวลาทำงาน:</b> ๑๕–๒๐ วันหลังลงนาม/ส่งมอบพื้นที่</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="qr-box">QR CODE<br>Full TOR</div>
+    <div class="scan-msg">
+      <div class="label">Scan for Full Details</div>
+      <div class="text">Terms of Reference · Design Brief ฉบับเต็ม</div>
+    </div>
+    <div class="contact-right">
+      <div class="email">Contact_us@acep.ac.th</div>
+      <div class="subject">ระบุหัวข้อ: ประกวดออกแบบห้องเตรียมอนุบาล</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
