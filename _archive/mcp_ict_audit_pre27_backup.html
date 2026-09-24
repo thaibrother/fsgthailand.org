@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>มคป. · รายงานตรวจติดตามงาน ICT — กรอบ 5 กลุ่ม · 8 sub · มงฟอร์ตวิทยาลัยแผนกประถม ปีการศึกษา 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1a2f5a;--gold:#b8860b;--ok:#1e7d46;--okbg:#eaf7f0;--warn:#9a6700;--warnbg:#fff8e1;--red:#b91c1c;--redbg:#fef2f2;--line:#dde2ea;--soft:#f6f8fb;--swis:#0b6bcb;--swisbg:#eaf2fc;--draft:#7c3aed;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Sarabun',sans-serif;color:#1f2937;line-height:1.6;background:#fff;max-width:1240px;margin:0 auto;padding:30px 34px 60px;}
+  header{border-bottom:3px double var(--navy);padding-bottom:14px;margin-bottom:18px;text-align:center;}
+  header .org{color:var(--gold);font-weight:600;font-size:.82rem;}
+  header h1{color:var(--navy);font-size:1.28rem;margin:8px 0 5px;}
+  header .sub{color:#6b7280;font-size:.84rem;}
+  .verdict{border:2px solid var(--navy);border-radius:12px;padding:18px 22px;margin:18px 0;background:linear-gradient(180deg,#f8fafc,#fff);}
+  .verdict h2{color:var(--navy);font-size:1.05rem;margin-bottom:10px;}
+  .score{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;}
+  .pill{flex:1;min-width:150px;border-radius:10px;padding:10px 14px;text-align:center;}
+  .pill .n{font-size:1.45rem;font-weight:700;display:block;line-height:1.2;}
+  .pill .l{font-size:.74rem;opacity:.85;}
+  .pill.g{background:var(--okbg);color:var(--ok);border:1px solid #b6e2c8;}
+  .pill.y{background:var(--warnbg);color:var(--warn);border:1px solid #f0dda0;}
+  .pill.r{background:var(--redbg);color:var(--red);border:1px solid #f3c4c4;}
+  .part{font-size:1.05rem;color:#fff;background:var(--navy);padding:8px 16px;border-radius:8px;margin:26px 0 12px;}
+  h3{color:var(--navy);font-size:.98rem;margin:15px 0 6px;padding:5px 10px;border-left:5px solid var(--swis);background:var(--swisbg);border-radius:6px;}
+  h3.gold{border-left-color:var(--gold);background:#fffaf0;}
+  h4{color:#334155;font-size:.9rem;margin:12px 0 5px;font-weight:600;}
+  table{width:100%;border-collapse:collapse;font-size:.79rem;margin:8px 0 14px;}
+  th{background:var(--navy);color:#fff;padding:7px 9px;text-align:left;font-weight:600;font-size:.75rem;vertical-align:top;}
+  td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  td.st{text-align:center;font-weight:700;white-space:nowrap;}
+  .c{text-align:center;} .b{font-weight:600;}
+  .box{border-left:5px solid var(--swis);background:var(--swisbg);border-radius:0 8px 8px 0;padding:12px 16px;font-size:.85rem;margin:12px 0;}
+  .box.red{border-color:var(--red);background:var(--redbg);}
+  .box.warn{border-color:var(--warn);background:var(--warnbg);}
+  .box.ok{border-color:var(--ok);background:var(--okbg);}
+  .box.small{font-size:.8rem;color:#4b5563;}
+  .box.note{border-color:var(--draft);background:#faf5ff;}
+  .ok{color:var(--ok);font-weight:700;} .warn{color:var(--warn);font-weight:700;} .red{color:var(--red);font-weight:700;}
+  .num{font-weight:700;color:var(--navy);}
+  .m{color:var(--swis);font-weight:600;background:var(--swisbg);padding:1px 5px;border-radius:4px;}
+  a.src{color:var(--swis);text-decoration:none;font-weight:600;} a.src:hover{text-decoration:underline;}
+  a.xref{color:var(--draft);font-weight:600;}
+  .tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:1px 6px;border-radius:3px;font-size:.72rem;margin:1px;font-weight:600;}
+  .who{background:#fffbeb;color:#854d0e;padding:1px 5px;border-radius:4px;font-size:.75rem;font-weight:600;display:inline-block;margin:1px 0;}
+  .who.f{background:#ecfdf5;color:#166534;}
+  ul{padding-left:20px;margin:6px 0;} li{margin-bottom:4px;font-size:.85rem;}
+  ol{padding-left:22px;margin:6px 0;} ol li{margin-bottom:5px;font-size:.85rem;}
+  .layer{border:2px solid var(--gold);border-radius:8px;padding:12px 16px;margin:10px 0;background:#fffef7;}
+  .kpi{font-size:.8rem;background:var(--soft);border-left:3px solid var(--swis);padding:6px 11px;margin:4px 0;border-radius:0 4px 4px 0;}
+  .goal{font-size:.8rem;background:#fffbf0;border-left:3px solid var(--gold);padding:6px 11px;margin:4px 0;border-radius:0 4px 4px 0;}
+  .obj{font-size:.8rem;background:var(--okbg);border-left:3px solid var(--ok);padding:6px 11px;margin:4px 0;border-radius:0 4px 4px 0;}
+  .foot{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);font-size:.74rem;color:#6b7280;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · Commission on ICT and HRM</div>
+<h1>มคป. · รายงานตรวจติดตามงาน ICT — กรอบ 5 กลุ่ม · 8 sub</h1>
+<div class="sub">โรงเรียนมงฟอร์ตวิทยาลัยแผนกประถม (db=mcp · เชียงใหม่) · ปีการศึกษา 2569 · เรียน ภราดา ดร.ทักษบุตร ไกรประสิทธิ์ ผู้อำนวยการ · ข้อมูล ณ 5 ส.ค. 69</div>
+</header>
+
+<div class="box note"><b>ขอบเขตและข้อจำกัดของรายงาน</b><br>
+· รายงานนี้ตรวจ <b>เฉพาะกรอบงาน ICT 5 กลุ่ม 8 ด้าน</b> ตามที่มูลนิธิฯ กำหนด · หัวข้อนอกกรอบมีผู้ตรวจเฉพาะทางดูแล (ดูตารางส่งต่อท้ายส่วนที่ 2)<br>
+· ข้อความเปรียบเทียบระหว่างโรงเรียนอ้างอิงเฉพาะ <b>8 โรงเรียนที่ตรวจแล้ว</b> (ซล. · สค. · มค. · มคป. · อสร. · อธ. · อลป. · อสป.) <b>ยังไม่ครบทุกโรงในเครือ</b><br>
+· รายงานนี้เสนอ <b>ข้อเท็จจริงและช่องว่างที่พบ</b> ไม่ได้เสนอแนวทางตัดสินใจ · การพิจารณาสั่งการเป็นดุลยพินิจของผู้อำนวยการ</div>
+
+<div class="part">1 · ภาพรวมผลตรวจ 8 ด้าน</div>
+<table>
+<tr><th style="width:5%">ด้าน</th><th style="width:22%">ชื่อด้าน</th><th style="width:47%">ข้อเท็จจริงที่พบ</th><th style="width:26%">ผู้รับผิดชอบ (มูลนิธิฯ / โรงเรียน)</th></tr>
+<tr><td class="c b">1</td><td>บริหารงาน ICT ภาพรวม</td><td>ไม่อยู่ในรายชื่อ 11 โรงเรียนที่ได้รับหนังสือเชิญเข้าคณะกรรมการมูลนิธิฯ (เลขที่ 2569/00052) · ไม่มีหน่วยงานระดับฝ่าย ICT · ไม่มีแผนพัฒนา ICT ระยะ 1-3 ปี</td><td><span class="who f">ภ.ศุภนันท์ (ประธานฝ่ายฯ · id 1046)</span><br><span class="who">ผอ. ภ.ดร.ทักษบุตร (id 9008)</span></td></tr>
+<tr><td class="c b">2.1</td><td>ส่งข้อมูลเข้าระบบกลางมูลนิธิฯ</td><td>ตัวชี้วัดข้อ 10 กำหนด "จัดระบบสารสนเทศครอบคลุม 5 ด้านตามกฎกระทรวง ร้อยละ 90" · ไม่มีหน่วยงานสารสนเทศแยก (รวมใน 2604) · ไม่มีวิธีวัดความถูกต้องของข้อมูลที่ส่ง</td><td><span class="who f">ภ.มานิต สกนธวัฒน์ (id 0740)</span><br><span class="who">ผู้รับผิดชอบแผน 4565 (id 1124)</span></td></tr>
+<tr><td class="c b">2.2.1</td><td>ซอฟต์แวร์เพื่อการบริหาร</td><td>ผู้บริหารลงทะเบียนใช้แอป <b>6 ท่าน</b> (มากที่สุดใน 8 โรงที่ตรวจแล้ว) · นักเรียน 6,231 · ผู้ปกครอง 3,127 · ครู 671 · ไม่มีหน่วยงาน SWIS แยกเฉพาะ</td><td><span class="who f">ภ.มานิต · ภ.กฤษฎา (id 5038)</span><br><span class="who">ผู้รับผิดชอบแผน 4565 (id 1124)</span></td></tr>
+<tr><td class="c b">2.2.2</td><td>ซอฟต์แวร์เพื่อการเรียนการสอน</td><td>มีบัญชีรายได้แยกหลักสูตรไทยและ EP · <b>บัญชีค่าโปรแกรมคอมพิวเตอร์ (5-704-14-00) เดือน มิ.ย. 69 ไม่มีรายการเบิกจ่าย</b> ยอดยกมา 16,447 บาท</td><td><span class="who f">ภ.มานิต</span><br><span class="who">หน่วยงาน 2604 · กลุ่มสาระวิทย์-เทคโนโลยี (2545)</span></td></tr>
+<tr><td class="c b">3.1</td><td>สื่อดิจิทัล</td><td>งานประชาสัมพันธ์ (2595) ตั้งงบ 143,491 บาท จ่ายจริง 7,354 บาท (5.13%) · ตัวชี้วัดข้อ 9 กำหนดข่าวบนเว็บไซต์ครบถ้วนเป็นปัจจุบัน 100%</td><td><span class="who f">ภ.ศราวุธ · ภ.ภานุวัฒน์ (id 12513)</span><br><span class="who">หน่วยงาน 2595 · 2604</span></td></tr>
+<tr><td class="c b">3.2</td><td>สื่อดั้งเดิม · โสตทัศนูปกรณ์</td><td>เป้าหมายข้อ 5 กำหนด <b>"วารสารโรงเรียน 2,700 เล่ม"</b> · ตัวชี้วัดข้อ 8 กำหนดร้อยละ 100 · ชื่อหน่วยงาน 2604 ระบุ "โสตทัศนูปกรณ์" · ยังไม่มีรายงานความคืบหน้า</td><td><span class="who f">ภ.ศราวุธ</span><br><span class="who">หน่วยงาน 2604 (id 1124)</span></td></tr>
+<tr><td class="c b">4.1</td><td>เครือข่าย · อุปกรณ์ เพื่อการบริหาร</td><td>ผังบัญชี ICT <b>12 รายการ</b> รวมค่าอินเทอร์เน็ตแยก · เดือน มิ.ย. 69 เบิกจ่ายจริง <b>32,639 บาท</b> เอกสารครบ · งบหน่วยงาน 2604 ใช้ไป <b>4.33%</b> · ไม่มีการบันทึกเวลาระบบล่ม ความเร็วเครือข่าย และเหตุการณ์ความปลอดภัย</td><td><span class="who f">ภ.อภิสิทธิ์ (id 0768) · ภ.ธนภูมิ (id 0690003)</span><br><span class="who">หน่วยงาน 2604 · งานจัดซื้อ (2592)</span></td></tr>
+<tr><td class="c b">4.2</td><td>เครือข่าย · อุปกรณ์ เพื่อการเรียนการสอน</td><td>งบกลุ่มสาระวิทย์-เทคโนโลยี (75,062 บาท) และ English Programme (1,181,200 บาท) <b>ใช้ไป 0% ทั้งคู่</b> · ระบบไม่ได้บันทึกรายการอุปกรณ์ในห้องเรียน</td><td><span class="who f">ภ.อภิสิทธิ์</span><br><span class="who">หน่วยงาน 2604 · 2545 · 2619</span></td></tr>
+<tr><td class="c b">5.1</td><td>บุคลากรทีม ICT</td><td>ผู้รับผิดชอบแผน 4565 ระบุตัวบุคคลชัด (รหัส 1124) · งานพัฒนาบุคลากร (2610) ตั้งงบ 1,197,260 บาท ใช้ไป 4.44% · <b>ไม่ทราบจำนวนและคุณวุฒิของทีม ICT เฉพาะ</b> (ข้อมูลกำลังคนอยู่ในรายงาน HRM)</td><td><span class="who f">ภ.อาวุธ (id 9011) · ภ.ศิริชัย (id 69001)</span><br><span class="who">ผู้รับผิดชอบแผน 4565 · หน่วยงาน 2610</span></td></tr>
+<tr><td class="c b">5.2</td><td>ผู้ใช้งานทั่วไป</td><td>ผู้ใช้แอปรวม <b>10,035</b> คน เพิ่มปีนี้ 730 คน · ตัวชี้วัดข้อ 12 กำหนดความพึงพอใจร้อยละ 86 · <b>ยังไม่มีเครื่องมือสำรวจ</b> · ระบบไม่ได้บันทึกการอบรมและความรู้ PDPA</td><td><span class="who f">ภ.อาวุธ</span><br><span class="who">หน่วยงาน 2610 · 2604</span></td></tr>
+</table>
+
+<div class="part">2 · บริบทโรงเรียนตามกรอบ ICT</div>
+<table>
+<tr><th style="width:22%">รายการ</th><th style="width:56%">ค่าจริงจากฐานข้อมูล</th><th style="width:22%">แหล่งข้อมูล</th></tr>
+<tr><td>ชื่อโรงเรียน</td><td>โรงเรียนมงฟอร์ตวิทยาลัยแผนกประถม (มคป.) · จังหวัดเชียงใหม่</td><td><a class="src" href="https://swis.mcp.ac.th" target="_blank">ระบบ SWIS</a></td></tr>
+<tr><td>ผู้อำนวยการ ปีการศึกษา 2569</td><td><b>ภราดา ดร.ทักษบุตร ไกรประสิทธิ์</b> (รหัสบุคลากร 9008 · โทร 053-252565) · <b>ดำรงตำแหน่งประธานอนุกรรมการฝ่ายบริหารทรัพยากรมนุษย์ด้านการรักษาบุคลากรของมูลนิธิฯ ควบคู่กัน</b></td><td>ทะเบียนผู้บริหารเครือฯ 2569</td></tr>
+<tr><td>โครงสร้างฝ่าย (8 ฝ่าย)</td><td>ฝ่ายวิชาการ (กิจกรรม 1,738) · ฝ่ายกิจการนักเรียน (784) · ฝ่ายธุรการ-การเงิน (699) · ฝ่ายภาษาต่างประเทศ (617) · ฝ่ายบริหารทั่วไป (389) · สำนักผู้อำนวยการ (372) · <b>ฝ่ายทรัพยากรมนุษย์ (343 · แยกเป็นฝ่ายเต็ม)</b> · แผนกการเงิน (169)</td><td>ผังโครงสร้างองค์กร</td></tr>
+<tr><td>จำนวนหน่วยงาน</td><td><b>76 หน่วยงาน</b></td><td>ระบบงบประมาณ 2569</td></tr>
+<tr><td>บุคลากร</td><td>รวม <b>325</b> คน · ชาย 127 · หญิง 198 · เข้าใหม่ 44 · พ้นสภาพ 18 · <b>เพิ่มสุทธิ 26 คน</b></td><td>ทะเบียนบุคลากร 2569</td></tr>
+<tr><td>งบประมาณทั้งโรงเรียน</td><td>ตั้งรับ 15,080,447 · รับจริง 4,637,300 · <b>ตั้งจ่าย 27,672,838</b> · จ่ายจริง 1,684,499 · คงเหลือ 25,988,339 · <b>ใช้ไป 6.09%</b></td><td>ระบบงบประมาณ 2569</td></tr>
+<tr><td>กลุ่มเป้าหมายตามแผน</td><td>นักเรียน <b>2,627</b> คน (ข้อมูล ณ 7 ธ.ค. 68) · ครูและบุคลากร <b>308</b> คน (ข้อมูล ณ 12 ธ.ค. 68)</td><td>แผนงานเลขที่ 4565</td></tr>
+</table>
+
+<div class="box"><b>ขอบเขตรายงาน:</b> รายงานนี้ตรวจเฉพาะกรอบงาน ICT 8 ด้าน หัวข้อที่อยู่นอกกรอบมีผู้ตรวจเฉพาะทางดูแล — คู่มือคุณภาพ/SAR/นโยบายโรงเรียน → <a class="xref" href="mcp_qm_audit.html">mcp_qm_audit</a> · ความครบถ้วนแผน PDCA9/ตัวชี้วัดมาตรฐาน → <a class="xref" href="mcp_pdca9_audit.html">mcp_pdca9_audit</a> · ผลตรวจบริการหน่วยงาน/ปฏิทินรวม/สแกนใบหน้า → <a class="xref" href="mcp_swis_audit.html">mcp_swis_audit</a> · Confirm Loop/Job Specification/อัตรากำลัง → <a class="xref" href="mcp_hrm_audit.html">mcp_hrm_audit</a></div>
+
+<div class="part">3 · ผลตรวจรายด้าน · 8 ด้าน (รายละเอียดเต็ม)</div>
+
+<h3>ด้าน 1 · งานบริหารฝ่าย ICT (ระดับกำกับภาพรวม)</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>กำกับทิศทาง ICT · จัดทำแผนพัฒนา 1-3 ปี · ธรรมาภิบาล · ประชุมคณะกรรมการประจำ · รวบรวมผลจาก 7 ด้านย่อย</td>
+<td>มีแผนพัฒนา ICT ระยะ 1-3 ปีที่สอดคล้องกับแผนยุทธศาสตร์มูลนิธิฯ</td>
+<td><b>มงฟอร์ตประถมไม่อยู่ในรายชื่อ 11 โรงเรียนที่ได้รับหนังสือเชิญ 2569/00052</b> (ผู้รับคือ ac · acep · acn · acp · acr · acs · acsp · atsn · mcs · sg · sl) · <b>ไม่มีหน่วยงานระดับ "ฝ่าย ICT"</b> — งานเทคโนโลยีอยู่ใต้ฝ่ายบริหารทั่วไป · แต่มีฝ่ายทรัพยากรมนุษย์แยกเป็นฝ่ายเต็ม 5 หน่วยงาน แสดงว่าโครงสร้างเน้นงานบุคคลมากกว่างานเทคโนโลยี</td>
+<td class="red">ไม่มีแผนพัฒนา ICT 1-3 ปี · ไม่มีคณะกรรมการ ICT ระดับโรงเรียน · ไม่มีผู้แทนในคณะกรรมการมูลนิธิฯ</td>
+<td><span class="who f">มูลนิธิฯ: ประธานฝ่ายฯ ภ.ศุภนันท์ ขันธปรีชา (id 1046) · เลขานุการสาย ICT ภ.อภิสิทธิ์ งามวงศ์ (id 0768)</span><br><span class="who">โรงเรียน: ผอ. ภ.ดร.ทักษบุตร ไกรประสิทธิ์ (id 9008)</span></td>
+<td><a class="src" href="https://thaibrothers.net" target="_blank">หนังสือเวียน 2569/00052</a></td>
+</tr>
+</table>
+
+<h3>ด้าน 2.1 · ระบบสารสนเทศกลางของมูลนิธิฯ (SIS)</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>ส่งข้อมูลเข้าระบบกลางมูลนิธิฯ ให้ครบถ้วน · ควบคุมคุณภาพข้อมูล · กระทบยอดข้อมูล</td>
+<td>ข้อมูลใช้ตัดสินใจระดับมูลนิธิฯ ได้จริง ถูกต้อง 100%</td>
+<td>หน่วยงาน <b>2604 "งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์"</b> ครอบคลุมทั้งงาน IT · โสตทัศนูปกรณ์ · สื่อดิจิทัล ในหน่วยเดียว · แผนงาน 4565 ตัวชี้วัดข้อ 10 ระบุ <b>"ร้อยละ 90 ของการจัดระบบข้อมูลสารสนเทศในการบริหารจัดการเพื่อพัฒนาคุณภาพสถานศึกษาครอบคลุมองค์ประกอบพื้นฐาน 5 ด้าน และสอดคล้องตามกฎกระทรวง"</b> · เป้าหมายข้อ 4 ระบุ "รายงานข้อมูลสารสนเทศ 5 ด้าน ปีการศึกษา 2569 จำนวน 1 เล่ม"</td>
+<td class="warn">ไม่มีหน่วยงาน "งานสารสนเทศ" แยก (ต่างจากอัสสัมชัญธนบุรีที่มีหน่วย 1626 และอัสสัมชัญศรีราชาที่มีหน่วย 2417) · ไม่ปรากฏการลงนามรับทราบในระบบหนังสือเวียน</td>
+<td><span class="who f">มูลนิธิฯ: ภ.มานิต สกนธวัฒน์ (id 0740) ผู้ดูแลระบบข้อมูลกลาง</span><br><span class="who">โรงเรียน: ผู้รับผิดชอบแผน 4565 (รหัสบุคลากร 1124)</span></td>
+<td><a class="src" href="https://swis.mcp.ac.th" target="_blank">แผนงาน 4565</a></td>
+</tr>
+</table>
+
+<h3>ด้าน 2.2 · ซอฟต์แวร์เพื่อสถานศึกษา (SWIS) — แบ่ง 2 หมวดย่อยตามกรอบ Tier-0</h3>
+
+<h3 class="gold">2.2.1 · ซอฟต์แวร์เพื่อการบริหารและบริการ</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>นำผู้ใช้เข้าระบบแอปพลิเคชัน · ใช้ SWIS ครอบงานบริหาร · แผงข้อมูลสำหรับผู้บริหาร</td>
+<td>อัตราการใช้งานไม่ต่ำกว่า 80% · ผู้บริหารใช้ข้อมูลประกอบการตัดสินใจ</td>
+<td><b>จำนวนผู้ลงทะเบียนใช้แอปพลิเคชัน:</b><br>
+• นักเรียน <span class="m">6,231</span> คน (เพิ่ม 223 · 3.6%)<br>
+• ผู้ปกครอง <span class="m">3,127</span> คน (เพิ่ม 443 · 14.2%)<br>
+• ครูและบุคลากร <span class="m">671</span> คน (เพิ่ม 64 · 9.5%)<br>
+• <b>ผู้บริหาร <span class="ok">6</span> คน (ไม่เพิ่ม)</b> — <b>มากที่สุดใน 8 โรงที่ตรวจแล้ว</b> (ซล. 4 · สค. 4 · มค. 2 · อสร. 4 · อธ. 3 · อลป. 4 · อสป. 4)<br>
+แผนงาน 4565 ตัวชี้วัดข้อ 11 <b>"มีการดำเนินการพัฒนาระบบเทคโนโลยีเพื่อสนับสนุนการบริหารจัดการและการจัดการเรียนรู้"</b></td>
+<td class="warn">ผู้บริหารไม่เพิ่มในรอบปี · ไม่มีหน่วยงาน SWIS แยกเฉพาะ (ต่างจากอัสสัมชัญศรีราชาที่มี "ศูนย์นวัตกรรมเทคโนโลยี ระบบ SWIS &amp; AI") · สถิติการใช้โมดูลรายตัวอยู่ในขอบเขตผู้ตรวจ SWIS</td>
+<td><span class="who f">มูลนิธิฯ: ภ.มานิต สกนธวัฒน์ · ภ.กฤษฎา งามวงศ์ (id 5038)</span><br><span class="who">ผู้พัฒนา: บริษัท SWIS Plus</span><br><span class="who">โรงเรียน: ผู้รับผิดชอบแผน 4565 (id 1124)</span></td>
+<td>สถิติการใช้งานแอป 2569 · <a class="xref" href="mcp_swis_audit.html">รายละเอียดโมดูล</a></td>
+</tr>
+</table>
+
+<h3 class="gold">2.2.2 · ซอฟต์แวร์เพื่อการเรียนการสอนและกิจกรรมตามหลักสูตร</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>ระบบจัดการเรียนรู้ · ห้องเรียนออนไลน์ · ลิขสิทธิ์ซอฟต์แวร์เพื่อการสอน</td>
+<td>ครูใช้เทคโนโลยีในการสอนทุกรายวิชา</td>
+<td><b>ผังบัญชีแยกหลักสูตรไทยและ English Programme:</b><br>
+• <span class="m">4-103-01-10</span> ค่าใช้คอมพิวเตอร์และอินเทอร์เน็ต (ไทย)<br>
+• <span class="m">4-103-02-20</span> ค่าใช้คอมพิวเตอร์และอินเทอร์เน็ต (EP)<br>
+• <span class="m">5-704-14-00</span> ค่าใช้จ่ายโปรแกรมคอมพิวเตอร์และอินเตอร์เน็ต — <b>เดือน มิ.ย. 69 ไม่มีรายการเบิกจ่าย ยอดยกมา 16,447 บาท</b><br>
+หน่วยงาน 2545 กลุ่มสาระวิทยาศาสตร์และเทคโนโลยี · แผนงาน 4583 อนุมัติแล้ว ครบ 9 ขั้น <b>18 ตัวชี้วัด</b> 4 วัตถุประสงค์ 2 เป้าหมาย</td>
+<td class="warn">ค่าใช้จ่ายด้านซอฟต์แวร์การสอนเดือน มิ.ย. เท่ากับศูนย์ · งบหน่วยงาน 2545 (75,062 บาท) และ 2619 English Programme (1,181,200 บาท) ใช้ไป 0% ทั้งคู่</td>
+<td><span class="who f">มูลนิธิฯ: ภ.มานิต สกนธวัฒน์</span><br><span class="who">โรงเรียน: หน่วยงาน 2604 (id 1124) · หัวหน้ากลุ่มสาระวิทย์-เทคโนโลยี (2545) · หัวหน้างาน EP (2619)</span></td>
+<td>ผังบัญชี · แผนงาน 4583</td>
+</tr>
+</table>
+
+<h3>ด้าน 3.1 · สื่อดิจิทัล</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>เว็บไซต์โรงเรียน · สื่อสังคมออนไลน์ · เนื้อหาดิจิทัล · ประชาสัมพันธ์เชิงรุก</td>
+<td>ข่าวสารเผยแพร่สม่ำเสมอ ครบถ้วน เป็นปัจจุบัน</td>
+<td>หน่วยงานที่เกี่ยวข้อง 2 หน่วย:<br>
+• <b>2604 งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</b> — รวมงานสื่อดิจิทัลไว้ในขอบเขต<br>
+• <b>2595 งานประชาสัมพันธ์</b> (ฝ่ายธุรการ-การเงิน) ตั้งงบ <span class="m">143,491</span> บาท จ่ายจริง 7,354 บาท <b>ใช้ไป 5.13%</b><br>
+แผนงาน 4565 ตัวชี้วัดข้อ 9 <b>"ร้อยละ 100 ของข้อมูลข่าวสารที่เผยแพร่ผ่านเว็บไซต์และสื่อดิจิทัลของโรงเรียน ครบถ้วน และเป็นปัจจุบัน"</b> · ตัวชี้วัดข้อ 6 "ร้อยละ 90 ของการให้บริการสนับสนุนด้านเทคโนโลยีสารสนเทศในการจัดทำสื่อดิจิทัลและสื่อสิ่งพิมพ์"</td>
+<td class="warn">งบประชาสัมพันธ์ต่ำและใช้ไปน้อย · ระบบไม่สามารถกรองเนื้อหาตามคำค้นได้ จึงยังไม่มีตัวเลขจำนวนข่าวที่เผยแพร่จริง</td>
+<td><span class="who f">มูลนิธิฯ: ภ.ศราวุธ ยุชมภู · ภ.ภานุวัฒน์ เหมือนทับ (id 12513)</span><br><span class="who">โรงเรียน: หัวหน้างานประชาสัมพันธ์ (2595) · หน่วยงาน 2604</span></td>
+<td>ระบบงบประมาณ · แผนงาน 4565</td>
+</tr>
+</table>
+
+<h3>ด้าน 3.2 · สื่อดั้งเดิม (สิ่งพิมพ์ · ป้าย · โสตทัศนูปกรณ์)</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>วารสารโรงเรียน · ป้าย · แผ่นพับ · บอร์ด · อุปกรณ์โสตทัศน์</td>
+<td>สื่อภายในโรงเรียนทั่วถึง · วารสารออกตามแผน</td>
+<td><b>เป้าหมายเป็นตัวเลขชัดเจนที่สุดใน 8 โรงที่ตรวจแล้ว:</b><br>
+• เป้าหมายข้อ 5 <b>"วารสารโรงเรียน ปีการศึกษา 2569 จำนวน 2,700 เล่ม"</b><br>
+• ตัวชี้วัดข้อ 8 <b>"ร้อยละ 100 ของการจัดทำและเผยแพร่วารสารโรงเรียน จำนวน 2,700 เล่ม"</b><br>
+• ตัวชี้วัดข้อ 7 "ร้อยละ 100 ของการให้บริการติดตั้งอุปกรณ์โสตทัศนูปกรณ์"<br>
+• <b>ชื่อหน่วยงาน 2604 ระบุ "โสตทัศนูปกรณ์"</b> จึงมีเจ้าภาพโดยตำแหน่ง</td>
+<td class="warn">ยังไม่มีรายงานความคืบหน้าว่าผลิตวารสารไปแล้วกี่เล่ม เมื่อผ่านมา 1 ใน 3 ของปี</td>
+<td><span class="who f">มูลนิธิฯ: ภ.ศราวุธ ยุชมภู</span><br><span class="who">โรงเรียน: หน่วยงาน 2604 (id 1124)</span></td>
+<td>แผนงาน 4565 เป้าหมายข้อ 5 · ตัวชี้วัดข้อ 7-8</td>
+</tr>
+</table>
+
+<h3>ด้าน 4.1 · เครือข่ายและอุปกรณ์ เพื่อการบริหารและบริการ</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>ระบบเครือข่ายภายใน · อินเทอร์เน็ต · เครื่องแม่ข่าย · ระบบความปลอดภัย · ศูนย์บริการซ่อมบำรุง · การจัดการทรัพย์สิน · การคุ้มครองข้อมูลส่วนบุคคล</td>
+<td>ระบบใช้งานได้ไม่ต่ำกว่า 99% · ตอบรับงานซ่อมภายใน 24 ชม. · ตรวจเช็กอุปกรณ์ปีละ 2 ครั้ง</td>
+<td><b>ผังบัญชี ICT ครบ 12 รายการ ครอบคลุมทั้ง 4 หมวด (ดูรายละเอียดส่วนที่ 4)</b><br>
+<b>การเบิกจ่ายจริงเดือนมิถุนายน 2569:</b><br>
+• <span class="m">5-701-05-00</span> ค่าอินเทอร์เน็ต/สมาชิก UBC — เดบิต <b>25,445</b> บาท<br>
+• <span class="m">5-301-05-00</span> ค่าวัสดุคอมพิวเตอร์ — เดบิต <b>7,194</b> บาท เครดิต 490 บาท<br>
+งบหน่วยงาน 2604 ตั้ง <span class="m">1,517,650</span> บาท จ่ายจริง 65,642 บาท <b>ใช้ไป 4.33%</b><br>
+แผนงาน 4565 ตัวชี้วัดข้อ 3-5 (ความเพียงพอ 100% · ตรวจเช็กปีละ 2 ครั้ง 100% · งานซ่อมเสร็จตามเวลา 90%)</td>
+<td class="warn">งบใช้ไปน้อยมากเมื่อเทียบกับแผน · ไม่มีการบันทึกเวลาระบบล่ม ความเร็วเครือข่าย เหตุการณ์ความปลอดภัย และการปฏิบัติตาม PDPA · เป้าหมายข้อ 2 "รายงานการตรวจเช็กและซ่อมบำรุง 1 เล่ม" ยังไม่มีความคืบหน้า</td>
+<td><span class="who f">มูลนิธิฯ: ภ.อภิสิทธิ์ งามวงศ์ (id 0768) · ภ.ธนภูมิ สายพรหม (id 0690003)</span><br><span class="who">โรงเรียน: หน่วยงาน 2604 (id 1124) · งานจัดซื้อ-จัดจ้าง (2592 · งบ 3,262 บาท ใช้ 0%)</span></td>
+<td>บัญชีแยกประเภท มิ.ย. 69 · ระบบงบประมาณ</td>
+</tr>
+</table>
+
+<h3>ด้าน 4.2 · เครือข่ายและอุปกรณ์ เพื่อการเรียนการสอนและกิจกรรม</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>เครือข่ายไร้สายในห้องเรียน · กระดานอัจฉริยะ · เครื่องฉาย · แท็บเล็ต · ห้องปฏิบัติการ</td>
+<td>ครูใช้เทคโนโลยีในการสอนทุกรายวิชา · ห้องปฏิบัติการเพียงพอ</td>
+<td>รายได้แยก 2 หลักสูตร (4-103-01-10 ไทย · 4-103-02-20 EP) · <b>สินทรัพย์แยกหลักสูตรด้วย</b> — 1-201-07-00 คอมพิวเตอร์และอุปกรณ์ (ไทย) และ 1-201-07-10 (ED) · หน่วยงาน 2619 English Programme ตั้งงบ <span class="m">1,181,200</span> บาท <b>ใช้ไป 0%</b> · หน่วยงาน 2545 กลุ่มสาระวิทย์-เทคโนโลยี ตั้งงบ 75,062 บาท <b>ใช้ไป 0%</b> · เป้าหมายข้อ 1 ระบุให้บริการนักเรียน 2,627 คน และครู 308 คน</td>
+<td class="red">งบทั้งสองหน่วยใช้ไป 0% · ระบบไม่ได้บันทึกรายการอุปกรณ์ในห้องเรียน · ไม่มีการตรวจสอบห้องปฏิบัติการ</td>
+<td><span class="who f">มูลนิธิฯ: ภ.อภิสิทธิ์ งามวงศ์</span><br><span class="who">โรงเรียน: หน่วยงาน 2604 · 2545 · 2619</span></td>
+<td>ระบบงบประมาณ · ผังบัญชี</td>
+</tr>
+</table>
+
+<h3>ด้าน 5.1 · บุคลากรทีม ICT</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>สำรวจกำลังคนทีม ICT · ตารางทักษะ · การอบรม · การรับรองคุณวุฒิ · การสืบทอดตำแหน่ง</td>
+<td>ทีมงานมีคุณสมบัติครบตามที่กำหนด · มีการรับรองด้านความปลอดภัยและ PDPA</td>
+<td><b>ผู้รับผิดชอบงาน ICT ที่ระบุตัวได้:</b> ผู้รับผิดชอบแผน 4565 รหัสบุคลากร <b>1124</b> — เป็นผู้เดียวที่ปรากฏชื่อผูกกับงานเทคโนโลยีสารสนเทศฯ ในระบบแผนงาน<br>
+<b>งบพัฒนาบุคลากรที่รองรับงาน ICT:</b> หน่วยงาน 2610 งานพัฒนาบุคลากร ตั้งงบ <span class="m">1,197,260</span> บาท จ่ายจริง 53,129 บาท (4.44%) — <b>ยังไม่ปรากฏรายการอบรมด้าน ICT</b><br>
+<b>เป้าหมายด้านเอกสารของหน่วยงาน:</b> เป้าหมายข้อ 6 "คู่มือคุณภาพหน่วยงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ 1 เล่ม" — ยังไม่มีรายงานความคืบหน้า</td>
+<td class="warn">ไม่ทราบจำนวนบุคลากรในทีม ICT · ไม่ทราบวุฒิ ทักษะ และการรับรองด้านความปลอดภัย/PDPA · <b>ยังไม่มีตารางทักษะและแผนสืบทอดตำแหน่งของทีม ICT</b></td>
+<td><span class="who f">มูลนิธิฯ: ภ.ดร.อาวุธ ศิลาเกษ (id 9011) · ภ.ศิริชัย ผังรักษ์ (id 69001)</span><br><span class="who">โรงเรียน: ผู้รับผิดชอบแผน 4565 (id 1124) · หน่วยงาน 2610</span></td>
+<td>แผนงาน 4565 · ระบบงบประมาณ<br><span style="font-size:.72rem;color:#6b7280">ข้อมูลกำลังคน วุฒิ และเอกสารกำหนดหน้าที่ อยู่ในรายงาน <a class="xref" href="mcp_hrm_audit.html">mcp_hrm_audit</a></span></td>
+</tr>
+</table>
+
+<h3>ด้าน 5.2 · ผู้ใช้งานทั่วไปในโรงเรียน</h3>
+<table>
+<tr><th style="width:15%">หน้าที่หลัก</th><th style="width:14%">เป้าหมายคุณภาพ</th><th style="width:26%">หลักฐานที่พบ</th><th style="width:13%">ช่องว่าง</th><th style="width:17%">ผู้รับผิดชอบ</th><th style="width:15%">แหล่งอ้างอิง</th></tr>
+<tr>
+<td>อบรมการใช้ระบบและ PDPA · นำผู้ใช้เข้าระบบ · ทักษะดิจิทัลพื้นฐาน · รับเรื่องร้องเรียน</td>
+<td>อัตราการใช้งานไม่ต่ำกว่า 80% · ความรู้ PDPA ไม่ต่ำกว่า 90% · ความพึงพอใจ 86%</td>
+<td>ผู้ใช้รวม <b>10,035</b> คน · เพิ่มในปีนี้ 730 คน<br>
+• นักเรียน 6,231 (+223) · ผู้ปกครอง 3,127 (+443) · ครู 671 (+64) · ผู้บริหาร 6 (+0)<br>
+แผนงาน 4565 ตัวชี้วัดข้อ 12 <b>"ร้อยละ 86 ของนักเรียน ผู้ปกครอง บุคลากร มีความพึงพอใจต่อการให้บริการงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ รวมถึงการใช้ข้อมูลสารสนเทศของมูลนิธิฯ"</b></td>
+<td class="warn">ไม่มีเครื่องมือสำรวจความพึงพอใจตามเป้า 86% · ระบบไม่ได้บันทึกการอบรมและความรู้ PDPA</td>
+<td><span class="who f">มูลนิธิฯ: ภ.ดร.อาวุธ ศิลาเกษ</span><br><span class="who">โรงเรียน: งานพัฒนาบุคลากร (2610) · หน่วยงาน 2604</span></td>
+<td>สถิติการใช้งานแอป 2569</td>
+</tr>
+</table>
+
+<div class="part">4 · หลักฐานทางการเงินและงบประมาณ</div>
+
+<h3>4.1 · หน่วยงานที่เกี่ยวข้องกับ ICT ทั้ง 8 หน่วย (จาก 76 หน่วยงานทั้งโรงเรียน)</h3>
+<table>
+<tr><th style="width:6%">รหัส</th><th style="width:26%">ชื่อหน่วยงาน</th><th style="width:13%">สังกัดฝ่าย</th><th style="width:10%" class="c">ตั้งจ่าย</th><th style="width:10%" class="c">จ่ายจริง</th><th style="width:7%" class="c">ใช้ไป</th><th style="width:12%">ผูกด้าน</th><th style="width:16%">แผนงาน</th></tr>
+<tr>
+<td>2604</td><td class="b">งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td>ฝ่ายบริหารทั่วไป</td>
+<td class="c b">1,517,650</td><td class="c">65,642</td><td class="c red">4.33%</td>
+<td><span class="tag">1</span><span class="tag">2.1</span><span class="tag">2.2.1</span><span class="tag">3.1</span><span class="tag">3.2</span><span class="tag">4.1</span></td>
+<td>4565 อนุมัติแล้ว · 9 ขั้น · 12 ตัวชี้วัด · 4 วัตถุประสงค์ · 10 เป้าหมาย · 36 กิจกรรมย่อย</td>
+</tr>
+<tr>
+<td>2610</td><td>งานพัฒนาบุคลากร</td><td><b>ฝ่ายทรัพยากรมนุษย์</b></td>
+<td class="c">1,197,260</td><td class="c">53,129</td><td class="c warn">4.44%</td>
+<td><span class="tag">5.1</span><span class="tag">5.2</span></td><td>—</td>
+</tr>
+<tr>
+<td>2619</td><td>งานการจัดการเรียนรู้ภาษาต่างประเทศ (English Programme)</td><td>ฝ่ายภาษาต่างประเทศ</td>
+<td class="c">1,181,200</td><td class="c">0</td><td class="c red b">0%</td>
+<td><span class="tag">2.2.2</span><span class="tag">4.2</span></td><td>—</td>
+</tr>
+<tr>
+<td>2554</td><td>งานธุรการและข้อมูลสารสนเทศฝ่ายวิชาการ</td><td>ฝ่ายวิชาการ</td>
+<td class="c">844,015</td><td class="c">69,305</td><td class="c warn">8.21%</td>
+<td><span class="tag">2.1</span></td><td>—</td>
+</tr>
+<tr>
+<td>2595</td><td>งานประชาสัมพันธ์</td><td>ฝ่ายธุรการ-การเงิน</td>
+<td class="c">143,491</td><td class="c">7,354</td><td class="c warn">5.13%</td>
+<td><span class="tag">3.1</span></td><td>—</td>
+</tr>
+<tr>
+<td>2607</td><td>งานบริหารงานฝ่ายทรัพยากรมนุษย์</td><td><b>ฝ่ายทรัพยากรมนุษย์</b></td>
+<td class="c">80,000</td><td class="c">0</td><td class="c red">0%</td>
+<td><span class="tag">5.1</span></td><td>—</td>
+</tr>
+<tr>
+<td>2545</td><td>งานจัดการเรียนรู้ (กลุ่มสาระวิทยาศาสตร์และเทคโนโลยี)</td><td>ฝ่ายวิชาการ</td>
+<td class="c">75,062</td><td class="c">0</td><td class="c red b">0%</td>
+<td><span class="tag">2.2.2</span><span class="tag">4.2</span></td>
+<td>4583 อนุมัติแล้ว · 9 ขั้น · <b>18 ตัวชี้วัด</b> · 4 วัตถุประสงค์ · 2 เป้าหมาย</td>
+</tr>
+<tr>
+<td>2592</td><td>งานจัดซื้อ-จัดจ้าง</td><td>ฝ่ายธุรการ-การเงิน</td>
+<td class="c">3,262</td><td class="c">0</td><td class="c red">0%</td>
+<td><span class="tag">4.1</span></td><td>—</td>
+</tr>
+<tr style="background:#fef9e7;">
+<td colspan="3" class="b">รวมหน่วยงานที่เกี่ยวข้องกับ ICT</td>
+<td class="c b">5,041,940</td><td class="c b">195,430</td><td class="c b red">3.88%</td>
+<td colspan="2"><b>คิดเป็น 18.2% ของงบตั้งจ่ายทั้งโรงเรียน (27,672,838 บาท)</b></td>
+</tr>
+</table>
+
+<h3>4.2 · ผังบัญชีที่เกี่ยวกับ ICT ครบ 12 รายการ (ครอบคลุมทั้ง 4 หมวด)</h3>
+<table>
+<tr><th style="width:14%">รหัสบัญชี</th><th style="width:34%">ชื่อบัญชี</th><th style="width:16%">หมวด</th><th style="width:16%" class="c">เดือน มิ.ย. 69</th><th style="width:20%">ผูกด้าน / หมายเหตุ</th></tr>
+<tr style="background:var(--okbg);"><td class="b">5-701-05-00</td><td class="b">ค่าอินเทอร์เน็ต/สมาชิก UBC</td><td>ค่าใช้จ่ายสาธารณูปโภค</td><td class="c ok b">เดบิต 25,445</td><td><span class="tag">4.1</span> มีบัญชีแยก</td></tr>
+<tr><td>5-301-05-00</td><td>ค่าวัสดุคอมพิวเตอร์</td><td>วัสดุใช้ไป</td><td class="c ok">เดบิต 7,194 · เครดิต 490</td><td><span class="tag">4.1</span></td></tr>
+<tr><td>5-704-14-00</td><td>ค่าใช้จ่ายโปรแกรมคอมพิวเตอร์และอินเตอร์เน็ต</td><td>ค่าใช้จ่ายบริหาร</td><td class="c warn">ไม่มีรายการ · ยกมา 16,447</td><td><span class="tag">2.2.2</span></td></tr>
+<tr><td>1-201-07-00</td><td>คอมพิวเตอร์และอุปกรณ์</td><td>ที่ดิน อาคารและสิ่งปลูกสร้าง</td><td class="c">—</td><td><span class="tag">4.1</span> หลักสูตรไทย</td></tr>
+<tr><td>1-201-07-10</td><td>คอมพิวเตอร์และอุปกรณ์ (ED)</td><td>ที่ดิน อาคารและสิ่งปลูกสร้าง</td><td class="c">—</td><td><span class="tag">4.2</span> หลักสูตร English</td></tr>
+<tr><td>1-201-15-00</td><td>คอมพิวเตอร์รอติดตั้ง</td><td>ที่ดิน อาคารและสิ่งปลูกสร้าง</td><td class="c">—</td><td><span class="tag">4.1</span> รออนุมัติใช้งาน</td></tr>
+<tr><td>1-301-07-00</td><td>ค่าเสื่อมราคาสะสม คอมพิวเตอร์และอุปกรณ์</td><td>ค่าเสื่อมราคาสะสม</td><td class="c">—</td><td><span class="tag">4.1</span></td></tr>
+<tr><td>1-301-07-10</td><td>ค่าเสื่อมราคาสะสม คอมพิวเตอร์และอุปกรณ์ (ED)</td><td>ค่าเสื่อมราคาสะสม</td><td class="c">—</td><td><span class="tag">4.2</span></td></tr>
+<tr><td>5-601-07-00</td><td>ค่าเสื่อมราคา คอมพิวเตอร์และอุปกรณ์</td><td>ค่าเสื่อมราคาสินทรัพย์</td><td class="c">—</td><td><span class="tag">4.1</span></td></tr>
+<tr><td>5-601-07-10</td><td>ค่าเสื่อมราคา คอมพิวเตอร์และอุปกรณ์ (ED)</td><td>ค่าเสื่อมราคาสินทรัพย์</td><td class="c">—</td><td><span class="tag">4.2</span></td></tr>
+<tr><td>4-103-01-10</td><td>ค่าใช้คอมพิวเตอร์และอินเทอร์เน็ต (ไทย)</td><td>รายได้ค่าธรรมเนียมอื่น</td><td class="c">รายได้</td><td><span class="tag">4.2</span></td></tr>
+<tr><td>4-103-02-20</td><td>ค่าใช้คอมพิวเตอร์และอินเทอร์เน็ต (EP)</td><td>รายได้ค่าธรรมเนียมอื่น</td><td class="c">รายได้</td><td><span class="tag">2.2.2</span><span class="tag">4.2</span></td></tr>
+<tr><td>2-105-18-00</td><td>เจ้าหนี้ บริษัทชิชางคอมพิวเตอร์</td><td>เจ้าหนี้อื่น</td><td class="c">—</td><td><span class="tag">4.1</span> ผู้ขายหลัก</td></tr>
+</table>
+<div class="box ok" style="font-size:.84rem;"><b>เทียบกับโรงเรียนที่ตรวจแล้ว:</b> มงฟอร์ตประถม 12 รายการ · มงฟอร์ตวิทยาลัย 12 · อัสสัมชัญลำปาง 9 · เซนต์คาเบรียล 9 · อัสสัมชัญธนบุรี 8 · อัสสัมชัญศรีราชา 4 · เซนต์หลุยส์ 3 · อัสสัมชัญประถม 3<br>
+<b>ข้อดีของการแยกละเอียด:</b> เห็นว่าเงินด้านเทคโนโลยีไปทางไหน · แยกต้นทุนหลักสูตรไทยกับ English Programme ได้ · วางแผนเปลี่ยนอุปกรณ์ล่วงหน้าจากค่าเสื่อมราคาได้ · ตรวจสอบย้อนหลังได้ทุกรายการ</div>
+
+<h3>4.3 · รายการเบิกจ่ายจริง เดือนมิถุนายน 2569 (รายการต่อรายการ)</h3>
+
+<h4>บัญชี 5-701-05-00 ค่าอินเทอร์เน็ต/สมาชิก UBC</h4>
+<table>
+<tr><th style="width:12%">วันที่</th><th style="width:16%">เลขที่เอกสาร</th><th style="width:16%">สมุดบัญชี</th><th style="width:38%">รายการ</th><th style="width:9%" class="c">เดบิต</th><th style="width:9%" class="c">คงเหลือ</th></tr>
+<tr><td>2 มิ.ย. 69</td><td>2569206007</td><td>สมุดจ่าย/เช็ค</td><td>ค่าอินเทอร์เน็ต เดือนพฤษภาคม 2569</td><td class="c b">21,500</td><td class="c">17,555</td></tr>
+<tr><td>25 มิ.ย. 69</td><td>2569306189</td><td>สมุดปรับปรุง</td><td>ค่าสมาชิก UBC เดือนมิถุนายน 2569 (#206115)</td><td class="c b">3,945</td><td class="c">21,500</td></tr>
+<tr style="background:var(--okbg);"><td colspan="4" class="b">รวมเดือนมิถุนายน</td><td class="c b">25,445</td><td class="c b">21,500</td></tr>
+</table>
+
+<h4>บัญชี 5-301-05-00 ค่าวัสดุคอมพิวเตอร์</h4>
+<table>
+<tr><th style="width:12%">วันที่</th><th style="width:16%">เลขที่เอกสาร</th><th style="width:16%">สมุดบัญชี</th><th style="width:38%">รายการ</th><th style="width:9%" class="c">เดบิต/เครดิต</th><th style="width:9%" class="c">คงเหลือ</th></tr>
+<tr><td>2 มิ.ย. 69</td><td>2569306001</td><td>สมุดปรับปรุง</td><td>ค่าอุปกรณ์ซ่อมบำรุงคอมพิวเตอร์สำนักงาน Power Supply 500w จำนวน 10 ตัว (#20601)</td><td class="c">เดบิต 3,500</td><td class="c">3,500</td></tr>
+<tr><td>8 มิ.ย. 69</td><td>PC256906025</td><td>เงินสดย่อย</td><td>ขออนุมัติซื้ออุปกรณ์ Network</td><td class="c">เดบิต 1,263</td><td class="c">4,763</td></tr>
+<tr><td>17 มิ.ย. 69</td><td>PC256906081</td><td>เงินสดย่อย</td><td>ขออนุมัติซื้ออุปกรณ์ซ่อมบำรุง</td><td class="c">เดบิต 161</td><td class="c">4,924</td></tr>
+<tr><td>23 มิ.ย. 69</td><td>2569106018</td><td>สมุดรับอื่นๆ</td><td>รายรับอื่นๆ</td><td class="c">เครดิต 490</td><td class="c">4,434</td></tr>
+<tr><td>29 มิ.ย. 69</td><td>PC256906134</td><td>เงินสดย่อย</td><td>ขออนุมัติซื้อ Media Converter ตัวแปลงสัญญาณ Fiber Optic</td><td class="c">เดบิต 750</td><td class="c">5,184</td></tr>
+<tr><td>30 มิ.ย. 69</td><td>PC256906135</td><td>เงินสดย่อย</td><td>ขออนุมัติจัดซื้ออุปกรณ์ควบคุมการนำเสนอแบบไร้สาย (Laser Pointer Wireless) จำนวน 4 ชิ้น</td><td class="c">เดบิต 1,520</td><td class="c">6,704</td></tr>
+<tr style="background:var(--okbg);"><td colspan="4" class="b">รวมเดือนมิถุนายน</td><td class="c b">เดบิต 7,194 · เครดิต 490</td><td class="c b">6,704</td></tr>
+</table>
+
+<h4>บัญชี 5-704-14-00 ค่าใช้จ่ายโปรแกรมคอมพิวเตอร์และอินเตอร์เน็ต</h4>
+<div class="box warn"><b>เดือนมิถุนายน 2569 ไม่มีรายการเบิกจ่าย</b> · ยอดยกมา 16,447 บาท · ยอดคงเหลือ 16,447 บาท — แสดงว่าค่าใช้จ่ายด้านซอฟต์แวร์ยังไม่มีความเคลื่อนไหวในเดือนนี้</div>
+
+<div class="box ok"><b>รวมการเบิกจ่ายจริงด้าน ICT เดือนมิถุนายน 2569 = 32,639 บาท</b> · ทุกรายการมีเลขที่เอกสาร วันที่ และสมุดบัญชีกำกับ ตรวจสอบย้อนหลังได้ครบถ้วน</div>
+
+<div class="part">5 · ปฏิทินกิจกรรมและการติดตามงาน</div>
+
+<h3>5.1 · ภาพรวมสถานะกิจกรรมทั้งปีการศึกษา</h3>
+<table>
+<tr><th style="width:44%">สถานะ</th><th style="width:16%" class="c">จำนวน</th><th style="width:12%" class="c">สัดส่วน</th><th style="width:28%">ข้อสังเกต</th></tr>
+<tr><td>กิจกรรมทั้งหมดในปีการศึกษา 2569</td><td class="c num">5,138</td><td class="c">100%</td><td>—</td></tr>
+<tr><td>เสร็จก่อนกำหนด</td><td class="c ok">5</td><td class="c">0.10%</td><td rowspan="3">ปิดงานทั้งหมด 1,154 รายการ · <b>ไม่มีรายการที่เสร็จหลังกำหนดเลย</b> แสดงว่าเมื่อปิดงานก็ปิดตรงเวลา</td></tr>
+<tr><td>เสร็จตามกำหนด</td><td class="c ok">1,149</td><td class="c">22.36%</td></tr>
+<tr><td>เสร็จหลังกำหนด</td><td class="c">0</td><td class="c">0%</td></tr>
+<tr style="background:var(--okbg);"><td class="b">ปิดงานแล้วรวม</td><td class="c ok b">1,154</td><td class="c ok b">22.46%</td><td class="ok">อันดับ 3 ใน 8 โรงที่ตรวจแล้ว</td></tr>
+<tr><td>กำลังดำเนินการ</td><td class="c">5</td><td class="c">0.10%</td><td>—</td></tr>
+<tr><td>ยังไม่ดำเนินการ</td><td class="c">1</td><td class="c">0.02%</td><td>—</td></tr>
+<tr style="background:var(--redbg);"><td class="b">ยังไม่มีคนตรวจสอบสถานะ</td><td class="c red b">3,978</td><td class="c red b">77.4%</td><td class="red">ไม่มีข้อมูลรองรับการประเมินปลายปี</td></tr>
+<tr><td>เลยกำหนดแล้วยังไม่เสร็จ</td><td class="c warn">535</td><td class="c warn">10.4%</td><td>ต่ำกว่าค่ากลางของเครือ</td></tr>
+</table>
+
+<h3>5.2 · สถานะการปิดงานรายฝ่าย (ทั้ง 8 ฝ่าย)</h3>
+<table>
+<tr><th style="width:26%">ฝ่าย</th><th style="width:11%" class="c">กิจกรรม</th><th style="width:11%" class="c">ปิดงานแล้ว</th><th style="width:11%" class="c">สัดส่วน</th><th style="width:11%" class="c">เลยกำหนด</th><th style="width:30%">หน่วยงาน ICT ในฝ่ายนี้</th></tr>
+<tr><td>ฝ่ายวิชาการ</td><td class="c">1,738</td><td class="c">442</td><td class="c ok">25.43%</td><td class="c">278</td><td>2545 กลุ่มสาระวิทย์-เทคโนโลยี · 2554 ธุรการสารสนเทศ</td></tr>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td class="c">784</td><td class="c">161</td><td class="c">20.54%</td><td class="c">110</td><td>—</td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน</td><td class="c">699</td><td class="c">183</td><td class="c ok">26.18%</td><td class="c">36</td><td>2595 ประชาสัมพันธ์ · 2592 จัดซื้อ-จัดจ้าง</td></tr>
+<tr><td>ฝ่ายภาษาต่างประเทศ</td><td class="c">617</td><td class="c">135</td><td class="c">21.88%</td><td class="c">18</td><td>2619 English Programme</td></tr>
+<tr style="background:var(--warnbg);"><td class="b">ฝ่ายบริหารทั่วไป</td><td class="c">389</td><td class="c">73</td><td class="c warn">18.77%</td><td class="c">21</td><td class="b">2604 งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ (หน่วยหลัก)</td></tr>
+<tr style="background:var(--redbg);"><td class="b">สำนักผู้อำนวยการ</td><td class="c">372</td><td class="c">40</td><td class="c red">10.75%</td><td class="c">29</td><td class="red">ต่ำที่สุดในโรงเรียน</td></tr>
+<tr><td>ฝ่ายทรัพยากรมนุษย์</td><td class="c">343</td><td class="c">74</td><td class="c">21.57%</td><td class="c">19</td><td>2610 พัฒนาบุคลากร</td></tr>
+<tr><td>แผนกการเงิน</td><td class="c">169</td><td class="c">42</td><td class="c ok">24.85%</td><td class="c">12</td><td>—</td></tr>
+</table>
+<div class="box warn"><b>ข้อสังเกต:</b> ฝ่ายบริหารทั่วไปซึ่งเป็นที่ตั้งของหน่วยงาน ICT หลัก ปิดงานได้ 18.77% ต่ำกว่าค่ากลางของโรงเรียน (22.46%) · สำนักผู้อำนวยการปิดงานได้ 10.75% ต่ำที่สุดในโรงเรียน</div>
+
+<h3>5.3 · เปรียบเทียบการปิดงานกับโรงเรียนที่ตรวจแล้ว</h3>
+<table>
+<tr><th style="width:26%">โรงเรียน</th><th style="width:18%" class="c">กิจกรรมทั้งหมด</th><th style="width:18%" class="c">ปิดงานแล้ว</th><th style="width:16%" class="c">สัดส่วน</th><th style="width:22%" class="c">เลยกำหนด</th></tr>
+<tr><td>อัสสัมชัญ แผนกประถม</td><td class="c">1,609</td><td class="c">458</td><td class="c ok b">28.46%</td><td class="c">25.2%</td></tr>
+<tr><td>อัสสัมชัญลำปาง</td><td class="c">3,764</td><td class="c">833</td><td class="c ok">22.13%</td><td class="c ok">8.5%</td></tr>
+<tr style="background:#e0f2fe;"><td class="b">มงฟอร์ตวิทยาลัยแผนกประถม</td><td class="c b">5,138</td><td class="c b">1,154</td><td class="c ok b">22.46%</td><td class="c">10.4%</td></tr>
+<tr><td>เซนต์หลุยส์ ฉะเชิงเทรา</td><td class="c">5,141</td><td class="c">—</td><td class="c">ประมาณ 6%</td><td class="c">15%</td></tr>
+<tr><td>อัสสัมชัญศรีราชา</td><td class="c">4,082</td><td class="c">252</td><td class="c warn">6.17%</td><td class="c">17.3%</td></tr>
+<tr><td>อัสสัมชัญธนบุรี</td><td class="c">3,059</td><td class="c">30</td><td class="c red">0.98%</td><td class="c warn">27.4%</td></tr>
+</table>
+
+<div class="part">6 · การใช้งานแอปพลิเคชันและการเปรียบเทียบ</div>
+<table>
+<tr><th style="width:24%">กลุ่มผู้ใช้</th><th style="width:14%" class="c">ผู้ใช้ทั้งหมด</th><th style="width:14%" class="c">เพิ่มปีนี้</th><th style="width:14%" class="c">สัดส่วนที่เพิ่ม</th><th style="width:34%">รายเดือน (พ.ค.-ส.ค. 69)</th></tr>
+<tr><td>นักเรียน</td><td class="c num">6,231</td><td class="c">+223</td><td class="c">3.6%</td><td>พ.ค. 53 · มิ.ย. 137 · ก.ค. 27 · ส.ค. 6</td></tr>
+<tr><td>ผู้ปกครอง</td><td class="c num">3,127</td><td class="c ok">+443</td><td class="c ok">14.2%</td><td>พ.ค. 166 · มิ.ย. 187 · ก.ค. 79 · ส.ค. 11</td></tr>
+<tr><td>ครูและบุคลากร</td><td class="c num">671</td><td class="c">+64</td><td class="c">9.5%</td><td>พ.ค. 34 · มิ.ย. 14 · ก.ค. 15 · ส.ค. 1</td></tr>
+<tr style="background:var(--okbg);"><td class="b">ผู้บริหาร</td><td class="c ok b">6</td><td class="c">+0</td><td class="c">0%</td><td class="ok">มากที่สุดใน 8 โรงที่ตรวจแล้ว</td></tr>
+</table>
+
+<h3>6.1 · เปรียบเทียบกับโรงเรียนที่ตรวจแล้ว</h3>
+<table>
+<tr><th style="width:24%">โรงเรียน</th><th style="width:19%" class="c">นักเรียน</th><th style="width:19%" class="c">ครู</th><th style="width:19%" class="c">ผู้ปกครอง</th><th style="width:19%" class="c">ผู้บริหาร</th></tr>
+<tr style="background:#e0f2fe;"><td class="b">มงฟอร์ตประถม</td><td class="c">6,231 (+223)</td><td class="c">671 (+64)</td><td class="c">3,127 (+443)</td><td class="c ok b">6 (+0)</td></tr>
+<tr><td>อัสสัมชัญธนบุรี</td><td class="c ok">9,214 (+203)</td><td class="c">1,337 (+78)</td><td class="c">1,845 (+543)</td><td class="c">3 (+0)</td></tr>
+<tr><td>เซนต์คาเบรียล</td><td class="c">7,774 (+459)</td><td class="c">1,142 (+104)</td><td class="c red">583 (+425)</td><td class="c">4 (+0)</td></tr>
+<tr><td>มงฟอร์ตวิทยาลัย</td><td class="c">7,553 (+55)</td><td class="c">895 (+105)</td><td class="c">2,028 (+411)</td><td class="c red">2 (+0)</td></tr>
+<tr><td>อัสสัมชัญศรีราชา</td><td class="c">7,218 (+417)</td><td class="c">1,314 (+158)</td><td class="c ok">2,941 (+1,169)</td><td class="c warn">4 (+1)</td></tr>
+<tr><td>อัสสัมชัญลำปาง</td><td class="c">6,978 (+89)</td><td class="c">970 (+65)</td><td class="c">2,405 (+272)</td><td class="c">4 (+0)</td></tr>
+<tr><td>เซนต์หลุยส์</td><td class="c">3,312 (+160)</td><td class="c">753 (+73)</td><td class="c">1,392 (+444)</td><td class="c">4 (+0)</td></tr>
+<tr><td>อัสสัมชัญ แผนกประถม</td><td class="c">2,972 (+62)</td><td class="c">697 (+57)</td><td class="c ok">6,735 (+605)</td><td class="c">4 (+0)</td></tr>
+</table>
+
+<div class="part">7 · แผนงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ปี 2569 (รายละเอียดเต็ม)</div>
+
+<h3 class="gold">7.1 · แผนงานทั้งหมดในหน่วยงานที่เกี่ยวกับเทคโนโลยี (4 แผน)</h3>
+<table>
+<tr><th style="width:12%">เลขที่แผน</th><th style="width:34%">ชื่อแผน</th><th style="width:18%">หน่วยงาน</th><th style="width:10%" class="c">อนุมัติ</th><th style="width:8%" class="c">ขั้น PDCA</th><th style="width:18%" class="c">ตัวชี้วัด/วัตถุประสงค์/เป้าหมาย</th></tr>
+<tr><td>4565</td><td class="b">งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td>2604</td><td class="c ok">✓</td><td class="c ok">9/9</td><td class="c">12 / 4 / 10</td></tr>
+<tr><td>4583</td><td>งานจัดการเรียนรู้ (กลุ่มสาระวิทยาศาสตร์และเทคโนโลยี)</td><td>2545</td><td class="c ok">✓</td><td class="c ok">9/9</td><td class="c">18 / 4 / 2</td></tr>
+<tr style="background:var(--redbg);"><td>4563</td><td class="red">"ดด" (แผนทดสอบ)</td><td>2604</td><td class="c red">✗</td><td class="c red">1/9</td><td class="c">0 / 0 / 0</td></tr>
+<tr style="background:var(--redbg);"><td>4668</td><td class="red">"แชมป์ทดสอบแผนงาน" (แผนทดสอบ)</td><td>2604</td><td class="c red">✗</td><td class="c">9/9</td><td class="c">0 / 0 / 0</td></tr>
+</table>
+<div class="box red"><b>ควรดำเนินการ:</b> แผนเลขที่ 4563 และ 4668 เป็นแผนทดสอบที่ค้างอยู่ในระบบใช้งานจริง ควรลบหรือย้ายออก เพื่อไม่ให้ปะปนกับแผนงานจริงเวลาตรวจสอบ</div>
+
+<h3 class="gold">7.2 · แผนงาน 4565 · ข้อมูลทั่วไป</h3>
+<table>
+<tr><th style="width:26%">รายการ</th><th style="width:74%">รายละเอียด</th></tr>
+<tr><td>ชื่อแผน</td><td><b>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</b></td></tr>
+<tr><td>หน่วยงาน / ฝ่าย</td><td>รหัส 2604 · ฝ่ายบริหารทั่วไป (รหัสฝ่าย 266)</td></tr>
+<tr><td>ผู้รับผิดชอบ</td><td>รหัสบุคลากร <b>1124</b></td></tr>
+<tr><td>สถานะ</td><td class="ok">อนุมัติแล้ว · ครบทั้ง 9 ขั้นตอน PDCA · ไม่มีขั้นตอนที่ขาด</td></tr>
+<tr><td>งบประมาณ</td><td>ตั้งจ่าย <b>1,517,650</b> บาท · จ่ายจริง <b>65,642</b> บาท (4.33%) · ตั้งรับ 0 · รับจริง 0</td></tr>
+<tr><td>กิจกรรมย่อยรวม</td><td><b>36 รายการ</b> (ขั้นที่ 4 = 15 รายการ · ขั้นที่ 6 = 13 รายการ · ขั้นที่ 7 = 5 รายการ · ขั้นที่ 8 = 3 รายการ)</td></tr>
+</table>
+
+<h3 class="gold">7.3 · วัตถุประสงค์ 4 ข้อ (ข้อความตามที่บันทึกในระบบ)</h3>
+<div class="obj"><b>ข้อ 1</b> · เพื่อให้มีแผนพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ที่มีคุณภาพเป็นไปตามมาตรฐานการปฏิบัติงาน PDCA 9 ขั้นตอนของมูลนิธิฯ และดำเนินการพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ให้บรรลุเป้าหมายตามแผนพัฒนาการจัดการศึกษาของโรงเรียน และแผนยุทธศาสตร์ของมูลนิธิฯ</div>
+<div class="obj"><b>ข้อ 2</b> · เพื่อให้มีแผนพัฒนาและดำเนินการพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ให้บรรลุเป้าหมายคุณภาพของงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ตามพระราชบัญญัติ ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ (ฉบับที่ 2) พ.ศ. 2560, พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562, มาตรฐานการศึกษาระดับการศึกษาขั้นพื้นฐาน พ.ศ. 2561, มาตรฐานการศึกษาโรงเรียนมงฟอร์ตวิทยาลัย แผนกประถม, คู่มือการบริหารโดยใช้หลักธรรมาภิบาลสำหรับโรงเรียนในเครือมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย, มาตรฐานสากลตามเกณฑ์รางวัลคุณภาพแห่งชาติ Thailand Quality Award (TQA), กรอบแนวทางการประกันคุณภาพภายนอก พ.ศ. 2567-2571 ของสำนักงานรับรองมาตรฐานและประเมินคุณภาพการศึกษา (องค์การมหาชน), นโยบายโรงเรียนปีการศึกษา 2569, แผนพัฒนาการจัดการศึกษาโรงเรียน และแผนยุทธศาสตร์มูลนิธิฯ</div>
+<div class="obj"><b>ข้อ 3</b> · เพื่อให้มีการบริการด้านเทคโนโลยีสารสนเทศ สื่อประเภทดิจิทัล สื่อสิ่งพิมพ์ โสตทัศนูปกรณ์ และช่องทางการประชาสัมพันธ์โรงเรียนเชิงรุก ให้ผู้ที่เกี่ยวข้องทั้งหน่วยงานภายใน และหน่วยงานภายนอกรับทราบเข้าใจ และร่วมดำเนินการเพื่อพัฒนาการศึกษาของโรงเรียน</div>
+<div class="obj"><b>ข้อ 4</b> · เพื่อให้มีการรวบรวม จัดทำและบริหารจัดการสารสนเทศของโรงเรียนให้เป็นระบบ สามารถตอบสนองการพัฒนาการศึกษาของโรงเรียน ให้สอดคล้องกับนโยบายแผนยุทธศาสตร์ของมูลนิธิฯ และแผนพัฒนาโรงเรียน และดำเนินการให้บรรลุเป้าหมายคุณภาพตามแผนที่วางไว้</div>
+
+<h3 class="gold">7.4 · ตัวชี้วัด 12 ข้อ (ข้อความตามที่บันทึกในระบบ)</h3>
+<div class="kpi"><b>ตัวชี้วัดที่ 1</b> · มีการดำเนินงานตามแผนพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ที่มีคุณภาพเป็นไปตามมาตรฐานการปฏิบัติงาน PDCA 9 ขั้นตอนของมูลนิธิฯ และดำเนินการพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ให้บรรลุตามเป้าหมายตามแผนพัฒนาการจัดการศึกษาของโรงเรียน แผนยุทธศาสตร์ของมูลนิธิฯ</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 2</b> · มีการดำเนินการพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ให้บรรลุเป้าหมายคุณภาพของงานบริหารฝ่ายบริหารทั่วไป ตามพระราชบัญญัติ ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ (ฉบับที่ 2) พ.ศ. 2560, พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562, มาตรฐานการศึกษาระดับการศึกษาขั้นพื้นฐาน พ.ศ. 2561, มาตรฐานการศึกษาโรงเรียนมงฟอร์ตวิทยาลัย แผนกประถม, คู่มือการบริหารโดยใช้หลักธรรมาภิบาลฯ, มาตรฐานสากลตามเกณฑ์รางวัลคุณภาพแห่งชาติ (TQA), กรอบแนวทางการประกันคุณภาพภายนอก พ.ศ. 2567-2571, นโยบายโรงเรียนปีการศึกษา 2569, แผนพัฒนาการจัดการศึกษาโรงเรียน และแผนยุทธศาสตร์มูลนิธิฯ</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 3</b> · ร้อยละ 100 ของคอมพิวเตอร์ ระบบเครือข่าย และซอฟต์แวร์ มีความเพียงพอต่อการบริหารจัดการและการจัดการเรียนการสอนตามหลักสูตร</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 4</b> · ร้อยละ 100 ของคอมพิวเตอร์และโสตทัศนูปกรณ์ของโรงเรียน ได้รับการตรวจเช็กและซ่อมบำรุงอย่างสม่ำเสมอปีการศึกษาละ 2 ครั้ง</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 5</b> · ร้อยละ 90 ของการซ่อมบำรุง ติดตั้ง และให้บริการด้านเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ดำเนินการแล้วเสร็จตามระยะเวลาที่กำหนด</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 6</b> · ร้อยละ 90 ของการให้บริการสนับสนุนด้านเทคโนโลยีสารสนเทศในการจัดทำสื่อดิจิทัลและสื่อสิ่งพิมพ์ของโรงเรียน ดำเนินการแล้วเสร็จตามระยะเวลาที่กำหนด</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 7</b> · ร้อยละ 100 ของการให้บริการติดตั้งอุปกรณ์โสตทัศนูปกรณ์ ดำเนินการแล้วเสร็จตามระยะเวลาที่กำหนด</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 8</b> · ร้อยละ 100 ของการจัดทำและเผยแพร่วารสารโรงเรียน จำนวน 2,700 เล่ม ดำเนินการแล้วเสร็จตามแผนที่กำหนด</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 9</b> · ร้อยละ 100 ของข้อมูลข่าวสารที่เผยแพร่ผ่านเว็บไซต์และสื่อดิจิทัลของโรงเรียน ครบถ้วน และเป็นปัจจุบัน</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 10</b> · ร้อยละ 90 ของการจัดระบบข้อมูลสารสนเทศในการบริหารจัดการเพื่อพัฒนาคุณภาพสถานศึกษาครอบคลุมองค์ประกอบพื้นฐาน 5 ด้าน และสอดคล้องตามกฎกระทรวง</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 11</b> · มีการดำเนินการพัฒนาระบบเทคโนโลยีเพื่อสนับสนุนการบริหารจัดการและการจัดการเรียนรู้</div>
+<div class="kpi"><b>ตัวชี้วัดที่ 12</b> · ร้อยละ 86 ของนักเรียน ผู้ปกครอง บุคลากร มีความพึงพอใจต่อการให้บริการงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ รวมถึงการใช้ข้อมูลสารสนเทศของมูลนิธิฯ</div>
+
+<h3 class="gold">7.5 · เป้าหมาย 10 ข้อ (ข้อความตามที่บันทึกในระบบ)</h3>
+<h4>เป้าหมายเชิงผลผลิต (สิ่งที่ต้องส่งมอบ) — 6 ข้อ</h4>
+<div class="goal"><b>เป้าหมายที่ 1</b> · บริการด้านเทคโนโลยีสารสนเทศ สื่อประเภทดิจิทัล สื่อสิ่งพิมพ์ และโสตทัศนูปกรณ์ เพื่อสนับสนุนการจัดการศึกษาและการบริหารจัดการ แก่<b>นักเรียน จำนวน 2,627 คน</b> (ข้อมูล ณ วันที่ 7 ธันวาคม 2568) <b>ครู และบุคลากรของโรงเรียน จำนวน 308 คน</b> (ข้อมูล ณ วันที่ 12 ธันวาคม 2568)</div>
+<div class="goal"><b>เป้าหมายที่ 2</b> · รายงานการตรวจเช็กและซ่อมบำรุงอุปกรณ์คอมพิวเตอร์และโสตทัศนูปกรณ์ ปีการศึกษา 2569 <b>จำนวน 1 เล่ม</b></div>
+<div class="goal"><b>เป้าหมายที่ 3</b> · รายงานสรุปการดำเนินการงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ ปีการศึกษา 2569 <b>จำนวน 1 เล่ม</b></div>
+<div class="goal"><b>เป้าหมายที่ 4</b> · รายงานข้อมูลสารสนเทศ 5 ด้าน ประจำปีการศึกษา 2569 ของโรงเรียนมงฟอร์ตวิทยาลัย แผนกประถม <b>จำนวน 1 เล่ม</b></div>
+<div class="goal"><b>เป้าหมายที่ 5</b> · <b>วารสารโรงเรียน ปีการศึกษา 2569 จำนวน 2,700 เล่ม</b></div>
+<div class="goal"><b>เป้าหมายที่ 6</b> · คู่มือคุณภาพหน่วยงานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ <b>จำนวน 1 เล่ม</b></div>
+
+<h4>เป้าหมายเชิงผลลัพธ์ (สภาพที่ต้องการให้เกิด) — 4 ข้อ</h4>
+<div class="goal"><b>เป้าหมายที่ 7</b> · มีแผนพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ที่มีคุณภาพเป็นไปตามมาตรฐานการปฏิบัติงาน PDCA 9 ขั้นตอนของมูลนิธิฯ และดำเนินการพัฒนางานให้บรรลุตามเป้าหมายตามแผนพัฒนาการจัดการศึกษาของโรงเรียน และแผนยุทธศาสตร์ของมูลนิธิฯ</div>
+<div class="goal"><b>เป้าหมายที่ 8</b> · มีแผนพัฒนางานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ และดำเนินการพัฒนาให้บรรลุเป้าหมายคุณภาพ ตามพระราชบัญญัติว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ (ฉบับที่ 2) พ.ศ. 2560, พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562, มาตรฐานการศึกษาระดับการศึกษาขั้นพื้นฐาน พ.ศ. 2561, มาตรฐานการศึกษาโรงเรียนฯ, คู่มือการบริหารโดยใช้หลักธรรมาภิบาลฯ, TQA, กรอบแนวทางการประกันคุณภาพภายนอก พ.ศ. 2567-2571, นโยบายโรงเรียนปีการศึกษา 2569, แผนพัฒนาการจัดการศึกษาโรงเรียน และแผนยุทธศาสตร์มูลนิธิฯ</div>
+<div class="goal"><b>เป้าหมายที่ 9</b> · มีระบบการให้บริการด้านเทคโนโลยีสารสนเทศ สื่อประเภทดิจิทัล สื่อสิ่งพิมพ์ โสตทัศนูปกรณ์ พร้อมทั้งมีช่องทางการประชาสัมพันธ์เชิงรุกที่สามารถสร้างความเข้าใจและความร่วมมืออันดีกับหน่วยงานภายในและภายนอกเพื่อสนับสนุนการพัฒนาการศึกษาตามกำหนดการที่วางไว้</div>
+<div class="goal"><b>เป้าหมายที่ 10</b> · มีระบบบริหารจัดการข้อมูลสารสนเทศ ที่เป็นหมวดหมู่ ถูกต้อง ครอบคลุม และทันสมัย เพื่อใช้ในการวางแผนบริหารจัดการและรายงานผลการดำเนินงานให้บรรลุเป้าหมายคุณภาพตามนโยบายและแผนพัฒนาโรงเรียน</div>
+
+<h3 class="gold">7.6 · ขั้นตอนการดำเนินงาน PDCA ครบ 9 ขั้น</h3>
+<table>
+<tr><th style="width:6%" class="c">ขั้น</th><th style="width:6%" class="c">PDCA</th><th style="width:50%">ชื่อขั้นตอน</th><th style="width:13%" class="c">เริ่ม</th><th style="width:13%" class="c">สิ้นสุด</th><th style="width:12%" class="c">กิจกรรมย่อย</th></tr>
+<tr><td class="c">1</td><td class="c">P</td><td>แต่งตั้งคณะกรรมการ/ผู้รับผิดชอบของหน่วยงาน</td><td class="c">2 มี.ค. 69</td><td class="c">31 มี.ค. 69</td><td class="c">—</td></tr>
+<tr><td class="c">2</td><td class="c">P</td><td>ศึกษาและวิเคราะห์ข้อมูล สรุปสภาพปัจจุบันของการดำเนินงานของหน่วยงาน</td><td class="c">2 มี.ค. 69</td><td class="c">31 มี.ค. 69</td><td class="c">—</td></tr>
+<tr><td class="c">3</td><td class="c">P</td><td>กำหนดคุณภาพที่คาดหวัง และเป้าหมายการดำเนินงานของหน่วยงานประจำปี</td><td class="c">2 มี.ค. 69</td><td class="c">31 มี.ค. 69</td><td class="c">—</td></tr>
+<tr><td class="c">4</td><td class="c">P</td><td>จัดทำแผนงาน กำหนดการ ตารางเวลา แบบฟอร์มเอกสาร จดหมาย คู่มือ (ขั้นตอน ระเบียบการ ฯลฯ) ที่สอดคล้องตามหน้าที่หลัก</td><td class="c">2 มี.ค. 69</td><td class="c">31 มี.ค. 69</td><td class="c b">15</td></tr>
+<tr><td class="c">5</td><td class="c">P</td><td>ประชุมคณะกรรมการเพื่อวางแผนและมอบหมายงาน</td><td class="c">1 พ.ค. 68</td><td class="c">30 พ.ค. 68</td><td class="c">—</td></tr>
+<tr><td class="c">6</td><td class="c b">D</td><td>ดำเนินงานตามแผนปฏิบัติการประจำปี</td><td class="c">18 พ.ค. 69</td><td class="c">30 เม.ย. 70</td><td class="c b">13</td></tr>
+<tr><td class="c">7</td><td class="c">C</td><td>รับการนิเทศการดำเนินงานตามแผนปฏิบัติการจากสำนักผู้อำนวยการ ประจำปี 2569</td><td class="c">18 พ.ค. 69</td><td class="c">30 เม.ย. 70</td><td class="c">5</td></tr>
+<tr><td class="c">8</td><td class="c">C</td><td>ประเมินผลการดำเนินงานตามแผนปฏิบัติการประจำปี 2569</td><td class="c">18 พ.ค. 69</td><td class="c">30 เม.ย. 70</td><td class="c">3</td></tr>
+<tr><td class="c">9</td><td class="c">A</td><td>นำสรุปผลการประเมินและข้อเสนอแนะไปพัฒนาการดำเนินงานในปีการศึกษาต่อไป</td><td class="c">30 เม.ย. 70</td><td class="c">30 เม.ย. 70</td><td class="c">—</td></tr>
+</table>
+<div class="box"><b>สรุปโครงสร้างแผน:</b> ขั้นวางแผน (P) 5 ขั้น มีกิจกรรมย่อย 15 รายการ · ขั้นดำเนินการ (D) 1 ขั้น มี 13 รายการ · ขั้นตรวจสอบ (C) 2 ขั้น มี 8 รายการ · ขั้นปรับปรุง (A) 1 ขั้น · <b>รวมกิจกรรมย่อย 36 รายการ</b> · ไม่มีขั้นตอนใดขาด</div>
+
+<div class="part">8 · การตรวจสอบความสอดคล้องระหว่างแผนกับความเป็นจริง (4 ชั้น)</div>
+
+<div class="layer">
+<h4>ชั้นที่ 1 · โครงสร้างแผนงาน — ครอบคลุม 8 ด้านหรือไม่</h4>
+<table>
+<tr><th style="width:16%">ด้าน ICT</th><th style="width:34%">แผนที่รองรับ</th><th style="width:12%" class="c">ครบ 9 ขั้น</th><th style="width:12%" class="c">ตัวชี้วัด</th><th style="width:26%">ผู้รับผิดชอบ</th></tr>
+<tr><td>1 บริหาร</td><td class="red">ไม่มีแผนเฉพาะ · รวมอยู่ในแผน 4565</td><td class="c">—</td><td class="c">—</td><td>ผอ. (ควบตำแหน่งมูลนิธิฯ)</td></tr>
+<tr><td>2.1 ระบบกลาง</td><td>4565 (ตัวชี้วัดข้อ 10 · สารสนเทศ 5 ด้าน)</td><td class="c ok">✓</td><td class="c">1</td><td>รหัส 1124</td></tr>
+<tr><td>2.2.1 ซอฟต์แวร์บริหาร</td><td>4565 (ตัวชี้วัดข้อ 11)</td><td class="c ok">✓</td><td class="c">1</td><td>รหัส 1124</td></tr>
+<tr><td>2.2.2 ซอฟต์แวร์การสอน</td><td>4583 กลุ่มสาระวิทย์-เทคโนโลยี</td><td class="c ok">✓</td><td class="c ok">18</td><td>หัวหน้ากลุ่มสาระ</td></tr>
+<tr><td>3.1 สื่อดิจิทัล</td><td>4565 (ตัวชี้วัดข้อ 6 · 9)</td><td class="c ok">✓</td><td class="c">2</td><td>รหัส 1124</td></tr>
+<tr><td>3.2 สื่อดั้งเดิม</td><td>4565 (ตัวชี้วัดข้อ 7 · 8 · เป้าหมายข้อ 5)</td><td class="c ok">✓</td><td class="c">2</td><td>รหัส 1124</td></tr>
+<tr><td>4.1 เครือข่ายบริหาร</td><td>4565 (ตัวชี้วัดข้อ 3 · 4 · 5)</td><td class="c ok">✓</td><td class="c">3</td><td>รหัส 1124</td></tr>
+<tr><td>4.2 เครือข่ายการสอน</td><td>4565 + 4583</td><td class="c ok">✓</td><td class="c">2</td><td>รหัส 1124 + กลุ่มสาระ</td></tr>
+<tr><td>5.1 บุคลากร ICT</td><td class="warn">ไม่แยก · รวมในงานพัฒนาบุคลากร (2610)</td><td class="c">—</td><td class="c">—</td><td>หัวหน้าฝ่าย HR</td></tr>
+<tr><td>5.2 ผู้ใช้ทั่วไป</td><td>4565 (ตัวชี้วัดข้อ 12 · ความพึงพอใจ)</td><td class="c ok">✓</td><td class="c">1</td><td>รหัส 1124</td></tr>
+</table>
+<b>สรุปชั้นที่ 1:</b> แผน 4565 ครอบคลุม 8 จาก 10 ด้านย่อย · ด้านที่ไม่มีแผนรองรับคือ ด้าน 1 (บริหารภาพรวม) และ ด้าน 5.1 (บุคลากร ICT เฉพาะ)
+</div>
+
+<div class="layer">
+<h4>ชั้นที่ 2 · ความเชื่อมโยงของตัวชี้วัดกับระดับมูลนิธิฯ</h4>
+<p style="font-size:.85rem;">จากตัวชี้วัด 12 ข้อของแผน 4565 แบ่งได้เป็น:</p>
+<ul>
+<li><b>เชื่อมกับมูลนิธิฯ โดยตรง 4 ข้อ</b> — ข้อ 1 (มาตรฐาน PDCA 9 ขั้นของมูลนิธิฯ) · ข้อ 2 (กฎหมายและมาตรฐานสากล) · ข้อ 10 (สารสนเทศ 5 ด้านตามกฎกระทรวง) · ข้อ 11 (พัฒนาระบบเทคโนโลยี)</li>
+<li><b>ตัวชี้วัดระดับปฏิบัติการ 7 ข้อ</b> — ข้อ 3-9 (ความเพียงพอ · ซ่อมบำรุง · บริการ · สื่อ · วารสาร · เว็บไซต์)</li>
+<li><b>ตัวชี้วัดที่ยังวัดไม่ได้ 1 ข้อ</b> — ข้อ 12 (ความพึงพอใจ 86%) เพราะยังไม่มีเครื่องมือสำรวจ</li>
+</ul>
+<b>สรุปชั้นที่ 2:</b> ตัวชี้วัด 4 ข้อควรส่งขึ้นระดับมูลนิธิฯ เพื่อรวมเป็นภาพรวมเครือ · ตัวชี้วัดข้อ 12 ต้องหาเครื่องมือวัดก่อนสิ้นปีการศึกษา
+</div>
+
+<div class="layer">
+<h4>ชั้นที่ 3 · เปรียบเทียบแผนกับความเป็นจริง</h4>
+<table>
+<tr><th style="width:32%">รายการ</th><th style="width:22%">ตามแผน</th><th style="width:22%">ความเป็นจริง</th><th style="width:24%">ช่องว่าง</th></tr>
+<tr><td>งบประมาณหน่วยงาน 2604</td><td class="c">1,517,650 บาท</td><td class="c">65,642 บาท</td><td class="red">ห่าง 95.67%</td></tr>
+<tr><td>ค่าอินเทอร์เน็ตและ UBC (มิ.ย.)</td><td class="c">มีบัญชีรองรับ</td><td class="c ok">25,445 บาท</td><td class="ok">เดินตามจริง</td></tr>
+<tr><td>ค่าวัสดุคอมพิวเตอร์ (มิ.ย.)</td><td class="c">มีบัญชีรองรับ</td><td class="c ok">7,194 บาท</td><td class="ok">เดินตามจริง มีเอกสารครบ</td></tr>
+<tr><td>ค่าโปรแกรมคอมพิวเตอร์ (มิ.ย.)</td><td class="c">มีบัญชีรองรับ</td><td class="c red">0 บาท</td><td class="red">ไม่มีความเคลื่อนไหว</td></tr>
+<tr><td>วารสารโรงเรียน</td><td class="c">2,700 เล่ม</td><td class="c warn">ยังไม่มีรายงาน</td><td class="warn">ผ่านมา 1 ใน 3 ของปี</td></tr>
+<tr><td>ตรวจเช็กอุปกรณ์</td><td class="c">ปีละ 2 ครั้ง 100%</td><td class="c warn">ยังไม่มีรายงาน</td><td class="warn">เป้าหมายข้อ 2 ยังไม่เริ่ม</td></tr>
+<tr><td>กิจกรรมฝ่ายบริหารทั่วไป</td><td class="c">389 รายการ</td><td class="c warn">ปิดงาน 73 (18.77%)</td><td class="warn">ต่ำกว่าค่ากลางโรงเรียน</td></tr>
+</table>
+<b>สรุปชั้นที่ 3:</b> ระบบบัญชีเดินจริงและตรวจสอบได้ · แต่การใช้งบตามแผนยังห่างมาก และเป้าหมายที่ต้องส่งมอบ (วารสาร · รายงานตรวจเช็ก) ยังไม่มีความคืบหน้า
+</div>
+
+<div class="layer">
+<h4>ชั้นที่ 4 · ธรรมาภิบาลและการใช้ข้อมูล</h4>
+<ul>
+<li><b>การเชื่อมโยงกับมาตรฐานภายนอก</b> — แผน 4565 อ้างอิง พ.ร.บ. คอมพิวเตอร์ 2560 · พ.ร.บ. ไซเบอร์ 2562 · มาตรฐานการศึกษาขั้นพื้นฐาน 2561 · TQA · กรอบประกันคุณภาพภายนอก 2567-2571 (รายละเอียดการปฏิบัติตามอยู่ในขอบเขต <a class="xref" href="mcp_qm_audit.html">ผู้ตรวจคู่มือคุณภาพ</a>)</li>
+<li><b>บทบาทซ้อนของผู้อำนวยการ</b> — ดำรงตำแหน่งประธานอนุกรรมการฝ่ายบริหารทรัพยากรมนุษย์ด้านการรักษาบุคลากรของมูลนิธิฯ ควบคู่กับผู้อำนวยการโรงเรียน · ควรมีการแยกบทบาทให้ชัดเมื่อพิจารณาเรื่องที่เกี่ยวข้องกับโรงเรียนตนเอง</li>
+<li><b>การใช้ข้อมูลประกอบการตัดสินใจ</b> — ระบบมีข้อมูลพร้อมและผู้บริหาร 6 ท่านเข้าถึงได้ (มากที่สุดใน 8 โรงที่ตรวจแล้ว) แต่ยังไม่ปรากฏการนำข้อมูลไปใช้ในการประชุมหรือรายงานประจำ</li>
+<li><b>การคุ้มครองข้อมูลส่วนบุคคล</b> — ตัวชี้วัดข้อ 2 อ้างถึงกฎหมาย แต่ยังไม่มีบันทึกการปฏิบัติตามและการอบรมผู้ใช้</li>
+</ul>
+</div>
+
+<div class="part">9 · สรุปสามมุมมอง</div>
+
+<div class="box ok"><b>จุดแข็ง</b>
+<ul>
+<li><b>ผู้บริหารใช้ระบบข้อมูล 6 ท่าน — มากที่สุดใน 8 โรงที่ตรวจแล้ว</b> (โรงเรียนอื่นมี 2-4 ท่าน)</li>
+<li><b>ผังบัญชี ICT ครบ 12 รายการครอบคลุมทั้ง 4 หมวด</b> — แยกครุภัณฑ์ ค่าเสื่อมราคา ค่าอินเทอร์เน็ต และแยกหลักสูตรไทยกับ English Programme</li>
+<li><b>การเบิกจ่ายเดือน มิ.ย. 32,639 บาท มีเอกสารครบทุกรายการ</b> ระบุเลขที่เอกสาร วันที่ และสมุดบัญชี ตรวจสอบย้อนหลังได้</li>
+<li><b>ผู้รับผิดชอบงาน ICT ระบุตัวได้</b> — แผน 4565 ผูกกับรหัสบุคลากร 1124 ตรวจสอบและติดตามงานถึงตัวบุคคลได้</li>
+<li><b>แผน 4565 อนุมัติแล้ว ครบ 9 ขั้น มี 36 กิจกรรมย่อย</b> โครงสร้างสมบูรณ์</li>
+<li><b>มีเป้าหมายเป็นตัวเลข "วารสาร 2,700 เล่ม"</b> — เป็นโรงเรียนเดียวใน 8 โรงที่กำหนดเป้าสื่อสิ่งพิมพ์เป็นจำนวนชัดเจน</li>
+<li><b>ปิดงานในปฏิทิน 22.46% และไม่มีรายการที่เสร็จหลังกำหนดเลย</b> — เมื่อปิดงานก็ปิดตรงเวลา</li>
+</ul></div>
+
+<div class="box warn"><b>จุดที่ต้องพัฒนา</b>
+<ul>
+<li><b>งบทั้งโรงเรียนใช้ไปเพียง 6.09%</b> — ต่ำที่สุดใน 8 โรงที่ตรวจแล้ว</li>
+<li><b>หน่วยงาน 2604 ใช้งบ 4.33%</b> ทั้งที่รับผิดชอบถึง 6 ด้านจาก 8 ด้าน</li>
+<li>งบ English Programme (1,181,200 บาท) และกลุ่มสาระวิทย์-เทคโนโลยี (75,062 บาท) <b>ใช้ไป 0% ทั้งคู่</b></li>
+<li><b>กิจกรรม 3,978 รายการ (77.4%) ไม่มีคนบันทึกสถานะ</b></li>
+<li>สำนักผู้อำนวยการปิดงานได้ 10.75% ต่ำที่สุดในโรงเรียน</li>
+<li>ไม่มีหน่วยงานสารสนเทศแยก — งานทั้งหมดรวมใน 2604 หน่วยเดียว</li>
+<li>ไม่มีฝ่าย ICT แยก — งานเทคโนโลยีอยู่ใต้ฝ่ายบริหารทั่วไป</li>
+<li>ยังไม่ได้รับหนังสือเชิญเข้าคณะกรรมการมูลนิธิฯ</li>
+<li>มีแผนทดสอบค้างในระบบใช้งานจริง 2 รายการ</li>
+</ul></div>
+
+<div class="box red"><b>ความเสี่ยง</b>
+<ul>
+<li><b>แผนงานอาจไม่เกิดตามกำหนด</b> — ผ่านมา 1 ใน 3 ของปีแต่ใช้งบเพียง 6% หากเร่งช่วงท้ายปีจะเสี่ยงต่อคุณภาพการจัดซื้อและการตรวจรับ</li>
+<li><b>ไม่มีข้อมูลรองรับการประเมินปลายปี</b> — กิจกรรม 3,978 รายการไม่มีสถานะ เมื่อถึงขั้นที่ 8 ของแผน (ประเมินผลการดำเนินงาน) จะไม่มีหลักฐาน</li>
+<li><b>ขาดช่องทางเชื่อมกับมูลนิธิฯ</b> — ไม่ได้รับหนังสือเชิญ ทำให้ไม่มีผู้แทนในคณะกรรมการ ICT และประเด็นของโรงเรียนอาจไม่ถูกนำเสนอ</li>
+<li><b>ความเสี่ยงด้านกฎหมาย</b> — ตัวชี้วัดข้อ 2 อ้าง พ.ร.บ. ไซเบอร์ 2562 และ พ.ร.บ. คอมพิวเตอร์ 2560 แต่ไม่มีบันทึกเหตุการณ์ความปลอดภัยและการปฏิบัติตาม PDPA หากเกิดเหตุจะไม่มีหลักฐานยืนยัน</li>
+<li><b>ผู้ใช้ระบบเพิ่ม 730 คนในปีนี้ แต่งบ ICT ใช้ไปเพียง 4.33%</b> — ภาระงานบริการเพิ่มขึ้นโดยทรัพยากรที่ลงจริงยังไม่เพิ่มตาม</li>
+<li><b>เป้าหมายที่ต้องส่งมอบยังไม่เริ่ม</b> — วารสาร 2,700 เล่ม · รายงานตรวจเช็ก 1 เล่ม · รายงานสารสนเทศ 5 ด้าน 1 เล่ม · คู่มือคุณภาพ 1 เล่ม</li>
+<li><b>บทบาทซ้อนของผู้อำนวยการ</b> — เป็นทั้งประธานอนุกรรมการมูลนิธิฯ และผู้อำนวยการโรงเรียน ควรแยกบทบาทให้ชัดเมื่อพิจารณาเรื่องของโรงเรียนตนเอง</li>
+</ul></div>
+
+<div class="part">10 · ที่มาของข้อมูลทุกรายการในรายงาน</div>
+<table>
+<tr><th style="width:26%">ส่วนของรายงาน</th><th style="width:38%">คำสั่งเรียกข้อมูล</th><th style="width:36%">ผลที่ได้</th></tr>
+<tr><td>ส่วนที่ 2 · ชื่อผู้อำนวยการ</td><td>ทะเบียนผู้บริหารโรงเรียนในเครือ ปีการศึกษา 2569</td><td>รหัส 9008 · ภราดา ดร.ทักษบุตร ไกรประสิทธิ์</td></tr>
+<tr><td>ส่วนที่ 2 · จำนวนบุคลากร</td><td>ทะเบียนบุคลากร ปีการศึกษา 2569</td><td>325 คน (ชาย 127 · หญิง 198) · เข้า 44 · ออก 18</td></tr>
+<tr><td>ส่วนที่ 2 · 4.1 · งบประมาณ</td><td>ระบบงบประมาณรายหน่วยงาน ปีการศึกษา 2569</td><td>76 หน่วยงาน · ตั้งจ่ายรวม 27,672,838 บาท · ใช้ 6.09%</td></tr>
+<tr><td>ส่วนที่ 4.2 · ผังบัญชี</td><td>ผังบัญชีโรงเรียน (ค้น "คอมพิวเตอร์" และ "อินเทอร์เน็ต")</td><td>12 รายการ ครอบคลุม 4 หมวด</td></tr>
+<tr><td>ส่วนที่ 4.3 · การเบิกจ่ายจริง</td><td>บัญชีแยกประเภท รหัส 5-701-05-00 · 5-301-05-00 · 5-704-14-00 เดือน มิ.ย. 2569</td><td>ค่าอินเทอร์เน็ต 25,445 · วัสดุ 7,194 · โปรแกรม 0</td></tr>
+<tr><td>ส่วนที่ 5 · ปฏิทินกิจกรรม</td><td>สถิติการใช้งานระบบ SWIS โมดูลสถานะปฏิทิน ปีการศึกษา 2569</td><td>5,138 รายการ · ปิดงาน 22.46% · ค้างตรวจสอบ 77.4%</td></tr>
+<tr><td>ส่วนที่ 6 · การใช้แอป</td><td>สถิติการใช้งานระบบ SWIS โมดูลแอปพลิเคชัน ปีการศึกษา 2569</td><td>นักเรียน 6,231 · ผู้ปกครอง 3,127 · ครู 671 · ผู้บริหาร 6</td></tr>
+<tr><td>ส่วนที่ 7 · แผนงาน</td><td>ระบบแผนงาน PDCA9 (รายการแผน + รายละเอียดแผน 4565)</td><td>4 แผน · แผน 4565 ครบ 9 ขั้น 12 ตัวชี้วัด 10 เป้าหมาย 36 กิจกรรมย่อย</td></tr>
+<tr><td>ส่วนที่ 3 · หนังสือเวียน</td><td>ระบบหนังสือเวียนมูลนิธิฯ เอกสารเลขที่ 2569/00052</td><td>ส่ง 11 โรงเรียน · ไม่รวมมงฟอร์ตประถม</td></tr>
+</table>
+<div class="box small">ทุกตัวเลขในรายงานนี้ดึงจากฐานข้อมูลจริงของโรงเรียนและมูลนิธิฯ <b>ไม่มีการประมาณการหรือคาดคะเน</b> · หัวข้อที่ยังไม่มีข้อมูลในระบบระบุไว้ชัดเจนว่า "ยังไม่มี" หรือ "ยังไม่มีรายงาน" ไม่ได้เติมเอง · ข้อความเปรียบเทียบระหว่างโรงเรียนอ้างอิงเฉพาะ <b>8 โรงเรียนที่ตรวจแล้ว</b> ยังไม่ครบทุกโรงในเครือ</div>
+
+<div class="foot">
+<b>รายงานฉบับนี้:</b> ตรวจตามกรอบงาน ICT ของมูลนิธิฯ 5 กลุ่ม 8 ด้าน · โรงเรียนมงฟอร์ตวิทยาลัยแผนกประถม · ปีการศึกษา 2569 · ข้อมูล ณ 5 สิงหาคม 2569<br>
+<b>จัดทำโดย:</b> ฝ่ายเทคโนโลยีสารสนเทศและการบริหารทรัพยากรมนุษย์ มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>
+<b>เรียน:</b> ภราดา ดร.ทักษบุตร ไกรประสิทธิ์ ผู้อำนวยการโรงเรียนมงฟอร์ตวิทยาลัยแผนกประถม
+</div>
+
+</body>
+</html>

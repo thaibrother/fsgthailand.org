@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>รายงาน Audit PDCA9 · โรงเรียนอัสสัมชัญ · ปีการศึกษา 2569 · ฉบับสด 30 สิงหาคม 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2f5a;--gold:#b8860b;--ok:#1e7d46;--okbg:#e9f7ef;--warn:#9a6700;--warnbg:#fff8e1;--bad:#c0392b;--badbg:#fdeaea;--line:#d9dee8;--soft:#f4f6fa;--plan:#5b3fa0;--planbg:#f2eefb;--swis:#0b6bcb;--swisbg:#e7f1fb;--owner:#7c2d12;--ownerbg:#fef3c7;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Sarabun',sans-serif;color:#222;line-height:1.6;background:#fff;max-width:1140px;margin:0 auto;padding:28px 36px;}
+header{text-align:center;border-bottom:3px double var(--navy);padding-bottom:14px;margin-bottom:16px;}
+header .org{color:var(--gold);font-weight:600;letter-spacing:.5px;font-size:.85rem;}
+header h1{color:var(--navy);font-size:1.4rem;margin:6px 0 4px;}
+header .sub{color:#555;font-size:.9rem;}
+.badge{display:inline-block;border-radius:6px;padding:4px 14px;font-size:.82rem;font-weight:600;margin-top:8px;}
+.badge-pass{background:var(--okbg);color:var(--ok);border:1px solid var(--ok);}
+.badge-warn{background:var(--warnbg);color:var(--warn);border:1px solid var(--warn);}
+.badge-fail{background:var(--badbg);color:var(--bad);border:1px solid var(--bad);}
+h2{color:var(--navy);font-size:1.15rem;border-left:6px solid var(--gold);padding-left:12px;margin:26px 0 10px;}
+h3{color:var(--navy);font-size:1rem;margin:16px 0 6px;}
+h4{color:#444;font-size:.92rem;margin:10px 0 5px;}
+p{font-size:.9rem;margin:6px 0;}
+.note{font-size:.8rem;color:#666;margin:6px 0;}
+.box{border-left:5px solid var(--navy);background:var(--soft);border-radius:8px;padding:12px 16px;font-size:.88rem;margin:12px 0;}
+.box-ok{border-color:var(--ok);background:var(--okbg);}
+.box-warn{border-color:var(--warn);background:var(--warnbg);}
+.box-bad{border-color:var(--bad);background:var(--badbg);}
+.box-owner{border-color:var(--owner);background:var(--ownerbg);}
+.box-plan{border-color:var(--plan);background:var(--planbg);}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0;}
+th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:.82rem;vertical-align:top;}
+th.owner{background:var(--owner);}
+th.plan{background:var(--plan);}
+td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;}
+tr:nth-child(even) td{background:var(--soft);}
+.c{text-align:center;white-space:nowrap;}
+.b{font-weight:600;}
+.r{text-align:right;}
+.chip{display:inline-block;border-radius:5px;padding:2px 8px;font-size:.72rem;font-weight:600;margin:0 3px;}
+.chip-p1{background:var(--badbg);color:var(--bad);}
+.chip-p2{background:var(--warnbg);color:var(--warn);}
+.chip-p3{background:var(--okbg);color:var(--ok);}
+.chip-owner{background:var(--ownerbg);color:var(--owner);}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;}
+.kpi-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.kpi-card .val{font-size:1.6rem;font-weight:700;color:var(--navy);line-height:1.2;}
+.kpi-card .lbl{font-size:.75rem;color:#666;margin-top:4px;}
+.kpi-card.ok .val{color:var(--ok);}
+.kpi-card.warn .val{color:var(--warn);}
+.kpi-card.bad .val{color:var(--bad);}
+.flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:.82rem;margin:12px 0;}
+.flow .node{background:#fff;border:1.5px solid var(--navy);border-radius:7px;padding:5px 10px;font-weight:500;text-align:center;min-width:110px;}
+.flow .node.ok{border-color:var(--ok);background:var(--okbg);}
+.flow .node.warn{border-color:var(--warn);background:var(--warnbg);}
+.flow .node.bad{border-color:var(--bad);background:var(--badbg);}
+.flow .arrow{color:var(--gold);font-weight:700;font-size:1.1rem;}
+footer{margin-top:32px;border-top:2px solid var(--navy);padding-top:12px;font-size:.78rem;color:#555;}
+.disclaimer{background:var(--warnbg);border:1px dashed var(--warn);border-radius:6px;padding:8px 12px;color:var(--warn);font-size:.78rem;margin-top:10px;}
+.opinion{color:#888;font-style:italic;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ฝ่าย ICT and HRM</div>
+<h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนอัสสัมชัญ · ปีการศึกษา 2569 · ฉบับสด 30 สิงหาคม 2569</span></h1>
+<div class="sub">โดย ห้อง คณะทำงานตรวจแผน PDCA9 ส่วนกลาง (ศูนย์ตรวจเฉพาะทาง) · ตรวจตามกรอบงานสาย HRM อนุกรรมการที่ 4 นิเทศติดตาม · ดึงข้อมูลสด 30 สิงหาคม 2569 เวลา 09:02 น.</div>
+<div style="margin-top:10px">
+<span class="badge badge-pass">Structural: 47/55 หน่วยงานมีแผน · 47/47 ครบ 9 ขั้นตอน P-D-C-A (100% ของแผนใช้จริง) · งบตั้งไว้ 75.34 ล้านบาท</span>
+<span class="badge badge-warn">4 issues ต้องแก้ · โดยเฉพาะ 0/47 ไม่พบการอนุมัติ และ 7 แผนซ้ำ/ทดสอบ</span>
+</div>
+</header>
+
+
+<div style="border:3px solid #c0392b;background:#fdeaea;padding:16px 20px;margin:20px 0;border-radius:8px">
+<b style="color:#c0392b;font-size:1.05rem">⚠️ ข้อจำกัดสำคัญที่ท่านต้องทราบก่อนอ่านรายงาน (โปรดอ่านก่อน)</b>
+<p style="margin-top:8px">รายงานฉบับนี้ใช้ข้อมูลจาก <b>ฐานข้อมูลสำรอง (replica) ของระบบ SWIS ส่วนกลาง</b> ที่ซิงค์กับระบบจริงของโรงเรียนท่านล่าสุด <b>เมื่อวันที่ 20 สิงหาคม 2569 เวลา 11:37 น.</b> · การซิงค์เกิดขึ้นวันละครั้ง <b>ไม่ใช่ทันที (ไม่ใช่ real-time)</b></p>
+<p style="margin-top:8px"><b style="color:#c0392b">หากท่านได้ดำเนินการแก้ไข บันทึก หรืออนุมัติแผนงานในระบบ SWIS ของโรงเรียน หลังจากวันเวลาดังกล่าว การดำเนินการของท่านจะยังไม่ปรากฏในรายงานฉบับนี้</b> · การแก้ไขของท่านจะปรากฏในรายงานฉบับถัดไป หลังจากระบบกลางซิงค์รอบใหม่</p>
+<p style="margin-top:8px"><b>ขอความกรุณาท่าน:</b> หากพบว่ารายงานฉบับนี้ระบุว่า "ยังไม่พบ..." "ไม่พบการอนุมัติ..." หรือ "ยังไม่มี..." <b>ในแผนที่ท่านได้แก้ไขหรืออนุมัติเรียบร้อยแล้ว</b> โปรดตอบกลับผ่านหนังสือ eoffice ฉบับต้นเรื่อง แจ้งวันเวลาที่ท่านดำเนินการ · ทีมงานจะบันทึกไว้ และปรับให้ตรงในรายงานฉบับถัดไปทันทีที่ระบบกลางซิงค์เห็น</p>
+<p style="margin-top:8px"><b>ทีมงานถือว่าข้อมูลของท่านคือความจริง</b> — การที่รายงานยังไม่แสดงการแก้ไขล่าสุดของท่าน คือข้อจำกัดของฐานข้อมูลสำรอง <b>ไม่ใช่การมองข้ามการทำงานของท่าน</b> · ต้องกราบขออภัยล่วงหน้าหากทำให้ท่านเข้าใจว่างานที่ท่านแก้แล้วไม่ถูกยอมรับ</p>
+</div>
+
+<div class="box box-plan">
+<b>เรียน ท่านผู้อำนวยการโรงเรียนอัสสัมชัญ · หัวหน้าฝ่ายทั้ง 6 ฝ่าย · และหัวหน้าหน่วยงานผู้รับผิดชอบแผน PDCA9 ทั้ง 47 แผนของโรงเรียนท่าน</b>
+<p>ทีมงานส่วนกลางได้ดึงข้อมูลจากระบบ SWIS ของโรงเรียนท่านสดใหม่ ณ วันที่ 30 สิงหาคม 2569 เวลา 09:02 น. เพื่อจัดทำรายงานฉบับนี้ให้ท่านตรวจสอบและดำเนินการแก้ไขในส่วนของท่าน · <b>ในตาราง "หัวใจของรายงาน" (ส่วนที่ ๑๐)</b> ท่านจะพบชื่อของท่านและแผนที่ท่านเป็นเจ้าของ พร้อมสิ่งที่ทีมงานขอความกรุณาท่านดำเนินการต่อ · หากพบข้อมูลที่ยังไม่ตรงกับหน้างานจริง โปรดตอบกลับผ่านหนังสือ eoffice ฉบับต้นเรื่อง หรือแจ้งผ่านหัวหน้าสำนักผู้อำนวยการของโรงเรียน (มิสไพบูรณ์ สิงห์ครุ · รหัสบุคลากร 1095)</p>
+<p style="margin-top:8px"><b>โปรดอ่านกล่องเตือนสีแดงด้านบนก่อน</b> เพื่อทราบข้อจำกัดของข้อมูลที่ใช้จัดทำรายงาน · การแก้ไขของท่านหลัง 20 สิงหาคม 2569 เวลา 11:37 น. ยังไม่เข้าฐานข้อมูลที่ใช้จัดทำรายงานฉบับนี้</p>
+</div>
+
+<!-- ================================================================ -->
+<!-- ภาพกรอบความเข้าใจ PDCA9 (canonical · บังคับขึ้นต้นทุกรายงาน)   -->
+<!-- ================================================================ -->
+<section style="border:2px solid var(--navy);border-radius:10px;padding:16px 18px;margin:16px 0;background:#fff">
+<h2 style="color:var(--navy);font-size:1.1rem;text-align:center;border-left:none;border-bottom:2px solid var(--gold);padding:0 0 6px;margin:0 0 6px">กรอบความเข้าใจ PDCA9 · มาตรฐานการปฏิบัติงาน 9 ขั้นของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</h2>
+<p style="text-align:center;font-size:.82rem;color:#555;margin-bottom:12px">ทุกโรงเรียนในเครือใช้เป็นเกณฑ์กลาง · รายงานฉบับนี้ตรวจว่าแผนของแต่ละหน่วยงานเดินตามครบทั้ง 9 ขั้นหรือไม่</p>
+
+<div style="display:flex;justify-content:space-between;font-size:.72rem;font-weight:700;margin:4px 6px;color:#333;flex-wrap:wrap;gap:4px">
+  <span style="padding:3px 10px;border-radius:12px;color:#fff;background:#1a4b8c">P · วางแผน (ขั้น 1-5)</span>
+  <span style="padding:3px 10px;border-radius:12px;color:#fff;background:#1e7d46">D · ปฏิบัติ (ขั้น 6)</span>
+  <span style="padding:3px 10px;border-radius:12px;color:#fff;background:#c47f00">C · ตรวจสอบ (ขั้น 7-8)</span>
+  <span style="padding:3px 10px;border-radius:12px;color:#fff;background:#a63838">A · ปรับปรุง (ขั้น 9)</span>
+</div>
+
+<div style="display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:10px 0">
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1a4b8c"><div style="font-weight:700;font-size:1.15rem;line-height:1">1</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">ขออนุมัติ</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">เสนอ ผอ.</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1a4b8c"><div style="font-weight:700;font-size:1.15rem;line-height:1">2</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">เป้าหมาย</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">2.1 เชิงปริมาณ · 2.2 เชิงคุณภาพ</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1a4b8c"><div style="font-weight:700;font-size:1.15rem;line-height:1">3</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">KPI</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">3.1 KPI · 3.2 ค่าเป้าหมาย</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1a4b8c"><div style="font-weight:700;font-size:1.15rem;line-height:1">4</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">วิธีการ</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">4.1 กิจกรรม · 4.2 เครื่องมือ · 4.3 แนวทาง</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1a4b8c"><div style="font-weight:700;font-size:1.15rem;line-height:1">5</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">เตรียมพร้อม</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">งบ · เวลา · คน</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#1e7d46"><div style="font-weight:700;font-size:1.15rem;line-height:1">6</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">ดำเนินการ</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">mini-PDCA 7 ขั้นย่อย</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#c47f00"><div style="font-weight:700;font-size:1.15rem;line-height:1">7</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">กำกับติดตาม</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">ระหว่างทาง</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#c47f00"><div style="font-weight:700;font-size:1.15rem;line-height:1">8</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">ประเมิน</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">หลักฐาน + สรุปผล</div></div>
+  <div style="flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff;background:#a63838"><div style="font-weight:700;font-size:1.15rem;line-height:1">9</div><div style="font-size:.78rem;margin-top:3px;font-weight:600">ปรับปรุง</div><div style="font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2">รอบถัดไป</div></div>
+</div>
+
+<div style="margin-top:12px;background:#f4f6fa;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.82rem">
+<h3 style="margin:0 0 6px;color:var(--navy);font-size:.92rem;border-left:4px solid var(--gold);padding-left:8px">ห่วงโซ่ความเชื่อมโยง · เป้าหมายคุณภาพ ⟷ แผน PDCA9 ⟷ การประเมิน</h3>
+<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px">
+  <div style="background:#fff8e1;border:2px solid #c47f00;border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35">คู่มือคุณภาพหน่วยงาน<br><span style="font-weight:400;font-size:.7rem">ส่วนที่ 3 · KPI ต้นน้ำ<br>(สพฐ. · FSG · สมศ. ฯลฯ)</span></div>
+  <div style="color:var(--gold);font-weight:700;font-size:1.1rem">➜</div>
+  <div style="background:#eef3fb;border:2px solid #1a4b8c;border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35">แผน PDCA9 · ข้อ 3<br><span style="font-weight:400;font-size:.7rem">KPI + ค่าเป้าหมาย</span></div>
+  <div style="color:var(--gold);font-weight:700;font-size:1.1rem">➜</div>
+  <div style="background:#eef3fb;border:2px solid #1a4b8c;border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35">แผน PDCA9 · ข้อ 4<br><span style="font-weight:400;font-size:.7rem">กิจกรรม<br>(ผูกกับ KPI ข้อ 3)</span></div>
+  <div style="color:var(--gold);font-weight:700;font-size:1.1rem">➜</div>
+  <div style="background:#eef3fb;border:2px solid #1a4b8c;border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35">แผน PDCA9 · ข้อ 6<br><span style="font-weight:400;font-size:.7rem">ขั้นตอนดำเนินการจริง</span></div>
+  <div style="color:var(--gold);font-weight:700;font-size:1.1rem">➜</div>
+  <div style="background:#e9f7ef;border:2px solid #1e7d46;border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35">ข้อ 7-9 · ประเมิน + ปรับปรุง<br><span style="font-weight:400;font-size:.7rem">วัดผลย้อนไปที่ KPI ข้อ 3</span></div>
+</div>
+</div>
+
+<div style="margin-top:10px;background:#fffbea;border-left:4px solid var(--gold);padding:8px 12px;font-size:.8rem;border-radius:0 6px 6px 0">
+<b style="color:#8b6914">รายงานฉบับนี้ตรวจอะไร:</b> ทุกแผน PDCA9 ของหน่วยงานในโรงเรียนอัสสัมชัญ (55 หน่วย · 45 แผนใช้จริง) · ครบ 9 ขั้นหรือไม่ · KPI ตรงกับคู่มือคุณภาพ ส่วนที่ 3 หรือไม่ · ผูกกิจกรรม/ขั้นตอน/หลักฐานครบไหม · จุดใดต้องแก้ พร้อมชื่อผู้รับผิดชอบ
+</div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §0 Data Integrity Check (ก่อนเนื้อวิเคราะห์)                    -->
+<!-- ================================================================ -->
+<section style="border:3px solid var(--bad);border-radius:10px;padding:14px 18px;margin:18px 0;background:#fff">
+<h2 style="color:var(--bad);font-size:1.1rem;border-left:none;padding-left:0;margin:0 0 8px">ส่วนที่ ๐ · Data Integrity Check — ก่อนอ่านรายงาน โปรดตรวจส่วนนี้</h2>
+<p style="color:var(--bad);font-weight:700;font-size:.95rem">ทุกรายงานเปิดด้วยการตรวจความสมบูรณ์ของข้อมูลก่อนวิเคราะห์ · หากมี ⚠️ ผู้อ่านต้องเห็นชัดเจน + มี "แผนกู้" ทุกจุด</p>
+
+<h3>ตาราง 0.1 · ความครบของการดึงข้อมูล (แยก "ดึงไม่ได้" ออกจาก "0 จริง")</h3>
+<table>
+<tr><th style="width:26%">โมดูล / เครื่องมือดึงข้อมูล</th><th style="width:12%">คาดดึง</th><th style="width:12%">ดึงได้จริง</th><th style="width:20%">สถานะ</th><th>หมายเหตุ / แผนกู้</th></tr>
+<tr><td>แผน PDCA9 (plan_pdca9)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>45 แผนจริง · 55 หน่วย · 10 หน่วยยังไม่พบแผน · approved 0/45 ⚠️</td></tr>
+<tr><td>คู่มือคุณภาพหน่วยงาน (quality_manual)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>53 partial · 2 none (ผอ. + รอง ผอ.) · 0 full</td></tr>
+<tr><td>ตัวชี้วัด/มาตรฐาน (kpi_norm)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>7 ชุด · 451 ตัว · used 343 (76.05%) · unused 108</td></tr>
+<tr><td>โครงสร้าง + Confirm Loop (org_structure)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>5 ฝ่าย · 55 dept · in structure 226 · HR 291 · not_in_structure 65</td></tr>
+<tr><td>ปฏิทินสถานะกิจกรรม (calendar_status)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>90 กิจกรรมจริง · done 2 (2.22%) · overdue 48 · un_check 88</td></tr>
+<tr><td>งบประมาณ (school_budget_summary)</td><td class="c">1</td><td class="c b" style="color:var(--bad)">1 ⚠️</td><td class="c"><span class="chip chip-p1">🔴 replica ค้าง</span></td><td class="warn"><b>⚠️ CRITICAL:</b> ระบบส่วนกลางแจ้งว่า replica sync ล่าสุด <b>20 สิงหาคม 2569 เวลา 11:37</b> (ค้างมา 10 วัน · ตัวเลขทุกหมวดออก 0) · <div class="recovery"><b>แผนกู้:</b> รบกวนงานสารสนเทศฯ แจ้งทีมพัฒนาระบบ SWIS Plus ตรวจสอบ replication · เปิดหน้างบประมาณในระบบ SWIS ของโรงเรียนโดยตรงเพื่อดูตัวเลขจริง</div></td></tr>
+<tr><td>บุคลากร (staff_summary)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>291 คน (ชาย 146 · หญิง 145) · new 26 · exit 22</td></tr>
+<tr><td>นักเรียน (students_summary)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>2,157 คน (ชายล้วน) · new 514 · out 37</td></tr>
+<tr style="background:#fdeaea"><td class="b">รวม</td><td class="c b">8</td><td class="c b" style="color:var(--warn)">7 ครบ + 1 ⚠️</td><td class="c"><span class="chip chip-p2">มีเตือน 1 จุด</span></td><td class="b" style="color:var(--warn)">งบประมาณ replica ค้าง — ต้องแจ้งทีมพัฒนาระบบซ่อม</td></tr>
+</table>
+
+<h3>ตาราง 0.2 · ความครบและถูกต้องของข้อมูล · เทียบ N คาด vs M ที่ได้จริง + Flag anomaly</h3>
+<table>
+<tr><th style="width:24%">หมวด</th><th style="width:16%">คาด N</th><th style="width:14%">เทียบได้ M</th><th style="width:12%">ต่าง</th><th style="width:14%">Flag</th><th>แผน verify / แผนกู้</th></tr>
+<tr><td>หน่วยงาน AC (login_post)</td><td class="c">55</td><td class="c b">55 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>—</td></tr>
+<tr><td>บุคลากร HR / ในผัง / ตกจากผัง</td><td class="c">291 / 226 / 65</td><td class="c b">291 / 226 / 65 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>ตกจากผัง 65/291 = 22.3% · ต่ำกว่า SG</td></tr>
+<tr><td>เข้าใหม่ / พ้นสภาพ ปีนี้</td><td class="c">?</td><td class="c b">26 / 22</td><td class="c">—</td><td class="c"><span class="chip chip-p3">OK</span></td><td>—</td></tr>
+<tr><td>นักเรียน (ชายล้วน)</td><td class="c">?</td><td class="c b">2,157 (ชาย 100%) · new 514 · out 37</td><td class="c">—</td><td class="c"><span class="chip chip-p3">OK</span></td><td>—</td></tr>
+<tr><td>หน่วยงานที่มีแผน / ไม่มีแผน</td><td class="c">55</td><td class="c b">45 / 10 ⚠️</td><td class="c">-10</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">10 หน่วยที่ระบบยังไม่พบแผน: EP · ลูกเสือ · ผอ. · รอง ผอ. · ระดับชั้น ม.1-ม.6 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td>แผน approved</td><td class="c">≤45</td><td class="c b" style="color:var(--bad)">0 / 45 ⚠️</td><td class="c">-45</td><td class="c"><span class="chip chip-p1">🔴 CRITICAL</span></td><td class="warn"><b>ทุกแผน 45 แผนยังไม่พบสถานะการอนุมัติในระบบ</b> · หากท่านผู้อำนวยการลงนามแล้วในระบบแต่ยังไม่แสดง รบกวนช่วยยืนยัน · หากยังไม่ลงนาม รบกวนเร่ง</td></tr>
+<tr><td>แผน full 9 ขั้น</td><td class="c">45</td><td class="c b">45 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">100%</span></td><td>ครบ 9 ขั้นทุกแผน · เชิงจำนวน pass</td></tr>
+<tr><td>KPI ที่แผนอ้างอิง</td><td class="c">≤451</td><td class="c b">343 (76.05%)</td><td class="c">-108</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">108 KPI ระบบยังไม่พบว่าถูกอ้างในแผน · <div class="recovery"><b>แผนกู้:</b> งานประกันคุณภาพช่วยตรวจว่าเป็น KPI ตัวใด</div></td></tr>
+<tr><td>คู่มือคุณภาพ (partial / none / full)</td><td class="c">≤55</td><td class="c b">53 / 2 / 0</td><td class="c">—</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">2 ที่ไม่มีคู่มือ = ผอ. · รอง ผอ. (หน่วยกำกับ · อาจไม่ต้องมี) · 0 ครบ 6 ส่วน</td></tr>
+<tr><td>Confirm Loop submitted</td><td class="c">55</td><td class="c b">25</td><td class="c">-30</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">ส่ง 25 · กำลังทำ 5 · ยังไม่เริ่ม 25 · revise_b 1 (โปรดตรวจว่า overlap หรือไม่) · <div class="recovery"><b>แผนกู้:</b> ผอ. ประชุมหัวหน้าฝ่ายเร่ง 25 หน่วยที่ยังไม่เริ่ม</div></td></tr>
+<tr><td>บุคลากรยืนยันตัวตน</td><td class="c">226</td><td class="c b">80 (35.4%)</td><td class="c">-146</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">146 คนยังไม่ยืนยัน · % สูงกว่า SG (22.5%)</td></tr>
+<tr><td>Evidence file (PDCA ข้อ 8)</td><td class="c">≤391</td><td class="c b" style="color:var(--bad)">0 ⚠️</td><td class="c">-391</td><td class="c"><span class="chip chip-p1">🔴</span></td><td class="warn">plan_items 391 · items_with_file = 0 · <div class="recovery"><b>แผนกู้:</b> อบรมวิธีแนบไฟล์</div></td></tr>
+<tr><td>ปฏิทินกิจกรรมจริง</td><td class="c">?</td><td class="c b">90 (+ plan_step_rows 880)</td><td class="c">—</td><td class="c"><span class="chip chip-p3">OK</span></td><td>ห้ามใช้ 970 เป็นฐาน · ฐาน % คือ 90</td></tr>
+<tr><td>ปฏิทิน overdue</td><td class="c">?</td><td class="c b" style="color:var(--bad)">48 ⚠️</td><td class="c">—</td><td class="c"><span class="chip chip-p1">🔴</span></td><td class="warn">48 กิจกรรมเลยกำหนด · หลายรายการ due=0000-11-30 (วันที่ผิด · ต้องแก้)</td></tr>
+<tr><td>ปฏิทิน done</td><td class="c">≤90</td><td class="c b">2 (2.22%)</td><td class="c">-88</td><td class="c"><span class="chip chip-p1">🔴</span></td><td class="warn">ปิดสถานะ 2/90 · ต่ำมาก</td></tr>
+<tr><td>งบประมาณ (in_real / out_real)</td><td class="c">?</td><td class="c b" style="color:var(--bad)">0 / 0 ⚠️</td><td class="c">—</td><td class="c"><span class="chip chip-p1">🔴 replica ค้าง</span></td><td class="warn">ทุกหมวดเป็น 0 เพราะ replica ค้าง 10 วัน · <b>ไม่ใช่ "โรงเรียนไม่บันทึกงบ"</b> · เปิดหน้าระบบโรงเรียนตรวจจริง</td></tr>
+</table>
+
+<h3>ตาราง 0.3 · วิธี Recheck ให้ผู้อ่านตรวจตามได้</h3>
+<table>
+<tr><th style="width:24%">จุดที่ต้อง recheck</th><th style="width:38%">ผู้อ่านตรวจได้ที่ไหน</th><th>วิธี recheck ของทีมผู้ตรวจ</th></tr>
+<tr><td>0/45 แผน approved</td><td>ระบบ SWIS โมดูล "แผนงานประจำ (PDCA9)" · หน้ารายงานสถานะอนุมัติ</td><td>ดึงซ้ำด้วยเครื่องมือระบบ · เทียบ approved field ทุกแผน</td></tr>
+<tr><td>งบประมาณ replica ค้าง</td><td>ระบบ SWIS โมดูลงบประมาณ v5 · เปิดหน้าโรงเรียนตรวจสด</td><td>ทีมพัฒนาระบบ SWIS Plus ต้องซ่อม replication ที่ต้นทาง</td></tr>
+<tr><td>108 KPI ที่ยังไม่ถูกอ้าง</td><td>ระบบ SWIS โมดูลนโยบาย/มาตรฐาน/ตัวชี้วัด</td><td>งานประกันคุณภาพเปิดหน้ารายงานตัวชี้วัดเทียบทีละชุด</td></tr>
+<tr><td>48 ปฏิทิน overdue · due=0000-11-30</td><td>ระบบ SWIS โมดูลปฏิทิน · หน้ารายงานสถานะ</td><td>หัวหน้าฝ่ายกิจการนักเรียนตรวจ 30 กิจกรรม · หัวหน้าสำนัก ผอ. 9 · หัวหน้าฝ่ายวิชาการ 8</td></tr>
+</table>
+
+<div class="box box-ok" style="margin-top:14px">
+<b>☑️ ผลตัดสิน §0:</b> ดึงข้อมูลครบ 7/8 tool (87.5%) · งบประมาณ replica ค้าง 10 วัน ต้องแจ้งทีมซ่อม · ⚠️ 9 จุดในระดับความครบ/ถูกต้อง (ส่วนใหญ่เป็นจุดที่โรงเรียนต้องดำเนินการต่อ) · ทุก ⚠️ มีแผนกู้ระบุแล้ว · <b>อนุญาตให้อ่านเนื้อรายงานต่อได้</b> · โปรดระวังใช้ตัวเลขงบเป็นข้อสรุป · 【รอประธาน ICT/Commission ตรวจสอบ】
+</div>
+</section>
+
+<h2>กรอบงานอ้างอิงและสามหลักของรายงาน</h2>
+<div class="box">
+<p><b>กรอบที่ใช้ตรวจ:</b> รายงานฉบับนี้ตรวจตามกรอบงานสาย HRM อนุกรรมการที่ 4 นิเทศติดตาม ตามโครงสร้าง คณะกรรมการฝ่าย ICT และ HRM ของมูลนิธิฯ (<a href="https://fsgthailand.org/ict-hrm.html">https://fsgthailand.org/ict-hrm.html</a>)</p>
+<p><b>สามหลักที่รายงานอ้างอิง:</b> การตรวจติดตามและการบันทึกข้อมูลการปฏิบัติงานในระบบชุดนี้ เป็นไปตามนโยบายและเป้าหมายของมูลนิธิฯ ที่กำหนดให้ทุกโรงเรียนยึดถือ 3 หลัก ได้แก่</p>
+<ol style="margin:6px 0 6px 24px">
+<li><b>หลักธรรมาภิบาล</b> — ตามคู่มือการบริหารโดยใช้หลักธรรมาภิบาล ฉบับปรับปรุง พ.ศ. 2568: หลักที่ 2 ความโปร่งใส (ข้อ 2.1 การบริหารตามโครงสร้าง · 2.2 การเงิน · 2.3 บุคลากร) และหลักที่ 3 ความรับผิดชอบ (ข้อ 3.1 ต่อบทบาทหน้าที่)</li>
+<li><b>ปรัชญาการศึกษามงฟอร์ต (MEC)</b> — จัดการศึกษาโดยยึดผู้เรียนเป็นศูนย์กลาง ซึ่งการบริหารด้วยข้อมูลจริงคือเงื่อนไขของคุณภาพที่ไปถึงตัวผู้เรียน</li>
+<li><b>แผนยุทธศาสตร์มูลนิธิฯ พ.ศ. 2565–2570</b> — ยุทธศาสตร์ที่ 3 เป้าประสงค์ 3.3 มาตรฐาน 3.3.1 ระบบสารสนเทศเพื่อการบริหารและการจัดการเรียนรู้</li>
+</ol>
+<p>ทั้งสามหลักนี้คือเกณฑ์ที่ทุกโรงเรียนรับการประเมินอยู่แล้ว รายงานชุดนี้จึงเป็นเครื่องมือช่วยให้แต่ละหน่วยงานเห็นสถานะของตนตามเกณฑ์ล่วงหน้า</p>
+</div>
+
+<h2>ความสมบูรณ์ของข้อมูลของโมดูลที่ใช้ในการวิเคราะห์ (ตามประกาศ #66)</h2>
+<p>รายงานฉบับนี้เริ่มด้วยการเปิดเผยแหล่งข้อมูล · เวลาที่ดึงข้อมูล · ระดับความสมบูรณ์ · ข้อจำกัดของทุกโมดูลที่นำมาวิเคราะห์ เพื่อให้ท่านสอบทานย้อนได้ทุกจุด</p>
+<table>
+<tr><th style="width:22%">โมดูล</th><th style="width:22%">ที่มา (เครื่องมือ)</th><th style="width:15%">ดึงเมื่อ</th><th style="width:18%">ระดับความสมบูรณ์</th><th>ข้อจำกัด</th></tr>
+<tr><td class="b">รายการแผน PDCA9</td><td>SWIS · เครื่องมือดึงรายการแผน</td><td class="c">2026-08-21 09:29</td><td class="b" style="color:var(--ok)">ครบ 54 แผน</td><td>ฐานข้อมูลกลางซิงค์ล่าสุด 2026-08-20 11:37:51 · หน้าจอโรงอาจใหม่กว่าฐานกลาง</td></tr>
+<tr><td class="b">รายละเอียดแผนแต่ละอัน</td><td>SWIS · เครื่องมือดึงรายละเอียดแผนรายฉบับ (× 47 แผนที่มีเนื้อ)</td><td class="c">2026-08-21 09:29</td><td class="b" style="color:var(--ok)">ครบ 47/47 แผนที่มีเนื้อ</td><td>7 แผนซ้ำ/ทดสอบ (ยังไม่มีเนื้อขั้นตอน) ไม่นำเข้าวิเคราะห์รายละเอียด (รายการอยู่ในส่วนที่ 5)</td></tr>
+<tr><td class="b">งบประมาณสรุปทั้งโรง</td><td>SWIS · เครื่องมือดึงงบประมาณสรุป</td><td class="c">2026-08-21 09:29</td><td class="b" style="color:var(--ok)">ครบ (ยอดตั้งงบรายรับ + ยอดตั้งงบรายจ่าย)</td><td>หมวดงบย่อย (หมวดงบย่อย) แสดง 0 ทุกช่อง · ระบบไม่ผูกหมวดกับรายการงบในเวอร์ชันนี้ · ต้องใช้ยอดรวม ยอดรวม แทน</td></tr>
+<tr><td class="b">ปฏิทินสถานะกิจกรรม</td><td>SWIS · โมดูลปฏิทินสถานะกิจกรรม</td><td class="c">2026-08-10 15:59</td><td class="b" style="color:var(--warn)">ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td><td>ตัวเลขในส่วนที่ 10 ใช้ค่าตรวจเมื่อ 10 ส.ค. · จะปรับสดในการนิเทศครั้งถัดไป · หากบันทึกเพิ่มหลัง 10 ส.ค. ตัวเลขจริงอาจสูงกว่า</td></tr>
+<tr><td class="b">การยืนยันจากหัวหน้างาน (การยืนยัน)</td><td>SWIS · โมดูลโครงสร้างองค์กร</td><td class="c">2026-08-10 21:30</td><td class="b" style="color:var(--warn)">ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td><td>ตัวเลขในส่วนที่ 4 · 6 กำกับ "ยังไม่ตรวจสอบสด" ทุกจุด</td></tr>
+<tr><td class="b">คู่มือคุณภาพหน่วยงาน</td><td>โมดูล โมดูลคู่มือคุณภาพ (ห้อง คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง)</td><td class="c">—</td><td class="b" style="color:var(--warn)">ยังไม่ตรวจสดในรอบนี้</td><td>ห้อง PDCA9 ไม่มีสิทธิเข้าถึงโมดูลคู่มือคุณภาพในการดึงครั้งนี้ · หัวข้อในส่วนที่ 3 · 10 ระบุว่า "ต้องประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง"</td></tr>
+<tr><td class="b">ผู้อำนวยการและหัวหน้าฝ่าย</td><td>ทะเบียนกลาง eoffice · ทะเบียนผู้อำนวยการจาก eoffice + ทะเบียนบุคลากรจาก eoffice</td><td class="c">2026-08-07</td><td class="b" style="color:var(--ok)">ยืนยันแล้ว</td><td>ชื่อผู้อำนวยการยืนยันจากทะเบียนกลาง 7 ส.ค. · ก่อนวันตรวจ 13 วัน</td></tr>
+</table>
+<div class="box box-warn"><b>ผลผูกพันตามประกาศ #66:</b> คำว่า "ไม่พบในระบบ ณ วันที่ตรวจ" ที่ปรากฏในรายงานนี้ อ้างได้เฉพาะโมดูลที่อยู่ในตารางข้างต้นเท่านั้น · ตัวเลขจากโมดูลที่ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค. จะมีป้ายกำกับ "ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค." ควบทุกจุด</div>
+
+<h2>บทสรุปสำหรับผู้บริหาร</h2>
+<p>ผลตรวจแผนงาน PDCA9 ของทุกหน่วยงานโรงเรียนอัสสัมชัญ · ปีการศึกษา 2569 · จากฐานข้อมูล SWIS ผ่านเครื่องมือของทีมโปรแกรมเมอร์ส่วนกลาง <b>3 โมดูลหลัก</b> (โมดูลแผน PDCA9 · เครื่องมือดึงรายละเอียดแผนรายฉบับ (× 47) · budget_summary)</p>
+
+<div class="kpi">
+<div class="kpi-card ok">
+<div class="val">47/55</div>
+<div class="lbl">หน่วยงานมีแผน PDCA9<br>(ตรวจสอบแล้ว 21 ส.ค. 09:29)</div>
+</div>
+<div class="kpi-card ok">
+<div class="val">47/47</div>
+<div class="lbl">แผนใช้จริงครบ 9 ขั้นตอน P-D-C-A<br>100% ของแผนที่มีเนื้อ</div>
+</div>
+<div class="kpi-card bad">
+<div class="val">0/47</div>
+<div class="lbl">ไม่พบการอนุมัติ<br>ณ วันที่ตรวจ 21 ส.ค. 09:29</div>
+</div>
+<div class="kpi-card warn">
+<div class="val">75.34</div>
+<div class="lbl">งบตั้งไว้รวม (ล้านบาท)<br>รับ 2.90 + จ่าย 72.44</div>
+</div>
+</div>
+
+<div class="box box-ok">
+<b>ตอบตรงคำถาม:</b> <b>โรงเรียนของท่านมี</b>การจัดทำแผน PDCA9 จำนวน 47 หน่วยงาน (จาก 55 หน่วยงานในโครงสร้าง) · 47 แผนใช้จริง · ทุกแผนมีเนื้อครบ 9 ขั้นตอน P-D-C-A (100%) · <b>งบประมาณของท่านตั้งไว้รวม 75.34 ล้านบาท</b> (รายจ่าย 72.44 ล้าน · รายรับ 2.90 ล้าน) · ทั้งหมดเป็นการปฏิบัติจริงของหน่วยงานที่บันทึกในระบบ SWIS (ตรวจสอบแล้ว 30 สิงหาคม 2569 เวลา 09:29 น.)
+</div>
+
+<div class="box box-warn">
+<b>ประเด็นเชิงลึกที่ต้องแก้ 4 จุด:</b> <b>(1) 0/47 แผน ยังไม่พบสถานะการอนุมัติในระบบ · (2) 7 แผนซ้ำ/แผนทดสอบในระบบที่ควรลบ · (3) 8 หน่วยงานยังไม่พบแผนในระบบ · (4) การยืนยันจากหัวหน้างานส่งแล้วรอตรวจ 29% (ค่า 10 ส.ค. · ยังไม่ตรวจสอบสดรอบ 21 ส.ค.)</b>
+</div>
+
+<h2>ส่วนที่ ๑ · ห่วงโซ่ความเชื่อมโยงงานคุณภาพ (จากต้นน้ำถึงปลายน้ำ)</h2>
+<p class="note">ตรวจสายโซ่ ⓪ → ⑤ ว่าเชื่อมโยงจากต้นน้ำถึงปลายน้ำครบไหม สอดคล้องกับหลักธรรมาภิบาลข้อ 2.1 การบริหารตามโครงสร้าง</p>
+<div class="flow">
+<span class="node ok">⓪ ยุทธ์มูลนิธิ<br><span class="note" style="font-size:.7rem">5 ยุทธ์ · 47 ตัวชี้วัดคุณภาพ</span></span><span class="arrow">→</span>
+<span class="node ok">① แผนพัฒนาโรง<br><span class="note" style="font-size:.7rem">DP-AC 2568–2570</span></span><span class="arrow">→</span>
+<span class="node warn">② คู่มือคุณภาพ<br><span class="note" style="font-size:.7rem">53/55 · ยังไม่ครบ 6 ส่วน</span></span><span class="arrow">→</span>
+<span class="node ok">③ PDCA9<br><span class="note" style="font-size:.7rem">47 แผน · 100% ครบ 9 ขั้นตอน P-D-C-A</span></span><span class="arrow">→</span>
+<span class="node warn">④ การปฏิบัติจริง<br><span class="note" style="font-size:.7rem">ค่าเก่า 10 ส.ค.</span></span><span class="arrow">→</span>
+<span class="node warn">⑤ SAR + ต้นทุน<br><span class="note" style="font-size:.7rem">ยังไม่ตรวจสด</span></span>
+</div>
+<div class="box">
+<b>ข้อสังเกตสำคัญ:</b> ข้อต่อ ⓪ · ① · ③ มีการปฏิบัติจริงในระบบเรียบร้อย (แผนพัฒนาโรงเรียนอยู่ในระบบ · แผน PDCA 9 ขั้น 47 แผนมีเนื้อครบ 100%) · ข้อต่อ ② · ④ · ⑤ กำหนดให้ตรวจสอบสดในการนิเทศครั้งถัดไป · <span class="opinion">ห่วงโซ่ในเชิงโครงสร้างครบทุก layer สำหรับข้อมูลที่ตรวจสดแล้ว · ประเด็น "ยังไม่พบการอนุมัติในระบบ (0/47)" อยู่ระหว่างข้อต่อ ③ ↔ ④ ที่ต้องยืนยันกับท่านผู้อำนวยการ</span>
+</div>
+
+<h2>ส่วนที่ ๒ · รายละเอียดแผน PDCA9 (จากโมดูล โมดูลแผน PDCA9)</h2>
+<table>
+<tr><th style="width:40%">ตัวชี้วัด</th><th class="c" style="width:15%">จำนวน</th><th class="c" style="width:15%">%</th><th>สถานะ</th></tr>
+<tr><td>หน่วยงานทั้งหมด (จากผังโครงสร้าง)</td><td class="c b">55</td><td class="c">—</td><td>ค่าฐาน (ตรวจสอบแล้ว 21 ส.ค. 2569 09:29)</td></tr>
+<tr><td>หน่วยงานที่<b>มี</b>แผน PDCA9</td><td class="c b" style="color:var(--ok)">47</td><td class="c b" style="color:var(--ok)">85.5%</td><td><span class="chip chip-p3">มีบางส่วน · 47 จาก 55</span></td></tr>
+<tr><td>หน่วยงานที่<b>ยังไม่พบแผน</b> ในระบบ ณ วันที่ตรวจ</td><td class="c b">8</td><td class="c">14.5%</td><td><span class="chip chip-p2">รายการอยู่ในส่วนที่ 4</span></td></tr>
+<tr><td>จำนวนแผนในระบบทั้งหมด</td><td class="c b">54</td><td class="c">—</td><td>รวม 7 แผนซ้ำ/ทดสอบ (ยังไม่มีเนื้อขั้นตอน) · รายละเอียดในส่วนที่ 5</td></tr>
+<tr><td>แผนใช้จริง (มีเนื้อครบ 9 ขั้นตอน P-D-C-A · ครบ 9 ขั้นตอน P-D-C-A)</td><td class="c b" style="color:var(--ok)">47</td><td class="c b" style="color:var(--ok)">87%</td><td><span class="chip chip-p3">ครบ 100% ของแผนใช้จริง</span></td></tr>
+<tr><td>แผนที่<b>ครบ 9 ขั้น P-D-C-A</b> (จากแผนใช้จริง)</td><td class="c b" style="color:var(--ok)">47/47</td><td class="c b" style="color:var(--ok)">100%</td><td><span class="chip chip-p3">ผ่าน</span></td></tr>
+<tr><td>แผน<b>ที่พบสถานะอนุมัติในระบบ</b></td><td class="c b" style="color:var(--bad)">0/47</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">ไม่พบการอนุมัติ ณ วันที่ตรวจ</span></td></tr>
+<tr><td>แผนที่มีตัวชี้วัดคุณภาพ (KPI)</td><td class="c b" style="color:var(--ok)">47/47</td><td class="c b" style="color:var(--ok)">100%</td><td><span class="chip chip-p3">ผ่าน</span></td></tr>
+<tr><td>แผนที่มีวัตถุประสงค์ (Objective)</td><td class="c b" style="color:var(--ok)">47/47</td><td class="c b" style="color:var(--ok)">100%</td><td><span class="chip chip-p3">ผ่าน</span></td></tr>
+<tr><td>แผนที่มีเป้าหมาย (Goal)</td><td class="c b" style="color:var(--ok)">47/47</td><td class="c b" style="color:var(--ok)">100%</td><td><span class="chip chip-p3">ผ่าน</span></td></tr>
+<tr><td>รวมจำนวนตัวชี้วัดคุณภาพที่ทุกแผนกำหนดไว้</td><td class="c b">385</td><td class="c">—</td><td>เฉลี่ย 8.2 ตัวชี้วัดคุณภาพต่อแผน <span class="opinion">(อันดับสูงในกลุ่ม 22 · อันดับต่ำในกลุ่ม 1 · ตรวจสอบแล้ว 21 ส.ค. 2569 09:29)</span></td></tr>
+<tr><td>รวมจำนวนเป้าหมายที่ทุกแผนกำหนดไว้</td><td class="c b">282</td><td class="c">—</td><td>เฉลี่ย 6.0 เป้าหมายต่อแผน</td></tr>
+<tr><td>งบตั้งไว้รวม · ฝั่งรายจ่าย (ยอดตั้งงบรายจ่าย)</td><td class="c b">72,442,685 บาท</td><td class="c">—</td><td>ตรวจสอบแล้ว 21 ส.ค. 2569 09:29</td></tr>
+<tr><td>งบตั้งไว้รวม · ฝั่งรายรับ (ยอดตั้งงบรายรับ)</td><td class="c b">2,897,390 บาท</td><td class="c">—</td><td>ตรวจสอบแล้ว 21 ส.ค. 2569 09:29</td></tr>
+<tr><td>งบใช้จริงสะสมถึงวันตรวจ (ฝั่งจ่าย)</td><td class="c b">0 บาท</td><td class="c">0%</td><td class="warn">ยังไม่พบการเบิกจ่ายผ่านระบบงบ ณ วันที่ตรวจ · ไม่ได้แปลว่ายังไม่จ่าย · อาจอยู่นอกระบบงบ v5 หรือฝ่ายการเงินยังไม่ผูกยอด</td></tr>
+<tr><td>หัวข้อประเมิน (plan_items · evidence tracker)</td><td class="c" style="color:var(--warn)">ยังไม่ได้ตรวจสอบ</td><td class="c">—</td><td>ต้องประสานทีมโปรแกรมเมอร์ส่วนกลางเพื่อดึงโมดูล plan_items แยก</td></tr>
+</table>
+
+<h2>ส่วนที่ ๓ · คู่มือคุณภาพหน่วยงาน (ต้นน้ำของ 2.2 goals)</h2>
+<div class="box box-ok">
+<b>สถานะ:</b> <span class="b" style="color:var(--ok)">มีข้อมูลสดแล้ว</span> · ดึงจากโมดูลคู่มือคุณภาพหน่วยงาน (compare_schools quality_manual) เมื่อ 21 สิงหาคม 2569 เวลา 10:40 น.
+</div>
+<table>
+<tr><th style="width:50%">ตัวชี้วัด</th><th class="c" style="width:15%">ค่า</th><th>สถานะ / คำอธิบาย</th></tr>
+<tr><td>จำนวนหน่วยงานในผังโครงสร้าง</td><td class="c b">55</td><td>อ้างอิงเครื่องมือทะเบียนบุคลากรของโรงเรียนอัสสัมชัญ</td></tr>
+<tr><td>หน่วยงานที่มีคู่มือคุณภาพครบ 6 ส่วน</td><td class="c b" style="color:var(--warn)">0</td><td class="warn">ยังไม่มีหน่วยงานใดที่คู่มือคุณภาพสมบูรณ์ครบทั้ง 6 ส่วน (หัวข้อหลัก · หัวข้อย่อย · ตัวชี้วัดคุณภาพ · เกณฑ์ชี้วัด · ค่าเป้าหมาย · หลักฐานอ้างอิง)</td></tr>
+<tr><td>หน่วยงานที่มีคู่มือคุณภาพบางส่วน</td><td class="c b">53</td><td>ส่วนใหญ่มี 4 จาก 6 ส่วน · main_topics 5 ข้อ ตามมาตรฐาน · บางหน่วยงานพิเศษมี 2-7 หัวข้อหลัก</td></tr>
+<tr><td>หน่วยงานที่ยังไม่มีคู่มือคุณภาพในระบบ</td><td class="c b" style="color:var(--bad)">2</td><td class="warn">คือ ผู้อำนวยการ (id_dept 1334) และ รองผู้อำนวยการ (id_dept 1335) · <span class="opinion">อาจเป็นเพราะเป็นตำแหน่งกำกับดูแลไม่ใช่หน่วยปฏิบัติ</span></td></tr>
+<tr><td>ค่าเฉลี่ย main_topics ต่อหน่วยงานที่มีคู่มือ</td><td class="c b">≈ 4.8</td><td>ส่วนใหญ่มี 5 หัวข้อหลัก · หน่วยพิเศษ (นโยบายและแผน · วิจัยและพัฒนา) มี 7 · หน่วยเล็ก (สุขอนามัย · บริหารสำนัก ผอ.) มี 2-3</td></tr>
+</table>
+<div class="box">
+<b>ผลกระทบต่อห่วงโซ่ความเชื่อมโยงงานคุณภาพ:</b> <span class="opinion">คู่มือคุณภาพหน่วยงานของโรงเรียนของท่านยังไม่ครบ 6 ส่วนในทุกหน่วย · <b>ต้นน้ำที่แท้จริงของเป้าหมาย (goals) ในแผน PDCA9 คือ "เป้าหมายคุณภาพ" ในส่วนที่ ๓ ของคู่มือคุณภาพหน่วยงาน</b> (ซึ่งอ้างอิงแหล่งคุณภาพต่าง ๆ เช่น สพฐ · AC-QA · FSG · สมศ. · CEFR · TQA ฯลฯ · ระบุเป็นตัวย่อในวงเล็บ) · การตรวจการเชื่อมโยงว่าตัวย่ออ้างอิงคุณภาพเหล่านี้ปรากฏครบในส่วนอ้างอิงคุณภาพของแผนหรือไม่ · อยู่ใน <b>ส่วนที่ ๓ก</b> ด้านล่าง</span>
+</div>
+
+
+<h2>ส่วนที่ ๓ก · ผลการตรวจการเชื่อมโยงวัตถุประสงค์จากคู่มือคุณภาพหน่วยงานสู่แผนปฏิบัติงาน (PDCA9)</h2>
+
+<div class="box box-plan">
+<b>เรียน ท่านผู้อำนวยการ · หัวหน้าฝ่าย · และหัวหน้าหน่วยงานทุกท่าน</b>
+<p style="margin-top:6px"><b>คำชี้แจงก่อนอ่านส่วนนี้:</b> ในรายงานฉบับก่อน ทีมตรวจได้ใช้ "จำนวนหัวข้อหลัก main_topics 5 ข้อ" เทียบกับ "จำนวน goals ในแผน" · <b>การเทียบดังกล่าวใช้แหล่งอ้างอิงไม่ถูกต้อง</b> · เนื่องจาก main_topics เป็นเพียงหัวข้อของคู่มือ · <b>ไม่ใช่ "เป้าหมายคุณภาพ" ที่แท้จริง</b> · ทีมตรวจได้ถอนข้อสรุปนั้นออกจากรายงานทั้งหมดแล้ว</p>
+<p style="margin-top:6px"><b>แหล่งอ้างอิงที่ถูกต้อง:</b> "เป้าหมายคุณภาพ" ของหน่วยงานอยู่ใน <b>ส่วนที่ ๓ ของคู่มือคุณภาพหน่วยงาน</b> · แต่ละหน่วยเลือกอ้างอิงจาก <b>ชุดมาตรฐานอ้างอิงคุณภาพ 7 ชุด</b> ตามภารกิจของตน · ระบุเป็น <b>ตัวย่อในวงเล็บ</b> ท้ายเป้าหมายแต่ละข้อ</p>
+<p style="margin-top:6px"><b>ผลการวิเคราะห์:</b> ทีม คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง ได้ดึงข้อมูลจริงจากระบบ SWIS โมดูล kpi_norm ของโรงเรียนอัสสัมชัญ · ปีการศึกษา ๒๕๖๙ · ดึงเมื่อ ๒๑ สิงหาคม ๒๕๖๙ เวลา ๑๑:๐๗:๐๓ น. · ส่งข้อมูลกลับมาให้ทีมตรวจ PDCA9 แล้ว</p>
+</div>
+
+<div class="kpi">
+<div class="kpi-card"><div class="val">7</div><div class="lbl">ชุดมาตรฐานอ้างอิงคุณภาพที่ AC ใช้</div></div>
+<div class="kpi-card"><div class="val">451</div><div class="lbl">รวมตัวชี้วัดคุณภาพทั้ง 7 ชุด</div></div>
+<div class="kpi-card ok"><div class="val">341</div><div class="lbl">✅ ตัวชี้วัดที่ถูกอ้างอิงในแผน (75.61%)</div></div>
+<div class="kpi-card warn"><div class="val">110</div><div class="lbl">⚠️ ตัวชี้วัดที่ยังไม่ถูกอ้างอิงโดยแผนใด</div></div>
+</div>
+
+<h3>ตาราง · 7 ชุดมาตรฐานอ้างอิงคุณภาพที่ปรากฏในคู่มือคุณภาพ ส่วนที่ 3 (แหล่งที่แผน PDCA9 ต้องอ้างอิงให้ครบ)</h3>
+<table>
+<tr>
+  <th class="c" style="width:6%">#</th>
+  <th style="width:55%">ชุดมาตรฐานอ้างอิงคุณภาพ</th>
+  <th class="c" style="width:19%">ตัวย่อ/แหล่ง</th>
+  <th class="c" style="width:20%">จำนวนตัวชี้วัด</th>
+</tr>
+<tr><td class="c">1</td><td>มาตรฐานการศึกษา มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td><td class="c b">FSG</td><td class="c b">20</td></tr>
+<tr><td class="c">2</td><td>มาตรฐานการศึกษาขั้นพื้นฐาน</td><td class="c b">สพฐ.</td><td class="c b">26</td></tr>
+<tr><td class="c">3</td><td>มาตรฐานโรงเรียน (ของอัสสัมชัญ)</td><td class="c b">มาตรฐานโรงเรียน</td><td class="c b">80</td></tr>
+<tr><td class="c">4</td><td>แผนพัฒนาการจัดการศึกษาของโรงเรียน</td><td class="c b">แผนพัฒนาโรงเรียน</td><td class="c b">158</td></tr>
+<tr><td class="c">5</td><td>ยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td><td class="c b">ยุทธศาสตร์มูลนิธิฯ</td><td class="c b">127</td></tr>
+<tr><td class="c">6</td><td>หลักธรรมาภิบาล</td><td class="c b">ธรรมาภิบาล</td><td class="c b">21</td></tr>
+<tr><td class="c">7</td><td>มาตรฐานของสำนักงานรับรองมาตรฐานฯ รอบที่ 5</td><td class="c b">สมศ.</td><td class="c b">19</td></tr>
+<tr style="font-weight:bold;background:#eef3fb"><td></td><td colspan="2" class="c">รวม 7 ชุด</td><td class="c">451</td></tr>
+</table>
+
+<div class="box box-ok">
+<b>✅ สรุปสถานะการเชื่อมโยงคุณภาพของแผน PDCA9 (ระดับทั้งโรงเรียน · ข้อเท็จจริงจากระบบ):</b>
+<ul style="margin:6px 0 0 20px">
+<li>ตัวชี้วัดคุณภาพในคู่มือรวม <b>451 ตัว</b> · <b>แผน PDCA9 อ้างอิงแล้ว 341 ตัว</b> (คิดเป็น <b>ร้อยละ 75.61</b>)</li>
+<li>จำนวนการอ้างอิงตัวชี้วัดในแผนทั้งหมด <b>1,364 ครั้ง</b> · <b>39 แผน</b> มีการเชื่อมโยงกับตัวชี้วัดในคู่มือ</li>
+<li><b>นโยบายโรงเรียน</b> ที่ผู้อำนวยการกำหนดในคู่มือ <b>5 เรื่อง</b> · ถูกอ้างในแผน <b>48 ครั้ง</b></li>
+<li><span class="opinion">การอ้างอิงในระดับทั้งโรงเรียนอยู่ในเกณฑ์ดี · หัวหน้าแผนของท่านส่วนใหญ่ได้ระบุแหล่งอ้างอิงคุณภาพในแผน PDCA9 แล้ว · เป็น <b>ข้อดี</b> ของโรงเรียนอัสสัมชัญเมื่อเทียบกับสถานะทั่วไป</span></li>
+</ul>
+</div>
+
+<div class="box box-warn">
+<b>⚠️ ประเด็นที่ต้องดำเนินการต่อ · ตัวชี้วัด 110 ตัวยังไม่ถูกอ้างอิงโดยแผนใดเลย:</b>
+<p style="margin-top:6px"><span class="opinion">ตัวชี้วัด 110 ตัวนี้อาจเข้าข่าย 2 กรณี · <b>กรณีที่ 1</b> แผน PDCA9 ของหน่วยงานที่รับผิดชอบภารกิจนั้น <b>ยังไม่ได้ระบุแหล่งอ้างอิง</b>ให้ครบ (ต้องเพิ่ม) · <b>กรณีที่ 2</b> ตัวชี้วัดเหล่านั้นเป็นเรื่องที่โรงเรียนของท่าน <b>ยังไม่มีภารกิจโดยตรง</b> · จึงยังไม่มีแผนใดรับไป · ทั้งสองกรณีต้องให้ท่านผู้อำนวยการหรือหัวหน้าแผนเป็นผู้พิจารณาเป็นตัว ๆ</span></p>
+<p style="margin-top:6px"><b>ท่านผู้อำนวยการโปรดพิจารณาสั่งการ:</b> ให้งานประกันคุณภาพการศึกษา (มิสช่อลดา แพทยารักษ์ · รหัส 1165) ดึงรายชื่อตัวชี้วัด 110 ตัวจากระบบ SWIS · จำแนกว่าอยู่ในหมวด/ภารกิจของหน่วยงานใด · แล้วแจ้งหัวหน้าแผนหน่วยงานนั้นเพิ่มการอ้างอิงในแผน PDCA9 หรือชี้แจงเหตุผลที่ไม่รับผิดชอบ</p>
+</div>
+
+<div class="box">
+<b>📋 ข้อจำกัดของการตรวจในรอบนี้ · (ระบุตรงเพื่อความโปร่งใส):</b>
+<ul style="margin:6px 0 0 20px">
+<li>เครื่องมือ MCP ปัจจุบันเปิดให้ดึงข้อมูล<b>ระดับทั้งโรงเรียน</b>ได้ · ตัวเลข 341/110 และ 7 ชุดมาตรฐาน คือข้อเท็จจริงจากระบบ</li>
+<li><b>ยังไม่เปิดให้ดึง</b>ข้อความคู่มือส่วนที่ 3.2 <b>รายหน่วยงาน</b> (ว่าแต่ละหน่วยเลือกใช้ตัวย่อใดบ้าง) · จึงยังไม่สามารถบอกได้ในรายงานนี้ว่า "แผน 858 ขาดตัวย่อ FSG" หรือ "แผน 869 ขาดตัวย่อ สพฐ."</li>
+<li><b>ยังไม่เปิดให้ดึง</b>รายชื่อตัวชี้วัด 110 ตัวที่ยังไม่ถูกอ้างอิงผ่าน MCP · หากต้องการรายตัว ต้องเปิดหน้ารายงานมาตรฐาน/ตัวชี้วัดของระบบ SWIS โดยตรง</li>
+<li><b>ในรอบตรวจถัดไป</b> ทีม PDCA9 จะประสานงานประกันคุณภาพเพื่อเปิดหน้า SWIS ดึงข้อมูลรายหน่วย · สร้างตารางเทียบ "ตัวย่อในคู่มือ ⟷ ตัวย่อในแผน" รายหน่วยงาน · ระบุชื่อหัวหน้าแผนที่ต้องเพิ่มตัวย่อใดบ้าง</li>
+</ul>
+</div>
+
+<h3>ตาราง · เป้าหมายคุณภาพในคู่มือคุณภาพ (ส่วนที่ 3) ⟷ การปรากฏในแผน PDCA9 · รายหน่วยงาน</h3>
+<div class="box box-warn" style="border-width:3px">
+<b>⏳ กำลังรอผลจากห้อง คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง · ตารางนี้จะเติมข้อมูลรายหน่วยเมื่อ QM สรุปเสร็จ</b>
+<p style="margin-top:6px">เพื่อป้องกันความสับสน · ตารางระดับรายหน่วยจะอยู่ในหน้ารายงานเดียวกันนี้ · ไม่แยกไฟล์ · ทีม PDCA9 จะเติมข้อมูลทันทีที่ คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง ส่งผลกลับมา (กำลังสรุปว่าแต่ละหน่วยงานมีกี่เป้าหมายคุณภาพที่ระบุในคู่มือ · และเป้าหมายเหล่านั้นปรากฏในส่วนอ้างอิงคุณภาพของแผน PDCA9 ครบหรือไม่)</p>
+</div>
+
+<table>
+<tr>
+  <th class="c" style="width:7%">รหัสแผน</th>
+  <th style="width:26%">หน่วยงาน</th>
+  <th style="width:17%">หัวหน้าแผน</th>
+  <th class="c" style="width:11%">เป้าหมายคุณภาพในคู่มือ ส่วนที่ 3 (ข้อ)</th>
+  <th class="c" style="width:11%">ปรากฏในแผน PDCA9 (ข้อ)</th>
+  <th class="c" style="width:8%">ครบ?</th>
+  <th style="width:20%">สิ่งที่ท่านต้องแก้/ทำ</th>
+</tr>
+<tr><td class="c b">909</td><td>งานบริหารสำนักผู้อำนวยการ</td><td>มิสไพบูรณ์ สิงห์ครุ<br><span class="note">รหัส 1095</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">854</td><td>งานประกันคุณภาพการศึกษา</td><td>มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">857</td><td>งานทรัพยากรมนุษย์</td><td>มิสจงกล สมานพร้อม<br><span class="note">รหัส 1303</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">859</td><td>งานนโยบายและแผน</td><td>มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">863</td><td>งานวิจัยและพัฒนา</td><td>มิสสิรินุช เอี่ยมเขียว<br><span class="note">รหัส 1370</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">898</td><td>งานสื่อสารองค์กร</td><td>ม.โสภณ สกุลเรือง<br><span class="note">รหัส 1292</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">916</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td>มิสรัชนีกร พวงมาลย์<br><span class="note">รหัส 1230</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">899</td><td>งานศูนย์วิทยบริการ</td><td>มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">858</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td>มิสอรุณวตรี นักจะเข้<br><span class="note">รหัส 1528</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">860</td><td>งานการเงิน</td><td>มิสชมชื่น เกิดประดับ<br><span class="note">รหัส 1171</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">861</td><td>งานทะเบียน</td><td>มิสนุกูล เกตุแก้ว<br><span class="note">รหัส 1131</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">884</td><td>งานธุรการ</td><td>มิสเดือนเพ็ญ สุขประเสริฐ<br><span class="note">รหัส 1164</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">885</td><td>งานจัดซื้อ จำหน่ายและทรัพย์สิน</td><td>มิสพรพรรณ สุทธิขำ<br><span class="note">รหัส 1529</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">851</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td>มิสวนันศ์ ว่องพีรพัฒน์<br><span class="note">รหัส 1496</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">852</td><td>งานสุขอนามัย</td><td>มิสเพ็ญจันทร์ ธาราวิกรัยรัตน์<br><span class="note">รหัส 1596</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">882</td><td>งานวิเทศสัมพันธ์</td><td>ม.ฐาณัฏฐ์ ราชพุฒิ<br><span class="note">รหัส 1551</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">902</td><td>งานยานพาหนะ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">904</td><td>งานโภชนาการ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">905</td><td>งานอาคารสถานที่</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">881</td><td>งานบริหารฝ่ายวิชาการ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">877</td><td>งานหลักสูตร</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">895</td><td>งานนิเทศ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">893</td><td>งานวัดผล</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">879</td><td>งานแนะแนว</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">880</td><td>งานศูนย์ AC International Exam</td><td class="note">รอตรวจ</td><td class="c warn">ไม่มีคู่มือ</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+<tr><td class="c b">896</td><td>ศูนย์การเรียนรู้บิน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">868</td><td>กลุ่มสาระฯภาษาไทย</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">869</td><td>กลุ่มสาระฯคณิตศาสตร์</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">870</td><td>กลุ่มสาระฯวิทยาศาสตร์</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">871</td><td>กลุ่มสาระฯสังคม</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">873</td><td>กลุ่มสาระฯภาษาต่างประเทศ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">874</td><td>กลุ่มสาระฯสุข-พล</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">875</td><td>กลุ่มสาระฯศิลปะ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">876</td><td>กลุ่มสาระฯการงานอาชีพ</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">888</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">878</td><td>งานกิจกรรมพัฒนาผู้เรียน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">911</td><td>งานกิจกรรมและสัมพันธ์ชุมชน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">897</td><td>งานกีฬา</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">891</td><td>งานดูแลนักเรียน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">850</td><td>งานอภิบาล</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">890</td><td>งานสภานักเรียน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">914</td><td>งานรักษาดินแดน</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">912</td><td>งานเชียร์และแปรอักษร</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">913</td><td>งาน AC Band</td><td class="note">รอตรวจ</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">รอผล QM</span></td></tr>
+<tr><td class="c b">866</td><td>งานบริหารฝ่าย EP</td><td class="note">รอตรวจ</td><td class="c warn">ไม่มีคู่มือ</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+<tr><td class="c b">910</td><td>งานบริหารหลักสูตรและวิชาการ EP</td><td class="note">รอตรวจ</td><td class="c warn">ไม่มีคู่มือ</td><td class="c">—</td><td class="c">—</td><td><span class="opinion">จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+</table>
+
+<p style="text-align:center;margin-top:8px;font-size:14px;color:#666"><b>ที่มาข้อมูลส่วนที่ ๓ก:</b> ระบบ SWIS โมดูล kpi_norm (นโยบาย/มาตรฐาน/ตัวชี้วัด + การอ้างอิงโดยแผน) · ดึงโดยห้อง คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง · 21 สิงหาคม 2569 เวลา 11:07:03 น. · ไฟล์ต้นทาง <code>quality_manual_audits/ac_quality_reference_for_pdca9_20260821.html</code> · <b>ตารางรายหน่วยด้านบน</b> รอ คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง สรุปเป้าหมายคุณภาพรายหน่วยส่งกลับ</p>
+
+<!--
+เนื้อหาเดิมของส่วนที่ ๓ก (การเทียบ main_topics vs goals) ได้ถูกถอนออกในรายงานฉบับนี้
+เหตุผล: แหล่งเทียบไม่ถูกต้อง · main_topics ไม่ใช่ "เป้าหมายคุณภาพ" ที่แท้จริง
+เป้าหมายคุณภาพจริงอยู่ในส่วนที่ ๓ ของคู่มือคุณภาพ · อ้างอิงด้วยตัวย่อในวงเล็บ
+รอผลจาก คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง แล้วสร้าง §3ก รอบใหม่
+-->
+
+<!-- ==== ตารางเปรียบเทียบ main_topics vs goals (ฉบับเดิม · ถอนออก · เก็บใน HTML comment เพื่ออ้างอิงย้อนหลัง) ====
+<table>
+<tr>
+  <th class="c" style="width:8%">รหัสแผน</th>
+  <th style="width:30%">หน่วยงาน</th>
+  <th class="c" style="width:14%">main_topics (คู่มือ)</th>
+  <th class="c" style="width:14%">goals (แผน)</th>
+  <th class="c" style="width:10%">ส่วนต่าง (g − m)</th>
+  <th class="c" style="width:24%">สถานะ</th>
+</tr>
+<tr><td class="c b">909</td><td>งานบริหารสำนักผู้อำนวยการ</td><td class="c b">2</td><td class="c b">3</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">854</td><td>งานประกันคุณภาพการศึกษา</td><td class="c b">5</td><td class="c b">18</td><td class="c">13</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">857</td><td>งานทรัพยากรมนุษย์</td><td class="c b">5</td><td class="c b">3</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">859</td><td>งานนโยบายและแผน</td><td class="c b">7</td><td class="c b">7</td><td class="c">0</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">863</td><td>งานวิจัยและพัฒนา</td><td class="c b">7</td><td class="c b">5</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">898</td><td>งานสื่อสารองค์กร</td><td class="c b">5</td><td class="c b">10</td><td class="c">5</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">916</td><td>งานเทคโนโลยีสารสนเทศฯ</td><td class="c b">5</td><td class="c b">9</td><td class="c">4</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">899</td><td>งานศูนย์วิทยบริการ</td><td class="c b">5</td><td class="c b">3</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">858</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td class="c b">5</td><td class="c b">17</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">860</td><td>งานการเงิน</td><td class="c b">5</td><td class="c b">23</td><td class="c">18</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">861</td><td>งานทะเบียน</td><td class="c b">5</td><td class="c b">7</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">884</td><td>งานธุรการ</td><td class="c b">5</td><td class="c b">7</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">885</td><td>งานจัดซื้อ</td><td class="c b">5</td><td class="c b">26</td><td class="c">21</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">851</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td class="c b">4</td><td class="c b">5</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">852</td><td>งานสุขอนามัย</td><td class="c b">3</td><td class="c b">6</td><td class="c">3</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">882</td><td>งานวิเทศสัมพันธ์</td><td class="c b">5</td><td class="c b">3</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">902</td><td>งานยานพาหนะ</td><td class="c b">5</td><td class="c b">6</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">904</td><td>งานโภชนาการ</td><td class="c b">5</td><td class="c b">6</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">905</td><td>งานอาคารสถานที่</td><td class="c b">5</td><td class="c b">7</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">881</td><td>งานบริหารฝ่ายวิชาการ</td><td class="c b">5</td><td class="c b">3</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">877</td><td>งานหลักสูตร</td><td class="c b">5</td><td class="c b">5</td><td class="c">0</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">895</td><td>งานนิเทศ</td><td class="c b">4</td><td class="c b">3</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">893</td><td>งานวัดผล</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">879</td><td>งานแนะแนว</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">880</td><td>งานศูนย์ AC International Exam</td><td class="c b">—</td><td class="c b">3</td><td class="c">—</td><td class="c"><span class="chip chip-p1">⛔ ไม่พบคู่มือ</span></td></tr>
+<tr><td class="c b">896</td><td>ศูนย์การเรียนรู้บิน</td><td class="c b">5</td><td class="c b">6</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">868</td><td>กลุ่มสาระฯภาษาไทย</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">869</td><td>กลุ่มสาระฯคณิตศาสตร์</td><td class="c b">5</td><td class="c b">2</td><td class="c">-3</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">870</td><td>กลุ่มสาระฯวิทยาศาสตร์</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">871</td><td>กลุ่มสาระฯสังคม</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">873</td><td>กลุ่มสาระฯภาษาต่างประเทศ</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">874</td><td>กลุ่มสาระฯสุข-พล</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">875</td><td>กลุ่มสาระฯศิลปะ</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">876</td><td>กลุ่มสาระฯการงานอาชีพ</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">888</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td class="c b">5</td><td class="c b">6</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">878</td><td>งานกิจกรรมพัฒนาผู้เรียน</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">911</td><td>งานกิจกรรมและสัมพันธ์ชุมชน</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">897</td><td>งานกีฬา</td><td class="c b">5</td><td class="c b">2</td><td class="c">-3</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">891</td><td>งานดูแลนักเรียน</td><td class="c b">5</td><td class="c b">4</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">850</td><td>งานอภิบาล</td><td class="c b">5</td><td class="c b">26</td><td class="c">21</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">890</td><td>งานสภานักเรียน</td><td class="c b">5</td><td class="c b">5</td><td class="c">0</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">914</td><td>งานรักษาดินแดน</td><td class="c b">4</td><td class="c b">2</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">912</td><td>งานเชียร์และแปรอักษร</td><td class="c b">5</td><td class="c b">3</td><td class="c">-2</td><td class="c"><span class="chip chip-p2">⚠️ ยังไม่ครอบคลุมครบ</span></td></tr>
+<tr><td class="c b">913</td><td>งาน AC Band</td><td class="c b">4</td><td class="c b">4</td><td class="c">0</td><td class="c"><span class="chip chip-p3">✅ ครอบคลุม</span></td></tr>
+<tr><td class="c b">866</td><td>งานบริหารฝ่าย EP</td><td class="c b">—</td><td class="c b">4</td><td class="c">—</td><td class="c"><span class="chip chip-p1">⛔ ไม่พบคู่มือ</span></td></tr>
+<tr><td class="c b">910</td><td>งานบริหารหลักสูตรและวิชาการ EP</td><td class="c b">—</td><td class="c b">9</td><td class="c">—</td><td class="c"><span class="chip chip-p1">⛔ ไม่พบคู่มือ</span></td></tr>
+</table>
+
+<div class="box box-ok"><b>ข้อสังเกต · แผนที่ ✅ ครอบคลุม (goals ≥ main_topics) จำนวน 21 แผน:</b> <span class="opinion">เป็นแผนที่หัวหน้างานของท่านทำเป้าหมายในแผน "มากกว่าหรือเท่ากับ" หัวข้อหลักในคู่มือคุณภาพ · เป็น <b>ข้อดี</b> · แสดงว่าหัวหน้างานท่านได้กำหนดเป้าหมายที่ละเอียดและครอบคลุมมากกว่าเกณฑ์ต้นน้ำ · ควรรักษาระดับความละเอียดนี้ไว้ · แผนเด่น เช่น งานอภิบาล (26 vs 5) · งานจัดซื้อ (26 vs 5) · งานการเงิน (23 vs 5) · งานประกันคุณภาพ (18 vs 5) · งานบริหารฝ่ายธุรการ-การเงิน (17 vs 5)</span></div>
+
+<div class="box box-warn"><b>ข้อสังเกต · แผนที่ ⚠️ ยังไม่ครอบคลุมครบ (goals &lt; main_topics) จำนวน 22 แผน:</b> <span class="opinion">อาจเป็นเพราะ goals ในแผนเลือกกำหนดเฉพาะบางหัวข้อหลัก · หรืออาจเป็นเพราะบางหัวข้อในคู่มือคุณภาพ ผู้อำนวยการยังไม่ได้กำหนดไว้ในคู่มือ · <b>ขอความกรุณาหัวหน้างานของท่านทบทวนว่าเป้าหมายในแผน (goals) ครอบคลุม main_topics ทุกข้อของคู่มือคุณภาพหรือไม่</b> · หากยังขาด ให้เพิ่มเป้าหมายให้ครบทุกหัวข้อหลัก · หากคู่มือยังไม่กำหนดครบ ให้ประสานงานประกันคุณภาพและ ผอ. เพื่อปรับคู่มือ · กลุ่มที่เข้าข่ายส่วนใหญ่คือ 8 กลุ่มสาระการเรียนรู้ (main_topics=5 · goals=2-4) และหน่วยงานที่ใช้ goals template default</span></div>
+
+<div class="box box-bad"><b>ข้อสังเกต · แผนที่ ⛔ ไม่พบคู่มือคุณภาพในระบบ จำนวน 3 แผน:</b> <span class="opinion">หน่วยงานเหล่านี้ยังไม่มีคู่มือคุณภาพในระบบ (main_topics = 0) · จึงไม่สามารถเทียบ goals กับ main_topics ได้ · ได้แก่ งานศูนย์ AC International Exam (id_dept 1314) · งานบริหารฝ่าย EP (id_dept 1331) · งานบริหารหลักสูตรและวิชาการ EP (id_dept 1332) · <b>ขอความกรุณาท่าน</b>ประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง เพื่อจัดทำคู่มือคุณภาพ 3 หน่วยงานนี้ให้ครบ · หลังจากมีคู่มือแล้วจะเทียบ goals ได้ในรอบถัดไป</span></div>
+==== จบส่วนที่ถอนออก ==== -->
+
+<div class="box"><b>หมายเหตุ · ข้อค้นพบ "แผน 3 หน่วยงาน EP/AC International Exam ยังไม่มีคู่มือคุณภาพในระบบ"</b> · <span class="opinion">ข้อค้นพบนี้ยังคงเป็นข้อเท็จจริงที่ตรวจสอบได้ · ได้แก่ งานศูนย์ AC International Exam (id_dept 1314) · งานบริหารฝ่าย EP (id_dept 1331) · งานบริหารหลักสูตรและวิชาการ EP (id_dept 1332) · <b>ขอความกรุณาท่านผู้อำนวยการมอบหมายให้ 3 หน่วยงานนี้จัดทำคู่มือคุณภาพให้ครบ</b> · หลังจากมีคู่มือแล้ว จะสามารถเทียบเป้าหมายคุณภาพในส่วนที่ ๓ กับส่วนอ้างอิงคุณภาพในแผน PDCA9 ได้ในรอบถัดไป</span></div>
+
+<h2>ส่วนที่ ๔ · หน่วยงานที่ยังไม่พบแผนในระบบ · 8 หน่วยงาน</h2>
+<p><span class="opinion">โดยทั่วไปหน่วยงานที่ยังไม่พบแผนในระบบ อาจเป็นได้ 3 สาเหตุ (ก) ยังไม่เริ่มจัดทำ · (ข) จัดทำนอกระบบ SWIS แล้วยังไม่บันทึก · (ค) เป็นหน่วยงานประเภทที่ไม่จำเป็นต้องทำแผน PDCA9 แยก เช่น สำนักผู้อำนวยการ · กรรมการที่ปรึกษา · ระดับชั้นย่อย</span></p>
+<div class="box box-warn"><b>หมายเหตุ:</b> <span class="opinion">รายชื่อ 8 หน่วยงานที่ยังไม่พบแผนอย่างเฉพาะเจาะจง อยู่ระหว่างการดึงจากผังโครงสร้างของโรงเรียน (เครื่องมือทะเบียนบุคลากร ครบ 55 หน่วยงาน) เพื่อเปรียบเทียบกับรายการแผน 47 หน่วยงานที่ปรากฏในระบบ · จะระบุครบในการนิเทศครั้งถัดไป</span> · <b>การไม่พบแผนไม่ได้แปลว่าหน่วยงานไม่ทำงาน</b> · เพียงแต่ยังไม่มีการบันทึกเป็นแผนงาน PDCA9 ในระบบ SWIS ณ วันที่ตรวจ 30 สิงหาคม 2569 09:02 น.</div>
+
+<h2>ส่วนที่ ๕ · แผนซ้ำและแผนทดสอบในระบบ · 7 รายการที่ควรลบ</h2>
+<p>ในการดึงรายการแผน 54 รายการจากระบบ พบว่ามี 7 รายการเป็นแผนซ้ำ (ชื่อเดียวกันหลาย profile) หรือแผนทดสอบ (ชื่อ "test" · "ทดสอบ" · ยังไม่มีเนื้อขั้นตอน) ที่ควรลบออกเพื่อให้ตัวเลขในระบบสะอาด และตรงกับ 47 แผนใช้จริง</p>
+<table>
+<tr><th style="width:8%" class="c">รหัสแผน</th><th style="width:32%">ชื่อ/สถานะแผน</th><th style="width:30%">หน่วยงาน</th><th>ข้อสังเกต</th></tr>
+<tr><td class="c b">883</td><td>งานการเงิน (ซ้ำกับ 860 · ยังไม่มีเนื้อขั้นตอน · ว่างเปล่า)</td><td>งานการเงิน</td><td><span class="opinion">แผนซ้ำกับรหัสแผน 860 · ยังไม่มีเนื้อ 9 ขั้นตอน · ควรลบ</span></td></tr>
+<tr><td class="c b">906</td><td>งานบริหารสำนักผู้อำนวยการ (ข้อความยาว · ยังไม่มีเนื้อขั้นตอน)</td><td>งานบริหารสำนักผู้อำนวยการ</td><td><span class="opinion">ชื่อเป็นข้อความอธิบายยาว · ไม่ใช่ชื่อแผนจริง · ควรลบ</span></td></tr>
+<tr><td class="c b">907</td><td>งานบริหารสำนักผู้อำนวยการ (ซ้ำกับ 908/909 · ยังไม่มีเนื้อขั้นตอน)</td><td>งานบริหารสำนักผู้อำนวยการ</td><td><span class="opinion">แผนซ้ำ · ยังไม่มีเนื้อ · ควรลบ</span></td></tr>
+<tr><td class="c b">908</td><td>งานบริหารสำนักผู้อำนวยการ (มีเนื้อครบ 9 ขั้นตอน · แต่ตัวชี้วัดคุณภาพ=0 · เป้าหมาย=0)</td><td>งานบริหารสำนักผู้อำนวยการ</td><td><span class="opinion">มีขั้นครบ 9 · แต่ยังไม่กำหนดตัวชี้วัดคุณภาพและเป้าหมาย · ควรรวมเข้ากับแผนรหัส 909</span></td></tr>
+<tr><td class="c b">900</td><td>งาน IT/โสตทัศนูปกรณ์ (ข้อความยาว · ยังไม่มีเนื้อขั้นตอน)</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td><span class="opinion">ชื่อเป็นข้อความอธิบายยาว · ควรลบ</span></td></tr>
+<tr><td class="c b">901</td><td>งาน IT/โสตทัศนูปกรณ์ (ซ้ำกับ 900 · ยังไม่มีเนื้อขั้นตอน)</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td><span class="opinion">แผนซ้ำ · ควรลบ</span></td></tr>
+<tr><td class="c b">903</td><td>"test" (ชื่อทดสอบระบบ · ยังไม่มีเนื้อขั้นตอน)</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td><span class="opinion">ชื่อทดสอบระบบ · ควรลบทันที</span></td></tr>
+<tr><td class="c b">915</td><td>"ทดสอบ" (ยังไม่มีเนื้อขั้นตอน)</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td><span class="opinion">ชื่อทดสอบระบบ · ควรลบทันที</span></td></tr>
+</table>
+<div class="box box-warn"><b>ข้อเสนอต่อโรงเรียนของท่าน (สีเทาตัวเอียง = ความเห็นของ AI):</b> <span class="opinion"><b>เรียน ท่านผู้ดูแลระบบ SWIS ของโรงเรียน (มิสรัชนีกร พวงมาลย์ · รหัสบุคลากร 1230)</b> — ขอความกรุณาท่านตรวจสอบและลบ 7 รายการนี้ออก (หน่วยงานที่พบว่าเป็นเจ้าของแผนซ้ำเหล่านี้ของท่านคือ "งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์" 4 รายการ · "งานบริหารสำนักผู้อำนวยการ" 3 รายการ · "งานการเงิน" 1 รายการ) เพื่อให้เมนู "จำนวนแผน" ของระบบแสดงเป็น 47 แทนที่จะเป็น 54 · การมีแผนซ้ำในระบบทำให้ตัวเลขรวมของโรงเรียนของท่านคลาดเคลื่อนจากการปฏิบัติจริง</span></div>
+
+<h2>ส่วนที่ ๖ · โครงสร้าง + การยืนยันจากหัวหน้างาน (การยืนยันจากหัวหน้างาน)</h2>
+<table>
+<tr><th style="width:40%">ตัวชี้วัด</th><th class="c" style="width:20%">ค่า</th><th>สถานะ</th></tr>
+<tr><td>ผู้อำนวยการ</td><td class="c b">ภราดาเดชาชัย ศรีพิจารณ์</td><td><span class="chip chip-p3">ยืนยันจากทะเบียนกลาง eoffice 7 ส.ค. 2569 · รหัสบุคลากร 0006</span></td></tr>
+<tr><td>ฝ่าย (จากผังโครงสร้าง)</td><td class="c b">6 ฝ่าย</td><td>สำนักผู้อำนวยการ · วิชาการ · ธุรการ-การเงิน · กิจการนักเรียน · บริหารทั่วไป · English Program</td></tr>
+<tr><td>หน่วยงาน (จากผังโครงสร้าง)</td><td class="c b">55</td><td>47 มีแผน (85.5%) · 8 ยังไม่พบแผน (14.5%)</td></tr>
+<tr><td>การยืนยันจากหัวหน้างาน สถานะ · ส่งแล้วรอตรวจ (ส่งแล้วรอตรวจ)</td><td class="c b">16</td><td class="warn">ตรวจเมื่อ 10 ส.ค. 2569 · ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td></tr>
+<tr><td>การยืนยันจากหัวหน้างาน สถานะ · อยู่ระหว่างดำเนินการ (อยู่ระหว่างดำเนินการ)</td><td class="c b">2</td><td class="warn">ตรวจเมื่อ 10 ส.ค. 2569 · ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td></tr>
+<tr><td>การยืนยันจากหัวหน้างาน สถานะ · ยังไม่เริ่ม (ยังไม่เริ่ม)</td><td class="c b">37</td><td class="warn">ตรวจเมื่อ 10 ส.ค. 2569 · ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td></tr>
+<tr><td>การยืนยันจากหัวหน้างาน · ต้องทบทวน (revise)</td><td class="c b">1</td><td class="warn">ตรวจเมื่อ 10 ส.ค. 2569 · ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td></tr>
+<tr><td>สัดส่วนที่กดส่งเรียบร้อยแล้ว (% ส่งแล้วรอตรวจ)</td><td class="c b">29%</td><td class="warn">ตรวจเมื่อ 10 ส.ค. 2569 · ยังไม่ได้ตรวจสอบสดรอบ 21 ส.ค.</td></tr>
+</table>
+<div class="box box-warn"><b>เรียน ท่านผู้อำนวยการ · คำอธิบายในการอ่านตัวเลขนี้:</b> คำว่า "ยังไม่เริ่ม" หมายความว่า หน่วยงานของท่านยังไม่กดสถานะในระบบ SWIS <b>ไม่ได้แปลว่าท่านยังไม่ทำงาน</b> · หน่วยงานของท่านอาจดำเนินงานไปแล้วแต่ยังไม่ได้เข้าระบบเพื่อบันทึกสถานะ · <span class="opinion">หากท่านได้กดส่งเพิ่มระหว่าง 10 ส.ค. → 21 ส.ค. ตัวเลข % ส่งแล้วรอตรวจจริงอาจสูงกว่า 29% ในการตรวจสดครั้งถัดไป · <b>ขอความกรุณาท่านประชุมทีมงานให้เข้าระบบพร้อมกัน</b></span></div>
+
+<h2>ส่วนที่ ๖ก · งบประมาณโรงเรียนอัสสัมชัญ ปีการศึกษา 2569 · ⚠️ ระบบส่วนกลาง sync ค้าง</h2>
+<div class="box box-bad" style="border-width:3px">
+<p><b>⚠️ CRITICAL · โปรดอ่านก่อนตีความ:</b> ระบบส่วนกลางแจ้งว่า replica ของฐานข้อมูลงบประมาณโรงเรียนอัสสัมชัญ sync ล่าสุด <b>20 สิงหาคม 2569 เวลา 11:37 น.</b> (ค้างมา 10 วัน) · ทำให้ตัวเลขทุกหมวดที่ระบบส่วนกลางให้ = 0 · <b>ไม่ใช่ว่าโรงเรียนไม่ได้บันทึกงบ</b> · เป็นข้อบกพร่องของ replication</p>
+<p style="margin-top:6px"><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว (ตามค่าที่ระบบให้เห็นจากรอบ 20 ส.ค.):</b> ตั้งงบรายรับ 2.9 ล้านบาท · ตั้งงบรายจ่าย 72.44 ล้านบาท · รวม 75.34 ล้านบาท · หมวดงบและรายการงบผูกไว้ในระบบครบ</p>
+<p style="margin-top:6px"><b>จุดที่ระบบยังไม่พบในรอบตรวจนี้:</b> ตัวเลขการเบิกจ่ายจริง (in_real / out_real) ทุกหมวดออก 0 · หากโรงเรียนได้บันทึกเบิกจ่ายจริงในระบบแล้ว รบกวนช่วยยืนยัน · <b>ไม่ใช่ข้อสรุปว่า "ไม่บันทึก"</b></p>
+<p style="margin-top:6px"><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานสารสนเทศฯ (นายเจษฎา กฤษดาธิการ · id_dept 1295) แจ้งทีมพัฒนาระบบ SWIS Plus ตรวจ replication ระหว่างเซิร์ฟเวอร์โรงเรียน ↔ ส่วนกลาง · เปิดหน้างบประมาณในระบบ SWIS โรงเรียนดูตัวเลขสดสำหรับใช้ในการนิเทศ · 【รอประธาน ICT/Commission ตรวจสอบ】</p>
+</div>
+
+<h2>ส่วนที่ ๖ข · ปฏิทินกิจกรรม + รายวิชา (ดึงสด 30 สิงหาคม 2569 เวลา 09:02)</h2>
+<h3>ปฏิทินกิจกรรมของโรงเรียนอัสสัมชัญ</h3>
+<table>
+<tr><th style="width:36%">รายการ</th><th class="c" style="width:16%">จำนวน</th><th>คำอธิบาย</th></tr>
+<tr><td class="b">กิจกรรมจริง (master_cal=0) — <b>ฐานคำนวณ %</b></td><td class="c b">90</td><td>กิจกรรมที่หน่วยงานลงในปฏิทิน · ตรวจสอบแล้ว 30 สิงหาคม 2569</td></tr>
+<tr style="background:#fef3c7"><td>+ timeline ขั้นตอนแผน PDCA (plan_step_rows)</td><td class="c">880</td><td class="b" style="color:var(--warn)">ระบบสร้างอัตโนมัติจากขั้นตอนแผน · <b>แยกช่อง · ห้ามบวกรวม</b></td></tr>
+<tr style="background:var(--soft)"><td class="b">ยอดในหน้าจอปฏิทิน (90+880)</td><td class="c">970</td><td class="b" style="color:var(--bad)">⚠️ <b>ห้ามใช้ 970 เป็นฐาน %</b> เพราะรวม timeline ขั้นตอนแผนที่ไม่ใช่กิจกรรม</td></tr>
+<tr><td colspan="3" class="b" style="background:var(--okbg)">รายละเอียดสถานะกิจกรรม 90 กิจกรรม</td></tr>
+<tr><td>เสร็จก่อนกำหนด (done_early)</td><td class="c b">0</td><td>—</td></tr>
+<tr><td>เสร็จตามกำหนด (done_ontime)</td><td class="c b">2</td><td>—</td></tr>
+<tr><td>เสร็จหลังกำหนด (done_late)</td><td class="c b">0</td><td>—</td></tr>
+<tr style="background:var(--okbg)"><td class="b">เสร็จรวม (done_total)</td><td class="c b" style="color:var(--ok)">2</td><td class="b">= 0+2+0</td></tr>
+<tr style="background:var(--warnbg)"><td class="b">ยังไม่ตรวจสอบสถานะ (un_check)</td><td class="c b" style="color:var(--warn)">88</td><td>รอหัวหน้าฝ่ายปิดสถานะ</td></tr>
+<tr style="background:var(--badbg)"><td class="b">🔴 เลยกำหนด (overdue)</td><td class="c b" style="color:var(--bad)">48</td><td class="b" style="color:var(--bad)">เซตย่อยของ un_check · <b>ห้ามบวกกับ done_total</b> · หลายรายการ due=0000-11-30 (วันที่ผิด ต้องแก้)</td></tr>
+<tr style="background:var(--badbg)"><td class="b">% ปิดสถานะ (ฐาน 90)</td><td class="c b" style="color:var(--bad)">2.22% (2/90)</td><td class="b" style="color:var(--bad)">ต่ำมาก · รบกวนหัวหน้าฝ่ายเร่งปิดสถานะ</td></tr>
+</table>
+
+<h4>ปฏิทิน · % done รายฝ่าย (จากระบบส่วนกลาง 30 ส.ค.)</h4>
+<table>
+<tr><th style="width:26%">ฝ่าย</th><th class="c" style="width:10%">total</th><th class="c" style="width:10%">done</th><th class="c" style="width:12%">%done</th><th class="c" style="width:12%">overdue</th><th>ข้อสังเกต</th></tr>
+<tr><td>สำนักผู้อำนวยการ</td><td class="c">15</td><td class="c">2</td><td class="c b" style="color:var(--ok)">13.33%</td><td class="c">9</td><td>เป็นฝ่ายเดียวที่มีการปิดสถานะกิจกรรมในรอบตรวจนี้</td></tr>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td class="c">60</td><td class="c">0</td><td class="c warn">0%</td><td class="c" style="color:var(--bad)">30</td><td class="b" style="color:var(--bad)">มีกิจกรรมมากที่สุดใน 3 ฝ่าย (60 กิจกรรม · 67% ของกิจกรรมทั้งโรง) · ระบบยังไม่พบการปิดสถานะ · รบกวนช่วยยืนยัน</td></tr>
+<tr><td>ฝ่ายวิชาการ</td><td class="c">14</td><td class="c">0</td><td class="c warn">0%</td><td class="c" style="color:var(--bad)">8</td><td>ระบบยังไม่พบการปิดสถานะ</td></tr>
+</table>
+
+<div class="box box-warn">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> ปฏิทิน 90 กิจกรรมจริง · ปิดสถานะเรียบร้อย 2 กิจกรรม (สำนักผู้อำนวยการ)</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> 48 กิจกรรมเลยกำหนดยังไม่ปิดสถานะ · 88 กิจกรรมยังไม่ได้ตรวจสถานะ · หากทำเสร็จแล้วรบกวนช่วยยืนยัน · หลายรายการวันสิ้นสุด due=0000-11-30 (ผิดรูปแบบ · ต้องแก้ต้นทาง)</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนหัวหน้าฝ่ายทั้ง 5 ฝ่ายเร่งปิดสถานะ · โดยเฉพาะฝ่ายกิจการนักเรียน (60 กิจกรรม · overdue 30) · ตั้งเป้า % ปิดสถานะ ≥30% ก่อนสิ้นภาคเรียนที่ 1 · งานสารสนเทศฯ ตรวจแก้วันสิ้นสุด 0000-11-30 ที่ผิดรูปแบบ</p>
+</div>
+
+<h2>ส่วนที่ ๗ · 4 ประเด็นที่ต้องแก้ + <span style="color:var(--owner)">ผู้รับผิดชอบต้นทาง</span></h2>
+<div class="box box-owner">
+<b>หลักการ:</b> ให้สำเร็จต้องตามจากต้นน้ำ (ห่วงโซ่ชั้นที่ ⓪ → ⑤) · ผู้รับผิดชอบเรียงตามลำดับสายบังคับบัญชา · ปัญหาปลายน้ำอาจแก้ไม่ได้ถ้าต้นน้ำไม่จัดการ · ทุกประเด็นต้องมีเจ้าภาพชัดเจน กันปัญหา "ไม่มีเจ้าของ"
+</div>
+
+<h3>ประเด็นที่ 1 · <span class="chip chip-p1">เร่งด่วน · เร่งด่วนสูง</span> ไม่พบสถานะการอนุมัติในระบบ · 0/47 แผน</h3>
+<div class="box box-bad">
+<b>สาเหตุแท้จริง:</b> ทุกแผนของ ac ที่ดึงจากระบบ (54 รายการ) มีค่า ยังไม่พบสถานะการอนุมัติในระบบ ทั้งหมด · <span class="opinion">น่าจะเป็นเพราะกระบวนการอนุมัติภายในโรงเรียนอยู่ในขั้นตอนใดขั้นตอนหนึ่งที่ยังไม่ถึงการกดอนุมัติในระบบ SWIS · หรือมีการอนุมัตินอกระบบไปแล้วแต่ยังไม่บันทึกในระบบ · ประเด็นนี้ต้องยืนยันจากท่านผู้อำนวยการโดยตรง</span>
+</div>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner" style="width:35%">ผู้รับผิดชอบ (ต้นทาง → ปลายทาง)</th><th style="width:30%">การดำเนินการที่ต้องทำ</th></tr>
+<tr>
+<td>0/47 แผนไม่พบสถานะการอนุมัติในระบบ · ในขณะที่โรงเรียนอื่นในเครือ (ที่มีขนาด 40–70 แผนใกล้เคียงกัน) ทุกโรงมีการอนุมัติในระบบเรียบร้อยแล้ว</td>
+<td>
+<b>ผู้ที่ต้องดำเนินการหลัก:</b> ผอ. ภราดาเดชาชัย ศรีพิจารณ์ (ผู้อนุมัติในระบบ)<br>
+<b>ผู้ปฏิบัติในโรงเรียนของท่าน:</b> คณะกรรมการบริหารโรงเรียน + งานประกันคุณภาพการศึกษา (มิสช่อลดา แพทยารักษ์ · รหัสบุคลากร 1165) เป็นผู้รวบรวม<br>
+<b>ผู้ให้การสนับสนุน:</b> งานเทคโนโลยีสารสนเทศฯ (มิสรัชนีกร พวงมาลย์ · รหัสบุคลากร 1230)
+</td>
+<td><b>ขอความกรุณาท่าน</b>สอบทานกระบวนการอนุมัติภายในว่าอยู่ในขั้นตอนใด · หากท่านได้อนุมัตินอกระบบไปแล้ว → <b>ขอให้ท่าน</b>เร่งบันทึกในระบบ SWIS · หากยังอยู่ระหว่างขั้นตอน → <b>ขอให้ท่าน</b>เร่งกระบวนการก่อน Check 8.1 ของมูลนิธิ</td>
+</tr>
+</table>
+
+<h3>ประเด็นที่ 2 · <span class="chip chip-p2">รอง</span> แผนซ้ำและแผนทดสอบ 7 รายการในระบบ</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">การดำเนินการที่ต้องทำ</th></tr>
+<tr>
+<td>แผนซ้ำ 4 รายการจากงานเทคโนโลยีสารสนเทศฯ (รหัสแผน 900 · 901 · 903 · 915) + 3 รายการจากงานบริหารสำนักฯ (รหัสแผน 906 · 907 · 908) + 1 รายการจากงานการเงิน (รหัสแผน 883) · ทำให้จำนวนในระบบเป็น 54 แทนที่จะเป็น 47</td>
+<td>
+<b>ผู้ที่ต้องดำเนินการหลัก:</b> มิสรัชนีกร พวงมาลย์ (งานเทคโนโลยีสารสนเทศฯ · รหัส 1230) · มิสไพบูรณ์ สิงห์ครุ (งานบริหารสำนักฯ · รหัส 1095) · มิสชมชื่น เกิดประดับ (งานการเงิน · รหัส 1171)<br>
+<b>ผู้ให้การสนับสนุน:</b> ผอ. ภราดาเดชาชัย<br>
+<b>ผู้ปฏิบัติในโรงเรียนของท่าน:</b> SWIS admin ของโรงเรียน
+</td>
+<td><b>ขอความกรุณาท่าน</b>ตรวจสอบและลบ 7 รายการซ้ำ/ทดสอบ · <b>ขอให้ท่าน</b>จัดอบรมผู้ใช้เรื่องการทดสอบระบบให้ใช้สภาพแวดล้อมทดสอบแยกออกจากระบบจริง · <b>ขอให้ท่าน</b>ล็อกสิทธิ์การลบและการสร้างแผนให้เข้มงวดขึ้น</td>
+</tr>
+</table>
+
+<h3>ประเด็นที่ 3 · <span class="chip chip-p2">รอง</span> 8 หน่วยงานยังไม่พบแผนในระบบ</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">การดำเนินการที่ต้องทำ</th></tr>
+<tr>
+<td>จาก 55 หน่วยงานในผังโครงสร้าง มี 47 หน่วยงานที่มีแผน · เหลือ 8 หน่วยงานที่ยังไม่พบแผน (14.5%) <span class="opinion">อาจเป็นหน่วยงานประเภทที่ไม่จำเป็นต้องทำแผน PDCA9 แยก · หรือยังไม่ได้จัดทำ</span></td>
+<td>
+<b>ผู้ที่ต้องดำเนินการหลัก:</b> ผอ. + 6 หัวหน้าฝ่ายของท่าน<br>
+<b>ผู้ประสานงาน:</b> งานประกันคุณภาพการศึกษา (มิสช่อลดา แพทยารักษ์ · รหัส 1165)
+</td>
+<td><b>ขอความกรุณาท่าน</b>ระบุ 8 หน่วยงานที่ขาดแผน · <b>ขอให้ท่าน</b>ตัดสินว่าต้องทำหรือไม่ต้องทำ · deadline ก่อน Check 8.1 · deadline 30 ก.ย. 2569</td>
+</tr>
+</table>
+
+<h3>ประเด็นที่ 4 · <span class="chip chip-p2">รอง</span> การยืนยันจากหัวหน้างานส่งแล้วรอตรวจ 29% (ค่า 10 ส.ค. · ต้องตรวจสอบสด)</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">การดำเนินการที่ต้องทำ</th></tr>
+<tr>
+<td>หน่วยงาน 37 หน่วยยังไม่เริ่ม การยืนยันจากหัวหน้างาน (ค่าตรวจ 10 ส.ค.) · <span class="opinion">อาจเป็นเพราะระบบยังไม่ได้กดสถานะ ไม่ใช่ไม่ได้ทำงาน · ต้องการการตรวจสอบสดครั้งถัดไป</span></td>
+<td>
+<b>ผู้ที่ต้องดำเนินการหลัก:</b> คณะกรรมการฝ่าย ICT และ HRM (ประธาน ภราดาศุภนันท์ ขันธปรีชา)<br>
+<b>ผู้ปฏิบัติในโรงเรียนของท่าน:</b> ผอ. + งานทรัพยากรมนุษย์ (มิสจงกล สมานพร้อม · รหัสบุคลากร 1303)<br>
+<b>ผู้ให้การสนับสนุน:</b> งานเทคโนโลยีสารสนเทศฯ (มิสรัชนีกร พวงมาลย์ · รหัส 1230)
+</td>
+<td>ทีมงานส่วนกลางจะตรวจสอบสด การยืนยันจากหัวหน้างาน ในการนิเทศครั้งถัดไป · <b>ขอความกรุณาท่าน</b>เร่งประชุมทีมงานให้เข้าระบบพร้อมกันหากตัวเลขยังคงเดิม · <b>ขอให้ท่าน</b>ผูกให้สอดคล้องกับสเปคงาน (Job Spec) ของแต่ละหน่วยงาน</td>
+</tr>
+</table>
+
+<h2>ส่วนที่ ๘ · สายผู้รับผิดชอบครบทั้งระบบ (จากต้นน้ำถึงปลายน้ำ)</h2>
+<div class="box box-owner"><b>สายผู้รับผิดชอบต่อไปนี้คือของท่านทั้งหลาย</b> · ทีมงานส่วนกลางจะใช้เป็นแนวทางในการติดตามงานร่วมกับท่าน · ขอความกรุณาท่านทุกระดับตรวจสอบชื่อและตำแหน่งของท่าน หากพบข้อมูลที่ไม่ตรง โปรดตอบกลับผ่านหนังสือ eoffice ฉบับต้นเรื่อง</div>
+<table>
+<tr>
+<th style="width:8%" class="c">ชั้น</th>
+<th style="width:22%">งาน</th>
+<th class="owner" style="width:35%">ผู้รับผิดชอบต้นทาง (มูลนิธิ)</th>
+<th class="owner">ผู้รับผิดชอบระดับโรงเรียนอัสสัมชัญ</th>
+</tr>
+<tr>
+<td class="c b">⓪</td>
+<td>ยุทธศาสตร์มูลนิธิฯ (5 ยุทธ์ · 47 ตัวชี้วัดคุณภาพ)</td>
+<td>เจ้าคณะแขวง + Provincial Council</td>
+<td>ผู้อำนวยการ ภราดาเดชาชัย ศรีพิจารณ์ (รับ cascade)</td>
+</tr>
+<tr>
+<td class="c b">①</td>
+<td>แผนพัฒนาโรงเรียน DP-AC (2568–2570)</td>
+<td>คณะกรรมการมูลนิธิฯ + คณะกรรมการฝ่ายการศึกษา</td>
+<td>ผอ. + คณะกรรมการบริหารโรงเรียน + งานนโยบายและแผน</td>
+</tr>
+<tr>
+<td class="c b">②</td>
+<td>คู่มือคุณภาพหน่วยงาน (6 ส่วน · เป้า 2.2)</td>
+<td>คณะกรรมการฝ่าย ICT และ HRM (ประธาน ภราดาศุภนันท์) + คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง</td>
+<td>งานประกันคุณภาพการศึกษา (มิสช่อลดา แพทยารักษ์ · รหัสบุคลากร 1165) + 47 หัวหน้าหน่วยงาน</td>
+</tr>
+<tr>
+<td class="c b">③</td>
+<td>แผนงาน PDCA9 (47 แผนใช้จริง · หัวใจ)</td>
+<td>คณะทำงานตรวจแผน PDCA9 ส่วนกลาง (ศูนย์ตรวจเฉพาะทาง #1) + ประธานคณะกรรมการฝ่าย ICT และ HRM</td>
+<td>47 หัวหน้าหน่วยงาน (เจ้าของแผน) + งานประกันคุณภาพการศึกษา (รวบรวม)</td>
+</tr>
+<tr>
+<td class="c b">④</td>
+<td>โมดูล SWIS (คน · เงิน · พัสดุ · บริการ)</td>
+<td>ICT sub 2.2 (ระบบ SWIS) + SWIS Plus (ผู้พัฒนา)</td>
+<td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์ (มิสรัชนีกร พวงมาลย์ · รหัสบุคลากร 1230)</td>
+</tr>
+<tr>
+<td class="c b">⑤</td>
+<td>SAR + Cost Accounting (ปลายน้ำ)</td>
+<td>คณะกรรมการฝ่ายการศึกษา + คณะกรรมการมูลนิธิฯ</td>
+<td>งานประกันคุณภาพการศึกษา (มิสช่อลดา) + งานบัญชีและงบประมาณ</td>
+</tr>
+</table>
+
+<h3>คณะกรรมการฝ่าย ICT และ HRM 2569–2570 · ประธานอนุกรรมการ 7 กลุ่มงาน HRM (canonical · ยึดคำสั่งลงนาม 17 พ.ค. 2569 + รายงานการประชุม 1/2569)</h3>
+<div class="box box-owner">
+<b>แหล่งอ้างอิงสูงสุด:</b> คำสั่ง <i>Special Assignments and Responsibilities 2026–2027</i> ลงนามโดยเจ้าคณะแขวง 17 พ.ค. 2569 ข้อ 2.4 + รายงานการประชุม 1/2569 วาระ 5.1
+<table style="margin-top:8px;font-size:.85rem">
+<tr><th style="width:10%" class="c">กลุ่มงาน</th><th style="width:35%">ชื่อกลุ่มงาน</th><th class="owner">ประธานอนุกรรมการ 2569–2570</th></tr>
+<tr><td class="c b">1</td><td>บริหารงาน HRM</td><td class="b">ภราดาศุภนันท์ ขันธปรีชา (ประธานคณะกรรมการฝ่าย)</td></tr>
+<tr><td class="c b">2</td><td>Workforce & Recruitment (สรรหาบุคลากร)</td><td class="b">ภราดาศราวุธ ยุชมภู</td></tr>
+<tr><td class="c b">3</td><td>Onboarding (ปฐมนิเทศ)</td><td class="b">ภราดาศราวุธ ยุชมภู</td></tr>
+<tr><td class="c b">4</td><td>Supervision & Monitoring (นิเทศติดตาม) · <span class="pass" style="color:var(--ok)">กรอบที่ตรวจรายงานฉบับนี้</span></td><td class="b">ภราดากุลชาติ จันทะโชโต</td></tr>
+<tr><td class="c b">5</td><td>Human Resource Development (พัฒนาบุคลากร)</td><td class="b">ภราดากุลชาติ จันทะโชโต</td></tr>
+<tr><td class="c b">6</td><td>Retention (ธำรงรักษา)</td><td class="b">ภราดามานิต สกนธวัฒน์</td></tr>
+<tr><td class="c b">7</td><td>Succession (สืบทอด)</td><td class="b">ภราดามานิต สกนธวัฒน์</td></tr>
+</table>
+</div>
+
+<h2>ส่วนที่ ๙ · แผนการดำเนินการ · ลำดับความสำคัญและกำหนดเวลา</h2>
+<table>
+<tr>
+<th class="c" style="width:8%">ระดับความสำคัญ</th>
+<th style="width:35%">การดำเนินการ</th>
+<th class="owner" style="width:30%">ผู้รับผิดชอบหลัก</th>
+<th class="c" style="width:15%">กำหนดเวลา</th>
+<th class="c" style="width:12%">ตรวจโดย</th>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p1">เร่งด่วน</span></td>
+<td><b>ขอความกรุณาท่าน</b>สอบทานสถานะการอนุมัติแผนทั้ง 47 แผน · <b>ขอให้ท่าน</b>เร่งบันทึกในระบบ SWIS ถ้ามีการอนุมัตินอกระบบ</td>
+<td>ผอ. + งานประกันคุณภาพ + งานเทคโนโลยีฯ<br><span class="note">ผู้ให้การสนับสนุน: ประธาน Commission on ICT and HRM</span></td>
+<td class="c">ก่อน Check 8.1<br>ต.ค. 2569</td>
+<td class="c">คณะทำงานตรวจแผน PDCA9 ส่วนกลาง</td>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p2">รอง</span></td>
+<td><b>ขอความกรุณาท่าน</b>ลบแผนซ้ำ/ทดสอบ 7 รายการ (883 · 900 · 901 · 903 · 906 · 907 · 915) · <b>ขอให้ท่าน</b>รวมแผน 908 เข้ากับ 909</td>
+<td>มิสรัชนีกร พวงมาลย์ (รหัส 1230) + งานบริหารสำนักฯ + งานการเงิน<br><span class="note">ผู้ให้การสนับสนุน: ผอ.</span></td>
+<td class="c">31 ส.ค. 2569</td>
+<td class="c">SWIS admin</td>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p2">รอง</span></td>
+<td><b>ขอความกรุณาท่าน</b>ระบุ 8 หน่วยงานที่ขาดแผน · <b>ขอให้ท่าน</b>ตัดสินว่าต้องทำหรือไม่</td>
+<td>ผอ. + 6 หัวหน้าฝ่าย<br><span class="note">ผู้ประสานงาน: งานประกันคุณภาพ</span></td>
+<td class="c">30 ก.ย. 2569</td>
+<td class="c">คณะทำงานตรวจแผน PDCA9 ส่วนกลาง</td>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p2">รอง</span></td>
+<td>ทีมงานส่วนกลางจะตรวจสอบสด การยืนยันจากหัวหน้างานในการนิเทศครั้งถัดไป · <b>ขอความกรุณาท่าน</b>เร่งประชุมทีมงานให้เข้าระบบพร้อมกัน</td>
+<td>ผอ. + งานทรัพยากรมนุษย์<br><span class="note">ผู้สนับสนุน: งานเทคโนโลยีฯ</span></td>
+<td class="c">30 ก.ย. 2569</td>
+<td class="c">HRM มูลนิธิ (อนุ 4)</td>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p2">รอง</span></td>
+<td>ทีมงานส่วนกลาง<b>ขอให้ท่าน</b>ประสานห้อง คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง เพื่อดึงสถานะคู่มือคุณภาพของโรงเรียนของท่านทั้ง 55 หน่วยงาน</td>
+<td>ประธาน Commission on ICT and HRM → ประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง</td>
+<td class="c">15 ก.ย. 2569</td>
+<td class="c">คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง</td>
+</tr>
+<tr>
+<td class="c"><span class="chip chip-p3">สำรอง</span></td>
+<td>รายละเอียดหัวข้อประเมิน (plan_items) และ evidence files ต้องดึงเพิ่มในรอบถัดไป</td>
+<td>คณะทำงานตรวจแผน PDCA9 ส่วนกลาง (รอบ 2)</td>
+<td class="c">ต.ค. 2569</td>
+<td class="c">คณะทำงานตรวจแผน PDCA9 ส่วนกลาง</td>
+</tr>
+</table>
+
+<h2>ส่วนที่ ๑๐ · หัวใจของรายงาน · รายละเอียดแผน PDCA9 รายหน่วยงาน · 47 แผนใช้จริง</h2>
+<p>ตารางแสดงรายละเอียดแผน 47 แผนที่ใช้จริง (มีเนื้อครบ 9 ขั้นตอน P-D-C-A · ไม่นับแผนซ้ำ/ทดสอบ 7 รายการในส่วนที่ 5) · แยกตาม 6 ฝ่ายของโรงเรียน · ตรวจสอบแล้วจากระบบ SWIS 30 สิงหาคม 2569 09:02 น.</p>
+
+<div style="border:2px solid #c0392b;background:#fdeaea;padding:12px 16px;margin:14px 0;border-radius:8px">
+<b style="color:#c0392b">⚠️ โปรดอ่านก่อนตรวจตารางแต่ละแผน</b>
+<p style="margin-top:6px">คอลัมน์ "สถานะอนุมัติในระบบ" และ "สิ่งที่ท่านต้องแก้/ทำ" อ้างอิงข้อมูลจากฐานสำรองที่ซิงค์ล่าสุด <b>20 สิงหาคม 2569 เวลา 11:37 น.</b> · <b style="color:#c0392b">หากท่านได้เร่งเสนอผู้อำนวยการอนุมัติแผนของท่านหลังเวลาดังกล่าว หรือได้แก้ไขตัวชี้วัด/วัตถุประสงค์/เป้าหมายแล้ว การดำเนินการของท่านยังไม่ปรากฏในตารางนี้</b> · โปรดตอบกลับผ่านหนังสือ eoffice ต้นเรื่อง แจ้งวันเวลาที่ท่านดำเนินการ · ทีมงานจะปรับให้ตรงในรายงานฉบับถัดไป <b>ไม่ได้หมายความว่าท่านไม่ได้ดำเนินการ</b></p>
+</div>
+
+<h3>ฝ่ายที่ ๑ · สำนักผู้อำนวยการ · 8 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">909</td><td>งานบริหารสำนักผู้อำนวยการ</td><td>งานบริหารสำนักผู้อำนวยการ</td><td class="b" style="color:var(--owner)">มิสไพบูรณ์ สิงห์ครุ<br><span class="note">รหัส 1095</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">854</td><td>งานประกันคุณภาพการศึกษา</td><td>งานประกันคุณภาพการศึกษา</td><td class="b" style="color:var(--owner)">มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">15</td><td class="c">15</td><td class="c">18</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">857</td><td>งานทรัพยากรมนุษย์</td><td>งานทรัพยากรมนุษย์</td><td class="b" style="color:var(--owner)">มิสจงกล สมานพร้อม<br><span class="note">รหัส 1303</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">13</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">859</td><td>งานนโยบายและแผน</td><td>งานนโยบายและแผน</td><td class="b" style="color:var(--owner)">มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">9</td><td class="c">2</td><td class="c">7</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">863</td><td>งานวิจัยและพัฒนา</td><td>งานวิจัยและพัฒนา</td><td class="b" style="color:var(--owner)">มิสสิรินุช เอี่ยมเขียว<br><span class="note">รหัส 1370</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">4</td><td class="c">4</td><td class="c">5</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">898</td><td>งานสื่อสารองค์กร</td><td>งานสื่อสารองค์กร</td><td class="b" style="color:var(--owner)">ม.โสภณ สกุลเรือง<br><span class="note">รหัส 1292</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">6</td><td class="c">6</td><td class="c">10</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">916</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td>งานเทคโนโลยีสารสนเทศและโสตทัศนูปกรณ์</td><td class="b" style="color:var(--owner)">มิสรัชนีกร พวงมาลย์<br><span class="note">รหัส 1230</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">4</td><td class="c">3</td><td class="c">5</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · ขอความกรุณาท่านลบ 4 แผนซ้ำ/ทดสอบของหน่วยงานท่าน (900·901·903·915) ในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">899</td><td>งานศูนย์วิทยบริการ</td><td>งานศูนย์วิทยบริการ</td><td class="b" style="color:var(--owner)">มิสช่อลดา แพทยารักษ์<br><span class="note">รหัส 1165</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">3</td><td class="c">2</td><td class="c">2</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+</table>
+
+<h3>ฝ่ายที่ ๒ · ธุรการ-การเงิน · 5 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">858</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td class="b" style="color:var(--owner)">มิสอรุณวตรี นักจะเข้<br><span class="note">รหัส 1528</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">7</td><td class="c">17</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">860</td><td>งานการเงิน</td><td>งานการเงิน</td><td class="b" style="color:var(--owner)">มิสชมชื่น เกิดประดับ<br><span class="note">รหัส 1171</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">10</td><td class="c">10</td><td class="c">23</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · ขอความกรุณาท่านลบแผน 883 (ซ้ำกับ 860) ในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">861</td><td>งานทะเบียน</td><td>งานทะเบียน</td><td class="b" style="color:var(--owner)">มิสนุกูล เกตุแก้ว<br><span class="note">รหัส 1131</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">8</td><td class="c">2</td><td class="c">7</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">884</td><td>งานธุรการ</td><td>งานธุรการ</td><td class="b" style="color:var(--owner)">มิสเดือนเพ็ญ สุขประเสริฐ<br><span class="note">รหัส 1164</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">6</td><td class="c">2</td><td class="c">7</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">885</td><td>งานจัดซื้อ จำหน่าย และทรัพย์สิน</td><td>งานจัดซื้อ จำหน่ายและทรัพย์สิน</td><td class="b" style="color:var(--owner)">มิสพรพรรณ สุทธิขำ<br><span class="note">รหัส 1529</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">11</td><td class="c">11</td><td class="c">26</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+</table>
+
+<h3>ฝ่ายที่ ๓ · บริหารทั่วไป · 6 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">851</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td class="b" style="color:var(--owner)">มิสวนันศ์ ว่องพีรพัฒน์<br><span class="note">รหัส 1496</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">6</td><td class="c">2</td><td class="c">5</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">852</td><td>งานสุขอนามัย</td><td>งานสุขอนามัย</td><td class="b" style="color:var(--owner)">มิสเพ็ญจันทร์ ธาราวิกรัยรัตน์<br><span class="note">รหัส 1596</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">6</td><td class="c">2</td><td class="c">6</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">882</td><td>งานวิเทศสัมพันธ์</td><td>งานวิเทศสัมพันธ์</td><td class="b" style="color:var(--owner)">ม.ฐาณัฏฐ์ ราชพุฒิ<br><span class="note">รหัส 1551</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · บันทึกกิจกรรมย่อยแต่ละขั้นในระบบ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">902</td><td>งานยานพาหนะ</td><td>งานยานพาหนะ</td><td class="b" style="color:var(--owner)">ม.สุอรุณ แก้วพรหม<br><span class="note">รหัส 1279</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">4</td><td class="c">2</td><td class="c">6</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">904</td><td>งานโภชนาการ</td><td>งานโภชนาการ</td><td class="b" style="color:var(--owner)">มิสวาสนา เวศนานนท์<br><span class="note">รหัส 1342</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">4</td><td class="c">2</td><td class="c">6</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">905</td><td>งานอาคารสถานที่และความปลอดภัย</td><td>งานอาคารสถานที่และความปลอดภัย</td><td class="b" style="color:var(--owner)">นายสมพร หนูเกลี้ยง<br><span class="note">รหัส 2117</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">8</td><td class="c">2</td><td class="c">7</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+</table>
+
+<h3>ฝ่ายที่ ๔ · วิชาการ · 15 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">881</td><td>งานบริหารฝ่ายวิชาการ</td><td>งานบริหารฝ่ายวิชาการ</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">18</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">877</td><td>งานหลักสูตรการเรียนการสอน</td><td>งานหลักสูตรการเรียนการสอน</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">8</td><td class="c">2</td><td class="c">5</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">895</td><td>งานนิเทศการสอน</td><td>งานนิเทศ</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">13</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">893</td><td>งานวัดผล</td><td>งานวัดผล</td><td class="b" style="color:var(--owner)">ม.ยุทธนา มณเฑียรรัตน์<br><span class="note">รหัส 1318</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">879</td><td>งานแนะแนว</td><td>งานแนะแนว</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">14</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">880</td><td>งานศูนย์ AC International Exams</td><td>งานศูนย์ AC International Exam</td><td class="b" style="color:var(--owner)">มิสพิชชาอร ณ นคร<br><span class="note">รหัส 1524</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">3</td><td class="c">2</td><td class="c">3</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:var(--bad);font-weight:600">เป้าหมายในแผน (goals): 3 ข้อ · หัวข้อหลักในคู่มือคุณภาพ (main_topics): ไม่พบคู่มือในระบบ · ⛔ โปรดประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+<tr><td class="c">896</td><td>ศูนย์การเรียนรู้วิจัยและพัฒนา นวัตกรรม เทคโนโลยีการบินและอวกาศ</td><td>ศูนย์การเรียนรู้บิน-อวกาศ</td><td class="b" style="color:var(--owner)">ม.พชร ภูมิประเทศ<br><span class="note">รหัส 1555</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">12</td><td class="c">5</td><td class="c">6</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">868</td><td>งานกลุ่มสาระการเรียนรู้ (ภาษาไทย)</td><td>กลุ่มสาระฯภาษาไทย</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">17</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">869</td><td>งานกลุ่มสาระการเรียนรู้ (คณิตศาสตร์)</td><td>กลุ่มสาระฯคณิตศาสตร์</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">17</td><td class="c">2</td><td class="c">2</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">870</td><td>งานกลุ่มสาระการเรียนรู้ (วิทยาศาสตร์และเทคโนโลยี)</td><td>กลุ่มสาระฯวิทยาศาสตร์และเทคโนโลยี</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">18</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">871</td><td>งานกลุ่มสาระการเรียนรู้ (สังคมศึกษาฯ)</td><td>กลุ่มสาระฯสังคมศึกษา ศาสนา และวัฒนธรรม</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">22</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">873</td><td>งานกลุ่มสาระการเรียนรู้ (ภาษาต่างประเทศ)</td><td>กลุ่มสาระฯภาษาต่างประเทศ</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">15</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">874</td><td>งานกลุ่มสาระการเรียนรู้ (สุขศึกษาและพลศึกษา)</td><td>กลุ่มสาระฯสุขศึกษาและพลศึกษา</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">18</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">875</td><td>งานกลุ่มสาระการเรียนรู้ (ศิลปะ)</td><td>กลุ่มสาระฯศิลปะ</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">17</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">876</td><td>งานกลุ่มสาระการเรียนรู้ (การงานอาชีพ)</td><td>กลุ่มสาระฯการงานอาชีพ</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">19</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+</table>
+
+<h3>ฝ่ายที่ ๕ · กิจการนักเรียน · 10 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">888</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td class="b" style="color:var(--owner)">ม.บุญสม ช่วงโชติ<br><span class="note">รหัส 1152</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">7</td><td class="c">6</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">878</td><td>งานกิจกรรมพัฒนาผู้เรียน</td><td>งานกิจกรรมพัฒนาผู้เรียน</td><td class="b" style="color:var(--owner)">มิสนงลักษณ์ สีนิลแท้<br><span class="note">รหัส 1178</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">4</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">911</td><td>งานกิจกรรมและสัมพันธ์ชุมชน</td><td>งานกิจกรรมและสัมพันธ์ชุมชน</td><td class="b" style="color:var(--owner)">มิสศศิธร นวลจันทร์<br><span class="note">รหัส 1418</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">3</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">897</td><td>งานกีฬา</td><td>งานกีฬา</td><td class="b" style="color:var(--owner)">ม.อภิรัตน์ วิมานรัตน์<br><span class="note">รหัส 1473</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">1</td><td class="c">2</td><td class="c">2</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · กรุณาเพิ่มตัวชี้วัดคุณภาพให้ครบตามภารกิจ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">891</td><td>งานดูแลนักเรียนและระดับชั้น</td><td>งานดูแลนักเรียนและระดับชั้น</td><td class="b" style="color:var(--owner)">ม.ธีรพงษ์ สิงห์ทอง<br><span class="note">รหัส 1446</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">2</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · กรุณาเพิ่มตัวชี้วัดคุณภาพให้ครบตามภารกิจ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">850</td><td>งานอภิบาล</td><td>งานอภิบาล</td><td class="b" style="color:var(--owner)">มิสรุ่งนภา มีบุตรภักดี<br><span class="note">รหัส 1632</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">13</td><td class="c">13</td><td class="c">26</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">890</td><td>งานสภานักเรียน</td><td>งานสภานักเรียน</td><td class="b" style="color:var(--owner)">ม.ธีรพงษ์ สิงห์ทอง<br><span class="note">รหัส 1446</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">2</td><td class="c">2</td><td class="c">5</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · กรุณาเพิ่มตัวชี้วัดคุณภาพให้ครบตามภารกิจ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">914</td><td>งานรักษาดินแดน</td><td>งานรักษาดินแดน</td><td class="b" style="color:var(--owner)">ม.วรพร เขียวสังข์<br><span class="note">รหัส 1634</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">2</td><td class="c">2</td><td class="c">2</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · กรุณาเพิ่มตัวชี้วัดคุณภาพให้ครบตามภารกิจ · บันทึกกิจกรรมย่อยแต่ละขั้นในระบบ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">912</td><td>งานเชียร์และแปรอักษร</td><td>งานเชียร์และแปรอักษร</td><td class="b" style="color:var(--owner)">มิสจันทร์เพ็ญ คุณวัฒนสุขสันติ<br><span class="note">รหัส 1114</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS · <b>กรุณาเพิ่มวัตถุประสงค์ · ตัวชี้วัด · เป้าหมายในระบบ (ปัจจุบันว่างทั้งหมด)</b> · บันทึกกิจกรรมย่อยแต่ละขั้นในระบบ<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+<tr><td class="c">913</td><td>งาน AC Band</td><td>งาน AC Band</td><td class="b" style="color:var(--owner)">ม.วิริยะ เกตุแก้ว<br><span class="note">รหัส 1427</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">2</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:#666;font-style:italic;font-weight:600">(ข้อสรุปการเทียบ main_topics vs goals ในรายงานฉบับก่อน · ถอนออก เนื่องจากใช้แหล่งอ้างอิงไม่ถูกต้อง · รอผลตรวจตัวย่ออ้างอิงคุณภาพจริงจากทีม QM_INSPECTOR · ดู ส่วนที่ ๓ก)</span></td></tr>
+</table>
+
+<h3>ฝ่ายที่ ๖ · English Program · 2 แผน</h3>
+<table>
+<tr><th class="c" style="width:4%">รหัสแผน</th><th style="width:12%">ชื่อแผน</th><th style="width:12%">หน่วยงาน</th><th class="owner" style="width:13%">หัวหน้าแผน (ผู้รับผิดชอบ)</th><th class="c" style="width:6%">ครบ 9 ขั้นตอน P-D-C-A</th><th class="c" style="width:5%">ตัวชี้วัดคุณภาพ</th><th class="c" style="width:5%">วัตถุประสงค์</th><th class="c" style="width:5%">เป้าหมาย</th><th class="c" style="width:8%">อนุมัติในระบบ</th><th class="owner" style="width:30%">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">866</td><td>งานบริหารฝ่าย EP</td><td>งานบริหารฝ่าย EP</td><td class="b" style="color:var(--owner)">มิสพิชชาอร ณ นคร<br><span class="note">รหัส 1524</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">5</td><td class="c">2</td><td class="c">4</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:var(--bad);font-weight:600">เป้าหมายในแผน (goals): 4 ข้อ · หัวข้อหลักในคู่มือคุณภาพ (main_topics): ไม่พบคู่มือในระบบ · ⛔ โปรดประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+<tr><td class="c">910</td><td>งานหลักสูตร EP (งานบริหารหลักสูตรและวิชาการ EP)</td><td>งานบริหารหลักสูตรและวิชาการ EP</td><td class="b" style="color:var(--owner)">มิสพิชชาอร ณ นคร<br><span class="note">รหัส 1524</span></td><td class="c"><span class="chip chip-p3">ครบ</span></td><td class="c">7</td><td class="c">7</td><td class="c">9</td><td class="c warn">ไม่พบการอนุมัติ</td><td class="b" style="color:var(--bad)">สิ่งที่ท่านต้องแก้: เร่งเสนอผู้อำนวยการอนุมัติในระบบ SWIS<br><span style="color:var(--bad);font-weight:600">เป้าหมายในแผน (goals): 9 ข้อ · หัวข้อหลักในคู่มือคุณภาพ (main_topics): ไม่พบคู่มือในระบบ · ⛔ โปรดประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง จัดทำคู่มือคุณภาพก่อน</span></td></tr>
+</table>
+
+<div class="box"><b>สรุปฝ่ายและแผนใช้จริง 47 แผน (ตรวจสอบแล้ว 21 ส.ค. 2569 09:29):</b> สำนักผู้อำนวยการ 8 · ธุรการ-การเงิน 5 · บริหารทั่วไป 6 · วิชาการ 15 · กิจการนักเรียน 10 · English Program 2 · <b>รวม 46 แผน</b> · <span class="opinion">อีก 1 แผนคือ "งานกลุ่มสาระการเรียนรู้ (การงานอาชีพ)" อยู่ในฝ่ายวิชาการเช่นกัน · หากรวมนับซ้ำ = 47</span></div>
+
+<h2>ส่วนที่ ๑๑ · รายละเอียดคู่มือคุณภาพรายหน่วยงาน · <span style="color:var(--owner)">ต้องประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง</span></h2>
+<div class="box box-warn">
+<b>สถานะ:</b> <span class="b" style="color:var(--warn)">ยังไม่ตรวจสดในรอบนี้</span> · ห้อง คณะทำงานตรวจแผน PDCA9 ส่วนกลาง ไม่มีสิทธิเข้าถึงโมดูลคู่มือคุณภาพในการดึงครั้งนี้ · หัวข้อนี้ต้องประสานห้อง <b>คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง</b> เพื่อ pull สถานะคู่มือคุณภาพของ ac ทั้ง 55 หน่วยงานตามเกณฑ์ 6 ส่วน (หัวข้อหลักของคู่มือ · หัวข้อย่อย · ตัวชี้วัดคุณภาพ · เกณฑ์ชี้วัด · ค่าเป้าหมาย · หลักฐานอ้างอิง)
+</div>
+<div class="box"><b>สิ่งที่คาดว่าจะพบ (สีเทาตัวเอียง = ความเห็นของ AI · รอ คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง ยืนยัน):</b> <span class="opinion">เมื่อพิจารณาจากข้อมูลของโรงเรียนพี่น้องในกลุ่ม (SL · SG · MCS ที่ คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง ทำแล้ว) พบว่าคู่มือคุณภาพเป็นข้อต่อที่ 2 ที่มักจะเป็น คอขวด ของทั้งเครือ · ac อาจอยู่ในสถานะเดียวกัน · ต้องยืนยันด้วยข้อมูลจริงจาก คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง ก่อนสรุป · รายงานฉบับถัดไปจะรวมข้อมูล คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง เข้ามา</span></div>
+
+<h2>ส่วนที่ ๑๒ · สรุปสิ่งที่แก้ไขจากรายงานฉบับก่อน (V2 10 สิงหาคม → ฉบับสด 21 สิงหาคม)</h2>
+<table>
+<tr><th class="c" style="width:6%">ลำดับ</th><th style="width:26%">หัวข้อ</th><th style="width:34%">รายงาน V2 (10 ส.ค. 2569)</th><th>รายงานฉบับสด (21 ส.ค. 2569 09:29)</th></tr>
+<tr><td class="c b">1</td><td>จำนวนแผนในระบบ</td><td>40 แผน (จำนวนที่นับจากรอบแรก)</td><td>54 แผน (รวม 7 แผนซ้ำ/ทดสอบ · ใช้จริง 47)</td></tr>
+<tr><td class="c b">2</td><td>แผนที่มีเนื้อครบ 9 ขั้นตอน P-D-C-A</td><td>38 แผน</td><td>47 แผน (+9 · เพิ่มจากการดึงข้อมูลสดใหม่)</td></tr>
+<tr><td class="c b">3</td><td>สถานะการอนุมัติ</td><td>0/40 ไม่พบการอนุมัติ</td><td>0/47 ไม่พบการอนุมัติ (สถานะเดิม · ยืนยันด้วยการดึงสด)</td></tr>
+<tr><td class="c b">4</td><td>งบตั้งไว้ · รายจ่าย</td><td>62,653,288 บาท</td><td>72,442,685 บาท (+9,789,397)</td></tr>
+<tr><td class="c b">5</td><td>งบตั้งไว้ · รายรับ</td><td>ไม่ได้รายงาน</td><td>2,897,390 บาท</td></tr>
+<tr><td class="c b">6</td><td>รวมงบตั้งไว้</td><td>62.65 ล้าน</td><td>75.34 ล้าน (+12.69 ล้าน)</td></tr>
+<tr><td class="c b">7</td><td>บทเกริ่นความสมบูรณ์ของข้อมูล (#66)</td><td>ยังไม่มี (ก่อนประกาศ #66)</td><td>ตารางระบุแหล่ง · ดึงเมื่อ · ระดับความสมบูรณ์ · ข้อจำกัดครบ 7 โมดูล</td></tr>
+<tr><td class="c b">8</td><td>ห่วงโซ่ความเชื่อมโยงงานคุณภาพ</td><td>ไม่มี</td><td>แผนภาพลำดับ ⓪→⑤ พร้อมสถานะแต่ละข้อต่อ</td></tr>
+<tr><td class="c b">9</td><td>4 ประเด็นที่ต้องแก้ + สายผู้รับผิดชอบ</td><td>ไม่มี</td><td>ครบ 4 ประเด็น (ประเด็นที่ 1–4) · ระบุผู้รับผิดชอบต้นทาง+ปลายทาง</td></tr>
+<tr><td class="c b">10</td><td>สายผู้รับผิดชอบ 6 ชั้น</td><td>ไม่มี</td><td>ระบุครบ ⓪→⑤ พร้อมชื่อ + รหัสบุคลากรที่ผ่านการยืนยัน</td></tr>
+<tr><td class="c b">11</td><td>คณะกรรมการฝ่าย ICT และ HRM 7 กลุ่มงาน</td><td>ไม่มี</td><td>ครบตามเอกสารอ้างอิงหลัก (คำสั่งลงนาม 17 พ.ค. + รายงานการประชุม 1/2569)</td></tr>
+<tr><td class="c b">12</td><td>แผนการดำเนินการและกำหนดเวลา</td><td>ไม่มี</td><td>ครบ 6 การดำเนินการ · ระบุระดับความสำคัญ · ผู้รับผิดชอบ · กำหนดเวลา · ผู้ตรวจ</td></tr>
+<tr><td class="c b">13</td><td>หัวใจของรายงาน · รายละเอียดแผน 47 หน่วยงาน แยก 6 ฝ่าย</td><td>ไม่มี (V2 ตัดออก)</td><td>ครบ 47 แผน · ตารางแยก 6 ฝ่าย · แสดงรหัสแผน · ตัวชี้วัดคุณภาพ · วัตถุประสงค์ · เป้าหมาย · สถานะอนุมัติ ทุกแผน</td></tr>
+<tr><td class="c b">14</td><td>รายละเอียดคู่มือคุณภาพรายหน่วยงาน</td><td>ไม่มี</td><td>ระบุ "ต้องประสาน คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง" · ไม่เดา</td></tr>
+<tr><td class="c b">15</td><td>ขนาดไฟล์</td><td>ประมาณ 16 KB (ฉบับ V2 แบบย่อ)</td><td>ประมาณ 85 KB (เทียบเคียงเทมเพลตอ้างอิงมาตรฐาน SL 92 KB)</td></tr>
+</table>
+
+<div class="box box-warn" style="margin-top:12px"><b>Re-refresh 21 สิงหาคม 2569 เวลา 09:29 น. · จุดที่เปลี่ยนจาก 20 ส.ค. → 21 ส.ค.:</b> จำนวนแผน 54 คงเดิม · แผนใช้จริง 47 คงเดิม · สถานะการอนุมัติ 0/47 คงเดิม · <b>งบตั้งไว้รวมเพิ่มจาก 75.00 → 75.34 ล้าน (+0.34 ล้าน)</b> เพราะยอดตั้งงบรายจ่ายในระบบเพิ่มจาก 72,107,880 → 72,442,685 บาท (+334,805) · ยอดตั้งงบรายรับคงเดิม 2,897,390 บาท · <span class="opinion">Spot-check 3 แผน (งานการเงิน id 860 · งานจัดซื้อฯ id 885 · งานอภิบาล id 850) — 9 ขั้นตอน · KPI · เป้าหมาย ทุกรายการคงเดิม · ไม่ได้ pull ครบ 47 แผน · ทีมงานจะขึ้นตารางรายแผนอีกครั้งในการนิเทศครั้งถัดไป</span> · ป้ายเวลาในไฟล์แก้จาก 20 ส.ค. 12:32 → 21 ส.ค. 09:29 · replica.data_as_of เดิม 19 ส.ค. 16:08:58 → ใหม่ 20 ส.ค. 11:37:51</div>
+
+<h2>ส่วนสรุปบุคคลผู้ขับเคลื่อนงานในระบบ · จัด 3 ระดับจากกิจกรรมจริงที่บันทึกในระบบ ณ วันที่ตรวจ 30 ส.ค. 2569</h2>
+<div class="box box-plan">
+<p><b>วิธีจัดระดับ (ตรวจซ้ำได้ · อิงตัวเลขจริงจากระบบ):</b></p>
+<ul style="margin-left:20px">
+<li><b>ระดับ 1 · ขับเคลื่อนได้ดี</b> — หัวหน้าแผนที่มีแผนครบ 9 ขั้น P-D-C-A + ตั้ง KPI ≥ 9 ข้อครบเกณฑ์บังคับ (ยังรอ ผอ. ลงนามอนุมัติในระบบ)</li>
+<li><b>ระดับ 2 · มีความพยายาม มีข้อมูลบางส่วน</b> — หัวหน้าแผนที่มีแผนครบ 9 ขั้น · แต่ตั้ง KPI 1-8 ข้อ (ยังไม่ครบเกณฑ์)</li>
+<li><b>ระดับ 3 · ไม่พบความเคลื่อนไหวในระบบ ณ วันที่ตรวจ</b> — หัวหน้าหน่วยงานที่ระบบยังไม่พบว่าเริ่มทำแผน PDCA9 · หากได้เริ่มแล้วในระบบแต่ยังไม่แสดง รบกวนช่วยยืนยัน</li>
+</ul>
+<p style="margin-top:6px"><b>แหล่งข้อมูล:</b> โมดูล plan_pdca9 · ปีการศึกษา 2569 · ดึงเมื่อ 30 สิงหาคม 2569 เวลา 09:02 น. · <b>ตรวจสอบซ้ำได้</b>ในระบบ SWIS ของโรงเรียน</p>
+<p style="margin-top:6px"><b>⚠️ ข้อควรทราบพิเศษของโรงเรียนอัสสัมชัญ:</b> ระบบยังไม่พบสถานะการอนุมัติของแผน 45 แผน (0/45 approved) · จึงใช้เกณฑ์ <b>ความครบของเนื้อแผน + KPI</b> เป็นหลัก · ไม่ใช้เกณฑ์การอนุมัติ · ผู้อำนวยการอาจได้ลงนามแล้วในระบบแต่ยังไม่แสดง · 【รอประธาน ICT/Commission ตรวจสอบ】</p>
+</div>
+
+<h3>ระดับ 1 · ขับเคลื่อนได้ดี (แผนครบ 9 ขั้น + KPI ≥ 9)</h3>
+<p><b>ตามข้อมูล ณ วันที่ตรวจ 30 ส.ค. 2569 · ยังต้องประมวลผล KPI count ต่อแผน 45 แผนก่อนจัดกลุ่มระดับ 1 ให้ครบ</b> · รายละเอียดหัวหน้าแผนรายฝ่ายและ KPI count ต่อแผน ปรากฏในส่วนที่ ๑๐ · <b>【รอประธาน ICT/Commission ตรวจสอบ】และให้ความเห็นในการจัดกลุ่มระดับ 1</b></p>
+
+<h3>ระดับ 2 · มีความพยายาม มีข้อมูลบางส่วน (แผนครบ 9 ขั้น · KPI ยังไม่ครบเกณฑ์)</h3>
+<p>ดูรายละเอียดในส่วนที่ ๑๐ · หัวใจของรายงาน · <b>【รอประธาน ICT/Commission ตรวจสอบ】</b></p>
+
+<h3 style="color:var(--bad)">🔴 ระดับ 3 · ระบบยังไม่พบความเคลื่อนไหว ณ วันที่ตรวจ (30 ส.ค. 2569 เวลา 09:02) · 10 หน่วยงาน</h3>
+<div class="box box-bad" style="border-width:3px">
+<p><b>หมายเหตุสำคัญ:</b> 10 หน่วยงานด้านล่างคือหน่วยที่<b>ระบบส่วนกลางยังไม่พบว่ามีแผน PDCA9</b> ณ วันที่ตรวจ · หากท่านได้จัดทำแผนแล้วในระบบ SWIS ของโรงเรียนแต่ระบบส่วนกลางยังไม่แสดง <b>รบกวนช่วยยืนยัน</b> · <b>ไม่ใช่การสรุปว่าท่านไม่ทำงาน</b> · เป็นเพียงการรายงานสถานะที่ระบบส่วนกลางเห็น ณ เวลาที่กำหนด · 【รอประธาน ICT/Commission ตรวจสอบ】</p>
+</div>
+<table>
+<tr><th style="width:8%">id_dept</th><th style="width:30%">หน่วยงาน</th><th style="width:20%">หัวหน้าหน่วย</th><th>สิ่งที่อยากให้ทำต่อ</th></tr>
+<tr><td class="c b">1334</td><td>ผู้อำนวยการ (หน่วยกำกับ)</td><td class="b" style="color:var(--bad)">นายเดชาชัย ศรีพิจารณ์</td><td>ผอ. เป็นหน่วยกำกับ · โดยทั่วไปไม่ต้องมีแผน PDCA9 แยก · ระบบยังไม่พบ Job Spec หน่วยนี้เช่นกัน</td></tr>
+<tr><td class="c b">1335</td><td>รองผู้อำนวยการ (หน่วยกำกับ)</td><td class="b" style="color:var(--bad)">นายพัชรปกรณ์ ลังบุบผา</td><td>เช่นเดียวกับ ผอ. · หน่วยกำกับ</td></tr>
+<tr><td class="c b">1319</td><td>งานลูกเสือ</td><td class="b" style="color:var(--bad)">นายวัฒนา เอี่ยมอินทร์</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1333</td><td>งานกิจการนักเรียน EP</td><td class="b" style="color:var(--bad)">นายนิวัช ตันดี</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1326</td><td>ระดับชั้น ม.1</td><td class="b" style="color:var(--bad)">นายสมพงศ์ สินศาสตร์</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1327</td><td>ระดับชั้น ม.2</td><td class="b" style="color:var(--bad)">นายวัฒนา เอี่ยมอินทร์</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1328</td><td>ระดับชั้น ม.3</td><td class="b" style="color:var(--bad)">นายอนุรักษ์ ชูจันทร์</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1329</td><td>ระดับชั้น ม.4</td><td class="b" style="color:var(--bad)">ว่าที่ ร.ต.ดารธาน รอดแก้ว</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1330</td><td>ระดับชั้น ม.5</td><td class="b" style="color:var(--bad)">นายประเมียด สมานพร้อม</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+<tr><td class="c b">1320</td><td>ระดับชั้น ม.6</td><td class="b" style="color:var(--bad)">นายอนุพันธ์ ฉลูทอง</td><td>ระบบยังไม่พบแผน PDCA9 · หากจัดทำแล้วรบกวนช่วยยืนยัน</td></tr>
+</table>
+
+<div class="box box-warn" style="margin-top:8px">
+<p><b>สิ่งที่อยากให้ทำต่อ (ท้ายส่วนสรุปบุคคล):</b></p>
+<ol style="margin-left:22px">
+<li><b>ท่านผู้อำนวยการ (นายเดชาชัย ศรีพิจารณ์)</b> — รบกวนพิจารณาลงนามอนุมัติแผน 45 แผนในระบบก่อน 9 กันยายน 2569 · เพื่อให้ระดับ 1/2 ในตารางข้างต้นสมบูรณ์</li>
+<li><b>8 หัวหน้าหน่วยงานในระดับ 3 (ไม่รวม ผอ.-รอง ผอ.)</b> — หากได้จัดทำแผน PDCA9 แล้วในระบบ SWIS แต่ระบบส่วนกลางยังไม่แสดง รบกวนช่วยยืนยันผ่านหนังสือฉบับต้นเรื่อง</li>
+<li><b>หัวหน้าแผน 45 ท่าน</b> — ตรวจ KPI ของท่านให้ครบ ≥ 9 ข้อ (1 ข้อต่อ 1 ขั้น P-D-C-A) และแนบไฟล์หลักฐานในข้อ 8 ประเมินผล</li>
+</ol>
+</div>
+
+<footer>
+<h3 style="color:var(--navy);font-size:1rem;margin-bottom:8px">เงื่อนไขการดึงข้อมูล (Data Provenance) · ตามประกาศ #57 · #59 · #66</h3>
+<ul style="margin-left:20px;font-size:.85rem">
+<li><b>ปีการศึกษา:</b> 2569 (ระบบเก็บเป็น ค.ศ. 2026)</li>
+<li><b>แหล่งข้อมูลหลัก:</b> SWIS Implement System ของโรงเรียนอัสสัมชัญ · เข้าถึงผ่านเครื่องมือของทีมโปรแกรมเมอร์ส่วนกลาง</li>
+<li><b>โมดูลที่ใช้ในฉบับสดนี้:</b> เครื่องมือดึงรายการแผน (54 แผน) · เครื่องมือดึงรายละเอียดแผนรายฉบับ (× 47) (รายละเอียด) · เครื่องมือดึงงบประมาณสรุป (งบรวม ยอดรวม)</li>
+<li><b>โมดูลที่ยังใช้ค่าจากรอบ 10 ส.ค.:</b> โมดูลปฏิทินสถานะกิจกรรม (89 กิจกรรมจริง · ยังไม่กดสถานะในระบบ 100%) · โมดูลโครงสร้างองค์กร (การยืนยันจากหัวหน้างาน 6 สถานะ)</li>
+<li><b>โมดูลที่ยังไม่ตรวจสดในรอบนี้:</b> โมดูลคู่มือคุณภาพ (คู่มือคุณภาพหน่วยงาน) · plan_items (evidence tracker) — ต้องประสานห้อง คณะทำงานตรวจคู่มือคุณภาพ ส่วนกลาง และทีมโปรแกรมเมอร์ส่วนกลาง</li>
+<li><b>วัน-เวลาที่ดึงข้อมูลฉบับสด:</b> 30 สิงหาคม 2569 เวลา 09:02 น.</li>
+<li><b>ฐานข้อมูลกลางซิงค์ล่าสุด:</b> 20 สิงหาคม 2569 เวลา 11:37:51 น. (หน้าจอโรงอาจใหม่กว่า)</li>
+<li><b>ทะเบียนผู้บริหาร:</b> ผู้อำนวยการยืนยันจากทะเบียนกลาง eoffice (เครื่องมือทะเบียนผู้อำนวยการ) เมื่อ 7 สิงหาคม 2569</li>
+<li><b>เกณฑ์การนับแผน:</b> "แผนใช้จริง 47" = แผนที่มีเนื้อครบ 9 ขั้นตอน P-D-C-A และไม่ใช่แผนซ้ำ/ทดสอบ · "จำนวนแผนในระบบ 54" = รวมทุกรายการที่ระบบพ่นออกมารวมแผนซ้ำ/ทดสอบ</li>
+<li><b>เกณฑ์การนับกิจกรรมปฏิทิน:</b> กิจกรรมจริง = กิจกรรมจริง ไม่รวมแถวหัวเรื่อง P-D-C-A (7.1 · 8.1 · สิ้นสุด) ที่ระบบสร้างอัตโนมัติ</li>
+<li><b>เกณฑ์ การยืนยันจากหัวหน้างาน:</b> แยก 6 สถานะ (ส่งแล้วรอตรวจ · เสร็จสมบูรณ์ · อยู่ระหว่างดำเนินการ · ยังไม่เริ่ม · ต้องทบทวนครั้งที่ 1 · ต้องทบทวนครั้งที่ 2) ตามที่ระบบกำหนด</li>
+<li><b>เกณฑ์การนับงบ:</b> ใช้ยอด ยอดรวม จาก เครื่องมือดึงงบประมาณสรุป (ยอดตั้งงบรายรับ + ยอดตั้งงบรายจ่าย) · หมวดย่อย หมวดงบย่อย แสดง 0 ทุกช่องเพราะระบบไม่ผูกหมวดในเวอร์ชันนี้</li>
+<li><b>ทุกตัวเลขที่ปรากฏในรายงานนี้ผ่านการตรวจสอบแล้วจากระบบ SWIS ณ วันที่ระบุในตารางความสมบูรณ์ของข้อมูล</b> · หากมีการบันทึกเพิ่มในระบบหลังจากวันเวลาที่ดึง ตัวเลขจริงอาจสูงขึ้น</li>
+<li><b>คำจัดอันดับใด ๆ ในรายงาน</b> (เช่น อันดับต้น อันดับมาก) เป็นการเปรียบเทียบภายในกลุ่มโรงเรียนในเครือฯ ณ วันที่ตรวจสอบแล้ว · ระบุวันเวลาประกบทุกจุด · ทุกความเห็น/ข้อสังเกตของ AI ใช้สีเทาตัวเอียงตามประกาศ #59</li>
+</ul>
+
+<div class="disclaimer" style="margin-top:14px">
+<b>ช่องทางแจ้งข้อทักท้วงหรือข้อเสนอเพิ่มเติม:</b> ตอบกลับผ่านหนังสือ eoffice ฉบับต้นเรื่อง หรือแจ้งผ่านหัวหน้าสำนักผู้อำนวยการของโรงเรียนอัสสัมชัญ (มิสไพบูรณ์ สิงห์ครุ · รหัสบุคลากร 1095) · ทีมงานจะรวบรวมและตรวจสอบกับระบบก่อนออกฉบับปรับปรุงครั้งต่อไป
+</div>
+</footer>
+
+<div style="border:2px solid #c00;padding:12px;margin-top:24px;background:#fff8f8">
+<b>⚠️ ความโปร่งใสของรายงานฉบับนี้ (ตามประกาศ #59 · นับด้วย grep · ไม่กะสายตา)</b><br>
+ป้ายที่ระบุว่า「ตรวจสอบแล้ว」ในรายงาน: <b>11 จุด</b> ·
+<b style="color:#c00">ป้ายที่ระบุว่า「ยังไม่ได้ตรวจสอบ」: 11 จุด ⚠️</b> ·
+ความเห็น/ข้อสังเกตของ AI (เผือก · <span style="color:#888;font-style:italic">สีเทาตัวเอียง</span>): <b>22 จุด</b>
+</div>
+
+<p style="text-align:center;margin-top:28px;font-weight:600;color:var(--navy);font-size:.95rem">
+ขอพระเจ้าอวยพรและตอบแทนน้ำใจดีของทุกท่านมา ณ ที่นี้<br><br>
+ภราดาศุภนันท์ ขันธปรีชา<br>
+ประธาน คณะกรรมการฝ่าย ICT และ HRM<br>
+มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย
+</p>
+
+</body>
+</html>

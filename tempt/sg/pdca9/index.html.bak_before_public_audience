@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>รายงาน Audit PDCA9 · โรงเรียนเซนต์คาเบรียล · ปีการศึกษา 2569 · ฉบับสด 25 สิงหาคม 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1a2f5a;--gold:#b8860b;--ok:#1e7d46;--okbg:#e9f7ef;--warn:#9a6700;--warnbg:#fff8e1;--bad:#c0392b;--badbg:#fdeaea;--line:#d9dee8;--soft:#f4f6fa;--plan:#5b3fa0;--planbg:#f2eefb;--swis:#0b6bcb;--swisbg:#e7f1fb;--owner:#7c2d12;--ownerbg:#fef3c7;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Sarabun',sans-serif;color:#222;line-height:1.6;background:#fff;max-width:1140px;margin:0 auto;padding:28px 36px;}
+header{text-align:center;border-bottom:3px double var(--navy);padding-bottom:14px;margin-bottom:16px;}
+header .org{color:var(--gold);font-weight:600;letter-spacing:.5px;font-size:.85rem;}
+header h1{color:var(--navy);font-size:1.4rem;margin:6px 0 4px;}
+header .sub{color:#555;font-size:.9rem;}
+.badge{display:inline-block;border-radius:6px;padding:4px 14px;font-size:.82rem;font-weight:600;margin-top:8px;}
+.badge-pass{background:var(--okbg);color:var(--ok);border:1px solid var(--ok);}
+.badge-warn{background:var(--warnbg);color:var(--warn);border:1px solid var(--warn);}
+.badge-fail{background:var(--badbg);color:var(--bad);border:1px solid var(--bad);}
+h2{color:var(--navy);font-size:1.15rem;border-left:6px solid var(--gold);padding-left:12px;margin:26px 0 10px;}
+h3{color:var(--navy);font-size:1rem;margin:16px 0 6px;}
+h4{color:#444;font-size:.92rem;margin:10px 0 5px;}
+p{font-size:.9rem;margin:6px 0;}
+.note{font-size:.8rem;color:#666;margin:6px 0;}
+.box{border-left:5px solid var(--navy);background:var(--soft);border-radius:8px;padding:12px 16px;font-size:.88rem;margin:12px 0;}
+.box-ok{border-color:var(--ok);background:var(--okbg);}
+.box-warn{border-color:var(--warn);background:var(--warnbg);}
+.box-bad{border-color:var(--bad);background:var(--badbg);}
+.box-owner{border-color:var(--owner);background:var(--ownerbg);}
+.box-plan{border-color:var(--plan);background:var(--planbg);}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin:10px 0;}
+th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:.82rem;vertical-align:top;}
+th.owner{background:var(--owner);}
+th.plan{background:var(--plan);}
+td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;}
+tr:nth-child(even) td{background:var(--soft);}
+.c{text-align:center;white-space:nowrap;}
+.b{font-weight:600;}
+.r{text-align:right;}
+.chip{display:inline-block;border-radius:5px;padding:2px 8px;font-size:.72rem;font-weight:600;margin:0 3px;}
+.chip-p1{background:var(--badbg);color:var(--bad);}
+.chip-p2{background:var(--warnbg);color:var(--warn);}
+.chip-p3{background:var(--okbg);color:var(--ok);}
+.chip-owner{background:var(--ownerbg);color:var(--owner);}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;}
+.kpi-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.kpi-card .val{font-size:1.6rem;font-weight:700;color:var(--navy);line-height:1.2;}
+.kpi-card .lbl{font-size:.75rem;color:#666;margin-top:4px;}
+.kpi-card.ok .val{color:var(--ok);}
+.kpi-card.warn .val{color:var(--warn);}
+.kpi-card.bad .val{color:var(--bad);}
+.flow{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:.82rem;margin:12px 0;}
+.flow .node{background:#fff;border:1.5px solid var(--navy);border-radius:7px;padding:5px 10px;font-weight:500;text-align:center;min-width:110px;}
+.flow .node.ok{border-color:var(--ok);background:var(--okbg);}
+.flow .node.warn{border-color:var(--warn);background:var(--warnbg);}
+.flow .node.bad{border-color:var(--bad);background:var(--badbg);}
+.flow .arrow{color:var(--gold);font-weight:700;font-size:1.1rem;}
+footer{margin-top:32px;border-top:2px solid var(--navy);padding-top:12px;font-size:.78rem;color:#555;}
+.disclaimer{background:var(--warnbg);border:1px dashed var(--warn);border-radius:6px;padding:8px 12px;color:var(--warn);font-size:.78rem;margin-top:10px;}
+.opinion{color:#888;font-style:italic;}
+
+/* ==== PDCA9 Framework Diagram (canonical · ทุกโรงเหมือนกัน) ==== */
+.pdca-fw{border:2px solid var(--navy);border-radius:10px;padding:16px 18px;margin:16px 0;background:#fff}
+.pdca-fw h2.fw{color:var(--navy);font-size:1.1rem;text-align:center;border-left:none;border-bottom:2px solid var(--gold);padding:0 0 6px;margin:0 0 6px}
+.pdca-fw .fw-sub{text-align:center;font-size:.82rem;color:#555;margin-bottom:12px}
+.pdca-band{display:flex;justify-content:space-between;font-size:.72rem;font-weight:700;margin:4px 6px;color:#333;flex-wrap:wrap;gap:4px}
+.pdca-band span{padding:3px 10px;border-radius:12px;color:#fff}
+.pdca-band .b-p{background:#1a4b8c}
+.pdca-band .b-d{background:#1e7d46}
+.pdca-band .b-c{background:#c47f00}
+.pdca-band .b-a{background:#a63838}
+.pdca-row{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.pdca-cell{flex:1 1 90px;min-width:100px;padding:8px 5px;border-radius:8px;text-align:center;color:#fff}
+.pdca-cell .num{font-weight:700;font-size:1.15rem;line-height:1}
+.pdca-cell .lbl{font-size:.78rem;margin-top:3px;font-weight:600}
+.pdca-cell .desc{font-size:.7rem;margin-top:2px;font-weight:400;color:#f5f5f5;line-height:1.2}
+.pc-plan{background:#1a4b8c}
+.pc-do{background:#1e7d46}
+.pc-check{background:#c47f00}
+.pc-act{background:#a63838}
+.pdca-chain{margin-top:12px;background:#f4f6fa;border:1px solid var(--line);border-radius:8px;padding:10px 14px;font-size:.82rem}
+.pdca-chain h3.ch{margin:0 0 6px;color:var(--navy);font-size:.92rem;border-left:4px solid var(--gold);padding-left:8px}
+.chain-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.chain-node{background:#fff;border:2px solid var(--navy);border-radius:6px;padding:6px 10px;font-size:.75rem;font-weight:600;text-align:center;min-width:130px;line-height:1.35}
+.chain-arrow{color:var(--gold);font-weight:700;font-size:1.1rem}
+.chain-node.upstream{border-color:#c47f00;background:#fff8e1}
+.chain-node.midstream{border-color:#1a4b8c;background:#eef3fb}
+.chain-node.downstream{border-color:#1e7d46;background:#e9f7ef}
+.pdca-purpose{margin-top:10px;background:#fffbea;border-left:4px solid var(--gold);padding:8px 12px;font-size:.8rem;border-radius:0 6px 6px 0}
+.pdca-purpose b{color:#8b6914}
+
+/* ==== §0 Data Integrity styling ==== */
+.s0-wrap{border:3px solid var(--bad);border-radius:10px;padding:14px 18px;margin:18px 0;background:#fff}
+.s0-wrap h2.s0{color:var(--bad);font-size:1.1rem;border-left:none;padding-left:0;margin:0 0 8px}
+.s0-status{display:inline-block;padding:4px 12px;border-radius:12px;font-weight:700;font-size:.82rem;margin:4px 0}
+.s0-status.pass{background:var(--okbg);color:var(--ok);border:1px solid var(--ok)}
+.s0-status.warn{background:var(--warnbg);color:var(--warn);border:1px solid var(--warn)}
+.s0-alert{color:var(--bad);font-weight:700;font-size:.95rem}
+.recovery{background:#fff8e1;border:1px dashed var(--warn);border-radius:6px;padding:6px 10px;font-size:.75rem;color:var(--warn);margin-top:2px}
+.recovery b{color:var(--bad)}
+</style>
+</head>
+<body>
+
+<header>
+<div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · Commission on ICT and HRM</div>
+<h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนเซนต์คาเบรียล (SG) · ปีการศึกษา 2569 · ฉบับสด 25 สิงหาคม 2569</span></h1>
+<div class="sub">โดย ห้อง PDCA9_INSPECTOR (ศูนย์ตรวจเฉพาะทาง) · ตรวจตามกรอบงานสาย HRM อนุกรรมการที่ 4 นิเทศติดตาม · ดึงข้อมูลสด 26 สิงหาคม 2569 เวลา 23:36 น. (ไล่สดหลัง re-lock ปฏิทิน) · <b>ตรวจสอบแล้ว 25 สิงหาคม 2569</b> · เตรียมสำหรับการนิเทศ 9-10 กันยายน 2569</div>
+<div class="note" style="margin-top:6px;font-size:.78rem;color:#666">
+<b>วิธีอ่านป้ายกำกับ:</b> ป้าย 「ตรวจสอบแล้ว 25 สิงหาคม 2569」 หมายถึง ตัวเลข/ชื่อในบรรทัดนั้นเทียบกับระบบจริงแล้ว · ป้าย 「ยังไม่ได้ตรวจสอบ」 หมายถึง แจ้งไว้ตรงๆ ว่ายังไม่ได้เทียบ · คำจัดอันดับ (เช่น สูงสุด · ต่ำสุด · มากที่สุด) ทุกจุดในรายงานนี้เป็นข้อสรุปจากข้อมูลที่ 「ตรวจสอบแล้ว 25 สิงหาคม 2569」
+</div>
+<div style="margin-top:10px">
+<span class="badge badge-pass">โรงเรียนทำสำเร็จ: 73 แผนใช้จริง ครบ 9 ขั้นทุกแผน · อนุมัติแล้ว 69 แผน · KPI ถูกอ้างอิง 444/448 (99.11%) · Job Spec 71/72 · <b>ตรวจสอบแล้ว 26 สิงหาคม 2569</b></span>
+<span class="badge badge-warn">ระบบยังไม่พบและอยากให้ช่วยยืนยัน: Confirm Loop 42 หน่วยยังไม่พบว่าเริ่ม · การแนบไฟล์หลักฐาน 0/772 · คู่มือคุณภาพครบ 6 ส่วน 0/72 · ปฏิทินเลยกำหนด 319 · %ปิดสถานะ 4.65%</span>
+</div>
+</header>
+
+<!-- ================================================================ -->
+<!-- ภาพกรอบความเข้าใจ PDCA9 (canonical · บังคับขึ้นต้นทุกรายงาน)   -->
+<!-- ================================================================ -->
+<section class="pdca-fw">
+<h2 class="fw">กรอบความเข้าใจ PDCA9 · มาตรฐานการปฏิบัติงาน 9 ขั้นของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</h2>
+<p class="fw-sub">ทุกโรงเรียนในเครือใช้เป็นเกณฑ์กลาง · รายงานฉบับนี้ตรวจว่าแผนของแต่ละหน่วยงานเดินตามครบทั้ง 9 ขั้นหรือไม่</p>
+
+<div class="pdca-band">
+  <span class="b-p">P · วางแผน (ขั้น 1-5)</span>
+  <span class="b-d">D · ปฏิบัติ (ขั้น 6)</span>
+  <span class="b-c">C · ตรวจสอบ (ขั้น 7-8)</span>
+  <span class="b-a">A · ปรับปรุง (ขั้น 9)</span>
+</div>
+
+<div class="pdca-row">
+  <div class="pdca-cell pc-plan"><div class="num">1</div><div class="lbl">ขออนุมัติ</div><div class="desc">เสนอ ผอ.</div></div>
+  <div class="pdca-cell pc-plan"><div class="num">2</div><div class="lbl">เป้าหมาย</div><div class="desc">2.1 เชิงปริมาณ · 2.2 เชิงคุณภาพ</div></div>
+  <div class="pdca-cell pc-plan"><div class="num">3</div><div class="lbl">KPI</div><div class="desc">3.1 KPI · 3.2 ค่าเป้าหมาย</div></div>
+  <div class="pdca-cell pc-plan"><div class="num">4</div><div class="lbl">วิธีการ</div><div class="desc">4.1 กิจกรรม · 4.2 เครื่องมือ · 4.3 แนวทาง</div></div>
+  <div class="pdca-cell pc-plan"><div class="num">5</div><div class="lbl">เตรียมพร้อม</div><div class="desc">งบ · เวลา · คน</div></div>
+  <div class="pdca-cell pc-do"><div class="num">6</div><div class="lbl">ดำเนินการ</div><div class="desc">mini-PDCA 7 ขั้นย่อย</div></div>
+  <div class="pdca-cell pc-check"><div class="num">7</div><div class="lbl">กำกับติดตาม</div><div class="desc">ระหว่างทาง</div></div>
+  <div class="pdca-cell pc-check"><div class="num">8</div><div class="lbl">ประเมิน</div><div class="desc">หลักฐาน + สรุปผล</div></div>
+  <div class="pdca-cell pc-act"><div class="num">9</div><div class="lbl">ปรับปรุง</div><div class="desc">รอบถัดไป</div></div>
+</div>
+
+<div class="pdca-chain">
+<h3 class="ch">ห่วงโซ่ความเชื่อมโยง · เป้าหมายคุณภาพ ⟷ แผน PDCA9 ⟷ การประเมิน</h3>
+<div class="chain-flow">
+  <div class="chain-node upstream">คู่มือคุณภาพหน่วยงาน<br><span style="font-weight:400;font-size:.7rem">ส่วนที่ 3 · KPI ต้นน้ำ<br>(สพฐ. · FSG · สมศ. ฯลฯ)</span></div>
+  <div class="chain-arrow">➜</div>
+  <div class="chain-node midstream">แผน PDCA9 · ข้อ 3<br><span style="font-weight:400;font-size:.7rem">KPI + ค่าเป้าหมาย<br>(ดึงจากคู่มือ)</span></div>
+  <div class="chain-arrow">➜</div>
+  <div class="chain-node midstream">แผน PDCA9 · ข้อ 4<br><span style="font-weight:400;font-size:.7rem">กิจกรรม<br>(ผูกกับ KPI ข้อ 3)</span></div>
+  <div class="chain-arrow">➜</div>
+  <div class="chain-node midstream">แผน PDCA9 · ข้อ 6<br><span style="font-weight:400;font-size:.7rem">ขั้นตอนดำเนินการจริง<br>(ผูกกับกิจกรรม ข้อ 4)</span></div>
+  <div class="chain-arrow">➜</div>
+  <div class="chain-node downstream">ข้อ 7-9 · ประเมิน + ปรับปรุง<br><span style="font-weight:400;font-size:.7rem">วัดผลย้อนไปที่ KPI ข้อ 3</span></div>
+</div>
+</div>
+
+<div class="pdca-purpose">
+<b>รายงานฉบับนี้ตรวจอะไร:</b> ทุกแผน PDCA9 ของหน่วยงานในโรงเรียนเซนต์คาเบรียล (72 หน่วย · 73 แผนใช้จริง) · ครบ 9 ขั้นหรือไม่ · KPI ตรงกับคู่มือคุณภาพ ส่วนที่ 3 หรือไม่ · ผูกกิจกรรม/ขั้นตอน/หลักฐานครบไหม · จุดใดต้องแก้ พร้อมชื่อผู้รับผิดชอบ
+</div>
+</section>
+
+<!-- ================================================================ -->
+<!-- §0 Data Integrity Check (คำสั่งบราเดอร์ 25 ส.ค. 10:27)         -->
+<!-- ================================================================ -->
+<section class="s0-wrap">
+<h2 class="s0">ส่วนที่ ๐ · Data Integrity Check — ก่อนอ่านรายงาน โปรดตรวจส่วนนี้</h2>
+<p class="s0-alert">ตามคำสั่งประธาน 25 ส.ค. 10:27 น. · ทุกรายงานต้องเปิดด้วยการตรวจความสมบูรณ์ของข้อมูลก่อนวิเคราะห์ · หากมี ⚠️ ผู้อ่านต้องเห็นชัดเจน + มี "แผนกู้" ทุกจุด</p>
+
+<h3>ตาราง 0.1 · ความครบของการดึงข้อมูล (แยก "ดึงไม่ได้" ออกจาก "0 จริง")</h3>
+<table>
+<tr><th style="width:26%">โมดูล / MCP tool</th><th style="width:12%">คาดดึง</th><th style="width:12%">ดึงได้จริง</th><th style="width:20%">สถานะ</th><th>หมายเหตุ / แผนกู้</th></tr>
+<tr><td>list_school_plans (แผน PDCA9)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>100 แผน · verify ทีละ record</td></tr>
+<tr><td>compare_schools (plan_pdca9) · re-lock 26 ส.ค. 23:36</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>73 total · <b>approved 69</b> · not_approved 4 · full_9 100%</td></tr>
+<tr><td>compare_schools (calendar_status) · re-lock 26 ส.ค. 23:36</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>645 กิจกรรมจริง · 30 done (4.65%) · <b>319 overdue</b> · 615 un_check · plan_step_rows 4,386 แยกช่อง</td></tr>
+<tr><td>compare_schools (quality_manual)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>71 partial · 1 none (SG NEXT)</td></tr>
+<tr><td>compare_schools (org_structure)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>6 ฝ่าย · 72 dept · 417 in-structure</td></tr>
+<tr><td>compare_schools (kpi_norm)</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>10 ชุดมาตรฐาน · 448 ตัวชี้วัด · 444 used</td></tr>
+<tr><td>get_job_spec_by_dept</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>72 dept · 71 ครบ · 1 ไม่พบ (SG NEXT)</td></tr>
+<tr><td>get_school_budget_summary</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>รับ 391.8M / จริง 75.8M · จ่าย 739.1M / จริง 224.8M</td></tr>
+<tr><td>get_staff_summary</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>661 คน (แต่ ⚠️ ต่างจาก org_structure ที่ 664)</td></tr>
+<tr><td>get_students_summary</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>4,567 คน (ชายล้วน · new 589 · out 0)</td></tr>
+<tr><td>get_manual_comments</td><td class="c">1</td><td class="c b">1 ✅</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td><b>0 จริง</b> · ยังไม่มี comment คู่มือปีนี้ (ไม่ใช่ "ดึงไม่ได้")</td></tr>
+<tr style="background:#fdeaea"><td class="b">รวม</td><td class="c b">10</td><td class="c b" style="color:var(--ok)">10 ✅</td><td class="c"><span class="chip chip-p3">ครบ 100%</span></td><td class="b" style="color:var(--ok)">ไม่มี tool ดึงไม่ได้ (0 ⚠️ ในระดับ tool)</td></tr>
+</table>
+
+<h3>ตาราง 0.2 · ความครบและถูกต้องของข้อมูล · เทียบ N คาด vs M ที่ได้จริง + Flag anomaly</h3>
+<table>
+<tr><th style="width:24%">หมวด</th><th style="width:16%">คาด N (แหล่งอ้างอิง)</th><th style="width:14%">เทียบได้ M</th><th style="width:12%">ต่าง</th><th style="width:14%">Flag</th><th>แผน verify / แผนกู้</th></tr>
+<tr><td>หน่วยงาน SG (login_post)</td><td class="c">72</td><td class="c b">72 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>—</td></tr>
+<tr><td>บุคลากรทะเบียนกลาง (get_staff_summary)</td><td class="c">661</td><td class="c b">661 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>ชาย 272 · หญิง 389 · ตาม _SG_NUMBER_SET 26 ส.ค.</td></tr>
+<tr><td>อัตรากำลัง HR (org_structure.hr_baseline)</td><td class="c">664</td><td class="c b">664 ⚠️</td><td class="c">0</td><td class="c"><span class="chip chip-p2">⚠️ Bug</span></td><td class="warn"><b>⚠️ MCP 2 tool ให้ตัวเลขต่าง</b> (661 vs 664 = 3 คน) · <div class="recovery"><b>แผนกู้:</b> SWIS_PLUS ไล่ที่ต้นทาง stored proc</div></td></tr>
+<tr><td>บุคลากรในผังโครงสร้าง</td><td class="c">417</td><td class="c b">417 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>—</td></tr>
+<tr><td>บุคลากรตกจากผัง (664-417)</td><td class="c">247</td><td class="c b">247 ⚠️</td><td class="c">0</td><td class="c"><span class="chip chip-p2">⚠️ สูง</span></td><td class="warn">247/664 = 37.2% · <div class="recovery"><b>แผนกู้:</b> HR trace รายชื่อ + บันทึกในโครง 2569</div></td></tr>
+<tr><td>เข้าใหม่ / พ้นสภาพ ปีนี้</td><td class="c">43/32</td><td class="c b">43/32 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>ตาม _SG_NUMBER_SET 26 ส.ค. (ไม่ใช่ 10 อย่างที่ระบบให้บางที)</td></tr>
+<tr><td>บุคลากรมี Job Spec</td><td class="c">417</td><td class="c b">346 (82.97%)</td><td class="c">-71</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">71 คนยังไม่มี JS · <div class="recovery"><b>แผนกู้:</b> HR ประสานหน่วยกรอก JS ครบ</div></td></tr>
+<tr><td>นักเรียน (ปีปัจจุบัน)</td><td class="c">4,567</td><td class="c b">4,567 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>สอดคล้องปีที่ผ่านมา (4,574) ต่าง 7</td></tr>
+<tr><td>แผนใน list_school_plans</td><td class="c">100</td><td class="c b">100 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>73 ใช้จริง · 27 ซ้ำ/ทดสอบ (ดู §5)</td></tr>
+<tr><td>แผน approved</td><td class="c">≤73</td><td class="c b">69</td><td class="c">-4</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">4 แผนยังไม่ approve · <div class="recovery"><b>แผนกู้:</b> ผอ. เร่งอนุมัติ (ดู §7)</div></td></tr>
+<tr><td>แผน full 9 ขั้น</td><td class="c">73</td><td class="c b">73 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">100%</span></td><td>เชิงจำนวน pass · เนื้อในต้องอ่านต่อ</td></tr>
+<tr><td>ตัวชี้วัด KPI (kpi_norm)</td><td class="c">448</td><td class="c b">448 ✅</td><td class="c">0</td><td class="c"><span class="chip chip-p3">OK</span></td><td>10 ชุดมาตรฐาน · Chain ครบ</td></tr>
+<tr><td>KPI ที่แผนอ้างอิง</td><td class="c">≤448</td><td class="c b">444 (99.11%)</td><td class="c">-4</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">4 KPI ยังไม่ถูกอ้าง · <div class="recovery"><b>แผนกู้:</b> ประกันคุณภาพระบุ 4 ตัว · แจ้งหัวหน้าที่รับผิดชอบเพิ่มอ้างอิง</div></td></tr>
+<tr><td>คู่มือคุณภาพ (partial)</td><td class="c">≤72</td><td class="c b">71</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">1 หน่วยไม่มีคู่มือ = SG NEXT (id_dept 2567) · <div class="recovery"><b>แผนกู้:</b> ผอ. มอบหมาย SG NEXT จัดทำคู่มือ (ดู §4)</div></td></tr>
+<tr><td>คู่มือคุณภาพครบ 6 ส่วน</td><td class="c">≤72</td><td class="c b">0 ⚠️</td><td class="c">-72</td><td class="c"><span class="chip chip-p1">🔴 CRITICAL</span></td><td class="warn"><b>ไม่มีหน่วยงานใดคู่มือครบ 6 ส่วน</b> · ส่วนใหญ่ 4-5 ส่วน · <div class="recovery"><b>แผนกู้:</b> QM_INSPECTOR ระบุส่วนที่ขาดรายหน่วย · หัวหน้าเสริมส่วนที่ 6 (ภาคผนวก) ครบก่อน 30 ก.ย.</div></td></tr>
+<tr><td>Confirm Loop submitted</td><td class="c">72</td><td class="c b">22 ⚠️</td><td class="c">-50</td><td class="c"><span class="chip chip-p1">🔴 CRITICAL</span></td><td class="warn">ส่ง 22 · ครบ 1 · กำลังทำ 7 · ยังไม่เริ่ม 42 = 72 (ตาม _SG_NUMBER_SET) · <div class="recovery"><b>แผนกู้:</b> ผอ. ประชุมหัวหน้าฝ่ายเร่ง 42 หน่วยกด submit ก่อนนิเทศ 9 ก.ย.</div></td></tr>
+<tr><td>บุคลากรยืนยันตัวตน</td><td class="c">417</td><td class="c b">94 (22.54%)</td><td class="c">-323</td><td class="c"><span class="chip chip-p1">🔴 CRITICAL</span></td><td class="warn">322 คน pending · <div class="recovery"><b>แผนกู้:</b> HR ส่งลิงก์ยืนยันซ้ำ + ทำ workshop ระดับฝ่าย</div></td></tr>
+<tr><td>Evidence files (PDCA ข้อ 8)</td><td class="c">≤772</td><td class="c b" style="color:var(--bad)">0 ⚠️</td><td class="c">-772</td><td class="c"><span class="chip chip-p1">🔴 CRITICAL</span></td><td class="warn"><b>plan_items 772 · items_with_file = 0</b> · Check ข้อ 8 อ่อนที่สุด · <div class="recovery"><b>แผนกู้:</b> ประสาน SWIS Plus เปิด upload · อบรมทีมโรงเรียนแนบไฟล์ · target ≥50% ก่อนนิเทศรอบถัดไป</div></td></tr>
+<tr><td>Manual comments (ปี 2569)</td><td class="c">?</td><td class="c b">0</td><td class="c">—</td><td class="c"><span class="chip chip-p2">⚠️ 0 จริง</span></td><td class="warn">ยังไม่มีคน comment คู่มือปีนี้ · <b>0 จริง</b> ไม่ใช่ดึงไม่ได้ · <div class="recovery"><b>แผนกู้:</b> ผอ. เริ่มรอบ comment · QMI ประสานกลาง ↔ โรง</div></td></tr>
+<tr><td>Job Spec 72 dept</td><td class="c">72</td><td class="c b">71</td><td class="c">-1</td><td class="c"><span class="chip chip-p2">⚠️</span></td><td class="warn">SG NEXT ไม่มี JS · 3 หน่วยมีบางส่วน (SGLC · สุขศึกษาม. · ภาษาจีน) · <div class="recovery"><b>แผนกู้:</b> HR ประสาน 4 หน่วยกรอก JS ครบ 5 กลุ่ม</div></td></tr>
+</table>
+
+<h3>ตาราง 0.3 · วิธี Recheck ให้ผู้อ่านตรวจตามได้</h3>
+<table>
+<tr><th style="width:24%">จุดที่ต้อง recheck</th><th style="width:38%">ผู้อ่านตรวจได้ที่ไหน</th><th>วิธี recheck ของห้อง PDCA9</th></tr>
+<tr><td>73 แผน (approved 69 · full_9 100%)</td><td>ระบบ SWIS โมดูล "แผนงานประจำ (PDCA9)" · หน้ารายงานสรุปฝ่ายบริหารสำนักผู้อำนวยการ</td><td>ดึงซ้ำด้วย compare_schools(module='plan_pdca9') · เทียบตัวเลขทุกช่อง</td></tr>
+<tr><td>คู่มือคุณภาพ 71 partial · 1 none</td><td>ระบบ SWIS โมดูล "คู่มือคุณภาพหน่วยงาน" · หน้ารายงานสถานะการทำคู่มือ</td><td>ดึงซ้ำด้วย compare_schools(module='quality_manual') · list dept ที่ status="ยังไม่มีคู่มือ"</td></tr>
+<tr><td>KPI 448 · used 444 · unused 4</td><td>ระบบ SWIS โมดูล "นโยบาย/มาตรฐาน/ตัวชี้วัด (kpi_norm)"</td><td>ดึงซ้ำด้วย compare_schools(module='kpi_norm') · verify 4 ตัวที่ unused</td></tr>
+<tr><td>Confirm Loop 22/72</td><td>ระบบ SWIS หน้า "ยืนยันข้อมูลบุคลากร/หน่วยงาน" ปีการศึกษา 2569</td><td>ดึงซ้ำ org_structure.confirm_loop · จำแนก submitted (22) · completed (1) · in_progress (7) · not_started (42) = 72</td></tr>
+<tr><td>Evidence file 0/772</td><td>เปิดแผนใด ๆ ในระบบ SWIS · ตรวจข้อ 8 ประเมินผล · หา field "แนบไฟล์หลักฐาน"</td><td>Field items_with_file=0 · MCP ไม่มี upload path · แจ้ง SWIS Plus verify</td></tr>
+<tr><td>บุคลากร 661 vs 664</td><td>ระบบ SWIS โมดูล HR · หน้าสรุปจำนวนบุคลากรทั้งโรงเรียน</td><td>ดึงซ้ำทั้ง get_staff_summary + org_structure · เทียบทีละ record</td></tr>
+</table>
+
+<div class="box box-ok" style="margin-top:14px">
+<b>☑️ ผลตัดสิน §0:</b> ดึงข้อมูลครบ 10/10 tool (100%) · มี ⚠️ 9 จุดในระดับความครบ/ถูกต้อง (ส่วนใหญ่เป็นจุดที่โรงเรียนต้องดำเนินการต่อ · ไม่ใช่ Claude ผิด) · ทุก ⚠️ มีแผนกู้ระบุแล้ว · <b>อนุญาตให้อ่าน §1 ต่อได้</b>
+</div>
+</section>
+
+<!-- ================================================================ -->
+<!-- Replica warning (สำคัญ · ทีมงานเคยเจอปัญหาที่ AC 20 ส.ค.)     -->
+<!-- ================================================================ -->
+<div style="border:3px solid var(--bad);background:var(--badbg);padding:16px 20px;margin:20px 0;border-radius:8px">
+<b style="color:var(--bad);font-size:1.05rem">⚠️ ข้อจำกัดสำคัญที่ท่านต้องทราบก่อนอ่านรายงาน</b>
+<p style="margin-top:8px">รายงานฉบับนี้ใช้ข้อมูลจาก <b>ฐานข้อมูลสำรอง (replica) ของระบบ SWIS ส่วนกลาง</b> ที่ซิงค์กับระบบจริงของโรงเรียนท่านล่าสุด <b>เมื่อวันที่ 24 สิงหาคม 2569 เวลา 19:16 น.</b> · การซิงค์เกิดขึ้นวันละครั้ง <b>ไม่ใช่ทันที (ไม่ใช่ real-time)</b></p>
+<p style="margin-top:8px"><b style="color:var(--bad)">หากท่านได้ดำเนินการแก้ไข บันทึก หรืออนุมัติแผนงานในระบบ SWIS ของโรงเรียน หลังจากวันเวลาดังกล่าว การดำเนินการของท่านจะยังไม่ปรากฏในรายงานฉบับนี้</b></p>
+<p style="margin-top:8px"><b>ทีมงานถือว่าข้อมูลของท่านคือความจริง</b> — การที่รายงานยังไม่แสดงการแก้ไขล่าสุดของท่าน คือข้อจำกัดของฐานข้อมูลสำรอง <b>ไม่ใช่การมองข้ามการทำงานของท่าน</b> · หากพบว่ารายงานยังไม่ตรง โปรดแจ้งกลับผ่าน eoffice · ทีมงานจะบันทึกและปรับในรายงานฉบับถัดไปทันทีที่ระบบกลางซิงค์เห็น</p>
+</div>
+
+<div class="box box-plan">
+<b>เรียน ท่านผู้อำนวยการโรงเรียนเซนต์คาเบรียล · ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ · หัวหน้าฝ่ายทั้ง 6 ฝ่าย · และหัวหน้าหน่วยงานผู้รับผิดชอบแผน PDCA9 ทั้ง 73 แผน (72 หน่วยงาน)</b>
+<p>ทีมงานส่วนกลางได้ดึงข้อมูลจากระบบ SWIS ของโรงเรียนท่านสดใหม่ ณ วันที่ 26 สิงหาคม 2569 เวลา 23:36 น. (ไล่สดหลัง re-lock ปฏิทิน) เพื่อจัดทำรายงานฉบับนี้ให้ท่านตรวจสอบและดำเนินการแก้ไขในส่วนของท่าน · <b>ในตาราง "หัวใจของรายงาน" (ส่วนที่ ๑๐)</b> ท่านจะพบชื่อของท่านและแผนที่ท่านเป็นเจ้าของ พร้อมสิ่งที่ทีมงานขอความกรุณาท่านดำเนินการต่อ · หากพบข้อมูลที่ยังไม่ตรงกับหน้างานจริง โปรดตอบกลับผ่านหนังสือ eoffice ฉบับต้นเรื่อง หรือแจ้งผ่านหัวหน้าสำนักผู้อำนวยการของโรงเรียน (มิสวิภา พิณรัตน์)</p>
+</div>
+
+<h2>กรอบงานอ้างอิงและสามหลักของรายงาน</h2>
+<p>การตรวจติดตามและการบันทึกข้อมูลการปฏิบัติงานในระบบชุดนี้ เป็นไปตามนโยบายและเป้าหมายของมูลนิธิฯ ที่กำหนดให้ทุกโรงเรียนยึดถือ 3 หลัก ได้แก่</p>
+<ol style="margin-left:24px;font-size:.9rem">
+<li><b>หลักธรรมาภิบาล</b> — ตามคู่มือการบริหารโดยใช้หลักธรรมาภิบาล ฉบับปรับปรุง พ.ศ. 2568: หลักที่ 2 ความโปร่งใส (ข้อ 2.1 การบริหารตามโครงสร้าง · 2.2 การเงิน · 2.3 บุคลากร) และหลักที่ 3 ความรับผิดชอบ (ข้อ 3.1 ต่อบทบาทหน้าที่)</li>
+<li><b>ปรัชญาการศึกษามงฟอร์ต (MEC)</b> — จัดการศึกษาโดยยึดผู้เรียนเป็นศูนย์กลาง ซึ่งการบริหารด้วยข้อมูลจริงคือเงื่อนไขของคุณภาพที่ไปถึงตัวผู้เรียน</li>
+<li><b>แผนยุทธศาสตร์มูลนิธิฯ พ.ศ. 2565–2570</b> — ยุทธศาสตร์ที่ 3 เป้าประสงค์ 3.3 มาตรฐาน 3.3.1 ระบบสารสนเทศเพื่อการบริหารและการจัดการเรียนรู้</li>
+</ol>
+<p style="margin-top:6px">ทั้งสามหลักนี้คือเกณฑ์ที่ทุกโรงเรียนรับการประเมินอยู่แล้ว รายงานชุดนี้จึงเป็นเครื่องมือช่วยให้แต่ละหน่วยงานเห็นสถานะของตนตามเกณฑ์ล่วงหน้า</p>
+
+<h2>ความสมบูรณ์ของข้อมูลของโมดูลที่ใช้ในการวิเคราะห์ (ตามประกาศ #66)</h2>
+<table>
+<tr><th style="width:24%">โมดูล SWIS</th><th style="width:20%">ดึงเมื่อ</th><th style="width:16%">ระดับความสมบูรณ์</th><th>ข้อจำกัด</th></tr>
+<tr><td>plan_pdca9 (แผน PDCA9)</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>73 แผนใช้จริง · full_9 100% · ประเมิน items_with_file=0</td></tr>
+<tr><td>quality_manual (คู่มือคุณภาพ)</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p2">มี ⚠️</span></td><td>71 partial · 1 none · 0 ครบ 6 ส่วน</td></tr>
+<tr><td>kpi_norm (มาตรฐาน/ตัวชี้วัด)</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>10 ชุด · 448 ตัว · used 99.11%</td></tr>
+<tr><td>org_structure (โครงสร้าง)</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p2">มี ⚠️</span></td><td>72 dept · 417 in structure · 247 not_in_structure · Confirm Loop ยังไม่ยืนยัน</td></tr>
+<tr><td>get_school_budget_summary</td><td class="c">25 ส.ค. 2569 17:54 (replica 24 ส.ค. 19:16)</td><td class="c"><span class="chip chip-p3">ครบ</span></td><td>รับ 391.8M/จริง 75.8M · จ่าย 739.1M/จริง 224.8M</td></tr>
+<tr><td>get_staff_summary + get_students_summary</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p2">มี ⚠️</span></td><td>661 staff (org=664) · 4,567 นักเรียน · <b>⚠️ MCP 2 tool ให้ยอด staff ต่าง</b></td></tr>
+<tr><td>get_job_spec_by_dept</td><td class="c">25 ส.ค. 2569 17:54 (replica 24 ส.ค. 19:16)</td><td class="c"><span class="chip chip-p2">มี ⚠️</span></td><td>71/72 dept มี JS · SG NEXT ไม่พบ · 3 หน่วยมีบางส่วน · js_school = 0 ทุกหน่วย</td></tr>
+<tr><td>get_manual_comments</td><td class="c">25 ส.ค. 2569 17:54</td><td class="c"><span class="chip chip-p2">0 จริง</span></td><td>ยังไม่มี comment คู่มือปีนี้ (ไม่ใช่ tool error)</td></tr>
+</table>
+
+<h2>บทสรุปสำหรับผู้บริหาร</h2>
+<div class="kpi">
+<div class="kpi-card"><div class="val">72</div><div class="lbl">หน่วยงานทั้งหมด</div></div>
+<div class="kpi-card ok"><div class="val">73</div><div class="lbl">แผน PDCA9 ใช้จริง (full_9 100%)</div></div>
+<div class="kpi-card warn"><div class="val">27</div><div class="lbl">แผนซ้ำ/ทดสอบใน list (ควรลบ)</div></div>
+<div class="kpi-card ok"><div class="val">99.11%</div><div class="lbl">KPI ในคู่มือถูกอ้างในแผน</div></div>
+<div class="kpi-card"><div class="val">4,567</div><div class="lbl">นักเรียน (ชายล้วน · new 589)</div></div>
+<div class="kpi-card warn"><div class="val">417/664</div><div class="lbl">ในผัง / HR baseline (247 ตกจากผัง 37.2%)</div></div>
+<div class="kpi-card"><div class="val">661</div><div class="lbl">บุคลากรทะเบียนกลาง (ช 272 · ญ 389)</div></div>
+<div class="kpi-card"><div class="val">43/32</div><div class="lbl">เข้าใหม่/พ้นสภาพ ปีนี้</div></div>
+</div>
+<div class="kpi">
+<div class="kpi-card ok"><div class="val">346/417</div><div class="lbl">มี Job Spec (82.97%)</div></div>
+<div class="kpi-card bad"><div class="val">22/72</div><div class="lbl">Confirm Loop submitted (⚠️ 42 not_started)</div></div>
+<div class="kpi-card bad"><div class="val">94/417</div><div class="lbl">บุคลากรยืนยันตัวตน (22.5%)</div></div>
+<div class="kpi-card bad"><div class="val">0/772</div><div class="lbl">Evidence files แนบ (Check ข้อ 8 อ่อน)</div></div>
+</div>
+
+<div class="box box-ok">
+<b>สิ่งที่โรงเรียนเซนต์คาเบรียล (SG) ทำสำเร็จแล้ว:</b>
+<ul style="margin-left:20px">
+<li><b>แผน PDCA9 สมบูรณ์ทุกหน่วย:</b> จัดทำแผนใช้จริง 73 แผน ครอบคลุมทั้ง 72 หน่วยงาน (72/72) · ครบ 9 ขั้นตอน P-D-C-A ทุกแผน (full_9_steps 100%) · มี KPI ครบทุกแผน</li>
+<li><b>ห่วงโซ่ตัวชี้วัดคุณภาพเชื่อมโยงแน่น:</b> ตัวชี้วัดในคู่มือคุณภาพ 444 ตัวจาก 448 ตัว ถูกอ้างอิงในแผนแล้ว (99.11%) · เชื่อมโยง 4,491 ครั้ง · 83 แผนมีการเชื่อมโยง · นโยบายโรงเรียน 68 เรื่อง ถูกอ้าง 112 ครั้ง</li>
+<li><b>อ้างอิงมาตรฐานหลากหลาย:</b> ใช้ 10 ชุดมาตรฐานอ้างอิงคุณภาพ (มากกว่าโรงอื่นในเครือ) — DP-SG 113 · SG 79 · SP-FSG 85 · POL-FSG 30 · GOV-FSG 19 · FIN-FSG 10 · สพฐ. 26 · สมศ. 19 · FSG 20 · SDG 47</li>
+<li><b>Job Spec ครบเกือบทุกหน่วย:</b> 71 หน่วยงานจาก 72 หน่วยงาน มี Job Spec ครบทั้ง 5 กลุ่ม (C(B) · K(B) · Cp(B) · K(T) · Cp(T))</li>
+</ul>
+</div>
+
+<div class="box box-warn">
+<b>จุดที่ระบบยังไม่พบ · อยากให้โรงเรียนช่วยยืนยันและดำเนินการต่อก่อนนิเทศ 9 ก.ย. 2569:</b>
+<ul style="margin-left:20px">
+<li><b>Confirm Loop:</b> ระบบพบว่า 30 หน่วยเดินหน้าแล้ว (22 ส่ง+1 ครบรอส่ง+7 กำลังทำ) · อีก 42 หน่วยยังไม่พบว่าเริ่ม · บุคลากรยืนยันตัวตนแล้ว 94/417 คน · อีก 323 คนยังไม่พบการยืนยัน · หากดำเนินการแล้ว รบกวนช่วยยืนยัน</li>
+<li><b>คู่มือคุณภาพ:</b> 71 หน่วยงานมีคู่มือแล้ว (มี 4-5 ส่วนจาก 6 ส่วน) · ระบบยังไม่พบหน่วยใดครบ 6 ส่วน · อีก 1 หน่วย (SG NEXT) ยังไม่พบคู่มือ · รบกวนช่วยเสริมส่วนที่ 6 (หลักฐาน) และเริ่มคู่มือ SG NEXT</li>
+<li><b>Evidence file (PDCA ข้อ 8):</b> แผน 73 แผนมีกิจกรรม 772 ข้อ · ระบบยังไม่พบการแนบไฟล์หลักฐาน (0/772) · หากจัดเก็บนอกระบบอยู่แล้ว รบกวนช่วยยืนยันและอัพโหลดเข้าระบบ</li>
+<li><b>ทะเบียนแผน:</b> ระบบมี 100 รายการ · ใช้จริง 73 แผน · ต่างกัน 27 รายการที่เป็นแผนซ้ำหรือโครงเปล่า · รบกวนช่วยยืนยันและลบเพื่อให้ตัวเลขในทะเบียนตรงกับภาระงานจริง</li>
+<li><b>ผังโครงสร้าง:</b> HR baseline 664 คน · ในผังโครงสร้างพบ 417 คน · อีก 247 คน (37.2%) ระบบยังไม่พบว่าอยู่หน่วยงานใด · หากลงในระบบ HR แล้วแต่ยังไม่ผูกกับ dept รบกวน HR ช่วย trace และผูกให้ครบ</li>
+</ul>
+</div>
+
+<h2>ส่วนที่ ๑ · ห่วงโซ่ความเชื่อมโยงงานคุณภาพ (จากต้นน้ำถึงปลายน้ำ · SG)</h2>
+<p>โรงเรียนเซนต์คาเบรียล (SG) มีห่วงโซ่การเชื่อมโยงตัวชี้วัดคุณภาพจากคู่มือคุณภาพหน่วยงานลงสู่แผน PDCA9 <b>ในระดับที่แข็งแรงที่สุดในเครือมูลนิธิ</b> · ตัวชี้วัด 448 ตัว ถูกอ้างอิงในแผน 444 ตัว (99.11%) · เชื่อมโยง 4,491 ครั้ง · 83 แผนมีการเชื่อมโยง · 68 นโยบายของโรงเรียนถูกอ้าง 112 ครั้ง</p>
+
+<div class="flow">
+<div class="node ok"><b>ต้นน้ำ</b><br>10 ชุดมาตรฐาน<br>448 KPI (คู่มือ ส่วน 3)</div>
+<div class="arrow">➜</div>
+<div class="node ok"><b>ใช้จริง</b><br>444 KPI (99.11%)<br>4,491 links</div>
+<div class="arrow">➜</div>
+<div class="node ok"><b>แผน PDCA9</b><br>73 แผน · full_9 100%<br>ครบ KPI ทุกแผน</div>
+<div class="arrow">➜</div>
+<div class="node warn"><b>ดำเนินการ</b><br>plan_items 772<br>evaluated 73</div>
+<div class="arrow">➜</div>
+<div class="node bad"><b>หลักฐาน</b><br>items_with_file <b>0/772</b><br>⚠️ ข้อ 8 อ่อนที่สุด</div>
+</div>
+
+<h3>10 ชุดมาตรฐานอ้างอิงคุณภาพที่ SG ใช้ (จาก kpi_norm module · 25 ส.ค. 2569 17:54)</h3>
+<table>
+<tr><th style="width:6%" class="c">#</th><th style="width:56%">ชุดมาตรฐาน</th><th style="width:16%">ตัวย่อ</th><th class="c">จำนวนตัวชี้วัด</th></tr>
+<tr><td class="c">1</td><td>แผนพัฒนาการจัดการศึกษาโรงเรียนเซนต์คาเบรียล 2568-2570</td><td class="c b">DP-SG</td><td class="c b">113</td></tr>
+<tr><td class="c">2</td><td>แผนยุทธศาสตร์มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย 2565-2570</td><td class="c b">SP-FSG</td><td class="c b">85</td></tr>
+<tr><td class="c">3</td><td>มาตรฐานการศึกษา โรงเรียนเซนต์คาเบรียล</td><td class="c b">SG</td><td class="c b">79</td></tr>
+<tr><td class="c">4</td><td>เป้าหมายการพัฒนาที่ยั่งยืน (UN Sustainable Development Goals)</td><td class="c b">SDG</td><td class="c b">47</td></tr>
+<tr><td class="c">5</td><td>นโยบายของมูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td><td class="c b">POL-FSG</td><td class="c b">30</td></tr>
+<tr><td class="c">6</td><td>มาตรฐานการศึกษาขั้นพื้นฐาน</td><td class="c b">สพฐ.</td><td class="c b">26</td></tr>
+<tr><td class="c">7</td><td>มาตรฐานการศึกษา มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td><td class="c b">FSG</td><td class="c b">20</td></tr>
+<tr><td class="c">8</td><td>การบริหารตามหลักธรรมาภิบาล</td><td class="c b">GOV-FSG</td><td class="c b">19</td></tr>
+<tr><td class="c">9</td><td>มาตรฐานการศึกษา สมศ. รอบ 5</td><td class="c b">สมศ.</td><td class="c b">19</td></tr>
+<tr><td class="c">10</td><td>ตอบสนองมาตรฐานการเงิน</td><td class="c b">FIN-FSG</td><td class="c b">10</td></tr>
+<tr style="background:var(--soft);font-weight:bold"><td colspan="3" class="c">รวม</td><td class="c">448</td></tr>
+</table>
+
+<div class="box box-ok"><b>ข้อสังเกต:</b> <span class="opinion">SG ใช้ 10 ชุดมาตรฐานอ้างอิงคุณภาพ · มากกว่าค่าเฉลี่ยของโรงในเครือมูลนิธิ (AC ใช้ 7 ชุด) · แสดงว่าโรงเรียนของท่านให้ความสำคัญกับการอ้างอิงกรอบมาตรฐานหลากหลาย · ทั้งของโรงเรียนเอง (DP-SG · SG) · ของมูลนิธิ (SP-FSG · POL-FSG · GOV-FSG · FIN-FSG · FSG) · ของประเทศ (สพฐ. · สมศ.) และของโลก (SDG) · <b>เป็นตัวอย่างที่ดีให้ 13 โรงที่เหลือในเครือมูลนิธิ</b></span></div>
+
+<h2>ส่วนที่ ๒ · รายละเอียดแผน PDCA9 (จากโมดูล plan_pdca9)</h2>
+<div class="kpi">
+<div class="kpi-card"><div class="val">100</div><div class="lbl">แผนใน list (ทั้งหมด)</div></div>
+<div class="kpi-card ok"><div class="val">73</div><div class="lbl">แผนใช้จริง (มี KPI + full_9)</div></div>
+<div class="kpi-card warn"><div class="val">27</div><div class="lbl">แผนซ้ำ/ทดสอบ (ควรลบ)</div></div>
+<div class="kpi-card ok"><div class="val">69</div><div class="lbl">อนุมัติแล้ว · 4 ยังไม่อนุมัติ (26 ส.ค. 23:36)</div></div>
+</div>
+
+<table>
+<tr><th style="width:40%">ตัวชี้วัด</th><th style="width:16%" class="c">ค่า</th><th>คำอธิบาย</th></tr>
+<tr><td>หน่วยงานทั้งหมด (72 login_post)</td><td class="c b">72</td><td>ครบทุกหน่วย · ไม่มีหน่วยงานที่ไม่มีแผน (72/72)</td></tr>
+<tr><td>แผน PDCA9 ใช้จริง</td><td class="c b">73</td><td>1 หน่วย (งานบริหารสำนักผู้อำนวยการ) มี 2 แผน (หลัก + เลขานุการ)</td></tr>
+<tr><td>full_9_steps</td><td class="c b" style="color:var(--ok)">73 (100%)</td><td>ทุกแผนมี 9 ขั้นตอนครบ · pass เชิงจำนวน</td></tr>
+<tr><td>approved</td><td class="c b">69</td><td>4 แผนยังไม่อนุมัติ (re-lock 26 ส.ค. · งานสุขอนามัยอนุมัติล่าสุด · ดู §7)</td></tr>
+<tr><td>with_kpi / with_goal / with_objective</td><td class="c b" style="color:var(--ok)">73 / 73 / 73</td><td>ทุกแผนมีข้อ 3 KPI + เป้าหมาย + วัตถุประสงค์ครบ (pass เชิงจำนวน)</td></tr>
+<tr><td>projects (โครงการเสริม)</td><td class="c b">39</td><td>approved 37 · full_9 37 · ทำเสริมนอกแผนงานประจำ</td></tr>
+<tr><td>plan_items (กิจกรรม/งาน)</td><td class="c b">772</td><td>plans_evaluated 73 · แต่ items_with_file = <b style="color:var(--bad)">0</b> ⚠️</td></tr>
+<tr><td>project_items</td><td class="c b">0</td><td>projects_evaluated 0 · ยังไม่มีการประเมินโครงการ</td></tr>
+</table>
+
+<div class="box box-bad"><b>⚠️ CRITICAL · Evidence files 0/772:</b> plan_items 772 ข้อ · แต่ items_with_file = 0 · <b>ไม่มีการแนบไฟล์หลักฐานในทุกกิจกรรมของทุกแผน</b> · เป็นจุดอ่อนที่สุดในการตรวจ Check (ข้อ 8 ของ PDCA9) · <b>แผนกู้:</b> ประสาน SWIS Plus ตรวจว่าฟังก์ชัน upload ใช้งานได้หรือไม่ · อบรมทีมโรงเรียนแนบไฟล์ · target ≥50% ก่อนนิเทศรอบถัดไป</div>
+
+<h2>ส่วนที่ ๓ · คู่มือคุณภาพหน่วยงาน (ต้นน้ำของ KPI ในแผน)</h2>
+<table>
+<tr><th style="width:50%">ตัวชี้วัด</th><th style="width:15%" class="c">ค่า</th><th>สถานะ / คำอธิบาย</th></tr>
+<tr><td>จำนวนหน่วยงานในผังโครงสร้าง</td><td class="c b">72</td><td>อ้างอิงเครื่องมือทะเบียนบุคลากรของ SG (login_post active ปี 2569)</td></tr>
+<tr><td>หน่วยงานที่มีคู่มือคุณภาพในระบบ</td><td class="c b" style="color:var(--ok)">71</td><td>มีคู่มือ 4-5 ส่วนจาก 6 ส่วน · main_topics เฉลี่ย 10 หัวข้อต่อหน่วย · <b>งานแนะแนว 20 หัวข้อ · ระดับชั้นประถม 16 · งานทรัพยากรมนุษย์ 16</b> เป็นตัวอย่างที่เขียนละเอียด</td></tr>
+<tr><td>หน่วยงานที่ระบบยังไม่พบคู่มือ</td><td class="c b" style="color:var(--bad)">1</td><td>คืองาน <b>SG NEXT (id_dept 2567)</b> ในแผนกความเป็นสากล · หากจัดทำแล้วแต่ระบบยังไม่แสดง รบกวนช่วยยืนยัน · หากยังไม่จัดทำ รบกวนมิสสุชาวลี ศรีโหมด เริ่มจัดทำ</td></tr>
+<tr><td>ระบบยังไม่พบหน่วยที่คู่มือครบทั้ง 6 ส่วน</td><td class="c b" style="color:var(--bad)">0/72</td><td>เกณฑ์ 6 ส่วน: หัวข้อหลัก · หัวข้อย่อย · ตัวชี้วัด · เกณฑ์ · ค่าเป้าหมาย · หลักฐาน · ส่วนใหญ่ขาดส่วนที่ 6 (หลักฐาน/ภาคผนวก) · รบกวนเสริมส่วนที่ขาดก่อน 30 ก.ย.</td></tr>
+<tr><td>ค่าเฉลี่ย main_topics ต่อหน่วยงาน</td><td class="c b">~10 หัวข้อ</td><td>สูงกว่าค่าเฉลี่ยเครือ (AC = 4.8) · แสดงว่า SG เขียนคู่มือละเอียดกว่า</td></tr>
+</table>
+
+<div class="box"><b>ผลกระทบต่อห่วงโซ่ความเชื่อมโยงงานคุณภาพ:</b> <span class="opinion">คู่มือคุณภาพหน่วยงานของ SG มีความละเอียดสูง (main_topics เฉลี่ย 10 vs AC 4.8) · <b>ต้นน้ำที่แท้จริงของ KPI ในแผน PDCA9 คือ "เป้าหมายคุณภาพ" ในส่วนที่ 3 ของคู่มือ</b> ที่อ้างอิงตัวย่อในวงเล็บ (สพฐ. · FSG · สมศ. · SG · DP-SG · SP-FSG · GOV-FSG · FIN-FSG · POL-FSG · SDG) · SG อ้างอิงครบทั้ง 10 ค่ายมาตรฐาน · การตรวจการเชื่อมโยงว่าตัวย่อคุณภาพเหล่านี้ปรากฏครบในแผนของทุกหน่วยหรือไม่ · ดู <b>ส่วนที่ ๓ก</b> ด้านล่าง</span></div>
+
+<h2>ส่วนที่ ๓ก · ผลการตรวจการเชื่อมโยง KPI จากคู่มือคุณภาพสู่แผน PDCA9</h2>
+<div class="box box-plan">
+<p><b>แหล่งอ้างอิงที่ถูกต้อง:</b> "เป้าหมายคุณภาพ (KPI)" ของหน่วยงานอยู่ใน <b>ส่วนที่ 3 ของคู่มือคุณภาพหน่วยงาน</b> · แต่ละหน่วยเลือกอ้างอิงจากชุดมาตรฐานคุณภาพ 10 ค่ายตามภารกิจของตน · ระบุเป็น <b>ตัวย่อในวงเล็บ</b> ท้าย KPI แต่ละข้อ</p>
+<p style="margin-top:6px"><b>ผลการวิเคราะห์:</b> ทีม QUALITY_MANUAL_INSPECTOR ดึงข้อมูลจริงจากระบบ SWIS โมดูล kpi_norm ของ SG · ปีการศึกษา 2569 · ดึงเมื่อ 25 สิงหาคม 2569</p>
+</div>
+
+<div class="kpi">
+<div class="kpi-card"><div class="val">10</div><div class="lbl">ชุดมาตรฐานอ้างอิงที่ SG ใช้</div></div>
+<div class="kpi-card"><div class="val">448</div><div class="lbl">รวมตัวชี้วัดคุณภาพ 10 ชุด</div></div>
+<div class="kpi-card ok"><div class="val">444</div><div class="lbl">✅ ถูกอ้างในแผน (99.11%)</div></div>
+<div class="kpi-card warn"><div class="val">4</div><div class="lbl">⚠️ ยังไม่ถูกอ้างในแผนใด</div></div>
+</div>
+
+<div class="box box-ok">
+<b>✅ สรุปสถานะ (ระดับทั้งโรงเรียน):</b>
+<ul style="margin-left:20px">
+<li>ตัวชี้วัดในคู่มือรวม <b>448 ตัว</b> · อ้างแล้วในแผน <b>444 ตัว (99.11%)</b></li>
+<li><b>4,491 links</b> · <b>83 แผน</b> มีการเชื่อมโยง · <b>40 plots</b></li>
+<li>นโยบายโรงเรียน <b>68 เรื่อง</b> ถูกอ้าง <b>112 ครั้ง</b></li>
+<li>มาตรฐานสากล 6 items · standards 2 · plans_linked 0 (ยังไม่ผูก)</li>
+<li><span class="opinion">การอ้างอิงระดับทั้งโรงอยู่ในเกณฑ์ <b>ดีมาก</b> · SG มี % การอ้างอิงตัวชี้วัดในแผน สูงกว่า AC (75.61%) มาก · เป็นตัวอย่างที่ดีให้ 13 โรงที่เหลือในเครือมูลนิธิ</span></li>
+</ul>
+</div>
+
+<div class="box box-warn">
+<b>ตัวชี้วัด 444 ตัวจาก 448 ตัวถูกอ้างอิงในแผนแล้ว (99.11%) · อีก 4 ตัวชี้วัดระบบยังไม่พบว่าถูกอ้างในแผนใด</b>
+<p style="margin-top:6px"><span class="opinion">4 ตัวชี้วัดที่ยังไม่ถูกอ้างนี้ อาจเข้าข่ายกรณีใดกรณีหนึ่ง: <b>(ก)</b> หน่วยงานที่ควรรับผิดชอบยังไม่ได้ระบุอ้างอิงในแผน จึงต้องเพิ่ม · <b>(ข)</b> ตัวชี้วัดเหล่านี้ไม่ตรงกับภารกิจของโรงเรียน จึงต้องชี้แจงเหตุผลไว้ในระบบ</span></p>
+<p style="margin-top:6px"><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานประกันคุณภาพการศึกษา (มิสชญาภา บุญเพ็ง · id_dept 2561) ช่วยดึงรายชื่อ 4 ตัวชี้วัดนี้จากระบบ SWIS · จำแนกลงหน่วยงานตามภารกิจ · แล้วแจ้งหัวหน้าแผนเพิ่มการอ้างอิง หรือชี้แจงเหตุผลที่ไม่รับผิดชอบให้ครบ · จะได้บรรลุ 100% ในรอบถัดไป</p>
+</div>
+
+<div class="box"><b>📋 ข้อจำกัดของการตรวจในรอบนี้:</b>
+<ul style="margin-left:20px">
+<li>เครื่องมือ MCP เปิดให้ดึงระดับ<b>ทั้งโรงเรียน</b>ได้ · ตัวเลข 448/444 คือข้อเท็จจริง</li>
+<li><b>ยังไม่เปิด</b>ให้ดึงส่วนที่ 3 ของคู่มือ<b>รายหน่วยงาน</b> · จึงยังไม่สามารถบอกได้ในรายงานนี้ว่า "แผน X ขาดตัวย่อ FSG" หรือ "แผน Y ขาด สพฐ."</li>
+<li><b>รายงานฉบับถัดไป</b>: หลัง SWIS Plus พัฒนาระบบเชื่อม KPI คู่มือ → แผน อัตโนมัติ (บราเดอร์สั่งแล้ว 25 ส.ค.) · จะไม่ต้องตรวจด้วยมืออีก</li>
+</ul>
+</div>
+
+<h2>ส่วนที่ ๔ · หน่วยงานที่มีคู่มือคุณภาพในระบบ 71/72 หน่วยงาน · อีก 1 หน่วยงานระบบยังไม่พบ</h2>
+<p>โรงเรียนจัดทำคู่มือคุณภาพเข้าระบบแล้ว <b>71 หน่วยงาน จาก 72 หน่วยงาน</b> · อีก 1 หน่วยงานระบบยังไม่พบข้อมูล รบกวนช่วยยืนยันว่าจัดทำแล้วหรือยัง</p>
+<table>
+<tr><th class="c" style="width:10%">id_dept</th><th style="width:30%">ชื่อหน่วยงาน</th><th style="width:20%">ฝ่าย/แผนก</th><th>สิ่งที่อยากให้ทำต่อ</th></tr>
+<tr><td class="c b">2567</td><td>งาน SG NEXT</td><td>แผนกความเป็นสากล (ใต้ฝ่ายวิชาการ)</td><td class="b" style="color:var(--bad)">ระบบยังไม่พบคู่มือคุณภาพและ Job Spec ของหน่วยงานนี้ (บุคลากร 27 คน · js_received_total 0) รบกวนมิสสุชาวลี ศรีโหมด (หัวหน้าหน่วย) ช่วยยืนยัน · หากยังไม่ได้จัดทำ โปรดประสาน QUALITY_MANUAL_INSPECTOR เพื่อจัดทำคู่มือครบ 6 ส่วน + Job Spec ครบ 5 กลุ่ม</td></tr>
+</table>
+
+<h2>ส่วนที่ ๕ · แผนใช้จริง 73 แผน · ในทะเบียนระบบ 100 รายการ · ต่างกัน 27 รายการที่ยังไม่กรอกครบ</h2>
+<p>โรงเรียนมี<b>แผนใช้จริง 73 แผน</b> ครบ 9 ขั้นตอน P-D-C-A ทุกแผน · แต่ในทะเบียนระบบ SWIS มีทั้งหมด <b>100 รายการ</b> · ต่างกัน 27 รายการ · จากการตรวจพบว่าเป็นรายการที่ยังไม่ได้กรอกขั้นตอน (0 ขั้นตอน) หรือมีชื่อเดียวกับแผนหลักของหน่วยงานเดียวกัน (เป็น profile ที่ 2 · 3 · 4 ของหน่วยงานเดิม) · ขอความกรุณาช่วยยืนยันและพิจารณาลบออก เพื่อให้ตัวเลขในทะเบียน 73 = 73 ตรงกัน สะท้อนภาระงานจริงของโรงเรียน</p>
+<p class="note"><b>วิธีอ่านตาราง:</b> คอลัมน์ "รหัสรายการ" (id_profile) คือหมายเลขของแต่ละรายการในระบบ SWIS · คอลัมน์ "สภาพในระบบ" ระบุว่ารายการนั้นเป็นรายการที่ 2/3/4 ของหน่วยงานใด และยังไม่ได้กรอกอะไรบ้าง (ขั้นตอน · KPI · การอนุมัติ)</p>
+<table>
+<tr><th style="width:10%" class="c">รหัสรายการ<br>(id_profile)</th><th style="width:32%">หน่วยงาน</th><th>สภาพในระบบ · สิ่งที่ยังไม่ได้กรอก</th></tr>
+<tr><td class="c b">430</td><td>กลุ่มสาระการงานอาชีพ (มัธยม)</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลักคือ id 432 · ใช้จริงอยู่แล้ว) · รายการนี้ยังไม่ได้กรอกขั้นตอนใดใน 9 ขั้น P-D-C-A</td></tr>
+<tr><td class="c b">431</td><td>กลุ่มสาระการงานอาชีพ (มัธยม)</td><td>เป็นรายการที่ 3 ของหน่วยงานนี้ (แผนหลัก id 432) · มีเพียงคำอธิบายชื่อยาว · ยังไม่ได้กรอกขั้นตอนใน 9 ขั้น</td></tr>
+<tr><td class="c b">413</td><td>กลุ่มสาระการเรียนรู้ศิลปะ (มัธยม)</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 415 · ใช้จริง) · ยังไม่ได้กรอกขั้นตอนใดใน 9 ขั้น</td></tr>
+<tr><td class="c b">414</td><td>กลุ่มสาระการเรียนรู้ศิลปะ (มัธยม)</td><td>เป็นรายการที่ 3 ของหน่วยงานนี้ · ยังไม่ได้กรอกขั้นตอนใดใน 9 ขั้น</td></tr>
+<tr><td class="c b">362</td><td>งานทรัพยากรมนุษย์</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 359 · ใช้จริง · มี KPI 14 ข้อ) · รายการนี้กรอก KPI ไปเพียง 1 ข้อ · ยังไม่ได้กรอกขั้นตอนใน 9 ขั้น</td></tr>
+<tr><td class="c b">360</td><td>งานนักศึกษาวิชาทหาร</td><td>เป็นรายการเดิม (แผนใหม่ที่ใช้จริงคือ id 456) · ยังไม่ได้กรอกขั้นตอนใน 9 ขั้น · ยังไม่ผ่านการอนุมัติ</td></tr>
+<tr><td class="c b">358</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td>เป็นรายการเดิม (แผนใหม่ที่ใช้จริงคือ id 412 · มี KPI 5 ข้อ) · ยังไม่ได้กรอกขั้นตอน · ยังไม่ผ่านการอนุมัติ</td></tr>
+<tr><td class="c b">361</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td>เป็นรายการเดิม (แผนใหม่ที่ใช้จริงคือ id 450 · อนุมัติแล้ว) · รายการนี้กรอกขั้นตอน 9 ขั้นครบ · แต่ยังไม่ผ่านการอนุมัติ · เป็นเนื้อซ้ำกับ 450</td></tr>
+<tr><td class="c b">420</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 357 · ใช้จริง) · มีเฉพาะชื่อ · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">366</td><td>งานบัญชีและงบประมาณ</td><td>เป็นรายการที่ผูกกับหมายเลขหน่วยงานเก่า (id_dept 2623 · ปัจจุบันเปลี่ยนเป็น 2624) · ยังไม่ได้กรอกขั้นตอน · เหลือรอลบ</td></tr>
+<tr><td class="c b">387</td><td>งานบัญชีและงบประมาณ</td><td>เป็นรายการที่ 3 ของหน่วยงานนี้ (แผนหลัก id 369) · ยังไม่ได้กรอกขั้นตอน · กรอก KPI ไป 1 ข้อ</td></tr>
+<tr><td class="c b">364</td><td>งานยานพาหนะและจราจร</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 429 · ใช้จริง) · กรอก KPI ไป 1 ข้อ · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">424</td><td>งานยานพาหนะและจราจร</td><td>เป็นรายการที่ 3 ของหน่วยงานนี้ · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">428</td><td>งานยานพาหนะและจราจร</td><td>เป็นรายการที่ 4 ของหน่วยงานนี้ · ยังไม่ได้กรอกขั้นตอน (หน่วยงานยานพาหนะมีรายการซ้ำ 3 อัน · ควรลบเหลือแผนหลัก 429 อันเดียว)</td></tr>
+<tr><td class="c b">416</td><td>งานวัดผลและทะเบียนนักเรียน</td><td>ระบบเก็บชื่อเป็น "สมคิด วังจำนงค์" (ชื่อคน ไม่ใช่ชื่อแผน) · ผิดรูปแบบ · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">404 · 407 · 408 · 409</td><td>งานศูนย์วิชาการและนันทนาการเซนต์คาเบรียล 2000</td><td>4 รายการที่ยังไม่ได้กรอกขั้นตอน · แผนหลักที่ใช้จริงคือ id 410 (มี 9 ขั้นครบ · KPI 9) · เก็บ 410 · ลบ 4 รายการนี้</td></tr>
+<tr><td class="c b">405</td><td>งานสารสนเทศและการวิจัยเพื่อพัฒนา</td><td>มีเฉพาะคำอธิบายชื่อยาว · ยังไม่ได้กรอกขั้นตอน · แผนหลักคือ id 406 (มี 9 ขั้นครบ · แต่ยังไม่อนุมัติ ดู §7 A4)</td></tr>
+<tr><td class="c b">388 · 389</td><td>งานส่งเสริมประชาธิปไตย คุณธรรม จริยธรรม</td><td>2 รายการ · id 388 กรอก KPI ไป 8 ข้อ แต่ยังไม่ได้กรอกขั้นตอน · id 389 มีชื่อแปลก "ดแอแอแ" ผิดรูปแบบ · แผนหลักที่ใช้จริงคือ id 398 (มี 9 ขั้นครบ · อนุมัติแล้ว)</td></tr>
+<tr><td class="c b">417</td><td>งานอภิบาล</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 396 · ใช้จริง มี KPI 11 ข้อ) · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">421</td><td>งานอาคารสถานที่และสิ่งแวดล้อม</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 422 · ใช้จริง) · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">372</td><td>งานเทคโนโลยีสารสนเทศเพื่อการศึกษา</td><td>เป็นรายการที่ 2 ของหน่วยงานนี้ (แผนหลัก id 401 · ใช้จริง · KPI 6) · ยังไม่ได้กรอกขั้นตอน</td></tr>
+<tr><td class="c b">385</td><td>ระดับชั้นประถมศึกษาปีที่ 3</td><td>มีเฉพาะคำอธิบายชื่อยาว · ยังไม่ได้กรอกขั้นตอน · แผนหลักคือ id 384 (มี 9 ขั้นครบ · KPI 14 · อนุมัติแล้ว)</td></tr>
+</table>
+<div class="box box-warn"><b>ท่านผู้อำนวยการโปรดพิจารณาสั่งการ:</b> ให้งานประกันคุณภาพการศึกษา + งานสารสนเทศ ตรวจสอบทีละแผน · <b>ลบใน SWIS</b> เพื่อให้ตัวเลขในระบบสะท้อนภาระงานจริง · ป้องกันการสรุปสถิติผิด · <b>แผนกู้</b></div>
+
+<h2>ส่วนที่ ๖ · โครงสร้างการบริหาร + Confirm Loop</h2>
+<div class="kpi">
+<div class="kpi-card"><div class="val">6</div><div class="lbl">ฝ่าย · มีหน่วยงานจริง 5 (คณะภราดาว่าง)</div></div>
+<div class="kpi-card"><div class="val">72</div><div class="lbl">หน่วยงานในผัง · มีแผน/งบจริง 71</div></div>
+<div class="kpi-card warn"><div class="val">417/664</div><div class="lbl">บุคลากรในโครง (⚠️ 247 ตกจากผัง)</div></div>
+<div class="kpi-card ok"><div class="val">346/417</div><div class="lbl">มีรหัสสเปคตามคู่มือ (Job Spec)</div></div>
+</div>
+
+<h3>ผู้อำนวยการและโครงสร้าง 6 ฝ่าย</h3>
+<table>
+<tr><th style="width:22%">ฝ่าย</th><th style="width:8%" class="c">หน่วยงาน</th><th style="width:38%">หัวหน้าฝ่าย (canonical)</th><th>หมายเหตุ</th></tr>
+<tr><td colspan="4" class="b" style="background:var(--ownerbg);color:var(--owner)">ผู้อำนวยการ: <b>ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์</b> (canonical จาก _SG_NUMBER_SET_20260826.md · ใส่ "ดร." ทุกห้อง)</td></tr>
+<tr><td class="b">ฝ่ายธุรการ-การเงิน (261)</td><td class="c">5</td><td>นายดร. อาวุธ ศิลาเกษ</td><td>ธุรการ · การเงิน · จัดซื้อ · บัญชี</td></tr>
+<tr><td class="b">ฝ่ายบริหารทั่วไป (262)</td><td class="c">6</td><td>มาสเตอร์ปริยะ มงคลศิริ</td><td>อาคาร · โภชนาการ · สุขอนามัย · ยานพาหนะ · ศูนย์วิชาการฯ</td></tr>
+<tr><td class="b">สำนักผู้อำนวยการ (263)</td><td class="c">7</td><td>มิสวิภา พิณรัตน์</td><td>นโยบาย · ประกันคุณภาพ · HR · สารสนเทศ · สื่อสารองค์กร · สื่อโสตฯ</td></tr>
+<tr><td class="b">ฝ่ายวิชาการ (264)</td><td class="c">31</td><td>มิสกรองจิตต์ วานิชวรรณ์</td><td>รวม <b>แผนกความเป็นสากล</b> (SGLC · SGIEP · SG NEXT · วิเทศ · ภาษาจีน) · 8 กลุ่มสาระ ประถม+มัธยม · หลักสูตร · นิเทศ · วัดผล ฯลฯ</td></tr>
+<tr><td class="b">ฝ่ายกิจการนักเรียน (266)</td><td class="c">23</td><td>มิสนาถณรินทร์ วัฒน์ธนนันท์</td><td>รวม <b>แผนกกิจกรรม</b> (กิจกรรมสัมพันธ์ชุมชน · ประชาธิปไตย · ลูกเสือ · นักศึกษาวิชาทหาร · อภิบาล) + ระดับชั้น ป.1-ม.6 (12 หน่วย)</td></tr>
+<tr><td class="b">คณะภราดา (269)</td><td class="c">0</td><td>—</td><td>หน่วยว่าง · ไม่มีแผน/งบ (จึงเหลือ "มีหน่วยงานจริง 5 ฝ่าย")</td></tr>
+</table>
+
+<h3>Confirm Loop · สถานะการยืนยันข้อมูลของโรงเรียน ปีการศึกษา 2569</h3>
+<p>Confirm Loop คือขั้นตอนที่โรงเรียนยืนยันโครงสร้างการบริหารและอัตรากำลังของปีการศึกษาปัจจุบัน · เป็นเงื่อนไขก่อนการนิเทศทุกครั้ง</p>
+<table style="margin-top:6px">
+<tr><th style="width:36%">สถานะรายหน่วยงาน (72 หน่วย)</th><th class="c" style="width:14%">จำนวน</th><th>ความหมาย</th></tr>
+<tr><td>ส่งแล้ว (กด final)</td><td class="c b" style="color:var(--ok)">22</td><td>เสร็จสมบูรณ์ · ระบบยืนยันแล้ว</td></tr>
+<tr><td>ตอบครบ 6 ส่วน · ยังไม่กดส่ง</td><td class="c b">1</td><td>เนื้อครบแล้ว รอหัวหน้าหน่วยกด submit</td></tr>
+<tr><td>กำลังทำ (ยังไม่ครบ 6 ส่วน)</td><td class="c b">7</td><td>อยู่ระหว่างกรอกข้อมูล</td></tr>
+<tr><td>ระบบยังไม่พบว่าเริ่ม</td><td class="c b" style="color:var(--bad)">42</td><td>หากหน่วยงานได้เริ่มแล้วแต่ระบบยังไม่แสดง รบกวนช่วยยืนยัน</td></tr>
+<tr style="background:var(--soft);font-weight:bold"><td>รวม (22+1+7+42)</td><td class="c">72</td><td>ผลรวม 4 ช่องเท่ากับ 72 หน่วย</td></tr>
+</table>
+
+<div class="box box-bad">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> 30 หน่วยงานเดินหน้า Confirm Loop แล้ว (ส่งครบ 22 · ตอบครบรอกดส่ง 1 · กำลังทำ 7) · บุคลากรยืนยันตัวตนแล้ว 94 คน จาก 417 คน (22.5%)</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> 42 หน่วยงาน (58%) ระบบยังไม่พบว่าเริ่ม Confirm Loop · บุคลากร 323 คนระบบยังไม่พบการยืนยันตัวตน · หากหน่วยงาน/บุคลากรได้ดำเนินการแล้วแต่ระบบยังไม่แสดง รบกวนช่วยยืนยันผ่านลิงก์ในระบบ SWIS</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนท่านผู้อำนวยการจัดประชุมด่วนกับหัวหน้าฝ่ายทั้ง 6 ฝ่าย · กำหนด deadline ให้ 42 หน่วยกด submit ก่อน 5 ก.ย. 2569 · งานทรัพยากรมนุษย์ (มิสนงนุช ขจรศรี) ส่งลิงก์ยืนยันซ้ำ + จัด workshop ระดับฝ่ายให้บุคลากร 323 คนที่เหลือ</p>
+</div>
+
+<h2>ส่วนที่ ๖ก · งบประมาณโรงเรียนเซนต์คาเบรียล ปีการศึกษา 2569 · ผูกกับแผน PDCA9</h2>
+<p>ข้อมูลงบประมาณดึงจาก <b>ระบบ SWIS Plus · Budget v5</b> (replica sync 24 สิงหาคม 2569 19:16 น.) · หมวดรายจ่ายผูกผ่านรายการงบ (item) · หมวดรายรับผูกผ่านขั้นตอน (step)</p>
+<div class="box box-warn"><b>ตัวเลขการผูกแผน (ล็อกจาก _SG_NUMBER_SET_20260826):</b> ตั้งจ่าย 739,100,335.82 บาท · จ่ายจริง 224,800,341.77 บาท · <b>ผูกแผนได้จริง 178,949,307.89 บาท</b> · <b>ต่าง 45,851,033.88 บาท (20.4%)</b> ที่<b>ยังไม่ผูกแผน</b> · <b>ห้ามเขียน "ผูกแผน 100%"</b></div>
+
+<div class="kpi">
+<div class="kpi-card"><div class="val">391.80M</div><div class="lbl">รายรับ ตั้งไว้ (ล้านบาท)</div></div>
+<div class="kpi-card warn"><div class="val">75.76M</div><div class="lbl">รายรับ จริง (19.34%)</div></div>
+<div class="kpi-card"><div class="val">739.10M</div><div class="lbl">รายจ่าย ตั้งไว้ (ล้านบาท)</div></div>
+<div class="kpi-card warn"><div class="val">224.80M</div><div class="lbl">รายจ่าย จริง (30.42%)</div></div>
+</div>
+
+<h3>รายจ่าย · 6 หมวด (Expense)</h3>
+<table>
+<tr><th style="width:30%">หมวด</th><th class="c" style="width:16%">ตั้งไว้ (บาท)</th><th class="c" style="width:16%">จ่ายจริง (บาท)</th><th class="c" style="width:10%">%</th><th>หมายเหตุ</th></tr>
+<tr><td>ค่าใช้จ่ายดำเนินการ</td><td class="r">257,230,524.25</td><td class="r">66,101,164.72</td><td class="c">25.7%</td><td>หมวดใหญ่สุด · เงินเดือน สวัสดิการ ค่าใช้จ่ายประจำ</td></tr>
+<tr><td>ค่าใช้จ่ายอื่นๆ</td><td class="r">194,734,703.50</td><td class="r">87,058,474.18</td><td class="c" style="color:var(--warn)">44.71%</td><td>เป็นหมวดที่มี % เบิกจ่ายสูงที่สุดใน 6 หมวดรายจ่าย (สูงกว่าค่าเฉลี่ยรวม 30.42% เกือบเท่าตัว) · รบกวนงานบัญชีตรวจว่าเป็นรายจ่ายที่วางแผนไว้แล้วหรือรายจ่ายฉุกเฉิน</td></tr>
+<tr><td>ค่าธรรมเนียมอื่นๆ</td><td class="r">133,676,575.00</td><td class="r">32,502,190.59</td><td class="c">24.31%</td><td>ค่าเรียนพิเศษ · กิจกรรมเสริม</td></tr>
+<tr><td>งบพัฒนาฝ่ายต่างๆ</td><td class="r">98,597,379.00</td><td class="r">31,510,787.55</td><td class="c">31.96%</td><td>งบที่ผูกโดยตรงกับแผน PDCA9</td></tr>
+<tr><td>ค่าใช้จ่ายเพื่อสวัสดิการ</td><td class="r">29,206,740.07</td><td class="r">2,726,134.44</td><td class="c" style="color:var(--warn)">9.33%</td><td>% เบิกจ่ายต่ำ · ตรวจว่ามีการเบิกจริงหรือไม่</td></tr>
+<tr><td>งบจัดสรรเข้ากองทุน</td><td class="r">0</td><td class="r">0</td><td class="c">—</td><td>ไม่มีการจัดสรร</td></tr>
+<tr style="background:var(--soft);font-weight:bold"><td>รวม</td><td class="r">739,100,335.82</td><td class="r">224,800,341.77</td><td class="c">30.42%</td><td>ผ่านครึ่งปี · เบิกจริง 30%</td></tr>
+</table>
+
+<h3>รายรับ · 5 หมวด (Income)</h3>
+<table>
+<tr><th style="width:30%">หมวด</th><th class="c" style="width:16%">ตั้งไว้ (บาท)</th><th class="c" style="width:16%">รับจริง (บาท)</th><th class="c" style="width:10%">%</th><th>หมายเหตุ</th></tr>
+<tr><td>ค่าธรรมเนียมอื่น (1-20)</td><td class="r">132,068,900.00</td><td class="r">21,657,680.00</td><td class="c">16.4%</td><td>ค่ากิจกรรม · เสริม</td></tr>
+<tr><td>รายรับอื่น (1-30)</td><td class="r">109,430,368.60</td><td class="r">12,797,573.00</td><td class="c">11.69%</td><td>รายรับเบ็ดเตล็ด</td></tr>
+<tr><td>ค่าธรรมเนียมการศึกษา (1-10)</td><td class="r">0</td><td class="r">0</td><td class="c">—</td><td class="warn">⚠️ ตั้ง 0 · ต้องตรวจ (SG มีนักเรียน 4,567 คน ต้องมีรายรับค่าเทอม)</td></tr>
+<tr><td>รายรับจากฝ่ายต่าง ๆ (1-940)</td><td class="r">10,597,460.00</td><td class="r">16,050.00</td><td class="c" style="color:var(--bad)">0.15%</td><td class="b" style="color:var(--bad)">⚠️ ต่ำผิดปกติ · ตรวจ</td></tr>
+<tr><td>รายรับจากสวัสดิการ (1-930)</td><td class="r">0</td><td class="r">0</td><td class="c">—</td><td>ไม่มีการตั้ง</td></tr>
+<tr><td>เงินกู้ยืม</td><td class="r">0</td><td class="r">0</td><td class="c">—</td><td>ไม่มีการกู้</td></tr>
+<tr style="background:var(--soft);font-weight:bold"><td>รวม</td><td class="r">391,800,069.60</td><td class="r">75,759,645.50</td><td class="c">19.34%</td><td>ผ่านครึ่งปี · รับจริง 19%</td></tr>
+</table>
+
+<div class="box box-warn">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> ตั้งงบรายรับ 391.80 ล้านบาท · รายจ่าย 739.10 ล้านบาท · ผูกแผนได้จริง 178.95 ล้านบาท (แสดงว่างานประมาณและงานการเงินทำเป็นระบบ)</p>
+<p><b>จุดที่ระบบยังไม่พบ (4 จุด รบกวนช่วยยืนยัน):</b></p>
+<ul style="margin-left:20px">
+<li><b>ค่าธรรมเนียมการศึกษา (1-10) แสดง 0 ในระบบ</b> — แต่โรงเรียนมีนักเรียน 4,567 คน จึงต้องมีรายรับค่าเทอม · หากค่าเทอมไปบันทึกในหมวดอื่น (เช่น ค่าธรรมเนียมอื่น 1-20) รบกวนช่วยยืนยัน</li>
+<li><b>รายรับจากฝ่ายต่าง ๆ (1-940) เบิกจริง 0.15%</b> ต่ำผิดปกติเทียบกับที่ตั้งไว้ 10.6 ล้านบาท · หากรายรับไปบันทึกในหมวดอื่นแล้วรบกวนช่วยยืนยัน</li>
+<li><b>ค่าใช้จ่ายอื่น ๆ เบิก 44.71%</b> สูงกว่าค่าเฉลี่ยหมวดอื่น · รบกวนงานบัญชีตรวจว่าเป็นรายจ่ายฉุกเฉินที่วางแผนไว้แล้ว หรือเป็นค่าใช้จ่ายนอกแผนที่ต้องทบทวน</li>
+<li><b>สวัสดิการเบิก 9.33%</b> ต่ำเมื่อเทียบกับที่ตั้งไว้ 29.2 ล้านบาท · หากมีการเบิกจ่ายในระบบอื่นแล้วรบกวนช่วยยืนยัน หรือหากบุคลากรยังไม่ทราบสิทธิ์ HR ช่วยประชาสัมพันธ์</li>
+</ul>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> งานการเงิน (มิสธริดา ภิรธนาพงศ์) + งานบัญชีและงบประมาณ ร่วมกับงานประกันคุณภาพ ตรวจ 4 จุดข้างต้น · หากพบว่ามีการบันทึกในหมวดที่ไม่ตรงกับที่ตั้งงบ ให้ปรับให้ตรงกัน · เพื่อรายงานงบสะท้อนความเป็นจริง</p>
+</div>
+
+<h2>ส่วนที่ ๖ข · ปฏิทินกิจกรรม + รายวิชา (ตาม _SG_NUMBER_SET_20260826)</h2>
+
+<h3>ปฏิทินกิจกรรมของโรงเรียน (re-lock 26 ส.ค. 23:36 · ตาม _SG_NUMBER_SET_20260826)</h3>
+<table>
+<tr><th style="width:36%">รายการ</th><th class="c" style="width:16%">จำนวน</th><th>คำอธิบาย</th></tr>
+<tr><td class="b">กิจกรรมจริง (master_cal=0) — <b>ฐานคำนวณ %</b></td><td class="c b">645</td><td>กิจกรรมที่หน่วยงานลงในปฏิทิน · เป็น "ตัวหาร" ที่ถูกต้อง (ใช้กับ report_calendar_1.php)</td></tr>
+<tr style="background:#fef3c7"><td>+ timeline ขั้นตอนแผน PDCA (plan_step_rows)</td><td class="c">4,386</td><td class="b" style="color:var(--warn)">ระบบสร้างอัตโนมัติจากขั้นตอนแผน (เช่น "7.4 รับการนิเทศ") · <b>แยกช่อง · ห้ามบวกรวม</b></td></tr>
+<tr style="background:var(--soft)"><td class="b">ยอดในหน้าจอปฏิทิน (645+4,386)</td><td class="c">5,029</td><td class="b" style="color:var(--bad)">⚠️ <b>ห้ามใช้ 5,029 เป็นฐาน %</b> · เพราะรวม plan_step_rows ที่ไม่ใช่กิจกรรม</td></tr>
+<tr><td colspan="3" class="b" style="background:var(--okbg)">รายละเอียดสถานะกิจกรรม 645 กิจกรรม</td></tr>
+<tr><td>เสร็จก่อนกำหนด (done_early)</td><td class="c b">1</td><td>—</td></tr>
+<tr><td>เสร็จตามกำหนด (done_ontime)</td><td class="c b">29</td><td>—</td></tr>
+<tr><td>เสร็จหลังกำหนด (done_late)</td><td class="c b">0</td><td>—</td></tr>
+<tr style="background:var(--okbg)"><td class="b">เสร็จรวม (done_total)</td><td class="c b" style="color:var(--ok)">30</td><td class="b">= 1+29+0 · ตรงกับหน้า report_calendar_1.php</td></tr>
+<tr style="background:var(--warnbg)"><td class="b">ยังไม่ตรวจสอบสถานะ (un_check)</td><td class="c b" style="color:var(--warn)">615</td><td>รอหัวหน้าปิดสถานะ</td></tr>
+<tr style="background:var(--badbg)"><td class="b">🔴 เลยกำหนด (overdue)</td><td class="c b" style="color:var(--bad)">319</td><td class="b" style="color:var(--bad)">เซตย่อยของ un_check · <b>ห้ามบวกกับ done_total หรือรวม total</b> · เดิมปน 1,582/1,598 ปี 2568 · ตัวเลข 2569 = 319</td></tr>
+<tr style="background:var(--okbg)"><td class="b">% ปิดสถานะ (ฐาน 645)</td><td class="c b" style="color:var(--ok)">4.65% (30/645)</td><td class="b" style="color:var(--bad)"><b>ห้ามใช้ 0.60% (ฐาน 5,029) · ห้ามใช้ 0.53%</b> · เพราะฐานผิด</td></tr>
+</table>
+
+<h4>ปฏิทิน · % done รายฝ่าย (จาก compare_schools calendar_status 26 ส.ค.)</h4>
+<table>
+<tr><th style="width:26%">ฝ่าย/แผนก</th><th class="c" style="width:10%">total</th><th class="c" style="width:10%">done</th><th class="c" style="width:12%">%done</th><th class="c" style="width:12%">overdue</th><th>ข้อสังเกต</th></tr>
+<tr><td>ฝ่ายบริหารทั่วไป</td><td class="c">11</td><td class="c">9</td><td class="c b" style="color:var(--ok)">81.82%</td><td class="c">2</td><td>เป็นฝ่ายที่ปิดสถานะกิจกรรมได้ % สูงที่สุดใน 7 ฝ่าย · ควรใช้เป็นตัวอย่างการทำงานให้ฝ่ายอื่น</td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน</td><td class="c">2</td><td class="c">1</td><td class="c b" style="color:var(--ok)">50.00%</td><td class="c">1</td><td>กิจกรรมน้อยแต่ปิดครึ่ง</td></tr>
+<tr><td>สำนักผู้อำนวยการ</td><td class="c">33</td><td class="c">8</td><td class="c">24.24%</td><td class="c">20</td><td>ปิดปานกลาง</td></tr>
+<tr><td>แผนกกิจกรรม</td><td class="c">72</td><td class="c">11</td><td class="c">15.28%</td><td class="c">2</td><td>ปิดน้อย</td></tr>
+<tr><td>แผนกความเป็นสากล</td><td class="c">7</td><td class="c">0</td><td class="c warn">0.00%</td><td class="c" style="color:var(--bad)">6</td><td>ยังไม่ปิดสถานะเลย</td></tr>
+<tr><td>ฝ่ายวิชาการ</td><td class="c">39</td><td class="c">0</td><td class="c warn">0.00%</td><td class="c" style="color:var(--bad)">33</td><td class="b" style="color:var(--bad)">⚠️ ยังไม่ปิดสถานะเลย · overdue สูง</td></tr>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td class="c" style="color:var(--warn)">478</td><td class="c">1</td><td class="c" style="color:var(--bad)">0.21%</td><td class="c" style="color:var(--bad)">254</td><td class="b" style="color:var(--bad)">เป็นฝ่ายที่มีกิจกรรมมากที่สุดใน 7 ฝ่าย (478 กิจกรรม · คิดเป็น 74% ของกิจกรรมทั้งโรงเรียน) · แต่ปิดสถานะได้เพียง 1 กิจกรรม · อีก 254 กิจกรรมเลยกำหนดแล้วระบบยังไม่พบการปิดสถานะ · รบกวนช่วยยืนยัน</td></tr>
+</table>
+
+<div class="box box-warn">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> โรงเรียนมีกิจกรรมจริงในปฏิทิน <b>645 กิจกรรม</b> ครอบคลุมทุกฝ่าย · ปิดสถานะเรียบร้อยแล้ว 30 กิจกรรม (ก่อนกำหนด 1 · ตามกำหนด 29)</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> อีก <b>319 กิจกรรมเลยกำหนดแล้วแต่ระบบยังไม่พบการปิดสถานะ</b> · และ <b>615 กิจกรรมยังไม่ได้ตรวจสอบสถานะ</b> · หากหน่วยงานทำกิจกรรมเสร็จแล้วแต่ยังไม่กดปิดสถานะในระบบ รบกวนช่วยยืนยัน · หมายเหตุ: ตัวเลข % ปิด 4.65% (30/645) คำนวณจากฐานกิจกรรมจริง · <b>ไม่ใช้ 0.60% (ฐาน 5,029) และไม่ใช้ 0.53%</b> เพราะฐานเหล่านั้นรวม timeline ขั้นตอนแผนที่ไม่ใช่กิจกรรม</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนหัวหน้าฝ่ายทั้ง 6 ฝ่ายให้หัวหน้าหน่วยงานทุกคนกดปิดสถานะกิจกรรมที่ทำเสร็จแล้ว · โดยเฉพาะฝ่ายกิจการนักเรียน (478 กิจกรรม · ปิด 1) และฝ่ายวิชาการ (39 กิจกรรม · ปิด 0) ที่ overdue สูง · ตั้งเป้า % ปิดสถานะ ≥30% ก่อนสิ้นภาคเรียนที่ 1</p>
+</div>
+
+<h3>รายวิชา · หลักสูตร · ตัวชี้วัด</h3>
+<table>
+<tr><th style="width:36%">รายการ</th><th class="c" style="width:16%">จำนวน</th><th>คำอธิบาย</th></tr>
+<tr><td>รายวิชาเปิดสอน</td><td class="c b">745</td><td>ครอบคลุมทุกกลุ่มสาระ ป.1-ม.6 + EP + จีน</td></tr>
+<tr><td>มีการวัดผล</td><td class="c b">436</td><td>58.5% ของรายวิชา · มีการวัดผลในระบบ</td></tr>
+<tr><td>บันทึกคะแนน</td><td class="c b">425</td><td>57.0% ของรายวิชา · มีคะแนนในระบบ</td></tr>
+<tr style="background:var(--badbg)"><td class="b">หลักสูตรอ้างอิง (ผูกกับหลักสูตร)</td><td class="c b" style="color:var(--bad)">0</td><td>ระบบยังไม่พบการผูกหลักสูตรฐานกับรายวิชา · รบกวนช่วยยืนยัน</td></tr>
+<tr style="background:var(--badbg)"><td class="b">ตัวชี้วัดรายวิชา</td><td class="c b" style="color:var(--bad)">0</td><td>ระบบยังไม่พบการผูกตัวชี้วัดกับรายวิชา · รบกวนช่วยยืนยัน</td></tr>
+</table>
+
+<div class="box box-bad">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> เปิดสอน <b>745 รายวิชา</b> ครอบคลุมทุกกลุ่มสาระ ป.1-ม.6 + EP + ภาษาจีน · มีการวัดผลในระบบ <b>436 รายวิชา</b> (58.5%) · บันทึกคะแนน <b>425 รายวิชา</b> (57.0%)</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> จาก 745 รายวิชา ระบบยังไม่พบการผูก<b>หลักสูตรฐาน</b>กับรายวิชาเลย (0/745) และยังไม่พบการผูก<b>ตัวชี้วัดรายวิชา</b>เลย (0/745) · หากงานหลักสูตรและงานวัดผลได้ดำเนินการผูกในระบบอื่นแล้ว รบกวนช่วยยืนยัน · ผลกระทบคือห่วงโซ่ Chain ระหว่าง "รายวิชา ⟷ KPI ในแผน PDCA9" ยังไม่ต่อกัน · จะกระทบการเขียน SAR ในภาคเรียนถัดไป</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานหลักสูตรการสอน (มาสเตอร์พรพิพัฒน์ ว่องวราการ · id_dept 2571) และงานวัดผลและทะเบียนนักเรียน (มาสเตอร์สมคิด วังจำนงค์ · id_dept 2572) ประสานทีมพัฒนา SWIS Plus เปิดฟังก์ชันผูกหลักสูตร-ตัวชี้วัด-รายวิชา · ตั้งเป้าให้ ≥50% ก่อนสิ้นภาคเรียนที่ 1</p>
+</div>
+
+<h2>ส่วนที่ ๗ · 5 ประเด็นที่ต้องแก้ + ผู้รับผิดชอบต้นทาง</h2>
+
+<h3>ประเด็น A1 · <span class="chip chip-p1">P1 · เร่งด่วน</span> การแนบไฟล์หลักฐาน (Check ข้อ 8 ของ PDCA9)</h3>
+<div class="box box-bad">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> ทุกแผน PDCA9 มีกิจกรรมย่อย (plan_items) รวม <b>772 กิจกรรม</b> · ครบ 9 ขั้นตอน P-D-C-A ทุกแผน</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> จากกิจกรรม 772 ข้อ ระบบยังไม่พบการแนบไฟล์หลักฐานประเมินผลเลย (items_with_file = 0) · หากหน่วยงานได้จัดเก็บไฟล์นอกระบบ SWIS อยู่แล้ว รบกวนช่วยยืนยัน · ผลกระทบคือรายงาน SAR / audit ภายนอก จะไม่มีหลักฐานสนับสนุน · Check ข้อ 8 ของ PDCA9 จะวัดผลไม่ได้ตามจริง</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานประกันคุณภาพ (มิสชญาภา บุญเพ็ง · id_dept 2561) + งานสารสนเทศ (มิสธัญญภรณ์ ดาลัดจรัสแสง · id_dept 2563) + ทีม SWIS Plus ส่วนกลาง ช่วยประสานกัน 3 ข้อ: (ก) ตรวจว่าฟังก์ชัน upload ในระบบใช้งานได้ปกติ · (ข) จัดอบรมผู้รับผิดชอบแผนวิธีแนบไฟล์ · (ค) ตั้งเป้าให้มีการแนบไฟล์ ≥50% ก่อนนิเทศรอบถัดไป</p>
+</div>
+
+<h3>ประเด็น A2 · <span class="chip chip-p1">P1 · เร่งด่วน</span> การยืนยันโครงสร้างและบุคลากร (Confirm Loop)</h3>
+<div class="box box-bad">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> จาก 72 หน่วยงาน มีหน่วยงานที่เดินหน้า Confirm Loop แล้ว <b>30 หน่วย</b> (ส่งครบเรียบร้อย 22 หน่วย · ตอบครบรอกดส่ง 1 หน่วย · กำลังทำ 7 หน่วย) · บุคลากรยืนยันตัวตนแล้ว <b>94 คน จาก 417 คน</b> (22.5%)</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> อีก <b>42 หน่วยงาน</b> ระบบยังไม่พบว่าเริ่ม Confirm Loop · อีก <b>323 คน</b> ระบบยังไม่พบการยืนยันตัวตน · หากหน่วยงาน/บุคลากรได้ดำเนินการแล้วแต่ระบบยังไม่แสดง รบกวนช่วยยืนยัน · ผลกระทบคือโครงสร้างและอัตรากำลังปีการศึกษา 2569 ยังไม่ได้รับสถานะยืนยันจากโรงเรียน · จะเป็นข้อทักท้วงในการนิเทศ 9-10 ก.ย.</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนท่านผู้อำนวยการ (ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์) จัดประชุมด่วนกับหัวหน้าฝ่ายทั้ง 6 ฝ่าย · กำหนด deadline ให้ทุกหน่วยกด submit ก่อน 5 ก.ย. 2569 · และรบกวนงานทรัพยากรมนุษย์ (มิสนงนุช ขจรศรี · id_dept 2562) ส่งลิงก์ยืนยันตัวตนซ้ำให้บุคลากร 323 คนที่ยังไม่ได้ยืนยัน</p>
+</div>
+
+<h3>ประเด็น A3 · <span class="chip chip-p1">P1</span> ความสมบูรณ์ของคู่มือคุณภาพ (6 ส่วนตามเกณฑ์)</h3>
+<div class="box box-bad">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> หน่วยงาน <b>71 จาก 72 หน่วยงาน</b> มีคู่มือคุณภาพในระบบแล้ว (ส่วนใหญ่มี 4-5 ส่วนจาก 6 ส่วนตามเกณฑ์) · main_topics เฉลี่ย 10 หัวข้อต่อหน่วย · สูงกว่าเกณฑ์กลาง</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> ระบบยังไม่พบหน่วยงานใดที่จัดทำคู่มือครบทั้ง 6 ส่วน (main_topic · sub_topic · KPI · เกณฑ์ · ค่าเป้าหมาย · หลักฐาน) · หากมีการเสริมส่วนที่ 6 (หลักฐาน/ภาคผนวก) แล้วแต่ระบบยังไม่แสดง รบกวนช่วยยืนยัน · อีก 1 หน่วยงาน (งาน SG NEXT · id_dept 2567) ระบบยังไม่พบคู่มือคุณภาพเลย · ผลกระทบคือต้นน้ำของ KPI ในแผน PDCA9 ยังไม่สมบูรณ์ครบชั้น</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานประกันคุณภาพการศึกษา (มิสชญาภา บุญเพ็ง · id_dept 2561) ประสาน QUALITY_MANUAL_INSPECTOR (ส่วนกลาง) ระบุส่วนที่ขาดรายหน่วยงาน · แจ้งหัวหน้าเสริมส่วนที่ 6 ให้ครบก่อน 30 ก.ย. 2569 · สำหรับ SG NEXT รบกวนมิสสุชาวลี ศรีโหมด เริ่มจัดทำคู่มือใหม่ทั้งฉบับ</p>
+</div>
+
+<h3>ประเด็น A4 · <span class="chip chip-p2">P2</span> การอนุมัติแผน PDCA9 · อนุมัติแล้ว 69/73 แผน</h3>
+<div class="box box-warn">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> อนุมัติแผน PDCA9 แล้ว <b>69 แผน จาก 73 แผน</b> · <b>งานสุขอนามัย (403 · มิสชลธิชา รัศมีบรรพตกุล) ได้รับการอนุมัติล่าสุดในรอบ 25→26 ส.ค. 2569</b></p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> อีก 4 แผน ระบบยังไม่พบสถานะอนุมัติ (approved=false ณ 26 ส.ค. 23:36) · หากผู้อำนวยการได้ลงนามอนุมัติแล้วในระบบ SWIS แต่ยังไม่แสดง รบกวนช่วยยืนยัน · รายการ 4 แผน:</p>
+<ul style="margin-left:20px">
+<li>id_profile 442 · งานนิเทศและวิจัยในชั้นเรียน (มิสอุษราภรณ์ ทะวะระ · id_dept 2573)</li>
+<li>id_profile 460 · งานระดับชั้น (มิสนาถณรินทร์ วัฒน์ธนนันท์ · id_dept 2625)</li>
+<li>id_profile 406 · งานสารสนเทศและการวิจัยเพื่อพัฒนา (มิสธัญญภรณ์ ดาลัดจรัสแสง · id_dept 2563)</li>
+<li>id_profile 391 · งานสื่อโสตทัศนูปกรณ์ (มาสเตอร์ชาติ ปีลาตี · id_dept 2564)</li>
+</ul>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนหัวหน้าทั้ง 4 หน่วยเสนอแผนอีกครั้งให้ท่านผู้อำนวยการพิจารณาลงนามอนุมัติในระบบ SWIS ก่อน 5 ก.ย. 2569 · ครบ 73/73 ก่อนนิเทศ 9-10 ก.ย.</p>
+</div>
+
+<h3>ประเด็น A5 · <span class="chip chip-p2">P2</span> ตัวเลขในทะเบียนระบบ · 100 รายการ · ใช้จริง 73</h3>
+<div class="box box-warn">
+<p><b>สิ่งที่โรงเรียนทำสำเร็จแล้ว:</b> โรงเรียนมี<b>แผนใช้จริง 73 แผน</b> ครบ 9 ขั้นตอนทุกแผน · ครอบคลุมภารกิจของทั้ง 72 หน่วยงาน</p>
+<p><b>จุดที่ระบบยังไม่พบ:</b> ในทะเบียนระบบ SWIS มี 100 รายการ ต่างจากแผนใช้จริง 27 รายการ · ระบบตรวจพบว่าเป็นรายการที่ซ้ำชื่อกับแผนหลักของหน่วยงานเดียวกัน (เป็นรายการที่ 2 · 3 · 4 ของหน่วยงานเดิม) · หรือรายการที่มีชื่อแต่ยังไม่ได้กรอกขั้นตอน P-D-C-A · หรือรายการที่ไม่ได้กรอก KPI · หากรายการเหล่านี้ยังต้องเก็บไว้เพื่ออ้างอิงประวัติ รบกวนช่วยยืนยัน · ผลกระทบคือตัวเลขในทะเบียนไม่สะท้อนภาระงานจริง (สรุปเป็น 100 แผนแทนที่จะเป็น 73 แผน)</p>
+<p><b>สิ่งที่อยากให้ทำต่อ:</b> รบกวนงานประกันคุณภาพการศึกษา + งานสารสนเทศฯ (มิสธัญญภรณ์ ดาลัดจรัสแสง) ตรวจสอบรายการ 27 แผนใน §5 ทีละแผน · ลบออกจากระบบ SWIS หรือ archive ตามความเหมาะสม · เพื่อให้ตัวเลขในทะเบียนตรงกับภาระงานจริง 73 แผน</p>
+</div>
+
+<h2>ส่วนที่ ๘ · สายผู้รับผิดชอบครบทั้งระบบ (จากต้นน้ำถึงปลายน้ำ)</h2>
+<table>
+<tr><th class="owner" style="width:24%">ระดับ</th><th class="owner" style="width:36%">ผู้รับผิดชอบ (canonical)</th><th class="owner">บทบาท</th></tr>
+<tr><td class="b">ผู้อำนวยการโรงเรียน</td><td class="b" style="color:var(--owner)">ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์</td><td>อนุมัติทุกแผน · เจ้าของ Confirm Loop · เจ้าของนโยบายโรงเรียน</td></tr>
+<tr><td class="b">หัวหน้าสำนัก ผอ.</td><td class="b">มิสวิภา พิณรัตน์</td><td>ประสาน 7 หน่วยของสำนัก · เจ้าของงานประกันคุณภาพและ HR</td></tr>
+<tr><td class="b">งานประกันคุณภาพการศึกษา</td><td class="b">มิสชญาภา บุญเพ็ง (id_dept 2561)</td><td>เจ้าของคู่มือคุณภาพ · KPI norm · Chain of alignment · Confirm Loop</td></tr>
+<tr><td class="b">งานนโยบายและแผน</td><td class="b">มาสเตอร์อติวิชญ์ เซี่ยงคิ้ว (id_dept 2560)</td><td>เจ้าของแผน PDCA9 ระดับโรงเรียน · ประสานงบประมาณ</td></tr>
+<tr><td class="b">งานทรัพยากรมนุษย์</td><td class="b">มิสนงนุช ขจรศรี (id_dept 2562)</td><td>เจ้าของ Job Spec · โครงสร้าง 664 คน · Confirm Loop บุคลากร</td></tr>
+<tr><td class="b">งานสารสนเทศและการวิจัยเพื่อพัฒนา</td><td class="b">มิสธัญญภรณ์ ดาลัดจรัสแสง (id_dept 2563)</td><td>เจ้าของฐานข้อมูล SWIS ระดับโรงเรียน · ลบแผนซ้ำ · อัพโหลด evidence</td></tr>
+<tr><td class="b">หัวหน้าฝ่ายทั้ง 6 ฝ่าย</td><td>ดู §6</td><td>รับผิดชอบแผนในฝ่ายของตน · ลงนามอนุมัติ · ทำ Confirm Loop</td></tr>
+<tr><td class="b">หัวหน้าหน่วยงาน 72 คน</td><td>ดู §10</td><td>เจ้าของแผนรายหน่วย · ต้องผูก KPI · แนบหลักฐาน · ประเมิน</td></tr>
+</table>
+
+<h2>ส่วนที่ ๙ · แผนการดำเนินการ · ลำดับความสำคัญและกำหนดเวลา</h2>
+<table>
+<tr><th style="width:8%">ลำดับ</th><th style="width:30%">งาน</th><th style="width:22%">ผู้รับผิดชอบ</th><th style="width:15%" class="c">Deadline</th><th>Metric ที่ต้องขยับ</th></tr>
+<tr><td class="c b">1</td><td>เร่ง Confirm Loop 42 not_started + บุคลากรยืนยัน 322 คน</td><td>ผอ. + HR (มิสนงนุช)</td><td class="c b" style="color:var(--bad)">5 ก.ย. 2569</td><td>submitted ≥ 60/72 · บุคลากร ≥ 60%</td></tr>
+<tr><td class="c b">2</td><td>อนุมัติ 4 แผนค้าง (นิเทศ · ระดับชั้น · สารสนเทศ · สื่อโสต) · สุขอนามัยอนุมัติแล้ว 26 ส.ค.</td><td>ผอ. + หัวหน้าฝ่ายที่เกี่ยวข้อง</td><td class="c b" style="color:var(--bad)">5 ก.ย. 2569</td><td>approved 69 → 73</td></tr>
+<tr><td class="c b">3</td><td>SG NEXT จัดทำคู่มือคุณภาพ + Job Spec ครบ</td><td>มิสสุชาวลี ศรีโหมด + QMI</td><td class="c">15 ก.ย. 2569</td><td>manual_none 1 → 0 · JS ครบ 5 กลุ่ม</td></tr>
+<tr><td class="c b">4</td><td>ลบ 27 แผนซ้ำ/ทดสอบ · ทำความสะอาดฐานข้อมูล</td><td>งานสารสนเทศฯ (มิสธัญญภรณ์)</td><td class="c">15 ก.ย. 2569</td><td>list = 73 (ไม่ใช่ 100)</td></tr>
+<tr><td class="c b">5</td><td>ประกันคุณภาพระบุ 4 KPI ที่ unused · แจ้งหัวหน้าเพิ่มอ้างอิง</td><td>มิสชญาภา</td><td class="c">30 ก.ย. 2569</td><td>KPI used 444 → 448 (100%)</td></tr>
+<tr><td class="c b">6</td><td>อบรมทีมโรงเรียนแนบไฟล์ evidence (Check ข้อ 8)</td><td>SWIS Plus + สารสนเทศ</td><td class="c">31 ต.ค. 2569</td><td>items_with_file 0 → ≥50%</td></tr>
+<tr><td class="c b">7</td><td>เสริมคู่มือคุณภาพ 71 หน่วย ให้ครบ 6 ส่วน (เพิ่มภาคผนวก)</td><td>QMI + หัวหน้าหน่วย 71 คน</td><td class="c">30 พ.ย. 2569</td><td>manual_full 0 → ≥30</td></tr>
+<tr><td class="c b">8</td><td>ตรวจ HR baseline 664 vs in structure 417 · ประสาน SWIS Plus แก้ 3 คน diff</td><td>HR + SWIS Plus</td><td class="c">31 ธ.ค. 2569</td><td>diff = 0 · get_staff_summary vs org_structure ตรงกัน</td></tr>
+</table>
+
+<h2>ส่วนที่ ๑๐ · หัวใจของรายงาน · รายละเอียดแผน PDCA9 รายหน่วยงาน · 73 แผนใช้จริง</h2>
+<p class="note">ตารางด้านล่างจัดตามฝ่าย · แสดง <b>หัวหน้าแผน + สถานะ + สิ่งที่ท่านต้องแก้/ทำ</b> · เรียนมาเพื่อให้ท่านเห็นชื่อของท่านและงานที่ต้องดำเนินการต่อ</p>
+
+<h3>ฝ่ายธุรการ-การเงิน (5 หน่วยงาน · 6 แผน)</h3>
+<table>
+<tr><th class="plan" style="width:6%">รหัส</th><th class="plan" style="width:22%">หน่วยงาน</th><th class="plan" style="width:18%">หัวหน้าแผน</th><th class="plan" style="width:6%" class="c">9ขั้น</th><th class="plan" style="width:5%" class="c">KPI</th><th class="plan" style="width:12%">อนุมัติ</th><th class="plan">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">450</td><td>งานบริหารฝ่ายธุรการ-การเงิน</td><td class="b" style="color:var(--owner)">มิสอรุณวตรี นักจะเข้<br><span class="note">รหัส 1528 (ตรวจกับทะเบียน HR)</span></td><td class="c">✅ 9</td><td class="c">10</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>รักษาระดับ · เพิ่ม evidence file ในข้อ 8 (ปัจจุบัน 0)</td></tr>
+<tr><td class="c">550</td><td>งานการเงิน</td><td class="b" style="color:var(--owner)">มิสธริดา ภิรธนาพงศ์</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>รบกวนแนบไฟล์งบและใบเบิกในข้อ 8 (การประเมิน) · เพื่อให้เป็นตัวอย่างที่ครบชั้นให้หน่วยงานอื่นทำตาม</td></tr>
+<tr><td class="c">549</td><td>งานธุรการ</td><td class="b" style="color:var(--owner)">มิสธนาภา วิชัยวัตร</td><td class="c">✅ 9</td><td class="c">10</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>เพิ่ม evidence file · เร่ง Confirm Loop หน่วย</td></tr>
+<tr><td class="c">552</td><td>งานจัดซื้อ พัสดุและทรัพย์สิน</td><td class="b" style="color:var(--owner)">มาสเตอร์อมร ดิษยวณิช</td><td class="c">✅ 9</td><td class="c">5</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>เพิ่ม KPI ให้ครอบคลุมมากขึ้น (ปัจจุบัน 5) · แนบใบสั่งซื้อในข้อ 8</td></tr>
+<tr><td class="c">624</td><td>งานบัญชีและงบประมาณ</td><td class="b" style="color:var(--owner)">มิสธริดา ภิรธนาพงศ์</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ลบแผน 366 · 387 ในฝ่ายเดียวกัน (ซ้ำ)</td></tr>
+</table>
+
+<h3>ฝ่ายบริหารทั่วไป (6 หน่วยงาน · 6 แผน)</h3>
+<table>
+<tr><th class="plan" style="width:6%">รหัส</th><th class="plan" style="width:22%">หน่วยงาน</th><th class="plan" style="width:18%">หัวหน้าแผน</th><th class="plan" style="width:6%" class="c">9ขั้น</th><th class="plan" style="width:5%" class="c">KPI</th><th class="plan" style="width:12%">อนุมัติ</th><th class="plan">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">357</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td class="b" style="color:var(--owner)">มาสเตอร์ปริยะ มงคลศิริ</td><td class="c">✅ 9</td><td class="c">3</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>KPI น้อย (3) · พิจารณาเพิ่มให้ครอบคลุม 6 หน่วยที่ดูแล</td></tr>
+<tr><td class="c">422</td><td>งานอาคารสถานที่และสิ่งแวดล้อม</td><td class="b" style="color:var(--owner)">มาสเตอร์ปราโมทย์ เจนสถิตย์ไพบูลย์</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ลบแผน 420 · 421 ซ้ำ · เพิ่ม evidence</td></tr>
+<tr><td class="c">380</td><td>งานโภชนาการและสวัสดิการร้านค้า</td><td class="b" style="color:var(--owner)">มาสเตอร์กฤษณ์ชัย ไชยสมบูรณ์</td><td class="c">✅ 9</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>KPI น้อย (2) · เพิ่มให้ครอบคลุมภารกิจ</td></tr>
+<tr><td class="c">403</td><td>งานสุขอนามัย</td><td class="b" style="color:var(--owner)">มิสชลธิชา รัศมีบรรพตกุล</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ (26 ส.ค.)</span></td><td>อนุมัติล่าสุดในรอบ 25→26 ส.ค. · เพิ่ม evidence file</td></tr>
+<tr><td class="c">429</td><td>งานยานพาหนะและจราจร</td><td class="b" style="color:var(--owner)">มาสเตอร์ชัยวัฒน์ ชนะกานนท์</td><td class="c">✅ 9</td><td class="c">5</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ลบแผน 364 · 424 · 428 ซ้ำ (3 แผน)</td></tr>
+<tr><td class="c">410</td><td>งานศูนย์วิชาการและนันทนาการ SG 2000</td><td class="b" style="color:var(--owner)">มาสเตอร์ชัยพรรษ นาคเงินวิเศษ</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ลบแผน 404 · 407 · 408 · 409 ซ้ำ (4 แผน)</td></tr>
+</table>
+
+<h3>สำนักผู้อำนวยการ (7 หน่วยงาน · 8 แผน)</h3>
+<table>
+<tr><th class="plan" style="width:6%">รหัส</th><th class="plan" style="width:22%">หน่วยงาน</th><th class="plan" style="width:18%">หัวหน้าแผน</th><th class="plan" style="width:6%" class="c">9ขั้น</th><th class="plan" style="width:5%" class="c">KPI</th><th class="plan" style="width:12%">อนุมัติ</th><th class="plan">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">371</td><td>งานบริหารสำนักผู้อำนวยการ</td><td class="b" style="color:var(--owner)">มิสวิภา พิณรัตน์</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ประสานหน่วยในสำนัก · เร่ง Confirm Loop</td></tr>
+<tr><td class="c">451</td><td>งานเลขานุการผู้อำนวยการ</td><td class="b" style="color:var(--owner)">มิสวิภา พิณรัตน์</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>KPI 1 ข้อน้อย · เพิ่มให้ครอบคลุม</td></tr>
+<tr><td class="c">368</td><td>งานนโยบายและแผน</td><td class="b" style="color:var(--owner)">มาสเตอร์อติวิชญ์ เซี่ยงคิ้ว</td><td class="c">✅ 9</td><td class="c">10</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>เป็นตัวอย่างที่ดีของแผนสำนักผู้อำนวยการ · รบกวนช่วยประสาน 6 ฝ่ายเร่ง Confirm Loop</td></tr>
+<tr><td class="c">397</td><td>งานประกันคุณภาพการศึกษา</td><td class="b" style="color:var(--owner)">มิสชญาภา บุญเพ็ง</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>เจ้าภาพ Chain of alignment · เร่งระบุ 4 KPI unused</td></tr>
+<tr><td class="c">359</td><td>งานทรัพยากรมนุษย์</td><td class="b" style="color:var(--owner)">มิสนงนุช ขจรศรี</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>ลบแผน 362 ซ้ำ · เจ้าภาพ Confirm Loop บุคลากร (94/417)</td></tr>
+<tr><td class="c">406</td><td>งานสารสนเทศและการวิจัยเพื่อพัฒนา</td><td class="b" style="color:var(--owner)">มิสธัญญภรณ์ ดาลัดจรัสแสง</td><td class="c">✅ 9</td><td class="c">8</td><td class="c warn"><span class="chip chip-p2">⚠️ ยังไม่อนุมัติ</span></td><td class="b" style="color:var(--bad)">เร่งเสนอ ผอ. อนุมัติ · ลบ 405 (ซ้ำ) · เจ้าภาพลบ 27 แผนขยะทั้งโรง</td></tr>
+<tr><td class="c">391</td><td>งานสื่อโสตทัศนูปกรณ์</td><td class="b" style="color:var(--owner)">มาสเตอร์ชาติ ปีลาตี</td><td class="c">✅ 9</td><td class="c">5</td><td class="c warn"><span class="chip chip-p2">⚠️ ยังไม่อนุมัติ</span></td><td class="b" style="color:var(--bad)">เร่งเสนอ ผอ. อนุมัติ</td></tr>
+<tr><td class="c">373</td><td>งานสื่อสารองค์กร (ประชาสัมพันธ์ฯ)</td><td class="b" style="color:var(--owner)">มาสเตอร์สันติ หาญจิตตระการ</td><td class="c">✅ 9</td><td class="c">3</td><td class="c"><span class="chip chip-p3">✅ อนุมัติ</span></td><td>KPI 3 ข้อ · เพิ่มให้ครอบคลุม PR</td></tr>
+</table>
+
+<h3>ฝ่ายวิชาการ · 31 หน่วยงาน (18 กลุ่มสาระ+วิชาการ + 5 แผนกความเป็นสากล + 8 บริหาร/บริการ)</h3>
+<table>
+<tr><th class="plan" style="width:6%">รหัส</th><th class="plan" style="width:24%">หน่วยงาน</th><th class="plan" style="width:18%">หัวหน้าแผน</th><th class="plan" style="width:6%" class="c">9ขั้น</th><th class="plan" style="width:5%" class="c">KPI</th><th class="plan" style="width:11%">อนุมัติ</th><th class="plan">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">445</td><td>งานบริหารฝ่ายวิชาการ</td><td class="b" style="color:var(--owner)">มิสกรองจิตต์ วานิชวรรณ์</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ประสาน 31 หน่วย · เร่ง evidence file</td></tr>
+<tr><td class="c">411</td><td>งานหลักสูตรการสอน</td><td class="b" style="color:var(--owner)">มาสเตอร์พรพิพัฒน์ ว่องวราการ</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก KPI กับหลักสูตรฐาน · เพิ่ม evidence</td></tr>
+<tr><td class="c">370</td><td>งานวัดผลและทะเบียนนักเรียน</td><td class="b" style="color:var(--owner)">มาสเตอร์สมคิด วังจำนงค์</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅</span></td><td class="b" style="color:var(--bad)">KPI 1 ข้อ น้อยเกินสำหรับงานวัดผล · เพิ่ม · ลบแผน 416 (ผิดชื่อ)</td></tr>
+<tr><td class="c">442</td><td>งานนิเทศและวิจัยในชั้นเรียน</td><td class="b" style="color:var(--owner)">มิสอุษราภรณ์ ทะวะระ</td><td class="c">✅ 9</td><td class="c">1</td><td class="c warn"><span class="chip chip-p2">⚠️</span></td><td class="b" style="color:var(--bad)">เร่งอนุมัติ · KPI 1 น้อย · เพิ่ม</td></tr>
+<tr><td class="c">392</td><td>งานวิทยบริการ</td><td class="b" style="color:var(--owner)">มิสเบญจลักษณ์ สมคะเน</td><td class="c">✅ 9</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI 2 น้อย · เพิ่ม</td></tr>
+<tr><td class="c">394·395</td><td>งานกีฬา</td><td class="b" style="color:var(--owner)">มาสเตอร์ศุภสิทธิ์ ดาลัดจรัสแสง</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅ (395)</span></td><td>รบกวนลบรายการ id 394 ในระบบ (เป็นรายการเดิมของหน่วยงานเดียวกัน · ยังไม่ผ่านการอนุมัติ)</td></tr>
+<tr><td class="c">378</td><td>งานดนตรี</td><td class="b" style="color:var(--owner)">มาสเตอร์เทพสัญยา ทรงสิริวรกุล</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก KPI กับกิจกรรมดนตรี</td></tr>
+<tr><td class="c">401</td><td>งานเทคโนโลยีสารสนเทศเพื่อการศึกษา</td><td class="b" style="color:var(--owner)">มาสเตอร์วิทยายุทธ สีทอง</td><td class="c">✅ 9</td><td class="c">6</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ลบแผน 372 ซ้ำ</td></tr>
+<tr><td colspan="7" style="background:var(--soft);font-weight:bold">แผนกความเป็นสากล (SGLC · SGIEP · SG NEXT · วิเทศฯ · ภาษาจีน)</td></tr>
+<tr><td class="c">457</td><td>งาน SGLC</td><td class="b" style="color:var(--owner)">มาสเตอร์จักรินทร์ สุขเกษม</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>Job Spec ครบ 5 กลุ่ม 4/5 · เสริมส่วนที่ขาด</td></tr>
+<tr><td class="c">458</td><td>งาน SGIEP</td><td class="b" style="color:var(--owner)">มาสเตอร์จักรินทร์ สุขเกษม</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>staff 54 คน · ประกันคุณภาพครอบคลุมนักเรียนต่างชาติ</td></tr>
+<tr><td class="c">454</td><td>งาน SG NEXT</td><td class="b" style="color:var(--owner)">มิสสุชาวลี ศรีโหมด</td><td class="c">✅ 9</td><td class="c">2</td><td class="c"><span class="chip chip-p3">✅</span></td><td class="b" style="color:var(--bad)">⚠️ ยังไม่มีคู่มือคุณภาพ + Job Spec (staff 27 คน · JS = 0) · เร่งทั้ง 2</td></tr>
+<tr><td class="c">455</td><td>งานวิเทศสัมพันธ์</td><td class="b" style="color:var(--owner)">มาสเตอร์ชยกร อุดมวงษ์</td><td class="c">✅ 9</td><td class="c">4</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เพิ่ม evidence เรื่อง MOU ต่างประเทศ</td></tr>
+<tr><td class="c">419</td><td>งานการเรียนการสอนภาษาจีน</td><td class="b" style="color:var(--owner)">มิสสิริวิมล เขมะธารากูล</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅</span></td><td>JS มีบางส่วน (3/5) · เสริม 2 กลุ่มที่ขาด</td></tr>
+<tr><td colspan="7" style="background:var(--soft);font-weight:bold">8 กลุ่มสาระการเรียนรู้ · แยกประถม/มัธยม (16 หน่วย · 17 แผน)</td></tr>
+<tr><td class="c">383</td><td>ภาษาไทย (ประถม)</td><td class="b" style="color:var(--owner)">มาสเตอร์สิทธิพงษ์ สังข์เสม</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เพิ่ม evidence file · ผูก KPI กับ O-NET</td></tr>
+<tr><td class="c">447</td><td>ภาษาไทย (มัธยม)</td><td class="b" style="color:var(--owner)">มาสเตอร์ธาม คะเชนทร์กูล</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>คู่มือ main_topics = 0 · ต้องเติมด่วน</td></tr>
+<tr><td class="c">440</td><td>คณิตศาสตร์ (ประถม)</td><td class="b" style="color:var(--owner)">มาสเตอร์ศิวกานต์ ศรีดาเดช</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นตัวอย่างแผนที่ตั้ง KPI ครบทั้ง 9 ขั้น P-D-C-A</td></tr>
+<tr><td class="c">427</td><td>คณิตศาสตร์ (มัธยม)</td><td class="b" style="color:var(--owner)">มิสดไนยา ไกรเลิศณรงค์</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นตัวอย่างแผนที่ตั้ง KPI ครบทั้ง 9 ขั้น P-D-C-A</td></tr>
+<tr><td class="c">382</td><td>วิทยาศาสตร์และเทคโนโลยี (ประถม)</td><td class="b" style="color:var(--owner)">มาสเตอร์กฤษติชัย ดียิ่ง</td><td class="c">✅ 9</td><td class="c">11</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก KPI กับ Coding · STEM</td></tr>
+<tr><td class="c">376</td><td>วิทยาศาสตร์และเทคโนโลยี (มัธยม)</td><td class="b" style="color:var(--owner)">มาสเตอร์สาริน ผดุงสวัสดิ์</td><td class="c">✅ 9</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นหน่วยงานที่ตั้ง KPI สูงที่สุดใน 8 กลุ่มสาระ (12 ข้อ) · รบกวนเพิ่มการแนบไฟล์หลักฐาน (evidence) ในข้อ 8 ประเมินผล</td></tr>
+<tr><td class="c">443</td><td>สังคมศึกษาฯ (ประถม)</td><td class="b" style="color:var(--owner)">มิสจันทร์เพ็ญ ศรีคงอยู่</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · ผูกกิจกรรมประชาธิปไตย</td></tr>
+<tr><td class="c">437</td><td>สังคมศึกษาฯ (มัธยม)</td><td class="b" style="color:var(--owner)">มิสนิศากร วงศ์สินธพ</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก KPI กับ SDG 4 · 16</td></tr>
+<tr><td class="c">390</td><td>ศิลปะ (ประถม)</td><td class="b" style="color:var(--owner)">มิสนัยนา วรรณรัตน์</td><td class="c">✅ 9</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI สูง · เพิ่ม evidence งานแสดง</td></tr>
+<tr><td class="c">415</td><td>ศิลปะ (มัธยม)</td><td class="b" style="color:var(--owner)">มิสนัยนา วรรณรัตน์</td><td class="c">✅ 9</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅ (415)</span></td><td>ลบแผน 413 · 414 ซ้ำ (2 แผน)</td></tr>
+<tr><td class="c">448</td><td>สุขศึกษาและพลศึกษา (ประถม)</td><td class="b" style="color:var(--owner)">มาสเตอร์ณัฐพล โมระเสริฐ</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก KPI กับ BMI · การออกกำลังกาย</td></tr>
+<tr><td class="c">452</td><td>สุขศึกษาและพลศึกษา (มัธยม)</td><td class="b" style="color:var(--owner)">มาสเตอร์มนศักดิ์ ปลอดโปร่ง</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅</span></td><td class="b" style="color:var(--bad)">KPI 1 ข้อน้อยเกิน · JS มีบางส่วน (3/5) · เสริมทั้ง 2</td></tr>
+<tr><td class="c">441</td><td>การงานอาชีพ (ประถม)</td><td class="b" style="color:var(--owner)">มิสทิพยสุดา สิงห์เจริญ</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI 1 ข้อน้อย · เพิ่มให้ครอบคลุม</td></tr>
+<tr><td class="c">432</td><td>การงานอาชีพ (มัธยม)</td><td class="b" style="color:var(--owner)">มิสกติกา เมฆสุต</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅ (432)</span></td><td>ลบแผน 430 · 431 ซ้ำ (2 แผน)</td></tr>
+<tr><td class="c">439</td><td>ภาษาต่างประเทศ (ประถม)</td><td class="b" style="color:var(--owner)">มิสพานทอง อิ่มประไพ</td><td class="c">✅ 9</td><td class="c">13</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นหน่วยงานที่ตั้ง KPI สูงที่สุดใน 8 กลุ่มสาระระดับประถม (13 ข้อ) · รบกวนผูก KPI กับกรอบ CEFR ให้ชัด</td></tr>
+<tr><td class="c">446</td><td>ภาษาต่างประเทศ (มัธยม)</td><td class="b" style="color:var(--owner)">มิสอุไรวรรณ ทวีปสูงเนิน</td><td class="c">✅ 9</td><td class="c">11</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก TOEFL/IELTS/CU-TEP</td></tr>
+<tr><td class="c">425</td><td>ดนตรี (ประถม)</td><td class="b" style="color:var(--owner)">มาสเตอร์สิปปวิชญ์ วงค์สกุลศิลป์</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · ผูกวงดนตรี AC Band</td></tr>
+<tr><td class="c">426</td><td>ดนตรี (มัธยม)</td><td class="b" style="color:var(--owner)">มาสเตอร์สิปปวิชญ์ วงค์สกุลศิลป์</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI 1 น้อย · เพิ่ม</td></tr>
+</table>
+
+<h3>ฝ่ายกิจการนักเรียน · 23 หน่วยงาน (5 แผนกกิจกรรม + 6 บริหาร/บริการ + 12 ระดับชั้น)</h3>
+<table>
+<tr><th class="plan" style="width:6%">รหัส</th><th class="plan" style="width:24%">หน่วยงาน</th><th class="plan" style="width:18%">หัวหน้าแผน</th><th class="plan" style="width:6%" class="c">9ขั้น</th><th class="plan" style="width:5%" class="c">KPI</th><th class="plan" style="width:11%">อนุมัติ</th><th class="plan">สิ่งที่ท่านต้องแก้/ทำ</th></tr>
+<tr><td class="c">412</td><td>งานบริหารฝ่ายกิจการนักเรียน</td><td class="b" style="color:var(--owner)">มิสนาถณรินทร์ วัฒน์ธนนันท์</td><td class="c">✅ 9</td><td class="c">5</td><td class="c"><span class="chip chip-p3">✅ (412)</span></td><td>ลบแผน 358 ซ้ำ · ประสาน 23 หน่วย</td></tr>
+<tr><td class="c">460</td><td>งานระดับชั้น</td><td class="b" style="color:var(--owner)">มิสนาถณรินทร์ วัฒน์ธนนันท์</td><td class="c">✅ 9</td><td class="c">12</td><td class="c warn"><span class="chip chip-p2">⚠️</span></td><td class="b" style="color:var(--bad)">เร่งอนุมัติ · ประสาน 12 ระดับชั้น</td></tr>
+<tr><td class="c">402</td><td>งานกิจกรรมและสัมพันธ์ชุมชน</td><td class="b" style="color:var(--owner)">มิสภารณี พึ่งพระเดช</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · เพิ่ม evidence CSR</td></tr>
+<tr><td class="c">398</td><td>งานส่งเสริมประชาธิปไตยฯ</td><td class="b" style="color:var(--owner)">มาสเตอร์คงฤทธิ์ ธาราธร</td><td class="c">✅ 9</td><td class="c">6</td><td class="c"><span class="chip chip-p3">✅ (398)</span></td><td>ลบแผน 388 · 389 ซ้ำ</td></tr>
+<tr><td class="c">418</td><td>งานสวัสดิภาพและความปลอดภัย</td><td class="b" style="color:var(--owner)">มาสเตอร์ธนวรรธณ์ ธนฐิติมหวงศ์</td><td class="c">✅ 9</td><td class="c">7</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · ผูกกล้อง CCTV และ 5.4 GDPR</td></tr>
+<tr><td class="c">379</td><td>งานลูกเสือ</td><td class="b" style="color:var(--owner)">มาสเตอร์บรรหาร ปาโล</td><td class="c">✅ 9</td><td class="c">4</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · เพิ่ม evidence ค่าย</td></tr>
+<tr><td class="c">436</td><td>งาน SG Leaders Commission</td><td class="b" style="color:var(--owner)">มิสนิตยา ย้อยแก้ว</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>JS มีบางส่วน (4/5) · เสริม</td></tr>
+<tr><td class="c">456</td><td>งานนักศึกษาวิชาทหาร (นศท.)</td><td class="b" style="color:var(--owner)">มาสเตอร์จิรกร ฤกษ์ถวิลชัย</td><td class="c">✅ 9</td><td class="c">4</td><td class="c"><span class="chip chip-p3">✅ (456)</span></td><td>รบกวนลบรายการ id 360 ในระบบ (เป็นรายการเดิมของหน่วยงานเดียวกัน · ยังไม่ผ่านการอนุมัติ)</td></tr>
+<tr><td class="c">399</td><td>งานพัฒนาศักยภาพนักเรียนตามแนวมนุษยปรัชญา</td><td class="b" style="color:var(--owner)">มิสปราณี เฉลิมมิตร</td><td class="c">✅ 9</td><td class="c">8</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI ครบ · ผูก MEC</td></tr>
+<tr><td class="c">453</td><td>งานแนะแนว</td><td class="b" style="color:var(--owner)">มิสลักขณา ดารามาตร์</td><td class="c">✅ 9</td><td class="c">17</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นหน่วยงานที่ตั้ง KPI สูงที่สุดของโรงเรียนทั้ง 73 แผน (17 ข้อ) · รบกวนผูก KPI กับกรอบ TCAS และการสมัครทุนต่างประเทศให้ชัด</td></tr>
+<tr><td class="c">396</td><td>งานอภิบาล</td><td class="b" style="color:var(--owner)">มิสนภัสวรรณ เจริญสำราญ</td><td class="c">✅ 9</td><td class="c">11</td><td class="c"><span class="chip chip-p3">✅ (396)</span></td><td>ลบแผน 417 ซ้ำ</td></tr>
+<tr><td colspan="7" style="background:var(--soft);font-weight:bold">12 ระดับชั้น (ป.1-ม.6) — ผูก KPI กับผลสัมฤทธิ์ · O-NET · A-NET · TCAS</td></tr>
+<tr><td class="c">377</td><td>ระดับชั้นประถมศึกษาปีที่ 1</td><td class="b" style="color:var(--owner)">มิสณัฐชา หอทอง</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅</span></td><td>มีบุคลากร 19 คน · แผนตั้ง KPI ครบ 14 ข้อ · เป็นตัวอย่างที่ดีของแผนระดับชั้นประถม</td></tr>
+<tr><td class="c">433</td><td>ระดับชั้นประถมศึกษาปีที่ 2</td><td class="b" style="color:var(--owner)">มาสเตอร์นิพนธ์ ศรีกุลคร</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅</span></td><td>staff 20 คน</td></tr>
+<tr><td class="c">384</td><td>ระดับชั้นประถมศึกษาปีที่ 3</td><td class="b" style="color:var(--owner)">มิสฉวีวรรณ ศรศรี</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅ (384)</span></td><td>ลบแผน 385 (โครงเปล่า)</td></tr>
+<tr><td class="c">381</td><td>ระดับชั้นประถมศึกษาปีที่ 4</td><td class="b" style="color:var(--owner)">มิสมัชญากรณ์ ธรรมเกตุ</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅</span></td><td>staff 19 คน</td></tr>
+<tr><td class="c">434</td><td>ระดับชั้นประถมศึกษาปีที่ 5</td><td class="b" style="color:var(--owner)">มาสเตอร์กิตติรัตน์ ศิริธนาพิพัฒน์</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅</span></td><td>staff 20 คน</td></tr>
+<tr><td class="c">435</td><td>ระดับชั้นประถมศึกษาปีที่ 6</td><td class="b" style="color:var(--owner)">มิสเนาวรัตน์ ฉิมปรี</td><td class="c">✅ 9</td><td class="c">9</td><td class="c"><span class="chip chip-p3">✅</span></td><td>KPI น้อยกว่าเพื่อน · ผูก O-NET ป.6</td></tr>
+<tr><td class="c">459</td><td>ระดับชั้นมัธยมศึกษาปีที่ 1</td><td class="b" style="color:var(--owner)">มิสภาวินี ส้มมีสี</td><td class="c">✅ 9</td><td class="c">16</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เป็นหน่วยงานที่ตั้ง KPI สูงที่สุดใน 6 ระดับชั้นมัธยม (16 ข้อ) · รบกวนผูก KPI กับผลสอบ O-NET ระดับ ม.3 ให้ชัด</td></tr>
+<tr><td class="c">374</td><td>ระดับชั้นมัธยมศึกษาปีที่ 2</td><td class="b" style="color:var(--owner)">มิสรัตนา อมรรัตน์ชัย</td><td class="c">✅ 9</td><td class="c">1</td><td class="c"><span class="chip chip-p3">✅</span></td><td class="b" style="color:var(--bad)">KPI 1 น้อยเกินสำหรับระดับชั้น · เพิ่ม</td></tr>
+<tr><td class="c">375</td><td>ระดับชั้นมัธยมศึกษาปีที่ 3</td><td class="b" style="color:var(--owner)">มิสทิวาภรณ์ การบุญ</td><td class="c">✅ 9</td><td class="c">16</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก O-NET ม.3 · เตรียม ม.4</td></tr>
+<tr><td class="c">449</td><td>ระดับชั้นมัธยมศึกษาปีที่ 4</td><td class="b" style="color:var(--owner)">มิสสาวิตรี แจ่มใจ</td><td class="c">✅ 9</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เตรียม TCAS · GAT/PAT</td></tr>
+<tr><td class="c">423</td><td>ระดับชั้นมัธยมศึกษาปีที่ 5</td><td class="b" style="color:var(--owner)">มาสเตอร์พิษณุ จงเจริญ</td><td class="c">✅ 9</td><td class="c">12</td><td class="c"><span class="chip chip-p3">✅</span></td><td>เตรียม TCAS · IELTS</td></tr>
+<tr><td class="c">438</td><td>ระดับชั้นมัธยมศึกษาปีที่ 6</td><td class="b" style="color:var(--owner)">มาสเตอร์กรีฑา ถิระวัฒน์ทยาวัต</td><td class="c">✅ 9</td><td class="c">14</td><td class="c"><span class="chip chip-p3">✅</span></td><td>ผูก TCAS ม.6 · สอบเข้ามหาลัย</td></tr>
+</table>
+
+<h2>ส่วนที่ ๑๑ · คู่มือคุณภาพรายหน่วยงาน · ประสาน QUALITY_MANUAL_INSPECTOR</h2>
+<p>รายละเอียดคู่มือคุณภาพ (main_topics · ส่วนที่ครบ) รายหน่วยงาน 72 หน่วย · <b>ส่งต่อให้ห้อง QUALITY_MANUAL_INSPECTOR ตรวจต่อ</b> (นอก scope ห้อง PDCA9)</p>
+<table>
+<tr><th class="c" style="width:8%">id_dept</th><th style="width:32%">หน่วยงาน</th><th class="c" style="width:12%">sections</th><th class="c" style="width:12%">main_topics</th><th>สถานะ / คำแนะนำ</th></tr>
+<tr><td class="c b">2567</td><td>งาน SG NEXT</td><td class="c">0</td><td class="c">0</td><td class="b" style="color:var(--bad)">⚠️ ไม่มีคู่มือ · ต้องเริ่มต้นใหม่ทั้งหมด</td></tr>
+<tr><td class="c b">2579</td><td>ภาษาไทย (มัธยม)</td><td class="c">4</td><td class="c">0</td><td class="warn">มี 4 ส่วน แต่ main_topics = 0 · โครงเปล่า</td></tr>
+<tr><td class="c b">2574</td><td>งานวิทยบริการ</td><td class="c">5</td><td class="c">0</td><td class="warn">มี 5 ส่วน แต่ main_topics = 0 · โครงเปล่า</td></tr>
+<tr><td class="c b">2605</td><td>งานแนะแนว</td><td class="c">4</td><td class="c">20</td><td>เป็นหน่วยงานที่เขียนหัวข้อในคู่มือคุณภาพมากที่สุดของโรงเรียน (20 หัวข้อ) · รบกวนเสริมส่วนที่ 5 และ 6 (หลักฐาน/ภาคผนวก) ให้ครบ</td></tr>
+<tr><td class="c b">2615</td><td>ระดับชั้น ม.3</td><td class="c">4</td><td class="c">18</td><td>ละเอียดสูง · เสริมส่วน 5-6</td></tr>
+<tr><td class="c b">2613</td><td>ระดับชั้น ม.1</td><td class="c">4</td><td class="c">17</td><td>ละเอียดสูง · เสริมส่วน 5-6</td></tr>
+<tr><td class="c b">2562</td><td>งานทรัพยากรมนุษย์</td><td class="c">4</td><td class="c">16</td><td>ละเอียด · เสริมส่วน 5-6</td></tr>
+<tr><td class="c b">2607-2612</td><td>ระดับชั้น ป.1-ป.6</td><td class="c">5</td><td class="c">16 (แต่ละชั้น)</td><td>ทุกระดับชั้น 5 ส่วน · เสริมส่วน 6</td></tr>
+<tr><td colspan="5" class="c note">(รายชื่อ 72 หน่วยเต็ม ดูใน <code>ac_unit_standard_kpi_for_pdca9_20260821.html</code> · QMI จะรายงานเจาะรายหน่วยในรอบต่อไป)</td></tr>
+</table>
+
+<h2>ส่วนที่ ๑๒ · สรุปสิ่งที่เปลี่ยนจากรายงานฉบับก่อน (11 สิงหาคม 2569 → 25 สิงหาคม 2569)</h2>
+<p>รายงาน SG PDCA9 ฉบับก่อนหน้า (`sg_pdca9_audit.html` ในโฟลเดอร์หลัก · 15,825 bytes · 11 ส.ค. 2569) มีขนาดบางเกินไป (R24.1 ห้ามส่งของบาง) · <b>ฉบับนี้เป็นการรีเฟรชครั้งใหญ่ เตรียมสำหรับการนิเทศ 9-10 กันยายน 2569</b></p>
+
+<table>
+<tr><th style="width:24%">หมวด</th><th style="width:18%">ฉบับ 11 ส.ค. (15KB)</th><th style="width:18%">ฉบับ 25 ส.ค. (ปัจจุบัน)</th><th>เหตุที่ต่าง</th></tr>
+<tr><td class="b">ขนาดไฟล์</td><td class="c">15,825 bytes</td><td class="c b" style="color:var(--ok)">≥130,000 bytes</td><td>ฉบับก่อนบางเกิน R24.1 · ฉบับใหม่ครบตามเกณฑ์ SL canonical + AC ล่าสุด</td></tr>
+<tr><td class="b">แผน approved · ไล่สด</td><td class="c">71 (11 ส.ค.) · 68 (25 ส.ค.)</td><td class="c b" style="color:var(--ok)">69 (26 ส.ค. 23:36)</td><td>ระหว่าง 25→26 ส.ค. งานสุขอนามัยได้รับอนุมัติเพิ่ม · not_approved 5→4</td></tr>
+<tr><td class="b">ปฏิทินกิจกรรม re-lock</td><td class="c">643 (25 ส.ค.)</td><td class="c b" style="color:var(--ok)">645 · overdue 319 · un_check 615 · done 30 (4.65%)</td><td>เพิ่ม 2 กิจกรรม · re-lock ปฏิทินเฉพาะปี 2569 (แก้ 1,582/1,598 ที่ปนปี 2568)</td></tr>
+<tr><td class="b">บุคลากร metric ครบ</td><td class="c">ไม่กำกับ</td><td class="c b" style="color:var(--ok)">661/664/417/247/94/346/JS 82.97% (ตาม _SG_NUMBER_SET)</td><td>ห้องกลาง lock วันที่ 26 ส.ค. · เข้า/พ้นสภาพ 43/32 (ไม่ใช่ 10)</td></tr>
+<tr><td class="b">งบ ผูกแผน</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--bad)">178.9M / ต่าง 45.85M (20.4%)</td><td><b>ห้ามเขียน "ผูกแผน 100%"</b> ตามคำสั่ง _SG_NUMBER_SET</td></tr>
+<tr><td class="b">ปฏิทินกิจกรรม %</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--ok)">30/645 = 4.65% (ห้ามใช้ 0.60%)</td><td>ฐานคำนวณเปลี่ยนจาก 5,029 (รวม auto) เป็น 645 (จริง)</td></tr>
+<tr><td class="b">รายวิชา + หลักสูตรอ้างอิง</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--bad)">เปิด 745 · วัดผล 436 · คะแนน 425 · <b>หลักสูตรอ้างอิง 0</b> · <b>ตัวชี้วัดรายวิชา 0</b></td><td>ยกช่อง 0 ขึ้นแสดง · Chain ไม่ครบ</td></tr>
+<tr><td class="b">Confirm Loop (ยอด)</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--ok)">22+1+7+42 = 72 (ตัด revise_a ตาม canonical)</td><td>ก่อนหน้าใส่ revise_a 5 · sum = 77 · เกิน 72 · แก้แล้ว</td></tr>
+<tr><td class="b">หน่วยงานมีแผน</td><td class="c">71/72</td><td class="c b" style="color:var(--ok)">72/72</td><td>SG NEXT (id 2567) จัดทำแผนใหม่ในระบบ · แต่ยังไม่มีคู่มือ</td></tr>
+<tr><td class="b">§0 Data Integrity</td><td class="c">ไม่มี</td><td class="c b" style="color:var(--ok)">มี · 3 ตาราง + 9 ⚠️ + แผนกู้ทุกจุด</td><td>บังคับจากคำสั่งบราเดอร์ 25 ส.ค. 10:27 (Data Integrity §0)</td></tr>
+<tr><td class="b">ภาพกรอบ PDCA9</td><td class="c">ไม่มี</td><td class="c b" style="color:var(--ok)">มี · ก่อน §0</td><td>บังคับจากคำสั่งบราเดอร์ 25 ส.ค. (ให้ผู้อ่านเข้าใจกรอบก่อน)</td></tr>
+<tr><td class="b">ผอ. canonical</td><td class="c">ไม่มีชื่อในไฟล์</td><td class="c b" style="color:var(--ok)">ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ (ตาม _CANONICAL_TERMS L217)</td><td>ตรงกับ GOV_AUDIT · ไม่ใส่ "ดร." เกิน</td></tr>
+<tr><td class="b">Chain of alignment</td><td class="c">ไม่มี</td><td class="c b" style="color:var(--ok)">10 ชุดมาตรฐาน · 448 KPI · 99.11% used</td><td>ดึงจาก kpi_norm สด 25 ส.ค. 17:54</td></tr>
+<tr><td class="b">รายแผนหัวหน้าพร้อม directive</td><td class="c">ไม่มี</td><td class="c b" style="color:var(--ok)">73 แผน · หัวหน้าทุกคน · สิ่งที่ต้องแก้/ทำ</td><td>บังคับตาม ประกาศ #62 Actor-Directive Output</td></tr>
+<tr><td class="b">งบประมาณ (§6ก)</td><td class="c">ไม่มี</td><td class="c b" style="color:var(--ok)">รับ 391.8M/75.8M · จ่าย 739.1M/224.8M · 4 ⚠️ ต้องตรวจ</td><td>ดึงจาก Budget v5 สด · replica 24 ส.ค. 19:16</td></tr>
+<tr><td class="b">แผนซ้ำ/ทดสอบ (§5)</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--ok)">27 แผน · ระบุ id_profile ครบ</td><td>เตรียมให้งานสารสนเทศฯ ลบใน SWIS</td></tr>
+<tr><td class="b">Confirm Loop (§6)</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--ok)">submitted 22 · not_started 42 · บุคลากร 94/417</td><td>ดึงจาก org_structure สด</td></tr>
+<tr><td class="b">Evidence file (§2 · §7)</td><td class="c">ไม่ระบุ</td><td class="c b" style="color:var(--bad)">plan_items 772 · items_with_file <b>0</b> · Critical</td><td>Check ข้อ 8 ของ PDCA9 อ่อนที่สุด · ต้องแก้ก่อนนิเทศรอบถัดไป</td></tr>
+</table>
+
+<div class="box box-plan"><b>สรุปการปรับปรุงฉบับนี้:</b> <span class="opinion">ฉบับนี้ครอบคลุมทุกจุดตามคำสั่งบราเดอร์ (Data Integrity §0 · ภาพกรอบ PDCA9 · Actor-Directive · Replica warning · Chain of alignment 10 ชุด · ⚠️ พร้อมแผนกู้ทุกจุด) · เตรียมสำหรับการนิเทศ 9-10 กันยายน 2569 · <b>ยังไม่อัพเว็บ</b> จนกว่าห้องกลาง verify + บราเดอร์เคาะ</span></div>
+
+<h2>กล่องสรุปความโปร่งใสของรายงานฉบับนี้ · Unverified และเผือก (ประกาศ #59)</h2>
+<div class="box box-warn" style="border-width:2px">
+<b>⚠️ สิ่งที่ยังไม่ได้ตรวจสอบยืนยัน (unverified) ในรายงานฉบับนี้:</b>
+<ol style="margin-left:22px">
+<li><b>ตัวย่ออ้างอิงคุณภาพ (สพฐ. · FSG · สมศ. · SG · DP-SG · SP-FSG · GOV-FSG · FIN-FSG · POL-FSG · SDG) รายแผน</b> — เครื่องมือ MCP ปัจจุบันดึงได้แค่ระดับทั้งโรงเรียน (448 KPI · 444 used) · <b>ยังไม่เปิดให้ดึงส่วนที่ 3 ของคู่มือรายหน่วยงาน</b> · จึงยังไม่สามารถบอกได้ว่าแผนใดขาดตัวย่อใดบ้างในรอบนี้ · จะแก้ที่รากด้วยระบบเชื่อม KPI คู่มือ → แผน อัตโนมัติ ที่บราเดอร์สั่งทีมพัฒนา 25 ส.ค. แล้ว</li>
+<li><b>รายชื่อ 4 KPI ที่ยังไม่ถูกอ้าง</b> — MCP ให้ยอด 4 ตัว แต่ไม่ให้รายละเอียดว่าเป็น KPI ตัวไหนของชุดมาตรฐานใด · ต้องเปิดหน้า SWIS โดยตรง</li>
+<li><b>247 บุคลากรที่ตกจากผังโครงสร้าง</b> — MCP ให้ยอดต่าง (664 vs 417 = 247 คน) แต่ไม่ให้รายชื่อ · HR ต้อง trace ทีละคน</li>
+<li><b>Bug MCP: get_staff_summary=661 vs org_structure.hr_baseline=664</b> — ต่างกัน 3 คน · เป็นปัญหาระบบ ไม่ใช่ผู้ตรวจ · แจ้ง SWIS_PLUS แล้ว</li>
+<li><b>Job Spec เนื้อในรายบุคคล</b> — MCP ให้ยอดครบ 5 กลุ่ม/dept แต่ไม่ให้เนื้อว่าใครทำอะไร</li>
+<li><b>คู่มือคุณภาพส่วนที่ 5-6</b> ที่ทุกหน่วยยังขาด — ต้องเปิดคู่มือรายหน่วยว่าส่วนไหนขาดจริง · QMI จะตรวจต่อในรอบถัดไป</li>
+</ol>
+</div>
+
+<div class="box" style="border-left:5px solid #888;background:#f4f4f4;font-style:italic;color:#555;border-width:2px;margin-top:10px">
+<b>🟣 เผือก (ข้อสังเกตของ AI · เสนอให้พิจารณา · ไม่ใช่ข้อเท็จจริงจากระบบ):</b>
+<ol style="margin-left:22px">
+<li>SG มี Chain of Alignment แข็งแรงที่สุดในเครือมูลนิธิ (KPI used 99.11% · vs AC 75.61%) · แต่ <b>Confirm Loop และ Evidence file อ่อนกว่า AC</b> · แสดงว่าจุดแข็งอยู่ที่ "การเขียนแผน" · จุดอ่อนอยู่ที่ "การปิดวงจร"</li>
+<li>10 ชุดมาตรฐานที่ SG ใช้ (มากกว่า AC 7 ชุด) เป็นภาระที่ผูกไว้กับตัวเอง — <b>อาจตรวจว่ามีชุดใดซ้ำซ้อน</b> (เช่น DP-SG กับ SG · SP-FSG กับ POL-FSG) เพื่อลดภาระ<br><span style="font-size:.75rem">หมายเหตุ: ข้อเสนอนี้ไม่ใช่ข้อเสนอที่ต้องทำทันที · เป็นความคิดที่บราเดอร์อาจพิจารณาในอนาคต</span></li>
+<li>42 หน่วยงานที่ยังไม่เริ่ม Confirm Loop (58%) เป็นเปอร์เซ็นต์สูงมากสำหรับปีที่ผ่านครึ่งแล้ว · อาจสะท้อนว่า <b>หัวหน้าฝ่ายยังไม่ได้ประชุมเน้นเรื่องนี้</b> · หรือ HR ยังไม่ได้ push ระบบให้ครบ</li>
+<li>SG เป็นโรงเรียนชายล้วน (นักเรียน 4,567 คน ชาย 100%) · ควรตรวจว่าตัวเลขนี้ตรงจริง หรือมีการตกช่อง gender ในระบบ</li>
+<li>งาน SG NEXT (id 2567) เป็นหน่วยงานเดียวที่ยังไม่มีทั้งคู่มือคุณภาพและ Job Spec · แต่มีบุคลากร 27 คน · น่าจะเป็นหน่วยงานใหม่ที่เพิ่งตั้ง · <b>ควรให้เวลาและสนับสนุนเป็นพิเศษ</b> · ไม่ใช่มองว่าละเลย</li>
+</ol>
+</div>
+
+<div class="box" style="border-left:5px solid var(--gold);background:#fffbea;border-width:2px;margin-top:10px">
+<b>🎯 ปลายทางคน + ขั้นต่อไป (Actor-Directive · ประกาศ #62):</b>
+<ul style="margin-left:22px">
+<li><b>ใคร:</b> ผู้อำนวยการ SG (ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์) + หัวหน้าฝ่าย 6 ฝ่าย + หัวหน้าหน่วยงาน 72 คน</li>
+<li><b>สั่งอะไร:</b> ดำเนินการตาม §7 (5 ประเด็นวิกฤต) และ §9 (Action Plan 8 ข้อ · deadline 5 ก.ย. - 31 ธ.ค.)</li>
+<li><b>ช่องทาง:</b> ระบบ SWIS ของ SG + eoffice ตอบกลับหนังสือฉบับต้นเรื่อง</li>
+<li><b>เวลา:</b> ก่อนนิเทศ 9-10 กันยายน 2569 (15 วันจากวันนี้) · เป้าหมาย: Confirm Loop ≥60/72 · อนุมัติแผนค้าง 4 แผน · SG NEXT เริ่มคู่มือ</li>
+<li><b>ผู้ติดตาม:</b> ห้อง PDCA9_INSPECTOR (ทีมผู้จัดทำ) + ห้องกลาง (CENTRAL_TWIN) · ผ่าน `central_feedback.md`</li>
+</ul>
+</div>
+
+<footer>
+<b>รายงานตรวจสอบโดย</b> ห้อง PDCA9_INSPECTOR · ศูนย์ตรวจเฉพาะทาง · ฝ่าย ICT and HRM · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>
+<b>เตรียมสำหรับ</b> การนิเทศโรงเรียนเซนต์คาเบรียล (SG) วันที่ 9-10 กันยายน 2569<br>
+<b>ข้อมูลดึงสด</b> 26 สิงหาคม 2569 เวลา 23:36 น. (ไล่สดหลัง re-lock ปฏิทิน) (replica sync 24 ส.ค. 2569 19:16 น.)<br>
+<b>ลงชื่อ:</b> ภราดาศุภนันท์ ขันธปรีชา · ประธาน Commission on ICT and HRM · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>
+<span class="opinion">ขอพระเจ้าอวยพรและตอบแทนน้ำใจดีของทุกท่านมา ณ ที่นี้</span>
+</footer>
+
+</body>
+</html>

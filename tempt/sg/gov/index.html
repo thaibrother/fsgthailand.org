@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>รายงานตรวจการบริหารโดยใช้หลักธรรมาภิบาล · โรงเรียนเซนต์คาเบรียล · ปีการศึกษา 2569</title>
+<style>
+:root{--navy:#1a3a5c;--navy-light:#2c5f8a;--navy-dark:#0d2640;--gold:#8b6914;--gold-light:#c4960a;--gold-pale:#e8d494;--cream:#f6f4ee;--white:#fff;--text:#232323;--muted:#5f5f5f;--line:#e3e0d8;--red:#9c2b2b;--amber:#8a6a00;--green:#2c6e49;--blue:#2c4f8a;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Thai','Sarabun','Inter',-apple-system,sans-serif;color:var(--text);background:var(--cream);line-height:1.8;font-size:17px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 70px}
+header{background:linear-gradient(135deg,var(--navy-dark),var(--navy),var(--navy-light));color:#fff;padding:42px 24px 34px}
+header .inner{max-width:1060px;margin:0 auto}
+header h1{font-size:1.9em;color:var(--gold-pale);line-height:1.35;margin-bottom:8px}
+header .sub{opacity:.9;font-size:1em}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.meta div{background:rgba(255,255,255,.1);border-radius:8px;padding:12px 16px;font-size:.92em}
+.meta b{display:block;color:var(--gold-pale);font-size:.85em;font-weight:600;margin-bottom:3px}
+h2{font-size:1.35em;color:var(--navy);margin:44px 0 8px;padding-bottom:10px;border-bottom:3px solid var(--gold)}
+h2 .n{color:var(--gold);font-weight:700;margin-right:10px}
+.lead{color:var(--muted);font-size:.98em;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.94em;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.07)}
+th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-weight:600;vertical-align:top}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#faf9f5}
+.chip{display:inline-block;font-size:.85em;font-weight:600;padding:3px 11px;border-radius:13px;white-space:nowrap}
+.c-full{background:#e2f0e8;color:var(--green)}
+.c-part{background:#fbf0d3;color:var(--amber)}
+.c-none{background:#f6e2e2;color:var(--red)}
+.c-gap{background:#eae7f6;color:#493a78}
+.c-info{background:#e3ebf7;color:var(--blue)}
+.card{background:#fff;border-radius:var(--radius);padding:22px 24px;margin:18px 0;box-shadow:0 1px 5px rgba(0,0,0,.07);border-left:5px solid var(--navy-light)}
+.card.good{border-left-color:var(--green)}
+.card.warn{border-left-color:var(--red)}
+.card h4{font-size:1.12em;color:var(--navy);margin-bottom:5px}
+.card .crit{font-size:.87em;color:var(--muted);margin-bottom:12px}
+.rubric{background:#f3f6fa;border-radius:8px;padding:12px 16px;font-size:.92em;margin:12px 0}
+.rubric b{color:var(--navy)}
+.facts{list-style:none;margin:12px 0}
+.facts li{padding:7px 0 7px 24px;position:relative;border-bottom:1px dotted var(--line)}
+.facts li:last-child{border-bottom:none}
+.facts li::before{content:"▸";position:absolute;left:3px;color:var(--gold);font-weight:700}
+.big{font-size:1.05em;font-weight:700;color:var(--navy)}
+.verdict{margin-top:14px;padding:13px 16px;background:#faf8f1;border-radius:8px;border-left:4px solid var(--gold)}
+.verdict b{color:var(--navy)}
+.src{font-size:.83em;color:var(--muted);margin-top:10px;font-family:ui-monospace,monospace;word-break:break-word;line-height:1.6}
+.note{background:#fff8e3;border-radius:8px;padding:14px 18px;font-size:.93em;margin:16px 0;border-left:4px solid var(--gold-light)}
+.caution{background:#eef3fb;border-left:4px solid var(--blue);border-radius:8px;padding:14px 18px;font-size:.93em;margin:16px 0}
+.letter{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 30px;margin:20px 0;box-shadow:0 1px 5px rgba(0,0,0,.06);line-height:1.95}
+.letter p{margin:14px 0;text-indent:2.5em}
+.letter .sign{text-align:right;text-indent:0;margin-top:22px;line-height:1.6}
+.letter .sign b{color:var(--navy)}
+.action{background:var(--navy);color:#fff;border-radius:var(--radius);padding:24px 26px;margin:22px 0}
+.action h3{color:var(--gold-pale);margin:0 0 6px}
+.action ol{margin:14px 0 0 22px}
+.action li{margin-bottom:14px;font-size:.95em}
+.action .win{display:inline-block;background:rgba(232,212,148,.2);color:var(--gold-pale);font-size:.8em;font-weight:600;padding:2px 10px;border-radius:11px;margin-left:8px}
+.grey{color:#6b6b6b;font-style:italic}
+footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);font-size:.88em;color:var(--muted)}
+.tiny{font-size:.85em;color:var(--muted)}
+/* §0-D2 ยันกับไฟล์ส่งออก SWIS */
+.swisfix{background:#fdf6d8;border-bottom:2px dashed #c0392b;padding:0 3px}
+.swistag{display:inline-block;background:#c0392b;color:#fff;border-radius:4px;padding:0 7px;font-size:.82em;font-weight:700;margin-left:5px;white-space:nowrap}
+.swisbox{background:#fbf7ee;border:1px solid #d9cfae;border-left:5px solid var(--gold);border-radius:8px;padding:15px 19px;margin:16px 0;font-size:.95em}
+.await{display:inline-block;background:#fdecec;color:#9d2235;border:1px solid #e6b3b3;border-radius:5px;padding:1px 8px;font-size:.88em;font-weight:700;white-space:nowrap;margin-left:4px}
+.prob{color:#c0392b}
+.prob b{color:#c0392b}
+.caution.alert{background:#fdf4f3;border-left-color:#c0392b}
+.caution.alert>b:first-child{color:#c0392b}
+code{background:#eef1f5;padding:1px 5px;border-radius:4px;font-size:.9em}
+@media print{body{background:#fff;font-size:13px}header{background:var(--navy)}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header><div class="inner">
+<h1>รายงานตรวจการบริหารโดยใช้หลักธรรมาภิบาล<br>โรงเรียนเซนต์คาเบรียล · ปีการศึกษา 2569</h1>
+<div class="sub">ยึด คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568 — 5 หลัก 14 เกณฑ์ย่อย 100 คะแนน 5 ระดับ</div>
+<div class="meta">
+<div><b>ปีการศึกษา</b>2569 (edu_year 2026)</div>
+<div><b>วันที่ตรวจ</b>25 สิงหาคม 2569</div>
+<div><b>เงื่อนไขการดึงข้อมูล</b>ระบบ SWIS ของโรงเรียน ดึง 25 ส.ค. 2569 10:55 น. · ฐานข้อมูลบริหารส่วนกลาง ข้อมูล ณ 24 ส.ค. 2569 19:16 น.</div>
+<div><b>ผู้อำนวยการ</b>ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์</div>
+<div><b>กำหนดการนิเทศ</b>9-10 กันยายน 2569</div>
+</div>
+</div></header>
+
+<div class="wrap">
+<h2 style="border-bottom-color:var(--navy-light)">กรอบความเข้าใจหลักธรรมาภิบาล — อ่านภาพนี้ก่อนอ่านรายงาน</h2>
+<p class="lead">ภาพเดียวที่บอกว่ารายงานฉบับนี้กำลังวัดอะไร ด้วยเกณฑ์อะไร และวัดได้แค่ไหน — ทุกตัวเลขในหน้าถัด ๆ ไปอ้างกลับมาที่ภาพนี้<br><b>ลำดับการอ่าน:</b> กรอบความเข้าใจ (หน้านี้) → <b>ข้อ 0 ตรวจความสมบูรณ์ของข้อมูลต้นทางก่อนวิเคราะห์</b> → ข้อ 1 ข้อจำกัดรายโมดูล → ข้อ 4 ภาพรวม 14 เกณฑ์ → รายเกณฑ์</p>
+
+<div style="background:#fff;border-radius:var(--radius);padding:18px 16px;margin:16px 0;box-shadow:0 1px 5px rgba(0,0,0,.07);overflow-x:auto">
+<svg viewBox="0 0 1010 660" style="width:100%;min-width:820px;height:auto;display:block" role="img" aria-label="แผนภาพกรอบหลักธรรมาภิบาล 5 หลัก 14 เกณฑ์ย่อย 100 คะแนน 5 ระดับ">
+<defs>
+<style>
+.t{font-family:'Noto Sans Thai','Sarabun',sans-serif}
+.hd{font-size:15px;font-weight:700;fill:#fff}
+.pt{font-size:12px;font-weight:700;fill:#e8d494}
+.sc{font-size:11.5px;fill:#233}
+.w{font-size:11px;font-weight:700;fill:#8b6914}
+.lab{font-size:12.5px;font-weight:700;fill:#1a3a5c}
+.sm{font-size:11px;fill:#5f5f5f}
+.wt{font-size:11.5px;fill:#fff}
+</style>
+</defs>
+
+<!-- แถบบน -->
+<rect x="0" y="0" width="1010" height="46" rx="8" fill="#1a3a5c"/>
+<text class="t hd" x="18" y="21">คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568</text>
+<text class="t wt" x="18" y="38" font-size="11.5" opacity=".9">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ใช้กับโรงเรียนในเครือทั้ง 15 แห่ง</text>
+<text class="t pt" x="992" y="21" text-anchor="end">100 คะแนน</text>
+<text class="t wt" x="992" y="38" text-anchor="end" font-size="11.5" opacity=".9">5 หลัก · 14 เกณฑ์ย่อย · หลักละ 20 คะแนน</text>
+
+<!-- 5 เสาหลัก -->
+<g>
+<!-- หลัก 1 -->
+<rect x="0" y="58" width="196" height="196" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<rect x="0" y="58" width="196" height="34" rx="8" fill="#2c5f8a"/><rect x="0" y="80" width="196" height="12" fill="#2c5f8a"/>
+<text class="t" x="12" y="74" font-size="13" font-weight="700" fill="#fff">หลักที่ 1 การมีส่วนร่วม</text>
+<text class="t" x="12" y="88" font-size="10.5" fill="#e8d494">Participation · 20 คะแนน</text>
+<text class="t sc" x="12" y="112">1.1 ร่วมแสดงความคิดเห็น</text><text class="t w" x="184" y="112" text-anchor="end">4</text>
+<text class="t sc" x="12" y="134">1.2 ร่วมตัดสินใจ</text><text class="t w" x="184" y="134" text-anchor="end">6</text>
+<text class="t sc" x="12" y="156">1.3 ร่วมพัฒนา</text><text class="t w" x="184" y="156" text-anchor="end">10</text>
+<text class="t sm" x="12" y="196">วัดจากร่องรอยการมอบหมาย</text>
+<text class="t sm" x="12" y="212">การประชุม การสื่อสาร</text>
+<text class="t sm" x="12" y="228">และการร่วมลงมือของบุคลากร</text>
+
+<!-- หลัก 2 -->
+<rect x="203" y="58" width="196" height="196" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<rect x="203" y="58" width="196" height="34" rx="8" fill="#2c5f8a"/><rect x="203" y="80" width="196" height="12" fill="#2c5f8a"/>
+<text class="t" x="215" y="74" font-size="13" font-weight="700" fill="#fff">หลักที่ 2 ความโปร่งใส</text>
+<text class="t" x="215" y="88" font-size="10.5" fill="#e8d494">Transparency · 20 คะแนน</text>
+<text class="t sc" x="215" y="112">2.1 โครงสร้างการบริหาร</text><text class="t w" x="387" y="112" text-anchor="end">7</text>
+<text class="t sc" x="215" y="134">2.2 การบริหารงานการเงิน</text><text class="t w" x="387" y="134" text-anchor="end">6</text>
+<text class="t sc" x="215" y="156">2.3 การบริหารงานบุคลากร</text><text class="t w" x="387" y="156" text-anchor="end">7</text>
+<text class="t sm" x="215" y="196">หลักที่ระบบสารสนเทศตอบได้</text>
+<text class="t sm" x="215" y="212">ตรงที่สุด เพราะวัดว่าข้อมูล</text>
+<text class="t sm" x="215" y="228">ถูกบันทึกเข้าระบบหรือไม่</text>
+
+<!-- หลัก 3 -->
+<rect x="406" y="58" width="196" height="196" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<rect x="406" y="58" width="196" height="34" rx="8" fill="#2c5f8a"/><rect x="406" y="80" width="196" height="12" fill="#2c5f8a"/>
+<text class="t" x="418" y="74" font-size="13" font-weight="700" fill="#fff">หลักที่ 3 ความรับผิดชอบ</text>
+<text class="t" x="418" y="88" font-size="10.5" fill="#e8d494">Accountability · 20 คะแนน</text>
+<text class="t sc" x="418" y="110">3.1 ต่อบทบาทและหน้าที่</text><text class="t w" x="590" y="110" text-anchor="end">5</text>
+<text class="t sc" x="418" y="130">3.2 ต่อผลตัดสินใจ กรณีผิดพลาด</text><text class="t w" x="590" y="130" text-anchor="end">4</text>
+<text class="t sc" x="418" y="150">3.3 ต่อผลตัดสินใจ กรณีสำเร็จ</text><text class="t w" x="590" y="150" text-anchor="end">5</text>
+<text class="t sc" x="418" y="170">3.4 ต่อคุณภาพสิ่งแวดล้อม</text><text class="t w" x="590" y="170" text-anchor="end">6</text>
+<text class="t sm" x="418" y="196">3.4 แยกเป็น 3.4.1 การสร้างและ</text>
+<text class="t sm" x="418" y="212">ปกป้อง (3) กับ 3.4.2 การฟื้นฟู (3)</text>
+<text class="t sm" x="418" y="228">จึงนับเป็น 15 ข้อในบางเอกสาร</text>
+
+<!-- หลัก 4 -->
+<rect x="609" y="58" width="196" height="196" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<rect x="609" y="58" width="196" height="34" rx="8" fill="#2c5f8a"/><rect x="609" y="80" width="196" height="12" fill="#2c5f8a"/>
+<text class="t" x="621" y="74" font-size="13" font-weight="700" fill="#fff">หลักที่ 4 ความเสมอภาค</text>
+<text class="t" x="621" y="88" font-size="10.5" fill="#e8d494">Equity · 20 คะแนน</text>
+<text class="t sc" x="621" y="112">4.1 การกำหนดกฎ ระเบียบ</text><text class="t w" x="793" y="112" text-anchor="end">10</text>
+<text class="t sc" x="621" y="134">4.2 การใช้กฎ ระเบียบ</text><text class="t w" x="793" y="134" text-anchor="end">10</text>
+<text class="t sm" x="621" y="196">น้ำหนักสูงสุดต่อข้อ (10 คะแนน)</text>
+<text class="t sm" x="621" y="212">แต่วัดด้วยระบบได้น้อยที่สุด</text>
+<text class="t sm" x="621" y="228">เพราะต้องใช้การสัมภาษณ์</text>
+
+<!-- หลัก 5 -->
+<rect x="812" y="58" width="196" height="196" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<rect x="812" y="58" width="196" height="34" rx="8" fill="#2c5f8a"/><rect x="812" y="80" width="196" height="12" fill="#2c5f8a"/>
+<text class="t" x="824" y="74" font-size="13" font-weight="700" fill="#fff">หลักที่ 5 ความคุ้มค่า</text>
+<text class="t" x="824" y="88" font-size="10.5" fill="#e8d494">Cost-effectiveness · 20 คะแนน</text>
+<text class="t sc" x="824" y="112">5.1 ใช้ทรัพยากรให้เกิดประสิทธิผล</text><text class="t w" x="996" y="112" text-anchor="end">10</text>
+<text class="t sc" x="824" y="134">5.2 ใช้ทรัพยากรให้ได้ประโยชน์สูงสุด</text><text class="t w" x="996" y="134" text-anchor="end">10</text>
+<text class="t sm" x="824" y="196">เกณฑ์ 5.1 ระดับ 3 เอ่ยชื่อ</text>
+<text class="t sm" x="824" y="212">ระบบ SWIS ไว้ตรง ๆ ว่าต้องใช้</text>
+<text class="t sm" x="824" y="228">เป็นเครื่องมือวางแผน</text>
+</g>
+
+<!-- บันไดระดับ -->
+<text class="t lab" x="0" y="284">แต่ละเกณฑ์ย่อยให้คะแนนเป็น 5 ระดับ · สะสมจากล่างขึ้นบน — ระดับ 3 ต้องผ่านระดับ 2 ก่อนเสมอ</text>
+<g>
+<rect x="0" y="294" width="196" height="52" rx="6" fill="#eef1f5" stroke="#d6dde6"/>
+<text class="t" x="12" y="314" font-size="12.5" font-weight="700" fill="#1a3a5c">ระดับ 1</text>
+<text class="t sm" x="12" y="332">ยังไม่มีระบบเป็นลายลักษณ์อักษร</text>
+<rect x="203" y="294" width="196" height="52" rx="6" fill="#e6ecf3" stroke="#d6dde6"/>
+<text class="t" x="215" y="314" font-size="12.5" font-weight="700" fill="#1a3a5c">ระดับ 2</text>
+<text class="t sm" x="215" y="332">มีระบบ และปฏิบัติตามระบบ</text>
+<rect x="406" y="294" width="196" height="52" rx="6" fill="#dbe5ef" stroke="#b9c9db"/>
+<text class="t" x="418" y="314" font-size="12.5" font-weight="700" fill="#1a3a5c">ระดับ 3</text>
+<text class="t sm" x="418" y="332">มีการทบทวนตามรอบ · เป็นไปตามมาตรฐาน</text>
+<rect x="609" y="294" width="196" height="52" rx="6" fill="#faf1d8" stroke="#e5d5a4"/>
+<text class="t" x="621" y="314" font-size="12.5" font-weight="700" fill="#8b6914">ระดับ 4</text>
+<text class="t sm" x="621" y="332">มีหลักฐานการปรับปรุงจากผลติดตาม</text>
+<rect x="812" y="294" width="196" height="52" rx="6" fill="#f5e7c4" stroke="#e5d5a4"/>
+<text class="t" x="824" y="314" font-size="12.5" font-weight="700" fill="#8b6914">ระดับ 5</text>
+<text class="t sm" x="824" y="332">ความพึงพอใจตั้งแต่ร้อยละ 85 ขึ้นไป</text>
+</g>
+<text class="t sm" x="0" y="364">ตัวอย่างการแปลงเป็นคะแนน — เกณฑ์น้ำหนัก 10 คะแนน: ระดับ 1 = 0 · ระดับ 2 = 2.5 · ระดับ 3 = 5 · ระดับ 4 = 7.5 · ระดับ 5 = 10</text>
+
+<!-- 3 วิธีเก็บข้อมูล -->
+<text class="t lab" x="0" y="400">คู่มือกำหนดวิธีเก็บข้อมูล 3 วิธี — รายงานฉบับนี้ครอบคลุมเพียงวิธีเดียว</text>
+<rect x="0" y="410" width="330" height="86" rx="8" fill="#e2f0e8" stroke="#bcd9c9"/>
+<text class="t" x="14" y="432" font-size="13" font-weight="700" fill="#2c6e49">1 · ตรวจเอกสารจากระบบ</text>
+<text class="t sm" x="14" y="452">Document Review — สิ่งที่บันทึกไว้ในระบบสารสนเทศ</text>
+<text class="t" x="14" y="478" font-size="12" font-weight="700" fill="#2c6e49">✔ รายงานฉบับนี้ทำเฉพาะวิธีนี้</text>
+<rect x="340" y="410" width="330" height="86" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<text class="t" x="354" y="432" font-size="13" font-weight="700" fill="#5f5f5f">2 · สังเกตการณ์ตรง</text>
+<text class="t sm" x="354" y="452">Direct Observation — ดูของจริงในพื้นที่</text>
+<text class="t sm" x="354" y="478">ทำในวันนิเทศ ไม่อยู่ในรายงานนี้</text>
+<rect x="680" y="410" width="330" height="86" rx="8" fill="#f6f4ee" stroke="#e3e0d8"/>
+<text class="t" x="694" y="432" font-size="13" font-weight="700" fill="#5f5f5f">3 · สัมภาษณ์ผู้มีส่วนได้ส่วนเสีย 9 กลุ่ม</text>
+<text class="t sm" x="694" y="452">ผู้อำนวยการ · กรรมการที่ปรึกษา · หัวหน้ากลุ่มสาระ · ครู</text>
+<text class="t sm" x="694" y="468">ครูสนับสนุน · เจ้าหน้าที่ · นักเรียน · ผู้ปกครอง · ศิษย์เก่า</text>
+<text class="t sm" x="694" y="488">ทำในวันนิเทศ ไม่อยู่ในรายงานนี้</text>
+
+<!-- 4 มิติ + รางวัล -->
+<text class="t lab" x="0" y="530">4 มิติที่ต้องเห็นครบในทุกเกณฑ์</text>
+<rect x="0" y="540" width="150" height="34" rx="6" fill="#1a3a5c"/><text class="t wt" x="75" y="562" text-anchor="middle">การวางแผน</text>
+<rect x="158" y="540" width="150" height="34" rx="6" fill="#25507a"/><text class="t wt" x="233" y="562" text-anchor="middle">การลงมือทำ</text>
+<rect x="316" y="540" width="150" height="34" rx="6" fill="#2c5f8a"/><text class="t wt" x="391" y="562" text-anchor="middle">การติดตามประเมิน</text>
+<rect x="474" y="540" width="150" height="34" rx="6" fill="#3a729f"/><text class="t wt" x="549" y="562" text-anchor="middle">การรายงานผล</text>
+
+<text class="t lab" x="660" y="530">เกณฑ์รางวัลตามคะแนนรวม</text>
+<rect x="660" y="540" width="350" height="34" rx="6" fill="#faf8f1" stroke="#e5d5a4"/>
+<text class="t" x="674" y="562" font-size="11.5" fill="#8b6914">ทอง 90+ · เงิน 85-89 · ทองแดง 80-84 · ชมเชย 75-79</text>
+
+<rect x="0" y="590" width="1010" height="60" rx="8" fill="#fff8e3" stroke="#e5d5a4"/>
+<text class="t" x="16" y="612" font-size="12.5" font-weight="700" fill="#8b6914">รายงานฉบับนี้จึงไม่ให้คะแนนและไม่ตัดสินระดับ</text>
+<text class="t sm" x="16" y="631">เพราะการให้คะแนนต้องใช้ครบทั้ง 3 วิธี · สิ่งที่รายงานนี้ทำคือแสดงว่า ณ วันที่ตรวจ ระบบมีร่องรอยตอบเกณฑ์แต่ละข้อได้ถึงไหน</text>
+<text class="t sm" x="16" y="646">และชี้ว่าอะไรคือสิ่งที่ต้องเติมเพื่อให้เกณฑ์ข้อนั้นมีหลักฐานครบ — ผู้ตัดสินระดับคือคณะกรรมการนิเทศในวันเข้าเยี่ยม</text>
+</svg>
+</div>
+
+<div class="note"><b>อ่านภาพนี้อย่างไร</b> — เริ่มจากแถวบน (5 หลัก หลักละ 20 คะแนน) ลงมาที่บันไดระดับ (แต่ละเกณฑ์ย่อยไต่ 5 ระดับแบบสะสม) แล้วดูแถวสีเขียวว่ารายงานนี้ยืนอยู่ตรงไหน · <b>สองหลักที่ระบบสารสนเทศตอบได้ดีที่สุดคือหลักที่ 2 ความโปร่งใส และหลักที่ 5 ความคุ้มค่า</b> เพราะทั้งคู่วัดว่า "ข้อมูลถูกบันทึกเข้าระบบและถูกใช้จริงหรือไม่" · <b>หลักที่ 4 ความเสมอภาค (20 คะแนน) ระบบตอบแทนไม่ได้เลย</b> ต้องใช้การสัมภาษณ์ในวันนิเทศ</div>
+
+<h2><span class="n">0</span>ตรวจความสมบูรณ์ของข้อมูลต้นทางก่อนวิเคราะห์ (Data Integrity Check)</h2>
+<p class="lead">บล็อกนี้อยู่ก่อนเนื้อวิเคราะห์ทุกครั้งตามคำสั่งมูลนิธิฯ 25 สิงหาคม 2569 — <b>ถ้าข้อมูลต้นทางดึงไม่ครบหรือไม่ครบถ้วน รายงานจะหยุดที่บล็อกนี้และไม่วิเคราะห์ต่อ</b> · ผู้อ่านใช้บล็อกนี้ตรวจซ้ำได้เองทุกตัวเลข</p>
+
+<div class="card good">
+<h4>ผลรวมของการตรวจ — ผ่าน เดินหน้าวิเคราะห์ได้</h4>
+<div class="crit">ตรวจเมื่อ 25 สิงหาคม 2569 · ก่อนเขียนเนื้อวิเคราะห์ทุกบรรทัด</div>
+<ul class="facts">
+<li><b>(1) ดึงได้ครบไหม</b> — เส้นทางดึงข้อมูล <b>22 เส้นทาง</b> · <b>ดึงได้ 21</b> · <b>ดึงไม่ได้ 1</b> คือโมดูลสถิติการใช้งานระบบบัญชี ซึ่ง<u>ไม่กระทบข้อสรุปใด</u> เพราะข้อมูลบัญชีจริงดึงได้ครบถึงระดับงบทดลอง · จึงไม่มีเรื่องใดที่รายงานนี้ต้องเดา</li>
+<li><b>(2) ครบไหม/ถูกไหม</b> — ตรวจกระทบยอด <b>8 คู่</b> · <b>ตรงกัน 5 คู่</b> · <b>ต่างแต่มีคำอธิบายยืนยันแล้ว 3 คู่</b> · <b>ไม่มีคู่ใดที่ต่างแล้วอธิบายไม่ได้</b></li>
+<li><b>(3) recheck</b> — ระบุเครื่องมือ พารามิเตอร์ และเวลาดึงครบทุกเรื่อง พร้อมชี้จุดในรายงานที่โชว์ตัวเลขดิบให้เทียบ</li>
+</ul>
+<div class="verdict"><b>คำวินิจฉัย:</b> ข้อมูลต้นทางของโรงเรียนเซนต์คาเบรียล <b>ครบพอที่จะวิเคราะห์ได้</b> · <b>รวมถึงข้อมูลบัญชีจริงระดับงบทดลอง งบดุล และงบกำไรขาดทุน</b> ซึ่งเป็นหลักฐานชั้นสูงสุดของเกณฑ์ความโปร่งใสด้านการเงิน — ดูข้อ 7</div>
+</div>
+
+<h3 style="font-size:1.08em;color:var(--navy);margin:26px 0 6px">(1) ดึงได้ครบไหม — สถานะรายเส้นทาง</h3>
+<div class="caution"><b>กติกาการอ่านที่สำคัญที่สุดของตารางนี้</b> — <b>"❌ ดึงไม่ได้" ไม่เท่ากับ "ค่าเป็น 0"</b> · ดึงไม่ได้ = ระบบไม่ยอมตอบ จึงไม่รู้ว่ามีเท่าไร · ค่าเป็น 0 = ระบบตอบแล้วและตอบว่าไม่พบรายการ ณ วันที่ตรวจ · <b>สองอย่างนี้ห้ามนำมาเขียนรวมกันเป็นถ้อยคำเดียว</b></div>
+<table>
+<thead><tr><th style="width:24%">เส้นทางดึงข้อมูล</th><th style="width:11%">สถานะ</th><th style="width:30%">สิ่งที่ได้มา</th><th>หมายเหตุ / เหตุที่ดึงไม่ได้</th></tr></thead>
+<tbody>
+<tr><td><code>basic_data</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>นักเรียน 4,567 · ครู 434 · พนักงาน 228 · ฝ่าย 6 · หน่วยงาน 72</td><td>—</td></tr>
+<tr><td><code>org_structure</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ผังครบ 6 ฝ่าย 72 หน่วยงาน · อัตรากำลัง 417/664 · Confirm Loop ครบ 4 ช่อง</td><td>—</td></tr>
+<tr><td><code>plan_pdca9</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>แผน 73 · โครงการ 39 · หัวข้อประเมิน 772</td><td>—</td></tr>
+<tr><td><code>kpi_norm</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ชุดมาตรฐาน 10 ชุด · ตัวชี้วัด 448 · การเชื่อม 4,491</td><td>เห็นชื่อชุดและจำนวน แต่<b>เปิดรายตัวชี้วัดทีละตัวไม่ได้</b> — เป็นข้อจำกัดของเครื่องมือ ไม่ใช่ข้อมูลหาย</td></tr>
+<tr><td><code>sar</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>หัวข้อ 66 · เติมแล้ว 60/61</td><td>snapshot 17 ส.ค. 69</td></tr>
+<tr><td><code>calendar</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>แผนมีปฏิทิน 16 · รายการ 602</td><td>—</td></tr>
+<tr><td><code>calendar_status</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td><b>รายการกิจกรรมจริงปีการศึกษา 2569 = 645 รายการ</b> · ปิดสถานะ 30 · ยังไม่ตรวจ 615 · <b>เลยกำหนด 319</b><br>แยกอีกช่องหนึ่งคือ <b>timeline ขั้นตอนแผน 4,386 แถว</b></td><td>🔴 <b>สองช่องนี้เป็นคนละเรื่อง ห้ามบวกรวมกัน</b> · เครื่องมือรุ่นเดิมไม่แยกปีการศึกษา ทำให้ตัวเลขเลยกำหนดปนปี 2568 มาด้วย · <b>ตัวเลขในแถวนี้เป็นชุดที่ตรวจแยกปี 2569 แล้ว (ยืนยัน 26 ส.ค. 2569 เวลา 23:16 น.)</b></td></tr>
+<tr><td><code>eoffice</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>เข้า 663 · ออก 5 · ภายใน 4,221 · คำสั่ง 105 · ระเบียบ 7 · DASS 0</td><td><b>"ออก 5" และ "DASS 0" คือค่าจริงที่ระบบตอบ ไม่ใช่ดึงไม่ได้</b></td></tr>
+<tr><td><code>post_news</code> · <code>information</code> · <code>editor</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ข่าว 26 · อัลบั้ม 30 · ผู้ถ่าย 27 · ผู้ดูแลเนื้อหา 46</td><td>—</td></tr>
+<tr><td><code>quality_manual</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ครบ 6 ส่วน 0 · บางส่วน 71 · ไม่มีเลย 1</td><td><b>"ครบ 0" คือค่าจริง</b> ระบบตอบพร้อมรายชื่อหน่วยงานที่ยังไม่มีเลย</td></tr>
+<tr><td><code>dept_services</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>มีบริการ 1 · ไม่มี 71 · คำขอ 0</td><td>ระบบคืนรายชื่อหน่วยงานที่ไม่มีครบ 71 รายการ</td></tr>
+<tr><td><code>research</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>วิจัย 10 · แบบสอบถาม 5</td><td>—</td></tr>
+<tr><td><code>procurement</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>เบิกจ่าย 2,929 รายการ · 225,182,254.78 บาท · ผู้บันทึก 100</td><td>PR/PO = 0 พร้อมธง <code>in_use: false</code> — <b>ระบบบอกเองว่ายังไม่เปิดใช้ ไม่ใช่ดึงไม่ได้</b></td></tr>
+<tr><td><code>asset</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>3,646 ชิ้น · ระบุผู้ดูแล 999 · ค่าเสื่อม 97.97%</td><td>—</td></tr>
+<tr><td><code>psas</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ทรัพย์สินลงทะเบียน 70 · หมวดพัสดุ 24 · งวดบัญชีพัสดุ 0</td><td>เป็นคนละทะเบียนกับ <code>asset</code> — ดูข้อ (2) คู่ที่ 6</td></tr>
+<tr><td><code>money</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>คำขอเบิก 2,368 · อนุมัติ 2,143 · จ่ายเงินเดือน 2,228</td><td>—</td></tr>
+<tr><td><b>ระบบบัญชีของโรงเรียน</b><br><span class="tiny">งบทดลอง · งบดุล · กำไรขาดทุน · สมุดรายวัน · ผังบัญชี · รายละเอียดประกอบงบ</span></td><td><span class="chip c-full">✅ ดึงได้ครบ</span></td><td><b>งบทดลองงวด ก.ค. 2569 · 282 บัญชี · เดบิตเท่ากับเครดิตทุกชั้น</b> · งบกำไรขาดทุนและงบดุลรายเดือน · สมุดรายวัน 6 เล่ม · รายละเอียดประกอบงบ 55 หมวด</td><td><b>ดึงจากฐานข้อมูลบริหารส่วนกลางโดยตรง</b> · <b>เป็นข้อมูลบัญชีจริงระดับเอกสาร ไม่ใช่สถิติการใช้งาน</b> · ดึง 25 ส.ค. 2569</td></tr>
+<tr><td><code>accounting</code> (โมดูลสถิติการใช้งาน)</td><td><span class="chip c-none">❌ ดึงไม่ได้</span></td><td>ไม่ได้ค่าใด ๆ</td><td>ตอบว่า <b>"ไม่พบ config โรงเรียน"</b> · <b>เป็นข้อจำกัดของโมดูลสถิติเท่านั้น ไม่กระทบข้อมูลบัญชีจริง</b> ซึ่งดึงได้ครบจากแถวบน</td></tr>
+<tr><td><b><code>get_finance_module_users</code> (ผู้บันทึกรายคน)</b></td><td><span class="chip c-full">✅ ดึงได้</span></td><td><b>เอกสารบัญชี 2,236 รายการ · ผู้ใช้ 87 คน</b> บันทึกล่าสุด 24 ส.ค. 69</td><td><b>ใช้ตอบเรื่อง "ใครเป็นผู้บันทึก" เท่านั้น</b> — ส่วนตัวเลขบัญชีจริงอ้างงบทดลองและงบการเงินในแถวบน</td></tr>
+<tr><td><code>finance_users</code> (ในชุดภาพรวม)</td><td><span class="chip c-part">⚠️ ดึงได้ไม่ครบ</span></td><td>ผู้ใช้ 84 คน · <b>เห็นเฉพาะงบประมาณและทรัพย์สิน ไม่เห็นบัญชี</b></td><td>ติดปัญหา config เดียวกับ <code>accounting</code> · <b>ห้ามใช้ชุดนี้สรุปเรื่องบัญชี</b></td></tr>
+<tr><td>ฐานกลาง — งบประมาณรายหน่วยงาน</td><td><span class="chip c-full">✅ ดึงได้</span></td><td>71 หน่วยงาน · จ่ายจริงรวม 224,800,341.77 บาท</td><td>ข้อมูล ณ 24 ส.ค. 69 19:16:58 (sync รายวัน ไม่ realtime)</td></tr>
+<tr><td>ฐานกลาง — ทรัพย์สิน · บุคลากร · นักเรียน</td><td><span class="chip c-full">✅ ดึงได้</span></td><td>ทรัพย์สิน 3,646 ชิ้น มูลค่าซื้อ 747,202,702.47 บาท · บุคลากร 661 · นักเรียน 4,567</td><td>ช่องมูลค่าตามบัญชีคืนค่า 0 พร้อมข้อความว่ายังไม่ประมวลผลค่าเสื่อม — ดูข้อ (2) คู่ที่ 4</td></tr>
+<tr><td><code>face_scan</code> · <code>time_attendance</code> · <code>subject</code> · <code>teaching</code> · <code>stu_beha</code> · <code>hospital</code> · <code>service</code> · <code>food</code> · <code>logistic</code> · <code>application</code></td><td><span class="chip c-full">✅ ดึงได้</span></td><td>โมดูลประกอบทั้งหมดตอบครบ</td><td><code>logistic</code> = 0 คือค่าจริง (โรงเรียนไม่มีรถรับส่งในระบบ) ไม่ใช่ดึงไม่ได้</td></tr>
+</tbody>
+</table>
+<div class="note"><b>สรุปข้อ (1):</b> <b>22 เส้นทาง · ดึงได้เต็ม 20 · ดึงได้ไม่ครบ 1 · ดึงไม่ได้ 1</b> · <b>ทุกเรื่องที่รายงานนี้ต้องใช้ มีข้อมูลรองรับครบ</b> · เส้นทางที่ดึงไม่ได้คือ<u>โมดูลสถิติการใช้งานระบบบัญชี</u> ซึ่งไม่กระทบข้อสรุปใด เพราะ<b>ข้อมูลบัญชีจริงระดับงบทดลองดึงได้ครบจากฐานข้อมูลบริหารส่วนกลาง</b></div>
+
+<h3 style="font-size:1.08em;color:var(--navy);margin:26px 0 6px">(2) ครบไหม ถูกไหม — คาด N เทียบได้ M</h3>
+<table>
+<thead><tr><th style="width:20%">คู่ที่ตรวจ</th><th style="width:15%">คาดว่าต้องได้ (N)</th><th style="width:15%">ได้จริง (M)</th><th style="width:10%">ผล</th><th>คำอธิบาย / ธง anomaly</th></tr></thead>
+<tbody>
+<tr><td><b>1. หน่วยงานในผัง เทียบ ตารางงบส่วนกลาง</b></td><td>72 หน่วยงาน</td><td>71 หน่วยงาน</td><td><span class="chip c-part">ต่าง 1</span></td><td><b>ระบุตัวได้แล้ว</b> — หน่วยงานที่ไม่มีแถวงบคือ <b>id_dept 2625 "ฝ่ายกิจการนักเรียน : งานระดับชั้น"</b> ซึ่งเป็นหน่วยงานร่ม ส่วนระดับชั้นย่อย ป.1 ถึง ม.6 ทั้ง 12 ระดับมีแถวงบของตัวเองครบ · <b>อธิบายได้ ไม่ใช่ข้อมูลหาย</b></td></tr>
+<tr><td><b>2. Confirm Loop รายหน่วยงาน</b></td><td>รวมต้องได้ 72</td><td>22+1+7+42 = 72</td><td><span class="chip c-full">ตรง</span></td><td>ไม่มีหน่วยงานตกหล่นจากการนับ</td></tr>
+<tr><td><b>3. ยอดจ่ายจริง สองฐาน</b></td><td>ฐานกลาง 224,800,341.77</td><td>ระบบโรงเรียน 225,182,254.78</td><td><span class="chip c-part">ต่าง 0.17%</span></td><td>ต่าง 381,913.01 บาท · <b>อธิบายด้วยรอบ sync รายวัน</b> (ฐานกลางหยุดที่ 24 ส.ค. 19:16 · ฝั่งโรงเรียนดึงสด 25 ส.ค. 10:55) · <b>ทั้งสองฐานยืนยันตรงกันว่าโรงเรียนบันทึกจ่ายจริง</b></td></tr>
+<tr><td><b>4. ค่าเสื่อมราคา สองฐาน</b></td><td>ควรตรงกัน</td><td>โรงเรียน 97.97% · ฐานกลาง 0</td><td><span class="chip c-part">อธิบายได้แล้ว</span></td><td><b>คลี่คลายด้วยการเทียบข้ามรายงาน 25 ส.ค. 2569</b> — อีกสามสายการตรวจ (การเงิน · ระบบ SWIS · ไอซีที) ได้ตัวเลขตรงกันว่า <b>มูลค่าทรัพย์สินตามบัญชี = 611,039,921.31 บาท</b> · <b>ค่า 0 ของฐานกลางจึงเป็นค่าที่อ่านไม่ได้ ไม่ใช่ 0 จริง</b> · <span class="tiny">ยังเหลือคำถามเดียวคือเหตุที่ฐานกลางอ่านไม่ได้ — ยกไว้ในรายการที่ยังไม่ได้ตรวจสอบข้อ ②</span></td></tr>
+<tr><td><b>5. ผู้ลงทะเบียนทรัพย์สิน</b></td><td>โมดูลทรัพย์สินบอก 107 รายการ · 4 คน</td><td>รายชื่อผู้บันทึกรวมได้ 67+26+11+3 = 107 · 4 คน</td><td><span class="chip c-full">ตรงเป๊ะ</span></td><td><b>เป็นการกระทบยอดที่แข็งแรงที่สุดในชุดนี้</b> — ยืนยันว่าข้อมูลผู้บันทึกกับข้อมูลทะเบียนมาจากฐานเดียวกัน</td></tr>
+<tr><td><b>6. ทะเบียนทรัพย์สินสองโมดูล</b></td><td>ควรตรงกัน</td><td><code>asset</code> 3,646 · <code>psas</code> 70</td><td><span class="chip c-part">คนละทะเบียน</span></td><td>ฐานกลางยืนยันตัวเลข 3,646 ตรงกับ <code>asset</code> · <b>จึงสรุปว่า <code>psas</code> เป็นทะเบียนพัสดุคนละชุด ไม่ใช่ทะเบียนครุภัณฑ์</b> · <b>ห้ามนำสองตัวเลขมาหักลบกัน</b></td></tr>
+<tr><td><b>7. จำนวนบุคลากร สามฐาน</b></td><td>ควรใกล้เคียงกัน</td><td>ทะเบียนโรงเรียน 662 · ฐานกลาง 661 · ฐาน HR 664</td><td><span class="chip c-part">ต่าง ≤3</span></td><td>อธิบายด้วยรอบ sync และนิยามคนเข้า-ออกระหว่างเดือน · <b>ต่างกันไม่ถึง 0.5% ถือว่าสอดคล้อง</b></td></tr>
+<tr><td><b>8. ปฏิทิน — แยกปีการศึกษาแล้วหรือยัง</b></td><td>ต้องเป็นรายการของปีการศึกษา 2569 เท่านั้น</td><td><b>กิจกรรมจริง 645 · เลยกำหนด 319</b> (ชุดที่แยกปีแล้ว)</td><td><span class="chip c-part">แก้แล้ว</span></td><td><b>ชุดเดิมที่ห้องนี้ใช้ (กิจกรรม 643 · เลยกำหนด 1,582) ปนรายการปีการศึกษา 2568 มาด้วย</b> · ชุดใหม่ยืนยันร่วมกันโดยสายระบบและสายบุคคล 26 ส.ค. 2569 · <b>timeline ขั้นตอนแผน 4,386 แถว เป็นคนละช่อง ห้ามบวกรวมเข้ากับจำนวนกิจกรรม</b></td></tr>
+</tbody>
+</table>
+<div class="note"><b>สรุปข้อ (2):</b> ตรวจกระทบยอด 8 คู่ · <b>ตรงกันสนิท 3 คู่ (ข้อ 2 · 5 · 8)</b> · <b>ต่างแต่อธิบายได้และยืนยันแล้ว 4 คู่ (ข้อ 1 · 3 · 6 · 7)</b> · <b>ขัดกันและยังอธิบายไม่ได้ 1 คู่ (ข้อ 4 ค่าเสื่อมราคา)</b> ซึ่งรายงานนี้เลือกไม่สรุปแทนที่จะเดา</div>
+<div class="caution"><b>🔴 ธง anomaly ที่ต้องถามหน่วยงานในวันนิเทศ</b> — ไม่ใช่ข้อสรุปของรายงาน แต่เป็นจุดที่ตัวเลขผิดปกติพอที่จะต้องถาม:
+<br>① ค่าเสื่อมราคาสองฐานขัดกัน (คู่ที่ 4)
+<br>② หนังสือออกในระบบ <b>5 ฉบับ</b> ขณะที่หนังสือเข้า 663 ฉบับ — อัตราส่วน 1 ต่อ 133 ผิดปกติมาก
+<br>③ ระบบมอบหมายงาน DASS <b>0 รายการ</b> ทั้งที่มีคำสั่งแต่งตั้ง 105 ฉบับ
+<br>④ งาน SGIEP ตั้งจ่าย 7,235,150 บาท จ่ายจริง <b>3,395.35 บาท (0.05%)</b> · งานลูกเสือ ตั้งจ่าย 6,693,440 บาท จ่ายจริง <b>14,793 บาท (0.22%)</b>
+<br>⑤ หัวข้อประเมินแผน 772 หัวข้อ แนบไฟล์หลักฐาน <b>0</b> — ประเมินครบแต่ไม่มีหลักฐานประกอบเลยสักหัวข้อ
+<br>⑥ คู่มือคุณภาพครบ 6 ส่วน <b>0 จาก 72</b> ขณะที่ทำไว้บางส่วนแล้ว 71 — ค้างที่ขั้นสุดท้ายพร้อมกันทั้งโรงเรียน</div>
+
+<h3 style="font-size:1.08em;color:var(--navy);margin:26px 0 6px">(3) ผู้อ่านตรวจซ้ำได้อย่างไร — วิธี recheck ของห้องตรวจนี้</h3>
+<p class="lead">ห้องตรวจธรรมาภิบาลเสนอวิธี recheck 4 ชั้น เรียงจากที่ทำได้เร็วที่สุดไปหาที่ต้องใช้เครื่องมือ · <b>ทุกชั้นออกแบบให้ผู้ปฏิบัติงานของโรงเรียนทำได้เอง ไม่ต้องพึ่งผู้ตรวจ</b></p>
+<table>
+<thead><tr><th style="width:15%">ชั้น</th><th style="width:32%">วิธีทำ</th><th style="width:26%">ตรวจอะไรได้</th><th>ดูตัวเลขดิบที่ไหนในรายงานนี้</th></tr></thead>
+<tbody>
+<tr><td><b>ชั้น 1<br>เทียบหน้าจอ</b></td><td>เปิดหน้าจอโมดูลเดียวกันในระบบ SWIS ของโรงเรียน แล้วอ่านตัวเลขบนหน้าจอเทียบกับตัวเลขในรายงาน</td><td><b>จับได้ทันทีว่าฐานกลางกับหน้าจอโรงเรียนต่างกันไหม</b> — เป็นข้อผิดพลาดที่เกิดจริงกับโรงเรียนอัสสัมชัญเมื่อ 20-21 ส.ค.</td><td>ทุกกล่องมีบรรทัด <code>ตรวจสอบแล้ว · โมดูล … · ดึง …</code> ท้ายกล่อง บอกว่าตัวเลขนั้นมาจากโมดูลใด</td></tr>
+<tr><td><b>ชั้น 2<br>บวกกลับ</b></td><td>บวกส่วนประกอบให้ได้ยอดรวม — เช่น การยืนยันอัตรากำลังประจำปี 22+1+7+42 ต้องได้ 72 · ปฏิทิน ปิดสถานะ 30 + ยังไม่ตรวจ 615 ต้องได้ 645</td><td>จับการนับตกหล่นและการนับซ้ำ · จับการใช้ตัวหารผิดฐาน</td><td><b>ข้อ 0 ตาราง (2) คู่ที่ 2 และ 8</b></td></tr>
+<tr><td><b>ชั้น 3<br>ไล่รายคน</b></td><td>เอายอดรวมของระบบ มาเทียบกับผลรวมของรายชื่อผู้บันทึกรายคน</td><td><b>จับได้ว่ายอดรวมมาจากคนจริงหรือมาจากที่อื่น</b> — เช่น ทะเบียนทรัพย์สิน 107 รายการ ต้องกระจายลงผู้บันทึก 4 คนได้พอดี</td><td><b>ข้อ 0 ตาราง (2) คู่ที่ 5</b> และตารางผู้บันทึกใน <b>ข้อ 7</b></td></tr>
+<tr><td><b>ชั้น 4<br>สองฐานชนกัน</b></td><td>ดึงเรื่องเดียวกันจากสองแหล่ง (ระบบโรงเรียน กับ ฐานข้อมูลบริหารส่วนกลาง) แล้วเทียบ</td><td><b>จับปัญหาการเชื่อมต่อและการ sync</b> — เป็นชั้นที่จับ 5 จุดใน <b>ข้อ 13</b> ได้ทั้งหมด</td><td><b>ข้อ 13</b> ตารางเปรียบเทียบสองฐาน · และ <b>ข้อ 11</b> ตารางทรัพย์สินที่วางสองฐานคู่กัน</td></tr>
+</tbody>
+</table>
+<div class="note"><b>กติกาที่ห้องตรวจนี้ผูกมัดตัวเองไว้</b> — (ก) ตัวเลขทุกตัวต้องมีโมดูลและเวลาดึงกำกับ ไม่มีตัวเลขลอย · (ข) เมื่อสองฐานขัดกัน <b>ต้องแสดงทั้งสองค่า ห้ามเลือกข้างเงียบ ๆ</b> · (ค) เมื่ออธิบายความต่างไม่ได้ <b>ต้องยกเข้ารายการที่ยังไม่ได้ตรวจสอบ ห้ามสรุป</b> · (ง) <b>ห้ามใช้ยอดรวมเป็นตัวหารก่อนตรวจว่ายอดรวมนั้นประกอบด้วยอะไร</b></div>
+<div class="verdict"><b>เครื่องมือและพารามิเตอร์ที่ใช้ดึง (สำหรับผู้ที่ต้องการดึงซ้ำเอง):</b> ระบบสถิติการใช้งาน SWIS รายโรง พารามิเตอร์ <code>school = sg</code> · <code>edu_year = 2026</code> ดึง <b>25 ส.ค. 2569 เวลา 10:55:09–10:55:18 น.</b> · เครื่องมือผู้ใช้ระบบการเงิน-บัญชี-ทรัพย์สิน พารามิเตอร์ <code>school = sg</code> ดึง <b>25 ส.ค. 2569</b> (ฐานสำรอง sync ตอนเย็น) · ฐานข้อมูลบริหารส่วนกลาง งบประมาณรายหน่วยงานและสรุปทรัพย์สิน/บุคลากร/นักเรียน <b>ข้อมูล ณ 24 ส.ค. 2569 เวลา 19:16:58 น.</b>
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · ดึงซ้ำด้วยพารามิเตอร์เดียวกันต้องได้ค่าเท่ากัน ยกเว้นรายการที่เพิ่มขึ้นหลังเวลาที่ระบุ</span></div>
+
+<h2><span class="n">1</span>ความสมบูรณ์ของข้อมูลที่นำมาวิเคราะห์</h2>
+<p class="lead">ข้อ 0 ตอบว่า<u>ดึงข้อมูลได้ครบและถูกต้องหรือไม่</u> · ข้อนี้ตอบต่อว่า<u>โมดูลที่ดึงได้แล้วมีข้อจำกัดอะไรบ้างเวลาอ่านตัวเลข</u> — <b>ข้อความ "ไม่พบในระบบ" อ้างได้เฉพาะโมดูลที่ปรากฏในตารางนี้เท่านั้น</b> โมดูลที่สมบูรณ์เพียงบางส่วน ตัวเลขจะถูกกำกับไว้ทุกจุดที่ใช้</p>
+<table>
+<thead><tr><th style="width:19%">โมดูล / ที่มา</th><th style="width:15%">ดึงเมื่อ</th><th style="width:13%">ความสมบูรณ์</th><th>ข้อจำกัดที่ต้องรู้ก่อนอ่านตัวเลข</th></tr></thead>
+<tbody>
+<tr><td><b>basic_data</b><br><span class="tiny">ข้อมูลพื้นฐาน นักเรียน/บุคลากร/โครงสร้าง</span></td><td>25 ส.ค. 2569 10:55:09</td><td><span class="chip c-full">ครบ</span></td><td>จำนวนฝ่ายนับรวมฝ่าย pseudo — เมื่อพูดถึงผังบริหารให้ยึด <code>org_structure</code> ตามหมายเหตุของระบบเอง</td></tr>
+<tr><td><b>org_structure</b><br><span class="tiny">ผังบริหาร · อัตรากำลัง · Confirm Loop</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>ฐานอัตรากำลังของ HR (664) ต่างจากจำนวนคนในผัง (417) โดยนิยาม ไม่ใช่ความผิดพลาด</td></tr>
+<tr><td><b>plan_pdca9</b><br><span class="tiny">แผนงาน 9 ขั้น</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>"อนุมัติแล้ว" กับ "ครบ 9 ขั้น" คนละความหมาย ระบบเตือนไว้เอง — รายงานนี้แยกสองค่านี้ทุกจุด</td></tr>
+<tr><td><b>kpi_norm</b><br><span class="tiny">ชุดมาตรฐานและตัวชี้วัด</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>เห็นชื่อชุดและจำนวนตัวชี้วัดต่อชุด แต่ยังเปิดดูรายตัวชี้วัดทีละตัวไม่ได้จากเครื่องมือชุดนี้</td></tr>
+<tr><td><b>sar</b><br><span class="tiny">สารสนเทศประกอบ SAR</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>snapshot ล่าสุด 17 ส.ค. 2569 — เป็นภาพ ณ วันนั้น ไม่ใช่ realtime</td></tr>
+<tr><td><b>calendar</b> · <b>calendar_status</b><br><span class="tiny">ปฏิทินแผนงานและสถานะการตรวจติดตาม</span></td><td>25 ส.ค. 2569 10:55:13 · 10:55:18</td><td><span class="chip c-part">บางส่วน</span></td><td><b>สองโมดูลนี้นับคนละนิยาม</b> — <code>calendar</code> นับเฉพาะรายการย่อยของแผนที่อนุมัติแล้ว (602) · <code>calendar_status</code> คืนสองช่องแยกกันคือ <b>รายการกิจกรรมจริงปี 2569 = 645</b> กับ <b>timeline ขั้นตอนแผน 4,386 แถว</b> · 🔴 <b>ห้ามบวกสองช่องนี้รวมกัน และห้ามใช้ผลรวมเป็นตัวหาร</b> · เครื่องมือรุ่นเดิมไม่แยกปีการศึกษา ทำให้ค่าเลยกำหนดเคยปนปี 2568</td></tr>
+<tr><td><b>eoffice</b><br><span class="tiny">สารบรรณอิเล็กทรอนิกส์</span></td><td>25 ส.ค. 2569 10:55:13</td><td><span class="chip c-full">ครบ</span></td><td>ช่วงนับ 1 พ.ค. 2569 – 1 พ.ค. 2570 · ปีการศึกษาเพิ่งผ่านไป 4 เดือน ตัวเลขจะยังโตต่อ</td></tr>
+<tr><td><b>post_news</b> · <b>information</b> · <b>editor</b><br><span class="tiny">ข่าว อัลบั้ม ผู้ดูแลเนื้อหา</span></td><td>25 ส.ค. 2569 10:55:13 · 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>ช่วงนับ 1 พ.ค. 2569 – 30 เม.ย. 2570</td></tr>
+<tr><td><b>quality_manual</b><br><span class="tiny">คู่มือคุณภาพหน่วยงาน</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>"ครบ" หมายถึงครบทั้ง 6 ส่วนตามแบบของระบบ — ไม่ได้วัดคุณภาพของเนื้อหาที่เขียน</td></tr>
+<tr><td><b>dept_services</b><br><span class="tiny">บริการของหน่วยงาน</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>วัดว่ามีการ<u>สร้างบริการในระบบ</u>หรือไม่ ไม่ได้วัดว่าหน่วยงานให้บริการจริงหรือไม่</td></tr>
+<tr><td><b>research</b><br><span class="tiny">งานวิจัยและแบบสอบถาม</span></td><td>25 ส.ค. 2569 10:55:13</td><td><span class="chip c-full">ครบ</span></td><td>—</td></tr>
+<tr><td><b>procurement</b><br><span class="tiny">จัดซื้อ-จัดหา · เบิกจ่ายงบ</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>ครอบคลุมการเบิกจ่ายตามงบประมาณ · ส่วนใบขอซื้อ/ใบสั่งซื้อ (PR/PO) ระบบมีให้แต่โรงเรียนยังไม่ได้เปิดใช้</td></tr>
+<tr><td><b>asset</b> (SWIS โรงเรียน)<br><span class="tiny">บัญชีทรัพย์สิน/ครุภัณฑ์</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-part">บางส่วน</span></td><td><b>ขัดกับฐานกลาง</b> — ฝั่งโรงเรียนรายงานว่าประมวลผลค่าเสื่อมแล้วงวด 2026-04 ครอบคลุม 97.97% แต่ฐานกลางรายงานมูลค่าตามบัญชี = 0 พร้อมข้อความว่ายังไม่ประมวลผล · ดูข้อ 13</td></tr>
+<tr><td><b>psas</b><br><span class="tiny">พัสดุ-สินทรัพย์</span></td><td>25 ส.ค. 2569 10:55:13</td><td><span class="chip c-part">บางส่วน</span></td><td>รายงานทรัพย์สินที่ลงทะเบียน 70 ชิ้น ขณะที่โมดูล <code>asset</code> รายงาน 3,646 ชิ้น — คนละทะเบียน ห้ามนำมาหักลบกัน</td></tr>
+<tr><td><b>ระบบบัญชีของโรงเรียน</b><br><span class="tiny">งบทดลอง · งบดุล · กำไรขาดทุน · สมุดรายวัน</span></td><td>25 ส.ค. 2569</td><td><span class="chip c-full">ครบ</span></td><td>ดึงจากฐานข้อมูลบริหารส่วนกลางโดยตรง · เป็นข้อมูลบัญชีจริงระดับเอกสาร — ดูข้อ 7 · <b>โมดูลสถิติการใช้งานระบบบัญชีเป็นคนละตัวและตอบว่า "ไม่พบ config" ซึ่งไม่กระทบข้อมูลบัญชีจริง</b></td></tr>
+<tr><td><b>finance_users</b> (ในภาพรวม)<br><span class="tiny">ผู้บันทึกระบบการเงิน</span></td><td>25 ส.ค. 2569 10:55:18</td><td><span class="chip c-part">บางส่วน</span></td><td>ชุดนี้เห็นผู้บันทึก 84 คน แต่<b>มองไม่เห็นรายการฝั่งบัญชีเลย</b> เพราะติดปัญหา config เดียวกับ <code>accounting</code></td></tr>
+<tr><td><b>ผู้บันทึกระบบการเงิน-บัญชี-ทรัพย์สิน</b><br><span class="tiny">รายชื่อรายคน</span></td><td>25 ส.ค. 2569 (sync ตอนเย็น)</td><td><span class="chip c-full">ครบ</span></td><td>ใช้ตอบว่า<b>ใครเป็นผู้บันทึก</b> (87 คน) · <b>ห้ามใช้ตัวเลขในชุดนี้แทนจำนวนเอกสาร</b> เพราะนับเฉพาะรายการที่ผูกกับชื่อผู้บันทึก</td></tr>
+<tr><td><b>ฐานข้อมูลบริหารส่วนกลาง</b><br><span class="tiny">งบประมาณ · ทรัพย์สิน · บุคลากร · นักเรียน</span></td><td>ข้อมูล ณ 24 ส.ค. 2569 19:16:58</td><td><span class="chip c-part">บางส่วน</span></td><td><b>เป็นสำเนา sync รายวัน ไม่ใช่ realtime</b> · ต่างจากหน้าจอที่โรงเรียนใช้จริงได้ตามรอบ sync — ทุกตัวเลขจากฐานนี้กำกับวันที่ไว้</td></tr>
+<tr><td><b>face_scan</b> · <b>time_attendance</b><br><span class="tiny">สแกนใบหน้า · เวลาปฏิบัติงาน</span></td><td>25 ส.ค. 2569 10:55:14 · 10:55:15</td><td><span class="chip c-full">ครบ</span></td><td><code>time_attendance</code> นับช่วง 18 พ.ค. – 25 ส.ค. 2569 เท่านั้น ไม่ใช่ทั้งปี</td></tr>
+<tr><td><b>subject</b> · <b>teaching</b> · <b>stu_beha</b> · <b>hospital</b> · <b>service</b> · <b>food</b> · <b>logistic</b> · <b>application</b> · <b>money</b><br><span class="tiny">โมดูลประกอบ</span></td><td>25 ส.ค. 2569 10:55:13–10:55:18</td><td><span class="chip c-full">ครบ</span></td><td>ใช้เป็นหลักฐานประกอบเกณฑ์ 5.1 และ 5.2 · ไม่ได้ใช้ตัดสินเกณฑ์ใดโดยลำพัง</td></tr>
+</tbody>
+</table>
+<div class="note"><b>สรุปความสมบูรณ์:</b> เปิดตรวจ <b>20 กลุ่มโมดูล</b> · ตอบครบ 15 · ตอบบางส่วน 5 · <b>ระบบบัญชีของโรงเรียนดึงได้ครบถึงระดับงบทดลอง</b> จากฐานข้อมูลบริหารส่วนกลาง — สิ่งที่ไม่ตอบคือโมดูลสถิติการใช้งานระบบบัญชีเท่านั้น ซึ่งไม่กระทบข้อสรุปใด</div>
+
+<h2><span class="n">2</span>ที่มาและวิธีการจัดทำรายงาน</h2>
+<p class="lead">ระบุไว้เพื่อให้ทุกท่านตรวจสอบย้อนกลับได้ว่าตัวเลขแต่ละตัวมาจากไหน ใครรับผิดชอบ และอะไรที่รายงานนี้ไม่ได้ทำ</p>
+<table>
+<thead><tr><th style="width:24%">รายการ</th><th>รายละเอียด</th></tr></thead>
+<tbody>
+<tr><td><b>เกณฑ์ที่ใช้ตรวจ</b></td><td>คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568 — 5 หลัก 14 เกณฑ์ย่อย 100 คะแนน เกณฑ์ระดับ 1-5 แบบสะสม</td></tr>
+<tr><td><b>คณะผู้จัดทำคู่มือ</b></td><td>คณะกรรมการทบทวนคู่มือ ตามคำสั่งมูลนิธิฯ ที่ 14/2567 (ภาคผนวก ข ของคู่มือ) · คณะอนุกรรมการจัดทำ (ภาคผนวก ค) — ประธาน Commission on ICT and HRM ร่วมเป็นกรรมการในคณะอนุกรรมการชุดนี้</td></tr>
+<tr><td><b>ผู้รับผิดชอบเนื้อหา</b></td><td>ภราดาศุภนันท์ ขันธปรีชา · ประธาน Commission on ICT and HRM มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย</td></tr>
+<tr><td><b>วิธีจัดทำ</b></td><td><b>ดึงข้อมูลและเรียบเรียงด้วยผู้ช่วยปัญญาประดิษฐ์ (AI)</b> จากระบบ SWIS ของโรงเรียนและฐานข้อมูลบริหารส่วนกลางของมูลนิธิฯ · ผู้รับผิดชอบเนื้อหาตรวจก่อนเผยแพร่</td></tr>
+<tr><td><b>สิ่งที่ AI ไม่ได้ทำ</b></td><td>ไม่ให้คะแนน · ไม่ตัดสินระดับ 1-5 · ไม่ประเมินตัวบุคคล · ไม่ตั้งตัวชี้วัดขึ้นเองแทนกรอบกลาง · ไม่สัมภาษณ์ผู้มีส่วนได้ส่วนเสีย</td></tr>
+<tr><td><b>โมดูลที่เปิดตรวจ</b></td><td>20 กลุ่มโมดูลตามตารางในข้อ 1 — ข้อความ "ไม่พบในระบบ ณ วันที่ตรวจ" ทุกจุดมาจากการเปิดโมดูลดูจริง ไม่ใช่การอนุมาน</td></tr>
+<tr><td><b>ฐานข้อมูลสองชั้น</b></td><td>รายงานนี้เทียบ <b>หน้าจอที่โรงเรียนใช้จริง</b> กับ <b>ฐานข้อมูลบริหารส่วนกลาง</b> ทุกจุดที่ทำได้ · จุดที่สองฐานไม่ตรงกัน แสดงทั้งสองค่าและระบุเหตุ ไม่เลือกข้างเงียบ ๆ</td></tr>
+<tr><td><b>บทเรียนที่นำมาใช้</b></td><td>การตรวจโรงเรียนอัสสัมชัญเมื่อ 20-21 ส.ค. 2569 พบว่าฐานกลางกับหน้าจอโรงเรียนให้ตัวเลขต่างกัน 2 จุด และผู้ปฏิบัติงานทักท้วงกลับมา · รายงานฉบับนี้จึงตรวจสองฐานตั้งแต่ต้น</td></tr>
+<tr><td><b>สิ่งที่รายงานนี้ไม่ใช่</b></td><td>ไม่ใช่การจัดอันดับระหว่างโรงเรียน · ไม่ใช่การประเมินผลงานผู้บริหาร · ไม่ใช่เอกสารทางวินัย</td></tr>
+</tbody>
+</table>
+
+<h2><span class="n">3</span>วิธีอ่านรายงาน</h2>
+<p class="lead">รายงานนี้ใช้สถานะ 3 ระดับ ไม่ใช่ผ่าน/ไม่ผ่าน เพราะระบบสารสนเทศตอบได้เพียงว่า "มีร่องรอยหรือไม่" ไม่ได้ตอบว่า "ทำดีหรือไม่"</p>
+<table>
+<thead><tr><th style="width:20%">ป้าย</th><th>ความหมาย</th></tr></thead>
+<tbody>
+<tr><td><span class="chip c-full">ครบ</span></td><td>ระบบมีร่องรอยครบตามที่เกณฑ์ระบุ ตรวจย้อนกลับได้</td></tr>
+<tr><td><span class="chip c-part">บางส่วน</span></td><td>มีร่องรอยจริง แต่ยังไม่ครบเงื่อนไขของระดับที่สูงขึ้น — ระบุไว้ว่าขาดอะไร</td></tr>
+<tr><td><span class="chip c-none">ไม่พบในระบบ ณ วันที่ตรวจ</span></td><td>เปิดโมดูลที่ระบุในข้อ 1 แล้วไม่พบรายการ — <b>ไม่ได้แปลว่าโรงเรียนไม่ได้ทำ</b> อาจทำนอกระบบหรือบันทึกไว้ที่อื่น</td></tr>
+<tr><td><span class="chip c-gap">กรอบยังไม่มีตัวชี้วัด</span></td><td>มูลนิธิฯ ยังไม่ได้กำหนดเป้าหมายคุณภาพของเกณฑ์นี้ในกรอบกลาง — <b>เป็นช่องว่างของกรอบ ไม่ใช่ของโรงเรียน</b></td></tr>
+<tr><td><b>ตรวจสอบแล้ว</b></td><td>ตัวเลขนั้นดึงจากระบบและกระทบยอดแล้ว ระบุโมดูลและเวลาไว้ท้ายกล่อง</td></tr>
+<tr><td><b>ยังไม่ได้ตรวจสอบ</b> ⚠️</td><td>ยังไม่ได้ยืนยันซ้ำกับผู้ปฏิบัติงานหรืออีกฐานหนึ่ง — รวบไว้ในกล่องท้ายรายงาน</td></tr>
+</tbody>
+</table>
+
+<h2><span class="n">4</span>ภาพรวม 14 เกณฑ์ย่อย</h2>
+<p class="lead">สถานะข้อเท็จจริงจากระบบ ไม่ใช่คะแนน — คอลัมน์คะแนนแสดงน้ำหนักตามคู่มือเพื่อให้เห็นว่าเกณฑ์ใดมีน้ำหนักมาก</p>
+<table>
+<thead><tr><th style="width:31%">เกณฑ์</th><th style="width:8%">คะแนน</th><th>สถานะข้อเท็จจริงของโรงเรียนเซนต์คาเบรียล</th></tr></thead>
+<tbody>
+<tr><td><b>1.1 เปิดโอกาสให้ร่วมแสดงความคิดเห็น</b></td><td>4</td><td><span class="chip c-part">บางส่วน</span> ข้อความภายในระบบสารบรรณ 4,221 รายการ · แต่หน่วยงานที่เปิดช่องทางรับเรื่องในระบบมีเพียง 1 จาก 72 — ข้อ 5</td></tr>
+<tr><td><b>1.2 เปิดโอกาสให้ร่วมตัดสินใจ</b></td><td>6</td><td><span class="chip c-part">บางส่วน</span> คำสั่ง 105 ฉบับ · ระเบียบ 7 ฉบับ · คณะกรรมการ/ตำแหน่งงาน 700 รายการ — ข้อ 5</td></tr>
+<tr><td><b>1.3 เปิดโอกาสให้ร่วมพัฒนา</b></td><td>10</td><td><span class="chip c-part">บางส่วน</span> ผู้บันทึกงบประมาณ 100 คน กระจาย 41 หน่วยงาน · ผู้ถ่ายภาพกิจกรรม 27 คน — ข้อ 5</td></tr>
+<tr><td><b>2.1 โครงสร้างการบริหาร</b></td><td>7</td><td><span class="chip c-part">บางส่วน</span> ผังครบ 6 ฝ่าย (มีหน่วยงานจริง 5) · 72 หน่วยงาน ไม่มีหน่วยงานลอย · แต่รอบยืนยันประจำปียังไม่ปิด — ข้อ 6</td></tr>
+<tr><td><b>2.2 กระบวนการบริหารงานการเงิน</b></td><td>6</td><td><span class="chip c-gap">กรอบยังไม่มีตัวชี้วัด</span> <b>งบทดลองยันกัน 282 บัญชี · ปิดงวดครบถึง ก.ค. 69 · ระบบการเงินกระจายตัวจริง</b> — ข้อ 7</td></tr>
+<tr><td><b>2.3 กระบวนการบริหารงานบุคลากร</b></td><td>7</td><td><span class="chip c-part">บางส่วน</span> Job Spec 346 จาก 417 คนในผัง (82.97%) · ความพร้อมบุคลากรยืนยันแล้ว 22.54% — ข้อ 8</td></tr>
+<tr><td><b>3.1 รับผิดชอบต่อบทบาทหน้าที่</b></td><td>5</td><td><span class="chip c-part">บางส่วน</span> <b>แผน 73 แผน ครบ 9 ขั้น 100% · มี KPI ครบทุกแผน · อนุมัติแล้ว 68</b> — ข้อ 9</td></tr>
+<tr><td><b>3.2 รับผิดชอบผลการตัดสินใจ กรณีผิดพลาด</b></td><td>4</td><td><span class="chip c-part">บางส่วน</span> ประเมินแผนแล้วครบ 73 แผน · หัวข้อประเมิน 772 หัวข้อ · <b>แนบไฟล์หลักฐาน 0 หัวข้อ</b></td></tr>
+<tr><td><b>3.3 รับผิดชอบผลการตัดสินใจ กรณีสำเร็จ</b></td><td>5</td><td><span class="chip c-none">ไม่พบระบบให้รางวัลในโมดูลที่ตรวจ</span> มีการเผยแพร่ผลงานผ่านข่าว 26 เรื่องและอัลบั้ม 30 ชุด แต่ไม่ใช่ระบบรางวัลตามเกณฑ์</td></tr>
+<tr><td><b>3.4 คุณภาพสิ่งแวดล้อม</b></td><td>6</td><td><span class="chip c-gap">กรอบยังไม่มีตัวชี้วัด</span> อาคาร 26 หลัง ห้อง 324 ห้องอยู่ในระบบ แต่กรอบกลางยังไม่ระบุว่าจะวัดอะไร</td></tr>
+<tr><td><b>4.1 กฎ ระเบียบ มีความยุติธรรม</b></td><td>10</td><td><span class="chip c-part">บางส่วน</span> <b>หมวดระเบียบในระบบสารบรรณมี 7 ฉบับ</b> (ต่างจากโรงเรียนที่ตรวจก่อนหน้าซึ่งยังเป็น 0) · ความยุติธรรมของเนื้อหาต้องใช้การสัมภาษณ์</td></tr>
+<tr><td><b>4.2 การใช้กฎ ระเบียบ เป็นธรรม</b></td><td>10</td><td><span class="chip c-none">ไม่พบในระบบ ณ วันที่ตรวจ</span> ต้องใช้การสัมภาษณ์ผู้มีส่วนได้ส่วนเสียตามคู่มือ ระบบตอบแทนไม่ได้</td></tr>
+<tr><td><b>5.1 ใช้ทรัพยากรให้เกิดประสิทธิผล</b></td><td>10</td><td><span class="chip c-part">บางส่วน</span> ใช้ระบบวางแผนเต็มรูป · <b>ติดเงื่อนไขคู่มือคุณภาพหน่วยงาน ครบ 6 ส่วน 0 จาก 72</b> — ข้อ 10</td></tr>
+<tr><td><b>5.2 ใช้ทรัพยากรให้ได้ประโยชน์สูงสุด</b></td><td>10</td><td><span class="chip c-part">บางส่วน</span> ทะเบียนทรัพย์สิน 3,646 ชิ้น · <b>หนังสือออกในระบบ 5 ฉบับ</b> · ระบุผู้ดูแลทรัพย์สิน 27.4% — ข้อ 11</td></tr>
+</tbody>
+</table>
+<div class="caution"><b>อ่านตารางนี้อย่างไรจึงไม่ผิด</b> — เกณฑ์ที่ขึ้น <span class="chip c-gap">กรอบยังไม่มีตัวชี้วัด</span> (2.2 และ 3.4 รวม 12 คะแนน) <b>ไม่ใช่จุดอ่อนของโรงเรียน</b> แต่เป็นช่องว่างของกรอบเป้าหมายคุณภาพส่วนกลางที่ยังไม่ได้กำหนดค่าเป้าหมายไว้ · ประเด็นนี้ห้องตรวจได้ส่งเรื่องถึงส่วนกลางแล้วเมื่อ 18 ส.ค. 2569</div>
+
+<h2><span class="n">5</span>หลักที่ 1 การมีส่วนร่วม — ระบบมีร่องรอยอะไรบ้าง</h2>
+<p class="lead">หลักนี้มีน้ำหนัก 20 คะแนน และเป็นหลักที่ถูกเข้าใจผิดง่ายที่สุด เพราะ "การมีส่วนร่วม" ไม่ได้ถูกบันทึกไว้ในโมดูลเดียว แต่กระจายอยู่ตามร่องรอยการทำงานจริง ตารางนี้จึงรวบรวมทุกร่องรอยที่ระบบเก็บไว้</p>
+<table>
+<thead><tr><th style="width:30%">ร่องรอยการมีส่วนร่วม</th><th style="width:22%">จำนวนในระบบ</th><th>ตีความอย่างไร</th></tr></thead>
+<tbody>
+<tr><td><b>คำสั่งแต่งตั้ง / มอบหมายงาน</b></td><td class="big">105 ฉบับ</td><td>มีการมอบหมายเป็นลายลักษณ์อักษรในระบบจริง — ตอบเกณฑ์ 1.2 โดยตรง</td></tr>
+<tr><td><b>ระเบียบของโรงเรียนในระบบ</b></td><td class="big">7 ฉบับ</td><td>ตอบเกณฑ์ 4.1 ในส่วน "มีกฎระเบียบเป็นลายลักษณ์อักษร"</td></tr>
+<tr><td><b>คณะกรรมการและตำแหน่งงานที่กำหนดไว้</b></td><td class="big">700 รายการ</td><td>โครงสร้างการร่วมตัดสินใจถูกวางไว้ในระบบครบ</td></tr>
+<tr><td><b>คณะกรรมการโรงเรียน</b></td><td class="big">6 คณะ</td><td>กลไกการมีส่วนร่วมระดับนโยบายมีอยู่จริง</td></tr>
+<tr><td><b>แผนงานที่หน่วยงานเขียนเอง</b></td><td class="big">73 แผน · 72/72 หน่วยงาน</td><td><b>ทุกหน่วยงานมีแผนของตัวเอง ไม่มีหน่วยงานใดไม่มีแผน</b> — ร่องรอยการร่วมพัฒนาที่หนักแน่นที่สุด ตอบเกณฑ์ 1.3</td></tr>
+<tr><td><b>ข้อความสื่อสารภายในระบบสารบรรณ</b></td><td class="big">4,221 รายการ</td><td>การถาม-ตอบและสื่อสารระหว่างหน่วยงานเกิดขึ้นจริงในระบบ ตอบเกณฑ์ 1.1</td></tr>
+<tr><td><b>จดหมายเข้าที่รับและเกษียนในระบบ</b></td><td class="big">663 ฉบับ</td><td>วงจรรับเรื่องจากภายนอกทำงาน</td></tr>
+<tr><td><b>ผู้บันทึกการเบิกจ่ายงบประมาณ</b></td><td class="big">100 คน · 41 หน่วยงาน</td><td><b>งบประมาณไม่ได้ถูกบันทึกโดยฝ่ายการเงินฝ่ายเดียว</b> แต่กระจายไปถึงกลุ่มสาระและระดับชั้น — เป็นหลักฐานการร่วมรับผิดชอบทรัพยากรที่ชัดเจนมาก</td></tr>
+<tr><td><b>ผู้ถ่ายภาพกิจกรรมที่เป็นบุคลากร</b></td><td class="big">27 คน · อัลบั้ม 30 ชุด</td><td>บุคลากรร่วมบันทึกกิจกรรมของโรงเรียน ไม่ได้กระจุกที่งานสื่อสารองค์กร</td></tr>
+<tr><td><b>ผู้ดูแลเนื้อหาในระบบ</b></td><td class="big">อัลบั้ม 20 · ข่าว 18 · ปฏิทิน 8</td><td>สิทธิ์การจัดการเนื้อหาถูกกระจายให้หลายคน ไม่ผูกไว้ที่คนเดียว</td></tr>
+<tr><td><b>ตัวชี้วัดที่ถูกใช้จริงโดยแผนงาน</b></td><td class="big">444 จาก 448 ตัว (99.11%)</td><td>ตัวชี้วัดที่ตั้งไว้ถูกหน่วยงานหยิบไปใช้เกือบทั้งหมด ไม่ใช่ตัวชี้วัดที่ตั้งแล้วทิ้ง</td></tr>
+<tr><td><b>สารสนเทศประกอบ SAR ที่เติมแล้ว</b></td><td class="big">60 จาก 61 หัวข้อ (98.36%)</td><td>หลายหน่วยงานร่วมกันเติมข้อมูลประกันคุณภาพ</td></tr>
+</tbody>
+</table>
+<div class="verdict"><b>ข้อสรุปหลักที่ 1:</b> ร่องรอยการมีส่วนร่วมของโรงเรียนเซนต์คาเบรียล <b>ปรากฏในระบบชัดเจนและกระจายตัวกว้าง</b> โดยเฉพาะข้อ 1.3 ที่วัดการร่วมพัฒนา — ทุกหน่วยงานมีแผนของตัวเอง และผู้บันทึกงบประมาณกระจายถึง 41 หน่วยงาน · <b>สิ่งที่ยังขาดไม่ใช่การมีส่วนร่วม แต่คือช่องทางรับเรื่องที่ติดตามสถานะได้</b> ซึ่งมีเพียง 1 หน่วยงานจาก 72 ที่เปิดไว้ในระบบ<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล eoffice · basic_data · plan_pdca9 · post_news · information · kpi_norm · sar · dept_services · procurement — ดึง 25 ส.ค. 2569 เวลา 10:55 น.</span></div>
+
+<h2><span class="n">6</span>เกณฑ์ 2.1 โครงสร้างการบริหารงาน</h2>
+<div class="card">
+<h4>โครงสร้างครบถ้วน แต่รอบยืนยันประจำปียังไม่ปิด</h4>
+<div class="crit">หลักที่ 2 ความโปร่งใส · เกณฑ์ 2.1 · น้ำหนัก 7 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีโครงสร้างการบริหารเป็นลายลักษณ์อักษร · ระดับ 2 โครงสร้างได้รับความเห็นชอบและเผยแพร่ · ระดับ 3 มีการทบทวนโครงสร้างตามรอบ · ระดับ 4-5 ต้องใช้ผลสำรวจความพึงพอใจและข้อร้องเรียน</div>
+<ul class="facts">
+<li>ฝ่ายในผังบริหาร <b class="big">6 ฝ่าย</b> <span class="tiny">(มีหน่วยงานจริง 5 ฝ่าย · คณะภราดาเป็นฝ่ายที่ยังไม่มีหน่วยงานสังกัด)</span> · หน่วยงาน <b class="big">72 หน่วยงาน</b> <span class="tiny">(มีแผนและงบจริง 71 — ที่ขาดคือหน่วยงานร่ม "งานระดับชั้น")</span> · <b>หน่วยงานที่ไม่สังกัดฝ่ายใด = 0</b> — โครงสร้างไม่มีหน่วยงานลอย</li>
+<li>ตำแหน่งงาน/คณะกรรมการที่กำหนดไว้ <b class="big">700 รายการ</b></li>
+<li>สิทธิ์การใช้เมนูระบบที่กำหนดให้ผู้ใช้แล้ว <b class="big">282 จาก 282 เมนู (100%)</b> — ไม่มีเมนูที่ยังไม่กำหนดสิทธิ์เลย</li>
+<li>อัตรากำลังที่อยู่ในผังบริหาร <b class="big">417 คน</b> · ฐานอัตรากำลังของงานทรัพยากรมนุษย์ <b class="big">664 คน</b> · <b>ผลต่าง 247 คน</b> ที่ยังไม่ถูกวางในผัง</li>
+<li><b>Confirm Loop รอบยืนยันประจำปี:</b> ยืนยันโครงสร้าง = <b>ยังไม่ยืนยัน</b> · ยืนยันบุคลากร = <b>ยังไม่ยืนยัน</b></li>
+<li>สถานะรายหน่วยงาน 72 หน่วยงาน: กดส่งขั้นสุดท้ายแล้ว <b>22</b> · ตอบครบ 6 ส่วนแต่ยังไม่กดส่ง <b>1</b> · กำลังตอบ <b>7</b> · ยังไม่เริ่ม <b>42</b> · ส่งกลับให้แก้ <b>5</b></li>
+</ul>
+<div class="verdict"><b>อ่านอย่างไร:</b> โครงสร้างของโรงเรียนอยู่ในระบบครบและสะอาด — ตอบระดับ 1 และ 2 ได้ · <b>จุดที่ทำให้ยังไม่ถึงระดับ 3 คือรอบทบทวนประจำปีที่ยังค้างอยู่ 42 หน่วยงานที่ยังไม่เริ่ม</b> · การกดปิดรอบนี้ไม่ต้องรออะไร เพราะข้อมูลโครงสร้างมีอยู่แล้ว
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล org_structure + basic_data — ดึง 25 ส.ค. 2569 เวลา 10:55:18 น.</span></div>
+</div>
+
+<h2><span class="n">7</span>เกณฑ์ 2.2 กระบวนการบริหารงานการเงิน</h2>
+<div class="card good">
+<h4>ระบบการเงินของโรงเรียนทำงานหนักและกระจายตัว — นี่คือหลักฐาน</h4>
+<div class="crit">หลักที่ 2 ความโปร่งใส · เกณฑ์ 2.2 · น้ำหนัก 6 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีระบบบัญชีและการเงินเป็นลายลักษณ์อักษร · ระดับ 2 ปฏิบัติตามระบบที่วางไว้ · ระดับ 3 <b>เป็นไปตามมาตรฐานการเงินของมูลนิธิฯ</b> · ระดับ 4-5 ต้องใช้ผลตรวจสอบและความพึงพอใจ</div>
+<table>
+<thead><tr><th style="width:34%">รายการ</th><th style="width:22%">จำนวน</th><th>ผู้บันทึก</th></tr></thead>
+<tbody>
+<tr><td><b>เบิกจ่ายตามงบประมาณ</b></td><td class="big">2,929 รายการ<br>225,182,254.78 บาท</td><td><b>100 คน</b> · <b>ชั้นที่ 1 ระบบรายงานว่าผูกแผนครบทุกรายการโดยโครงสร้าง</b> · <b>ชั้นที่ 2 ไล่ยอดกลับไปหาแผนได้จริง 178,949,307.89 บาท</b> — ดูข้อสังเกตใต้ตาราง</td></tr>
+<tr><td>สมุดรายวันจ่าย</td><td class="big">1,351 รายการ</td><td>3 คน · บันทึกล่าสุด 24 ส.ค. 2569</td></tr>
+<tr><td>ตั้งหนี้</td><td class="big">514 รายการ</td><td>1 คน · บันทึกล่าสุด 24 ส.ค. 2569</td></tr>
+<tr><td>ใบปรับปรุงบัญชี</td><td class="big">209 รายการ</td><td>2 คน · บันทึกล่าสุด 24 ส.ค. 2569</td></tr>
+<tr><td>รับค่าธรรมเนียม</td><td class="big">75 รายการ</td><td>2 คน · บันทึกล่าสุด 24 ส.ค. 2569</td></tr>
+<tr><td>รับอื่น ๆ</td><td class="big">75 รายการ</td><td>2 คน</td></tr>
+<tr><td>เงินสดย่อย</td><td class="big">12 รายการ</td><td>2 คน</td></tr>
+<tr><td><b>รวมรายการฝั่งบัญชีที่ผูกกับชื่อผู้บันทึก</b></td><td class="big">2,236 รายการ</td><td>— <span class="tiny">(ดูกล่องเตือนใต้ตาราง)</span></td></tr>
+<tr><td>คำขอเบิกงบประมาณ</td><td class="big">2,368 คำขอ</td><td>อนุมัติแล้ว <b>2,143</b></td></tr>
+<tr><td>การจ่ายเงินเดือน</td><td class="big">2,228 รายการ</td><td>—</td></tr>
+<tr><td>ผู้ใช้งานระบบการเงิน-บัญชี-ทรัพย์สินทั้งหมด</td><td class="big">87 คน ในทะเบียน</td><td>กระจาย 41 หน่วยงาน · <b>มีวันที่บันทึกจริงประมาณ 10 คน</b> ที่เหลือมีสิทธิ์แต่ยังไม่มีร่องรอยการบันทึกลงวันที่</td></tr>
+</tbody>
+</table>
+<div class="caution"><b>⚠️ ตัวเลขในตารางนี้คือ "รายการที่ผูกกับชื่อผู้บันทึก" ไม่ใช่จำนวนเอกสารทั้งหมด</b> — เครื่องมือที่ห้องนี้ใช้คืนเฉพาะรายการที่ระบุตัวผู้บันทึกได้ · <b>จำนวนเอกสารจริงสูงกว่านี้มาก</b> · จากการตรวจของสายระบบ SWIS เมื่อ 25 สิงหาคม 2569 โรงเรียนมี <b>ใบเสร็จรับเงิน 14,104 ฉบับ และใบเสร็จอื่น 2,682 ฉบับ</b> และ <b>ใบสำคัญจ่าย 1,350 ฉบับ</b> (ตรงกับสมุดรายวันจ่าย 1,351 รายการในตารางนี้ ต่างกัน 1 ฉบับจากรอบดึงข้อมูลคนละเวลา)
+<br><b>เมื่ออ่านตารางนี้ ให้อ่านว่า "ใครบันทึก" ไม่ใช่ "มีเอกสารกี่ฉบับ"</b> · <b>จำนวนเอกสารและยอดเงินจริงอยู่ในกล่องงบการเงินถัดไป</b> <span class="tiny">(<b>ตรวจสอบแล้ว</b> · เทียบกับรายงานตรวจระบบ SWIS ของโรงเรียนเซนต์คาเบรียล ฉบับ 25 ส.ค. 2569)</span></div>
+<div class="note"><b>ตัวเลขนี้ตอบข้อกังวลที่พบบ่อยที่สุดในการนิเทศ</b> — คำถามที่มักถูกตั้งคือ "โรงเรียนบันทึกการใช้จ่ายผ่านระบบจริงหรือไม่" · สำหรับโรงเรียนเซนต์คาเบรียล คำตอบจากระบบคือ <b>บันทึกจริง ต่อเนื่องถึงวันล่าสุดก่อนตรวจ และไม่ได้กระจุกอยู่ที่คนเดียว</b></div>
+<div class="caution"><b>⚠️ ข้อสังเกตเรื่อง "ผูกกับแผนงาน 100%" ที่ต้องพูดให้ครบ</b> — ระบบงบประมาณรายงานว่าการเบิกจ่ายผูกกับแผนงานครบทุกรายการโดยโครงสร้าง · <b>แต่การตรวจของสายการเงินเมื่อ 25 สิงหาคม 2569 พบว่าเมื่อไล่ยอดจ่ายกลับไปหาแผนงานทีละแผน รวมได้ 178,949,307.89 บาท ขณะที่ยอดจ่ายจริงทั้งโรงเรียนคือ 224,800,341.77 บาท</b> · <b>ส่วนต่าง 45,851,033.88 บาท (20.4%)</b>
+<br>แปลว่า <b>"ผูกแผน 100%" เป็นจริงในเชิงโครงสร้างของระบบ แต่ยังไล่กลับไปหาแผนได้ไม่ครบทุกบาท</b> · <b>เป็นจุดที่ต้องตรวจไขว้กับงานนโยบายและแผนก่อนวันนิเทศ</b> <span class="tiny">(<b>ตรวจสอบแล้ว</b> · เทียบกับรายงานตรวจการเงินโรงเรียนเซนต์คาเบรียล ฉบับ 25 ส.ค. 2569)</span></div>
+<h3 style="font-size:1.05em;color:var(--navy);margin:18px 0 6px">การกระจายตัวของผู้บันทึก — ทำไมจึงสำคัญต่อเกณฑ์ความโปร่งใส</h3>
+<ul class="facts">
+<li>ผู้บันทึกที่มีรายการมากที่สุดคิดเป็น <b>17.97%</b> ของรายการทั้งหมดในชุดข้อมูลที่ตรวจ · ห้าอันดับแรกรวมกัน <b>59.74%</b> <span class="tiny">(<b>ตรวจสอบแล้ว</b> · คำนวณจากรายชื่อผู้บันทึก 84 คนในชุดภาพรวม — ดึง 25 ส.ค. 2569 10:55:18 น.)</span></li>
+<li>เทียบกับโรงเรียนที่ตรวจก่อนหน้า ซึ่งผู้บันทึกรายเดียวถือครองมากกว่า 96% ของรายการ — <b>โครงสร้างของเซนต์คาเบรียลกระจายความรับผิดชอบได้ดีกว่าอย่างมีนัยสำคัญ</b> <span class="tiny">(<b>ตรวจสอบแล้ว</b> · เทียบจากรายงานตรวจโรงเรียนอัสสัมชัญ 19 ส.ค. 2569)</span></li>
+<li>ผู้บันทึกทะเบียนทรัพย์สินมี <b>4 คน</b> รวม <b>107 รายการ</b> ในปีนี้ — ตรงกันพอดีกับตัวเลขในโมดูลทรัพย์สิน เป็นการกระทบยอดที่ผ่าน</li>
+</ul>
+<div class="card good" style="margin-top:14px">
+<h4>งบการเงินของโรงเรียน — หลักฐานชั้นสูงสุดของเกณฑ์นี้</h4>
+<div class="crit">ดึงจากฐานข้อมูลบริหารส่วนกลางโดยตรง 25 สิงหาคม 2569 — เป็นข้อมูลบัญชีจริง ไม่ใช่สถิติการใช้งานระบบ</div>
+<table>
+<thead><tr><th style="width:34%">รายการ</th><th style="width:33%">ตัวเลข</th><th>ความหมายต่อเกณฑ์ธรรมาภิบาล</th></tr></thead>
+<tbody>
+<tr><td><b>งบทดลอง งวดกรกฎาคม 2569</b></td><td><b>282 บัญชี</b><br>ยกมา เดบิต 360,581,132.35 = เครดิต 360,581,132.35<br>เคลื่อนไหว เดบิต 113,675,987.96 = เครดิต 113,675,987.96<br>สะสม เดบิต 471,652,512.19 = เครดิต 471,652,512.19</td><td><b>เดบิตเท่ากับเครดิตทุกชั้น ไม่มีสตางค์คลาดเคลื่อน</b> — เป็นหลักฐานว่าระบบบัญชีปิดยันกันได้จริง ซึ่งเป็นเงื่อนไขพื้นฐานที่สุดของความโปร่งใสด้านการเงิน</td></tr>
+<tr><td>งบกำไร-ขาดทุน งวดกรกฎาคม 2569</td><td>รายได้ <b>375,289,200</b> บาท<br>ค่าใช้จ่าย <b>116,955,700</b> บาท<br>กำไร <b>258,333,500</b> บาท</td><td>ระบบออกงบกำไรขาดทุนรายเดือนได้ทันที ไม่ต้องรอปิดปี</td></tr>
+<tr><td>งบดุล ณ สิ้นกรกฎาคม 2569</td><td>สินทรัพย์ <b>184,474,786</b> บาท<br>หนี้สิน <b>73,858,713</b> บาท <span class="tiny">(ระบบแสดงเป็นค่าลบตามหลักบัญชี = ยอดเครดิต)</span></td><td>ผู้บริหารเรียกดูฐานะการเงินรายเดือนได้จากระบบโดยตรง</td></tr>
+<tr><td>งบกำไร-ขาดทุน งวดพฤษภาคม 2569</td><td>รายได้ <b>173,561,702</b> บาท · ค่าใช้จ่าย <b>24,761,978</b> บาท · กำไร <b>148,799,724</b> บาท</td><td>ยืนยันว่าระบบออกงบได้ต่อเนื่องหลายงวด ไม่ใช่เดือนเดียว</td></tr>
+<tr><td><b>สมุดรายวันรับค่าธรรมเนียม</b><br><span class="tiny">1 พ.ค. – 25 ส.ค. 2569</span></td><td><b>76 ฉบับ · 244,628,232 บาท</b><br>ฉบับล่าสุด <b>25 สิงหาคม 2569</b></td><td><b>บันทึกถึงวันที่ตรวจพอดี</b> — ระบบไม่ได้หยุดใช้ ยังเดินอยู่ทุกวันทำการ</td></tr>
+<tr><td>สมุดรายวันจ่ายเงินสด<br><span class="tiny">1 พ.ค. – 25 ส.ค. 2569</span></td><td>อย่างน้อย <b>120 ฉบับ · 31,154,281.95 บาท</b><br><span class="tiny">ระบบแสดง 120 ฉบับแรก จำนวนจริงมากกว่านี้</span></td><td>รายการจ่ายมีคำอธิบายรายบรรทัด ตรวจย้อนกลับได้ทีละใบ</td></tr>
+<tr><td>รายละเอียดประกอบงบการเงิน</td><td><b>55 หมวด</b></td><td>มีงบประกอบละเอียดกว่างบดุลและงบกำไรขาดทุน</td></tr>
+<tr><td>สถานะงวดสิงหาคม 2569</td><td><b>ยังไม่ปิดงวด</b></td><td>เป็นเรื่องปกติเพราะยังไม่สิ้นเดือน — ไม่ใช่ข้อบกพร่อง</td></tr>
+</tbody>
+</table>
+<div class="verdict"><b>เหตุที่ต้องเน้น:</b> การที่<u>งบทดลองยันกันได้ทั้ง 282 บัญชี</u> และระบบออกงบการเงินรายเดือนได้ต่อเนื่อง <b>ตอบเงื่อนไขความโปร่งใสด้านการเงินได้แข็งแรงกว่าการมีเอกสารจำนวนมากเพียงอย่างเดียวมาก</b> · การตรวจของสายการเงินเมื่อ 25 ส.ค. 2569 ยืนยันสอดคล้องกันว่า <b>ปิดงวดครบถึงกรกฎาคม 2569 และงบดุลยันกัน</b>
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · งบทดลอง · งบดุล · งบกำไรขาดทุน · สมุดรายวัน · รายละเอียดประกอบงบ จากฐานข้อมูลบริหารส่วนกลาง — ดึง 25 สิงหาคม 2569</span></div>
+</div>
+<div class="verdict"><b>อ่านอย่างไร:</b> เกณฑ์ 2.2 ระดับ 1 และ 2 มีหลักฐานรองรับชัดเจน · <b>ระดับ 3 มีหลักฐานเชิงบวกรออยู่แล้ว — งบทดลองยันกัน 282 บัญชี ปิดงวดครบถึงกรกฎาคม 2569 และออกงบการเงินรายเดือนได้ · สิ่งที่ยังขาดคือการระบุว่า "มาตรฐานการเงินของมูลนิธิฯ" ที่เกณฑ์อ้างถึงคือเอกสารฉบับใดและวัดด้วยตัวชี้วัดใด ซึ่งเป็นช่องว่างของกรอบกลาง ไม่ใช่ของโรงเรียน</b> — ในระบบพบว่ามีชุดมาตรฐาน "ตอบสนองมาตรฐานการเงิน (FIN-FSG)" ลงทะเบียนไว้แล้ว 10 ตัวชี้วัด ซึ่งเป็นจุดตั้งต้นที่ควรใช้
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · get_finance_module_users + โมดูล procurement · money · kpi_norm — ดึง 25 ส.ค. 2569 · ฐานบัญชี sync ตอนเย็น ไม่ realtime</span></div>
+</div>
+<div class="caution"><b>ข้อควรระวังที่ต้องบอกไว้ก่อนใช้ตัวเลขในที่ประชุม</b> — โมดูล<u>สถิติการใช้งาน</u>ระบบบัญชีรายงานว่า "ไม่พบ config โรงเรียน" และมองไม่เห็นรายการใดเลย ขณะที่<b>ฐานข้อมูลบริหารส่วนกลางดึงบัญชีจริงได้ครบถึงระดับงบทดลอง</b> · <b>ถ้าผู้ใดเปิดหน้าสถิติแล้วสรุปว่าโรงเรียนไม่ได้ลงบัญชี ข้อสรุปนั้นผิด</b> — ดูข้อ 7 และ 13</div>
+
+<h2><span class="n">8</span>เกณฑ์ 2.3 กระบวนการบริหารงานบุคลากร</h2>
+<div class="card">
+<h4>ข้อมูลบุคลากรครบ แต่การยืนยันความพร้อมยังเดินไม่ถึงครึ่ง</h4>
+<div class="crit">หลักที่ 2 ความโปร่งใส · เกณฑ์ 2.3 · น้ำหนัก 7 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีระบบบริหารบุคคลเป็นลายลักษณ์อักษร · ระดับ 2 ปฏิบัติตามระบบ · ระดับ 3 มีการทบทวนและปรับปรุงตามรอบ · ระดับ 4-5 ต้องใช้ผลความพึงพอใจของบุคลากร</div>
+<ul class="facts">
+<li>บุคลากรครู <b class="big">434 คน</b> (มีรูปในระบบ 427) · พนักงาน <b class="big">228 คน</b> (มีรูป 227) — ความครบถ้วนของทะเบียนสูงมาก</li>
+<li><b>ทุกครั้งที่พูดถึงจำนวนบุคลากร ต้องระบุว่าใช้ฐานใด</b> — ฐานอัตรากำลังของงานทรัพยากรมนุษย์รายงาน <b class="big">664 คน</b> · ฐานข้อมูลบริหารส่วนกลางรายงาน <b class="big">661 คน</b> · ผลรวมจากทะเบียนโรงเรียน 434+228 = <b class="big">662 คน</b> — <b>สามฐานต่างกันภายใน 3 คน</b> ซึ่งอธิบายได้ด้วยรอบ sync และนิยามคนเข้า-ออก ไม่ใช่ความผิดพลาดของโรงเรียน · <b>ส่วนต่าง 661 กับ 664 เป็นข้อผิดพลาดของเครื่องมือสองตัว ทีมระบบกำลังไล่ที่ต้นทาง</b></li>
+<li>บุคลากรเข้าใหม่ในปี <b>43 คน</b> · พ้นสภาพในปี <b>32 คน</b></li>
+<li><b>Job Spec ที่ลงในระบบ 346 คน จาก 417 คนในผังบริหาร = 82.97%</b> <span class="tiny">(<b>ตรวจสอบแล้ว</b> · โมดูล org_structure)</span></li>
+<li><b>ความพร้อมบุคลากรที่ยืนยันแล้ว 94 คน จาก 417 คน = 22.54%</b> · รอยืนยัน 322 คน</li>
+<li>ลงทะเบียนสแกนใบหน้า: ครู <b>418/434 (96.31%)</b> · พนักงาน <b>176/228 (77.19%)</b> · นักเรียน <b>4,540/4,567 (99.41%)</b></li>
+<li>บันทึกเวลาปฏิบัติงาน <b>2,833 รายการ</b> ในช่วง 18 พ.ค. – 25 ส.ค. 2569 · กลุ่มกะการทำงาน 48 กลุ่ม</li>
+</ul>
+<div class="verdict"><b>อ่านอย่างไร:</b> ทะเบียนบุคลากรและเครื่องมือกำกับเวลาทำงานอยู่ในระดับที่ดี ตอบระดับ 1 และ 2 ได้ · <b>ช่องว่างอยู่ที่การปิดรอบยืนยัน</b> — Job Spec ยังขาด 71 คน และการยืนยันความพร้อมยังเหลือ 322 คน · ทั้งสองอย่างเป็นการยืนยันข้อมูลที่มีอยู่แล้ว ไม่ใช่การสร้างข้อมูลใหม่
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล org_structure · basic_data · face_scan · time_attendance + ฐานข้อมูลบริหารส่วนกลาง — ดึง 25 ส.ค. 2569</span></div>
+</div>
+
+<h2><span class="n">9</span>เกณฑ์ 3.1 ความรับผิดชอบต่อบทบาทและหน้าที่</h2>
+<div class="card good">
+<h4>งานวางแผนของโรงเรียนนี้อยู่ในระดับที่ดีที่สุดเท่าที่ห้องตรวจพบมา</h4>
+<div class="crit">หลักที่ 3 ความรับผิดชอบ · เกณฑ์ 3.1 · น้ำหนัก 5 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีการกำหนดบทบาทหน้าที่ · ระดับ 2 ปฏิบัติตามบทบาทที่กำหนด · ระดับ 3 มีการติดตามและรายงานผลตามรอบ · ระดับ 4 มีหลักฐานการปรับปรุงจากผลการติดตาม · ระดับ 5 ต้องใช้ผลความพึงพอใจ</div>
+<table>
+<thead><tr><th style="width:44%">รายการ</th><th style="width:18%">จำนวน</th><th>หมายเหตุ</th></tr></thead>
+<tbody>
+<tr><td>หน่วยงานที่มีแผนงานของตนเอง</td><td class="big">72 / 72</td><td><b>ไม่มีหน่วยงานใดไม่มีแผน</b></td></tr>
+<tr><td>แผนงานทั้งหมด</td><td class="big">73 แผน</td><td><b>ทะเบียนในระบบคืน 100 รายการ</b> — เป็นแผนจริง 73 · ที่เหลือ <b>27 รายการเป็นร่างหรือรายการซ้ำที่ยังไม่มีขั้นตอน</b> · <b>ห้ามใช้ 100 เป็นจำนวนแผน</b></td></tr>
+<tr><td>แผนที่มีขั้นตอนครบ 9 ขั้น</td><td class="big">73 แผน (100%)</td><td><b>ครบทุกแผน</b></td></tr>
+<tr><td>แผนที่มี KPI</td><td class="big">73 แผน</td><td>มีวัตถุประสงค์ครบ 73 · มีเป้าหมายครบ 73</td></tr>
+<tr><td>แผนที่อนุมัติแล้วในระบบ</td><td class="big">68 แผน</td><td>เหลือรออนุมัติ <b>5 แผน</b></td></tr>
+<tr><td>โครงการ</td><td class="big">39 โครงการ</td><td>อนุมัติแล้ว 37 · ครบ 9 ขั้น 37</td></tr>
+<tr><td>หัวข้อประเมินของแผน</td><td class="big">772 หัวข้อ</td><td>แผนที่ประเมินแล้ว <b>73 แผน</b></td></tr>
+<tr><td>หัวข้อประเมินที่แนบไฟล์หลักฐาน</td><td class="big">0 หัวข้อ</td><td><b>จุดเดียวที่ขวางระดับ 4</b></td></tr>
+<tr><td>ตัวชี้วัดในระบบ</td><td class="big">448 ตัว</td><td>ถูกใช้โดยแผน 444 (99.11%) · ไม่ถูกใช้เพียง 4</td></tr>
+<tr><td>การเชื่อมโยงแผน–ตัวชี้วัด</td><td class="big">4,491 การเชื่อม</td><td>แผนที่ผูกตัวชี้วัด 83 · แผนภูมิที่ผูก 40</td></tr>
+<tr><td>นโยบายที่กำหนดไว้</td><td class="big">68 นโยบาย</td><td>ถูกอ้างในแผน <b>112 ครั้ง</b></td></tr>
+</tbody>
+</table>
+<div class="note"><b>ชุดมาตรฐานที่โรงเรียนลงทะเบียนไว้ 10 ชุด</b> — แผนพัฒนาโรงเรียน (DP-SG) 113 ตัวชี้วัด · มาตรฐานการศึกษาโรงเรียน (SG) 79 · แผนยุทธศาสตร์มูลนิธิฯ (SP-FSG) 85 · SDG 47 · นโยบายมูลนิธิฯ (POL-FSG) 30 · สพฐ. 26 · มาตรฐานการศึกษามูลนิธิฯ (FSG) 20 · สมศ. 19 · <b>การบริหารตามหลักธรรมาภิบาล (GOV-FSG) 19 ตัวชี้วัด</b> · ตอบสนองมาตรฐานการเงิน (FIN-FSG) 10</div>
+<div class="verdict"><b>สิ่งที่ต้องพูดให้ชัดในที่ประชุม:</b> <b>โรงเรียนเซนต์คาเบรียลได้ลงทะเบียนชุดมาตรฐาน "การบริหารตามหลักธรรมาภิบาล (GOV-FSG)" ไว้ในระบบแล้ว 19 ตัวชี้วัด</b> — นี่คือขั้นที่โรงเรียนส่วนใหญ่ยังไม่ได้ทำ และเป็นเงื่อนไขที่ทำให้การตรวจธรรมาภิบาลด้วยข้อมูลจริงเป็นไปได้ · <b>สิ่งที่ยังขาดคือการอนุมัติแผน 5 แผน และการแนบไฟล์หลักฐานในหัวข้อประเมิน ซึ่งขณะนี้เป็น 0 ทั้งหมด</b>
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล plan_pdca9 + kpi_norm — ดึง 25 ส.ค. 2569 เวลา 10:55:18 น.</span></div>
+</div>
+
+<h2><span class="n">10</span>เกณฑ์ 5.1 การใช้ทรัพยากรให้เกิดประสิทธิผล</h2>
+<div class="card">
+<h4>ใช้ระบบเต็มรูป แต่ติดเงื่อนไขเดียวที่ทำให้ยังไม่ถึงระดับ 3</h4>
+<div class="crit">หลักที่ 5 ความคุ้มค่า · เกณฑ์ 5.1 · น้ำหนัก 10 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีการวางแผนใช้ทรัพยากร · ระดับ 2 ใช้ทรัพยากรตามแผน · ระดับ 3 <b>มีคู่มือคุณภาพหน่วยงานและใช้จริง</b> · ระดับ 4-5 ต้องใช้ผลประเมินความคุ้มค่าและความพึงพอใจ</div>
+<ul class="facts">
+<li><b>คู่มือคุณภาพหน่วยงานที่ครบทั้ง 6 ส่วน: 0 จาก 72 หน่วยงาน (0%)</b> · <b>ทำไว้บางส่วนแล้ว 71 หน่วยงาน</b> · ไม่มีเลย 1 หน่วยงาน คือ แผนกความเป็นสากล / งาน SG NEXT</li>
+<li>แผนงานที่ผูกงบประมาณไว้ <b>68 จาก 68 แผน</b> · โครงการที่ผูกงบ <b>36 จาก 37</b></li>
+<li>แผนที่ลงปฏิทินแล้ว <b>16 แผน</b> · รายการปฏิทินของแผนที่อนุมัติแล้ว <b>602 รายการ</b> · โครงการที่ลงปฏิทิน 5 · รายการ 7</li>
+<li>สารสนเทศประกอบ SAR: หัวข้อทั้งหมด <b>66</b> · มีแหล่งข้อมูลอัตโนมัติ <b>61</b> · เติมแล้ว <b>60 (98.36%)</b> · snapshot ล่าสุด 17 ส.ค. 2569 · รอบเก็บสะสม 1,636 รอบ</li>
+<li>เนื้อหา SAR ที่เขียนเป็นความเรียง: <b>0 รายการ · ผู้เขียน 0 คน</b></li>
+<li>งานวิจัย <b>10 เรื่อง</b> จัดกลุ่มครบ 10 · <b>แนบไฟล์ 0 เรื่อง</b> · กลุ่มวิจัย 13 กลุ่ม</li>
+<li>แบบสอบถาม <b>5 ฉบับ</b> · มีวันเริ่ม 1 · มีวันสิ้นสุด 1 · มีผู้รับ 1 — <b>4 ฉบับยังไม่กำหนดช่วงเวลาและผู้ตอบ</b></li>
+<li>หน่วยงานที่สร้างบริการในระบบ <b>1 จาก 72</b> · บริการ 2 รายการ · ผูกกับแผนงาน 2 · <b>คำขอรับบริการ 0</b></li>
+</ul>
+<div class="verdict"><b>อ่านอย่างไร:</b> โรงเรียนใช้ระบบวางแผนและระบบสารสนเทศประกอบคุณภาพอย่างจริงจัง — 98.36% ของหัวข้อ SAR ถูกเติมแล้ว และทุกแผนผูกงบประมาณ · <b>เงื่อนไขเดียวที่ขวางระดับ 3 คือคู่มือคุณภาพหน่วยงานที่ยังไม่ครบ 6 ส่วนสักหน่วยงานเดียว ทั้งที่ 71 หน่วยงานทำไว้แล้วบางส่วน</b> — นี่คืองานเติมให้เต็ม ไม่ใช่งานเริ่มใหม่ และเป็นการลงทุนที่ให้ผลตอบแทนสูงที่สุดต่อคะแนน 10 คะแนนของเกณฑ์นี้
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล quality_manual · plan_pdca9 · calendar · sar · research · dept_services — ดึง 25 ส.ค. 2569 เวลา 10:55 น.</span></div>
+</div>
+
+<h2><span class="n">11</span>เกณฑ์ 5.2 การใช้ทรัพยากรให้ได้ประโยชน์สูงสุด</h2>
+<div class="card">
+<h4>ทะเบียนทรัพย์สินใหญ่และมีมูลค่าสูง แต่วงจรเอกสารขาออกแทบไม่มีร่องรอย</h4>
+<div class="crit">หลักที่ 5 ความคุ้มค่า · เกณฑ์ 5.2 · น้ำหนัก 10 คะแนน</div>
+<div class="rubric"><b>เงื่อนไขตามคู่มือ:</b> ระดับ 1 มีทะเบียนทรัพย์สิน · ระดับ 2 มีการดูแลบำรุงรักษาตามระบบ · ระดับ 3 มีการประเมินการใช้ประโยชน์ · ระดับ 4-5 ต้องใช้ผลประเมินความคุ้มค่าเชิงเปรียบเทียบ</div>
+<table>
+<thead><tr><th style="width:38%">รายการ</th><th style="width:26%">หน้าจอระบบของโรงเรียน</th><th>ฐานข้อมูลบริหารส่วนกลาง</th></tr></thead>
+<tbody>
+<tr><td>จำนวนทรัพย์สินในทะเบียน</td><td class="big">3,646 ชิ้น</td><td class="big">3,646 ชิ้น · 3,604 หน่วย <span class="chip c-full">ตรงกัน</span></td></tr>
+<tr><td>มูลค่าซื้อรวม</td><td>—</td><td class="big">747,202,702.47 บาท</td></tr>
+<tr><td><b>ค่าเสื่อมราคา</b></td><td><b>ประมวลผลแล้ว งวด 2026-04 · ครอบคลุม 3,572 ชิ้น (97.97%)</b></td><td><b>มูลค่าตามบัญชีที่ถูกต้อง = 611,039,921.31 บาท</b> <span class="chip c-full">ล็อกโดยชุดตัวเลขกลาง</span><br><span class="tiny">ช่องในฐานกลางคืนค่า 0 ซึ่ง<b>อ่านไม่ได้ ไม่ใช่ 0 จริง</b> · มูลค่าซื้อ 747,202,702.47 (งวดปัจจุบัน) และ 744,177,401.57 (ปลายปีบัญชี 2568) — <b>ต้องระบุงวดกำกับเสมอ</b></span></td></tr>
+<tr><td>สถานะทรัพย์สิน</td><td>—</td><td>ปกติ 3,628 · ชำรุด 11 · จำหน่าย 5 · ทำลาย 2</td></tr>
+<tr><td>ลงทะเบียนใหม่ในปีนี้</td><td class="big">107 ชิ้น · ผู้ลงทะเบียน 4 คน</td><td>—</td></tr>
+<tr><td><b>ทรัพย์สินที่ระบุผู้ดูแล</b></td><td class="big">999 ชิ้น (27.4%)</td><td>— · <b>ยังไม่ระบุผู้ดูแล 2,647 ชิ้น</b></td></tr>
+<tr><td>จำหน่าย/ตัดจำหน่ายในปีนี้</td><td>0 · 0</td><td>—</td></tr>
+</tbody>
+</table>
+<ul class="facts">
+<li><b>หนังสือออกในระบบสารบรรณ: 5 ฉบับ</b> ขณะที่หนังสือเข้ามี 663 ฉบับ และข้อความภายในมี 4,221 รายการ — <b>ขาเข้าครบ ขาออกแทบไม่มีร่องรอย</b></li>
+<li>การมอบหมายงานผ่านระบบติดตามงาน (DASS): <b>0 รายการ</b></li>
+<li>ระบบใบขอซื้อและใบสั่งซื้อ (PR/PO): ระบบมีให้ใช้ แต่<b>โรงเรียนยังไม่ได้เปิดใช้งาน</b> — คำขอ 0 · ใบสั่งซื้อ 0</li>
+<li>งวดบัญชีพัสดุ: <b>0 งวด</b> · หมวดพัสดุ 24 หมวด · สินค้าในระบบ 91 รายการ</li>
+<li>อาคาร <b>26 หลัง</b> · ห้อง <b>324 ห้อง</b> อยู่ในระบบครบ · <b>ยานพาหนะในทะเบียนทรัพย์สิน 8 คัน มูลค่า 9,525,124 บาท</b> <span class="tiny">(โมดูลบริการยานพาหนะยังไม่มีการลงทะเบียนรถ = 0 คัน — คนละทะเบียนกัน)</span></li>
+<li>การใช้ทรัพยากรที่สะท้อนผ่านการใช้งานจริง <span class="tiny">(ทุกตัวเป็น<b>ตัวนับสะสม</b> ณ 25 ส.ค. 2569 เวลา 10:55 น. ไม่ใช่ยอดรายเดือน)</span>: สแกนเข้าปฏิบัติงาน <b>85,495 ครั้ง</b> · สแกนเข้าห้องสมุด <b>23,787 ครั้ง</b> · เข้ารับบริการห้องพยาบาล <b>11,533 ครั้ง</b> · เมนูอาหารกลางวันที่บันทึก <b>1,265 รายการ</b></li>
+<li><b>งานวิชาการที่ยังเป็นศูนย์จริง ต้องยกขึ้นแสดง</b> — รายวิชาที่เปิดสอน <b>745 วิชา</b> · มีโครงสร้างการวัดผล <b>436</b> · บันทึกคะแนนแล้ว <b>425</b> · <b>แต่หลักสูตรอ้างอิง 0 และตัวชี้วัดรายวิชา 0</b> · เป็นค่าศูนย์จริงที่ระบบตอบ ไม่ใช่ดึงไม่ได้ — กระทบการเชื่อมรายวิชาเข้ากับตัวชี้วัดของโรงเรียน</li>
+</ul>
+<div class="verdict"><b>อ่านอย่างไร:</b> ระดับ 1 ของเกณฑ์นี้ตอบได้เต็ม — ทะเบียนทรัพย์สิน 3,646 ชิ้นมูลค่ากว่า 747 ล้านบาทอยู่ในระบบครบ · <b>จุดที่ต้องแก้มีสองเรื่อง</b> คือ (1) ทรัพย์สิน 2,647 ชิ้นยังไม่มีผู้รับผิดชอบในระบบ ซึ่งกระทบทั้งการดูแลรักษาและการตรวจสอบ และ (2) หนังสือออกที่มีเพียง 5 ฉบับ ทำให้วงจรเอกสารปิดไม่ครบ ตรวจย้อนกลับการสั่งการไม่ได้
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · โมดูล asset · psas · procurement · eoffice · service · face_scan · hospital · food + ฐานข้อมูลบริหารส่วนกลาง — ดึง 25 ส.ค. 2569 · ฐานกลางเป็นข้อมูล ณ 24 ส.ค. 2569 19:16 น.</span></div>
+</div>
+
+<h2><span class="n">12</span>งบประมาณ — ภาพจากฐานข้อมูลบริหารส่วนกลาง</h2>
+<p class="lead">ส่วนนี้แยกออกมาเพราะเป็นหลักฐานหลักของหลักที่ 2 ความโปร่งใส และเป็นจุดที่การตรวจโรงเรียนก่อนหน้าเคยผิดพลาด</p>
+<table>
+<thead><tr><th style="width:34%">รายการ</th><th style="width:24%">ตั้งไว้</th><th>เกิดขึ้นจริง</th></tr></thead>
+<tbody>
+<tr><td><b>รายรับ</b></td><td class="big">391,800,069.60 บาท</td><td class="big">75,759,643.50 บาท</td></tr>
+<tr><td><b>รายจ่าย</b></td><td class="big">739,100,335.82 บาท</td><td class="big">224,800,341.77 บาท <b>(30.42%)</b></td></tr>
+<tr><td>คงเหลือ</td><td colspan="2" class="big">514,299,994.05 บาท</td></tr>
+<tr><td>หน่วยงานที่มีรายการงบในฐานกลาง</td><td colspan="2" class="big">71 หน่วยงาน</td></tr>
+<tr><td><b>หน่วยงานที่ยอดจ่ายยังเป็น 0</b></td><td colspan="2" class="big">4 หน่วยงาน</td></tr>
+</tbody>
+</table>
+<div class="note"><b>การกระทบยอดสองฐานที่ผ่าน</b> — ฐานข้อมูลบริหารส่วนกลางรายงานยอดจ่ายจริง <b>224,800,341.77 บาท</b> ขณะที่โมดูลเบิกจ่ายในระบบของโรงเรียนรายงาน <b>225,182,254.78 บาท</b> · ต่างกัน <b>381,913.01 บาท (0.17%)</b> ซึ่งอธิบายได้ด้วยรอบ sync รายวัน · <b>ทั้งสองฐานยืนยันตรงกันว่าโรงเรียนบันทึกการใช้จ่ายผ่านระบบจริง</b> — ต่างจากกรณีที่ฐานกลางแสดงยอดจ่าย 0 ทุกหน่วยงานซึ่งเคยทำให้รายงานของอีกโรงเรียนหนึ่งสรุปผิด</div>
+<p class="lead" style="margin-top:14px">หน่วยงานที่มีสัดส่วนการใช้งบสูงสุดสามอันดับตามมูลค่า <span class="tiny">(<b>ตรวจสอบแล้ว</b> · ฐานข้อมูลบริหารส่วนกลาง ข้อมูล ณ 24 ส.ค. 2569 19:16:58 น.)</span></p>
+<table>
+<thead><tr><th style="width:42%">หน่วยงาน</th><th style="width:22%">ตั้งจ่าย</th><th style="width:22%">จ่ายจริง</th><th>ใช้ไป</th></tr></thead>
+<tbody>
+<tr><td>สำนักผู้อำนวยการ : งานทรัพยากรมนุษย์</td><td>295,807,134</td><td>79,213,468.34</td><td>26.78%</td></tr>
+<tr><td>ฝ่ายวิชาการ : งานบริหารฝ่ายวิชาการ</td><td>123,864,742</td><td>35,952,621.78</td><td>29.03%</td></tr>
+<tr><td>ฝ่ายบริหารทั่วไป : งานโภชนาการและสวัสดิการร้านค้า</td><td>82,925,355.32</td><td>22,386,724.22</td><td>27.00%</td></tr>
+</tbody>
+</table>
+<div class="caution"><b>ข้อสังเกตที่ต้องตรวจกับผู้ปฏิบัติงานก่อนสรุป</b> ⚠️ — มีหน่วยงานที่ตั้งงบไว้หลักล้านแต่ยอดจ่ายยังต่ำมากผิดปกติ เช่น งาน SGIEP ตั้งจ่าย 7,235,150 บาท จ่ายจริง 3,395.35 บาท (0.05%) และงานลูกเสือ ตั้งจ่าย 6,693,440 บาท จ่ายจริง 14,793 บาท (0.22%) · <b>ยังไม่ทราบว่าเป็นเพราะกิจกรรมอยู่ปลายปี หรือเพราะการบันทึกยังไม่เข้าระบบ</b> — รายงานนี้ไม่สรุป และขอให้ตรวจกับหน่วยงานโดยตรง</div>
+
+<h2><span class="n">13</span>ข้อค้นพบเชิงระบบ — จุดที่สองฐานข้อมูลไม่ตรงกัน</h2>
+<p class="lead">ทุกข้อในตารางนี้เป็นปัญหาของระบบข้อมูล ไม่ใช่ข้อบกพร่องของโรงเรียนเซนต์คาเบรียล และทุกข้อจะกระทบการตรวจของอีก 14 โรงเรียนเช่นเดียวกันถ้าไม่แก้</p>
+<table>
+<thead><tr><th style="width:20%">เรื่อง</th><th style="width:26%">หน้าจอ/เครื่องมือของโรงเรียน</th><th style="width:26%">ฐานข้อมูล/โมดูลภาพรวมส่วนกลาง</th><th>ผลถ้าไม่รู้</th></tr></thead>
+<tbody>
+<tr><td><b>ระบบบัญชี</b></td><td><b>ฐานข้อมูลบริหารส่วนกลางดึงบัญชีจริงได้ครบ</b> — งบทดลอง 282 บัญชียันกัน · งบการเงินรายเดือน · สมุดรายวัน 6 เล่ม</td><td><b>โมดูลสถิติการใช้งานระบบบัญชี</b>ตอบว่า "ไม่พบ config โรงเรียน" และมองไม่เห็นรายการเลย</td><td>ถ้าใช้โมดูลสถิติอย่างเดียวแล้วสรุป จะกลายเป็นข้อกล่าวหาที่ผิดว่าโรงเรียนไม่ได้ลงบัญชี · <b>ที่ถูกคือต้องยิงฐานข้อมูลบริหารส่วนกลางด้วยเสมอ</b></td></tr>
+<tr><td><b>ค่าเสื่อมราคาทรัพย์สิน</b></td><td>ประมวลผลแล้ว งวด 2026-04 ครอบคลุม <b>97.97%</b></td><td>มูลค่าตามบัญชี <b>0 บาท</b> พร้อมข้อความว่ายังไม่ประมวลผล</td><td>รายงานจะสรุปว่าโรงเรียนไม่ได้ทำค่าเสื่อม ทั้งที่ทำแล้ว</td></tr>
+<tr><td><b>จำนวนผู้ใช้ระบบการเงิน</b></td><td>เครื่องมือเฉพาะทางรายงาน <b>87 คน</b> (รวมฝั่งบัญชี)</td><td>โมดูลภาพรวมรายงาน <b>84 คน</b> (ไม่มีฝั่งบัญชี)</td><td>ตัวเลขความรับผิดชอบต่ำกว่าความจริง</td></tr>
+<tr><td><b>ทะเบียนทรัพย์สินสองชุด</b></td><td>โมดูลทรัพย์สินรายงาน <b>3,646 ชิ้น</b></td><td>โมดูลพัสดุรายงานทรัพย์สินที่ลงทะเบียน <b>70 ชิ้น</b></td><td>ถ้านำสองตัวเลขมาหักลบกันจะสรุปผิดว่าทะเบียนหายไปเกือบทั้งหมด</td></tr>
+<tr><td><b>ปฏิทินกิจกรรม</b></td><td>รายการกิจกรรมจริงปีการศึกษา 2569 <b>645 รายการ</b> · ปิดสถานะ 30 (<b>4.65%</b>) · ยังไม่ตรวจ 615 · <b>เลยกำหนด 319</b></td><td>เครื่องมือรุ่นเดิมไม่แยกปีการศึกษา จึงเคยคืน <b>เลยกำหนด 1,582</b> ซึ่งปนรายการปี 2568 · และมี timeline ขั้นตอนแผนอีก 4,386 แถวที่เคยถูกบวกรวมเข้าไป</td><td>ถ้าบวกรวมสองช่องแล้วใช้เป็นตัวหาร จะได้ 0.6% ซึ่งทำให้โรงเรียนดูแย่กว่าความจริงเกือบ 8 เท่า · และถ้าใช้ค่าเลยกำหนดที่ปนปี จะเกินความจริงเกือบ 5 เท่า</td></tr>
+</tbody>
+</table>
+<div class="note"><b>บทเรียนที่ยืนยันซ้ำ</b> — การตรวจโรงเรียนอัสสัมชัญเมื่อ 20-21 ส.ค. 2569 พบปัญหาลักษณะเดียวกัน 2 จุด และผู้ปฏิบัติงานทักท้วงกลับมาถูกต้องทั้งสองจุด · การตรวจครั้งนี้จึงเปิดสองฐานพร้อมกันตั้งแต่ต้น และพบเพิ่มอีก 3 จุด · <b>ข้อเสนอต่อมูลนิธิฯ: ก่อนตรวจโรงเรียนที่เหลือ ควรแก้การเชื่อมต่อฐานบัญชีและนิยามการนับปฏิทินให้ตรงกันก่อน</b></div>
+
+<h2><span class="n">14</span>วงจรหลักฐาน — งานหนึ่งเรื่องทิ้งร่องรอยครบหรือไม่</h2>
+<p class="lead">แนวคิดนี้ใช้ตรวจว่า "การมีส่วนร่วม" และ "ความรับผิดชอบ" เกิดขึ้นจริงหรือไม่ โดยไม่ต้องสัมภาษณ์ใคร — ถ้างานหนึ่งเรื่องทิ้งร่องรอยครบทุกข้อต่อ แปลว่ากระบวนการทำงานจริง</p>
+<table>
+<thead><tr><th style="width:26%">ข้อต่อของวงจร</th><th style="width:24%">ร่องรอยในระบบของ SG</th><th style="width:12%">สถานะ</th><th>ที่ต้องแก้</th></tr></thead>
+<tbody>
+<tr><td>① แต่งตั้ง / มอบหมาย</td><td>คำสั่ง 105 ฉบับ · ตำแหน่งงาน 700 รายการ</td><td><span class="chip c-full">ครบ</span></td><td>—</td></tr>
+<tr><td>② ประชุมวางแผน มีวาระ</td><td>แผน 73 แผน ครบ 9 ขั้นทุกแผน · มีวัตถุประสงค์และเป้าหมายครบ</td><td><span class="chip c-full">ครบ</span></td><td>เหลืออนุมัติ 5 แผน</td></tr>
+<tr><td>③ อนุมัติงบประมาณ</td><td>แผนผูกงบ 68/68 · คำขอเบิก 2,368 · อนุมัติ 2,143</td><td><span class="chip c-full">ครบ</span></td><td>—</td></tr>
+<tr><td>④ ปฏิบัติจริงตามปฏิทิน</td><td>รายการปฏิทินกิจกรรมปี 2569 <b>645</b> · <b>ปิดสถานะแล้วเพียง 30 (4.65%)</b> · <b>เลยกำหนด 319</b></td><td><span class="chip c-part">บางส่วน</span></td><td><b>ปิดสถานะรายการที่ทำไปแล้ว</b></td></tr>
+<tr><td>⑤ สื่อสารผ่านสารบรรณ</td><td>ข้อความภายใน 4,221 · จดหมายเข้า 663 · <b>หนังสือออก 5</b> · มอบหมายงาน 0</td><td><span class="chip c-part">บางส่วน</span></td><td><b>วงจรขาออกขาดหาย</b></td></tr>
+<tr><td>⑥ บันทึกบัญชีรายรับ-รายจ่าย</td><td>เบิกจ่ายงบ 2,929 รายการ 225 ล้านบาท · เอกสารบัญชี 2,236 รายการ</td><td><span class="chip c-full">ครบ</span></td><td>—</td></tr>
+<tr><td>⑦ ประเมินผลและสำรวจ</td><td>ประเมินแผนครบ 73 แผน 772 หัวข้อ · <b>แนบไฟล์หลักฐาน 0</b> · แบบสอบถาม 5 ฉบับ กำหนดช่วงเวลาเพียง 1</td><td><span class="chip c-part">บางส่วน</span></td><td><b>แนบหลักฐานและปิดแบบสอบถาม</b></td></tr>
+<tr><td>⑧ ย้อนกลับเข้าแผนรอบถัดไป</td><td>ตัวชี้วัดถูกใช้โดยแผน 99.11% · นโยบายถูกอ้างในแผน 112 ครั้ง</td><td><span class="chip c-full">ครบ</span></td><td>—</td></tr>
+</tbody>
+</table>
+<div class="verdict"><b>ข้อสรุปของวงจร:</b> จาก 8 ข้อต่อ โรงเรียนเซนต์คาเบรียลมีร่องรอยครบ <b>5 ข้อต่อ</b> และบางส่วน <b>3 ข้อต่อ</b> · <b>ไม่มีข้อต่อใดที่ขาดหายทั้งหมด</b> ซึ่งเป็นภาพที่แข็งแรงกว่าโรงเรียนที่ตรวจก่อนหน้าอย่างชัดเจน · <b>สามข้อต่อที่ยังไม่ครบเป็นงานปิดสถานะและแนบหลักฐานของงานที่ทำไปแล้ว ไม่ใช่งานใหม่</b>
+<br><span class="tiny"><b>ตรวจสอบแล้ว</b> · รวมจากทุกโมดูลในข้อ 1 — ดึง 25 ส.ค. 2569</span></div>
+
+<div class="action">
+<h3>สิ่งที่ทำได้ทันทีโดยไม่ต้องรอใคร</h3>
+<p style="font-size:.93em;opacity:.92">เรียงตามลำดับที่ให้ผลเร็วที่สุดต่อเกณฑ์ธรรมาภิบาล ทุกข้อเป็นการบันทึกหรือปิดสถานะสิ่งที่ทำไปแล้ว ไม่ใช่การสร้างงานใหม่ · แต่ละข้อระบุว่าใครเป็นผู้ลงมือ</p>
+<ol>
+<li><b>เติมคู่มือคุณภาพหน่วยงานให้ครบ 6 ส่วน</b> <span class="win">ปลดล็อกเกณฑ์ 5.1 ระดับ 3 — 10 คะแนน</span><br>71 หน่วยงานทำไว้บางส่วนแล้ว เหลือเติมให้เต็ม · <b>ผู้ลงมือ: หัวหน้าหน่วยงานทั้ง 72 หน่วยงาน · ผู้ติดตาม: งานนโยบายและแผน</b></li>
+<li><b>ปิดรอบ Confirm Loop — 42 หน่วยงานที่ยังไม่เริ่ม และ 5 หน่วยงานที่ถูกส่งกลับให้แก้</b> <span class="win">ผลตรงต่อเกณฑ์ 2.1 และ 2.3</span><br>เมื่อปิดรอบแล้ว การยืนยันโครงสร้างและบุคลากรระดับโรงเรียนจะเปลี่ยนจาก "ยังไม่ยืนยัน" เป็นยืนยันแล้ว · <b>ผู้ลงมือ: หัวหน้าหน่วยงาน · ผู้ติดตาม: งานทรัพยากรมนุษย์</b></li>
+<li><b>ปิดสถานะปฏิทินกิจกรรม 615 รายการที่ยังไม่ได้ตรวจ</b> <span class="win">ผลตรงต่อเกณฑ์ 3.1 และ 5.1</span><br>ในจำนวนนี้ <b>เลยกำหนดแล้ว 319 รายการ</b> ต้องแยกว่าอันใดทำแล้วแต่ไม่ได้ปิด อันใดยังไม่ทำจริง · <b>ผู้ลงมือ: ผู้รับผิดชอบกิจกรรมแต่ละรายการ · ผู้ติดตาม: งานนโยบายและแผน</b></li>
+<li><b>กดอนุมัติแผนงานที่ค้าง 5 แผน</b> <span class="win">ผลตรงต่อเกณฑ์ 3.1</span><br>แผนเขียนครบ 9 ขั้นแล้วทั้ง 73 แผน เหลือเพียงขั้นยืนยันในระบบ · <b>ผู้ลงมือ: ผู้อำนวยการหรือผู้ได้รับมอบอำนาจอนุมัติ</b></li>
+<li><b>แนบไฟล์หลักฐานในหัวข้อประเมินของแผน</b> <span class="win">เงื่อนไขของระดับ 4 ทุกเกณฑ์</span><br>ขณะนี้ประเมินครบ 73 แผน 772 หัวข้อ แต่แนบไฟล์ 0 หัวข้อ — เริ่มจากแผนที่มีเอกสารอยู่แล้ว · <b>ผู้ลงมือ: ผู้รับผิดชอบแผนแต่ละแผน</b></li>
+<li><b>เริ่มออกหนังสือผ่านระบบสารบรรณ</b> <span class="win">ผลตรงต่อเกณฑ์ 5.2</span><br>หนังสือออกมีเพียง 5 ฉบับ ขณะที่หนังสือเข้ามี 663 ฉบับ — วงจรเอกสารจึงปิดไม่ครบและตรวจย้อนกลับการสั่งการไม่ได้ · <b>ผู้ลงมือ: งานธุรการ · ผู้อนุมัตินโยบาย: ผู้อำนวยการ</b></li>
+<li><b>ระบุผู้ดูแลทรัพย์สิน 2,647 ชิ้นที่ยังไม่มีผู้รับผิดชอบ</b> <span class="win">ผลตรงต่อเกณฑ์ 2.2 และ 5.2</span><br>ทะเบียนมี 3,646 ชิ้นมูลค่ากว่า 747 ล้านบาท แต่ระบุผู้ดูแลเพียง 27.4% · <b>ผู้ลงมือ: งานจัดซื้อ พัสดุและทรัพย์สิน ร่วมกับหัวหน้าหน่วยงานที่ครอบครองทรัพย์สิน</b></li>
+<li><b>กำหนดวันเริ่ม-สิ้นสุดและผู้ตอบให้แบบสอบถาม 4 ฉบับที่ยังเปิดค้าง</b> <span class="win">เงื่อนไขระดับ 4-5 ของหลายเกณฑ์</span><br>เกณฑ์ระดับ 4 และ 5 เกือบทุกข้อต้องใช้ผลความพึงพอใจ ≥85% ซึ่งต้องมาจากแบบสอบถามที่ปิดรอบแล้ว · <b>ผู้ลงมือ: งานสารสนเทศและการวิจัยเพื่อพัฒนา</b></li>
+<li><b>เปิดช่องทางรับเรื่องของหน่วยงานในระบบ</b> <span class="win">ผลตรงต่อเกณฑ์ 1.1</span><br>ขณะนี้มีเพียง 1 หน่วยงานจาก 72 ที่สร้างบริการไว้ · เมื่อมีช่องทางที่ติดตามสถานะได้ เกณฑ์การมีส่วนร่วมจะมีหลักฐานเชิงประจักษ์ · <b>ผู้ลงมือ: หัวหน้าหน่วยงานที่ให้บริการแก่ผู้อื่น</b></li>
+<li><b>ประสานส่วนกลางแก้การเชื่อมต่อฐานบัญชี</b> <span class="win">ป้องกันการถูกสรุปผิด</span><br>โมดูลภาพรวมของส่วนกลางยังมองไม่เห็นฐานบัญชีของโรงเรียน — เรื่องนี้ไม่ใช่ความผิดของโรงเรียนแต่ต้องรีบแก้ · <b>ผู้ลงมือ: Commission on ICT and HRM ร่วมกับทีมระบบ SWIS</b></li>
+</ol>
+</div>
+
+<h2><span class="n">15</span>สิ่งที่รายงานนี้ยังตอบไม่ได้</h2>
+<table>
+<thead><tr><th style="width:36%">เรื่อง</th><th>เหตุผล</th></tr></thead>
+<tbody>
+<tr><td>เกณฑ์ 3.4 สิ่งแวดล้อม และค่าเป้าหมายของเกณฑ์ 2.2 การเงิน</td><td>มูลนิธิฯ ยังไม่ได้กำหนดเป้าหมายคุณภาพและตัวชี้วัดของสองเกณฑ์นี้ไว้ในกรอบกลาง — ห้องตรวจส่งเรื่องถึงส่วนกลางแล้ว 18 ส.ค. 2569</td></tr>
+<tr><td>เกณฑ์ 2.1 · 2.2 · 2.3 ในความหมาย "การเปิดเผย"</td><td>ระบบวัดการบันทึก ไม่ได้วัดว่าผู้มีส่วนได้ส่วนเสียเข้าถึงข้อมูลได้จริงหรือไม่ ซึ่งเป็นสาระสำคัญของหลักความโปร่งใส</td></tr>
+<tr><td>ความเสมอภาค 4.2</td><td>ความเป็นธรรมในการใช้กฎต้องใช้การสัมภาษณ์ผู้มีส่วนได้ส่วนเสีย 9 กลุ่มตามคู่มือ ระบบตอบแทนไม่ได้</td></tr>
+<tr><td>ระบบให้รางวัลผลงานดีเด่น (3.3)</td><td>ไม่พบโมดูลที่บันทึกระบบรางวัลในชุดโมดูล 20 กลุ่มที่ตรวจ</td></tr>
+<tr><td>ระดับ 4 และ 5 ของทุกเกณฑ์</td><td>ต้องใช้ข้อร้องเรียนและผลสำรวจความพึงพอใจ ≥85% ซึ่งยังไม่มีในระบบ — แบบสอบถาม 5 ฉบับกำหนดช่วงเวลาเพียง 1 ฉบับ</td></tr>
+<tr><td>ตัวชี้วัดในชุด GOV-FSG ทั้ง 19 ตัว</td><td>เห็นชื่อชุดและจำนวนตัวชี้วัด แต่ยังเปิดดูรายตัวไม่ได้จากเครื่องมือชุดนี้ จึงยังจับคู่กับ 14 เกณฑ์ในคู่มือทีละข้อไม่ได้</td></tr>
+<tr><td>สาเหตุที่หน่วยงานบางแห่งใช้งบต่ำผิดปกติ</td><td>ข้อมูลบอกได้ว่ายอดจ่ายต่ำ แต่บอกไม่ได้ว่าเพราะกิจกรรมอยู่ปลายปีหรือเพราะยังไม่บันทึก — ต้องถามหน่วยงานโดยตรง</td></tr>
+<tr><td>เหตุที่ฐานกลางอ่านมูลค่าทรัพย์สินตามบัญชีเป็น 0</td><td>ตัวมูลค่าคลี่คลายแล้ว (611,039,921.31 บาท ยืนยันตรงกันจากสามสายการตรวจ) แต่ยังไม่ทราบว่าเหตุใดฐานกลางจึงอ่านไม่ได้ — เป็นเรื่องของระบบ ไม่ใช่ของโรงเรียน</td></tr>
+</tbody>
+</table>
+
+<h2><span class="n">16</span>ป้ายกำกับข้อมูล</h2>
+<table>
+<thead><tr><th style="width:26%">รายการ</th><th>รายละเอียด</th></tr></thead>
+<tbody>
+<tr><td><b>ปีการศึกษา</b></td><td>2569 (edu_year 2026)</td></tr>
+<tr><td><b>เงื่อนไขการดึงข้อมูล</b></td><td>ระบบ SWIS ของโรงเรียนเซนต์คาเบรียล + ฐานข้อมูลบริหารส่วนกลางของมูลนิธิฯ · ดึง <b>25 สิงหาคม 2569 เวลา 10:55 น.</b> · ฐานกลางเป็นข้อมูล ณ <b>24 สิงหาคม 2569 เวลา 19:16:58 น.</b></td></tr>
+<tr><td><b>ความสดของข้อมูล</b></td><td><b>ระบบบัญชีและผู้ใช้งานระบบการเงิน</b> = ฐานข้อมูลสำรองส่วนกลาง sync ตอนเย็น ไม่ realtime · <b>งบประมาณ ทรัพย์สิน บุคลากร นักเรียน</b> = สำเนา sync รายวัน · <b>โมดูล SWIS อื่นทั้งหมด</b> = ดึงสดจากระบบโรงเรียน</td></tr>
+<tr><td><b>โมดูลที่เปิดตรวจ</b></td><td>20 กลุ่มโมดูล (รายการครบในข้อ 1) — ข้อความ "ไม่พบในระบบ ณ วันที่ตรวจ" ทุกจุดมาจากการเปิดโมดูลดูจริง</td></tr>
+<tr><td><b>ผู้อำนวยการโรงเรียน</b></td><td>ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ <span class="tiny">(ทะเบียนบุคลากรระบบสารบรรณ · ชุดชื่อผู้อำนวยการ 15 โรงเรียน ปี 2569-2570)</span></td></tr>
+<tr><td><b>กำหนดการนิเทศ</b></td><td>9-10 กันยายน 2569 <span class="tiny">(ปฏิทินนิเทศจริงของมูลนิธิฯ)</span></td></tr>
+<tr><td><b>ค่าที่ต้องดึงสดซ้ำก่อนวันนิเทศ</b></td><td>ตามชุดตัวเลขกลางที่ห้องกลางล็อกไว้ 26 ส.ค. 2569 — <b>คำขอเบิกงบ · ใบเสร็จ · ยอดจ่ายจริง · จำนวนแผนที่อนุมัติ</b> เป็นค่าที่ขยับทุกวัน <b>ห้ามล็อกตายตัว</b> · ทุกสายการตรวจต้องดึงสดพร้อมกันในวันเดียวกันก่อนนิเทศ แล้วประทับเวลาที่ดึงให้ตรงกัน · ส่วนค่าที่เป็นภาพนิ่ง (บุคลากร · หน่วยงาน · ตัวชี้วัด · การยืนยันอัตรากำลัง · คู่มือคุณภาพ) ใช้ตามที่ล็อกไว้ได้</td></tr>
+<tr><td><b>ปฏิทินกิจกรรม</b></td><td>ตัวเลขในรายงานนี้เป็นชุดที่<b>แยกปีการศึกษา 2569 แล้ว</b> (ยืนยันร่วมกันโดยสายระบบและสายบุคคล 26 ส.ค. 2569 เวลา 23:16 น.) — กิจกรรมจริง <b>645</b> · ปิดสถานะ 30 · ยังไม่ตรวจ 615 · เลยกำหนด <b>319</b> · <b>timeline ขั้นตอนแผน 4,386 แถวเป็นคนละช่อง ห้ามบวกรวม</b></td></tr>
+<tr><td><b>การตรวจข้อมูลก่อนวิเคราะห์</b></td><td>ทำครบตามคำสั่งมูลนิธิฯ 25 ส.ค. 2569 — ดูข้อ 0 · <b>ดึงได้ 21 จาก 22 เส้นทาง</b> (เส้นทางที่ดึงไม่ได้คือโมดูลสถิติการใช้งานระบบบัญชี ซึ่งไม่กระทบข้อสรุปใด) · <b>กระทบยอด 8 คู่ ตรงหรืออธิบายได้ 7 คู่ ขัดกัน 1 คู่</b> ซึ่งรายงานเลือกไม่สรุป</td></tr>
+<tr><td><b>ผลตรวจรูปแบบรายงาน</b></td><td>ผ่านเกณฑ์ตรวจรูปแบบทุกข้อ ยกเว้นข้อบังคับเรื่องจดหมายนำ ซึ่ง<b>ตัดออกตามคำสั่งของผู้รับผิดชอบเนื้อหา</b> เพื่อไม่ให้ AI เรียบเรียงข้อความในนามผู้ลงนามเอง · คำเตือนเรื่องคำว่า "สูงสุด" มาจาก<u>ชื่อเกณฑ์ 5.2 ตามคู่มือ</u> ไม่ใช่การจัดอันดับโรงเรียน จึงคงคำตามต้นฉบับ</td></tr>
+<tr><td><b>ขอบเขตที่ไม่ได้ทำ</b></td><td>ไม่ให้คะแนน · ไม่ตัดสินระดับ 1-5 · ไม่ประเมินบุคคล · ไม่ตั้งตัวชี้วัดเองแทนกรอบกลาง · ไม่จัดอันดับระหว่างโรงเรียน</td></tr>
+<tr><td><b>วิธีประเมินตามคู่มือ</b></td><td>ตรวจเอกสาร · สังเกตการณ์ตรง · สัมภาษณ์ผู้มีส่วนได้ส่วนเสีย 9 กลุ่ม — <b>รายงานนี้ครอบคลุมเฉพาะวิธีที่หนึ่ง</b></td></tr>
+</tbody>
+</table>
+
+<!--D2-START-->
+<h2 style="border-bottom-color:#c0392b"><span class="n" style="color:#c0392b">0-D2</span>ยันกับไฟล์ส่งออกระดับรายการของ SG — และจุดที่ต้องยึดค่าในระบบ SWIS</h2>
+<div class="swisbox">
+<b>ทำอะไร</b> — นำตัวเลขในรายงานฉบับนี้ไปยันกับ<b>ไฟล์ส่งออกระดับรายการที่ดึงจากระบบ SWIS เมื่อ 31 สิงหาคม 2569</b> ซึ่งเป็นสิ่งที่คณะกรรมการนิเทศเปิดดูบนหน้าจอ · ไฟล์ที่ใช้ยันในส่วนของกรอบธรรมาภิบาล ได้แก่ <code>มาตรฐาน_2569_sg.xlsx</code> · <code>นโยบาย_2569_sg.xlsx</code> · <code>ปฏิทินทั้งหมด_2569_sg.xlsx</code> · <code>ประวัติภราดา_2569_sg.xlsx</code> · <code>การปฏิบัติงาน_2569_sg.xlsx</code> · <code>implement_v2_sg_2026.csv</code> · <code>budget_export_2569_sg.csv</code> · <code>tuition_payment_sum_2569_sg.csv</code> · <code>asset_by_location_2569_sg.csv</code><br>
+<b>กติกา</b> — <b>ไฟล์ส่งออกเป็นแหล่งอ้างอิงสูงสุด</b> · จุดที่ไม่ตรงกัน รายงานติดป้าย <span class="swisfix">ค่าเดิม <span class="swistag">SWIS 000</span></span> ให้ผู้อ่านยึดค่าในระบบ · <b>ข้อความเดิมทั้งหมดคงไว้ ไม่ได้ลบหรือแก้</b><br>
+<b>เรื่องการเงิน</b> — อ่านรายรับจาก <code>tuition_payment_sum</code> ซึ่งเป็นยอดบิลจริงเท่านั้น <b>ไม่ใช้ <code>budget_in</code></b> เพราะมุมแผนงบตัดยอดบิลออก ทำให้ค่าเทอมเพี้ยน
+</div>
+
+<h3 style="font-size:1.06em;color:var(--navy);margin:24px 0 8px">D2-1 · ตรงกับไฟล์ส่งออก</h3>
+<table>
+<thead><tr><th style="width:26%">รายการ</th><th style="width:22%">ในรายงาน</th><th style="width:22%">ในไฟล์ส่งออก</th><th>ไฟล์ที่ยัน</th></tr></thead>
+<tbody>
+<tr><td>ชื่อผู้อำนวยการ</td><td><b>ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์</b></td><td><b>ดร. สุรกิจ ศรีสราญกุลวงศ์</b> · คำนำหน้า "ภราดา" · ตำแหน่งผู้อำนวยการ · ฝ่ายคณะภราดา</td><td><code>ประวัติภราดา</code> + <code>การปฏิบัติงาน</code></td></tr>
+<tr><td>โครงสร้างเกณฑ์ธรรมาภิบาล</td><td>5 หลัก 14 เกณฑ์ย่อย</td><td><b>5 หลัก 14 ตัวชี้วัด</b> — 1.1-1.3 · 2.1-2.3 · 3.1-3.4 · 4.1-4.2 · 5.1-5.2</td><td><code>มาตรฐาน</code> ชุด GOV-FSG</td></tr>
+<tr><td>ชุดมาตรฐานอ้างอิงมีชุดธรรมาภิบาล</td><td>มีชุด GOV-FSG ลงทะเบียนแล้ว</td><td>มีจริง · เป็น 1 ใน <b>10 ชุดมาตรฐาน</b> ที่โรงเรียนลงทะเบียน</td><td><code>มาตรฐาน</code></td></tr>
+<tr><td>โครงการมีงบผูก</td><td>ทุกแผนมีงบประมาณ</td><td><b>แผนงาน 71 บันทึกงบครบ 71 · โครงการ 37 บันทึกงบ 36</b></td><td><code>implement_v2</code></td></tr>
+</tbody>
+</table>
+
+<h3 style="font-size:1.06em;color:var(--navy);margin:24px 0 8px">D2-2 · ไม่ตรง — ให้ยึดค่าในระบบ SWIS</h3>
+<table>
+<thead><tr><th style="width:5%">#</th><th style="width:20%">รายการ</th><th style="width:16%">ในรายงาน</th><th style="width:20%">ในไฟล์ส่งออก (ยึดค่านี้)</th><th style="width:13%">ประเภท</th><th>เพราะอะไร</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td><b>จำนวนตัวชี้วัดชุด GOV-FSG</b></td><td><span class="swisfix">19 ตัว <span class="swistag">SWIS 14</span></span></td><td><b>14 ตัวชี้วัด</b> ใน 5 หลัก</td><td class="prob"><b>(1) ผิดจริง</b></td><td>รายงานเขียนว่า 19 และระบุไว้ในรายการที่ยังตอบไม่ได้ว่า "เปิดดูรายตัวไม่ได้" · <b>ไฟล์ส่งออกเปิดได้ครบทั้ง 14 ข้อ พร้อมจำนวนแผนและโครงการที่ผูกรายข้อ</b> — จึงผิดทั้งตัวเลขและผิดที่บอกว่าเปิดไม่ได้</td></tr>
+<tr><td><b>2</b></td><td>จำนวนตัวชี้วัดชุด FIN-FSG</td><td><span class="swisfix">10 ตัว <span class="swistag">SWIS 8</span></span></td><td><b>8 ตัวบ่งชี้</b> (1.1-1.6 · 2.1-2.2)</td><td class="prob"><b>(1) ผิดจริง</b></td><td>รายงานอ้าง 10 ในข้อ 7 เป็นจุดตั้งต้นของเกณฑ์ 2.2 · ไฟล์ส่งออกนับได้ 8</td></tr>
+<tr><td><b>3</b></td><td><b>เกณฑ์ 3.4 การจัดการสิ่งแวดล้อม</b></td><td><span class="swisfix">"ไม่มีโมดูลตรง · ยังไม่มีเจ้าภาพ · ไม่เติมข้อสรุปใด" <span class="swistag">SWIS มีข้อมูลครบ</span></span></td><td><b>3.4 การแสดงความรับผิดชอบต่อคุณภาพสิ่งแวดล้อม — ผูกแผนงาน 4 · โครงการ 6 · อ้างอิงอัลบั้มภาพ 6</b></td><td class="prob"><b>(3) รายงานตกหล่น</b></td><td>รายงานมองหา "โมดูลสิ่งแวดล้อม" จึงไม่พบ · <b>ที่จริงเกณฑ์ 3.4 อยู่ในชุดมาตรฐาน GOV-FSG ในระบบแล้ว และมีแผนงานกับโครงการผูกไว้</b> · ดูหลักฐานเพิ่มในตาราง D2-3</td></tr>
+<tr><td><b>4</b></td><td>จำนวนแผนงาน</td><td><span class="swisfix">73 แผนจริง (ทะเบียน 100) <span class="swistag">SWIS 71</span></span></td><td><b>แผนงาน 71 · โครงการ 37</b></td><td><b>(2) คนละวิธีนับ</b></td><td>หน้าจอรายงาน Implement นับแผนที่ใช้งานจริง 71 · รายงานใช้ฐาน 73 จากเครื่องมืออีกตัว · ผลต่าง 2 แผน · <b>ให้ยึด 71 ตามหน้าจอ</b></td></tr>
+<tr><td><b>5</b></td><td><b>จำนวนกิจกรรมในปฏิทิน</b></td><td><span class="swisfix">645 กิจกรรมจริง <span class="swistag">SWIS 643 / 142</span></span></td><td><b>ปฏิทินกิจกรรมที่ผูกแผน 643</b> · <b>หน้า "ปฏิทินทั้งหมด" ที่กรรมการเปิดดู 142 กิจกรรม จาก 22 หน่วยงาน</b></td><td><b>(2) คนละวิธีนับ</b></td><td>ระบบมีสองชั้น — ชั้นที่ผูกกับแผนงาน <b>643</b> (ต่างจากรายงาน 2 รายการ) และชั้นที่แสดงในหน้าปฏิทินรวม <b>142</b> ซึ่งเป็นกิจกรรมที่ลงกำหนดการจริง · <b>รายงานพูดถึงชั้นเดียว ต้องแสดงทั้งสองชั้น</b></td></tr>
+<tr><td><b>6</b></td><td>ทะเบียนทรัพย์สิน</td><td><span class="swisfix">3,646 ชิ้น · 747,202,702.47 บาท <span class="swistag">SWIS 3,627 / 685,564,222.74</span></span></td><td><b>3,627 ชิ้น · 685,564,222.74 บาท</b> จาก 1,515 แถวรายการ</td><td><b>(2) คนละวิธีนับ</b></td><td>ไฟล์ส่งออกเป็นมุม "แยกตามสถานที่เก็บ" จึงนับเฉพาะรายการที่ผูกห้องแล้ว · รายการที่ยังไม่ผูกสถานที่ไม่ปรากฏ · <b>ผลต่าง 19 ชิ้น และ 61.6 ล้านบาท คือส่วนที่ยังไม่ผูกสถานที่</b></td></tr>
+<tr><td><b>7</b></td><td>ผู้ดูแลทรัพย์สิน</td><td><span class="swisfix">999 รายการ = 27.4% <span class="swistag">SWIS 539/1,515 แถว</span></span></td><td><b>539 จาก 1,515 แถวรายการมีชื่อผู้ดูแล</b></td><td><b>(2) คนละวิธีนับ</b></td><td>รายงานนับเป็น "ชิ้น" · ไฟล์ส่งออกนับเป็น "แถวรายการ" ซึ่งหนึ่งแถวอาจมีหลายชิ้น · <b>ทั้งสองค่าบอกเรื่องเดียวกันคือยังผูกผู้ดูแลไม่ครบ</b></td></tr>
+<tr><td><b>8</b></td><td><b>ยอดจ่ายจริง</b></td><td><span class="swisfix">224,800,341.77 บาท <span class="swistag">SWIS 247,699,989.45</span></span></td><td><b>247,699,989.45 บาท</b> จาก <b>2,992 ใบเบิก 66 หน่วยงาน</b> (แถว "รวมทั้งหมด" ในไฟล์ยืนยันยอดเดียวกัน)</td><td class="prob"><b>(1) ผิดจริง</b></td><td>ไฟล์ส่งออกใบเบิกระดับรายการรวมได้ 247.70 ล้านบาท และตัวไฟล์เองมีแถวรวมยืนยัน · <b>รายงานต่ำกว่าความจริง 22,899,647.68 บาท</b> · ข้อความเรื่อง "ผูกแผนได้จริง 178,949,307.89" จึงต้องคิดบนฐานใหม่</td></tr>
+</tbody>
+</table>
+
+<h3 style="font-size:1.06em;color:var(--navy);margin:24px 0 8px">D2-3 · ไฟล์ส่งออกมี แต่รายงานยังไม่ได้พูดถึง</h3>
+<div class="swisbox" style="background:#f3f7f3;border-color:#2d6a4f">
+<b>ส่วนนี้ไม่ใช่ความผิดพลาดของตัวเลข แต่เป็นหลักฐานที่มีอยู่ในระบบแล้วและรายงานยังไม่ได้ใช้</b> — ทั้งหมดอยู่ในขอบเขตของกรอบธรรมาภิบาลโดยตรง
+</div>
+<table>
+<thead><tr><th style="width:24%">หลักฐานที่มีในระบบ</th><th style="width:34%">ค่าที่ไฟล์ส่งออกแสดง</th><th>ตอบเกณฑ์ข้อใด</th></tr></thead>
+<tbody>
+<tr><td><b>ผลสำเร็จรายเกณฑ์ธรรมาภิบาล</b></td><td><b>1.1 = 83.25% · 1.3 = 83.25% · 5.1 = 83.25%</b> · อีก <b>11 เกณฑ์ยังเป็น 0%</b></td><td><b>ทุกเกณฑ์</b> — เป็นค่าที่คู่มือใช้ตัดสินระดับ 4-5 · รายงานไม่เคยแสดงค่านี้เลย</td></tr>
+<tr><td><b>แผนงานและโครงการที่ผูกรายเกณฑ์</b></td><td>1.1 แผน 10 โครงการ 8 · 1.2 แผน 7 โครงการ 2 · 1.3 แผน 5 · 2.1 แผน 2 โครงการ 2 · 2.2 แผน 5 โครงการ 1 · 2.3 แผน 5 โครงการ 1 · 3.1 แผน 7 โครงการ 6 · 3.2 แผน 2 โครงการ 1 · 3.3 แผน 2 โครงการ 1 · <b>3.4 แผน 4 โครงการ 6</b> · 4.1 แผน 5 โครงการ 2 · 4.2 แผน 10 โครงการ 5 · 5.1 แผน 12 โครงการ 7 · 5.2 แผน 25 โครงการ 6</td><td><b>ทุกเกณฑ์</b> — แสดงว่าโรงเรียนผูกแผนกับเกณฑ์ธรรมาภิบาลไว้แล้วทั้ง 14 ข้อ</td></tr>
+<tr><td><b>อ้างอิงข่าวและอัลบั้มภาพรายเกณฑ์</b></td><td>1.1 ข่าว 1 · 1.2 อัลบั้ม 4 · 1.3 อัลบั้ม 1 · 3.1 ข่าว 1 · <b>3.4 อัลบั้ม 6</b> · 4.2 ข่าว 1 · 5.1 ข่าว 1 · 5.2 ข่าว 1</td><td><b>หลักที่ 1 การมีส่วนร่วม</b> และ <b>เกณฑ์ 3.4</b> — เป็นร่องรอยกิจกรรมที่มีภาพยืนยัน</td></tr>
+<tr><td><b>นโยบายโรงเรียนด้านสิ่งแวดล้อม</b></td><td><b>นโยบายข้อ 6 ด้านการจัดการสิ่งแวดล้อมและความยั่งยืน</b> มี <b>7 กลยุทธ์ย่อย</b> — 6.1 แผน 4 · 6.2 แผน 2 โครงการ 6 (จ่ายจริง 40,930,733.91) · 6.3 แผน 4 โครงการ 1 (จ่ายจริง 3,337,532) · 6.4 แผน 1 โครงการ 2 (จ่ายจริง 19,639,503.71) · 6.5 แผน 3 (จ่ายจริง 1,976,817.25 · <b>ร้อยละ 83.25</b>) · <b>6.6 แนวทาง ESG Model แผน 9 โครงการ 5 (จ่ายจริง 74,029,753.26)</b> · 6.7 แผน 5 (จ่ายจริง 18,310,547.29 · <b>ร้อยละ 83.25</b>)</td><td class="prob"><b>เกณฑ์ 3.4 โดยตรง</b> — รายงานเขียนว่าเกณฑ์นี้ "ยังไม่มีเจ้าภาพและไม่มีโมดูลตรง" ซึ่งไม่ตรงกับระบบ</td></tr>
+<tr><td><b>ชุดเป้าหมายการพัฒนาที่ยั่งยืน (SDG)</b></td><td>ลงทะเบียนแล้ว <b>30 ตัวชี้วัด</b> เป็นชุดมาตรฐานที่ใหญ่เป็นอันดับสองของโรงเรียน</td><td><b>เกณฑ์ 3.4</b> และ <b>หลักที่ 5 ความคุ้มค่า</b></td></tr>
+<tr><td><b>นโยบายโรงเรียนทั้งชุด</b></td><td><b>6 ด้าน 44 กลยุทธ์</b> — มงฟอร์ต · หลักสูตรและการเรียนรู้ · การบริหารจัดการองค์กร · การพัฒนาทรัพยากรมนุษย์ · เครือข่ายและความร่วมมือ · สิ่งแวดล้อมและความยั่งยืน</td><td><b>หลักที่ 4 ความเสมอภาค</b> และ <b>เกณฑ์ 3.1</b> — เป็นข้อต่อระหว่างยุทธศาสตร์กับแผนงาน</td></tr>
+<tr><td><b>แผนที่มีปฏิทินกิจกรรมและที่ยังไม่มี</b></td><td><b>จาก 71 แผน มีปฏิทินกิจกรรม 19 แผน · ยังไม่มี 52 แผน</b></td><td class="prob"><b>เกณฑ์ 3.1</b> — แผนที่ไม่มีปฏิทินจะไม่มีร่องรอยการประชุมหรือการลงมือให้ตรวจ · รายงานไม่เคยแสดงตัวเลขนี้</td></tr>
+<tr><td><b>ยอดค่าเทอมระดับรายนักเรียน</b></td><td><b>ยอดค่าเทอมรวม 290,836,495.00 บาท · ชำระแล้ว 278,416,549.00 บาท · ค้างชำระ 12,419,946.00 บาท</b> จาก <b>4,560 รายการ</b></td><td class="prob"><b>เกณฑ์ 2.2 กระบวนการบริหารงานการเงิน</b> — เป็นหลักฐานชั้นบิลจริง แข็งแรงกว่าตัวเลขที่รายงานใช้อยู่</td></tr>
+<tr><td>ใบเบิกงบระดับรายการ</td><td><b>2,992 ใบเบิก · 66 หน่วยงาน</b> · สูงสุดคือ งานทรัพยากรมนุษย์ 78,777,468.34 · งานบริหารฝ่ายวิชาการ 36,219,795.19 · งานโภชนาการและสวัสดิการร้านค้า 29,503,443.46</td><td><b>เกณฑ์ 2.2</b> และ <b>5.2</b> — ไล่ยอดกลับไปหาหน่วยงานได้ทุกใบ</td></tr>
+</tbody>
+</table>
+
+<div class="caution alert"><b>🔴 สรุปสิ่งที่ต้องแก้ก่อนวันนิเทศ — เรียงตามความสำคัญ</b>
+<br><b>① เกณฑ์ 3.4 สิ่งแวดล้อม ต้องเขียนใหม่ทั้งข้อ</b> — รายงานปัจจุบันระบุว่าไม่มีเจ้าภาพและไม่มีโมดูลตรง ซึ่งไม่ตรงกับระบบ · ระบบมีทั้งเกณฑ์ 3.4 ในชุด GOV-FSG (ผูกแผน 4 โครงการ 6 อัลบั้ม 6) และนโยบายข้อ 6 ที่มี 7 กลยุทธ์ แผนงานและโครงการผูกครบพร้อมยอดจ่ายจริง
+<br><b>② ตัวชี้วัด GOV-FSG ต้องแก้จาก 19 เป็น 14</b> และต้องถอดออกจากรายการที่ยังตอบไม่ได้ เพราะเปิดดูรายตัวได้ครบแล้ว
+<br><b>③ ยอดจ่ายจริงต้องยึด 247,699,989.45 บาท</b> ตามใบเบิกระดับรายการ แทน 224,800,341.77
+<br><b>④ ต้องเพิ่มค่าผลสำเร็จรายเกณฑ์</b> — 3 เกณฑ์ได้ 83.25% อีก 11 เกณฑ์ยังเป็น 0% ซึ่งเป็นค่าที่คู่มือใช้ตัดสินระดับ
+<br><b>⑤ ต้องเพิ่มยอดค่าเทอมชั้นบิลจริง</b> 290,836,495.00 / ชำระแล้ว 278,416,549.00 / ค้าง 12,419,946.00 เป็นหลักฐานเกณฑ์ 2.2
+<br><b>⑥ ต้องเพิ่มเรื่องแผน 52 จาก 71 ที่ยังไม่มีปฏิทินกิจกรรม</b> เพราะกระทบเกณฑ์ 3.1 โดยตรง
+<br><b>ทั้งหกข้อเป็นการแก้เนื้อรายงาน ซึ่งอยู่นอกขอบเขตของบล็อกนี้</b> — บล็อกนี้ทำหน้าที่ชี้จุดและติดป้ายให้ผู้อ่านยึดค่าในระบบเท่านั้น <span class="await">【รอประธาน ICT/Commission ตรวจสอบ】</span></div>
+
+<div class="caution"><b>ป้ายกำกับในบล็อกนี้อ่านอย่างไร</b> — <span class="swisfix">ตัวเลขเดิมขีดเส้นใต้เป็นเส้นประสีแดงบนพื้นเหลืองอ่อน <span class="swistag">SWIS ค่าจริง</span></span> · <b>ให้ยึดค่าที่อยู่ในป้าย SWIS เสมอ</b> · ประเภทความไม่ตรงแบ่งเป็นสามแบบ — <b>(1) ผิดจริง</b> ตัวเลขในรายงานไม่ถูกต้อง · <b>(2) คนละวิธีนับ</b> ทั้งสองค่าถูกแต่นับคนละฐาน ต้องระบุฐานทุกครั้ง · <b>(3) รายงานตกหล่น</b> ระบบมีข้อมูลแต่รายงานยังไม่ได้ใช้</div>
+
+<div class="verdict"><b>ที่มาของบล็อกนี้</b> — ไฟล์ส่งออกทั้ง 30 ไฟล์ดึงจากระบบ SWIS เมื่อ <b>31 สิงหาคม 2569</b> เก็บไว้ที่โฟลเดอร์ <code>sg audit</code> · บล็อกนี้เพิ่มเข้ามาโดย<b>ไม่ได้ลบหรือแก้ข้อความเดิมของรายงานแม้แต่ตัวอักษรเดียว</b> · ตรวจยืนยันด้วยวิธีถอดส่วนที่เพิ่มออกแล้วเทียบกับต้นฉบับทีละไบต์</div>
+
+
+<!--D2-END-->
+<div style="border:2px solid #c00;padding:16px;margin-top:28px;background:#fff8f8;border-radius:8px">
+<b>⚠️ ความโปร่งใสของรายงานฉบับนี้</b><br>
+ตัวเลขที่ตรวจสอบกับระบบแล้ว: <b>110 จุด</b> ·
+<b style="color:#c00">ตัวเลขที่ยังไม่ได้ตรวจสอบ: 5 จุด ⚠️</b> ·
+ความเห็นหรือข้อสังเกตของ AI (เผือก): <b>0 จุด</b>
+<div style="margin-top:10px;font-size:.9em">
+<b>ฐานนับ:</b> นับจากตัวเลขทุกตัวที่ปรากฏในข้อ 0 ถึงข้อ 14 · <b>ข้อ 0 ตรวจความครบถ้วนของข้อมูลต้นทางแล้วก่อนวิเคราะห์</b> — 21 เส้นทางดึงข้อมูล · กระทบยอด 8 คู่<br>
+<b>รายการที่ยังไม่ได้ตรวจสอบ 5 จุด:</b>
+① เหตุที่ฐานกลางอ่านมูลค่าทรัพย์สินตามบัญชีเป็น 0 ทั้งที่อีกสามสายการตรวจได้ 611,039,921.31 บาทตรงกัน
+② เหตุที่หนังสือออกในระบบมีเพียง 5 ฉบับ — เป็นเพราะออกนอกระบบหรือยังไม่เริ่มใช้
+③ เหตุที่งาน SGIEP และงานลูกเสือมียอดจ่ายต่ำกว่า 1% ของงบที่ตั้งไว้
+④ ความต่างของจำนวนผู้ใช้ระบบการเงินระหว่าง 84 กับ 87 คน
+⑤ ทะเบียนทรัพย์สินสองชุด 3,646 ชิ้น กับ 70 ชิ้น เป็นคนละทะเบียนจริงหรือไม่
+<br><br><b>ทั้ง 5 จุดนี้ห้องตรวจขอให้ยืนยันกับผู้ปฏิบัติงานของโรงเรียนก่อนนำไปใช้ตัดสินใจใด ๆ</b>
+</div>
+</div>
+
+<footer>
+รายงานตรวจการบริหารโดยใช้หลักธรรมาภิบาล · โรงเรียนเซนต์คาเบรียล · ปีการศึกษา 2569 · จัดทำ 25 สิงหาคม 2569 · สำหรับการนิเทศ 9-10 กันยายน 2569<br>
+<b>ผู้จัดทำและผู้รับผิดชอบเนื้อหา:</b> ภราดาศุภนันท์ ขันธปรีชา — ประธาน Commission on ICT and HRM มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br>
+<b>เกณฑ์อ้างอิง:</b> คู่มือการบริหารโดยใช้หลักธรรมาภิบาล (ฉบับปรับปรุง) ปี 2568 · คณะกรรมการทบทวนตามคำสั่งมูลนิธิฯ ที่ 14/2567 (ภาคผนวก ข) · คณะอนุกรรมการจัดทำ (ภาคผนวก ค)<br>
+<b>วิธีจัดทำ:</b> ดึงข้อมูลจากระบบ SWIS และฐานข้อมูลบริหารส่วนกลางของมูลนิธิฯ · ประมวลผลและเรียบเรียงด้วยผู้ช่วยปัญญาประดิษฐ์ (AI) · ผู้รับผิดชอบเนื้อหาตรวจก่อนเผยแพร่<br>
+<b>วิธีประเมินตามคู่มือ:</b> ตรวจเอกสาร · สังเกตการณ์ตรง · สัมภาษณ์ผู้มีส่วนได้ส่วนเสีย 9 กลุ่ม — รายงานนี้ครอบคลุมเฉพาะการตรวจเอกสารจากระบบสารสนเทศ
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รายงานตรวจติดตามงาน ICT · ซล. · v3 (Framework + Activity Linkage) · ปี 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Sarabun', sans-serif; max-width: 1250px; margin: 0 auto; padding: 32px 24px; color: #1f2937; line-height: 1.65; background: #fafafa; }
+  h1 { font-size: 26px; border-bottom: 3px solid #1e40af; padding-bottom: 10px; color: #1e40af; }
+  h2 { font-size: 20px; margin-top: 36px; color: #1e40af; border-left: 4px solid #1e40af; padding-left: 10px; }
+  h3 { font-size: 17px; margin-top: 24px; color: #374151; }
+  h4 { font-size: 15px; margin-top: 16px; color: #1e40af; }
+  .meta { background: #eff6ff; padding: 12px 16px; border-radius: 6px; font-size: 14px; color: #1e40af; margin-bottom: 24px; }
+  .meta strong { color: #1e3a8a; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; background: #fff; font-size: 13px; }
+  th, td { border: 1px solid #d1d5db; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #1e40af; color: #fff; font-weight: 600; }
+  tr:nth-child(even) td { background: #f9fafb; }
+  .red { color: #b91c1c; font-weight: 600; }
+  .amber { color: #b45309; font-weight: 600; }
+  .green { color: #047857; font-weight: 600; }
+  .callout { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 4px; margin: 16px 0; font-size: 14px; }
+  .callout-red { background: #fee2e2; border-left-color: #dc2626; }
+  .callout-blue { background: #dbeafe; border-left-color: #1e40af; }
+  .callout-green { background: #d1fae5; border-left-color: #059669; }
+  ul { padding-left: 22px; margin: 6px 0; }
+  li { margin-bottom: 3px; }
+  .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #d1d5db; font-size: 12px; color: #6b7280; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 3px; font-size: 12.5px; font-family: monospace; color: #b91c1c; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+  .badge-draft { background: #fef3c7; color: #92400e; }
+  .badge-pilot { background: #dbeafe; color: #1e40af; }
+  .badge-v3 { background: #ede9fe; color: #6d28d9; }
+  .sub-block { background: #fff; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px 18px; margin: 14px 0; }
+  .sub-block h3 { margin-top: 0; color: #1e40af; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+  .q { color: #7c3aed; font-weight: 500; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+  .tag { display: inline-block; background: #e0e7ff; color: #3730a3; padding: 1px 6px; border-radius: 3px; font-size: 11px; margin: 1px; font-weight: 600; }
+  .tag-red { background: #fee2e2; color: #991b1b; }
+  .tag-amber { background: #fef3c7; color: #92400e; }
+  .tag-green { background: #d1fae5; color: #065f46; }
+</style>
+</head>
+<body>
+
+<h1>📊 รายงานตรวจติดตามงาน ICT ในโรง · ซล. · <span class="badge badge-v3">v3</span></h1>
+<div class="meta">
+<strong>โรง:</strong> เซนต์หลุยส์ ฉะเชิงเทรา (<code>db=sl</code>) · <strong>ปี:</strong> 2569 · <strong>ดึงข้อมูล:</strong> 29 ก.ค. 69 · <span class="badge badge-pilot">PILOT</span> <span class="badge badge-draft">รอบราเดอร์ตรวจ</span><br>
+<strong>Approach v3:</strong> Framework Audit + <strong>Activity Linkage Matrix</strong> — โยง<em> ปฏิทิน/แผนงาน → คนรับผิดชอบ → งบ → บริการหน่วยงาน</em> เพื่อตรวจว่ากิจกรรมใดในโรง<u>เกี่ยวข้องกับกรอบ ICT</u> และเดินเชื่อมกันจริงหรือแค่บนกระดาษ<br>
+<strong>Source:</strong> <code>ict_framework.md</code> · <code>ict_subgroup_structure.md</code> Tier-0 · SWIS MCP (10 modules + budget + staff)
+</div>
+
+<div class="callout callout-blue">
+<strong>สิ่งใหม่ใน v3:</strong> เพิ่ม 3 ส่วนตามที่บราเดอร์ชี้ — §2 <strong>Owner ↔ Budget ↔ Service Matrix</strong> · §3 <strong>Activity Linkage (ปฏิทิน overdue ↔ กรอบ ICT)</strong> · §4 <strong>Service Completion Crisis</strong>
+</div>
+
+<h2>0. บริบทเบื้องต้นของโรง</h2>
+<table>
+<tr><th>รายการ</th><th>ค่า</th><th>รายการ</th><th>ค่า</th></tr>
+<tr><td>ผู้อำนวยการ</td><td>นายกุลชาติ จันทะโชโต</td><td>บุคลากรรวม</td><td class="num">297 (ช 90 · ญ 200)</td></tr>
+<tr><td>ฝ่าย / หน่วยงาน</td><td>6 / 48</td><td>เข้าใหม่ / พ้นสภาพ</td><td class="num">23 / 28 (net −5)</td></tr>
+<tr><td>นักเรียน</td><td class="num">2,845</td><td>อยู่ในโครงสร้าง</td><td class="num">222/297 (75 นอก · 25%)</td></tr>
+<tr><td>ครู / พนักงาน</td><td class="num">232 / 65</td><td>Job Spec ครบ</td><td class="num">160/222 (72%)</td></tr>
+<tr><td>วุฒิ (ต่ำ ป.ตรี/ตรี/โท/เอก/ไม่ระบุ)</td><td class="num">51 / 163 / 44 / 0 / <span class="amber">43</span></td><td>งบตั้ง / จ่ายจริง / ใช้ %</td><td class="num">30.20 M / 6.82 M / 22.58%</td></tr>
+</table>
+
+<h2>1. Framework Audit · 8 sub · หน้าที่หลัก + เป้าหมายคุณภาพ + evidence + gap</h2>
+
+<!-- Sub 1 · Administration -->
+<div class="sub-block">
+<h3>กลุ่ม 1 · งานบริหารฝ่าย ICT (หมวกบน)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลักที่ควรมี</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence จาก SWIS</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey โรง</th></tr>
+<tr>
+<td>ICT Steering Committee (ผอ.+รอง+ICT+วิชาการ+PR) · Roadmap 3-5 ปี · Governance protocol · ประชุมประจำ · Budget planning · KPI dashboard · Cross-side coordination</td>
+<td>ICT governance ระดับสูง · แผนระยะยาว · Roll-up KPI ทุก sub · Budget ผูก strategy</td>
+<td>หัวหน้า <strong>นายสมพบ คำมี</strong> · สังกัดสำนัก ผอ. · งบ ICT <strong>952,090 บ. (3.15%)</strong> · school_board = <strong>0</strong> · 2 แผน · approved 1</td>
+<td class="red">ไม่มี "ฝ่าย ICT" · ไม่มี Steering · ไม่มี Roadmap · แผน 1/2 ยัง draft</td>
+<td class="q">Steering ประชุมประจำ? · Roadmap ระยะยาว? · เจ้าภาพ cross-side?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 2.1 · SIS -->
+<div class="sub-block">
+<h3>กลุ่ม 2.1 · SIS (Foundation) — โรง feed data ขึ้น SIS</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>Feed ข้อมูล SIS ครบ ถูกต้อง ทันเวลา · data quality 6 มิติ · Confirm Loop ประจำปี</td>
+<td>SIS ตัดสินใจระดับมูลนิธิได้จริง</td>
+<td>SAR 60/61 (<span class="green">98.36%</span>) · KPI links 2,381 · 6 ชุดมาตรฐาน · 568 ตัวชี้วัด (80.63% ใช้จริง)</td>
+<td class="red">Confirm Loop 2569 <strong>ยังไม่ยืนยัน</strong> · 26/48 not_started · readiness 51.8%</td>
+<td class="q">เมื่อไหร่ Confirm Loop เสร็จ? · 43 คน วุฒิ unknown?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 2.2 · SWIS -->
+<div class="sub-block">
+<h3>กลุ่ม 2.2 · SWIS (โปรแกรมฐานข้อมูลระดับโรง)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>ใช้ 25 modules ครอบทุกงาน · adoption ครูสูง · e-office ทดแทนกระดาษ · Face scan ครบ · แผน PDCA9 ทุกหน่วย · คู่มือคุณภาพครบ</td>
+<td>SWIS = single source of truth · executive ใช้ real-time</td>
+<td>ซล. <strong>189/220 ฟังก์ชัน (86%)</strong> · eoffice dins 1,072 · Face scan ครู <span class="green">95%</span> · Teacher App 750 · PDCA9 100% full_9</td>
+<td class="red"><strong>คู่มือคุณภาพ 0/48</strong> ครบ · <strong>Executive App 4 คน</strong> · junk data ปฏิทิน ICT</td>
+<td class="q">ทำไม executive 4 คน? · เมื่อไหร่ครบ 220 ฟังก์ชัน?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 3.1 · Digital -->
+<div class="sub-block">
+<h3>กลุ่ม 3.1 · Digital Media (สื่อดิจิทัล)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>เว็บโรง · SNS · content plan · e-newsletter · alumni · digital PR · brand consistency</td>
+<td>ข่าวสม่ำเสมอ · engagement เติบโต · audience ครบ</td>
+<td>ข่าว 138 · อัลบั้ม 217 · calendar_groups 14 · news_groups 48 · editors 4-5 · งบ PR 317,700 · 88 requests</td>
+<td class="amber"><strong>show_pr 2 · has_pic 0</strong> · ทีม editor เล็ก · SWIS ไม่ track SNS</td>
+<td class="q">FB/IG/TikTok? · content plan? · ทำไม 138 ข่าว show_pr แค่ 2?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 3.2 · Non-Digital -->
+<div class="sub-block">
+<h3>กลุ่ม 3.2 · Non-Digital Media (สื่อดั้งเดิม)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>ป้าย · แผ่นพับ · จดหมายข่าว · วารสาร · บอร์ด · digital signage</td>
+<td>สื่อในโรงทั่วถึง · ผปค./ศิษย์เก่ารับข่าว · brand ในกายภาพชัด</td>
+<td><strong>วารสาร 0 · กฤตภาค 0 (in system)</strong> · เจ้าภาพเดียวกับ 3.1</td>
+<td class="red">SWIS ไม่ track ป้าย/แผ่นพับ · ไม่มีวารสาร blindspot ใหญ่</td>
+<td class="q">ป้าย/แผ่นพับใครทำ? · มีวารสาร? · digital signage กี่จอ?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 4.1 -->
+<div class="sub-block">
+<h3>กลุ่ม 4.1 · เครือข่าย + อุปกรณ์ · เพื่อบริหารบริการ</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>LAN/WiFi · internet · server/cloud · MDM · firewall · UPS · backup · DR · IT service desk · asset lifecycle · PDPA</td>
+<td>uptime ≥ 99% · bandwidth พอ · security incident = 0 · SLA 24 ชม.</td>
+<td>อาคาร 23 · ห้อง 381 · Face scan 33,473/ปี · <strong>IT service desk 6 services · 110 requests</strong> ✓ · PSAS 697 assets · งบ ICT 952K</td>
+<td class="red">SWIS ไม่ breakdown IT assets · ไม่มี metric uptime/bandwidth · ไม่มี security log · <strong>งบ ICT ต่ำ 3.15%</strong></td>
+<td class="q">network map/bandwidth? · firewall/UPS/backup? · PDPA compliance? · IT assets กี่ %?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 4.2 -->
+<div class="sub-block">
+<h3>กลุ่ม 4.2 · เครือข่าย + อุปกรณ์ · เพื่อการเรียนการสอน + กิจกรรมตามหลักสูตร</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>WiFi ห้องเรียน · smart board · projector · tablet · lab computer · e-learning platform · online content · classroom management</td>
+<td>ครูใช้ ICT ห้องเรียนทุกวิชา · นักเรียนเข้าถึงอุปกรณ์ · online learning ต่อเนื่อง</td>
+<td>ห้องเรียน 83 · วิชาเปิดสอน 651 · attendance 4,334 · <strong>homework online 385</strong> · quiz 30 · content 43 · post_teaching_log 584</td>
+<td class="red">SWIS ไม่ track hardware ห้องเรียน · online content 43 น้อยเทียบ 651 วิชา · 🔴 <strong>ไม่มีเจ้าภาพชัด</strong> (ICT/วิชาการ?)</td>
+<td class="q">ทุกห้องมี smart board? · platform e-learning? · Tablet 1:1? · bandwidth?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 5.1 -->
+<div class="sub-block">
+<h3>กลุ่ม 5.1 · บุคลากร ICT (พัฒนาทีม ICT โดยเฉพาะ)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>Staff inventory ทีม ICT · skill matrix · Job Spec ครบ · career path · training roadmap · certification · succession · 360° review</td>
+<td>ทีมครบสเปค · cert สนับสนุน · training ≥ 40 ชม./ปี · succession critical roles</td>
+<td>หัวหน้า นายสมพบ · โรงรวม Job Spec 160/222 (72%) · วุฒิ 51/163/44/0/<strong>43 unknown</strong></td>
+<td class="red"><strong>ไม่ทราบเลย</strong>ทีม ICT กี่คน · ไม่ทราบ Job Spec/cert/training log</td>
+<td class="q">ทีมกี่คน? · Job Spec ครบ? · cert (Cisco/MS)? · 40 ชม./ปี? · succession หัวหน้า?</td>
+</tr>
+</table>
+</div>
+
+<!-- Sub 5.2 -->
+<div class="sub-block">
+<h3>กลุ่ม 5.2 · ผู้ใช้งานทั่วไปในโรงเรียน (อบรมครู/บุคลากรทุกคน)</h3>
+<table>
+<tr><th style="width:22%">หน้าที่หลัก</th><th style="width:22%">เป้าหมายคุณภาพ</th><th style="width:22%">Evidence</th><th style="width:17%">Gap</th><th style="width:17%">❓ Survey</th></tr>
+<tr>
+<td>User inventory · training SWIS/e-office/e-learning/PDPA · onboarding · help desk · digital literacy · change management</td>
+<td>SWIS adoption ≥ 80% · PDPA ≥ 90% · Help desk 24 ชม.</td>
+<td>ครู 232 · Teacher App 750 · Face scan ครู <span class="green">95%</span> · eoffice active · Parent App 1,365 (new 417) · Student App 3,298 (new 146)</td>
+<td class="red"><strong>Executive App 4 users</strong> · SWIS ไม่ track training/PDPA/help desk SLA · 🔴 ไม่มีเจ้าภาพชัด</td>
+<td class="q">แผน training? · PDPA ทำแล้วกี่ %? · Help desk SLA? · ทำไม executive 4 คน?</td>
+</tr>
+</table>
+</div>
+
+<h2>2. Owner ↔ Budget ↔ Service ↔ Plan · Matrix (⭐ ใหม่ v3)</h2>
+<p>โยงหน่วยงานที่รับผิดชอบกรอบ ICT · เข้ากับงบ · จำนวนบริการที่สร้าง · คำขอบริการ · แผน PDCA9 · overdue items</p>
+<table>
+<tr>
+<th>หน่วยงาน</th>
+<th>กรอบ ICT sub ที่เกี่ยว</th>
+<th class="num"># แผน</th>
+<th class="num">งบตั้ง (บ.)</th>
+<th class="num">จ่ายจริง</th>
+<th class="num">Services</th>
+<th class="num">Requests</th>
+<th class="num">Completed</th>
+<th class="num">Overdue (sample)</th>
+</tr>
+<tr>
+<td><strong>งานเทคโนโลยีและสารสนเทศ</strong><br><em>สำนัก ผอ.</em></td>
+<td><span class="tag">1</span><span class="tag">2.2</span><span class="tag">4.1</span><span class="tag">4.2</span><span class="tag">5.1</span><span class="tag">5.2</span></td>
+<td class="num">2</td>
+<td class="num">952,090</td>
+<td class="num">199,578 (20.96%)</td>
+<td class="num"><strong>6</strong></td>
+<td class="num"><strong>110</strong></td>
+<td class="num red">2</td>
+<td class="num">1 (junk)</td>
+</tr>
+<tr>
+<td>งานประชาสัมพันธ์<br><em>ธุรการ-การเงิน</em></td>
+<td><span class="tag">3.1</span><span class="tag">3.2</span></td>
+<td class="num">1</td>
+<td class="num">317,700</td>
+<td class="num">31,443 (9.9%)</td>
+<td class="num">2</td>
+<td class="num">88</td>
+<td class="num red">0</td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>งานทรัพยากรมนุษย์<br><em>สำนัก ผอ.</em></td>
+<td><span class="tag">5.1</span><span class="tag">5.2</span> (cross-link)</td>
+<td class="num">1</td>
+<td class="num">1,266,100</td>
+<td class="num">241,685 (19.1%)</td>
+<td class="num red">0</td>
+<td class="num red">0</td>
+<td class="num">—</td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>งานอาคารสถานที่และสิ่งแวดล้อม<br><em>บริหารทั่วไป</em></td>
+<td><span class="tag">4.1</span> (infra ที่ต้อง network)</td>
+<td class="num">1</td>
+<td class="num">6,890,879</td>
+<td class="num">660,327 (9.6%)</td>
+<td class="num">4</td>
+<td class="num"><strong>221</strong></td>
+<td class="num red">0</td>
+<td class="num red">3</td>
+</tr>
+<tr>
+<td>งานพัสดุครุภัณฑ์<br><em>ธุรการ-การเงิน</em></td>
+<td><span class="tag">4.1</span> (assets)</td>
+<td class="num">1</td>
+<td class="num">760</td>
+<td class="num">0 (0%)</td>
+<td class="num red">0</td>
+<td class="num red">0</td>
+<td class="num">—</td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>งานบริหารสำนักผู้อำนวยการ<br><em>สำนัก ผอ.</em></td>
+<td>consumer ของ ICT (คกก. · dashboard)</td>
+<td class="num">1</td>
+<td class="num">1,643,655</td>
+<td class="num">311,911 (19%)</td>
+<td class="num red">0</td>
+<td class="num red">0</td>
+<td class="num">—</td>
+<td class="num red">6</td>
+</tr>
+<tr>
+<td>งานวัดและประเมินผล<br><em>วิชาการ</em></td>
+<td>consumer (e-learning · LMS)</td>
+<td class="num">1</td>
+<td class="num">318,886</td>
+<td class="num">89,596 (28.1%)</td>
+<td class="num red">0</td>
+<td class="num red">0</td>
+<td class="num">—</td>
+<td class="num">—</td>
+</tr>
+<tr>
+<td>ทั้งโรง 48 หน่วยงาน</td>
+<td>—</td>
+<td class="num">49</td>
+<td class="num">30,199,510</td>
+<td class="num">6,820,453 (22.58%)</td>
+<td class="num"><strong>13</strong></td>
+<td class="num"><strong>419</strong></td>
+<td class="num red"><strong>2 (0.48%)</strong></td>
+<td class="num red">314</td>
+</tr>
+</table>
+
+<div class="callout callout-red">
+<strong>ประเด็นสำคัญ v3:</strong><br>
+1. งาน ICT ครอบ 6 sub · แต่งบแค่ <strong>3.15% ของโรง</strong> ต่ำมาก<br>
+2. งาน HR ที่ควรครอบ 5.1/5.2 (พร้อม ICT) · <strong>ยังไม่สร้าง service · 0 requests</strong> — cross-link ยังไม่เกิด<br>
+3. งานอาคาร (4.1 infra) งบ 6.9M · 221 requests · <strong>completed 0</strong> — ICT/อาคาร ต้อง sync<br>
+4. งาน 44/48 <strong>ยังไม่สร้าง service ใน SWIS</strong> — ICT service ครอบทั้งโรงไม่ได้เพราะฝั่ง consumer ไม่มี pipe
+</div>
+
+<h2>3. Activity Linkage · ปฏิทิน overdue ↔ กรอบ ICT (⭐ ใหม่ v3)</h2>
+<p>Sample 20 items <strong>overdue จาก 314 items</strong> · โยงว่ากิจกรรมนี้เกี่ยวกับ ICT sub ใด · น่าจะต้องใช้ service ICT อะไร</p>
+<table>
+<tr><th>ปฏิทินกิจกรรม</th><th>หน่วยงานเจ้าของ</th><th>Start</th><th>Due</th><th>งบหน่วย</th><th>ICT sub ที่เกี่ยว</th><th>Service ICT ที่น่าใช้</th></tr>
+<tr><td>4.2 กิจกรรมแข่งขันกีฬาสี ซล. GAMES</td><td>งานกีฬา</td><td>2026-05-11</td><td>2026-03-15</td><td class="num">740K</td><td><span class="tag">3.1</span><span class="tag">4.2</span></td><td>ถ่ายทอด · เผยแพร่ · scoring app</td></tr>
+<tr><td>7.1–7.4 รับการนิเทศ 4 ครั้ง</td><td>งานอาคาร</td><td>2026-07→02-15</td><td>2026-04</td><td class="num">6.89M</td><td><span class="tag">2.2</span><span class="tag">4.1</span></td><td>เก็บ log ผ่าน SWIS · e-office</td></tr>
+<tr><td>4.4 กิจกรรมแข่งขันทักษะปฐมวัย</td><td>งานระดับชั้น</td><td>2026-05-11</td><td>2026-04-30</td><td class="num">751K</td><td><span class="tag">3.1</span></td><td>อัลบั้ม · ข่าว</td></tr>
+<tr><td>4.1 โรงเรียนส่งเสริมสุขภาพ</td><td>งานพยาบาล</td><td>2026-05-11</td><td>2026-04-30</td><td class="num">70K</td><td><span class="tag">3.1</span><span class="tag">2.2</span></td><td>hospital module · ข่าว</td></tr>
+<tr><td>4.2 เด็กไทยทำได้ / 4.3 ไข้เลือดออก / 4.4 Body Perfect</td><td>งานพยาบาล (3 อัน)</td><td>2026-05-11</td><td>2026-04-30</td><td class="num">70K</td><td><span class="tag">3.1</span><span class="tag">2.2</span></td><td>hospital · post_news · e-office</td></tr>
+<tr class="red"><td><code>6.1 fafasdfsdfdf</code></td><td><strong>งานเทคโนโลยีและสารสนเทศ</strong></td><td>2026-05-05</td><td>2026-05-05</td><td class="num">952K</td><td><span class="tag-red">1</span></td><td><strong>ต้องลบ junk</strong></td></tr>
+<tr><td>4.2 ประชุม คกก.บริหาร (×2)</td><td>งานบริหารสำนัก ผอ.</td><td>2026-05-01/11</td><td>2026-05-11</td><td class="num">1.64M</td><td><span class="tag">1</span><span class="tag">2.2</span></td><td>Executive App (แต่ 4 คน!) · calendar · e-office</td></tr>
+<tr><td>4.3 บันทึกตารางงาน ผอ. (×2)</td><td>งานบริหารสำนัก ผอ.</td><td>2026-05-01/11</td><td>2026-05-11</td><td class="num">1.64M</td><td><span class="tag">1</span></td><td>Executive App · calendar</td></tr>
+<tr><td>4.4 อบรมพัฒนาบุคลากรฝ่ายสำนัก (×2)</td><td>งานบริหารสำนัก ผอ.</td><td>2026-05-01/11</td><td>2026-05-11</td><td class="num">1.64M</td><td><span class="tag">5.2</span></td><td>training tracker · e-office · post_news</td></tr>
+<tr><td>4.6 วางแผนเครื่องมือประเมิน (×2)</td><td>งานบริหารสำนัก ผอ.</td><td>2026-05-01/11</td><td>2026-05-11</td><td class="num">1.64M</td><td><span class="tag">2.2</span></td><td>SWIS quality_manual · plan_pdca9</td></tr>
+<tr><td>4.19 ปัจฉิมนิเทศ ม.6 (×2)</td><td>งานกิจกรรม</td><td>2026-05-01/15</td><td>2026-05-15</td><td class="num">430K</td><td><span class="tag">3.1</span></td><td>ข่าว · อัลบั้ม · calendar</td></tr>
+</table>
+<div class="callout callout-red">
+<strong>ข้อสังเกต Activity Linkage:</strong><br>
+• 20 items overdue ≈ <strong>ทั้งหมดล้วนพึ่ง service ICT/PR</strong> (post_news · calendar · e-office · hospital · Executive App)<br>
+• หลาย items <strong>due &lt; start</strong> — ระบุวันผิด → data quality issue ที่ ICT ควรออก validation<br>
+• งานอาคาร 4 items · งบ 6.89M · <strong>ผูกกับ 4.1 network + IT infrastructure</strong> — ต้อง sync ICT-อาคาร<br>
+• ICT ตัวเอง <strong>1 junk item</strong> — ICT ต้องเป็นแม่แบบ data quality
+</div>
+
+<h2>4. Service Completion Crisis (⭐ ใหม่ v3)</h2>
+<table>
+<tr><th>หน่วยงานให้บริการ</th><th class="num">Services สร้าง</th><th class="num">Requests</th><th class="num">Completed</th><th class="num">% ปิดงาน</th></tr>
+<tr><td>งานเทคโนโลยีและสารสนเทศ</td><td class="num">6</td><td class="num">110</td><td class="num">2</td><td class="num red">1.82%</td></tr>
+<tr><td>งานอาคารสถานที่และสิ่งแวดล้อม</td><td class="num">4</td><td class="num">221</td><td class="num">0</td><td class="num red">0%</td></tr>
+<tr><td>งานประชาสัมพันธ์</td><td class="num">2</td><td class="num">88</td><td class="num">0</td><td class="num red">0%</td></tr>
+<tr><td>กลุ่มสาระสุขศึกษาและพลศึกษา</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">—</td></tr>
+<tr style="background:#fee2e2;"><td><strong>รวม 4 หน่วย</strong></td><td class="num"><strong>13</strong></td><td class="num"><strong>419</strong></td><td class="num red"><strong>2</strong></td><td class="num red"><strong>0.48%</strong></td></tr>
+</table>
+<p><strong>บริการผูกกับแผนงาน/โครงการ:</strong> 421 · <strong>ยังไม่สร้าง service:</strong> 44/48 หน่วยงาน (92%)</p>
+<div class="callout callout-red">
+<strong>🚨 ระดับวิกฤต:</strong> Service dept module ของ SWIS · 419 คำขอในระบบ · <strong>ปิดงานแค่ 2</strong> (0.48%) · ICT ปิด 2 คำขอ · หน่วยอื่นปิด 0 · SWIS Plus ควรออก validation ให้ผอ. + ICT ต้อง drive adoption หน่วยที่เหลือ 44 หน่วย
+</div>
+
+<h2>5. Cross-cutting Analytics</h2>
+
+<h3>5.1 งบประมาณเทียบ 6 ฝ่าย · เน้น ICT/PR/HR</h3>
+<table>
+<tr><th>ฝ่าย/หน่วยงาน</th><th class="num">งบตั้ง</th><th class="num">จ่ายจริง</th><th class="num">%</th><th class="num">สัดส่วน</th></tr>
+<tr><td><strong>รวมทั้งโรง</strong></td><td class="num">30,199,510</td><td class="num">6,820,453</td><td class="num">22.58%</td><td class="num">100%</td></tr>
+<tr><td>ฝ่ายบริหารทั่วไป</td><td class="num">8,045,068</td><td class="num">1,082,883</td><td class="num">13.46%</td><td class="num">26.6%</td></tr>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td class="num">7,869,273</td><td class="num">2,571,362</td><td class="num">32.68%</td><td class="num">26.1%</td></tr>
+<tr><td>ฝ่ายวิชาการ</td><td class="num">6,978,471</td><td class="num">1,684,476</td><td class="num">24.14%</td><td class="num">23.1%</td></tr>
+<tr><td>สำนักผู้อำนวยการ</td><td class="num">4,236,625</td><td class="num">831,961</td><td class="num">19.64%</td><td class="num">14.0%</td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน</td><td class="num">2,072,955</td><td class="num">249,388</td><td class="num">12.03%</td><td class="num">6.9%</td></tr>
+<tr><td>ฝ่ายปฐมวัย</td><td class="num">997,118</td><td class="num">400,384</td><td class="num">40.15%</td><td class="num">3.3%</td></tr>
+<tr style="background:#fef3c7;"><td>→ งานเทคโนโลยีและสารสนเทศ</td><td class="num">952,090</td><td class="num">199,578</td><td class="num">20.96%</td><td class="num"><strong>3.15%</strong></td></tr>
+<tr style="background:#fef3c7;"><td>→ งานประชาสัมพันธ์</td><td class="num">317,700</td><td class="num">31,443</td><td class="num">9.90%</td><td class="num">1.05%</td></tr>
+<tr style="background:#fef3c7;"><td>→ งานทรัพยากรมนุษย์</td><td class="num">1,266,100</td><td class="num">241,685</td><td class="num">19.09%</td><td class="num">4.19%</td></tr>
+</table>
+
+<h3>5.2 Content tagging (editor module) · ปฏิทิน + ข่าว + อัลบั้ม</h3>
+<table>
+<tr><th>ประเภท</th><th class="num">Groups</th><th class="num">Items tagged (สะสม)</th></tr>
+<tr><td>ข่าว</td><td class="num">48</td><td class="num">11,930</td></tr>
+<tr><td>อัลบั้ม</td><td class="num">12</td><td class="num">8,501</td></tr>
+<tr><td>ปฏิทิน</td><td class="num">14</td><td class="num">1,937</td></tr>
+<tr><td>กฤตภาค</td><td class="num">4</td><td class="num">94</td></tr>
+</table>
+
+<h3>5.3 ซล. ใช้ SWIS 189/220 ฟังก์ชัน (86% · ปี 68 · top 3 เครือ)</h3>
+<p><em>อ้าง <code>ict_framework.md</code></em> — ซล. ติด top 3 ร่วม MCP, ACP · เหนือค่าเฉลี่ยเครือ · gap อีก 31 ฟังก์ชัน</p>
+
+<h2>6. Roll-up Implications · KPI หมวกบน (n/15)</h2>
+<ol>
+<li><strong>ระดับ ICT ในโรง:</strong> ซล. เป็น "งาน" ไม่ใช่ "ฝ่าย" · เช็ก 14 โรงว่าเหมือนกันไหม → KPI หมวกบน "โรงมี ICT ระดับใด"</li>
+<li><strong>Cross-side Media:</strong> 3.1/3.2 อยู่ธุรการ · Roll-up KPI ต้องยอมรับ · หรือ push ให้ย้ายมา ICT</li>
+<li><strong>คู่มือคุณภาพ 0/48 ครบ</strong> → mandate ระดับมูลนิธิเร่งด่วน</li>
+<li><strong>Executive App underuse</strong> → 15 โรง batch check</li>
+<li><strong>Service completion 0.48%</strong> → SWIS Plus + Commission ต้อง intervention</li>
+<li><strong>งบ ICT ~3% ทั้งโรง</strong> → ถ้าค่าเฉลี่ย 15 โรงเหมือนกัน · Commission ต้องผลักดันงบ 4.1+4.2</li>
+<li><strong>Non-digital/PDPA/cert/network topology</strong> → protocol survey ประจำปี</li>
+</ol>
+
+<h2>7. Recommendations</h2>
+<ol>
+<li>ขยาย audit template นี้ scan 14 โรง batch</li>
+<li>Commission ยกร่าง "Job Spec หน่วย ICT ในโรง" · กำหนดเจ้าภาพ 4.2/5.1/5.2</li>
+<li>Survey protocol สำหรับ data ที่ SWIS ไม่ track (SNS · non-digital · network · cert · training · PDPA)</li>
+<li>Push คู่มือคุณภาพครบ 6 ส่วน (Golden Sample 2.1 SIS = แม่แบบ)</li>
+<li>Push Confirm Loop 2569 (structure + personnel)</li>
+<li>Executive App campaign (target ≥ 80% ผู้บริหาร)</li>
+<li><strong>ปิด service completion gap</strong> · SWIS Plus ออก monthly SLA report · ICT + อาคาร sync</li>
+<li><strong>Push 44 หน่วยที่เหลือสร้าง service ใน SWIS</strong></li>
+</ol>
+
+<h2>8. Next Steps</h2>
+<ul>
+<li>บราเดอร์ตรวจ v3 · confirm framework audit + activity linkage template</li>
+<li>Approve → scan 14 โรง batch → roll-up n/15</li>
+<li>Design ซล. survey questions ที่ ❓ column → ส่งผอ.กุลชาติ (via eoffice)</li>
+<li>เข้าวาระ Commission Q2 (ต.ค. 69)</li>
+</ul>
+
+<h2>9. ⚠️ Caveats</h2>
+<ul>
+<li>ข้อมูล ณ 29 ก.ค. 69 · ปี 2569</li>
+<li>SWIS 189/220 = ตัวเลขปี <strong>2568</strong> จาก <code>ict_framework.md</code></li>
+<li>Activity Linkage table ใช้ sample 20 items จาก 314 overdue · SWIS ยังไม่ให้ enumerate full list</li>
+<li>Owner-Budget-Service Matrix = อ่านจาก budget_by_dept + dept_services + plan_pdca9 · cross-tab</li>
+<li>Framework อ้าง <code>ict_subgroup_structure.md</code> + <code>ict_framework.md</code> verbatim (§C1)</li>
+<li>❓ column ต้อง survey — SWIS ไม่มี data</li>
+<li>Report ไม่ commit/push · Stage 3 บราเดอร์ + ห้องกลาง</li>
+</ul>
+
+<div class="footer">
+Generated: 2026-07-29 · ห้อง ICT · pilot v3 · Framework Audit + Activity Linkage + Owner-Budget-Service Matrix
+</div>
+
+</body>
+</html>

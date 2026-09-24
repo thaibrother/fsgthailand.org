@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DEMO · ซล. · sub 4.1 Network Admin · scope-clean pattern (เฉพาะกลุ่ม 4.1)</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#1a2f5a;--gold:#b8860b;--ok:#1e7d46;--okbg:#e9f7ef;--warn:#9a6700;--warnbg:#fff8e1;--line:#d9dee8;--soft:#f4f6fa;--swis:#0b6bcb;--swisbg:#e7f1fb;--red:#b91c1c;--redbg:#fef2f2;--draft:#7c3aed;--demo:#c026d3;--demobg:#fdf4ff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Sarabun',sans-serif;color:#222;line-height:1.55;background:#fff;max-width:1240px;margin:0 auto;padding:26px 34px;}
+  header{text-align:center;border-bottom:3px double var(--demo);padding-bottom:12px;margin-bottom:12px;background:var(--demobg);padding:14px;border-radius:8px;}
+  header .demo-tag{display:inline-block;background:var(--demo);color:#fff;padding:3px 12px;border-radius:4px;font-size:.78rem;font-weight:700;margin-bottom:6px;}
+  header .org{color:var(--gold);font-weight:600;font-size:.84rem;}
+  header h1{color:var(--navy);font-size:1.22rem;margin:6px 0 4px;}
+  header .sub{color:#555;font-size:.85rem;}
+  .part{font-size:1.1rem;color:#fff;background:var(--navy);padding:8px 14px;border-radius:8px;margin:22px 0 10px;}
+  .part.demo{background:var(--demo);}
+  h3{color:var(--navy);font-size:1rem;margin:14px 0 6px;padding:5px 10px;border-left:5px solid var(--swis);background:var(--swisbg);border-radius:6px;}
+  table{width:100%;border-collapse:collapse;font-size:.79rem;margin:8px 0 12px;}
+  th{background:var(--navy);color:#fff;padding:6px 8px;text-align:left;font-weight:600;font-size:.75rem;vertical-align:top;}
+  td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .b{font-weight:600;} .c{text-align:center;} .r{text-align:right;}
+  .box{border-left:5px solid var(--swis);background:var(--swisbg);border-radius:8px;padding:11px 15px;font-size:.86rem;margin:11px 0;}
+  .box.red{border-color:var(--red);background:var(--redbg);}
+  .box.warn{border-color:var(--warn);background:var(--warnbg);}
+  .box.ok{border-color:var(--ok);background:var(--okbg);}
+  .box.demo{border-color:var(--demo);background:var(--demobg);}
+  .m{color:var(--swis);font-weight:600;background:var(--swisbg);padding:1px 5px;border-radius:4px;}
+  .ok{color:var(--ok);font-weight:700;} .warn{color:var(--warn);font-weight:700;} .red{color:var(--red);font-weight:700;}
+  a.src{color:var(--swis);text-decoration:none;font-weight:600;} a.src:hover{text-decoration:underline;}
+  a.xref{color:var(--draft);text-decoration:underline;font-weight:600;} a.xref:hover{background:#f3e8ff;}
+  .tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:1px 6px;border-radius:3px;font-size:.72rem;margin:1px;font-weight:600;}
+  .who{background:#fefce8;color:#854d0e;padding:1px 4px;border-radius:3px;font-size:.7rem;font-weight:600;display:inline-block;margin:1px 0;}
+  .who.f{background:#dcfce7;color:#166534;}
+  ul{padding-left:22px;margin:6px 0;} li{margin-bottom:3px;font-size:.86rem;}
+  ol{padding-left:24px;margin:6px 0;} ol li{margin-bottom:4px;}
+  .foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--line);font-size:.72rem;color:#666;}
+  .keep{background:var(--okbg);border-left:4px solid var(--ok);padding:8px 12px;margin:4px 0;font-size:.85rem;border-radius:0 4px 4px 0;}
+  .cut{background:var(--redbg);border-left:4px solid var(--red);padding:8px 12px;margin:4px 0;font-size:.85rem;border-radius:0 4px 4px 0;text-decoration:line-through;}
+  .xref-note{background:#f3e8ff;border-left:4px solid var(--draft);padding:8px 12px;margin:4px 0;font-size:.85rem;border-radius:0 4px 4px 0;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="demo-tag">🧪 DEMO PATTERN · sub 4.1 เท่านั้น</div>
+<div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · Commission on ICT and HRM</div>
+<h1>ซล. · DEMO 4.1 Network Admin · Scope-Clean Pattern (100%)</h1>
+<div class="sub">โรงเรียนเซนต์หลุยส์ ฉะเชิงเทรา (db=sl) · ปีการศึกษา 2569 · <b>เอกสารทดลอง pattern เดียว sub 4.1</b> — เพื่อให้บราเดอร์ดูก่อน approve → rewrite ทุกโรง</div>
+</header>
+
+<div class="box demo">
+<b>🎯 วัตถุประสงค์เอกสารนี้ (Row #412-417 · #403 assignment):</b>
+<ol>
+<li><b>Demo scope-clean pattern สำหรับ sub 4.1 Network Admin เท่านั้น</b> — ให้บราเดอร์ดู render จริง (ไฟล์ .html เต็ม · ไม่ใช่ snippet ใน .md)</li>
+<li>บราเดอร์ approve pattern → ห้อง ICT rewrite <b>sl_ict_audit.html · sg_ict_audit.html · mcs_ict_audit.html</b> (live 3 โรง) ตาม pattern เดียวกัน</li>
+<li>แล้วค่อย downgrade <b>mcp_ict_audit.html</b> (gold standard 78K ที่ทำก่อน demo · ผิด order) และ upgrade acs·act·acl·acp v10 หยาบ</li>
+<li>แล้วค่อยขยาย 7 โรงใหม่ (ac · acn · acr · acsp · acu · atsn · acep)</li>
+</ol>
+<b>❌ ห้ามทำโรงใหม่หรือ rewrite จน demo pattern นี้ approve</b>
+</div>
+
+<div class="part demo">§0 · เหตุผลของ demo — ทำไม sub 4.1 · ทำไมต้อง scope-clean</div>
+
+<div class="box red">
+<b>ปัญหาที่ตรวจพบใน sl_ict_audit.html v9 (99K live 3 ส.ค. 69):</b><br>
+รายงาน ICT audit ลามไปทำงานของห้องเจ้าของอื่น 4 ห้อง — <b>เผือก scope</b>:
+<ul>
+<li>🔴 <b>คู่มือคุณภาพ · SAR · นโยบายโรง</b> = ห้อง <b>QUALITY_MANUAL_INSPECTOR (QM)</b> เจ้าของ</li>
+<li>🔴 <b>PDCA9 status · kpi_norm 568 indicators · ครบ 9 ขั้นไหม</b> = ห้อง <b>PDCA9_INSPECTOR</b> เจ้าของ</li>
+<li>🔴 <b>dept_services · service completion · Confirm Loop</b> = ห้อง <b>SWIS_PLUS / HRM</b> เจ้าของ</li>
+<li>🔴 <b>Job Spec% · อัตรากำลัง · Confirm Loop · Retention</b> = ห้อง <b>HRM</b> เจ้าของ</li>
+</ul>
+<b>ผลกระทบ:</b> กรรมการ + ผอ. เห็น scope เผือก → เจ้าภาพงานไม่ชัด → routing ผิด → PDCA C step 8 (ประเมินผล) จะไม่มีเจ้าของจริง<br>
+<b>สั่ง (Row #391 · 403):</b> ตัด scope เผือก ทั้งหมด → เหลือ ICT-only 8 sub → cross-ref ไปห้องเจ้าของ (ไม่ทำแทน · แค่ link)
+</div>
+
+<div class="box">
+<b>ทำไม 4.1 เป็น demo (ไม่ใช่ 5.1 หรือ 2.1):</b>
+<ul>
+<li>4.1 Network Admin = <b>sub ที่ evidence ICT direct มากสุด</b> (ledger ค่าอินเทอร์เน็ต · วัสดุคอมพิวเตอร์ · dept ICT budget · IT service desk · PSAS assets)</li>
+<li>เป็น sub ที่ scope ชัดสุด (network + hardware admin · ไม่กำกวมกับสายอื่น)</li>
+<li>ถ้า pattern 4.1 ทำได้ scope-clean 100% → sub อื่น (2.1 · 2.2.1 · 2.2.2 · 3.1 · 3.2 · 4.2 · 5.1 · 5.2) replicate ตามได้ทั้งหมด</li>
+</ul>
+</div>
+
+<div class="part">§1 · Framework Row · กลุ่ม 4.1 (ICT-only detail · ห้ามลาม)</div>
+
+<h3>กลุ่ม 4.1 · เครือข่ายและอุปกรณ์ · เพื่อบริหารบริการ</h3>
+<table>
+<tr>
+<th style="width:15%">หน้าที่หลัก (canonical)</th>
+<th style="width:15%">เป้าหมายคุณภาพ ICT (KEEP)</th>
+<th style="width:24%">Evidence ICT-only (MCP direct)</th>
+<th style="width:11%">Gap ICT</th>
+<th style="width:15%">ผู้รับผิดชอบ (F=มูลนิธิ / S=ซล.)</th>
+<th style="width:20%">ที่มา (SWIS URL)</th>
+</tr>
+<tr>
+<td>LAN · WiFi · internet · server/cloud · MDM · firewall · UPS · backup · DR · IT service desk · asset lifecycle · PDPA</td>
+<td>uptime ≥ 99% · bandwidth พอ · security incident = 0 · SLA IT service desk ≤ 24 ชม.</td>
+<td>
+<b>Chart of accounts ICT direct (SL · 2 codes ที่ผูก 4.1):</b><br>
+• <span class="m">5-114-04-00 ค่าอินเทอร์เน็ต</span> (หมวด: ค่าใช้จ่ายในการบริหาร)<br>
+• <span class="m">5-109-08-00 ค่าวัสดุคอมพิวเตอร์</span> (หมวด: ค่าวัสดุใช้ไป)<br><br>
+<b>Ledger มิ.ย. 69 · movement จริง:</b><br>
+• 5-114-04-00: <span class="ok">debit 31,752.91</span> · 2 entries (24 มิ.ย. · doc 2569206142 = 8,640.91 + doc 2569206145 = 23,112)<br>
+• 5-109-08-00: <span class="ok">debit 24,775</span> · 2 entries (30 มิ.ย. · doc 2569306046 = 23,710 + doc 2569306055 = 1,065 · ปรับปรุงบัญชีใบเคลียร์ทดรองจ่าย No.06-69027 + No.06-69036)<br><br>
+<b>งบ ICT dept (ซล. · dept "งานเทคโนโลยีและสารสนเทศ"):</b><br>
+• งบ ICT ปีการศึกษา 2569 = <span class="m">952,000 บ.</span> (3.15% ของงบโรง)<br>
+• IT service desk = <span class="m">6 services · 110 requests</span> ✓ (SWIS module service)<br>
+• PSAS (Physical Asset) = <span class="m">697 assets</span> (SWIS module psas)
+</td>
+<td class="red">
+• SWIS ไม่ track uptime/bandwidth<br>
+• ไม่มี metric security incident<br>
+• ไม่มี PDPA compliance log<br>
+• ไม่มี breakdown IT asset (697 รวมทั้งหมด)<br>
+• งบ ICT 3.15% ต่ำ
+</td>
+<td>
+<span class="who f">F: หลัก · ภราดาอภิสิทธิ์ 'ทัช' (id 0768)</span><br>
+<span class="who f">F: คณะทำงาน · ภราดาธนภูมิ สายพรหม (id 0690003)</span><br>
+<span class="who">S: หัวหน้า ICT สมพบ (dept 2604)</span><br>
+<span class="who">S: งานพัสดุ วรรณภา ปิ่นทอง</span><br>
+<span class="who">S: งานอาคาร เชษฐา รักษาศรี</span>
+</td>
+<td>
+<a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 IT service dept</a><br>
+<a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/psas_report.php" target="_blank">📄 PSAS 697 assets</a><br>
+<a class="src" href="https://thaibrothers.net" target="_blank">📄 chart of accounts</a>
+</td>
+</tr>
+</table>
+
+<div class="box ok">
+<b>✅ KEEP (ICT-only 4.1 pattern) — สิ่งที่รายงานนี้พูดถึง:</b>
+<ol>
+<li>Ledger direct 2 accounts (5-114-04-00 · 5-109-08-00) · movement มิ.ย. 69</li>
+<li>งบ ICT dept 952K · 3.15% share</li>
+<li>IT service desk 6 services · 110 requests (จำนวน · ไม่ใช่ยัดคุณภาพ)</li>
+<li>PSAS 697 assets (จำนวน · ไม่วิเคราะห์ asset compliance ที่เป็นงาน QM)</li>
+<li>ผู้รับผิดชอบ ระดับมูลนิธิ (ภ.ทัช + ภ.ธนภูมิ) + ระดับ ซล. (สมพบ + วรรณภา + เชษฐา)</li>
+<li>Gap: metric ที่ยังไม่มี (uptime/bandwidth/security · ระบุชัด · ไม่ทำแทน SWIS_PLUS)</li>
+</ol>
+</div>
+
+<div class="part">§2 · Data by 5 Channels · ICT 4.1-filtered (คัดกรองเฉพาะ 4.1)</div>
+
+<h3>2.1 · 📅 ปฏิทินกิจกรรม (calendar) — filter ICT 4.1</h3>
+<div class="box"><b>SWIS get_school_usage(module=calendar_status)</b> return aggregate ทั้งโรง (5,141 events · Done 6% · Overdue 15%) — <b>แต่รายงาน 4.1 นี้ไม่เอา aggregate ทั้งโรงมา</b> (นั่นเป็น scope SWIS/QM) · <b>เอาเฉพาะ events ที่ผูก dept ICT (dept 2604)</b><br>
+🔴 SWIS ไม่มี filter keyword ในระดับ calendar API · <b>flag SWIS Plus tool: `search_calendar_by_dept(sl, dept_id=2604, keyword=[network,internet,firewall,server])`</b> ต้องพัฒนา</div>
+
+<h3>2.2 · 📸 อัลบั้ม/ข่าว (albums · post_news) — filter ICT 4.1</h3>
+<div class="box"><b>SWIS get_school_usage(module=post_news)</b> return aggregate ทั้งโรง · <b>รายงาน 4.1 ต้องการเฉพาะ content ICT tagging</b> · <b>flag SWIS Plus tool: `search_content(sl, tag=[ict,network,server,it])`</b> ต้องพัฒนา · ตอนนี้ไม่มี → mark <span class="red">🔴 รอ verify</span> · ห้ามเดา</div>
+
+<h3>2.3 · 📨 eoffice (thaibrother · central → sl) — filter ICT 4.1</h3>
+<table>
+<tr><th>topic_id</th><th>เรื่อง</th><th>ผูก 4.1?</th><th>ผู้รับ ซล.</th></tr>
+<tr><td>2569/00052</td><td>Kickoff Commission ICT+HRM (11 โรง)</td><td class="ok">✅ ผูก scope 4.1 ทางอ้อม (Commission set structure)</td><td>ภ.กุลชาติ จันทะโชโต (id 10821)</td></tr>
+<tr><td colspan="4" class="c">ไม่มีเอกสารเฉพาะ 4.1 network operations · ผ่านทางการ · commit ผ่าน ภ.กุลชาติ</td></tr>
+</table>
+
+<h3>2.4 · 💰 งบประมาณ dept ICT (get_budget_by_dept) — filter 4.1 direct</h3>
+<table>
+<tr><th>dept_id</th><th>ชื่อหน่วยงาน</th><th class="c">set_out</th><th class="c">paid</th><th class="c">%used</th><th>ผูก 4.1</th></tr>
+<tr><td>2604</td><td><b>งานเทคโนโลยีและสารสนเทศ (main ICT)</b></td><td class="c b">952,000</td><td class="c">รอ verify</td><td class="c">🔴</td><td><span class="tag">4.1</span> Primary</td></tr>
+<tr><td colspan="6" class="c"><b>รวม dept ICT ที่ผูก 4.1 = 952K</b> · 3.15% ของงบโรงเรียน · ไม่รวม dept ห้องเรียน/สื่อ/HR (นั่น 4.2/3.x/5.x)</td></tr>
+</table>
+
+<h3>2.5 · 🧾 Ledger (get_ledger · ICT direct account · มิ.ย. 69)</h3>
+<table>
+<tr><th>code</th><th>ชื่อบัญชี</th><th class="c">debit มิ.ย. 69</th><th>รายละเอียด entries</th><th>ผูก 4.1</th></tr>
+<tr><td><b>5-114-04-00</b></td><td>ค่าอินเทอร์เน็ต</td><td class="c ok"><b>31,752.91</b></td><td>doc 2569206142 = 8,640.91 (24 มิ.ย.) + doc 2569206145 = 23,112 (24 มิ.ย.) · สมุดจ่าย/เช็ค</td><td><span class="tag">4.1</span> ✅</td></tr>
+<tr><td><b>5-109-08-00</b></td><td>ค่าวัสดุคอมพิวเตอร์</td><td class="c ok"><b>24,775</b></td><td>doc 2569306046 = 23,710 + doc 2569306055 = 1,065 (30 มิ.ย.) · ปรับปรุงใบเคลียร์ทดรองจ่าย No.06-69027 + No.06-69036</td><td><span class="tag">4.1</span> ✅</td></tr>
+<tr><td>4-103-01-00</td><td>รายได้ค่าเรียนคอมพิวเตอร์/อินเทอร์เน็ต</td><td class="c">(รายได้)</td><td>รายได้ทั้งปี · ไม่ใช่ 4.1 scope (เป็น 4.2 · เรียนการสอน)</td><td><span class="tag">4.2</span></td></tr>
+<tr><td colspan="5" class="c ok"><b>รวม ledger 4.1 มิ.ย. 69 = 56,527.91 บ.</b> · หลักฐาน ICT movement เดินจริง</td></tr>
+</table>
+
+<div class="part">§3 · Owner Matrix · 4.1 · Accountability Trace (H6)</div>
+
+<table>
+<tr><th style="width:20%">ระดับ</th><th style="width:20%">ชื่อ · id_emp</th><th style="width:30%">บทบาท ICT 4.1</th><th style="width:30%">Accountability trace (ตามใคร เรื่องอะไร)</th></tr>
+<tr>
+<td><b>🌐 มูลนิธิ (F)</b></td>
+<td><span class="who f">ภ.อภิสิทธิ์ 'ทัช' งามวงศ์ (id 0768)</span></td>
+<td>Chair sub 4.1 มูลนิธิ · ประธานอนุ Network + เลขา ICT commission</td>
+<td>ตาม Foundation Roadmap 1-3 ปี · กำหนด SLA เครือ · Bandwidth pool → รายงานประธานฝ่าย ภ.ศุภนันท์</td>
+</tr>
+<tr>
+<td><b>🌐 มูลนิธิ (F)</b></td>
+<td><span class="who f">ภ.ธนภูมิ สายพรหม (id 0690003 · acr)</span></td>
+<td>คณะทำงาน 4.1 · support ระหว่างโรง</td>
+<td>ตาม Kickoff Commission 00052 (25 พ.ค. 69 · ตอบเลือกสาย ICT)</td>
+</tr>
+<tr>
+<td><b>🏫 ซล. (S)</b></td>
+<td><span class="who">สมพบ</span> (หัวหน้างานเทคโนโลยีและสารสนเทศ · dept 2604)</td>
+<td>ดูแล Network + Internet + Server + Service desk · 6 services · 110 requests</td>
+<td>รายงาน ผอ. ซล. (ภ.กุลชาติ id 10821) · Reality check ledger 5-114-04-00 มิ.ย. = 31,753</td>
+</tr>
+<tr>
+<td><b>🏫 ซล. (S)</b></td>
+<td><span class="who">วรรณภา ปิ่นทอง</span> (งานพัสดุ)</td>
+<td>PSAS 697 assets · asset lifecycle · IT procurement</td>
+<td>เชื่อม 5-109-08-00 ledger (วัสดุคอมพิวเตอร์ 24,775 มิ.ย. 69 · ทดรองจ่าย No.06-69027+69036)</td>
+</tr>
+<tr>
+<td><b>🏫 ซล. (S)</b></td>
+<td><span class="who">เชษฐา รักษาศรี</span> (งานอาคาร)</td>
+<td>UPS · fiber physical · rack room · power backup</td>
+<td>เชื่อม dept อาคารสถานที่ · ต่างจาก dept 2604 · cross-ref</td>
+</tr>
+</table>
+
+<div class="part">§4 · Cross-reference (scope-clean pattern) · ห้ามทำแทน 4 ห้อง</div>
+
+<div class="xref-note"><b>หลักการ:</b> ทุก aggregate metric / คุณภาพ / บุคลากร ต้อง <b>ระบุ owner room + link</b> · ไม่ทำแทน · ไม่ยัดใน ICT report</div>
+
+<h3>4.1 ที่ยัดใน ICT audit ผิด (ตัดออก · cross-ref แทน)</h3>
+<table>
+<tr><th style="width:40%">ข้อมูลที่ v9 มี (เผือก scope)</th><th style="width:25%">Owner room ที่ถูก</th><th style="width:35%">Cross-ref link แทน</th></tr>
+<tr>
+<td class="red">ผลตรวจ 48 หน่วยงาน (ทั้งโรง · service completion) · dept_services aggregate</td>
+<td class="c">SWIS_PLUS</td>
+<td><a class="xref" href="sl_swis_audit.html">sl_swis_audit.html § dept_services</a></td>
+</tr>
+<tr>
+<td class="red">คู่มือคุณภาพ dept 4.1 · SAR · นโยบายโรง · quality principles</td>
+<td class="c">QUALITY_MANUAL_INSPECTOR</td>
+<td><a class="xref" href="sl_qm_audit.html">sl_qm_audit.html § dept 2604 คู่มือคุณภาพ</a></td>
+</tr>
+<tr>
+<td class="red">PDCA9 status ครบ 9 ขั้นไหม · kpi_norm indicators 568 ข้อ · Layer Structure</td>
+<td class="c">PDCA9_INSPECTOR</td>
+<td><a class="xref" href="sl_pdca9_audit.html">sl_pdca9_audit.html § plan 6058</a></td>
+</tr>
+<tr>
+<td class="red">Confirm Loop · Job Spec 137 หัวข้อ · อัตรากำลัง 4.1 team · Retention</td>
+<td class="c">HRM</td>
+<td><a class="xref" href="sl_hrm_audit.html">sl_hrm_audit.html § dept 2604 · Confirm Loop</a></td>
+</tr>
+<tr>
+<td class="red">Face scan 33,473/ปี · Attendance analytics</td>
+<td class="c">SWIS_PLUS + HRM</td>
+<td><a class="xref" href="sl_swis_audit.html">sl_swis_audit.html § face_scan</a> · <a class="xref" href="sl_hrm_audit.html">sl_hrm_audit.html § attendance</a></td>
+</tr>
+</table>
+
+<div class="box ok">
+<b>ที่ ICT 4.1 report เก็บไว้ (ไม่ cross-ref · เป็น scope ตัวเอง):</b>
+<ul>
+<li>✅ Ledger ค่าอินเทอร์เน็ต + วัสดุคอมพิวเตอร์ (บัญชี direct ICT)</li>
+<li>✅ IT service desk 6 services · 110 requests (จำนวน · ไม่ใช่ quality)</li>
+<li>✅ PSAS 697 assets (จำนวน · ไม่ใช่ asset lifecycle policy)</li>
+<li>✅ งบ dept ICT (dept 2604) 952K</li>
+<li>✅ Bandwidth/uptime/security (Gap ที่ ICT ต้อง track เอง · ไม่ใช่ QM audit)</li>
+<li>✅ ผู้รับผิดชอบ 4.1 team (Foundation + ซล. staff · specific names/id_emp)</li>
+</ul>
+</div>
+
+<div class="part">§5 · บทวิเคราะห์ 3 มุม · เฉพาะ sub 4.1 (H7)</div>
+
+<h3 style="border-left-color:var(--ok);background:var(--okbg);">5.1 · ข้อดี / จุดแข็ง (4.1 only)</h3>
+<ul>
+<li>✅ <b>Ledger ICT direct เดินจริง มิ.ย. 69</b> — Internet 31,752.91 + วัสดุคอมฯ 24,775 = 56,527.91 บ. · เอกสารครบ (สมุดจ่าย · doc 2569206142/145 · สมุดปรับปรุง · doc 2569306046/055) · <b>audit trail ตรวจสอบย้อนได้</b></li>
+<li>✅ <b>Chart of accounts มี code แยก "ค่าอินเทอร์เน็ต" (5-114-04-00)</b> — cost visibility ระดับดี · เดียวใน 8 โรง audited ที่มี code Internet แยก (พร้อม ACL · MCP)</li>
+<li>✅ <b>PSAS 697 assets tracked</b> — physical asset inventory มี · ต่างจากโรงที่ไม่มี</li>
+<li>✅ <b>IT service desk 6 services · 110 requests</b> — ระบบ ticketing มี · SLA measurable</li>
+<li>✅ <b>ผู้รับผิดชอบระบุตัวตนได้ทั้ง F + S</b> — Foundation ภ.ทัช + ภ.ธนภูมิ · ซล. สมพบ + วรรณภา + เชษฐา (H6 pass)</li>
+</ul>
+
+<h3 style="border-left-color:var(--warn);background:var(--warnbg);">5.2 · ข้อเสีย / จุดอ่อน (4.1 only)</h3>
+<ul>
+<li>🔴 <b>งบ ICT 3.15% ของโรง · ต่ำเทียบ standard 5-7%</b> — capacity อาจไม่พอ Bandwidth/refresh cycle</li>
+<li>🔴 <b>ไม่มี metric uptime/bandwidth/security incident</b> — SLA target 99% uptime · ไม่มีเครื่องมือ track · ทำ SLA report ไม่ได้</li>
+<li>🔴 <b>PDPA compliance log ไม่มี</b> — พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล 2562 มีผลบังคับ · risk legal</li>
+<li>⚠️ <b>PSAS 697 assets ไม่ breakdown</b> — ไม่รู้ IT asset (server/switch/AP) กี่ตัว · asset lifecycle plan ทำไม่ได้</li>
+<li>⚠️ <b>Ledger 5-109-08-00 ส่วนใหญ่มาจากใบเคลียร์ทดรองจ่าย</b> — signal purchase ผ่าน manual reimbursement (ไม่ผ่าน SWIS procurement)</li>
+</ul>
+
+<h3 style="border-left-color:var(--red);background:var(--redbg);">5.3 · ความเสี่ยง (4.1 only)</h3>
+<ul>
+<li>R1 · <b>ไม่มี uptime SLA · risk service continuity</b> — network fail = ทั้งโรงหยุด · ไม่มี escalation matrix</li>
+<li>R2 · <b>ไม่มี security incident log</b> — Cybersecurity Act 2562 บังคับ report incident · risk legal + reputation</li>
+<li>R3 · <b>PSAS ไม่ breakdown IT asset</b> — replacement plan ไม่มี · risk aging hardware (5-8 ปี)</li>
+<li>R4 · <b>งบ ICT 3.15% · Bandwidth ไม่ scale ตาม user growth</b> — user Executive/Teacher/Student โต แต่ pipe ไม่โต</li>
+<li>R5 · <b>Procurement via ทดรองจ่าย</b> — ไม่ผ่าน 3-quote SWIS · risk markup / audit trail incomplete</li>
+</ul>
+
+<div class="part">§6 · Anti-pattern (ที่ตัดออกจาก v9 · แสดง contrast)</div>
+
+<h3>6.1 · Anti-pattern examples (ห้ามใส่ใน ICT 4.1)</h3>
+
+<div class="cut"><b>❌ Anti-pattern 1:</b> "ผลตรวจ dept_services ทั้ง 48 หน่วยงาน (บริการเสร็จ 65% · overdue 15%)" — <b>นี่ SWIS_PLUS ทำแล้ว → cross-ref sl_swis_audit</b></div>
+
+<div class="cut"><b>❌ Anti-pattern 2:</b> "คู่มือคุณภาพ dept 2604 · SAR self-assessment score · TQA criteria compliance" — <b>นี่ QUALITY_MANUAL_INSPECTOR → cross-ref sl_qm_audit</b></div>
+
+<div class="cut"><b>❌ Anti-pattern 3:</b> "แผน 6058 PDCA9 ครบ 9/9 · KPI 12 ข้อ · Layer 2 KPI Linkage vs kpi_norm 568" — <b>นี่ PDCA9_INSPECTOR → cross-ref sl_pdca9_audit</b></div>
+
+<div class="cut"><b>❌ Anti-pattern 4:</b> "Confirm Loop dept 2604 · Job Spec ครบ 8/9 หัวข้อ · Retention 100% · อัตรากำลัง 3/4" — <b>นี่ HRM → cross-ref sl_hrm_audit</b></div>
+
+<div class="cut"><b>❌ Anti-pattern 5:</b> "Face scan 33,473/ปี · attendance analytics · Overtime pattern" — <b>นี่ SWIS_PLUS + HRM (attendance) → cross-ref</b></div>
+
+<h3>6.2 · Correct pattern (ที่เก็บใน ICT 4.1)</h3>
+
+<div class="keep"><b>✅ Keep 1:</b> "Ledger 5-114-04-00 มิ.ย. 69 debit 31,753 · 2 entries" — <b>direct ICT movement · เจ้าของบัญชี = งานการเงินตาม dept ICT</b></div>
+
+<div class="keep"><b>✅ Keep 2:</b> "งบ dept ICT 952K · 3.15% ของโรง" — <b>direct budget ICT · ไม่ใช่ analysis budget quality</b></div>
+
+<div class="keep"><b>✅ Keep 3:</b> "IT service desk 6 services · 110 requests (count only · ไม่ใช่ % SLA compliance)" — <b>count เป็น indicator ICT direct · % compliance เป็น QM</b></div>
+
+<div class="keep"><b>✅ Keep 4:</b> "PSAS 697 assets total (count) · Gap: ไม่ breakdown IT" — <b>count ICT indicator · Gap ระบุแทนที่จะทำแทน</b></div>
+
+<div class="keep"><b>✅ Keep 5:</b> "ผู้รับผิดชอบ ภ.ทัช + ภ.ธนภูมิ (F) · สมพบ + วรรณภา + เชษฐา (S)" — <b>ตัวคน identify · route ตามงานได้</b></div>
+
+<div class="part">§7 · Pattern Rules · สำหรับ replicate ไป sub อื่น (2.1 · 2.2.1/2 · 3.1/2 · 4.2 · 5.1/2)</div>
+
+<div class="box demo">
+<b>ห้อง ICT ทำอะไรได้ (KEEP · scope-in):</b>
+<ol>
+<li><b>Chart of accounts ICT direct + Ledger movement</b> เดือนล่าสุด (ค่าอินเทอร์เน็ต · วัสดุคอมฯ · ซอฟต์แวร์ · ครุภัณฑ์)</li>
+<li><b>งบ dept ICT direct</b> (dept ที่ชื่อมี "เทคโนโลยี · สารสนเทศ · คอมพิวเตอร์ · โสตทัศนูปกรณ์ · ประชาสัมพันธ์")</li>
+<li><b>Count indicator ICT</b> (IT service desk · PSAS · SWIS module usage) — <b>count เท่านั้น · ไม่วิเคราะห์คุณภาพ</b></li>
+<li><b>ผู้รับผิดชอบ ระบุ id_emp + role</b> ทั้ง Foundation + โรง (H6)</li>
+<li><b>Gap ICT-specific</b> (uptime · bandwidth · security · PDPA · asset lifecycle) — <b>ระบุ Gap · ไม่ทำแทน owner room</b></li>
+<li><b>บทวิเคราะห์ 3 มุม เฉพาะ sub นั้น</b> (H7) — อ้าง evidence ในรายงาน · ไม่ generic</li>
+<li><b>eoffice thaibrother direct</b> (topic_id ที่ผูก sub นั้น · dispatch/reply)</li>
+<li><b>plan ICT dept enumerate</b> (id_profile · KPI · goal · PDCA step direct)</li>
+</ol>
+</div>
+
+<div class="box red">
+<b>ห้อง ICT ห้ามทำ (CUT · scope-out):</b>
+<ol>
+<li>❌ <b>dept_services aggregate · service completion %</b> → SWIS_PLUS</li>
+<li>❌ <b>คู่มือคุณภาพ dept · SAR · นโยบายโรง · quality principles</b> → QUALITY_MANUAL_INSPECTOR</li>
+<li>❌ <b>PDCA9 status ครบ 9 ขั้นไหม · kpi_norm 568 · Layer Structure</b> → PDCA9_INSPECTOR</li>
+<li>❌ <b>Confirm Loop · Job Spec % · อัตรากำลัง · Retention</b> → HRM</li>
+<li>❌ <b>Face scan analytics · attendance pattern · overtime</b> → HRM + SWIS_PLUS</li>
+<li>❌ <b>Calendar aggregate ทั้งโรง (done%/overdue% ทุก side)</b> → SWIS_PLUS (ICT เอาเฉพาะ dept 2604)</li>
+<li>❌ <b>Application onboarding ทั้ง 4 apps</b> — ICT เอาเฉพาะ context 5.2 · aggregate ไป SWIS</li>
+<li>❌ <b>งบ 48 หน่วยงานทั้งโรง</b> — ICT เอาเฉพาะ dept ICT-related · aggregate ไป Finance/HRM</li>
+</ol>
+<b>ผู้พบสิ่งเหล่านี้ในรายงาน ICT = ตก verify · rewrite ทันที (Row #391)</b>
+</div>
+
+<div class="part">§8 · Checklist สำหรับ verify pattern (ก่อน CC ห้องกลาง)</div>
+
+<table>
+<tr><th style="width:6%">#</th><th style="width:40%">Item</th><th style="width:14%">ตรวจด้วย</th><th style="width:40%">Target · Pattern demo 4.1 นี้</th></tr>
+<tr><td>1</td><td>H2: `grep -ci "slc"`</td><td>bash</td><td>= 0 (ห้าม "slc" · ใช้ "sl" หรือ "ซล.")</td></tr>
+<tr><td>2</td><td>H3: `grep -c "นาย"` — ห้าม "นาย" นำหน้าภราดา</td><td>bash</td><td>= 0 (ยกเว้นฆราวาส · ระบุใน CC)</td></tr>
+<tr><td>3</td><td>H4: title/h1 caption ตรง canonical</td><td>visual</td><td>"DEMO · sub 4.1 · scope-clean pattern"</td></tr>
+<tr><td>4</td><td>H5: links `href="https?://(swis|thaibrothers)"`</td><td>bash</td><td>&gt; 0 · demo นี้ = 3-5 links (ICT SWIS + thaibrothers)</td></tr>
+<tr><td>5</td><td>H6: accountability trace ทุกรายการ (ผู้รับผิดชอบ + หน่วยงาน + ที่ตาม)</td><td>bash + visual</td><td>สรุป Owner Matrix §3 ครบ F+S per row</td></tr>
+<tr><td>6</td><td>H7: บทวิเคราะห์ 3 มุม (ข้อดี/ข้อเสีย/ความเสี่ยง)</td><td>visual</td><td>§5 3 มุม · เฉพาะ 4.1 · อ้างเลขจริง (ไม่ generic)</td></tr>
+<tr><td>7</td><td>Scope-clean: ไม่มี dept_services aggregate / คู่มือคุณภาพ / PDCA9 status / Confirm Loop / Face scan</td><td>grep + visual</td><td>= 0 keyword aggregate · เฉพาะ 4.1 direct</td></tr>
+<tr><td>8</td><td>Cross-ref: link ไปห้องเจ้าของอื่น (QM/PDCA9/SWIS/HRM)</td><td>bash</td><td>≥ 4 cross-ref · demo นี้ = 5 (§4 table)</td></tr>
+<tr><td>9</td><td>Anti-pattern section (§6): แสดงตัวอย่างที่ตัดออก + reason</td><td>visual</td><td>≥ 5 anti-pattern · demo นี้ = 5</td></tr>
+<tr><td>10</td><td>MCP call จริง (ไม่เดา)</td><td>evidence</td><td>demo นี้ = 5 calls (chart_of_accounts × 2 + ledger × 2 + budget_by_dept)</td></tr>
+</table>
+
+<div class="foot">
+<b>Demo Scope:</b> sub 4.1 Network Admin เฉพาะ · pattern scope-clean 100% · ICT-only 4.1 direct evidence + cross-ref 4 owner rooms + Anti-pattern showcase + Pattern rules · MCP call จริง 5 อัน · ผอ. verified `list_directors` 2569 (id 10821 · ภ.กุลชาติ จันทะโชโต · SL) · ไม่เดา · <b>ห้าม rewrite โรงอื่นจนกว่าบราเดอร์ approve pattern นี้</b><br>
+Generated: 2026-08-05 · demo v1 · ห้อง ICT · Post-Row #412-417 · pattern reference for future rewrite (sl · sg · mcs · mcp · phase 1 upgrade · phase 2 new schools)<br><br>
+<b>Next after approve:</b> (1) rewrite `sl_ict_audit.html` v10 scope-clean → replace v9 (2) rewrite `sg_ict_audit.html` v2 (3) rewrite `mcs_ict_audit.html` v2 (4) downgrade `mcp_ict_audit.html` 78K → scope-clean (5) upgrade acs/act/acl/acp v10 หยาบ → scope-clean (6) ขยาย 7 โรงใหม่ (ac · acn · acr · acsp · acu · atsn · acep)
+</div>
+
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ซล. · รายงานตรวจติดตามงาน ICT — กรอบ 5 กลุ่ม · 8 sub · เซนต์หลุยส์ ฉะเชิงเทรา ปีการศึกษา 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a2f5a; --gold:#b8860b; --ok:#1e7d46; --okbg:#e9f7ef; --warn:#9a6700; --warnbg:#fff8e1;
+    --line:#d9dee8; --soft:#f4f6fa; --swis:#0b6bcb; --swisbg:#e7f1fb;
+    --red:#b91c1c; --redbg:#fef2f2; --purple:#6d28d9; --purplebg:#f3e8ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Sarabun',sans-serif;color:#222;line-height:1.5;background:#fff;max-width:1240px;margin:0 auto;padding:26px 34px;}
+  header{text-align:center;border-bottom:3px double var(--navy);padding-bottom:12px;margin-bottom:12px;}
+  header .org{color:var(--gold);font-weight:600;font-size:.84rem;}
+  header h1{color:var(--navy);font-size:1.24rem;margin:6px 0 4px;}
+  header .sub{color:#555;font-size:.85rem;}
+  .part{font-size:1.12rem;color:#fff;background:var(--navy);padding:8px 14px;border-radius:8px;margin:24px 0 10px;}
+  .part small{font-weight:400;font-size:.8rem;opacity:.9;}
+  h3{color:var(--navy);font-size:1rem;margin:14px 0 5px;padding:5px 10px;border-left:5px solid var(--swis);background:var(--swisbg);border-radius:6px;}
+  table{width:100%;border-collapse:collapse;font-size:.78rem;margin:7px 0 12px;}
+  th{background:var(--navy);color:#fff;padding:6px 8px;text-align:left;font-weight:600;font-size:.74rem;vertical-align:top;}
+  td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;}
+  tr:nth-child(even) td{background:var(--soft);}
+  .b{font-weight:600;} .c{text-align:center;}
+  .setno{display:inline-block;min-width:24px;text-align:center;background:var(--gold);color:#fff;border-radius:5px;padding:1px 6px;font-weight:700;font-size:.78rem;}
+  .note{font-size:.72rem;color:#666;margin:5px 0;}
+  .box{border-left:5px solid var(--swis);background:var(--swisbg);border-radius:8px;padding:11px 15px;font-size:.85rem;margin:12px 0;}
+  .box.ok{border-color:var(--ok);background:var(--okbg);}
+  .box.warn{border-color:var(--warn);background:var(--warnbg);}
+  .box.red{border-color:var(--red);background:var(--redbg);}
+  .m{color:var(--swis);font-weight:600;background:var(--swisbg);padding:1px 5px;border-radius:4px;}
+  .ok{color:var(--ok);font-weight:700;} .warn{color:var(--warn);font-weight:700;} .red{color:var(--red);font-weight:700;}
+  a.src{color:var(--swis);text-decoration:none;font-weight:600;}
+  a.src:hover{text-decoration:underline;}
+  .tag{display:inline-block;background:#e0e7ff;color:#3730a3;padding:1px 6px;border-radius:3px;font-size:.72rem;margin:1px;font-weight:600;}
+  .tag.r{background:#fee2e2;color:#991b1b;}
+  .who{background:#fefce8;color:#854d0e;padding:1px 4px;border-radius:3px;font-size:.7rem;font-weight:600;display:inline-block;margin:1px 0;}
+  .who.f{background:#dcfce7;color:#166534;}
+  ul{padding-left:22px;margin:6px 0;} li{margin-bottom:3px;font-size:.85rem;}
+  ol{padding-left:22px;margin:6px 0;} ol li{margin-bottom:4px;font-size:.85rem;}
+  .foot{margin-top:30px;padding-top:12px;border-top:1px solid var(--line);font-size:.72rem;color:#666;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="org">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · Commission on ICT and HRM</div>
+<h1>ซล. · รายงานตรวจติดตามงาน ICT — กรอบ 5 กลุ่ม · 8 sub</h1>
+<div class="sub">โรงเรียนเซนต์หลุยส์ ฉะเชิงเทรา (db=sl) · ปีการศึกษา 2569 · v5 (Framework + Activity Linkage + H5 Traceability + H6 Accountability) · ดึงข้อมูล 29 ก.ค. 69</div>
+</header>
+
+<div class="box">
+<b>Approach:</b> ตรวจ<b>สาระ</b>ของกรอบ 8 sub · ทุกผลตรวจมีคอลัมน์ <b>"ที่มา"</b> ผูก href ไป SWIS (H5) · ทุกแถวมีคอลัมน์ <b>"ผู้รับผิดชอบ"</b> โยง <span class="who f">ภราดา = ผู้รับผิดชอบมูลนิธิ (Minutes 2 ก.ค. 69)</span> + <span class="who">หัวหน้า = ผู้ปฏิบัติในโรง ซล. (get_org_chart SWIS)</span> · <b>รายการ "รอ" ไม่ dead-end</b> — บอกใครต้องตาม (H6)<br>
+<b>Source:</b> <code>ict_framework.md</code> · <code>ict_subgroup_structure.md</code> Tier-0 (5 กลุ่ม · 8 sub verbatim) · SWIS MCP + Minutes 2 ก.ค. 69 · org_structure SWIS ซล.
+</div>
+
+<div class="part">§0 · บริบทเบื้องต้นของโรง</div>
+<table>
+<tr><th style="width:18%">รายการ</th><th style="width:34%">ค่า</th><th style="width:22%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:26%">ที่มา (SWIS)</th></tr>
+<tr><td>ผู้อำนวยการ</td><td>ภราดากุลชาติ จันทะโชโต</td><td><span class="who">ผอ. · ภราดากุลชาติ</span></td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 ผังบริหาร (get_org_chart)</a></td></tr>
+<tr><td>ฝ่าย / หน่วยงาน</td><td><span class="m">6 / 48</span></td><td><span class="who">ผอ. · ภราดากุลชาติ</span></td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 ผังบริหาร</a></td></tr>
+<tr><td>บุคลากรรวม / อยู่ในโครงสร้าง</td><td><span class="m">297 (ช 90 · ญ 200)</span> / <span class="m">222</span> (นอก 75 · <span class="warn">25%</span>)</td><td><span class="who">งานทรัพยากรมนุษย์ · จันทิพย์ เครือจันทร์</span></td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 อัตรากำลัง</a></td></tr>
+<tr><td>Job Spec ครบ</td><td><span class="m">160/222 (72%)</span></td><td><span class="who f">HRM · ภราดาศุภนันท์ (ประธาน)</span> + <span class="who">งาน HR ซล. · จันทิพย์</span></td><td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Confirm Loop</a></td></tr>
+<tr><td>วุฒิ (ต่ำ ป.ตรี/ตรี/โท/เอก/ไม่ระบุ)</td><td>51 / 163 / 44 / <span class="red">0</span> / <span class="warn">43 (14%)</span></td><td><span class="who">งาน HR ซล. · จันทิพย์</span></td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 บุคลากร</a></td></tr>
+<tr><td>นักเรียน / ครู / พนักงาน</td><td><span class="m">2,845 / 232 / 65</span></td><td><span class="who">งานทะเบียนสถิติ · จารุวรรณ ต่างใจ</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 basic_data</a></td></tr>
+<tr><td>งบตั้ง / จ่ายจริง / ใช้ %</td><td><span class="m">30.20 M / 6.82 M / 22.58%</span></td><td><span class="who">งานการเงินและบัญชี · ภาคภูมิ ใจสำเร็จ</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 money module</a></td></tr>
+</table>
+
+<div class="part">§1 · Framework Audit · 8 sub · แต่ละแถวมี "ผู้รับผิดชอบ" ทั้งระดับมูลนิธิและ ซล. (H6)</div>
+
+<h3>กลุ่ม 1 · งานบริหารฝ่าย ICT (หมวกบน)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>ICT Steering Committee · Roadmap 3-5 ปี · Governance · ประชุมประจำ · Budget · KPI dashboard · Cross-side coordination</td>
+<td>ICT governance ระดับสูง · Roll-up KPI ทุก sub · Budget ผูก strategy</td>
+<td>หัวหน้า <b>สมพบ คำมี</b> · สังกัดสำนัก ผอ. · งบ ICT <span class="m">952,090 บ. (3.15%)</span> · school_board = <span class="red">0</span> · 2 แผน · approved 1</td>
+<td class="red">ไม่มี "ฝ่าย ICT" · ไม่มี Steering · ไม่มี Roadmap · แผน 1/2 draft</td>
+<td>Steering ประชุมประจำ? · Roadmap ระยะยาว?</td>
+<td><span class="who f">ประธานฝ่าย · ภราดาศุภนันท์</span> + <span class="who f">เลขา · ภราดาอภิสิทธิ์ 'ทัช'</span> · <span class="who">ซล. · ผอ. ภราดากุลชาติ + หัวหน้า ICT สมพบ คำมี</span></td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 ผังบริหาร</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 2.1 · SIS · Saint Gabriel Information System (Foundation)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>Feed data ให้ SIS ครบ ถูกต้อง ทันเวลา · data quality 6 มิติ · Confirm Loop ประจำปี</td>
+<td>SIS ตัดสินใจระดับมูลนิธิได้จริง</td>
+<td>SAR <span class="ok">60/61 (98.36%)</span> · KPI links <span class="m">2,381</span> · plans_linked <span class="m">48/48</span> · 568 ตัวชี้วัด (ใช้ 458 · 80.63%)</td>
+<td class="red">Confirm Loop 2569 <b>ยังไม่ยืนยัน</b> · 26/48 not_started · readiness 51.8%</td>
+<td>เมื่อไหร่ Confirm Loop เสร็จ? · 43 คน วุฒิ unknown?</td>
+<td><span class="who f">หลัก · ภราดามานิต สกนธวัฒน์</span> + <span class="who f">คณะทำงาน · ภราดากรกวี</span> · <span class="who">ซล. feed data · สมพบ คำมี (ICT) + จันทิพย์ (HR) + วัชรี เกิดท่าไม้ (ประกันคุณภาพ)</span></td>
+<td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Confirm Loop</a> · <a class="src" href="https://swis.sl.ac.th/survey/view/main_php/print_norm_school.php" target="_blank">📊 ตัวชี้วัด</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 2.2 · SWIS (School Operational) — แตกเป็น 2.2.1 + 2.2.2 (บราเดอร์ update Tier-0 · 1 ส.ค. 69 · ขนาน 4.1/4.2)</h3>
+
+<div class="box"><b>Master Framework update:</b> 2.2 แตกเป็น 2 หมวดย่อย ตาม <code>ict_subgroup_structure.md</code> L18 (updated 1 ส.ค. 69) — 2.2.1 บริหารและบริการ · 2.2.2 เรียนการสอนและกิจกรรม · caption verbatim · <b>cross-verify กับ SWIS_PLUS</b> (เจ้าของ software detail) — mapping modules ด้านล่างเป็น initial draft · รอ SWIS_PLUS confirm ใน sl_swis_audit</div>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">2.2.1 · ซอฟต์แวร์เพื่อการบริหารและบริการ (Software for Administrative Services)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>Modules บริหาร: basic_data · org_structure · eoffice · calendar · money · psas · face_scan · time_attendance · post_news · service · quality_manual · plan_pdca9 · kpi_norm · sar · dept_services · application · information · logistic · food · calendar_status — รวม ~20 modules</td>
+<td>SWIS = single source of truth · executive ใช้ real-time · e-office ทดแทนกระดาษ · Confirm Loop ปีละ 1</td>
+<td>ซล. <span class="m">189/220 ฟังก์ชัน (86%)</span> · eoffice dins <span class="m">1,072</span> · dfos 621 · dtos 214 · orders 151 · Face scan ครู <span class="ok">95.26%</span> · staff 89.23% · Executive App <span class="red">4 users</span> · Teacher App <span class="m">750</span> · Parent App 1,365 · PDCA9 <span class="ok">100% full_9</span> · SAR 98.36%</td>
+<td class="red"><b>คู่มือคุณภาพ 0/48 ครบ 6 ส่วน</b> · <b>Executive App 4 users</b> · service completed 2/419 (0.48%) · junk data ปฏิทิน ICT · Confirm Loop 2569 ยังไม่ยืนยัน</td>
+<td>เมื่อไหร่ครบ 220 ฟังก์ชัน? · ทำไม executive 4? · service completion กี่ % ในไตรมาสถัดไป?</td>
+<td><span class="who f">หลัก · ภราดามานิต สกนธวัฒน์</span> + <span class="who f">คณะทำงาน · ภราดากฤษฎา 'ทิว'</span> · <span class="who">Vendor · บริษัท SWIS Plus (เจ้าของ software detail)</span> · <span class="who">ซล. · สมพบ (ICT) + จันทิพย์ (HR) + ภาคภูมิ (การเงิน) + วัชรี (ประกันคุณภาพ)</span></td>
+<td><a class="src" href="https://swis.sl.ac.th/swis_report/manual/report.php" target="_blank">📄 คู่มือคุณภาพ</a> · <a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 ปฏิทิน admin</a></td>
+</tr>
+</table>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">2.2.2 · ซอฟต์แวร์เพื่อการเรียนการสอนและกิจกรรมตามหลักสูตร (Software for Learning &amp; Curricular Activities)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>Modules การเรียนการสอน: subject · teaching · stu_beha · hospital · research — รวม ~5 modules (LMS-like · หลักสูตร · attendance · การบ้าน · quiz · content online · พฤติกรรม · แบบสอบถาม · วิจัย)</td>
+<td>ครูใช้ SWIS ครอบทุกวิชา · นักเรียนเข้าถึงเนื้อหา · attendance ครบ · การบ้าน/quiz online เพิ่มขึ้น</td>
+<td>ห้องเรียน <span class="m">83</span> · ครูประจำชั้น 155 · วิชาเปิดสอน <span class="m">651</span> · หลักสูตร 1 · indicators 2,296 · attendance check <span class="m">4,334</span> · period check 4,691 · homework online <span class="m">385</span> · quiz 30 · content online <span class="warn">43</span> · post_teaching_log 584 · พฤติกรรม 218 เคส · งานวิจัย 177 · แบบสอบถาม 22 · Student App 3,298 (new 146)</td>
+<td class="warn">online content <b>43/651 = 6.6%</b> ต่ำมาก · quiz 30 น้อยเทียบวิชา · SWIS ไม่ track hardware ห้องเรียน (smart board · projector · tablet)</td>
+<td>Platform e-learning ใช้อะไร? · ทำไม content online น้อย? · Tablet 1:1 ห้องเรียนไหม?</td>
+<td><span class="who f">หลัก · ภราดามานิต (เดียวกับ 2.2.1)</span> · <span class="who">Vendor · SWIS Plus (curricular modules)</span> · <span class="who">ซล. · สมพบ (ICT) + ไพศร คูหาพัฒนกุล (พัฒนาหลักสูตร) + จุฑามาศ มะหะมาน (วัดผล) + นันทิยา คำมี (ห้องสมุด)</span></td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 teaching + subject modules</a></td>
+</tr>
+</table>
+
+<div class="box warn"><b>Cross-verify status:</b> Module mapping (20 admin + 5 curricular) เป็น <b>initial draft ห้อง ICT</b> · ผูก modules ของ SWIS ตาม naming pattern ที่เห็น · <b>SWIS_PLUS เป็นเจ้าของ software detail</b> ต้อง confirm ใน sl_swis_audit ว่าแบ่งถูกและครบ · หลัง SWIS_PLUS ผ่าน H1-H7 · ผมจะกลับมา sync กับตัวเลข canonical</div>
+
+<h3>กลุ่ม 3.1 · Digital Media (สื่อดิจิทัล)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>เว็บโรง · SNS · content plan · e-newsletter · alumni · digital PR · brand consistency</td>
+<td>ข่าวสม่ำเสมอ · engagement เติบโต · audience ครบ</td>
+<td>ข่าว <span class="m">138</span> · อัลบั้ม <span class="m">217</span> · calendar_groups <span class="m">14</span> · news_groups <span class="m">48</span> · editors 4-5 · งบ PR <span class="m">317,700 บ. (1.05%)</span> · 88 requests</td>
+<td class="warn"><b>show_pr 2 · has_pic 0</b> · ทีม editor เล็ก · SWIS ไม่ track SNS</td>
+<td>FB/IG/TikTok? · content plan? · ทำไม 138 ข่าว show_pr แค่ 2?</td>
+<td><span class="who f">หลัก · ภราดาศราวุธ</span> + <span class="who f">คณะทำงาน · ภราดาภานุวัฒน์ · ภราดาพัชรปกรณ์</span> · <span class="who">ซล. · งานประชาสัมพันธ์ · ภาคภูมิ ใจสำเร็จ (ธุรการ-การเงิน)</span></td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 post_news + information module</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 3.2 · Non-Digital Media (สื่อดั้งเดิม)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>ป้ายประชาสัมพันธ์ · แผ่นพับ · จดหมายข่าว · วารสาร · บอร์ด · digital signage</td>
+<td>สื่อในโรงทั่วถึง · ผปค./ศิษย์เก่ารับข่าว · brand ในกายภาพชัด</td>
+<td>วารสาร <span class="red">0</span> · กฤตภาค <span class="red">0</span> · เจ้าภาพเดียวกับ 3.1</td>
+<td class="red">SWIS ไม่ track ป้าย/แผ่นพับ · ไม่มีวารสาร · blindspot ใหญ่</td>
+<td>ป้าย/แผ่นพับใครทำ? · มีวารสาร? · digital signage กี่จอ?</td>
+<td><span class="who f">หลัก · ภราดาศราวุธ (เหมือน 3.1)</span> · <span class="who">ซล. · งานประชาสัมพันธ์ · ภาคภูมิ ใจสำเร็จ</span> · <span class="who">ต้องตาม survey เพิ่ม · SWIS blindspot</span></td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 (SWIS blindspot)</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 4.1 · เครือข่ายและอุปกรณ์ · เพื่อบริหารบริการ</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>LAN/WiFi · internet · server/cloud · MDM · firewall · UPS · backup · DR · IT service desk · asset lifecycle · PDPA</td>
+<td>uptime ≥ 99% · bandwidth พอ · security incident = 0 · SLA 24 ชม.</td>
+<td>อาคาร <span class="m">23</span> · ห้อง <span class="m">381</span> · Face scan <span class="m">33,473/ปี</span> · <b>IT service desk 6 services · 110 requests</b> ✓ · PSAS <span class="m">697 assets</span> · งบ ICT 952K</td>
+<td class="red">SWIS ไม่ breakdown IT assets · ไม่มี metric uptime/bandwidth · ไม่มี security log · งบ ICT ต่ำ 3.15%</td>
+<td>network map? · bandwidth? · firewall/UPS/backup? · PDPA?</td>
+<td><span class="who f">หลัก · ภราดาอภิสิทธิ์ 'ทัช'</span> + <span class="who f">คณะทำงาน · ภราดาธนภูมิ</span> · <span class="who">ซล. · หัวหน้า ICT สมพบ + งานพัสดุ วรรณภา ปิ่นทอง + งานอาคาร เชษฐา รักษาศรี</span></td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 บริการ IT + PSAS</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 4.2 · เครือข่ายและอุปกรณ์ · เพื่อการเรียนการสอนและกิจกรรมตามหลักสูตร</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>WiFi ห้องเรียน · smart board · projector · tablet · lab computer · e-learning · online content · classroom management</td>
+<td>ครูใช้ ICT ทุกวิชา · นักเรียนเข้าถึงอุปกรณ์ · online learning ต่อเนื่อง</td>
+<td>ห้องเรียน <span class="m">83</span> · วิชาเปิดสอน <span class="m">651</span> · attendance <span class="m">4,334</span> · homework online <span class="m">385</span> · quiz 30 · content <span class="warn">43</span> · post_teaching_log 584</td>
+<td class="red">SWIS ไม่ track hardware ห้องเรียน · online content 43 น้อยเทียบ 651 วิชา · <b>ไม่มีเจ้าภาพชัด</b></td>
+<td>ทุกห้องมี smart board? · platform e-learning? · Tablet 1:1?</td>
+<td><span class="who f">หลัก · ภราดาอภิสิทธิ์ 'ทัช' (เหมือน 4.1)</span> · <span class="who">ซล. · สมพบ (ICT) + ภาคภูมิ (หัวหน้าฝ่ายวิชาการ) + ไพศร คูหาพัฒนกุล (พัฒนาหลักสูตร)</span> · <span class="who">ต้องตัดสิน scope: ICT หรือวิชาการเป็นเจ้าภาพ</span></td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 teaching module</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 5.1 · บุคลากร ICT (พัฒนาทีม ICT โดยเฉพาะ)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>Staff inventory ทีม ICT · skill matrix · Job Spec ครบ · career path · training roadmap · certification · succession · 360° review</td>
+<td>ทีมครบสเปค · cert สนับสนุน · training ≥ 40 ชม./ปี · succession critical roles</td>
+<td>หัวหน้า <b>สมพบ คำมี</b> · โรงรวม Job Spec <span class="m">160/222 (72%)</span> · วุฒิ 51/163/44/<span class="red">0</span>/<span class="warn">43 unknown</span></td>
+<td class="red"><b>ไม่ทราบเลย</b> ทีม ICT กี่คน · ไม่ทราบ cert/training log/succession</td>
+<td>ทีมกี่คน? · Job Spec ครบ? · cert (Cisco/MS)? · 40 ชม./ปี?</td>
+<td><span class="who f">หลัก · ภราดาอาวุธ ศิลาเกษ</span> + <span class="who f">คณะทำงาน · ภราดาศิริชัย ผังรักษ์</span> · <span class="who">ซล. · หัวหน้า ICT สมพบ + งาน HR จันทิพย์ (ระบุทีม + Job Spec + training)</span></td>
+<td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Job Spec via Confirm Loop</a></td>
+</tr>
+</table>
+
+<h3>กลุ่ม 5.2 · ผู้ใช้งานทั่วไปในโรงเรียน (อบรมครู/บุคลากรทุกคน)</h3>
+<table>
+<tr><th style="width:16%">หน้าที่หลัก</th><th style="width:16%">เป้าหมายคุณภาพ</th><th style="width:19%">Evidence</th><th style="width:13%">Gap</th><th style="width:11%">Survey</th><th style="width:15%">ผู้รับผิดชอบ (มูลนิธิ + ซล.)</th><th style="width:10%">ที่มา (SWIS)</th></tr>
+<tr>
+<td>User inventory · training SWIS/e-office/e-learning/PDPA · onboarding · help desk · digital literacy · change management</td>
+<td>SWIS adoption ≥ 80% · PDPA ≥ 90% · Help desk 24 ชม.</td>
+<td>ครู <span class="m">232</span> · Teacher App <span class="m">750</span> · Face scan ครู <span class="ok">95.26%</span> · eoffice active · Parent App <span class="m">1,365</span> (new 417) · Student App <span class="m">3,298</span> (new 146)</td>
+<td class="red"><b>Executive App 4 users</b> · SWIS ไม่ track training/PDPA/help desk SLA · ไม่มีเจ้าภาพชัด</td>
+<td>แผน training? · PDPA ทำแล้วกี่ %? · Help desk SLA? · ทำไม executive 4?</td>
+<td><span class="who f">หลัก · ภราดาอาวุธ (เหมือน 5.1)</span> · <span class="who">ซล. · สมพบ (ICT training) + จันทิพย์ (HR onboarding) + ภาคภูมิ (executive push)</span></td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 application module</a></td>
+</tr>
+</table>
+
+<div class="part">§2 · Owner ↔ Budget ↔ Service ↔ Plan · Matrix</div>
+<table>
+<tr>
+<th>หน่วยงาน</th><th>หัวหน้า (ซล.)</th><th>กรอบ ICT sub</th><th class="c"># แผน</th><th class="c">งบตั้ง (บ.)</th><th class="c">จ่ายจริง</th><th class="c">Services</th><th class="c">Requests</th><th class="c">Completed</th><th>ที่มา</th>
+</tr>
+<tr>
+<td><b>งานเทคโนโลยีและสารสนเทศ</b><br><span class="note">สำนัก ผอ.</span></td>
+<td><span class="who">สมพบ คำมี</span></td>
+<td><span class="tag">1</span><span class="tag">2.2</span><span class="tag">4.1</span><span class="tag">4.2</span><span class="tag">5.1</span><span class="tag">5.2</span></td>
+<td class="c">2</td><td class="c">952,090</td><td class="c">199,578 (20.96%)</td>
+<td class="c"><b>6</b></td><td class="c"><b>110</b></td><td class="c red">2</td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 ปฏิทิน ICT</a></td>
+</tr>
+<tr>
+<td>งานประชาสัมพันธ์<br><span class="note">ธุรการ-การเงิน</span></td>
+<td><span class="who">ภาคภูมิ ใจสำเร็จ</span></td>
+<td><span class="tag">3.1</span><span class="tag">3.2</span></td>
+<td class="c">1</td><td class="c">317,700</td><td class="c">31,443 (9.9%)</td>
+<td class="c">2</td><td class="c">88</td><td class="c red">0</td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 ปฏิทิน PR</a></td>
+</tr>
+<tr>
+<td>งานทรัพยากรมนุษย์<br><span class="note">สำนัก ผอ.</span></td>
+<td><span class="who">จันทิพย์ เครือจันทร์</span></td>
+<td><span class="tag">5.1</span><span class="tag">5.2</span> cross-link</td>
+<td class="c">1</td><td class="c">1,266,100</td><td class="c">241,685 (19.1%)</td>
+<td class="c red">0</td><td class="c red">0</td><td class="c">—</td>
+<td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 HRM Confirm Loop</a></td>
+</tr>
+<tr>
+<td>งานอาคารสถานที่และสิ่งแวดล้อม<br><span class="note">บริหารทั่วไป</span></td>
+<td><span class="who">เชษฐา รักษาศรี</span></td>
+<td><span class="tag">4.1</span> (infra)</td>
+<td class="c">1</td><td class="c">6,890,879</td><td class="c">660,327 (9.6%)</td>
+<td class="c">4</td><td class="c"><b>221</b></td><td class="c red">0</td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 ปฏิทิน อาคาร</a></td>
+</tr>
+<tr>
+<td>งานพัสดุครุภัณฑ์<br><span class="note">ธุรการ-การเงิน</span></td>
+<td><span class="who">วรรณภา ปิ่นทอง</span></td>
+<td><span class="tag">4.1</span> (assets)</td>
+<td class="c">1</td><td class="c">760</td><td class="c">0 (0%)</td>
+<td class="c red">0</td><td class="c red">0</td><td class="c">—</td>
+<td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 psas module</a></td>
+</tr>
+<tr>
+<td>งานบริหารสำนักผู้อำนวยการ<br><span class="note">สำนัก ผอ.</span></td>
+<td><span class="who">ภราดากุลชาติ จันทะโชโต (ผอ.)</span></td>
+<td>consumer ICT (คกก. · dashboard)</td>
+<td class="c">1</td><td class="c">1,643,655</td><td class="c">311,911 (19%)</td>
+<td class="c red">0</td><td class="c red">0</td><td class="c red">—</td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 สำนัก ผอ.</a></td>
+</tr>
+<tr style="background:#fef3c7;">
+<td><b>ทั้งโรง 48 หน่วยงาน</b></td>
+<td><span class="who">ผอ. ภราดากุลชาติ</span></td>
+<td>—</td>
+<td class="c"><b>49</b></td><td class="c">30,199,510</td><td class="c">6,820,453 (22.58%)</td>
+<td class="c"><b>13</b></td><td class="c"><b>419</b></td><td class="c red"><b>2 (0.48%)</b></td>
+<td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 รวม 48 หน่วย</a></td>
+</tr>
+</table>
+
+<div class="box red">
+<b>ประเด็นสำคัญ:</b><br>
+1. งาน ICT ครอบ 6 sub · งบแค่ <b>3.15% ของโรง</b> ต่ำมาก · <span class="who">ต้องตาม: ผอ. + สมพบ + Commission</span><br>
+2. งาน HR (คู่ 5.1/5.2) <b>ยังไม่สร้าง service · 0 requests</b> · <span class="who">ต้องตาม: จันทิพย์ (HR) + ภ.อาวุธ</span><br>
+3. งานอาคาร (4.1 infra) 221 requests · <b>completed 0</b> · <span class="who">ต้องตาม: เชษฐา + สมพบ</span><br>
+4. <b>44/48 หน่วยยังไม่สร้าง service</b> · <span class="who">ต้องตาม: ผอ. + ประธาน คกก. ประกันคุณภาพ วัชรี เกิดท่าไม้</span>
+</div>
+
+<div class="part">§3 · Activity Linkage · ปฏิทิน overdue ↔ กรอบ ICT (sample 20 · จาก 314 overdue)</div>
+<table>
+<tr><th>ปฏิทินกิจกรรม</th><th>หน่วยงานเจ้าของ (ซล.)</th><th>หัวหน้าที่ต้องตาม</th><th class="c">Start</th><th class="c">Due</th><th>ICT sub</th><th>Service ICT ที่น่าใช้</th><th>ที่มา</th></tr>
+<tr><td>4.2 กิจกรรมแข่งขันกีฬาสี ซล. GAMES</td><td>งานกีฬา (แผนกกิจกรรม)</td><td><span class="who">หน.แผนกกิจกรรม</span></td><td>2026-05-11</td><td class="red">2026-03-15</td><td><span class="tag">3.1</span><span class="tag">4.2</span></td><td>ถ่ายทอด · เผยแพร่ · scoring app</td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ตรวจติดตาม</a></td></tr>
+<tr><td>7.1-7.4 รับการนิเทศ 4 ครั้ง</td><td>งานอาคารสถานที่และสิ่งแวดล้อม</td><td><span class="who">เชษฐา รักษาศรี</span></td><td>2026-07-13→02-15</td><td class="red">2026-04</td><td><span class="tag">2.2</span><span class="tag">4.1</span></td><td>log ผ่าน SWIS · e-office</td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ตรวจติดตาม</a></td></tr>
+<tr><td>4.1-4.4 กิจกรรมสุขภาพ 4 อัน</td><td>งานพยาบาล</td><td><span class="who">พาวณี เพ็ชรแก้วนุ้ย</span></td><td>2026-05-11</td><td class="red">2026-04-30</td><td><span class="tag">3.1</span><span class="tag">2.2</span></td><td>hospital · post_news</td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ปฏิทิน พยาบาล</a></td></tr>
+<tr style="background:#fee2e2;"><td><code>6.1 fafasdfsdfdf</code></td><td>งานเทคโนโลยีและสารสนเทศ</td><td><span class="who">สมพบ คำมี</span> (ต้องลบ junk)</td><td>2026-05-05</td><td class="red">2026-05-05</td><td><span class="tag r">1</span></td><td><b>data cleanup</b></td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ปฏิทิน ICT</a></td></tr>
+<tr><td>4.2 · 4.3 · 4.4 · 4.6 กิจกรรมสำนัก ผอ. (8 อัน)</td><td>งานบริหารสำนักผู้อำนวยการ</td><td><span class="who">ภราดากุลชาติ (ผอ.)</span></td><td>2026-05-01/11</td><td class="red">2026-05-11</td><td><span class="tag">1</span><span class="tag">2.2</span></td><td>Executive App · calendar · e-office</td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ปฏิทิน สำนัก ผอ.</a></td></tr>
+<tr><td>4.19 ปัจฉิมนิเทศ ม.6 (×2)</td><td>งานกิจกรรม (แผนกกิจกรรม)</td><td><span class="who">หน.งานกิจกรรม</span></td><td>2026-05-01/15</td><td class="red">2026-05-15</td><td><span class="tag">3.1</span></td><td>ข่าว · อัลบั้ม · calendar</td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ปฏิทิน กิจกรรม</a></td></tr>
+</table>
+<div class="box red">
+<b>Activity Linkage สรุป:</b> 20 items overdue ล้วนพึ่ง service ICT/PR · หลาย items <b>due &lt; start</b> — <span class="who">ต้องตาม: สมพบ (data validation) + ผอ.กุลชาติ (จัดคน validate)</span>
+</div>
+
+<div class="part">§4 · Service Completion Crisis</div>
+<table>
+<tr><th>หน่วยงานให้บริการ</th><th>หัวหน้าที่ต้องตาม (ซล.)</th><th class="c">Services</th><th class="c">Requests</th><th class="c">Completed</th><th class="c">% ปิดงาน</th><th>ที่มา</th></tr>
+<tr><td>งานเทคโนโลยีและสารสนเทศ</td><td><span class="who">สมพบ คำมี</span></td><td class="c">6</td><td class="c">110</td><td class="c">2</td><td class="c red">1.82%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr><td>งานอาคารสถานที่และสิ่งแวดล้อม</td><td><span class="who">เชษฐา รักษาศรี</span></td><td class="c">4</td><td class="c">221</td><td class="c">0</td><td class="c red">0%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr><td>งานประชาสัมพันธ์</td><td><span class="who">ภาคภูมิ ใจสำเร็จ</span></td><td class="c">2</td><td class="c">88</td><td class="c">0</td><td class="c red">0%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr><td>กลุ่มสาระสุขศึกษาและพลศึกษา</td><td><span class="who">หน.กลุ่มสาระ</span></td><td class="c">1</td><td class="c">0</td><td class="c">0</td><td class="c">—</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr style="background:#fee2e2;"><td><b>รวม 4 หน่วย</b></td><td><span class="who">ผอ. + วัชรี (ประกันคุณภาพ)</span></td><td class="c"><b>13</b></td><td class="c"><b>419</b></td><td class="c red"><b>2</b></td><td class="c red"><b>0.48%</b></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 รวม</a></td></tr>
+</table>
+<div class="box red"><b>🚨 วิกฤต:</b> 419 คำขอ · ปิดงาน 2 (0.48%) · 44/48 หน่วยยังไม่สร้าง service · <span class="who">ต้องตาม: ผอ.กุลชาติ + วัชรี + สมพบ (SWIS training)</span></div>
+
+<div class="part">§5 · Cross-cutting Analytics</div>
+
+<h3>5.1 งบประมาณ 6 ฝ่าย · หัวหน้าฝ่ายที่ต้องตาม</h3>
+<table>
+<tr><th>ฝ่าย/หน่วยงาน</th><th>หัวหน้าฝ่าย (ซล.)</th><th class="c">งบตั้ง</th><th class="c">จ่ายจริง</th><th class="c">%</th><th class="c">สัดส่วน</th><th>ที่มา</th></tr>
+<tr><td><b>รวมทั้งโรง</b></td><td><span class="who">ผอ. ภราดากุลชาติ</span></td><td class="c">30,199,510</td><td class="c">6,820,453</td><td class="c">22.58%</td><td class="c">100%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 money</a></td></tr>
+<tr><td>ฝ่ายบริหารทั่วไป</td><td><span class="who">เชษฐา รักษาศรี</span></td><td class="c">8,045,068</td><td class="c">1,082,883</td><td class="c">13.46%</td><td class="c">26.6%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td><span class="who">วิหาร ศรีหาพล</span></td><td class="c">7,869,273</td><td class="c">2,571,362</td><td class="c">32.68%</td><td class="c">26.1%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr><td>ฝ่ายวิชาการ</td><td><span class="who">ภาคภูมิ ใจสำเร็จ</span></td><td class="c">6,978,471</td><td class="c">1,684,476</td><td class="c">24.14%</td><td class="c">23.1%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr><td>สำนักผู้อำนวยการ</td><td><span class="who">ผอ. ภราดากุลชาติ</span></td><td class="c">4,236,625</td><td class="c">831,961</td><td class="c">19.64%</td><td class="c">14.0%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน</td><td><span class="who">ภาคภูมิ ใจสำเร็จ</span></td><td class="c">2,072,955</td><td class="c">249,388</td><td class="c">12.03%</td><td class="c">6.9%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr><td>ฝ่ายปฐมวัย</td><td><span class="who">วิมล สมศรี</span></td><td class="c">997,118</td><td class="c">400,384</td><td class="c">40.15%</td><td class="c">3.3%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_side</a></td></tr>
+<tr style="background:#fef3c7;"><td>→ งานเทคโนโลยีและสารสนเทศ</td><td><span class="who">สมพบ คำมี</span></td><td class="c">952,090</td><td class="c">199,578</td><td class="c">20.96%</td><td class="c"><b>3.15%</b></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_dept</a></td></tr>
+<tr style="background:#fef3c7;"><td>→ งานประชาสัมพันธ์</td><td><span class="who">ภาคภูมิ ใจสำเร็จ</span></td><td class="c">317,700</td><td class="c">31,443</td><td class="c">9.90%</td><td class="c">1.05%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_dept</a></td></tr>
+<tr style="background:#fef3c7;"><td>→ งานทรัพยากรมนุษย์</td><td><span class="who">จันทิพย์ เครือจันทร์</span></td><td class="c">1,266,100</td><td class="c">241,685</td><td class="c">19.09%</td><td class="c">4.19%</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_dept</a></td></tr>
+</table>
+
+<h3>5.2 Content tagging · Editor module · สะสม</h3>
+<table>
+<tr><th>ประเภท</th><th>หัวหน้าที่ต้องตาม (ซล.)</th><th class="c">Groups</th><th class="c">Items tagged</th><th>ที่มา</th></tr>
+<tr><td>ข่าว</td><td><span class="who">ภาคภูมิ (PR)</span></td><td class="c">48</td><td class="c">11,930</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 editor · news</a></td></tr>
+<tr><td>อัลบั้ม</td><td><span class="who">ภาคภูมิ (PR)</span></td><td class="c">12</td><td class="c">8,501</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 editor · album</a></td></tr>
+<tr><td>ปฏิทิน</td><td><span class="who">งานนโยบายและแผน · สาวิตรี คงวิมล</span></td><td class="c">14</td><td class="c">1,937</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 editor · calendar</a></td></tr>
+<tr><td>กฤตภาค</td><td><span class="who">ภาคภูมิ (PR)</span></td><td class="c">4</td><td class="c">94</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 editor · informed</a></td></tr>
+</table>
+
+<h3>5.3 SWIS Usage · 189/220 ฟังก์ชัน (86%) · ปี 2568 · ติด top 3</h3>
+<div class="box">อ้าง <code>ict_framework.md</code> — ซล. ติด top 3 ร่วม MCP, ACP · <span class="who">ผู้รับผิดชอบตาม: หัวหน้า ICT สมพบ + ผอ. ภราดากุลชาติ + Commission (ภราดามานิต · ภราดาศุภนันท์)</span> · <a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 SWIS ซล.</a></div>
+
+<div class="part">§6 · Roll-up Implications · KPI หมวกบน (n/15) · ผู้รับผิดชอบระดับมูลนิธิ</div>
+<table>
+<tr><th class="c" style="width:6%">#</th><th>ประเด็น</th><th style="width:26%">ผู้รับผิดชอบตาม (มูลนิธิ)</th></tr>
+<tr><td class="c">1</td><td>ระดับ ICT ในโรง: ซล. เป็น "งาน" ไม่ใช่ "ฝ่าย" · เช็ก 14 โรง</td><td><span class="who f">Commission · ภราดาศุภนันท์ (ประธาน)</span></td></tr>
+<tr><td class="c">2</td><td>Cross-side Media (3.1/3.2 อยู่ธุรการ) · Roll-up KPI ต้องยอมรับ</td><td><span class="who f">ภราดาศราวุธ (กลุ่ม 3) + Commission</span></td></tr>
+<tr><td class="c">3</td><td>คู่มือคุณภาพ 0/48 ครบ → mandate เร่งด่วน</td><td><span class="who f">QUALITY_MANUAL_INSPECTOR + Commission</span></td></tr>
+<tr><td class="c">4</td><td>Executive App underuse → 15 โรง batch check</td><td><span class="who f">SWIS Plus + Commission</span></td></tr>
+<tr><td class="c">5</td><td>Service completion 0.48% → intervention</td><td><span class="who f">SWIS Plus + Commission + QMI</span></td></tr>
+<tr><td class="c">6</td><td>งบ ICT ~3% ทั้งโรง → ผลักดันงบ 4.1+4.2</td><td><span class="who f">Commission (ภราดาศุภนันท์) + ภราดาอภิสิทธิ์ (กลุ่ม 4)</span></td></tr>
+<tr><td class="c">7</td><td>Non-digital/PDPA/cert/network topology → protocol survey ประจำปี</td><td><span class="who f">Commission + ภราดาอาวุธ (กลุ่ม 5) + ภราดาอภิสิทธิ์ (กลุ่ม 4)</span></td></tr>
+</table>
+
+<div class="part">§7 · Recommendations · แหล่งจัดทำ + ผู้ตามงาน</div>
+<table>
+<tr><th class="c" style="width:6%">#</th><th>Recommendation</th><th style="width:22%">ผู้รับผิดชอบตาม</th><th style="width:18%">แหล่งจัดทำ</th></tr>
+<tr><td class="c">1</td><td>ขยาย audit template นี้ scan 14 โรง batch</td><td><span class="who f">ห้อง ICT · ประธาน (ภราดาศุภนันท์)</span></td><td>Commission Q2</td></tr>
+<tr><td class="c">2</td><td>Commission ยกร่าง "Job Spec หน่วย ICT ในโรง" · กำหนดเจ้าภาพ 4.2/5.1/5.2</td><td><span class="who f">HRM + ICT + ภราดาอาวุธ + ภราดาอภิสิทธิ์</span></td><td>Commission meeting</td></tr>
+<tr><td class="c">3</td><td>Survey protocol สำหรับ data ที่ SWIS ไม่ track</td><td><span class="who f">SWIS Plus + Commission</span></td><td>Google Form · thaibrothers.net survey</td></tr>
+<tr><td class="c">4</td><td>Push คู่มือคุณภาพครบ 6 ส่วน (Golden Sample 2.1 SIS = แม่แบบ)</td><td><span class="who f">QMI + Commission</span></td><td><a class="src" href="https://swis.sl.ac.th/swis_report/manual/report.php" target="_blank">📄 คู่มือคุณภาพ</a></td></tr>
+<tr><td class="c">5</td><td>Push Confirm Loop 2569</td><td><span class="who f">HRM + ICT</span></td><td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Confirm Loop</a></td></tr>
+<tr><td class="c">6</td><td>Executive App campaign (target ≥ 80% ผู้บริหาร)</td><td><span class="who f">SWIS Plus + Commission</span></td><td>Application dashboard</td></tr>
+<tr><td class="c">7</td><td>ปิด service completion gap · SWIS Plus ออก monthly SLA report</td><td><span class="who f">SWIS Plus (vendor)</span></td><td>Service module report</td></tr>
+<tr><td class="c">8</td><td>Push 44 หน่วยที่เหลือสร้าง service ใน SWIS</td><td><span class="who">ผอ.กุลชาติ + วัชรี (ประกันคุณภาพ)</span></td><td>SWIS admin panel</td></tr>
+</table>
+
+<div class="part">§8 · บทวิเคราะห์และสรุปภาพรวม (อิงข้อมูลจริงในรายงาน · ส่งกรรมการ)</div>
+
+<h3 style="border-left-color:var(--ok);background:var(--okbg);">8.1 · ข้อดี / จุดแข็ง</h3>
+<table>
+<tr><th style="width:5%">#</th><th style="width:22%">ข้อค้นพบ</th><th style="width:28%">ตัวเลขอ้าง (จาก §)</th><th style="width:25%">ผู้ผลักดัน (ตามผลงาน)</th><th style="width:20%">ที่มา</th></tr>
+<tr><td class="c">1</td><td><b>SAR snapshot เกือบครบ</b> — feed data สู่ SIS สมบูรณ์</td><td>60/61 topics filled (<b>98.36%</b>) · latest 28 ก.ค. 69 · KPI links 2,381 · plans_linked 48/48 (§1 · 2.1)</td><td><span class="who">งานประกันคุณภาพ · วัชรี เกิดท่าไม้</span></td><td><a class="src" href="https://swis.sl.ac.th/survey/view/main_php/print_norm_school.php" target="_blank">📊 ตัวชี้วัด</a></td></tr>
+<tr><td class="c">2</td><td><b>SWIS adoption สูง</b> — ติด top 3 เครือ (ร่วม MCP · ACP)</td><td>189/220 ฟังก์ชัน (<b>86%</b>) · ปี 2568 (§5.3)</td><td><span class="who">สมพบ คำมี (ICT)</span> · <span class="who f">SWIS Plus (vendor)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 SWIS ซล.</a></td></tr>
+<tr><td class="c">3</td><td><b>PDCA9 ครบทุกหน่วยงาน 100%</b></td><td>48/48 หน่วยมีแผน · 49 แผน · full_9 = 100% · with_kpi 48 (§1 · 2.2)</td><td><span class="who">งานนโยบายและแผน · สาวิตรี คงวิมล</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 plan_pdca9</a></td></tr>
+<tr><td class="c">4</td><td><b>Face scan adoption ทั่วโรง</b> — infrastructure ใช้จริง</td><td>ครู <b>95.26%</b> (221/232) · staff 89.23% (58/65) · นักเรียน <b>99.96%</b> (2,844/2,845) · scan 33,473/ปี (§1 · 2.2 · 4.1)</td><td><span class="who">สมพบ (ICT) + จันทิพย์ (HR)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 face_scan</a></td></tr>
+<tr><td class="c">5</td><td><b>e-Office ใช้จริงต่อเนื่อง</b> — ทดแทนกระดาษได้</td><td>dins 1,072 · dfos 621 · dtos 214 · orders 151 (§1 · 2.2)</td><td><span class="who">ภาคภูมิ (ธุรการ-การเงิน)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 eoffice module</a></td></tr>
+<tr><td class="c">6</td><td><b>IT Service Desk มีจริงในระบบ</b> — infrastructure พร้อม</td><td>6 services · <b>110 requests</b> (สูงสุดในกลุ่ม dept ที่สร้าง service · §4)</td><td><span class="who">สมพบ คำมี (ICT)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr><td class="c">7</td><td><b>Parent App ตอบรับดี</b> — ครอบ 15 โรง reference model ได้</td><td>1,365 users total · new 417 (พ.ค. 284 · มิ.ย. 86) (§1 · 5.2)</td><td><span class="who f">SWIS Plus</span> + <span class="who">งาน HR</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 application module</a></td></tr>
+</table>
+
+<h3 style="border-left-color:var(--warn);background:var(--warnbg);">8.2 · ข้อเสีย / จุดอ่อน</h3>
+<table>
+<tr><th style="width:5%">#</th><th style="width:22%">ข้อค้นพบ</th><th style="width:28%">ตัวเลขอ้าง (จาก §)</th><th style="width:25%">ผู้ต้องตาม</th><th style="width:20%">ที่มา</th></tr>
+<tr><td class="c">1</td><td><b>คู่มือคุณภาพหน่วยงาน 0% ครบ 6 ส่วน</b> — Foundation-wide gap</td><td>0/48 หน่วย · 46 มีบางส่วน · 2 ไม่มี (งานวัดและประเมินผล · ศูนย์ภาษาต่างประเทศ) (§1 · 2.2)</td><td><span class="who">ผอ.ภราดากุลชาติ + วัชรี (ประกันคุณภาพ)</span> · <span class="who f">QMI + Commission</span></td><td><a class="src" href="https://swis.sl.ac.th/swis_report/manual/report.php" target="_blank">📄 คู่มือคุณภาพ</a></td></tr>
+<tr><td class="c">2</td><td><b>Confirm Loop 2569 ยังไม่ยืนยัน</b> — structure + personnel · downstream ทั้งหมดกระทบ</td><td>submitted 16/48 · completed <b>2/48 (4%)</b> · not_started 26/48 (54%) · readiness 51.8% (§0 · 2.1 · 6)</td><td><span class="who">ผอ. + จันทิพย์ (HR)</span> · <span class="who f">HRM + Commission</span></td><td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Confirm Loop</a></td></tr>
+<tr><td class="c">3</td><td><b>Executive App 4 users</b> — ผู้บริหารไม่ใช้แอป · governance visibility ต่ำ</td><td>total 4 users · new 0 ทุกเดือน (§1 · 5.2)</td><td><span class="who">ผอ.กุลชาติ</span> · <span class="who f">SWIS Plus + Commission (campaign)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 application module</a></td></tr>
+<tr><td class="c">4</td><td><b>งบ ICT ต่ำ · 3.15%</b> — เทียบภารกิจ 6 sub (1 · 2.2 · 4.1 · 4.2 · 5.1 · 5.2)</td><td>งบ 952,090 บ. · จ่ายจริง 199,578 (20.96%) · เทียบทั้งโรง 30.20 M (§2 · 5.1)</td><td><span class="who">ผอ.กุลชาติ + สมพบ</span> · <span class="who f">Commission (ผลักดันงบ)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 budget_by_dept</a></td></tr>
+<tr><td class="c">5</td><td><b>Service dept ยังไม่สร้าง 92%</b> — pipe consumer ↔ ICT ไม่ต่อ</td><td>4/48 หน่วยสร้าง service (§2 · 4) · 44 หน่วย 0 requests</td><td><span class="who">ผอ. + วัชรี (ประกันคุณภาพ)</span> · <span class="who">สมพบ (SWIS training)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 service module</a></td></tr>
+<tr><td class="c">6</td><td><b>Digital Media เผยแพร่น้อย · has_pic = 0</b> — 138 ข่าวไม่มีรูปประกอบเนื้อ</td><td>ข่าว 138 · has_pic 0 · show_pr 2 · show_internal 32 (§1 · 3.1)</td><td><span class="who">ภาคภูมิ (PR)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 post_news</a></td></tr>
+<tr><td class="c">7</td><td><b>online content น้อยเทียบวิชา</b> — 43/651 (6.6%)</td><td>content 43 · quiz 30 · เทียบวิชาเปิดสอน 651 (§1 · 4.2)</td><td><span class="who">ภาคภูมิ (วิชาการ) + ไพศร (หลักสูตร)</span> · <span class="who f">ภราดาอภิสิทธิ์ (4.2)</span></td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 teaching module</a></td></tr>
+<tr><td class="c">8</td><td><b>75 คน (25%) นอกโครงสร้าง</b> · Job Spec ครบ 72% · วุฒิ unknown 14%</td><td>222/297 in_structure · Job Spec 160/222 · วุฒิ unknown 43/297 (§0)</td><td><span class="who">จันทิพย์ (HR) + ผอ.</span></td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 ผังบริหาร</a></td></tr>
+<tr><td class="c">9</td><td><b>Junk data + due&lt;start</b> ในปฏิทิน · data quality ต่ำ</td><td>"6.1 fafasdfsdfdf" (ICT) · 20/20 overdue sample due &lt; start (§3)</td><td><span class="who">สมพบ (data validation)</span></td><td><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎 ตรวจติดตาม</a></td></tr>
+</table>
+
+<h3 style="border-left-color:var(--red);background:var(--redbg);">8.3 · ความเสี่ยง</h3>
+<table>
+<tr><th style="width:5%">#</th><th style="width:22%">ความเสี่ยง</th><th style="width:28%">Trigger / ตัวเลขอ้าง</th><th style="width:25%">ผลกระทบ (ถ้าปล่อย)</th><th style="width:20%">ผู้ต้องกำกับ</th></tr>
+<tr><td class="c">R1</td><td><b>Vendor lock-in · SWIS Plus</b> — ผู้พัฒนาเดียวครอบ 2.2 · ไม่มีสัญญา SLA ในระบบ</td><td>SLA baseline 🔴 รอ (§1 · 2.2 goal 2.2.3) · ไม่มี disaster recovery plan</td><td>ถ้า vendor มีปัญหา · SWIS ทั้งเครือหยุด · SIS feed ล่ม</td><td><span class="who f">Commission (ภราดามานิต · ภราดาศุภนันท์)</span></td></tr>
+<tr><td class="c">R2</td><td><b>Data quality ปฏิทิน · un_check 82%</b> — real-time visibility หาย</td><td>overdue 314/1,380 (22.75%) · un_check 1,135 (82.25%) · junk data ในปฏิทิน ICT (§3)</td><td>ผอ./กรรมการเห็นเลขไม่ถูก · ตัดสินใจผิด · KPI มูลนิธิเพี้ยน</td><td><span class="who">ผอ.กุลชาติ + สมพบ</span> · <span class="who f">SWIS Plus (monthly validation)</span></td></tr>
+<tr><td class="c">R3</td><td><b>Service completion 0.48%</b> — SLA ห่างมาตรฐาน 24 ชม.</td><td>419 requests · completed 2 · ICT ปิดแค่ 2 · อาคาร/PR ปิด 0 (§4)</td><td>ครู/บุคลากรเลิกใช้ SWIS · หันไป LINE/กระดาษ · adoption ถดถอย</td><td><span class="who">ผอ. + วัชรี + สมพบ</span> · <span class="who f">SWIS Plus</span></td></tr>
+<tr><td class="c">R4</td><td><b>Cross-side Media · ICT ไม่คุม</b> — 3.1/3.2 อยู่ธุรการ</td><td>Media เจ้าภาพ = ภาคภูมิ (ธุรการ) · ไม่อยู่ใต้ ICT (§1 · 2)</td><td>ข่าวสารงาน ICT/มูลนิธิ ไม่ทันเวลา · brand เสียหาย · adoption drop</td><td><span class="who f">Commission (ภราดาศราวุธ) + ผอ.</span></td></tr>
+<tr><td class="c">R5</td><td><b>ICT บุคลากร single point of failure</b> — หัวหน้าคนเดียว · ไม่มี succession</td><td>สมพบ = หัวหน้าเดียวใน ICT · ไม่ทราบทีมกี่คน (§1 · 5.1)</td><td>ถ้าสมพบลาออก · ICT ในโรงหยุดชะงัก · vendor coordinator หาย</td><td><span class="who f">ภราดาอาวุธ (5.1) + HR</span></td></tr>
+<tr><td class="c">R6</td><td><b>PDPA compliance blindspot</b> — SWIS ไม่ track training</td><td>ไม่มี metric PDPA completion · ไม่มี help desk SLA data (§1 · 4.1 · 5.2)</td><td>ถูกฟ้อง PDPA · ค่าปรับ · reputation loss ต่อผู้ปกครอง</td><td><span class="who f">ภราดาอาวุธ (5.2)</span> · <span class="who">จันทิพย์ + สมพบ</span></td></tr>
+<tr><td class="c">R7</td><td><b>Network topology blindspot</b> — ไม่มี metric uptime/bandwidth/security</td><td>SWIS ไม่ breakdown IT assets ใน 697 · ไม่มี security log · ไม่มี bandwidth metric (§1 · 4.1)</td><td>downtime ยาว · security incident ตรวจไม่พบ · ค่าใช้จ่ายซ่อมสูง</td><td><span class="who f">ภราดาอภิสิทธิ์ 'ทัช' (4.1) + ภราดาธนภูมิ</span></td></tr>
+<tr><td class="c">R8</td><td><b>KPI หมวกบน roll-up 15 โรง เสี่ยงล้ม</b> — ถ้า 14 โรงเหมือน ซล.</td><td>คู่มือคุณภาพ 0% · Executive App 4 · service completion 0.48% (§4 · 6)</td><td>Foundation dashboard ไม่ตอบ Commission · SIS ตัดสินใจไม่ได้ · แผน 6 ปีมูลนิธิเพี้ยน</td><td><span class="who f">Commission (ภราดาศุภนันท์) + SWIS Plus</span></td></tr>
+</table>
+
+<div class="box">
+<b>สรุปสำหรับกรรมการ (โทนเป็นกลาง):</b> ซล. มี infrastructure และ adoption พื้นฐาน (SWIS 86% · Face scan 95%+ · e-office active · SAR 98%) แต่มี Foundation gap 3 จุดที่ต้องเร่ง — (1) คู่มือคุณภาพ 0/48 · (2) Confirm Loop ค้าง · (3) Executive App 4 users · และมีความเสี่ยงเชิงระบบ 8 ข้อที่ต้องกำกับผ่าน Commission — โดยเฉพาะ vendor lock-in, data quality ปฏิทิน 82% un_check, service completion 0.48%, และ blindspot ด้าน PDPA/network/succession · <b>ทุกข้อโยงกลับผู้รับผิดชอบทั้งระดับมูลนิธิ (Minutes 2 ก.ค. 69) และในโรง (org_structure SWIS) · ผอ./กรรมการตามงานถึงตัวคนได้</b>
+</div>
+
+<div class="part">§9 · Reality vs Plan Audit · 4 Layer (ICT-focused · ต้นแบบ PDCA9 Section 11)</div>
+<div class="box"><b>ตอบคำถาม ผอ. 2 ประเด็น:</b> (1) กรอบ ICT 8 sub มีแผน/หน่วยงาน/ผู้รับผิดชอบใน ซล. ครบไหม (2) กิจกรรม ICT จริง (อัลบั้ม/ปฏิทิน) ตรงกับแผนไหม · <b>อิงฐานข้อมูล MCP:</b> list_central_plans · plan_pdca9 · calendar_status · post_news · kpi_norm · sar · application · information</div>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">Layer 1 · Plan Structure (แผนงาน 8 sub ICT ในระบบ)</h3>
+<table>
+<tr><th style="width:20%">Sub ICT</th><th class="c" style="width:12%">แผนส่วนกลาง (id_profile)</th><th class="c" style="width:12%">แผน ซล. (dept)</th><th class="c" style="width:10%">Coverage</th><th style="width:22%">ต้องตาม + เรื่อง</th><th style="width:24%">ที่มา</th></tr>
+<tr><td>1 · บริหารฝ่าย ICT</td><td class="c">2637</td><td class="c red">🔴 ไม่มี "ฝ่าย" ในโครงสร้าง ซล.</td><td class="c warn">🟡 ระดับต่าง</td><td><b>ต้องตาม:</b> ผอ. + ประธานฝ่าย ICT (ภราดาศุภนันท์) — จัด Steering ที่ ซล.</td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄 ผังบริหาร</a></td></tr>
+<tr><td>2.1 · SIS (Foundation)</td><td class="c">2638</td><td class="c">N/A (ระดับมูลนิธิ)</td><td class="c ok">✅ feed</td><td><b>ต้องตาม:</b> ภราดามานิต + วัชรี (ประกันคุณภาพ ซล.) — feed data ตรงเวลา</td><td><a class="src" href="https://swis.sl.ac.th/survey/view/main_php/print_norm_school.php" target="_blank">📊 ตัวชี้วัด</a></td></tr>
+<tr><td>2.2.1 · SWIS admin</td><td class="c">2639</td><td class="c ok">✓ งาน ICT (สมพบ)</td><td class="c ok">✅ 20 modules</td><td><b>ต้องตาม:</b> สมพบ (ICT) · ปิด service completion gap</td><td><a class="src" href="https://swis.sl.ac.th/swis_report/manual/report.php" target="_blank">📄 คู่มือคุณภาพ</a></td></tr>
+<tr><td>2.2.2 · SWIS learning</td><td class="c">2639</td><td class="c warn">🟡 กระจาย ICT/วิชาการ</td><td class="c warn">🟡 5 modules</td><td><b>ต้องตาม:</b> สมพบ + ไพศร (หลักสูตร) — กำหนดเจ้าภาพชัด</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 teaching module</a></td></tr>
+<tr><td>3.1 · Digital Media</td><td class="c">2650</td><td class="c warn">🟡 งานประชาสัมพันธ์ (ธุรการ)</td><td class="c warn">🟡 cross-side</td><td><b>ต้องตาม:</b> ภาคภูมิ (PR) + ภราดาศราวุธ — cross-side coordination</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 post_news</a></td></tr>
+<tr><td>3.2 · Non-Digital</td><td class="c">2650</td><td class="c red">🔴 SWIS ปฏิทินส่วนกลาง 0 items</td><td class="c red">🔴 blindspot</td><td><b>ต้องตาม:</b> ภาคภูมิ + ภราดาศราวุธ — survey ป้าย/แผ่นพับ/วารสาร</td><td>🔴 รอ survey · SWIS ไม่ track</td></tr>
+<tr><td>4.1 · Network Admin</td><td class="c">2636 (+2646 dup)</td><td class="c warn">🟡 สมพบ + วรรณภา (พัสดุ) + เชษฐา (อาคาร)</td><td class="c warn">🟡 กระจาย 3 หน่วย</td><td><b>ต้องตาม:</b> สมพบ + ภราดาอภิสิทธิ์ 'ทัช' — network map · SLA · security log</td><td><a class="src" href="https://swis.sl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">📄 บริการ IT</a></td></tr>
+<tr><td>4.2 · Network Learning</td><td class="c">2636</td><td class="c red">🔴 ไม่มีเจ้าภาพชัด</td><td class="c red">🔴 gap</td><td><b>ต้องตาม:</b> ภราดาอภิสิทธิ์ 'ทัช' + ไพศร (หลักสูตร) — จัดเจ้าภาพ hardware ห้องเรียน</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 teaching module</a></td></tr>
+<tr><td>5.1 · บุคลากร ICT</td><td class="c">2640</td><td class="c red">🔴 ไม่ทราบทีม ICT กี่คน</td><td class="c red">🔴 gap</td><td><b>ต้องตาม:</b> จันทิพย์ (HR) + ภราดาอาวุธ — staff inventory ICT + succession plan</td><td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">🔗 Confirm Loop</a></td></tr>
+<tr><td>5.2 · ผู้ใช้ทั่วไปในโรง</td><td class="c">2640</td><td class="c red">🔴 ไม่มีเจ้าภาพชัด</td><td class="c red">🔴 gap</td><td><b>ต้องตาม:</b> สมพบ + จันทิพย์ + ภราดาอาวุธ — training program SWIS/PDPA</td><td><a class="src" href="https://swis.sl.ac.th" target="_blank">🔗 application</a></td></tr>
+<tr style="background:#fef3c7;"><td class="b">รวม 8 sub</td><td class="c b">9 แผนใน SWIS ส่วนกลาง</td><td class="c b" style="color:var(--warn)">2 แผน ซล. · dept ICT (approved 1/2)</td><td class="c b" style="color:var(--red)">3/8 ✅ · 3/8 🟡 · 4/8 🔴</td><td><b>ต้องตาม:</b> ประธานฝ่าย (ภราดาศุภนันท์) — ปิด 4 gap หลัก · re-align 3 cross-side</td><td>list_central_plans + plan_pdca9</td></tr>
+</table>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">Layer 2 · KPI Linkage (ตัวชี้วัด ICT ↔ 568 indicators)</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="c" style="width:15%">ตัวเลขจริง (ซล.)</th><th class="c" style="width:10%">สถานะ</th><th>ต้องตาม + เรื่อง</th></tr>
+<tr><td>indicators รวมทั้งโรง</td><td class="c b">568</td><td class="c"><span class="ok">baseline</span></td><td>6 ชุดมาตรฐาน (แผนพัฒนาโรง · สพฐ. · โรง · มูลนิธิ · ยุทธ์มูลนิธิ · ธรรมาภิบาล)</td></tr>
+<tr><td>indicators ใช้จริงในแผน</td><td class="c b ok">458 (80.63%)</td><td class="c"><span class="ok">✅</span></td><td>อ้างอิง 2,381 links · plans_linked 48/48</td></tr>
+<tr><td>indicators ค้างไม่ใช้</td><td class="c b warn">110 (19%)</td><td class="c"><span class="warn">⚠️</span></td><td><b>ต้องตาม:</b> วัชรี (ประกันคุณภาพ) + สาวิตรี (นโยบายและแผน) — audit 110 ตัวว่าเกี่ยว ICT ไหม</td></tr>
+<tr><td><b>indicators ที่โยงกรอบ ICT (8 sub)</b></td><td class="c b red">🔴 รอ verify</td><td class="c"><span class="red">🔴</span></td><td>SWIS ไม่ให้ filter per sub · <b>ต้องตาม:</b> วัชรี — trace 458 links หา ICT-related indicators</td></tr>
+<tr><td>ยุทธศาสตร์มูลนิธิที่ 3 (ICT)</td><td class="c b">96 indicators</td><td class="c"><span class="warn">🟡</span></td><td>เป้าประสงค์ 3.3 · มาตรฐาน 3.3.1 (ระบบสารสนเทศ) + 3.3.3 (การสื่อสาร) · <b>ต้องตาม:</b> ภราดาศุภนันท์ + สาวิตรี</td></tr>
+<tr><td>นโยบายโรงที่โยง ICT</td><td class="c b warn">3 policies total · plan_refs 61</td><td class="c"><span class="warn">🟡</span></td><td>ทั้งโรงมีนโยบาย 3 ตัว · <b>ต้องตาม:</b> ผอ. + คกก.บริหาร · มีนโยบาย ICT เฉพาะไหม</td></tr>
+<tr><td>มาตรฐานสากล</td><td class="c b bad">3 items · 2 std · plans 2</td><td class="c"><span class="red">🔴</span></td><td>🔴 <b>ไม่มี Cambridge IT / Google for Ed / MS Education</b> · <b>ต้องตาม:</b> ประธานฝ่าย + วิชาการ</td></tr>
+</table>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">Layer 3 · Reality Check (ปฏิทิน ICT ↔ กิจกรรม/อัลบั้มจริง)</h3>
+<div class="box warn"><b>Reverse trace:</b> event/album ที่เกี่ยว ICT (dept="งานเทคโนโลยีและสารสนเทศ" · keyword computer/IT/SWIS/network) — เทียบ<b>แผน vs จริง</b> · หาช่องว่าง "มีในแผนแต่ไม่ทำ / ทำแต่ไม่อยู่ในแผน"</div>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="c" style="width:15%">ตัวเลขจริง</th><th class="c" style="width:10%">Gap</th><th>Implication + ต้องตาม</th></tr>
+<tr><td>Events ปฏิทิน dept "งานเทคโนโลยีและสารสนเทศ"</td><td class="c b bad">1 item ที่ evidence จริง (junk "6.1 fafasdfsdfdf")</td><td class="c b" style="color:var(--red)">99%+</td><td>🔴 <b>ปฏิทิน ICT แทบว่างเปล่า</b> · junk data ไม่ validate · <b>ต้องตาม:</b> สมพบ — ลบ junk + จัดปฏิทินการทำงาน ICT รายเดือน</td></tr>
+<tr><td>Events ปฏิทินฝ่าย ICT ส่วนกลาง (มูลนิธิ)</td><td class="c b bad">8 items (title ซ้ำ · un_check 100%)</td><td class="c b" style="color:var(--red)">100%</td><td>🔴 <b>ฝ่าย ICT มูลนิธิ ไม่มีปฏิทินการทำงานจริง</b> · <b>ต้องตาม:</b> ภราดาศุภนันท์ + เลขา (ภราดาทัช) — import 9 แผน PDCA9 เข้าปฏิทิน</td></tr>
+<tr><td>อัลบั้มรวมทั้งโรง</td><td class="c b">217 อัลบั้ม</td><td class="c">—</td><td>photographer_emp 216 · has_poster 217 · ref_cal 141</td></tr>
+<tr><td><b>อัลบั้ม ↔ ปฏิทิน (ref_cal ผูก)</b></td><td class="c b warn">141 อัลบั้ม (65%)</td><td class="c warn">65%</td><td>ทำจริง + มีแผน · ok</td></tr>
+<tr><td><b>อัลบั้มนอกปฏิทิน (ad-hoc)</b></td><td class="c b bad">76 อัลบั้ม (35%)</td><td class="c bad">35%</td><td>🔴 <b>Ad-hoc events ไม่ track</b> · เกี่ยว ICT ไหม 🔴 รอ filter · <b>ต้องตาม:</b> ภาคภูมิ (PR) + สมพบ</td></tr>
+<tr><td><b>ข่าวเกี่ยว ICT/SWIS (post_news filter)</b></td><td class="c b red">🔴 รอ verify</td><td class="c"><span class="red">🔴</span></td><td>SWIS ไม่ให้ keyword search · <b>ต้องตาม:</b> ภาคภูมิ — เช็คข่าว 138 อันมีเกี่ยว ICT กี่อัน · has_pic 0 ทั้ง 138 ข่าว</td></tr>
+<tr><td>Overdue items ที่พึ่ง ICT service</td><td class="c b bad">20/20 sample</td><td class="c b bad">100%</td><td>🔴 <b>ทุกกิจกรรม overdue ต้องใช้ ICT/PR service</b> (calendar · post_news · e-office · hospital · Executive App) · <b>ต้องตาม:</b> สมพบ + ภาคภูมิ + ผอ.</td></tr>
+<tr><td>ข้อ 4 Plan · dept งานเทคโนโลยี (จาก sample 20)</td><td class="c b">0 items</td><td class="c b bad">100%</td><td>🔴 <b>ไม่มี Plan (4.x) ของ ICT ในปฏิทิน</b> · <b>ต้องตาม:</b> สมพบ — เพิ่ม Plan activity รายเดือน</td></tr>
+<tr><td>ข้อ 6 Do · dept งานเทคโนโลยี</td><td class="c b bad">1 item (junk)</td><td class="c b bad">99%+</td><td>🔴 ไม่มี Do จริงใน ปฏิทิน · <b>ต้องตาม:</b> สมพบ</td></tr>
+<tr><td>ข้อ 7 Monitor · dept งานเทคโนโลยี</td><td class="c b">0</td><td class="c b bad">100%</td><td>🔴 ไม่มี Monitor · <b>ต้องตาม:</b> ภราดาศุภนันท์ (ประธาน) — จัด Commission Q1-Q4</td></tr>
+</table>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">Layer 4 · SAR + Governance + App usage (ICT lens)</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="c" style="width:20%">ตัวเลขจริง</th><th class="c" style="width:10%">สถานะ</th><th>ต้องตาม</th></tr>
+<tr><td>SAR หัวข้อ (auto-source)</td><td class="c b ok">60/61 · 98.36%</td><td class="c"><span class="ok">✅</span></td><td>ระบบ auto-generate เกือบครบ</td></tr>
+<tr><td><b>SAR content เขียนเอง (2569)</b></td><td class="c b bad">0 items · 0 writers</td><td class="c"><span class="red">🔴</span></td><td>🔴 <b>ยังไม่มีการเขียน SAR รอบ 2569 เลย</b> · ครอบทุก sub รวม ICT · <b>ต้องตาม:</b> วัชรี (ประกันคุณภาพ) + ผอ.</td></tr>
+<tr><td><b>SAR sections เฉพาะ ICT</b></td><td class="c b red">🔴 รอ filter</td><td class="c"><span class="red">🔴</span></td><td>SWIS ไม่ break per topic · <b>ต้องตาม:</b> วัชรี · trace 60 topics ว่าเกี่ยว ICT/SWIS/สื่อ กี่ topic</td></tr>
+<tr><td><b>Executive App</b> (governance visibility)</td><td class="c b bad">4 total · 0 new</td><td class="c"><span class="red">🔴</span></td><td>🔴 <b>ผู้บริหารไม่ใช้ app</b> · Data-Driven Leadership ล้ม · <b>ต้องตาม:</b> ผอ. + คกก.บริหาร adopt · SWIS Plus (vendor) push</td></tr>
+<tr><td>Teacher App (ICT literacy proxy)</td><td class="c b ok">750 total · 70 new</td><td class="c"><span class="ok">✅</span></td><td>ครู 232 · onboard สะสม 750 (คลุมปีก่อน) · ok</td></tr>
+<tr><td>Parent App</td><td class="c b ok">1,365 total · 417 new</td><td class="c"><span class="ok">✅</span></td><td>ok · adoption ดี</td></tr>
+<tr><td>Student App</td><td class="c b ok">3,298 total · 146 new</td><td class="c"><span class="ok">✅</span></td><td>ok · เกิน students 2,845 (สะสม)</td></tr>
+<tr><td>App registration by month</td><td class="c b warn">พ.ค.-ก.ค. active · ส.ค.-เม.ย. = 0</td><td class="c"><span class="warn">⚠️</span></td><td>⚠️ <b>Onboarding กระจุกต้นปี</b> · ส.ค.-เม.ย. เงียบ · <b>ต้องตาม:</b> สมพบ + ภาคภูมิ · campaign ต่อเนื่อง</td></tr>
+<tr><td><b>ผู้มีสิทธิ์โพสต์อัลบั้ม (bottleneck ICT PR)</b></td><td class="c b warn">4 คน</td><td class="c"><span class="warn">⚠️</span></td><td>⚠️ 4 คน = risk เผยแพร่งาน ICT ล่าช้า · <b>ต้องตาม:</b> ภาคภูมิ — ขยายสิทธิ์</td></tr>
+<tr><td><b>ผู้มีสิทธิ์โพสต์ข่าว</b></td><td class="c b warn">5 คน</td><td class="c"><span class="warn">⚠️</span></td><td>⚠️ Bottleneck เดียวกัน</td></tr>
+<tr><td><b>ผู้มีสิทธิ์จัดปฏิทิน</b></td><td class="c b warn">4 คน</td><td class="c"><span class="warn">⚠️</span></td><td>⚠️ 4 คนจัดปฏิทิน 48 หน่วยงาน = risk data quality (un_check 82%)</td></tr>
+<tr><td>Face Scan ครู/staff/นักเรียน (ICT infra)</td><td class="c b ok">95%/89%/99.96% (33,473 scan/ปี)</td><td class="c"><span class="ok">✅</span></td><td>infrastructure ใช้จริง · ok</td></tr>
+</table>
+
+<div class="box red"><b>💡 สรุปตอบ ผอ. · 7 ประเด็น ICT-specific จากข้อมูลจริง:</b>
+<ol style="margin:6px 0 0 20px;font-size:.85rem">
+<li>🔴 <b>ปฏิทิน ICT ทั้งโรงและมูลนิธิ แทบว่างเปล่า</b> — dept ICT ซล. มี 1 junk item · ฝ่าย ICT มูลนิธิ 8 items title ซ้ำทั้งหมด · <b>ต้องตาม:</b> ประธานฝ่าย + สมพบ · import 9 แผน PDCA9</li>
+<li>🔴 <b>4/8 sub gap หนัก</b> — 1 (ไม่มีฝ่าย ICT) · 3.2 (Non-Digital blindspot) · 4.2 (ไม่มีเจ้าภาพ) · 5.1 (ไม่ทราบทีม ICT) · 5.2 (ไม่มีเจ้าภาพ) · <b>ต้องตาม:</b> Commission</li>
+<li>🔴 <b>SAR รอบ 2569 ยังไม่เริ่มเขียน</b> — 0 items 0 writers ครอบ ICT sections · <b>ต้องตาม:</b> วัชรี + ผอ.</li>
+<li>🔴 <b>Executive App 4 users</b> — governance visibility ต่ำ · <b>ต้องตาม:</b> ผอ. + คกก.บริหาร adopt</li>
+<li>🔴 <b>indicators เกี่ยว ICT รอ verify</b> — 458 links ผูก 48 แผน · trace เฉพาะ ICT ต้องขอ วัชรี</li>
+<li>⚠️ <b>4-5 คน bottleneck โพสต์อัลบั้ม/ข่าว/ปฏิทิน</b> — เผยแพร่งาน ICT ช้า · <b>ต้องตาม:</b> ภาคภูมิ ขยายสิทธิ์</li>
+<li>⚠️ <b>Ad-hoc events 35%</b> (76/217 อัลบั้ม) — ไม่มีแผนรองรับ · <b>ต้องตาม:</b> ผอ. + หัวหน้าหน่วยที่โพสต์</li>
+</ol>
+</div>
+
+<h3>📚 อ้างอิงข้อมูล MCP (ไม่เดา · อิง DB จริง)</h3>
+<div class="box">
+<ul style="margin:6px 0 0 20px;font-size:.8rem">
+<li><code>list_central_plans(dept=ICT, edu_year=2569)</code> → 9 แผน · id_profile 2636-2650 (Layer 1)</li>
+<li><code>get_school_usage(school=sl, module=plan_pdca9)</code> → 48/48 dept · 49 plans · ICT 2 แผน (Layer 1)</li>
+<li><code>get_school_usage(school=sl, module=kpi_norm)</code> → 568 · 458 used · 6 sets (Layer 2)</li>
+<li><code>get_school_usage(school=sl, module=calendar_status)</code> → 1,380 events · 20 overdue sample (Layer 3)</li>
+<li><code>get_school_usage(school=sl, module=post_news)</code> → 217 albums · 138 news · has_pic 0 (Layer 3)</li>
+<li><code>get_central_plan_calendar(dept=ICT)</code> → 47 items · 8 sub 5.2 only · title ซ้ำ (Layer 3)</li>
+<li><code>get_school_usage(school=sl, module=sar)</code> → 66 topics · 60 filled · content 0 (Layer 4)</li>
+<li><code>get_school_usage(school=sl, module=application)</code> → 4 apps · Executive 4 total (Layer 4)</li>
+<li><code>get_school_usage(school=sl, module=information)</code> → 4-5 editor rights (Layer 4)</li>
+<li><code>get_school_usage(school=sl, module=org_structure)</code> → 48 depts · Confirm Loop 4% completed (Layer 1 · 4)</li>
+</ul>
+</div>
+
+<div class="part">§10 · งานค้างจาก LINE กองเลขา ICT (ห้องกลาง route 3 ส.ค. 69 · CASCADE)</div>
+<div class="box"><b>ที่มา:</b> LINE "กองเลขา ICT" 26 พ.ค.–25 ก.ค. 69 · ผู้เกี่ยว: มิสเต๋ว (KRISSADA) · มิสอภิสิทธิ์ (Apisit) · ห้องกลางสกัด + route</div>
+<table>
+<tr><th style="width:5%">#</th><th style="width:26%">งาน</th><th class="c" style="width:12%">สถานะ</th><th style="width:24%">ที่มา (Bro.Book verbatim)</th><th style="width:23%">ผู้ต้องตาม + เรื่อง</th><th style="width:10%">Route</th></tr>
+<tr>
+<td class="c">1</td>
+<td><b>แผนรองรับแต่ละด้านในกรอบ ICT · เป้าหมายคุณภาพ + Roadmap 1-3 ปี</b></td>
+<td class="c red">🔴 ค้าง · ต้องจัดทำ</td>
+<td>Bro.Book 23 มิ.ย. 69: "ต้องมีแผนรองรับงานแต่ละด้าน...มีเป้าหมายคุณภาพ และระยะดำเนินการ/พัฒนา 1-3 ปี"</td>
+<td><span class="who f">ประธานฝ่าย (ภราดาศุภนันท์)</span> + <span class="who">คณะทำงาน 5 กลุ่ม (per Minutes 2 ก.ค.)</span> — ผูกกับ 8 sub · 2.2.1/2.2.2</td>
+<td>ห้อง ICT (ใน §11)</td>
+</tr>
+<tr>
+<td class="c">2</td>
+<td><b>ร่างคณะกรรมการ/อนุกรรมการ ICT</b></td>
+<td class="c warn">🟡 กำลังทำ</td>
+<td>มิสเต๋ว ส่งประธานอนุฯ แล้ว 13 ก.ค. 69</td>
+<td><span class="who f">ประธานฝ่าย + ภ.ทัช (เลขา)</span></td>
+<td>ห้อง ICT</td>
+</tr>
+<tr>
+<td class="c">3</td>
+<td><b>มอบบริษัท SWIS Plus จัดประชุม ICT ให้คณะฯ</b></td>
+<td class="c warn">🟡 ต้องดำเนินการ</td>
+<td>Bro.Book 25 ก.ค. 69: "ขอบริษัท SWIS ช่วยจัดประชุม ICT ให้คณะฯ" · Apisit รับทราบ</td>
+<td><span class="who">Apisit (SWIS Plus)</span> + <span class="who f">ประธานฝ่าย confirm วันประชุม</span></td>
+<td>SWIS_PLUS (parallel)</td>
+</tr>
+<tr>
+<td class="c">4</td>
+<td>ติดตามแผนงาน/กำหนดส่ง/วันประชุมติดตาม</td>
+<td class="c warn">🟡 คำสั่งต่อเนื่อง</td>
+<td>—</td>
+<td><span class="who f">ประธานฝ่าย + เลขา</span></td>
+<td>ห้อง ICT</td>
+</tr>
+<tr style="background:#d1fae5;">
+<td class="c">✓</td>
+<td>ประชุมกรรมการ ICT+HRM ครั้งที่ 1/2569</td>
+<td class="c ok">✅ ปิดแล้ว</td>
+<td>2 ก.ค. 69 · Zoom · commission2569</td>
+<td>Commission (13/15 ท่านมา)</td>
+<td>ปิด</td>
+</tr>
+</table>
+
+<div class="part">§11 · แผน ซล. dept "งานเทคโนโลยีและสารสนเทศ" · Enumerate จริง (ตอบ Bro.Book 23 มิ.ย.: แผน 1-3 ปี)</div>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">11.1 · list_school_plans(sl, dept="เทคโนโลยี") · 4 แผน · แต่ ICT จริง = 1</h3>
+<table>
+<tr><th class="c" style="width:8%">id_profile</th><th style="width:30%">ชื่อแผน</th><th style="width:23%">dept</th><th class="c" style="width:8%">approved</th><th class="c" style="width:8%">steps</th><th class="c" style="width:8%">KPI</th><th class="c" style="width:15%">สถานะ</th></tr>
+<tr style="background:#d1fae5;"><td class="c b">6058</td><td><b>105 งานเทคโนโลยีและสารสนเทศ</b></td><td>งานเทคโนโลยีและสารสนเทศ</td><td class="c ok">✅</td><td class="c">9</td><td class="c">3</td><td class="c ok">✅ แผน ICT จริง</td></tr>
+<tr style="background:#fee2e2;"><td class="c">6106</td><td>test</td><td>งานเทคโนโลยีและสารสนเทศ</td><td class="c red">❌</td><td class="c">0</td><td class="c">0</td><td class="c red">🔴 junk data</td></tr>
+<tr style="background:#fee2e2;"><td class="c">6108</td><td>ทดสอบ</td><td>งานเทคโนโลยีและสารสนเทศ</td><td class="c red">❌</td><td class="c">9</td><td class="c">0</td><td class="c red">🔴 junk data</td></tr>
+<tr><td class="c">6078</td><td>302.3 กลุ่มสาระการเรียนรู้วิทยาศาสตร์</td><td>กลุ่มสาระวิทยาศาสตร์และเทคโนโลยี</td><td class="c ok">✅</td><td class="c">9</td><td class="c">3</td><td class="c">— คนละหน่วย (วิชาการ)</td></tr>
+</table>
+<div class="box red"><b>Reality:</b> ซล. มีแผน ICT <b>1 แผนจริง</b> (6058) + <b>2 junk data</b> ที่รอลบ · <b>ต้องตาม:</b> สมพบ (owner_id_emp 10094) — ลบ junk ให้ระบบสะอาด</div>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">11.2 · เนื้อแผน 6058 · Objectives/KPIs/Goals verbatim (ตอบคำถามกรอบ)</h3>
+<table>
+<tr><th style="width:15%">รายการ</th><th style="width:70%">เนื้อ verbatim (จาก DB)</th><th style="width:15%">Map กรอบ 8 sub</th></tr>
+<tr><td class="b">Objectives (3)</td><td>1) เพื่อพัฒนาระบบเครือข่ายเทคโนโลยีสารสนเทศให้ครอบคลุมการใช้งานในสถานศึกษา<br>2) เพื่อพัฒนาระบบเครือข่ายข้อมูลสารสนเทศของสถานศึกษาให้สมบูรณ์ และเป็นปัจจุบัน<br>3) เพื่อบริการและเผยแพร่ข้อมูลสารสนเทศแก่ผู้บริหาร ครู บุคลากร นักเรียนและบุคคลภายนอก</td><td class="warn"><span class="tag">2.2</span><span class="tag">4.1</span></td></tr>
+<tr><td class="b">KPIs (3)</td><td>1) ระบบเครือข่ายข้อมูลสารสนเทศของสถานศึกษาให้สมบูรณ์ และเป็นปัจจุบัน<br>2) ระบบเครือข่ายเทคโนโลยีสารสนเทศให้ครอบคลุมการใช้งานในสถานศึกษา<br>3) บริการข้อมูลสารสนเทศแก่ผู้บริหาร ครู บุคลากร นักเรียนและบุคคลภายนอก</td><td class="warn"><span class="tag">2.2</span><span class="tag">4.1</span></td></tr>
+<tr><td class="b">Goals · type 1 (จำนวน)</td><td>ผู้เรียน อ.1-ม.6 = 3,000 คน · ครู/บุคลากร = 317 คน</td><td>—</td></tr>
+<tr><td class="b">Goals · type 0 (พรรณนา)</td><td>เครือข่ายเทคโน · ข้อมูลสารสนเทศ · บริการเผยแพร่ (ซ้ำ Objectives)</td><td class="warn"><span class="tag">2.2</span><span class="tag">4.1</span></td></tr>
+<tr><td class="b">edu_year</td><td>2569 (1 ปี · 11 พ.ค. 69 – 30 เม.ย. 70)</td><td>—</td></tr>
+<tr><td class="b">Budget</td><td>expense planned 952,090 บ. · used 199,578 (20.96%)</td><td>—</td></tr>
+</table>
+
+<div class="box red">
+<b>💡 ประเด็นสำคัญ · ตอบ Bro.Book 23 มิ.ย. 69 (แผน 1-3 ปี):</b>
+<ol style="margin:6px 0 0 20px;font-size:.85rem">
+<li>🔴 <b>ไม่มี Roadmap 1-3 ปี</b> — แผน ICT ซล. เป็น <b>ปีเดียว</b> (2569) · ครบทุกปีต้องเริ่มใหม่</li>
+<li>🔴 <b>Coverage แผนเทียบกรอบ 8 sub = 2/8 (25%)</b> — ครอบแค่ 2.2 SWIS + 4.1 Network · <b>ไม่มี</b> 1 (บริหาร) · 2.1 SIS · 2.2.2 curricular · 3.1/3.2 Media · 4.2 Network Learning · 5.1/5.2 บุคลากร</li>
+<li>🔴 <b>Objectives/KPIs เก่า</b> — เน้น "ระบบเครือข่าย + ข้อมูล + บริการ" (pattern ปี 2555+) · <b>ยังไม่ align</b> กับกรอบใหม่ 5 กลุ่ม 8 sub ที่มูลนิธิลง 1 ส.ค. 69</li>
+<li>🔴 <b>KPI ซ้ำ Objectives</b> — ไม่ระบุตัวชี้วัดเชิงจำนวน/เกณฑ์ผ่าน · ประเมินไม่ได้จริง</li>
+<li>⚠️ <b>Goals จำนวน "3,000 คน" · "317 คน"</b> — เกิน scope ICT (นับผู้เรียนทั้งโรง) · ไม่ใช่ user IT-specific</li>
+<li>🔴 <b>2 junk plans</b> (test/ทดสอบ) รกในระบบ · <b>ต้องตาม:</b> สมพบ ลบ</li>
+</ol>
+<b>ต้องตามใคร:</b> <span class="who f">ประธานฝ่าย (ภราดาศุภนันท์)</span> + <span class="who">สมพบ (owner)</span> — ยกร่างแผน ICT ซล. ใหม่ · 1-3 ปี · align 8 sub · pattern จาก 9 PDCA9 plans ที่ห้อง ICT ยกร่างในเครือ brobook-memory (2569_ICT_*)
+</div>
+
+<h3 style="border-left-color:var(--gold);background:#fffaf0;">11.3 · Sub-activities per PDCA step (แผน 6058)</h3>
+<table>
+<tr><th class="c" style="width:8%">ขั้น</th><th class="c" style="width:8%">PDCA</th><th style="width:44%">Title</th><th class="c" style="width:18%">ช่วงเวลา</th><th class="c" style="width:15%">Sub-activities</th><th class="c" style="width:7%">ที่มา</th></tr>
+<tr><td class="c">1</td><td class="c">P</td><td>แต่งตั้งคณะกรรมการ</td><td class="c">11-22 พ.ค. 69</td><td class="c">0</td><td class="c">—</td></tr>
+<tr><td class="c">2</td><td class="c">P</td><td>ศึกษาข้อมูล · วิเคราะห์สภาพปัจจุบัน</td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c">0</td><td class="c">—</td></tr>
+<tr><td class="c">3</td><td class="c">P</td><td>กำหนดคุณภาพที่คาดหวังและเป้าหมาย</td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c">0</td><td class="c">—</td></tr>
+<tr style="background:#fefce8;"><td class="c">4</td><td class="c">P</td><td><b>จัดทำแผน · กิจกรรม/โครงการ</b></td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c b">12</td><td class="c"><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎</a></td></tr>
+<tr><td class="c">5</td><td class="c">P</td><td>ประชุม กก. วางแผน+มอบหมาย</td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c">0</td><td class="c">—</td></tr>
+<tr style="background:#fefce8;"><td class="c">6</td><td class="c">D</td><td><b>ดำเนินงานตามแผน</b></td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c b">12</td><td class="c"><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎</a></td></tr>
+<tr style="background:#fefce8;"><td class="c">7</td><td class="c">C</td><td><b>รับการนิเทศ</b></td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c b">5</td><td class="c"><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎</a></td></tr>
+<tr style="background:#fefce8;"><td class="c">8</td><td class="c">C</td><td><b>ประเมินผล</b></td><td class="c">11 พ.ค. 69 – 30 เม.ย. 70</td><td class="c b">3</td><td class="c"><a class="src" href="https://swis.sl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">🔎</a></td></tr>
+<tr><td class="c">9</td><td class="c">A</td><td>สรุปผลและข้อเสนอแนะ</td><td class="c">1-30 เม.ย. 70</td><td class="c">0</td><td class="c">—</td></tr>
+</table>
+<div class="box">Sub-activities รวม <b>32 กิจกรรม</b> (Plan 12 · Do 12 · Monitor 5 · Check 3) · <b>ต้องตาม:</b> สมพบ (owner) · Enumerate 32 กิจกรรม → tool `get_plan_step_budget(sl, 6058, items=true)` (ยังไม่ดึงในรอบนี้ · ทำใน v10 ถ้าบราเดอร์ยืนยัน)</div>
+
+<div class="foot">
+<b>Caveats:</b> ข้อมูล ณ 29 ก.ค.-3 ส.ค. 69 · ปี 2569 · SWIS 189/220 = ปี 2568 · Framework Tier-0 verbatim (§C1 · 2.2.1/2.2.2 update 1 ส.ค.) · H5 = href SWIS/thaibrothers · H6 = ผู้รับผิดชอบมูลนิธิ + ซล. ทุกแถว · H7 = §8 บทวิเคราะห์ 3 มุม · §9 · 4 Layer ICT-focused (ต้นแบบ PDCA9 Section 11) · <b>§10 · งานค้างจาก LINE (CASCADE 3 ส.ค.) · §11 · แผน ซล. ICT enumerate จริง (list_school_plans + get_school_plan) · ตอบข้อ 1 (แผน 1-3 ปี = 🔴 ค้าง) + coverage 2/8 sub</b> · v9 patched 3 ส.ค. 69<br>
+Generated: 2026-08-03 · v9 · ห้อง ICT · pilot ซล. · H1-H7 + §9-§11 · owner ถือปากกา 100%
+</div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<title>รายงาน Audit แผนงาน PDCA9 · โรงเรียนอัสสัมชัญนครราชสีมา · ปีการศึกษา 2569</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+:root{--navy:#1a3557;--ok:#2e7d32;--warn:#e08e0b;--bad:#c0392b;--owner:#7b1fa2}
+*{box-sizing:border-box}body{font-family:'Sarabun',sans-serif;color:#1a1a1a;line-height:1.55;max-width:1200px;margin:0 auto;padding:26px;background:#fafafa}
+h1{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}h2{font-size:1.2rem;border-bottom:2px solid var(--navy);padding-bottom:5px;margin:28px 0 12px;color:var(--navy)}h3{font-size:1rem;margin:18px 0 8px;color:#333}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88rem;background:#fff}th,td{border:1px solid #d0d0d0;padding:7px 9px;vertical-align:top;text-align:left}th{background:var(--navy);color:#fff}th.owner{background:var(--owner)}.c{text-align:center}.b{font-weight:600}
+.chip{color:#fff;padding:2px 9px;border-radius:10px;font-size:.78rem;font-weight:600;display:inline-block}.chip-p1{background:var(--bad)}.chip-p2{background:var(--warn)}.chip-p3{background:var(--ok)}
+.box{border:1px solid #ddd;border-left:5px solid var(--navy);background:#f5f8fc;border-radius:5px;padding:12px 16px;margin:10px 0}.box-bad{border-left-color:var(--bad);background:#fdf6f5}.box-warn{border-left-color:var(--warn);background:#fff8e6}.box-owner{border-left-color:var(--owner);background:#f9f0ff}.box-plan{border-left-color:var(--ok);background:#f0f9f0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.kpi-card{flex:1;min-width:150px;border:1px solid #ddd;border-radius:6px;padding:10px 14px;text-align:center;background:#fff}.kpi-card .val{font-size:1.6rem;font-weight:700}.kpi-card .lbl{font-size:.78rem;color:#666}.kpi-card.ok{border-color:var(--ok)}.kpi-card.ok .val{color:var(--ok)}.kpi-card.warn{border-color:var(--warn)}.kpi-card.warn .val{color:var(--warn)}.kpi-card.bad{border-color:var(--bad)}.kpi-card.bad .val{color:var(--bad)}
+.note{color:#666;font-size:.85rem}.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0}.node{background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 12px;font-size:.85rem;min-width:120px}.node.bad{border-color:var(--bad);background:#fdf6f5}.node.warn{border-color:var(--warn);background:#fff8e6}.node.ok{border-color:var(--ok);background:#f0f9f0}.arrow{color:#888;font-weight:700}
+.badge{padding:3px 10px;border-radius:12px;font-size:.78rem;font-weight:600}.badge-pass{background:#e8f5e9;color:var(--ok)}.badge-fail{background:#ffebee;color:var(--bad)}
+.sidehdr td{background:#eaf0f6;font-weight:700;padding:8px 12px !important}a{color:var(--navy)}
+footer{border-top:2px solid #ccc;margin-top:26px;padding-top:12px;font-size:.82rem;color:#555}
+</style></head><body>
+<header><h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนอัสสัมชัญนครราชสีมา (ACN) · ปีการศึกษา 2569</span></h1>
+<p class="note">ตรวจโดย PDCA9_INSPECTOR (Specialty Hub #1) · เกณฑ์ pdca9_foundation_guide_v2.md · pattern v1 · SL gold standard · per-dept ครบ</p>
+<p><span class="badge badge-pass">✅ 44/44 มีแผน 100% · approved 100% · Structure confirmed · Personnel 76%</span> <span class="badge badge-fail">🔴 Manual 47.7% ไม่มี · Events done 13.39%</span></p></header>
+
+<h2>บทสรุปผู้บริหาร</h2>
+<div class="kpi">
+<div class="kpi-card ok"><a href="https://swis.acn.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">44/44</div><div class="lbl">หน่วยงานมีแผน</div></a></div>
+<div class="kpi-card ok"><div class="val">44/44</div><div class="lbl">approved</div></div>
+<div class="kpi-card bad"><a href="https://swis.acn.ac.th/swis_report/manual/report.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">0/44</div><div class="lbl">คู่มือครบ 6</div></a></div>
+<div class="kpi-card warn"><div class="val">21/44</div><div class="lbl">ไม่มีคู่มือ (47.7%)</div></div>
+<div class="kpi-card warn"><div class="val">190</div><div class="lbl">overdue</div></div>
+<div class="kpi-card warn"><div class="val">13.39%</div><div class="lbl">events done</div></div>
+</div>
+
+<div class="box box-bad"><b>ACN Structural strong:</b><ol style="margin:6px 0 0 20px"><li>✅ 44/44 มีแผน · approved 100% · ครบ 9 ขั้น 100%</li><li>✅ Structure confirmed · Personnel 76% · Job Spec 85%</li><li>🔴 Manual full 0 · none 21 (47.7%) · partial 23</li><li>🔴 Events done 13.39% · overdue 190</li><li>🔴 Evidence 0/386 · sar_content=0</li></ol></div>
+
+<h2>ส่วนที่ ๑ · Chain of Alignment</h2>
+<div class="flow">
+<span class="node ok">⓪ ยุทธ์มูลนิธิ</span><span class="arrow">→</span>
+<span class="node ok">① DP-ACN</span><span class="arrow">→</span>
+<span class="node warn">② คู่มือ 47.7% ไม่มี</span><span class="arrow">→</span>
+<span class="node ok">③ PDCA9 · 44 approved</span><span class="arrow">→</span>
+<span class="node warn">④ Reality 13.39% done</span><span class="arrow">→</span>
+<span class="node bad">⑤ SAR sar_content=0</span></div>
+
+<h2>ส่วนที่ ๒ · รายละเอียดแผน PDCA9</h2>
+<table>
+<tr><th>รายการ</th><th class="c">ค่า</th><th>สถานะ</th></tr>
+<tr><td>หน่วยงาน · มีแผน · ไม่มี</td><td class="c b">44 · 44 · 0</td><td>-</td></tr>
+<tr><td>plans total · approved</td><td class="c b">44 · 44</td><td>✅ 100% approved</td></tr>
+<tr><td>ครบ 9 ขั้น · with_kpi</td><td class="c b">44 · 44</td><td>-</td></tr>
+<tr><td>plan_items · Evidence</td><td class="c b" style="color:var(--bad)">386 · 0</td><td>🔴</td></tr>
+</table>
+
+<h2>ส่วนที่ ๓ · คู่มือคุณภาพ</h2>
+<table>
+<tr><th>สถานะ</th><th class="c">จำนวน</th><th class="c">%</th></tr>
+<tr><td>ครบ 6 ส่วน</td><td class="c b" style="color:var(--bad)">0/44</td><td class="c">0%</td></tr>
+<tr><td>partial</td><td class="c b">23</td><td class="c">52.3%</td></tr>
+<tr><td>ยังไม่มีคู่มือ</td><td class="c b" style="color:var(--bad)">21</td><td class="c">47.7%</td></tr>
+</table>
+
+<h2>ส่วนที่ ๔ · โครงสร้าง + Confirm Loop</h2>
+<table>
+<tr><th>รายการ</th><th class="c">ค่า</th><th>หมายเหตุ</th></tr>
+<tr><td>ผู้อำนวยการ</td><td class="c b">ภราดาครรชิต สีสาวรรณ</td><td>id_emp 20259001 (canonical list_directors)</td></tr>
+<tr><td>ฝ่าย · หน่วยงาน</td><td class="c b">6 · 44</td><td>-</td></tr>
+<tr><td>Staffing in_structure</td><td class="c b">204/264</td><td>not_in 60</td></tr>
+<tr><td>Personnel confirm</td><td class="c b">75.98%</td><td>155/204 · ดี</td></tr>
+<tr><td>Job Spec</td><td class="c b">173/204 (84.8%)</td><td>-</td></tr>
+</table>
+
+<h2>ส่วนที่ ๕ · Issues + Owner ต้นทาง</h2>
+<h3>A1 · Manual 47.7% ไม่มี</h3><p>ต้นทาง Commission ICT+HRM + QMI · Coord มิสธัญญ์ฐิตา</p><h3>A2 · Events done 13.39%</h3><p>Policy update event status · 44 หัวหน้าหน่วยงาน + Coord ประกันคุณภาพ</p><h3>A3 · Evidence 0/386</h3><p>Policy แนบไฟล์ · SAR risk</p><h3>A4 · Personnel confirmed 76% แต่ Structure confirmed แล้ว = OK</h3><p>Job Spec 84.8% · เร่ง 31 คนขาด</p>
+
+<h2>ส่วนที่ ๖ · Owner Chain ⓪→⑤</h2>
+<table>
+<tr><th class="c">Layer</th><th>งาน</th><th class="owner">ต้นทาง (มูลนิธิ)</th><th class="owner">ระดับโรง</th></tr>
+<tr><td class="c b">⓪</td><td>ยุทธ์มูลนิธิ</td><td>เจ้าคณะแขวง + Provincial Council</td><td>ผอ. ภราดาครรชิต สีสาวรรณ</td></tr>
+<tr><td class="c b">①</td><td>DP-ACN</td><td>Board มูลนิธิฯ + Commission Education</td><td>ผอ. + งานนโยบายและแผน</td></tr>
+<tr><td class="c b">②</td><td>คู่มือคุณภาพ 2.2</td><td>Commission ICT+HRM (ภราดาศุภนันท์) + QMI</td><td>งานประกันคุณภาพ + 44 หัวหน้าหน่วยงาน</td></tr>
+<tr><td class="c b">③</td><td>PDCA9 · 44 approved</td><td>PDCA9_INSPECTOR + Commission ICT+HRM</td><td>44 หัวหน้าหน่วยงาน</td></tr>
+<tr><td class="c b">④</td><td>SWIS</td><td>ICT sub 2.2 (ภราดามานิต) + SWIS Plus</td><td>งานสารสนเทศ + งานเทคโนโลยี</td></tr>
+<tr><td class="c b">⑤</td><td>SAR + Cost</td><td>Commission Education + Board</td><td>งานประกัน + งานบัญชี</td></tr>
+</table>
+
+<h3>📌 HRM 7 อนุ canonical (4 ส.ค. 69)</h3>
+<div class="box box-owner"><b>1</b> ศุภนันท์ · <b>2</b> สยาม แก้วประสิทธิ์ · <b>3</b> ศราวุธ ยุชมภู · <b>4</b> กุลชาติ จันทะโชโต · <b>5</b> นนทชา ศรีวิไล · <b>6</b> ทักษบุตร ไกรประสิทธิ์ · <b>7</b> นนทชา ศรีวิไล (=5) · SOURCE: Special Assignments 2026-2027 · canonical `_CANONICAL_TERMS.md`</div>
+
+<h2>ส่วนที่ ๗ · Action Plan Priority</h2>
+<table><tr><th class="c">P</th><th>Action</th><th class="c">Deadline</th></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Cascade คู่มือ 21 dept ไม่มี + main_topics 44</td><td class="c">30 พ.ย.</td></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Policy update event status · 13% → 40%</td><td class="c">31 ต.ค.</td></tr><tr><td class="c"><span class="chip chip-p2">P2</span></td><td>Job Spec 85% → 95%</td><td class="c">30 พ.ย.</td></tr></table>
+
+<h2>ส่วนที่ ๘ · คำแนะนำสรุป</h2>
+<div class="box box-plan">ACN <b>โครงสร้างดี</b> (100% pass · Structure confirmed · Personnel 76%) · ต้องเร่งเนื้อ (Manual + Evidence + Events update)</div>
+
+<h2>ส่วนที่ ๙ · [PRIMARY SCOPE] รายละเอียด 44 หน่วยงาน · 6 ฝ่าย</h2>
+<div class="box box-owner">Scope: เฟส ๑ = เชิงจำนวน · เฟส ๒ = per plan (deep audit)</div>
+
+<h3>ระดับความเร่งด่วน</h3>
+<div class="kpi">
+<div class="kpi-card warn"><div class="val">0</div><div class="lbl">P1a · ไม่มีแผน</div></div>
+<div class="kpi-card bad"><div class="val">21</div><div class="lbl">P1b · 2.2 ไม่ trace (Manual none)</div></div>
+<div class="kpi-card warn"><div class="val">23</div><div class="lbl">P2 · main_topics เติม</div></div>
+</div>
+
+<h3>รายละเอียดหน่วยงาน (44 dept · 6 ฝ่าย)</h3>
+<table><tr><th class="c" style="width:5%">#</th><th style="width:50%">หน่วยงาน · id_dept</th><th class="owner">หัวหน้าหน่วยงาน</th></tr><tr class="sidehdr"><td colspan="3">■ ฝ่ายธุรการ-การเงิน (6 dept)</td></tr><tr><td class="c">1</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2336" target="_blank">งานบริหารฝ่ายธุรการ-การเงิน · id_dept 2336</a></td><td class="b">ม.ชูเกียรติ ไชยทวีวิวัฒน์กุล</td></tr><tr><td class="c">2</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2337" target="_blank">งานธุรการและทะเบียน · id_dept 2337</a></td><td class="b">มิสมนทิรา อำภาวงษ์</td></tr><tr><td class="c">3</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2338" target="_blank">งานบัญชีและงบประมาณ · id_dept 2338</a></td><td class="b">มิสเตือนใจ แก่นพุดซา</td></tr><tr><td class="c">4</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2340" target="_blank">งานการเงิน · id_dept 2340</a></td><td class="b">มิสสุทิศา ภมรพล</td></tr><tr><td class="c">5</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2339" target="_blank">งานจัดซื้อ จัดจ้าง พัสดุครุภัณฑ์ · id_dept 2339</a></td><td class="b">มิสชัญญานุช บางปา</td></tr><tr><td class="c">6</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2376" target="_blank">งานส่งเสริมภาพลักษณ์โรงเรียน · id_dept 2376</a></td><td class="b">มิสมนทิรา อำภาวงษ์</td></tr><tr class="sidehdr"><td colspan="3">■ ฝ่ายบริหารทั่วไป (7 dept)</td></tr><tr><td class="c">7</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2341" target="_blank">งานบริหารฝ่ายบริหารทั่วไป · id_dept 2341</a></td><td class="b">มิสพนิดา แก่นสำโรง</td></tr><tr><td class="c">8</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2342" target="_blank">งานอาคารสถานที่และสาธารณูปโภค · id_dept 2342</a></td><td class="b">ม.ธรรมนูญ คำสัตย์</td></tr><tr><td class="c">9</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2347" target="_blank">งานเทคโนโลยีและโสตทัศนูปกรณ์ · id_dept 2347</a></td><td class="b">ม.กิตติศักดิ์ เดินสันเทียะ</td></tr><tr><td class="c">10</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2343" target="_blank">งานยานพาหนะ · id_dept 2343</a></td><td class="b">มิสธิดารัตน์ พึ่งทอง</td></tr><tr><td class="c">11</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2344" target="_blank">งานโภชนาการและร้านค้า · id_dept 2344</a></td><td class="b">มิสมะลิ วาปีโส</td></tr><tr><td class="c">12</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2345" target="_blank">งานอนามัย · id_dept 2345</a></td><td class="b">มิสณัฐปภัสร์ พรหมโสดา</td></tr><tr><td class="c">13</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2346" target="_blank">งานสิ่งแวดล้อมและอนุรักษ์พลังงาน · id_dept 2346</a></td><td class="b">ม.ธรรมนูญ คำสัตย์</td></tr><tr class="sidehdr"><td colspan="3">■ สำนักผู้อำนวยการ (5 dept)</td></tr><tr><td class="c">14</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2348" target="_blank">งานบริหารสำนักผู้อำนวยการ · id_dept 2348</a></td><td class="b">ม.สมบูรณ์ สุขชัย</td></tr><tr><td class="c">15</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2349" target="_blank">งานนโยบาย วางแผน และประกัน · id_dept 2349</a></td><td class="b">ม.สมบูรณ์ สุขชัย</td></tr><tr><td class="c">16</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2350" target="_blank">งานทรัพยากรมนุษย์ · id_dept 2350</a></td><td class="b">ม.สมบูรณ์ สุขชัย</td></tr><tr><td class="c">17</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2351" target="_blank">งานอภิบาลและศาสนสัมพันธ์ · id_dept 2351</a></td><td class="b">🔴 ต้องระบุ</td></tr><tr><td class="c">18</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2353" target="_blank">งานนักเรียนประจำ · id_dept 2353</a></td><td class="b">ภราดาพลากร เพียรพันธ์</td></tr><tr class="sidehdr"><td colspan="3">■ ฝ่ายวิชาการ (14 dept)</td></tr><tr><td class="c">19</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2355" target="_blank">งานบริหารฝ่ายวิชาการ · id_dept 2355</a></td><td class="b">มิสอุทัย เป้าประจำเมือง</td></tr><tr><td class="c">20</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2356" target="_blank">งานหลักสูตร · id_dept 2356</a></td><td class="b">มิสภาณิกา ศรีหาพล</td></tr><tr><td class="c">21</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2357" target="_blank">งานการเรียนการสอนและนิเทศ · id_dept 2357</a></td><td class="b">มิสอุทัย เป้าประจำเมือง</td></tr><tr><td class="c">22</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2358" target="_blank">งานวัดผลและวิจัย · id_dept 2358</a></td><td class="b">มิสปรียนันท์ เดซีเอล</td></tr><tr><td class="c">23</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2378" target="_blank">งานกลุ่มสาระคณิตศาสตร์ · id_dept 2378</a></td><td class="b">มิสทัศนีย์ พิมพ์ปรุ</td></tr><tr><td class="c">24</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2379" target="_blank">งานกลุ่มสาระวิทย์และเทคโนโลยี · id_dept 2379</a></td><td class="b">มิสรุสรา วิชาจารย์</td></tr><tr><td class="c">25</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2380" target="_blank">งานกลุ่มสาระภาษาต่างประเทศ · id_dept 2380</a></td><td class="b">มิสกัญญารัตน์ แก่นนอก</td></tr><tr><td class="c">26</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2381" target="_blank">งานกลุ่มสาระภาษาไทย · id_dept 2381</a></td><td class="b">มิสสุธิดา บาลไธสง</td></tr><tr><td class="c">27</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2382" target="_blank">งานกลุ่มสาระสังคมศึกษา · id_dept 2382</a></td><td class="b">มิสกุสุมา ศรีสูงเนิน</td></tr><tr><td class="c">28</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2383" target="_blank">งานกลุ่มสาระศิลปะ · id_dept 2383</a></td><td class="b">มิสวิภาพร จงคอยกลาง</td></tr><tr><td class="c">29</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2384" target="_blank">งานกลุ่มสาระสุขศึกษาและพลศึกษา · id_dept 2384</a></td><td class="b">มิสชฎาพร มาตรโคกสูง</td></tr><tr><td class="c">30</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2385" target="_blank">งานกลุ่มสาระการงานอาชีพ · id_dept 2385</a></td><td class="b">มิสทิวาพร พวนกิ่ง</td></tr><tr><td class="c">31</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2361" target="_blank">งานกิจกรรมพัฒนาศักยภาพผู้เรียน · id_dept 2361</a></td><td class="b">มิสปราณี แนบพุดซา</td></tr><tr><td class="c">32</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2362" target="_blank">งานหลักสูตรภาคภาษาอังกฤษ · id_dept 2362</a></td><td class="b">มิสณัฐกมล บุญศักดิ์</td></tr><tr class="sidehdr"><td colspan="3">■ ฝ่ายกิจการนักเรียน (7 dept)</td></tr><tr><td class="c">33</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2363" target="_blank">งานบริหารฝ่ายกิจการนักเรียน · id_dept 2363</a></td><td class="b">ม.ขาน ปุราเต</td></tr><tr><td class="c">34</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2365" target="_blank">งานระดับชั้น · id_dept 2365</a></td><td class="b">ม.ขาน ปุราเต</td></tr><tr><td class="c">35</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2366" target="_blank">งานสภานักเรียน · id_dept 2366</a></td><td class="b">ม.ขาน ปุราเต</td></tr><tr><td class="c">36</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2367" target="_blank">งานส่งเสริมอัตลักษณ์นักเรียน · id_dept 2367</a></td><td class="b">ม.ขาน ปุราเต</td></tr><tr><td class="c">37</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2368" target="_blank">งานกีฬาและนันทนาการ · id_dept 2368</a></td><td class="b">ม.สมพร กันศรีนวกุล</td></tr><tr><td class="c">38</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2369" target="_blank">งานดนตรีและการแสดง · id_dept 2369</a></td><td class="b">ม.ภุมรินทร์ รอสูงเนิน</td></tr><tr><td class="c">39</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2377" target="_blank">งานสวัสดิภาพและจราจร · id_dept 2377</a></td><td class="b">ม.ขาน ปุราเต</td></tr><tr class="sidehdr"><td colspan="3">■ ฝ่ายปฐมวัย (5 dept)</td></tr><tr><td class="c">40</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2371" target="_blank">งานบริหารฝ่ายปฐมวัย · id_dept 2371</a></td><td class="b">มิสยุภาพร เทพสุริยานนท์</td></tr><tr><td class="c">41</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2372" target="_blank">งานหลักสูตรและนิเทศปฐมวัย · id_dept 2372</a></td><td class="b">มิสมณีนุช แสพลกรัง</td></tr><tr><td class="c">42</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2373" target="_blank">งานจัดประสบการณ์การเรียนรู้ปฐมวัย · id_dept 2373</a></td><td class="b">มิสอภิญญา พุ่มพู</td></tr><tr><td class="c">43</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2374" target="_blank">งานวัดและประเมินผลปฐมวัย · id_dept 2374</a></td><td class="b">มิสสุลารัตน์ เอนกเวียง</td></tr><tr><td class="c">44</td><td><a href="https://swis.acn.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=2375" target="_blank">งานระดับชั้นปฐมวัย · id_dept 2375</a></td><td class="b">น.ส.กัญจน์ณิช วีระพันธ์กุล</td></tr></table>
+<h2>ส่วนที่ ๑๐ · บทวิเคราะห์ 3 มุม</h2>
+<h3>🟢 ข้อดี</h3><div class="box box-plan"><ol><li>44/44 มีแผน · approved · ครบ 9 · with_kpi 100%</li><li>Structure confirmed แล้ว (ดีในกลุ่ม)</li><li>Personnel confirm 76% (ดี)</li><li>Manual partial 23 (52.3% เริ่ม)</li></ol></div>
+<h3>🟡 ข้อเสีย</h3><div class="box box-warn"><ol><li>Manual none 21 (47.7%)</li><li>Events done 13.39%</li><li>Evidence 0/386</li><li>Job Spec 84.8%</li><li>sar_content=0</li></ol></div>
+<h3>🔴 ความเสี่ยง</h3><div class="box box-bad"><ol><li>เฟส ๒ อาจ fail 44/44 (2.2 ไม่ trace ต้นน้ำ)</li><li>SAR ปี 69 เสี่ยง</li><li>overdue 190 · pattern ไม่ update</li></ol></div>
+<h3>💡 สรุปเสนอ ผอ.</h3><div class="box box-owner"><ol><li>Cascade คู่มือ 21 dept</li><li>Policy update event status</li><li>Job Spec เร่ง 31 คน</li></ol></div>
+
+<h2>ส่วนที่ ๑๑ · Reality vs Plan · 4 Layer</h2>
+<table>
+<tr><th>Layer</th><th class="c">ค่าสำคัญ</th></tr>
+<tr><td>1 · Plan Structure</td><td class="c">plans 44 · approved 44 · ครบ 9 44 · with_kpi 44 · Evidence 0/386</td></tr>
+<tr><td>2 · KPI Linkage</td><td class="c">อ้างอิงมาตรฐาน DP-ACN · SP-FSG · สพฐ. · FSG · GGV · สมศ. รอบ 5</td></tr>
+<tr><td>3 · Reality Check</td><td class="c" style="color:var(--bad)">events 1038 · done 139 (13.39%) · overdue 190 (18.3%)</td></tr>
+<tr><td>4 · SAR + Gov</td><td class="c">SAR snapshot 2026-08-03 · sar_content=0 🔴 · Structure confirmed ✅ · Personnel 75.98%</td></tr>
+</table>
+
+<h2>ส่วนที่ ๑๒ · Per-plan Deep Audit</h2>
+<div class="box box-warn"><b>Pending:</b> Deep audit per plan · pilot P3 · จะเสริมเมื่อ CC verify pass · scope Finance ยกให้ SWIS_FINANCE_AUDIT</div>
+
+<footer>
+<div><b>ที่มา:</b> MCP 4 modules (plan_pdca9 · org_structure · quality_manual · calendar_status) · list_directors verify · date 2026-08-04</div>
+<div><b>Cross-room verified:</b> ผอ. ภราดาครรชิต สีสาวรรณ · canonical id_emp 20259001</div>
+<div><b>Compliance:</b> Rule #44 · #47 · CC ที่ central_feedback.md</div>
+</footer>
+</body></html>

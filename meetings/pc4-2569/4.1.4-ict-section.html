@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>วาระ 4.1.4 · ส่วนฝ่ายเทคโนโลยีสารสนเทศ (ICT) · PC 4/2569 — ฉบับส่งห้องกลาง compile</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d2640; --navy-light:#1a3a5c; --gold:#c9a74e; --bg:#fafaf7; --card:#fff; --border:#e2e8f0; --text:#2a2a2a; --muted:#6b7280; --ict:#1e40af; --hrm:#047857; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; padding:24px 16px; }
+  .container { max-width:1100px; margin:0 auto; }
+  .back-link { display:inline-flex; align-items:center; gap:6px; color:var(--gold); font-size:13px; text-decoration:none; margin-bottom:16px; }
+  .back-link:hover { text-decoration:underline; }
+
+  header { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); color:#fff; padding:32px; border-radius:12px; margin-bottom:24px; box-shadow:0 4px 16px rgba(10,31,68,0.18); }
+  header .eyebrow { font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  header h1 { font-size:24px; font-weight:700; margin-bottom:8px; }
+  header .meta { font-size:14px; opacity:0.92; line-height:1.8; }
+  header .meta strong { color:#fde68a; }
+
+  .exec-summary { background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%); border-left:4px solid #d97706; padding:20px 26px; border-radius:8px; margin-bottom:24px; color:#78350f; }
+  .exec-summary h2 { color:#78350f; font-size:16px; margin-bottom:10px; }
+  .exec-summary p { font-size:14px; line-height:1.8; }
+
+  section { background:var(--card); border:1px solid var(--border); border-radius:10px; margin-bottom:20px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.04); }
+  section .sec-head { padding:16px 24px; background:linear-gradient(180deg,#f1f5f9 0%,#e2e8f0 100%); border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
+  section .sec-head h2 { color:var(--navy); font-size:17px; font-weight:700; margin:0; }
+  section .sec-head .badge { font-size:11px; font-weight:700; letter-spacing:0.5px; padding:3px 9px; border-radius:4px; color:#fff; }
+  .badge.ict { background:var(--ict); }
+  .badge.hrm { background:var(--hrm); }
+  .badge.gold { background:var(--gold); }
+  section .sec-body { padding:22px 26px; }
+
+  h3.sub { color:var(--navy); font-size:15px; margin:14px 0 8px; padding-bottom:4px; border-bottom:1px solid var(--border); }
+  h3.sub:first-child { margin-top:0; }
+  p { margin:6px 0; font-size:14px; }
+  ul, ol { margin:6px 0 8px 24px; font-size:14px; }
+  li { margin:3px 0; }
+
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:13px; }
+  th, td { padding:8px 12px; border:1px solid var(--border); text-align:left; vertical-align:top; }
+  th { background:#f1f5f9; color:var(--navy); font-weight:600; }
+  td.num { text-align:center; font-variant-numeric:tabular-nums; }
+  td .status-done { color:#059669; font-weight:600; }
+  td .status-progress { color:#d97706; font-weight:600; }
+  td .status-plan { color:#6b7280; font-style:italic; }
+
+  a.link { color:var(--navy-light); text-decoration:none; border-bottom:1px dashed var(--navy-light); }
+  a.link:hover { color:var(--gold); border-bottom-color:var(--gold); }
+
+  .link-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:8px; margin-top:10px; }
+  .link-grid a { padding:10px 14px; background:#f8fafc; border:1px solid var(--border); border-radius:6px; text-decoration:none; color:var(--navy); font-size:13px; transition:all 0.2s; display:block; }
+  .link-grid a:hover { border-color:var(--gold); box-shadow:0 2px 6px rgba(0,0,0,0.04); }
+  .link-grid a strong { display:block; margin-bottom:2px; }
+  .link-grid a span { color:var(--muted); font-size:11.5px; }
+  .link-grid a.ict-item { border-left:3px solid var(--ict); }
+  .link-grid a.hrm-item { border-left:3px solid var(--hrm); }
+  .link-grid a.gold-item { border-left:3px solid var(--gold); }
+
+  .callout-box { background:#e0f2fe; border-left:4px solid var(--ict); padding:14px 18px; border-radius:6px; margin:14px 0; font-size:13.5px; color:#0c4a6e; }
+  .callout-box.hrm { background:#d1fae5; border-left-color:var(--hrm); color:#064e3b; }
+  .callout-box.warn { background:#fef3c7; border-left-color:#d97706; color:#78350f; }
+
+  footer { text-align:center; color:#9ca3af; font-size:12px; padding:24px 0 8px; line-height:1.8; }
+  footer a { color:var(--gold); text-decoration:none; }
+</style>
+</head><body>
+<div style="max-width:1180px;margin:0 auto;padding:28px 30px 60px;font-family:'Sarabun',sans-serif;color:#1f2937;line-height:1.65">
+<div style="border-bottom:3px double #1a2f5a;padding-bottom:12px;margin-bottom:18px;text-align:center">
+<div style="color:#b8860b;font-weight:600;font-size:.82rem">มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · การประชุมคณะกรรมการบริหารมูลนิธิฯ ครั้งที่ 4/2569</div>
+<h1 style="color:#1a2f5a;font-size:1.3rem;margin:8px 0 5px">วาระ 4.1.4 · รายงานฝ่ายเทคโนโลยีสารสนเทศและงานทรัพยากรมนุษย์</h1>
+<div style="color:#6b7280;font-size:.86rem"><b>เฉพาะส่วนฝ่ายเทคโนโลยีสารสนเทศ (ICT)</b> · ต่อเนื่องจากรายงานครั้งที่ 3/2569 เมื่อ 7 กรกฎาคม 2569 · เพื่อทราบ</div>
+</div>
+<div style="border:2px solid #1a2f5a;border-radius:10px;padding:14px 18px;margin:16px 0;background:#f6f8fb">
+<b>ก่อนอ่านรายงาน — ข้อมูลในรายงานนี้มาจากไหน และครบหรือไม่</b><br>
+ตัวเลขทุกตัวในรายงานนี้<b>ดึงสดจากระบบ SWIS ของทั้ง 15 โรงเรียน เมื่อวันที่ 25 สิงหาคม 2569 เวลา 21.17 น.</b> มิใช่ตัวเลขจากความจำหรือจากรายงานเดิม<br>
+<b>ดึงได้ครบทุกโรงเรียน 15 จาก 15 โรง</b> ในสองเรื่องที่ใช้ในรายงานนี้ คือคู่มือคุณภาพหน่วยงาน และแผนงานตามระบบ PDCA 9 ขั้น<br>
+<b>เรื่องที่ยังดึงไม่ได้และจึงไม่นำมาสรุปในรายงานนี้:</b> ระบบบัญชี-การเงินของโรงเรียนอัสสัมชัญและโรงเรียนเซนต์คาเบรียล ซึ่งระบบตอบกลับว่าหาฐานข้อมูลไม่พบ — เป็นเรื่องการติดตั้งระบบที่ส่วนกลาง มิใช่การปฏิบัติงานของโรงเรียน<br>
+<b>ตรวจซ้ำได้ที่:</b> ระบบ SWIS ของแต่ละโรงเรียน หน้ารายงานสรุปการลงคู่มือคุณภาพ และหน้าระบบแผนงาน · ถ้าตัวเลขบนหน้าจอไม่ตรงกับรายงานนี้ <b>ขอให้ถือตัวเลขบนหน้าจอของโรงเรียนเป็นหลัก</b> และแจ้งกลับเพื่อแก้ไข</div>
+<h2 style="color:#1a2f5a;border-left:6px solid #b8860b;padding-left:12px;margin-top:26px">1 · โครงสร้างฝ่ายเทคโนโลยีสารสนเทศ (คงเดิมตามที่รายงานไว้เมื่อ 7 กรกฎาคม)</h2>
+<p>ฝ่ายเทคโนโลยีสารสนเทศแบ่งงานเป็น <b>5 กลุ่มงานหลัก</b> และแตกเป็น <b>8 กลุ่มย่อย</b> เพื่อให้ระบุเจ้าภาพงานได้ถึงระดับปฏิบัติ ดังนี้</p>
+<table style="width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 16px"><tr style="background:#1a2f5a;color:#fff"><th style="padding:8px;text-align:left;width:12%">กลุ่ม</th><th style="padding:8px;text-align:left;width:38%">ชื่อกลุ่มงาน</th><th style="padding:8px;text-align:left;width:50%">กลุ่มย่อย</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px;text-align:center;font-weight:600">1</td><td style="border:1px solid #dde2ea;padding:7px">งานบริหารฝ่ายเทคโนโลยีสารสนเทศ</td><td style="border:1px solid #dde2ea;padding:7px">กำกับภาพรวมทั้งฝ่าย (ไม่แตกกลุ่มย่อย)</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px;text-align:center;font-weight:600">2</td><td style="border:1px solid #dde2ea;padding:7px">ระบบสารสนเทศและซอฟต์แวร์</td><td style="border:1px solid #dde2ea;padding:7px"><b>2.1</b> ระบบสารสนเทศกลางของมูลนิธิฯ · <b>2.2.1</b> ซอฟต์แวร์เพื่อการบริหารและบริการ · <b>2.2.2</b> ซอฟต์แวร์เพื่อการเรียนการสอน</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px;text-align:center;font-weight:600">3</td><td style="border:1px solid #dde2ea;padding:7px">สื่อ</td><td style="border:1px solid #dde2ea;padding:7px"><b>3.1</b> สื่อดิจิทัล · <b>3.2</b> สื่อดั้งเดิม (สิ่งพิมพ์ ป้าย โสตทัศนูปกรณ์)</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px;text-align:center;font-weight:600">4</td><td style="border:1px solid #dde2ea;padding:7px">เครือข่ายและอุปกรณ์</td><td style="border:1px solid #dde2ea;padding:7px"><b>4.1</b> เพื่อการบริหารและบริการ · <b>4.2</b> เพื่อการเรียนการสอน</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px;text-align:center;font-weight:600">5</td><td style="border:1px solid #dde2ea;padding:7px">บุคลากรและผู้ใช้งาน</td><td style="border:1px solid #dde2ea;padding:7px"><b>5.1</b> บุคลากรทีมเทคโนโลยีสารสนเทศ · <b>5.2</b> ผู้ใช้งานทั่วไปในโรงเรียน</td></tr>
+</table>
+<p><span style="color:#888;font-style:italic">โครงสร้างนี้ไม่มีการเปลี่ยนแปลงตั้งแต่รายงานครั้งที่แล้ว · ประโยชน์ที่เห็นชัดในรอบนี้คือ เมื่อออกรายงานตรวจติดตามรายโรงเรียน สามารถระบุได้ว่าแต่ละเรื่องเป็นของกลุ่มย่อยใด และมีหน่วยงานใดของโรงเรียนเป็นเจ้าภาพ</span></p>
+<h2 style="color:#1a2f5a;border-left:6px solid #b8860b;padding-left:12px;margin-top:30px">2 · ความคืบหน้าตั้งแต่การประชุมครั้งที่แล้ว (7 กรกฎาคม → 25 สิงหาคม 2569)</h2>
+<h3 style="color:#1a2f5a;margin-top:20px">2.1 · เปิดโครงการนิเทศติดตามการใช้ระบบ 15 โรงเรียน</h3>
+<p>ฝ่ายฯ เริ่มลงพื้นที่นิเทศติดตามการใช้ระบบสารสนเทศรายโรงเรียนตามปฏิทินจริง โรงเรียนละ 2 วัน ดังนี้</p>
+<table style="width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 14px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:26%">โรงเรียน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:20%">กำหนดการ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:16%">สถานะ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:38%">หมายเหตุ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">โรงเรียนอัสสัมชัญหลักสูตรภาษาอังกฤษ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">10–11 สิงหาคม 2569</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style='color:#1e7d46'>ดำเนินการแล้ว</b></td><td style="border:1px solid #dde2ea;padding:7px">โรงเรียนแรกของโครงการ</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">โรงเรียนอัสสัมชัญ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">20–21 สิงหาคม 2569</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style='color:#1e7d46'>ดำเนินการแล้ว</b></td><td style="border:1px solid #dde2ea;padding:7px">จัดทำรายงานฉบับข้อมูลสดก่อนเข้านิเทศ</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>โรงเรียนเซนต์คาเบรียล</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>9–10 กันยายน 2569</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>ลำดับถัดไป</b></td><td style="border:1px solid #dde2ea;padding:7px">รายงานฉบับข้อมูลสดเสร็จแล้ว รอการตรวจก่อนส่ง</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">โรงเรียนอัสสัมชัญเทคนิคนครพนม</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">22–23 กันยายน 2569</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">ตามแผน</td><td style="border:1px solid #dde2ea;padding:7px">—</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">อีก 11 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">ตุลาคม 2569 – กุมภาพันธ์ 2570</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">ตามแผน</td><td style="border:1px solid #dde2ea;padding:7px">ทยอยตามปฏิทินที่กำหนดไว้</td></tr>
+</table>
+<div style="border-left:5px solid #1e7d46;background:#eaf7f0;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>สิ่งที่ได้จากการนิเทศสองโรงเรียนแรก</b> — เมื่อฝ่ายฯ ส่งรายงานที่ดึงจากระบบจริงให้หน่วยงานตรวจทานล่วงหน้า หน่วยงานจะเร่งบันทึกข้อมูลที่ค้างเข้าระบบก่อนวันนิเทศ · <b>กรณีโรงเรียนเซนต์คาเบรียล คู่มือคุณภาพหน่วยงานเพิ่มจาก 24 หน่วยงาน เป็น 71 หน่วยงาน ภายใน 15 วัน</b> <b style="color:#1e7d46">[ตรวจกับระบบแล้ว 25 ส.ค. 2569]</b></div>
+<h3 style="color:#1a2f5a;margin-top:20px">2.2 · รายงานตรวจติดตาม 7 กรอบงาน ขึ้นเว็บภายในพร้อมรหัสผ่าน</h3>
+<p>ฝ่ายฯ จัดทำรายงานตรวจติดตามรายโรงเรียนใน 7 กรอบงาน นำขึ้นเว็บภายในของมูลนิธิฯ พร้อมรหัสผ่านรายโรงเรียน และส่งถึงหัวหน้างานที่รับผิดชอบโดยตรงผ่านระบบสารบรรณอิเล็กทรอนิกส์ เพื่อให้ตรวจทานก่อนนำเสนอผู้อำนวยการ</p>
+<table style="width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 14px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:32%">กรอบงาน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:22%">ความครอบคลุม</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:46%">สถานะ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>เทคโนโลยีสารสนเทศ (ฝ่ายฯ นี้)</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">15 จาก 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px"><b style='color:#1e7d46'>ครบทุกโรงเรียน</b> · ส่งถึงผู้รับแล้ว และส่งฉบับปรับปรุงตามข้อทักท้วงแล้ว <b style="color:#1e7d46">[ตรวจกับระบบแล้ว 25 ส.ค. 2569]</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ระบบ SWIS</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">15 จาก 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px">ครบทุกโรงเรียน <b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ทรัพยากรมนุษย์</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">15 จาก 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px">ครบทุกโรงเรียน <b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>คู่มือคุณภาพหน่วยงาน</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">15 จาก 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px">ครบทุกโรงเรียน <b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>แผนงานตามระบบ PDCA 9 ขั้น</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">15 จาก 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px">ครบทุกโรงเรียน <b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>การเงิน</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">—</td><td style="border:1px solid #dde2ea;padding:7px"><b style='color:#b91c1c'>ยังไม่เผยแพร่</b> — รอกำหนดสิทธิ์การเข้าถึงรายบุคคล เพราะเป็นข้อมูลที่จำกัดผู้อ่าน</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ธรรมาภิบาล</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">—</td><td style="border:1px solid #dde2ea;padding:7px"><b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b> ฝ่ายฯ ยังไม่ได้ตรวจสถานะของกรอบนี้</td></tr>
+</table>
+<p><span style="color:#888;font-style:italic">ข้อสังเกตที่ขอเรียนตรง ๆ — ฝ่ายฯ ยืนยันสถานะได้เองเฉพาะกรอบเทคโนโลยีสารสนเทศซึ่งเป็นงานของฝ่ายฯ เอง ส่วนอีก 4 กรอบที่ระบุว่าครบเป็นข้อมูลจากห้องงานอื่นที่ยังไม่ได้ตรวจซ้ำในรอบนี้ จึงติดป้ายกำกับไว้ตามจริง</span></p>
+<h3 style="color:#1a2f5a;margin-top:20px">2.3 · ยกระดับมาตรฐานคุณภาพรายงาน หลังได้รับข้อทักท้วงจากโรงเรียน</h3>
+<div style="border-left:5px solid #9a6700;background:#fff8e1;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>ที่มา</b> — รายงานชุดแรกที่ส่งเมื่อ 7 สิงหาคม 2569 มีหลายจุดรายงานว่า &ldquo;ไม่มีข้อมูล&rdquo; ทั้งที่หน่วยงานบันทึกงานไว้ในระบบแล้ว หลายโรงเรียนทักท้วง และเมื่อตรวจกับระบบจริงพบว่า<b>คำทักท้วงถูกต้อง</b> · ประธานฝ่ายฯ ออกหนังสือขออภัยและส่งรายงานฉบับปรับปรุงให้ทุกโรงเรียนแล้ว</div>
+<p><b>สาเหตุที่แท้จริง</b> — กระบวนการประมวลผลอ่านข้อมูลเพียงช่องเดียว คือช่อง &ldquo;เขียนครบทั้ง 6 ส่วน&rdquo; เมื่อพบว่าเป็นศูนย์จึงสรุปว่าไม่มีคู่มือเลย ทั้งที่ช่อง &ldquo;เขียนไว้บางส่วน&rdquo; มีจำนวนสูงมาก <b>งานที่หน่วยงานทำไปแล้วจึงถูกรายงานเป็นศูนย์</b></p>
+<p><b>มาตรฐานใหม่ที่ใช้กับรายงานทุกฉบับตั้งแต่บัดนี้</b></p>
+<table style="width:100%;border-collapse:collapse;font-size:.86rem;margin:10px 0 14px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:30%">มาตรฐาน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:70%">สาระสำคัญ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ตรวจความครบถ้วนของข้อมูลก่อนวิเคราะห์</b></td><td style="border:1px solid #dde2ea;padding:7px">ทุกรายงานขึ้นต้นด้วยตารางบอกว่า <b>ดึงข้อมูลเรื่องใดได้ เรื่องใดดึงไม่ได้</b> และแยก &ldquo;ดึงไม่ได้&rdquo; ออกจาก &ldquo;ค่าเป็นศูนย์จริง&rdquo; ให้ชัด · <b>เรื่องใดดึงไม่ได้ ห้ามนำมาวิเคราะห์</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>นับสถานะสามระดับเสมอ</b></td><td style="border:1px solid #dde2ea;padding:7px">ครบทุกส่วน / เขียนไว้บางส่วน (ระบุว่าเท่าไรจากเท่าไร) / ยังไม่พบในระบบ ณ วันที่ตรวจ — <b>ห้ามยุบเหลือมีหรือไม่มี</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ติดป้ายกำกับทุกตัวเลข</b></td><td style="border:1px solid #dde2ea;padding:7px">ตัวเลขใดตรวจกับระบบแล้ว ตัวเลขใดยังไม่ได้ตรวจ ต้องเขียนบอกตรง ๆ ทุกจุด</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>แยกความเห็นออกจากข้อเท็จจริง</b></td><td style="border:1px solid #dde2ea;padding:7px">ข้อความที่เป็นการตีความหรือความเห็น พิมพ์เป็น<span style='color:#888;font-style:italic'>สีเทาตัวเอียงแบบนี้</span> ส่วนข้อเท็จจริงจากระบบเป็นตัวอักษรสีดำปกติ</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ชี้จุดให้ผู้อ่านตรวจซ้ำได้เอง</b></td><td style="border:1px solid #dde2ea;padding:7px">ระบุว่าแต่ละตัวเลขเปิดดูได้ที่เมนูใดในระบบของโรงเรียน และอยู่ที่ตารางใดในรายงาน</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ใช้ภาษาที่ผู้อำนวยการอ่านเข้าใจ</b></td><td style="border:1px solid #dde2ea;padding:7px">กระชับได้ แต่ห้ามย่อจนต้องถามว่าแปลว่าอะไร · ห้ามยกชื่อโมดูลหรือรหัสในระบบมาใช้ดิบ ๆ ในเนื้อวิเคราะห์</td></tr>
+</table>
+<div style="border-left:5px solid #b91c1c;background:#fef2f2;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>บทเรียนที่ขอบันทึกไว้</b> — ความเสียหายครั้งนี้มิได้เกิดจากข้อมูลของโรงเรียน แต่เกิดจาก<b>วิธีอ่านข้อมูลของฝ่ายส่วนกลางเอง</b> · ฝ่ายฯ จึงเปลี่ยนหลักการเป็น <b>ตรวจความครบถ้วนให้ผ่านก่อน จึงวิเคราะห์</b> และ<b>เชิญผู้ปฏิบัติช่วยกันจับผิดรายงาน</b> <span style="color:#888;font-style:italic">คำทักท้วงของผู้ปฏิบัติคือกลไกควบคุมคุณภาพที่ได้ผลที่สุดเท่าที่ฝ่ายฯ มีอยู่ขณะนี้</span></div>
+<h3 style="color:#1a2f5a;margin-top:20px">2.4 · สถานะแผนงานตามระบบ PDCA 9 ขั้น ของฝ่ายฯ</h3>
+<p>ฝ่ายฯ ยกร่างแผนงานตามระบบ PDCA 9 ขั้น ครบทั้ง 9 กลุ่มงานย่อยเมื่อ 1 กรกฎาคม 2569 และปรับตามมติที่ประชุมคณะกรรมการ ICT และ HRM ครั้งที่ 1/2569 เมื่อ 2 กรกฎาคม 2569 <b style="color:#b91c1c">[ยังไม่ได้ตรวจสอบ]</b></p>
+<p><span style="color:#888;font-style:italic">ฝ่ายฯ ขอเรียนตรง ๆ ว่ายังไม่ได้ตรวจสถานะปัจจุบันของแผนทั้ง 9 ฉบับกับระบบในรอบการรายงานครั้งนี้ จึงยังไม่ขอสรุปความคืบหน้าเป็นตัวเลข และจะรายงานในการประชุมครั้งถัดไป</span></p>
+<h2 style="color:#1a2f5a;border-left:6px solid #b8860b;padding-left:12px;margin-top:30px">3 · ภาพรวมการใช้ระบบของ 15 โรงเรียน (เพื่อทราบ · เสนอเป็นภาพรวม ไม่ระบุรายโรงเรียนในเวทีนี้)</h2>
+<p>ตัวเลขทั้งหมดในหัวข้อนี้<b>ดึงสดจากระบบของทั้ง 15 โรงเรียนพร้อมกันเมื่อ 25 สิงหาคม 2569 เวลา 21.17 น.</b> <b style="color:#1e7d46">[ตรวจกับระบบแล้ว 25 ส.ค. 2569 เวลา 21.17 น.]</b></p>
+<h3 style="color:#1a2f5a;margin-top:18px">3.1 · คู่มือคุณภาพหน่วยงาน</h3>
+<table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0 12px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:50%">สถานะ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">จำนวนหน่วยงาน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">คิดเป็นร้อยละ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">หน่วยงานทั้งหมดของ 15 โรงเรียน</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>809</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">100</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">เขียนครบทั้ง 6 ส่วน</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#b91c1c">0</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#b91c1c">0.0</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>เขียนไว้แล้วบางส่วน</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#1e7d46">773</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#1e7d46">95.6</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">ยังไม่พบการเขียนในระบบ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">36</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">4.4</td></tr>
+</table>
+<div style="border-left:5px solid #9a6700;background:#fff8e1;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>ข้อเท็จจริงที่ขอให้ที่ประชุมทราบ</b> — <b>ยังไม่มีหน่วยงานใดในทั้ง 15 โรงเรียนที่เขียนคู่มือคุณภาพครบทั้ง 6 ส่วน</b> แม้แต่หน่วยงานเดียว ขณะที่หน่วยงานถึงร้อยละ 95.6 เขียนไว้แล้วบางส่วน<br><span style="color:#888;font-style:italic">อ่านได้สองทาง — ทางหนึ่งคือหน่วยงานลงมือทำแล้วเกือบทั้งหมด เหลือเพียงการเก็บให้ครบ อีกทางหนึ่งคือเกณฑ์ 6 ส่วนอาจกำหนดไว้สูงเกินกว่าที่หน่วยงานจะทำครบได้ในปีเดียว ฝ่ายฯ ยังไม่สรุปว่าเป็นทางใด และจะนำเข้าหารือในคณะกรรมการฝ่ายฯ ก่อน</span></div>
+<h3 style="color:#1a2f5a;margin-top:18px">3.2 · แผนงานตามระบบ PDCA 9 ขั้น</h3>
+<table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0 12px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:50%">รายการ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">จำนวน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">คิดเป็นร้อยละ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">หน่วยงานที่มีแผนงานแล้ว</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>758</b> จาก 809</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">93.7</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">หน่วยงานที่ยังไม่มีแผนงาน</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">51</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">6.3</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">แผนงานทั้งหมด</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>778</b> ฉบับ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">100</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ทำครบ 9 ขั้นตอนแล้ว</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style='color:#1e7d46'>771</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style='color:#1e7d46'>99.1</b></td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ผ่านการอนุมัติแล้ว</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>680</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">87.4</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">ยังไม่ผ่านการอนุมัติ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">98</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">12.6</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">โครงการทั้งหมด</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">217 โครงการ · อนุมัติแล้ว 177</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">81.6</td></tr>
+</table>
+<div style="border-left:5px solid #1e7d46;background:#eaf7f0;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>เรื่องที่ทำได้ดี</b> — แผนงานที่ทำครบ 9 ขั้นตอนสูงถึงร้อยละ 99.1 ของแผนทั้งหมด แสดงว่าโครงสร้างของระบบแผนงานถูกใช้จริงและใช้ได้ทั่วถึงทั้งเครือ</div>
+<h3 style="color:#1a2f5a;margin-top:18px">3.3 · การประเมินผลตามแผนงาน — จุดที่ขอให้ที่ประชุมทราบเป็นพิเศษ</h3>
+<table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0 12px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:50%">รายการ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">จำนวน</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:25%">คิดเป็นร้อยละ</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">รายการประเมินผลในแผนงานทั้งหมด</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>10,582</b> รายการ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">100</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px">แผนที่มีการประเมินแล้ว</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b>755</b> แผน</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center">—</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>รายการประเมินที่แนบไฟล์หลักฐาน</b></td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#b91c1c">21</b> รายการ</td><td style="border:1px solid #dde2ea;padding:7px;text-align:center"><b style="color:#b91c1c">0.2</b></td></tr>
+</table>
+<div style="border-left:5px solid #b91c1c;background:#fef2f2;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>ช่องว่างที่ใหญ่ที่สุดของทั้งเครือในรอบนี้</b> — มีการประเมินผลในแผนงานถึง 10,582 รายการ แต่<b>แนบไฟล์หลักฐานประกอบเพียง 21 รายการ คิดเป็นร้อยละ 0.2</b><br><span style="color:#888;font-style:italic">เมื่อไม่มีไฟล์หลักฐานแนบ การประเมินจะพิสูจน์ย้อนกลับไม่ได้ว่าอ้างอิงจากอะไร ห่วงโซ่จากแผนงานไปถึงหลักฐานจึงขาดข้อต่อสุดท้าย · จุดนี้เป็นเรื่องที่แก้ได้ด้วยการกำหนดแนวปฏิบัติร่วมกัน ไม่ต้องลงทุนเพิ่ม</span></div>
+<h3 style="color:#1a2f5a;margin-top:18px">3.4 · เรื่องที่ยังดึงข้อมูลไม่ได้ จึงไม่นำมาสรุป</h3>
+<div style="border-left:5px solid #b91c1c;background:#fef2f2;padding:11px 15px;margin:12px 0;font-size:.9rem"><b>ระบบบัญชีและการเงินของโรงเรียนอัสสัมชัญ และโรงเรียนเซนต์คาเบรียล</b> — ระบบตอบกลับว่าหาฐานข้อมูลไม่พบ เป็นเรื่องการตั้งค่าที่ส่วนกลาง <b>มิใช่การปฏิบัติงานของโรงเรียน</b> · รายงานตรวจติดตามของสองโรงเรียนนี้จึง<b>ระงับการวิเคราะห์เรื่องนี้ไว้</b> และฝ่ายฯ ได้แจ้งทีมผู้ดูแลระบบให้ตรวจสอบแล้ว <b style="color:#1e7d46">[ตรวจกับระบบแล้ว 25 ส.ค. 2569 เวลา 21.17 น.]</b></div>
+<h2 style="color:#1a2f5a;border-left:6px solid #b8860b;padding-left:12px;margin-top:30px">4 · ทิศทางต่อไป</h2>
+<table style="width:100%;border-collapse:collapse;font-size:.88rem;margin:10px 0 14px">
+<tr><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:34%">เรื่อง</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:30%">สิ่งที่จะทำ</th><th style="background:#1a2f5a;color:#fff;padding:8px;text-align:left;width:36%">กรอบเวลา</th></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>นิเทศติดตามต่อเนื่อง</b></td><td style="border:1px solid #dde2ea;padding:7px">เข้าโรงเรียนตามปฏิทินที่วางไว้ พร้อมส่งรายงานฉบับข้อมูลสดให้หน่วยงานตรวจทานล่วงหน้าทุกครั้ง</td><td style="border:1px solid #dde2ea;padding:7px">โรงเรียนเซนต์คาเบรียล 9–10 กันยายน · ต่อเนื่องถึงกุมภาพันธ์ 2570</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ปิดช่องว่างเรื่องไฟล์หลักฐานประกอบการประเมิน</b></td><td style="border:1px solid #dde2ea;padding:7px">หารือในคณะกรรมการฝ่ายฯ เพื่อกำหนดแนวปฏิบัติร่วมกันว่าการประเมินแต่ละรายการต้องแนบหลักฐานอย่างไร</td><td style="border:1px solid #dde2ea;padding:7px">เสนอเข้าคณะกรรมการฝ่ายฯ ในการประชุมครั้งถัดไป</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ทบทวนเกณฑ์คู่มือคุณภาพ 6 ส่วน</b></td><td style="border:1px solid #dde2ea;padding:7px">นำข้อเท็จจริงที่ว่ายังไม่มีหน่วยงานใดทำครบ 6 ส่วนเลย เข้าหารือว่าเกิดจากการปฏิบัติหรือจากตัวเกณฑ์</td><td style="border:1px solid #dde2ea;padding:7px">เสนอเข้าคณะกรรมการฝ่ายฯ ในการประชุมครั้งถัดไป</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>แก้การตั้งค่าฐานข้อมูลการเงิน</b></td><td style="border:1px solid #dde2ea;padding:7px">ประสานทีมผู้ดูแลระบบให้ตั้งค่าฐานข้อมูลการเงินของโรงเรียนที่ยังดึงไม่ได้</td><td style="border:1px solid #dde2ea;padding:7px">ไม่ผูกกับกำหนดการนิเทศ · รายงานได้ระงับการวิเคราะห์ไว้แล้ว</td></tr>
+<tr><td style="border:1px solid #dde2ea;padding:7px"><b>ใช้มาตรฐานตรวจความครบถ้วนข้อมูลกับทุกกรอบงาน</b></td><td style="border:1px solid #dde2ea;padding:7px">ขยายมาตรฐานที่ใช้ในกรอบเทคโนโลยีสารสนเทศ ไปยังรายงานของกรอบงานอื่นในฝ่ายฯ</td><td style="border:1px solid #dde2ea;padding:7px">ทยอยใช้ตั้งแต่รอบการนิเทศโรงเรียนเซนต์คาเบรียลเป็นต้นไป</td></tr>
+</table>
+<div style="border:2px solid #1a2f5a;border-radius:10px;padding:14px 18px;margin:20px 0;background:#f6f8fb"><b>ขอให้ที่ประชุมรับทราบ</b><br>1. โครงการนิเทศติดตาม 15 โรงเรียน ดำเนินการแล้ว 2 โรงเรียน ลำดับถัดไปคือโรงเรียนเซนต์คาเบรียล วันที่ 9–10 กันยายน 2569<br>2. รายงานตรวจติดตามกรอบเทคโนโลยีสารสนเทศ ส่งถึงหัวหน้างานครบทั้ง 15 โรงเรียน และได้ส่งฉบับปรับปรุงตามข้อทักท้วงแล้ว<br>3. ฝ่ายฯ ยอมรับว่ารายงานชุดแรกมีความคลาดเคลื่อนจากวิธีอ่านข้อมูลของส่วนกลางเอง และได้วางมาตรฐานใหม่ 6 ข้อเพื่อไม่ให้เกิดซ้ำ<br>4. ช่องว่างที่ใหญ่ที่สุดของทั้งเครือในรอบนี้คือ <b>การประเมินผลตามแผนงาน 10,582 รายการ แนบไฟล์หลักฐานเพียง 21 รายการ</b><br>5. <b>ยังไม่มีหน่วยงานใดในทั้ง 15 โรงเรียนเขียนคู่มือคุณภาพครบทั้ง 6 ส่วน</b> ฝ่ายฯ จะนำเข้าหารือว่าเกิดจากการปฏิบัติหรือจากตัวเกณฑ์</div>
+<div style="border-top:1px solid #dde2ea;margin-top:24px;padding-top:12px;font-size:.82rem;color:#6b7280"><b>ผู้จัดทำ:</b> ฝ่ายเทคโนโลยีสารสนเทศ · Commission on ICT and HRM มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย<br><b>ข้อมูล ณ:</b> 25 สิงหาคม 2569 เวลา 21.17 น. (ดึงสดจากระบบของทั้ง 15 โรงเรียนพร้อมกัน)<br><b>ฉบับก่อนหน้า:</b> รายงานวาระ 4.1.4 การประชุมครั้งที่ 3/2569 เมื่อ 7 กรกฎาคม 2569<br><b>หมายเหตุ:</b> เอกสารนี้เป็น<b>เฉพาะส่วนฝ่ายเทคโนโลยีสารสนเทศ</b> ส่งให้ห้องกลางรวมกับส่วนงานทรัพยากรมนุษย์ก่อนเสนอที่ประชุม</div>
+</div></body></html>

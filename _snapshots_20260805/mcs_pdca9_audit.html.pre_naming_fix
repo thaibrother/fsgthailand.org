@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<title>รายงาน Audit แผนงาน PDCA9 · โรงเรียนมงฟอร์ตวิทยาลัย · ปีการศึกษา 2569</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+:root{--navy:#1a3557;--ok:#2e7d32;--warn:#e08e0b;--bad:#c0392b;--owner:#7b1fa2}
+*{box-sizing:border-box}body{font-family:'Sarabun',sans-serif;color:#1a1a1a;line-height:1.55;max-width:1200px;margin:0 auto;padding:26px;background:#fafafa}
+h1{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}
+h2{font-size:1.2rem;border-bottom:2px solid var(--navy);padding-bottom:5px;margin:28px 0 12px;color:var(--navy)}
+h3{font-size:1rem;margin:18px 0 8px;color:#333}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88rem;background:#fff}
+th,td{border:1px solid #d0d0d0;padding:7px 9px;vertical-align:top;text-align:left}
+th{background:var(--navy);color:#fff}
+th.owner{background:var(--owner)}
+.c{text-align:center}.b{font-weight:600}
+.chip{color:#fff;padding:2px 9px;border-radius:10px;font-size:.78rem;font-weight:600;display:inline-block}
+.chip-p1{background:var(--bad)}.chip-p2{background:var(--warn)}.chip-p3{background:var(--ok)}
+.box{border:1px solid #ddd;border-left:5px solid var(--navy);background:#f5f8fc;border-radius:5px;padding:12px 16px;margin:10px 0}
+.box-bad{border-left-color:var(--bad);background:#fdf6f5}
+.box-warn{border-left-color:var(--warn);background:#fff8e6}
+.box-owner{border-left-color:var(--owner);background:#f9f0ff}
+.box-plan{border-left-color:var(--ok);background:#f0f9f0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.kpi-card{flex:1;min-width:150px;border:1px solid #ddd;border-radius:6px;padding:10px 14px;text-align:center;background:#fff}
+.kpi-card .val{font-size:1.7rem;font-weight:700}
+.kpi-card .lbl{font-size:.78rem;color:#666}
+.kpi-card.ok{border-color:var(--ok)}.kpi-card.ok .val{color:var(--ok)}
+.kpi-card.warn{border-color:var(--warn)}.kpi-card.warn .val{color:var(--warn)}
+.kpi-card.bad{border-color:var(--bad)}.kpi-card.bad .val{color:var(--bad)}
+.note{color:#666;font-size:.85rem}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0}
+.node{background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 12px;font-size:.85rem;min-width:120px}
+.node.bad{border-color:var(--bad);background:#fdf6f5}.node.warn{border-color:var(--warn);background:#fff8e6}.node.ok{border-color:var(--ok);background:#f0f9f0}
+.arrow{color:#888;font-weight:700}
+.badge{padding:3px 10px;border-radius:12px;font-size:.78rem;font-weight:600}
+.badge-pass{background:#e8f5e9;color:var(--ok)}.badge-fail{background:#ffebee;color:var(--bad)}
+.sidehdr td{background:#eaf0f6;font-weight:700;padding:8px 12px !important}
+a{color:var(--navy)}a:hover{text-decoration:underline}
+footer{border-top:2px solid #ccc;margin-top:26px;padding-top:12px;font-size:.82rem;color:#555}
+</style></head><body>
+
+<header>
+<h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนมงฟอร์ตวิทยาลัย (มงฟอร์ต · MC) · ปีการศึกษา 2569</span></h1>
+<p class="note">ตรวจโดยห้อง PDCA9_INSPECTOR (Specialty Hub #1) · เกณฑ์ <code>pdca9_foundation_guide_v2.md</code> · pattern v1 (approved #39)</p>
+<p><span class="badge badge-pass">✅ Structural: 34/37 dept มีแผน · 34/34 ครบ 9 ขั้น · 3 approved 34</span>
+<span class="badge badge-fail">🔴 Substance: 25/37 ไม่มีคู่มือ · overdue 641 · SAR content=0 · KPI สูตรบั๊ก 101.61%</span></p>
+</header>
+
+<h2>บทสรุปผู้บริหาร (Executive Summary)</h2>
+<div class="kpi">
+<div class="kpi-card ok"><a href="https://swis.mcs.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/37</div><div class="lbl">หน่วยงานมีแผน</div></a></div>
+<div class="kpi-card ok"><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/35</div><div class="lbl">approved (1 ศูนย์ดนตรี draft)</div></a></div>
+<div class="kpi-card bad"><a href="https://swis.mcs.ac.th/swis_report/manual/report.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">0/37</div><div class="lbl">คู่มือครบ 6 ส่วน</div></a></div>
+<div class="kpi-card bad"><div class="val">25/37</div><div class="lbl">ไม่มีคู่มือเลย (67.6%)</div></div>
+<div class="kpi-card warn"><div class="val">641</div><div class="lbl">overdue events</div></div>
+<div class="kpi-card ok"><div class="val">30.13%</div><div class="lbl">events done (1279/4245)</div></div>
+</div>
+
+<div class="box box-bad">
+<b>✅ ตอบตรงคำถาม:</b> มงฟอร์ตวิทยาลัย <b>มีแผน PDCA9 34/37 หน่วยงาน · 34/34 ครบ 9 ขั้น</b> เชิงจำนวน · แต่มี <b>จุดสำคัญที่ต้องแก้ 5 เรื่อง:</b>
+<ol style="margin:6px 0 0 20px">
+<li>🔴 <b>คู่มือคุณภาพ 25/37 (67.6%) ไม่มี · main_topics = 0 ทุก dept</b> → 2.2 goals trace ต้นน้ำไม่ได้</li>
+<li>🔴 <b>ศูนย์ดนตรี (id_dept 1968)</b> มีแผน draft <b>แต่ไม่อยู่ในผัง + ไม่มีงบ</b> — junk plan</li>
+<li>🔴 <b>งบใช้เกิน 2 หน่วย:</b> ศูนย์ความเป็นเลิศ 133.89% (-262K) · งานวัดผล 111.84% (-19.95K)</li>
+<li>🔴 <b>KPI สูตรบั๊ก:</b> ตัวชี้วัด 372 ตัว · ระบบว่าใช้ 378 = <b>101.61%</b> (เกิน 100% เป็นไปไม่ได้ · route ทีมพัฒนา)</li>
+<li>🔴 <b>SAR snapshot 2025-11-30 = ข้อมูลปีเก่า</b> · sar_content ปีนี้ = 0 · เสี่ยง SAR รอบ สมศ. ไม่ผ่าน</li>
+</ol>
+</div>
+
+<h2>ส่วนที่ ๑ · Chain of Alignment (สอดคล้อง CLAUDE.md L37-43)</h2>
+<div class="flow">
+<span class="node ok">⓪ ยุทธศาสตร์มูลนิธิ<br><span class="note" style="font-size:.7rem">5 ยุทธ์ · 47 KPI</span></span><span class="arrow">→</span>
+<span class="node ok">① แผนพัฒนาโรง<br><span class="note" style="font-size:.7rem">DP-MC 115 ตัวชี้วัด</span></span><span class="arrow">→</span>
+<span class="node bad">② คู่มือคุณภาพ<br><span class="note" style="font-size:.7rem">67.6% ไม่มี</span></span><span class="arrow">→</span>
+<span class="node ok">③ PDCA9<br><span class="note" style="font-size:.7rem">35 แผน · 34 approved</span></span><span class="arrow">→</span>
+<span class="node warn">④ Reality<br><span class="note" style="font-size:.7rem">done 30.13%</span></span><span class="arrow">→</span>
+<span class="node bad">⑤ SAR + Cost<br><span class="note" style="font-size:.7rem">sar_content=0</span></span>
+</div>
+<div class="box box-warn">
+<b>สรุป:</b> Chain ครบทุก layer แต่ <b>② ต้นน้ำอ่อน</b> (คู่มือคุณภาพ) → 2.2 goals ในแผน PDCA9 ทั้ง 34 แผน trace ต้นน้ำจริงไม่ได้ · ⑤ SAR รอบใหม่ยังไม่เริ่ม
+</div>
+
+<h2>ส่วนที่ ๒ · รายละเอียดแผน PDCA9 (module: plan_pdca9)</h2>
+<table>
+<tr><th>ตัวชี้วัด</th><th class="c">ตัวเลข</th><th class="c">%</th><th>สถานะ</th></tr>
+<tr><td>หน่วยงานทั้งหมด</td><td class="c b">37</td><td class="c">-</td><td>-</td></tr>
+<tr><td>หน่วยงานมีแผน</td><td class="c b">34</td><td class="c">91.9%</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>หน่วยงานไม่มีแผน</td><td class="c b">3</td><td class="c">8.1%</td><td>ผู้ร่วมบริหาร (ที่ปรึกษา · ใบอนุญาต · รอง ผอ.)</td></tr>
+<tr><td>แผนทั้งหมด (list)</td><td class="c b">35</td><td class="c">-</td><td>🔴 +1 จาก stats (ศูนย์ดนตรี id_dept 1968 · ไม่อยู่ในผัง)</td></tr>
+<tr><td>approved</td><td class="c b">34</td><td class="c">97.1%</td><td><span class="chip chip-p2">⚠️ 1 draft = ศูนย์ดนตรี</span></td></tr>
+<tr><td>ครบ 9 ขั้น</td><td class="c b">34/34</td><td class="c">100%</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>with_kpi</td><td class="c b">32/34</td><td class="c">94.1%</td><td>🔴 2 dept KPI=0 (งานบริหาร กจน. · งานวิเทศ)</td></tr>
+<tr><td>with_goal / with_objective</td><td class="c b">34/34</td><td class="c">100%</td><td>-</td></tr>
+<tr><td>Evaluation plan_items</td><td class="c b">438</td><td class="c">-</td><td>-</td></tr>
+<tr><td>Evidence files (แนบไฟล์)</td><td class="c b" style="color:var(--bad)">0/438</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">🔴 CRITICAL · SAR อัตโนมัติไม่มี data</span></td></tr>
+</table>
+
+<h2>ส่วนที่ ๓ · คู่มือคุณภาพหน่วยงาน (module: quality_manual · ต้นน้ำของ 2.2 goals)</h2>
+<table>
+<tr><th>สถานะคู่มือ</th><th class="c">ตัวเลข</th><th class="c">%</th><th>Priority</th></tr>
+<tr><td>มีคู่มือ<b>ครบ 6 ส่วน</b><div class="note" style="font-size:.78rem;margin-top:3px"><b>ต้องตาม:</b> ผอ. ภราดาชำนาญ + งานประกันคุณภาพ (น.ส.อรุณี มงคล) · <a href="https://swis.mcs.ac.th/swis_report/manual/report.php" target="_blank">📄 SWIS คู่มือ</a></div></td><td class="c b" style="color:var(--bad)">0/37</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">🔴 CRITICAL</span></td></tr>
+<tr><td>มีคู่มือแต่<b>ไม่ครบ</b> (partial)</td><td class="c b">12</td><td class="c">32.4%</td><td>ต้องเติมส่วนที่ขาด</td></tr>
+<tr><td>ยังไม่มีคู่มือ</td><td class="c b" style="color:var(--bad)">25</td><td class="c">67.6%</td><td><span class="chip chip-p1">🔴 P1</span></td></tr>
+</table>
+<h3>12 หน่วยงานที่มีคู่มือแต่ไม่ครบ (partial · main_topics = 0 ยกเว้น 8 dept)</h3>
+<div class="box box-warn">
+<ul style="margin:6px 0 0 20px;font-size:.85rem;columns:2">
+<li>งานอภิบาล (sections=1 · main_topics=0)</li>
+<li>งานอาคารสถานที่และสิ่งแวดล้อม (sections=1 · main_topics=0)</li>
+<li>งานสระว่ายน้ำ ฟิตเนส (sections=2 · main_topics=0)</li>
+<li>งานจัดการเรียนรู้และนิเทศ (sections=4 · main_topics=5)</li>
+<li>งานจัดซื้อ จัดจ้าง (sections=4 · main_topics=5)</li>
+<li>งานบริหารสำนักผู้อำนวยการ (sections=4 · main_topics=5)</li>
+<li>งานพัฒนาหลักสูตร (sections=4 · main_topics=5)</li>
+<li>งานวัดและประเมินผล (sections=4 · main_topics=5)</li>
+<li>งานวิเทศสัมพันธ์ (sections=4 · main_topics=5)</li>
+<li>งานเทคโนโลยีและนวัตกรรมดิจิทัล (sections=4 · main_topics=5)</li>
+<li>งานโภชนาการ (sections=4 · main_topics=5)</li>
+<li>งานทรัพยากรมนุษย์ (sections=5 · main_topics=5) — ครบสุด</li>
+</ul>
+</div>
+
+<h2>ส่วนที่ ๔ · โครงสร้าง + Confirm Loop (module: org_structure)</h2>
+<table>
+<tr><th>รายการ</th><th class="c">ตัวเลข</th><th>หมายเหตุ</th></tr>
+<tr><td>ผู้อำนวยการ</td><td class="c b">ภราดาชำนาญ เหล่ารักผล</td><td>⚠️ SWIS พ่นชื่อ "ดร.ชำนาญ" ขาดคำนำหน้าภราดา · canonical จาก <code>list_directors</code> id_emp 90018</td></tr>
+<tr><td>ฝ่าย</td><td class="c b">6</td><td>สำนัก ผอ. · วิชาการ · กจน. · ธุรการ-การเงิน · บริหารทั่วไป · ผู้ร่วมบริหาร</td></tr>
+<tr><td>หน่วยงาน</td><td class="c b">37</td><td>34 มีแผน · 3 ไม่มี (ผู้ร่วมบริหาร)</td></tr>
+<tr><td>อัตรากำลัง in_structure</td><td class="c b">255</td><td>hr_baseline 339 · not_in_structure 84 คน</td></tr>
+<tr><td>Confirm Loop structure</td><td class="c b" style="color:var(--warn)">ยังไม่ยืนยัน</td><td>submitted 19 · completed 0 · not_started 16 · in_progress 2 · revise_a 2</td></tr>
+<tr><td>Confirm Loop personnel</td><td class="c b" style="color:var(--warn)">ยังไม่ยืนยัน</td><td>confirmed 75/255 = 29.41%</td></tr>
+<tr><td>Job Spec ครบ</td><td class="c b">237/255</td><td>92.94% · 18 คนยังไม่มีสเปค</td></tr>
+</table>
+
+<h2>ส่วนที่ ๕ · 4 Issues ที่ต้องแก้ + <span style="color:var(--owner)">ผู้รับผิดชอบต้นทาง</span></h2>
+<div class="box box-owner">
+<b>หลักการ:</b> Chain layer ⓪→⑤ · ผู้รับผิดชอบเรียงตาม hierarchy · ปัญหาปลายน้ำอาจแก้ไม่ได้ถ้าต้นน้ำไม่จัดการ
+</div>
+
+<h3>Issue A1 · <span class="chip chip-p1">P1</span> ศูนย์ดนตรี (id_dept 1968) · junk plan · ไม่อยู่ในผัง · ไม่มีงบ</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">Action</th></tr>
+<tr>
+<td>มีแผน draft (id_profile 1616 · KPI=3 · goals=3) แต่ dept ไม่ปรากฏในผัง (org_structure ไม่มี id_dept 1968) และไม่มีงบใน budget_by_dept</td>
+<td>
+<b>① ต้องตาม:</b> ผอ. ภราดาชำนาญ (ออกคำสั่งแต่งตั้ง หรือ ยุบ dept)<br>
+<b>② หน.ฝ่ายกิจการนักเรียน:</b> นายชาญยุทธ รัตนมงคล (ถ้าจัดเข้าฝ่ายนี้)<br>
+<b>③ งานประกันคุณภาพ:</b> น.ส.อรุณี มงคล (จัดการ junk)
+</td>
+<td>Verify: ถ้า valid → เพิ่มในผัง + จัดสรรงบ · ถ้า orphan → ลบ + retire แผน</td>
+</tr>
+</table>
+
+<h3>Issue A2 · <span class="chip chip-p1">P1 · CRITICAL</span> Upstream 2.2 goals ต้นน้ำขาด</h3>
+<div class="box box-bad">
+<b>Root cause:</b> คู่มือคุณภาพ 0/37 ครบ 6 ส่วน · <b>25 dept ไม่มีคู่มือเลย</b> · main_topics = 0 ทั้ง 25 dept + 4 dept partial → เป้าหมายคุณภาพหลักยังไม่กำหนด → PDCA9 มี 2.2 goals แต่ trace ต้นน้ำจริงไม่ได้ (ขัด v2.md L107-115)
+</div>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ (ต้นทาง → ปลายทาง)</th><th style="width:30%">Action</th></tr>
+<tr>
+<td>25 dept ไม่มีคู่มือเลย (รวม งานประกันคุณภาพเอง · งานทะเบียน · งานประชาสัมพันธ์ · งานรับ นร. · SWIS · แผน)</td>
+<td>
+<b>ต้นทาง:</b> Commission ICT+HRM (ประธาน = ภราดาศุภนันท์) + QUALITY_MANUAL_INSPECTOR<br>
+<b>ระดับโรง:</b> ผอ. ภราดาชำนาญ + 6 หัวหน้าฝ่าย<br>
+<b>Coordinator:</b> งานประกันคุณภาพ (น.ส.อรุณี มงคล)
+</td>
+<td>สร้างคู่มือครบ 6 ส่วน · workshop main_topics ทุก dept · เร่ง cascade ที่ 25 dept ก่อน</td>
+</tr>
+<tr>
+<td>2 dept KPI=0 (งานบริหารฝ่าย กจน. · งานวิเทศฯ)</td>
+<td>
+<b>ต้นทาง:</b> PDCA9_INSPECTOR + Commission ICT+HRM<br>
+<b>ระดับโรง:</b> นายชาญยุทธ รัตนมงคล + นายไกรสิงห์ ใจหลวง (หัวหน้าหน่วยงาน)
+</td>
+<td>เติม KPI ตาม v2 spec 9 KPI/แผน · CC งานประกันคุณภาพ verify</td>
+</tr>
+</table>
+
+<h3>Issue A3 · <span class="chip chip-p1">P1</span> Evidence files บาง (0/438 = 0%)</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">Action</th></tr>
+<tr>
+<td>ประเมินหัวข้อกิจกรรม 438 หัวข้อ · <b>แนบไฟล์ 0</b> · SAR อัตโนมัติจะไม่มี data ปีนี้ (sar_content=0)</td>
+<td>
+<b>ต้นทาง:</b> 34 หัวหน้าหน่วยงาน (เจ้าของแผน)<br>
+<b>Coordinator:</b> งานประกันคุณภาพ (น.ส.อรุณี มงคล)<br>
+<b>Support:</b> งานระบบ SWIS (นายธราดร จันทร์แสง) — upload channel
+</td>
+<td>ประกาศ policy "แนบไฟล์หลักฐาน" ทุกหัวข้อ · deadline ก่อน Check 8.1 ต.ค. 69</td>
+</tr>
+</table>
+
+<h3>Issue A4 · <span class="chip chip-p1">P1</span> KPI สูตรบั๊ก 101.61% + งบใช้เกิน 2 หน่วย</h3>
+<table>
+<tr><th style="width:35%">ประเด็น</th><th class="owner">ผู้รับผิดชอบ</th><th style="width:30%">Action</th></tr>
+<tr>
+<td>ตัวชี้วัด 372 · ระบบว่าใช้ 378 = 101.61% (เป็นไปไม่ได้เชิงตรรกะ) · <b>Route ทีมพัฒนา</b></td>
+<td>
+<b>ต้นทาง:</b> SWIS Plus (vendor) + ประธาน Commission ICT (ภราดาศุภนันท์)<br>
+<b>ระดับโรง:</b> นายธราดร (SWIS) + น.ส.อรุณี (ประกัน)
+</td>
+<td>Flag bug · หยุดใช้ตัวเลขนี้อ้างอิงตัดสินใจ</td>
+</tr>
+<tr>
+<td>งบใช้เกิน 2 dept: <b>ศูนย์ความเป็นเลิศทางวิชาการ 133.89% (-262,000 บาท) · งานวัดและประเมินผล 111.84% (-19,952 บาท)</b></td>
+<td>
+<b>Owner:</b> นายทศพล โฆษิตพล (ศูนย์ความเป็นเลิศ) · นายพีรพงษ์ บัวเหลือง (วัดผล)<br>
+<b>Sponsor:</b> ผอ. ภราดาชำนาญ<br>
+<b>Cross-verify:</b> SWIS_FINANCE_AUDIT (ห้อง Finance) ตรวจ ledger จริง
+</td>
+<td>ขอเงินโอนงบเพิ่ม/ระงับใช้จ่าย · หาแหล่งเงินชดเชย · CC Finance verify</td>
+</tr>
+<tr>
+<td>Confirm Loop not_started 16/37 dept · Personnel ยืนยัน 29.41%</td>
+<td>
+<b>ต้นทาง:</b> HRM มูลนิธิ (Commission ICT+HRM · ภราดาศุภนันท์)<br>
+<b>ระดับโรง:</b> ผอ. + งานทรัพยากรมนุษย์ (นางธีริศรา คำสิทธิ์)
+</td>
+<td>เร่ง confirm loop 16 dept · alignment กับ Job Spec 137</td>
+</tr>
+</table>
+
+<h2>ส่วนที่ ๖ · Owner Chain ครบทั้งระบบ (จากต้นน้ำถึงปลายน้ำ)</h2>
+<table>
+<tr>
+<th style="width:8%" class="c">Layer</th>
+<th style="width:22%">งาน</th>
+<th class="owner" style="width:35%">ผู้รับผิดชอบต้นทาง (มูลนิธิ)</th>
+<th class="owner">ผู้รับผิดชอบระดับโรง มงฟอร์ตวิทยาลัย</th>
+</tr>
+<tr><td class="c b">⓪</td><td>ยุทธศาสตร์มูลนิธิฯ (5 ยุทธ์ · 47 KPI)</td><td>เจ้าคณะแขวง + Provincial Council</td><td>ผอ. ภราดาชำนาญ เหล่ารักผล (รับ cascade)</td></tr>
+<tr><td class="c b">①</td><td>แผนพัฒนาโรง DP-MC (5 ปี · 2565-2570 · 115 ตัวชี้วัด)</td><td>Board มูลนิธิฯ + Commission Education</td><td>ผอ. + คกก.บริหารโรง + งานแผน นโยบาย (นางดาริษา แสงสินธุ์)</td></tr>
+<tr><td class="c b">②</td><td>คู่มือคุณภาพหน่วยงาน (6 ส่วน · เป้า 2.2)</td><td>Commission ICT+HRM (ประธาน = ภราดาศุภนันท์) + QUALITY_MANUAL_INSPECTOR</td><td>งานประกันคุณภาพ (น.ส.อรุณี มงคล) + 34 หัวหน้าหน่วยงาน</td></tr>
+<tr><td class="c b">③</td><td>แผน PDCA9 (หัวใจ · 9 ขั้น · 35 แผน)</td><td>PDCA9_INSPECTOR (Specialty Hub #1) + Commission ICT+HRM</td><td>34 หัวหน้าหน่วยงาน (เจ้าของแผน) + งานประกันคุณภาพ (compile)</td></tr>
+<tr><td class="c b">④</td><td>โมดูล SWIS (คน · เงิน · พัสดุ · บริการ)</td><td>ICT sub 2.2 (ประธานผู้รับผิดชอบ · Minutes 2 ก.ค. = ภราดามานิต) + SWIS Plus (vendor)</td><td>งานระบบ SWIS (นายธราดร จันทร์แสง) + งานเทคโนโลยีและนวัตกรรมดิจิทัล (นายรังสรรค์ พรพัฒนา)</td></tr>
+<tr><td class="c b">⑤</td><td>SAR + Cost Accounting (ปลายน้ำ)</td><td>Commission Education + Board มูลนิธิฯ</td><td>งานประกันคุณภาพ (น.ส.อรุณี) + งานการเงิน บัญชีและงบประมาณ (นางศศิธร ตันดุ)</td></tr>
+</table>
+
+<h3>📌 Commission ICT & HRM 2569-2570 · ประธาน 7 กลุ่มงาน HRM (canonical · ✅ บราเดอร์ยืนยันแต่งตั้งแล้ว 4 ส.ค. 69)</h3>
+<div class="box box-owner">
+<b>SOURCE:</b> คำสั่งลงนาม <code>Special Assignments 2026-2027</code> (17 พ.ค. 69) ข้อ 2.4 + <code>_CANONICAL_TERMS.md</code> §HRM 2569-2570 (แต่งตั้งภายในโดยประธาน Commission)
+<table style="margin-top:8px;font-size:.88rem">
+<tr><th style="width:10%" class="c">กลุ่มงาน</th><th style="width:35%">ชื่อกลุ่มงาน</th><th class="owner">ประธานอนุ 2569-2570</th></tr>
+<tr><td class="c b">1</td><td>HRM Admin</td><td class="b">ภราดาศุภนันท์ ขันธปรีชา ⭐ (ประธาน Commission)</td></tr>
+<tr><td class="c b">2</td><td>Workforce & Recruitment</td><td class="b">ภราดาสยาม แก้วประสิทธิ์</td></tr>
+<tr><td class="c b">3</td><td>Onboarding</td><td class="b">ภราดาศราวุธ ยุชมภู</td></tr>
+<tr><td class="c b">4</td><td>Supervision & Monitoring</td><td class="b">ภราดากุลชาติ จันทะโชโต</td></tr>
+<tr><td class="c b">5</td><td>HRD</td><td class="b">ภราดานนทชา ศรีวิไล</td></tr>
+<tr><td class="c b">6</td><td>HR Retention</td><td class="b">ภราดาทักษบุตร ไกรประสิทธิ์</td></tr>
+<tr><td class="c b">7</td><td>Succession Planning</td><td class="b">ภราดานนทชา ศรีวิไล (ท่านเดียวกับกลุ่ม 5)</td></tr>
+</table>
+<p class="note" style="margin-top:8px"><b>Verify:</b> ยืนยัน 4 ส.ค. 69 · ใบแต่งตั้งภายในส่งตาม · ทุกเรื่องต้นน้ำ HRM ในรายงาน mcs (Issue A2 · A4 · Owner Chain ②) ใช้ประธานอนุตามตารางนี้เท่านั้น</p>
+</div>
+
+<h2>ส่วนที่ ๗ · Action Plan · ลำดับความสำคัญ + Deadline</h2>
+<table>
+<tr><th class="c" style="width:8%">Priority</th><th style="width:35%">Action</th><th class="owner" style="width:30%">ผู้รับผิดชอบหลัก</th><th class="c" style="width:15%">Deadline</th><th class="c" style="width:12%">ตรวจโดย</th></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Verify + retire/promote ศูนย์ดนตรี (junk plan · dept 1968)</td><td>ผอ. ภราดาชำนาญ + น.ส.อรุณี<br><span class="note">Support: นายธราดร (SWIS)</span></td><td class="c">15 ส.ค. 69</td><td class="c">PDCA9_INSPECTOR</td></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>สร้างคู่มือคุณภาพ 25 dept ที่ยังไม่มี</td><td>34 หัวหน้าหน่วยงาน<br><span class="note">Sponsor: 6 หัวหน้าฝ่าย · Coord: น.ส.อรุณี</span></td><td class="c">31 ต.ค. 69</td><td class="c">QMI</td></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>เร่ง main_topics ทุก 37 dept (เป้าหมายคุณภาพหลัก)</td><td>34 หัวหน้าหน่วยงาน<br><span class="note">Coordinator: น.ส.อรุณี</span></td><td class="c">30 พ.ย. 69</td><td class="c">QMI</td></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Policy "แนบไฟล์หลักฐาน" ทุกหัวข้อประเมิน (0/438 → target ≥50%)</td><td>น.ส.อรุณี + 34 หน.หน่วยงาน<br><span class="note">Support: SWIS Plus + นายธราดร</span></td><td class="c">ก่อน Check 8.1<br>ต.ค. 69</td><td class="c">PDCA9_INSPECTOR</td></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>ระงับ/หาแหล่งเงินชดเชย งบใช้เกิน 2 หน่วย</td><td>ผอ. + นายทศพล + นายพีรพงษ์<br><span class="note">Cross-verify: Finance room</span></td><td class="c">31 ส.ค. 69</td><td class="c">Finance + ผอ.</td></tr>
+<tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Flag KPI counter bug 101.61% → ทีมพัฒนา</td><td>นายธราดร (SWIS)<br><span class="note">Escalate: ภราดามานิต (ICT sub 2.2)</span></td><td class="c">31 ส.ค. 69</td><td class="c">SWIS_INSPECTOR</td></tr>
+<tr><td class="c"><span class="chip chip-p2">P2</span></td><td>เติม KPI 2 dept (งานบริหาร กจน. · งานวิเทศฯ)</td><td>นายชาญยุทธ + นายไกรสิงห์</td><td class="c">30 ก.ย. 69</td><td class="c">PDCA9_INSPECTOR</td></tr>
+<tr><td class="c"><span class="chip chip-p2">P2</span></td><td>เร่ง Confirm Loop 16 dept not_started · personnel 29.41% → 80%+</td><td>ผอ. + นางธีริศรา (HR)<br><span class="note">Support: นายธราดร (SWIS)</span></td><td class="c">30 พ.ย. 69</td><td class="c">HRM มูลนิธิ</td></tr>
+<tr><td class="c"><span class="chip chip-p2">P2</span></td><td>Add 84 คน not_in_structure · Map Job Spec 18 คนไม่มีสเปค</td><td>ผอ. + นางธีริศรา</td><td class="c">31 ธ.ค. 69</td><td class="c">HRM (อนุ 2)</td></tr>
+<tr><td class="c"><span class="chip chip-p3">P3</span></td><td>Executive App users = 2 · onboard 6 หัวหน้าฝ่ายเข้าใช้</td><td>ผอ. + นายธราดร</td><td class="c">30 ก.ย. 69</td><td class="c">ICT sub 2.2</td></tr>
+</table>
+
+<h2>ส่วนที่ ๘ · คำแนะนำสรุป</h2>
+<div class="box box-plan">
+<b>Verdict:</b> มงฟอร์ตวิทยาลัย <b>ผ่านเชิงจำนวน (34 dept มีแผน · ครบ 9 ขั้น)</b> · <b>เด่นกว่าโรงในกลุ่มเดียวกัน</b> ตรง events done 30.13% (โรงอื่นในกลุ่ม 0.98%-28.48%) และ ผังครบทุกฝ่าย · แต่<b>ต้องเร่งแก้ 5 เรื่องหลัก:</b> (1) ศูนย์ดนตรี junk (2) คู่มือคุณภาพ 25/37 ไม่มี (3) Evidence 0/438 (4) งบใช้เกิน 2 หน่วย (5) KPI สูตรบั๊ก · <b>ยังไม่ควรทำ PDCA9 round 2 (Substance audit)</b> จนกว่าคู่มือคุณภาพครบ (2.2 goals trace ต้นน้ำได้)
+</div>
+
+<h2>ส่วนที่ ๙ · [PRIMARY SCOPE] รายละเอียดแผน PDCA9 รายหน่วยงาน · <span style="color:var(--navy)">ตรวจโดยห้อง PDCA9_INSPECTOR (Specialty Hub #1)</span></h2>
+
+<div class="box box-owner">
+<b>Scope disclaimer:</b>
+<ul style="margin:6px 0 0 20px;font-size:.86rem">
+<li><b>เฟส ๑ (รอบนี้):</b> ตรวจจากระบบเชิงจำนวน · มีแผน · approved · ครบ 9 ขั้น · KPI · งบผูก dept</li>
+<li><b>เฟส ๒ (per plan · รอ approve):</b> Strict linkage 2.1↔3.1 · 2.2↔3.2 · Activity 3.2 · mini-PDCA · 3-Lens · 2-Branch · 2.2 source tracing</li>
+</ul>
+</div>
+
+<h3>สรุปเชิงจำนวน (37 หน่วยงาน · 35 แผน)</h3>
+<div class="kpi">
+<div class="kpi-card ok"><a href="https://swis.mcs.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/37</div><div class="lbl">มีแผน (91.9%)</div></a></div>
+<div class="kpi-card ok"><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/34</div><div class="lbl">ครบ 9 ขั้น (100%)</div></a></div>
+<div class="kpi-card warn"><a href="https://swis.mcs.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/35</div><div class="lbl">approved (97%)</div></a></div>
+<div class="kpi-card bad"><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">0/438</div><div class="lbl">Evidence files (0%)</div></a></div>
+</div>
+
+<h3>ระดับความเร่งด่วน (37 หน่วยงาน)</h3>
+<div class="kpi">
+<div class="kpi-card warn"><div class="val">3</div><div class="lbl">P1a · ไม่มีแผน (ผู้ร่วมบริหาร)</div></div>
+<div class="kpi-card bad"><div class="val">34</div><div class="lbl">P1b · 2.2 ไม่ trace ต้นน้ำ (dep QMI)</div></div>
+<div class="kpi-card warn"><div class="val">1</div><div class="lbl">P2 · junk plan (ศูนย์ดนตรี draft)</div></div>
+<div class="kpi-card ok"><div class="val">32</div><div class="lbl">P3 · เชิงจำนวน pass + KPI ครบ</div></div>
+</div>
+
+<div class="box box-bad">
+<b>Key finding ของ PDCA9_INSPECTOR:</b> 34 dept มีแผน + ครบ 9 ขั้น <b>เชิงจำนวน 100%</b> · <b>เนื้อคุณภาพต้องรอเฟส ๒</b> — <b>Cross-dependency กับ QMI:</b> 2.2 goals ในแผนทั้ง 34 <b>trace ต้นน้ำจริงไม่ได้</b> (QMI: 25 dept manual=none · 4 dept partial main_topics=0) → <b>34/34 อาจเป็น P1b</b> เมื่อผ่านเฟส ๒
+</div>
+
+<h3>รายละเอียด 37 หน่วยงาน (แยกตาม 6 ฝ่าย · มี id_dept · id_profile · KPI · งบ)</h3>
+<table>
+<tr><th class="c" style="width:5%">#</th><th style="width:30%">หน่วยงาน</th><th class="owner" style="width:22%">หัวหน้าหน่วยงาน</th><th class="c" style="width:8%">แผน</th><th class="c" style="width:8%">KPI</th><th class="c" style="width:12%">งบตั้ง</th><th class="c" style="width:8%">%ใช้</th><th class="c" style="width:7%">สถานะ</th></tr>
+<tr class="sidehdr"><td colspan="8">■ สำนักผู้อำนวยการ (5 หน่วยงาน)</td></tr>
+<tr><td class="c">1</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1967" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1967" style="color:var(--navy);text-decoration:none">งานบริหารสำนักผู้อำนวยการ</a></td><td class="b">น.ส.อริญชย์ ชัยปริพรรห์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1620" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1620">✓ ครบ 9 ขั้น</a></td><td class="c">10</td><td class="c" style="font-size:.82rem">22,762</td><td class="c"><span style="">25.58%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">2</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1969" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1969" style="color:var(--navy);text-decoration:none">งานแผน นโยบาย วิจัยและพัฒนา</a></td><td class="b">นางดาริษา แสงสินธุ์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1625" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1625">✓ ครบ 9 ขั้น</a></td><td class="c">7</td><td class="c" style="font-size:.82rem">7,000</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">3</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1993" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1993" style="color:var(--navy);text-decoration:none">งานประกันคุณภาพ</a></td><td class="b">น.ส.อรุณี มงคล</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1621" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1621">✓ ครบ 9 ขั้น</a></td><td class="c">10</td><td class="c" style="font-size:.82rem">29,050</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">4</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1994" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1994" style="color:var(--navy);text-decoration:none">งานระบบ SWIS และสารสนเทศ</a></td><td class="b">นายธราดร จันทร์แสง</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1619" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1619">✓ ครบ 9 ขั้น</a></td><td class="c">8</td><td class="c" style="font-size:.82rem">61,490</td><td class="c"><span style="">96.54%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">5</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1966" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1966" style="color:var(--navy);text-decoration:none">งานทรัพยากรมนุษย์</a></td><td class="b">นางธีริศรา คำสิทธิ์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1624" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1624">✓ ครบ 9 ขั้น</a></td><td class="c">18</td><td class="c" style="font-size:.82rem">1,266,720</td><td class="c"><span style="">27.14%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ ฝ่ายวิชาการ (8 หน่วยงาน)</td></tr>
+<tr><td class="c">6</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1974" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1974" style="color:var(--navy);text-decoration:none">งานบริหารฝ่าย (วิชาการ)</a></td><td class="b">นายธีรภัทร์ วิโรจน์สกุล</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1617" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1617">✓ ครบ 9 ขั้น</a></td><td class="c">15</td><td class="c" style="font-size:.82rem">299,020</td><td class="c"><span style="color:var(--warn)">6.76%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">7</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1970" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1970" style="color:var(--navy);text-decoration:none">งาน English Programme</a></td><td class="b">ดร.วรินทร วสุวัต</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1657" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1657">✓ ครบ 9 ขั้น</a></td><td class="c">16</td><td class="c" style="font-size:.82rem">14,781,297</td><td class="c"><span style="color:var(--warn)">3.67%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">8</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1971" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1971" style="color:var(--navy);text-decoration:none">งานพัฒนาหลักสูตร</a></td><td class="b">น.ส.กรรณิการ์ ใจแก้ว</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1645" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1645">✓ ครบ 9 ขั้น</a></td><td class="c">21</td><td class="c" style="font-size:.82rem">-</td><td class="c">-</td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">9</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1972" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1972" style="color:var(--navy);text-decoration:none">งานจัดการเรียนรู้และนิเทศ</a></td><td class="b">นางโนริโกะ มานิตปฏิภาณ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1649" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1649">✓ ครบ 9 ขั้น</a></td><td class="c">33</td><td class="c" style="font-size:.82rem">1,658,154.08</td><td class="c"><span style="">14.1%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">10</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1973" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1973" style="color:var(--navy);text-decoration:none">งานวัดและประเมินผล</a></td><td class="b">นายพีรพงษ์ บัวเหลือง</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1642" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1642">✓ ครบ 9 ขั้น</a></td><td class="c">16</td><td class="c" style="font-size:.82rem">168,548</td><td class="c"><span style="color:var(--bad);font-weight:700">111.84%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">11</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1975" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1975" style="color:var(--navy);text-decoration:none">งานวิเทศสัมพันธ์และส่งเสริมการศึกษาต่อ</a></td><td class="b">นายไกรสิงห์ ใจหลวง</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1640" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1640">✓ ครบ 9 ขั้น</a></td><td class="c"><span style="color:var(--bad);font-weight:600">0 🔴</span></td><td class="c" style="font-size:.82rem">450,340</td><td class="c"><span style="">17.08%</span></td><td class="c"><span class="chip chip-p2">P2</span></td></tr>
+<tr><td class="c">12</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1976" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1976" style="color:var(--navy);text-decoration:none">ศูนย์ความเป็นเลิศทางวิชาการ</a></td><td class="b">นายทศพล โฆษิตพล</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1650" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1650">✓ ครบ 9 ขั้น</a></td><td class="c">13</td><td class="c" style="font-size:.82rem">773,000</td><td class="c"><span style="color:var(--bad);font-weight:700">133.89%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">13</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1995" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1995" style="color:var(--navy);text-decoration:none">งานศูนย์การเรียนรู้และเทคโนโลยีการศึกษา</a></td><td class="b">น.ส.เจริญศรี ศรีจันทร์ดร</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1647" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1647">✓ ครบ 9 ขั้น</a></td><td class="c">10</td><td class="c" style="font-size:.82rem">204,971</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ ฝ่ายกิจการนักเรียน (7 หน่วยงาน)</td></tr>
+<tr><td class="c">14</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1980" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1980" style="color:var(--navy);text-decoration:none">งานบริหารฝ่าย (กิจการนักเรียน)</a></td><td class="b">นายชาญยุทธ รัตนมงคล</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1646" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1646">✓ ครบ 9 ขั้น</a></td><td class="c"><span style="color:var(--bad);font-weight:600">0 🔴</span></td><td class="c" style="font-size:.82rem">63,786</td><td class="c"><span style="">15.49%</span></td><td class="c"><span class="chip chip-p2">P2</span></td></tr>
+<tr><td class="c">15</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1977" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1977" style="color:var(--navy);text-decoration:none">งานอภิบาล</a></td><td class="b">น.ส.ศศิน ดาวดี</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1654" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1654">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">220,233</td><td class="c"><span style="">24.47%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">16</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1978" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1978" style="color:var(--navy);text-decoration:none">งานส่งเสริมพฤติกรรมและช่วยเหลือผู้เรียน</a></td><td class="b">นายฐิติวัชร อัครบริรักษ์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1651" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1651">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">215,940</td><td class="c"><span style="color:var(--warn)">2.81%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">17</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1982" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1982" style="color:var(--navy);text-decoration:none">งานสภานักเรียน</a></td><td class="b">นางจิดาภา ชัยสงคราม</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1653" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1653">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">288,920</td><td class="c"><span style="color:var(--warn)">6.09%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">18</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1984" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1984" style="color:var(--navy);text-decoration:none">งานกิจกรรมพัฒนาผู้เรียน</a></td><td class="b">นายประสงค์ สุทา</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1652" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1652">✓ ครบ 9 ขั้น</a></td><td class="c">13</td><td class="c" style="font-size:.82rem">3,703,086</td><td class="c"><span style="">45.67%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">19</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1996" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1996" style="color:var(--navy);text-decoration:none">งานระดับชั้น</a></td><td class="b">นายนิรันดร์พงค์ ลากตา</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1655" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1655">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">1,173,012</td><td class="c"><span style="">26.45%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">20</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1979" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1979" style="color:var(--navy);text-decoration:none">ศูนย์กิจกรรมพิเศษ</a></td><td class="b">นายศุภกิจ สุบินมิตร์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1648" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1648">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">4,696,390</td><td class="c"><span style="color:var(--warn)">3.78%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ ฝ่ายธุรการ-การเงิน (7 หน่วยงาน)</td></tr>
+<tr><td class="c">21</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1965" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1965" style="color:var(--navy);text-decoration:none">งานบริหารฝ่าย (ธุรการ-การเงิน)</a></td><td class="b">น.ส.ภวดี ศรีใจ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1634" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1634">✓ ครบ 9 ขั้น</a></td><td class="c">21</td><td class="c" style="font-size:.82rem">162,919</td><td class="c"><span style="">18.17%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">22</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1990" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1990" style="color:var(--navy);text-decoration:none">งานสารบรรณ</a></td><td class="b">น.ส.กฤติมา ทิพวัง</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1635" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1635">✓ ครบ 9 ขั้น</a></td><td class="c">8</td><td class="c" style="font-size:.82rem">15,000</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">23</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1991" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1991" style="color:var(--navy);text-decoration:none">งานรับนักเรียน</a></td><td class="b">นางมยุรี ทำทอง</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1637" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1637">✓ ครบ 9 ขั้น</a></td><td class="c">10</td><td class="c" style="font-size:.82rem">300,000</td><td class="c"><span style="">13.54%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">24</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1992" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1992" style="color:var(--navy);text-decoration:none">งานทะเบียนนักเรียน</a></td><td class="b">นางพิมพ์ลภัสร จันทร์ต๊ะ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1658" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1658">✓ ครบ 9 ขั้น</a></td><td class="c">8</td><td class="c" style="font-size:.82rem">64,905</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">25</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1962" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1962" style="color:var(--navy);text-decoration:none">งานประชาสัมพันธ์และสัมพันธ์ชุมชน</a></td><td class="b">น.ส.ชนกกร ไชยวงค์คำ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1636" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1636">✓ ครบ 9 ขั้น</a></td><td class="c">9</td><td class="c" style="font-size:.82rem">768,500</td><td class="c"><span style="color:var(--warn)">3.15%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">26</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1963" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1963" style="color:var(--navy);text-decoration:none">งานการเงิน บัญชีและงบประมาณ</a></td><td class="b">นางศศิธร ตันดุ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1638" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1638">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">46,000</td><td class="c"><span style="color:var(--warn)">1.33%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">27</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1964" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1964" style="color:var(--navy);text-decoration:none">งานจัดซื้อ จัดจ้างและทรัพย์สิน</a></td><td class="b">น.ส.ญาดา กะราม</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1631" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1631">✓ ครบ 9 ขั้น</a></td><td class="c">12</td><td class="c" style="font-size:.82rem">310,000</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ ฝ่ายบริหารทั่วไป (7 หน่วยงาน)</td></tr>
+<tr><td class="c">28</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1959" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1959" style="color:var(--navy);text-decoration:none">งานบริหารฝ่าย (บริหารทั่วไป)</a></td><td class="b">ว่าที่ ร.ต.ฤทธิยา ศรีสวนจิก</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1627" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1627">✓ ครบ 9 ขั้น</a></td><td class="c">16</td><td class="c" style="font-size:.82rem">38,000</td><td class="c"><span style="color:var(--warn)">4.26%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">29</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1956" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1956" style="color:var(--navy);text-decoration:none">งานอาคารสถานที่และสิ่งแวดล้อม</a></td><td class="b">นายอานนท์ อินนันท์</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1633" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1633">✓ ครบ 9 ขั้น</a></td><td class="c">13</td><td class="c" style="font-size:.82rem">22,578,100</td><td class="c"><span style="">35.44%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">30</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1961" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1961" style="color:var(--navy);text-decoration:none">งานเทคโนโลยีและนวัตกรรมดิจิทัล</a></td><td class="b">นายรังสรรค์ พรพัฒนา</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1629" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1629">✓ ครบ 9 ขั้น</a></td><td class="c">14</td><td class="c" style="font-size:.82rem">2,109,590.44</td><td class="c"><span style="">60.69%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">31</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1957" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1957" style="color:var(--navy);text-decoration:none">งานโภชนาการ</a></td><td class="b">นางเดือนเพ็ญ ตากันทะ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1656" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1656">✓ ครบ 9 ขั้น</a></td><td class="c">6</td><td class="c" style="font-size:.82rem">108,000</td><td class="c"><span style="color:var(--warn)">0%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">32</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1960" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1960" style="color:var(--navy);text-decoration:none">งานสระว่ายน้ำ และฟิตเนส</a></td><td class="b">นายสิทธิพันธ์ วันไชย</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1626" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1626">✓ ครบ 9 ขั้น</a></td><td class="c">1</td><td class="c" style="font-size:.82rem">706,880</td><td class="c"><span style="">13.05%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">33</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1958" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1958" style="color:var(--navy);text-decoration:none">งานยานพาหนะ จราจร สวัสดิภาพและความปลอดภัย</a></td><td class="b">นายสิริโรจน์ ฉลองสัพพัญญู</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1630" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1630">✓ ครบ 9 ขั้น</a></td><td class="c">10</td><td class="c" style="font-size:.82rem">1,147,400</td><td class="c"><span style="">15.89%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr><td class="c">34</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1989" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1989" style="color:var(--navy);text-decoration:none">งานพยาบาล</a></td><td class="b">มิสพวงไพร สายสกล</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1628" target="_blank" style="color:var(--ok);text-decoration:none" title="เปิดแผน id_profile=1628">✓ ครบ 9 ขั้น</a></td><td class="c">8</td><td class="c" style="font-size:.82rem">305,100</td><td class="c"><span style="">16.69%</span></td><td class="c"><span class="chip chip-p3">P3</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ ผู้ร่วมบริหาร (ไม่มีแผน) (3 หน่วยงาน)</td></tr>
+<tr><td class="c">35</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1985" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1985" style="color:var(--navy);text-decoration:none">กรรมการที่ปรึกษาผู้อำนวยการ</a></td><td class="b">ภราดาชำนาญ เหล่ารักผล (ผอ.)</td><td class="c"><span style="color:var(--warn)">ไม่มีแผน</span></td><td class="c">-</td><td class="c" style="font-size:.82rem">-</td><td class="c">-</td><td class="c"><span class="chip chip-p1">P1a</span></td></tr>
+<tr><td class="c">36</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1986" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1986" style="color:var(--navy);text-decoration:none">ผู้แทนผู้รับใบอนุญาต/ผู้อำนวยการ/ผู้จัดการ</a></td><td class="b"><span style="color:var(--bad)">— 🔴 ยังไม่ระบุ</span></td><td class="c"><span style="color:var(--warn)">ไม่มีแผน</span></td><td class="c">-</td><td class="c" style="font-size:.82rem">-</td><td class="c">-</td><td class="c"><span class="chip chip-p1">P1a</span></td></tr>
+<tr><td class="c">37</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1987" target="_blank" title="ปฏิทินหน่วยงาน id_dept=1987" style="color:var(--navy);text-decoration:none">รองผู้อำนวยการ</a></td><td class="b"><span style="color:var(--bad)">— 🔴 ยังไม่ระบุ</span></td><td class="c"><span style="color:var(--warn)">ไม่มีแผน</span></td><td class="c">-</td><td class="c" style="font-size:.82rem">-</td><td class="c">-</td><td class="c"><span class="chip chip-p1">P1a</span></td></tr>
+<tr class="sidehdr"><td colspan="8">■ 🔴 Orphan (ไม่อยู่ในผัง org_structure)</td></tr>
+<tr><td class="c">38</td><td><a href="https://swis.mcs.ac.th/html_edu/cgi-bin/report/report_calendar.php?id_dept=1968" target="_blank" style="color:var(--bad);text-decoration:none">ศูนย์ดนตรี (id_dept 1968) · junk</a></td><td class="b" style="color:var(--bad)">🔴 ต้องระบุ · <b>ต้องตาม:</b> ผอ. ภราดาชำนาญ</td><td class="c"><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1616" target="_blank" style="color:var(--warn)">draft</a></td><td class="c">3</td><td class="c">-</td><td class="c">-</td><td class="c"><span class="chip chip-p2">P2</span></td></tr>
+</table>
+
+<h3>สิ่งที่ต้องตรวจใน<b>เฟส ๒</b> (per plan · ต้องอ่านตัวแผน)</h3>
+<div class="box box-warn">
+<ol style="margin:6px 0 0 20px;font-size:.88rem">
+<li><b>Strict 1-to-1 linkage</b> — 2.1↔3.1 · 2.2↔3.2 · ไม่มี orphan (v2.md L88-172)</li>
+<li><b>9 KPI ครบใน 3.1</b> — 1 KPI/ขั้น (v2.md L137-149) · 2 dept KPI=0 ต้องแก้ก่อน</li>
+<li><b>ข้อ 4</b> — 4.1 กิจกรรม · 4.2 เครื่องมือ · 4.3 แนวทางจากรอบก่อน</li>
+<li><b>ข้อ 5 pre-flight</b> soft signal</li>
+<li><b>ข้อ 6 mini-PDCA 7 ขั้น × activity</b></li>
+<li><b>3-Lens Document Catalog</b> — Service Promise + PPPC + Compliance</li>
+<li><b>2-Branch Revision Path</b> — A operational / B governance</li>
+<li><b>2.2 source tracing</b> — 🚨 Cross-dep กับ QMI (25 dept ไม่มีคู่มือ)</li>
+<li><b>กฎเหล็ก:</b> Activity ผูก 3.2 <b>เท่านั้น</b> · ห้ามผูก 3.1</li>
+<li><b>Evidence files</b> = 0/438 (0%) → per dept audit ก่อน Check 8.1</li>
+</ol>
+</div>
+
+<h3>Cross-dependency: 2.2 goals ↔ คู่มือคุณภาพ (owner = QUALITY_MANUAL_INSPECTOR)</h3>
+<div class="box box-bad">
+<b>Implication CRITICAL:</b> จาก QMI · <b>main_topics = 0 ใน 25 dept ที่ไม่มีคู่มือ + 4 dept partial</b> ⇒ 2.2 goals ในแผน PDCA9 ทั้ง 34 <b>ไม่มีต้นน้ำจริง</b> · เฟส ๒ · <b>34/34 อาจกลายเป็น P1b</b> (fail 2.2 source tracing) ⇒ ต้อง <b>เร่งคู่มือคุณภาพก่อน</b> · แล้วค่อย audit round 2
+</div>
+
+<h3>Path: PDCA9 round 2 (หลังคู่มือคุณภาพครบ)</h3>
+<div class="flow">
+<span class="node bad">QMI · mcs_qm_audit<br><span class="note" style="font-size:.7rem">คู่มือครบ 6 ส่วน + main_topics</span></span><span class="arrow">→</span>
+<span class="node warn">34 หน.หน่วยงาน<br><span class="note" style="font-size:.7rem">update 2.2 ในแผน</span></span><span class="arrow">→</span>
+<span class="node warn">PDCA9_INSPECTOR<br><span class="note" style="font-size:.7rem">round 2 · verify trace</span></span><span class="arrow">→</span>
+<span class="node ok">✅ Substantive PASS<br><span class="note" style="font-size:.7rem">SAR อัตโนมัติได้จริง</span></span>
+</div>
+
+<h2>ส่วนที่ ๑๐ · บทวิเคราะห์และสรุปภาพรวม · <span style="color:var(--navy)">ตรวจโดย PDCA9_INSPECTOR</span></h2>
+<p class="note">อิงข้อมูลจริงในรายงาน (ส่วนที่ ๑-๙) · เป็นกลาง · ชี้ประเด็นให้ ผอ./กรรมการตัดสินใจ+ตามงานได้</p>
+
+<h3>🟢 ข้อดี / จุดแข็ง (5 ข้อ)</h3>
+<div class="box box-plan"><ol style="margin:0 0 0 20px;font-size:.9rem">
+<li><b>Structural pass:</b> 34/37 dept มีแผน · 34/34 ครบ 9 ขั้น · 34 approved (จาก 35 · ยกเว้น ศูนย์ดนตรี draft)</li>
+<li><b>KPI linkage sound:</b> 32/34 แผนมี KPI · ผูก 1,843 links กับ 7 ชุดมาตรฐาน (MC 80 · FSG 20 · SP-FSG 91 · DP-MC 115 · GGV 21 · สพฐ. 26 · สมศ. 19)</li>
+<li><b>Events done 30.13%</b> — <b>สูงสุดในกลุ่ม 6 โรง Phase 1</b> (โรงอื่น 0.98%-28.48%) · แสดงวินัยบันทึกผลกลับเข้าระบบ</li>
+<li><b>Job Spec 92.94%</b> (237/255) · ผังฝ่ายครบ 6 · หน่วยงานครบ 37 · sides ทุก dept ผูก parent</li>
+<li><b>Application coverage:</b> Parent 2,021 users (+404 ใหม่) · Teacher 895 users (+105) · Student 7,552 users (+54) — ครูใช้ Teacher App จริง</li>
+</ol></div>
+
+<h3>🟡 ข้อเสีย / จุดอ่อน (6 ข้อ)</h3>
+<div class="box box-warn"><ol style="margin:0 0 0 20px;font-size:.9rem">
+<li><b>คู่มือคุณภาพ 25/37 (67.6%) ไม่มี</b> · main_topics = 0 ทุก dept ที่ตรวจ → 2.2 ไม่ trace ต้นน้ำจริง</li>
+<li><b>Evidence files 0/438</b> — หัวข้อประเมินไม่แนบไฟล์เลย · SAR อัตโนมัติจะไม่มี data</li>
+<li><b>Confirm Loop:</b> structure ยังไม่ยืนยัน · 16 dept not_started · personnel confirmed 29.41% (75/255)</li>
+<li><b>Not_in_structure 84 คน</b> จาก hr_baseline 339 · Job Spec 18 คนไม่มี</li>
+<li><b>2 dept KPI=0</b> (งานบริหารฝ่าย กจน. · งานวิเทศฯ) · <b>1 dept ไม่ approve</b> (ศูนย์ดนตรี · orphan)</li>
+<li><b>Executive App:</b> 2 users · new 0 ทั้งปี — ผู้บริหาร 6 คนยังไม่ใช้ dashboard</li>
+</ol></div>
+
+<h3>🔴 ความเสี่ยง (6 ข้อ)</h3>
+<div class="box box-bad"><ol style="margin:0 0 0 20px;font-size:.9rem">
+<li><b>SAR ปี 2569 เสี่ยงไม่ผ่าน:</b> sar_content ปีนี้ = 0 · snapshot ล่าสุด 2025-11-30 (ปีเก่า) · ไม่มี Evidence files</li>
+<li><b>งบใช้เกิน 2 dept:</b> ศูนย์ความเป็นเลิศ -262,000 · งานวัดผล -19,952 · <b>รวม 281,952 บาท</b> · ต้องหาแหล่งชดเชย</li>
+<li><b>KPI สูตรบั๊ก 101.61%:</b> ตัวเลข system ไม่ trust ได้ · หยุดอ้างอิงตัดสินใจจนแก้</li>
+<li><b>เฟส ๒ อาจ fail 34/34:</b> 2.2 goals ไม่ trace ต้นน้ำจริง (dep QMI 25 dept ไม่มีคู่มือ)</li>
+<li><b>Junk plan:</b> ศูนย์ดนตรี (id_dept 1968) มีแผน draft แต่ไม่อยู่ในผัง + ไม่มีงบ · risk data quality</li>
+<li><b>Governance risk:</b> confirm loop ไม่ยืนยัน 43.2% dept · ผู้บริหารไม่ใช้ Executive App = ตามงานยาก</li>
+</ol></div>
+
+<h3>💡 สรุปประเด็นเสนอ ผอ. / กรรมการ (5 ข้อ)</h3>
+<div class="box box-owner"><ol style="margin:0 0 0 20px;font-size:.9rem">
+<li><b>สั่งเร่งคู่มือคุณภาพ 25 dept</b> (P1 · deadline 31 ต.ค. 69) — เพราะเป็น root cause ของ Substance audit fail</li>
+<li><b>Verify ศูนย์ดนตรี:</b> retire junk plan · ตัดสินใจว่าจะเพิ่มในผังหรือลบ (P1 · 15 ส.ค. 69)</li>
+<li><b>Policy แนบไฟล์หลักฐาน:</b> 0/438 → target ≥50% ก่อน Check 8.1 ต.ค. 69 (P1)</li>
+<li><b>ระงับ/หาแหล่งเงินชดเชย งบใช้เกิน 281,952 บาท</b> ศูนย์ความเป็นเลิศ + วัดผล (P1 · 31 ส.ค. 69)</li>
+<li><b>Flag ทีมพัฒนา:</b> KPI counter bug 101.61% · onboard 6 ผู้บริหาร Executive App (P1-P3)</li>
+</ol></div>
+
+<h2>ส่วนที่ ๑๑ · Reality vs Plan Audit · 4 Layer · <span style="color:var(--navy)">ตรวจโดย PDCA9_INSPECTOR</span></h2>
+
+<h3>Layer 1 · Plan Structure (โครงสร้างแผน 37 หน่วยงาน)</h3>
+<table>
+<tr><th>รายการ</th><th class="c">ค่า</th><th>สถานะ</th></tr>
+<tr><td>แผนทั้งหมด (list_school_plans)</td><td class="c b">35</td><td>+1 orphan (ศูนย์ดนตรี)</td></tr>
+<tr><td>Approved</td><td class="c b">34/35</td><td><span class="chip chip-p2">⚠️ 1 draft</span></td></tr>
+<tr><td>ครบ 9 ขั้น</td><td class="c b">34/34</td><td><span class="chip chip-p3">✅ 100%</span></td></tr>
+<tr><td>with_kpi</td><td class="c b">32/34</td><td>🔴 2 dept KPI=0</td></tr>
+<tr><td>Evidence 0/438</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">🔴</span></td></tr>
+</table>
+
+<h3>Layer 2 · KPI Linkage (372 ตัวชี้วัด · 7 ชุดมาตรฐาน)</h3>
+<table>
+<tr><th>ชุดมาตรฐาน</th><th class="c">ตัวชี้วัด</th></tr>
+<tr><td>มาตรฐานการศึกษา โรงเรียน (MC)</td><td class="c">80</td></tr>
+<tr><td>มาตรฐานการศึกษา มูลนิธิฯ (FSG.)</td><td class="c">20</td></tr>
+<tr><td>แผนยุทธ์ มูลนิธิ (SP-FSG. · 2565-2570)</td><td class="c">91</td></tr>
+<tr><td>แผนพัฒนาโรง (DP-MC · 2565-2570)</td><td class="c">115</td></tr>
+<tr><td>หลักธรรมาภิบาลมูลนิธิ (GGV)</td><td class="c">21</td></tr>
+<tr><td>มาตรฐาน สพฐ.</td><td class="c">26</td></tr>
+<tr><td>สมศ. รอบ 5</td><td class="c">19</td></tr>
+<tr><td class="b">รวม</td><td class="c b">372</td></tr>
+<tr><td>ระบบว่าใช้ (bug)</td><td class="c b" style="color:var(--bad)">378 (101.61%)</td></tr>
+<tr><td>Total links · plans_linked · plots_linked</td><td class="c">1,843 · 39 · 18</td></tr>
+<tr><td>นโยบายโรง (8) · plan_refs</td><td class="c">87</td></tr>
+<tr><td>มาตรฐานสากล (78) · plans_linked</td><td class="c">26</td></tr>
+</table>
+
+<h3>Layer 3 · Reality Check (ปฏิทินแผน ↔ อัลบั้มจริง)</h3>
+<div class="kpi">
+<div class="kpi-card"><div class="val">4,245</div><div class="lbl">Events ปฏิทิน</div></div>
+<div class="kpi-card ok"><div class="val">1,279</div><div class="lbl">done (30.13%)</div></div>
+<div class="kpi-card warn"><div class="val">641</div><div class="lbl">overdue (15.1%)</div></div>
+<div class="kpi-card"><div class="val">263</div><div class="lbl">อัลบั้มจริง</div></div>
+<div class="kpi-card ok"><div class="val">212</div><div class="lbl">อัลบั้ม↔ปฏิทิน (80.6%)</div></div>
+<div class="kpi-card"><div class="val">842</div><div class="lbl">ข่าวประชาสัมพันธ์</div></div>
+<div class="kpi-card"><div class="val">253</div><div class="lbl">ข่าว↔ปฏิทิน (30%)</div></div>
+</div>
+<div class="box box-plan"><b>Positive:</b> อัลบั้ม 80.6% ผูกปฏิทิน = <b>สูงสุดในกลุ่ม 6 โรง</b> (SG 36% · ACS 36% · ACT 13% · ACL 43% · ACP 61%) — MC มีวินัยบันทึกจริง</div>
+
+<h3>Layer 4 · SAR + Governance + App usage</h3>
+<table>
+<tr><th>รายการ</th><th class="c">ค่า</th><th>สถานะ</th></tr>
+<tr><td>SAR topics · with_auto_source</td><td class="c">66 · 61</td><td>-</td></tr>
+<tr><td>Snapshot ล่าสุด</td><td class="c b" style="color:var(--bad)">2025-11-30</td><td>🔴 <b>ปีเก่า</b> (ไม่ใช่ 2569)</td></tr>
+<tr><td>Topics filled</td><td class="c">60/61 (98.36%)</td><td>ถูกแต่ปีเก่า</td></tr>
+<tr><td>sar_content ปีนี้</td><td class="c b" style="color:var(--bad)">0 items · 0 writers</td><td><span class="chip chip-p1">🔴</span></td></tr>
+<tr><td>Structure confirm / Personnel confirm</td><td class="c">ยังไม่ยืนยัน / 29.41%</td><td>⚠️</td></tr>
+<tr><td>Executive App users · new</td><td class="c b" style="color:var(--bad)">2 · 0</td><td>🔴 ผู้บริหาร 6 คนไม่ใช้ dashboard</td></tr>
+<tr><td>Teacher App · Parent App</td><td class="c">895+105 · 2,021+404</td><td>✅ ใช้จริง</td></tr>
+</table>
+
+<h3>🎯 หลักการ Reverse Trace (canonical PDCA9 v2)</h3>
+<div class="box box-owner">
+<b>หลักการ:</b> ทุกกิจกรรมในปฏิทิน = มาจากแผน PDCA9 (P/D/C/A ขั้นไหน) · Title prefix "4.x/6.x/7.x/8.x" → บ่งขั้น · overdue = D ที่ยังไม่ปิด · ต้อง update Do (ข้อ 6) ระหว่างปี
+</div>
+
+<h3>Pilot Reverse Trace (จาก overdue sample 20/641)</h3>
+<div class="box box-warn">
+<b>pattern พบ:</b>
+<ul style="margin:6px 0 0 20px;font-size:.85rem">
+<li>Overdue เยอะที่ D ขั้น 6 (activity update ระหว่างปี) · เดือน พ.ค.-ก.ค. (start of year rush)</li>
+<li>"8.1 ประเมินผลการดำเนินงาน..." อ้าง due 1994-09-11 (ปี ค.ศ. 1994) = data quality bug</li>
+<li>งานสระว่ายน้ำ ฟิตเนส (id_dept 1960) มี pattern "6.x งานบำรุงรักษา..." due 3 พ.ค. หลายรายการ = คลื่นบำรุงต้นปี · ต้องปิด</li>
+</ul>
+</div>
+
+<h3>💡 สรุปตอบ ผอ. · 5 ประเด็นเร่งด่วน</h3>
+<div class="box box-bad">
+<ol style="margin:6px 0 0 20px;font-size:.88rem">
+<li>Update ปฏิทิน 641 overdue ก่อนสิ้น ก.ย. 69 (คลื่นบำรุงต้นปีคั่ง)</li>
+<li>Trigger SAR ปี 2569 rounds — snapshot 2025-11-30 = ปีเก่า</li>
+<li>Onboard 6 ผู้บริหารเข้า Executive App</li>
+<li>Confirm Loop 16 dept + Personnel 71% เร่ง</li>
+<li>Cascade คู่มือคุณภาพ 25 dept + main_topics (dep QMI)</li>
+</ol>
+</div>
+
+<h3>📚 อ้างอิงข้อมูล</h3>
+<div class="box">
+<b>MCP 8 modules · date query 2026-08-04:</b>
+<ul style="margin:6px 0 0 20px;font-size:.85rem">
+<li>plan_pdca9 (37 dept · 34 plans · 438 items · 0 files)</li>
+<li>quality_manual (25 none · 12 partial · 0 ครบ)</li>
+<li>calendar_status (4,245 events · done 1,279 · overdue 641)</li>
+<li>post_news (news 842 · albums 263 · albums_link 212)</li>
+<li>org_structure (6 sides · 255 in_structure · 84 not_in · Job Spec 237)</li>
+<li>list_school_plans (35 plans · 1 orphan ศูนย์ดนตรี)</li>
+<li>get_school_budget_summary + get_budget_by_dept (33 dept · 2 over 100%)</li>
+<li>kpi_norm (372 indicators · 101.61% bug · 7 sets · 1,843 links)</li>
+<li>sar (60/61 filled · snapshot 2025-11-30 · sar_content=0)</li>
+<li>application (Executive 2 · Teacher 895 · Parent 2,021)</li>
+</ul>
+</div>
+
+<h2>ส่วนที่ ๑๒ · Per-plan Deep Audit · <span style="color:var(--navy)">Pilot P3 · 6 แผน (baseline + 2 over-budget + 2 KPI=0 + 1 junk)</span></h2>
+
+<div class="box box-owner">
+<b>Scope:</b> ตรวจ 6 แผนตัวแทน ผ่าน <code>get_school_plan</code> + <code>get_plan_step_budget</code> · Structural + KPI + Budget compliance per plan · ไม่ deep dive การเงิน (scope Finance room)
+</div>
+
+<h3>Matrix per plan · 6 sample</h3>
+<table>
+<tr><th class="c" style="width:5%">#</th><th style="width:22%">แผน · id_profile</th><th class="c" style="width:6%">approved</th><th class="c" style="width:6%">ครบ 9</th><th class="c" style="width:8%">KPI</th><th class="c" style="width:8%">goals</th><th class="c" style="width:15%">งบตั้ง/จ่ายจริง</th><th class="c" style="width:8%">%ใช้</th><th class="c" style="width:22%">Finding</th></tr>
+
+<tr><td class="c">1</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1620" target="_blank">งานบริหารสำนักผู้อำนวยการ · 1620</a><br><span class="note" style="font-size:.75rem">baseline · id_dept 1967 · owner id_emp 00766</span></td><td class="c">✓</td><td class="c">✓</td><td class="c">10</td><td class="c">13</td><td class="c">22,762 / 5,822</td><td class="c">25.58%</td><td>งบผูก step 6 ล้วน · sub_activities 1·2·3·5·9 = 0 ทั้ง 5 ขั้น · Objective ยาวเกิน (มีตัวเลขนโยบายเยอะ)</td></tr>
+
+<tr><td class="c">2</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1650" target="_blank" style="color:var(--bad)">ศูนย์ความเป็นเลิศทางวิชาการ · 1650</a><br><span class="note" style="font-size:.75rem">🔴 over-budget · id_dept 1976 · owner id_emp 40007</span></td><td class="c">✓</td><td class="c">✓</td><td class="c">13</td><td class="c">13</td><td class="c" style="color:var(--bad);font-weight:700">13,000 / 1,035,000</td><td class="c" style="color:var(--bad);font-weight:700">7,961%</td><td>🔴 <b>overrun 7,961%</b> · 1 รายการเดียว = ประกวด JDIE 2026 ญี่ปุ่น (นักเรียนไปโอซาก้า) · budget planning ไม่ครอบคลุม trip ระหว่างปี</td></tr>
+
+<tr><td class="c">3</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1642" target="_blank" style="color:var(--bad)">งานวัดและประเมินผล · 1642</a><br><span class="note" style="font-size:.75rem">🔴 over-budget · id_dept 1973 · owner id_emp 00265</span></td><td class="c">✓</td><td class="c">✓</td><td class="c">18</td><td class="c">16</td><td class="c" style="color:var(--bad);font-weight:700">168,548 / 188,500</td><td class="c" style="color:var(--bad);font-weight:700">111.84%</td><td>🔴 overrun 111.84% (-19,952) · รายการซื้อสมุดเล่มแดง 188,500 · <b>KPI 18 > 9 spec</b> = ไม่ตรง PDCA9 v2 (1 KPI/ขั้น)</td></tr>
+
+<tr><td class="c">4</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1646" target="_blank" style="color:var(--bad)">งานบริหารฝ่าย กจน. · 1646</a><br><span class="note" style="font-size:.75rem">🔴 KPI=0 · id_dept 1980 · owner id_emp 00064</span></td><td class="c">✓</td><td class="c">✓</td><td class="c" style="color:var(--bad);font-weight:700">0 🔴</td><td class="c">17</td><td class="c">63,786 / 9,879</td><td class="c">15.49%</td><td>🔴 <b>KPI = [] (ว่างสิ้นเชิง)</b> · goals 17 ข้อ (3 type1 + 14 type0) · Objective ยาวมาก (14 ข้อ) · ตกกฎ v2 spec 9 KPI</td></tr>
+
+<tr><td class="c">5</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1640" target="_blank" style="color:var(--bad)">งานวิเทศฯ · 1640</a><br><span class="note" style="font-size:.75rem">🔴 KPI=0 · id_dept 1975 · owner id_emp 00685</span></td><td class="c">✓</td><td class="c">✓</td><td class="c" style="color:var(--bad);font-weight:700">0 🔴</td><td class="c">5</td><td class="c">450,340 / 76,900<br><span class="note" style="font-size:.72rem">in 552,500</span></td><td class="c">17.08%</td><td>🔴 <b>KPI = []</b> · goals 5 ข้อ (สั้นสุด) · Objective 17 ข้อ · 12 items ใน step 6 (Road Show · Open House · Career Shopping · เยี่ยม มช. · MOU · JDIE)</td></tr>
+
+<tr><td class="c">6</td><td><a href="https://swis.mcs.ac.th/admin/management/planning/plan_detail.php?id_profile=1616" target="_blank" style="color:var(--bad)">ศูนย์ดนตรี · 1616 (junk)</a><br><span class="note" style="font-size:.75rem">🔴 orphan · id_dept 1968 (ไม่อยู่ในผัง) · owner id_emp 00766</span></td><td class="c" style="color:var(--warn)">draft</td><td class="c">✓</td><td class="c">3</td><td class="c">3</td><td class="c">389,110 / 0</td><td class="c">0%</td><td>🔴 <b>junk verified 4 evidence:</b> (1) draft not approved (2) dept 1968 ไม่อยู่ในผัง (3) title step 7-8 = "2568" (ปีเก่า) (4) events date 2025-2026 (ผิดปี) · จ่ายจริง 0 = แผนไม่ได้ใช้</td></tr>
+</table>
+
+<h3>📋 6 Findings (ตอบตรงประเด็นบราเดอร์)</h3>
+<div class="box box-bad">
+<ol style="margin:6px 0 0 20px;font-size:.88rem">
+<li><b>sub_activities = 0 ที่ Step 1·2·3·5·9 ทุกแผน</b> (5 ขั้นจาก 9) — เหลือกิจกรรมจริงเฉพาะ Step 6 (D) · 7 (นิเทศ) · 8 (ประเมิน) · pattern เดียวกัน MC ทุก dept</li>
+<li><b>งบผูก Step 6 ล้วน 100%</b> — ทั้ง 6 แผน · Step 4 มี sub_activities แค่แผนเดียว (ศูนย์ดนตรี 3) · = pattern "งบก้อนเดียวใน D"</li>
+<li><b>2 แผน KPI = [] (ว่าง)</b> — งานบริหารฝ่าย กจน. + งานวิเทศฯ · ตกกฎ v2 spec (9 KPI/step) ชัดเจน</li>
+<li><b>KPI vs 9-step spec:</b> ศูนย์ความเป็นเลิศ (13) · งานบริหารสำนัก ผอ. (10) · งานวัดผล (18) — เกิน 9 ตัว = ไม่ mapping 1-per-step ตาม v2</li>
+<li><b>Over-budget 2 แผน confirmed:</b> ศูนย์ความเป็นเลิศ 7,961% (trip JDIE ญี่ปุ่น 1.03M ที่ไม่ตั้งงบ) · งานวัดผล 111.84% (สมุดเล่มแดง 188.5K)</li>
+<li><b>Junk plan 1 verified 4 evidence:</b> ศูนย์ดนตรี id_dept 1968 · draft · ไม่ในผัง · title ปี 2568 · events 2025-2026 · จ่ายจริง 0 → <b>retire ทันที</b></li>
+</ol>
+</div>
+
+<h3>📎 หลักฐาน items จริง (kind="จริง" · มีวันที่)</h3>
+<table>
+<tr><th style="width:20%">แผน</th><th class="c" style="width:8%">Step</th><th>รายการ</th><th class="c" style="width:12%">amount</th><th class="c" style="width:12%">date</th></tr>
+<tr><td>งานบริหารสำนัก ผอ.</td><td class="c">6</td><td>สำนัก ผอ.—เบิกวัสดุสำนักงานสิ้นเปลืองของฝ่าย ไส้แฟ้ม</td><td class="c">5,822</td><td class="c">2026-06-01</td></tr>
+<tr><td style="color:var(--bad)">ศูนย์ความเป็นเลิศ</td><td class="c">6</td><td>*วิชาการ* ประกวด JDIE 2026 (30 มิย. - 6 กค. 69) ณ นครโอซาก้า ประเทศญี่ปุ่น</td><td class="c" style="color:var(--bad);font-weight:700">1,035,000</td><td class="c">2026-06-18</td></tr>
+<tr><td style="color:var(--bad)">งานวัดและประเมินผล</td><td class="c">6</td><td>*วิชาการ* สมุดรายงานประจำตัวนักเรียน (สมุดเล่มแดง)</td><td class="c" style="color:var(--bad);font-weight:700">188,500</td><td class="c">2026-07-06</td></tr>
+<tr><td>งานบริหารฝ่าย กจน.</td><td class="c">6</td><td>กิจการนักเรียน—วัสดุสำนักงานสิ้นเปลืองของฝ่าย</td><td class="c">9,879</td><td class="c">2026-05-11</td></tr>
+<tr><td>งานวิเทศฯ</td><td class="c">6</td><td>*วิชาการ* MUIC MEET 2569 (18-19 มิ.ย. 69) วิทยาลัยนานาชาติ ม.มหิดล · เบี้ยเลี้ยงครู</td><td class="c">16,900</td><td class="c">2026-06-08</td></tr>
+<tr><td>งานวิเทศฯ</td><td class="c">6</td><td>*วิชาการ* MC OPEN HOUSE 2026 (11 ก.ค. 69) บูธนิทรรศการ/ฐานการเรียน</td><td class="c">60,000</td><td class="c">2026-07-06</td></tr>
+<tr><td style="color:var(--warn)">ศูนย์ดนตรี (junk)</td><td class="c" colspan="4">— ไม่มี item kind="จริง" · จ่ายจริง 0 = แผน draft ไม่ execute</td></tr>
+</table>
+
+<h3>🚨 Junk plan verify (ศูนย์ดนตรี · id_profile 1616 · id_dept 1968)</h3>
+<div class="box box-bad">
+<b>4 หลักฐาน confirm junk:</b>
+<ol style="margin:6px 0 0 20px;font-size:.88rem">
+<li><b>Approval:</b> approved=false (ยังไม่อนุมัติ) · 34/35 แผนอนุมัติ · แผนนี้เป็น 1 ที่ค้าง</li>
+<li><b>Structure orphan:</b> id_dept 1968 ไม่ปรากฏใน <code>org_structure</code> (37 dept ในผัง) และไม่ปรากฏใน <code>budget_by_dept</code> (33 dept มีงบ)</li>
+<li><b>Title ปีผิด:</b> Step 7 = "รับการนิเทศ...2568" · Step 8 = "ประเมินผล...2568" — ปีการศึกษาปัจจุบัน = <b>2569</b> · title = ปี 2568 (ปีเก่า)</li>
+<li><b>Events dates = 2025-2026:</b> ทั้ง 9 ขั้น start/end อยู่ในปี ค.ศ. 2025-04-01 ถึง 2026-04-30 = ปีการศึกษา 2568 (ไทย) · แผนไม่ update สู่ปี 2569</li>
+</ol>
+<b>Action:</b> ผอ. ภราดาชำนาญ ตัดสินใจ: (A) retire แผนนี้ · ลบ dept 1968 · หรือ (B) เพิ่ม dept 1968 ในผัง + อัปแผนสู่ปี 2569 + จัดสรรงบ · <b>Deadline:</b> 15 ส.ค. 69
+</div>
+
+<h3>💡 Cross-reference กับ Section 11 (Reality vs Plan)</h3>
+<div class="box box-warn">
+<ul style="margin:6px 0 0 20px;font-size:.86rem">
+<li><b>Layer 3 Reality Check:</b> 6 แผนนี้อยู่ในกลุ่ม events 4,245 · done 30.13% · overdue 641 — pattern ตรงกัน</li>
+<li><b>Layer 4 Governance:</b> ทั้ง 6 owner id_emp มีใน HR (00064, 00265, 00685, 00766×2, 40007) แต่ Confirm Loop personnel = 29.41% → owner บางคนอาจไม่ยืนยันตัวตน</li>
+<li><b>Cross-verify Finance room:</b> 2 over-budget items (JDIE 1.03M · สมุดเล่มแดง 188.5K) → flag Finance ตรวจ ledger ยืนยันจริง · <b>ไม่ handoff ตรง</b> · CC ผ่าน central</li>
+</ul>
+</div>
+
+<h3>📚 อ้างอิงข้อมูล (P3 pilot · 12 tool calls)</h3>
+<div class="box">
+<ul style="margin:6px 0 0 20px;font-size:.85rem">
+<li><code>get_school_plan(mcs, 1620/1650/1642/1646/1640/1616)</code> × 6 = 6 calls</li>
+<li><code>get_plan_step_budget(mcs, ..., items=true)</code> × 6 = 6 calls</li>
+<li>Total 12 tool calls · date query 2026-08-04</li>
+<li>Scope compliant กฎ #44 (edit ไฟล์ตัวเองเท่านั้น) · scope PDCA9 (Finance analysis ยกให้ SWIS_FINANCE_AUDIT)</li>
+</ul>
+</div>
+
+<footer>
+<div><b>ที่มา:</b> MCP tools 8 modules (mcs) · <code>list_directors</code> verify ผอ. · date query 2026-08-04</div>
+<div><b>Scope:</b> PDCA9 audit เท่านั้น · Finance analysis ยกให้ SWIS_FINANCE_AUDIT (งบใช้เกิน 2 dept · cross-verify)</div>
+<div><b>เกณฑ์:</b> <code>pdca9_foundation_guide_v2.md</code> · pattern v1 approved (announcement #39) · GOLD STANDARD SPEC (compare vs sl_pdca9_audit.html 130KB)</div>
+<div><b>Cross-room verified:</b> ผอ. ภราดาชำนาญ เหล่ารักผล (id_emp 90018) · SWIS พ่นชื่อขาดคำนำหน้าภราดา (SWIS bug · flagged)</div>
+<div><b>Compliance:</b> Rule #44 MEMORY WRITE AUTHORITY · เขียนใน folder ตัวเอง (fsgthailand.org/) · CC evidence ที่ central_feedback.md</div>
+</footer>
+</body></html>

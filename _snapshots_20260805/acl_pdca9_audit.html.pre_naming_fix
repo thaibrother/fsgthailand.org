@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<title>รายงาน Audit แผนงาน PDCA9 · โรงเรียนอัสสัมชัญลำปาง · ปีการศึกษา 2569</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+:root{--navy:#1a3557;--ok:#2e7d32;--warn:#e08e0b;--bad:#c0392b;--owner:#7b1fa2}
+*{box-sizing:border-box}body{font-family:'Sarabun',sans-serif;color:#1a1a1a;line-height:1.55;max-width:1200px;margin:0 auto;padding:26px;background:#fafafa}
+h1{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}h2{font-size:1.2rem;border-bottom:2px solid var(--navy);padding-bottom:5px;margin:28px 0 12px;color:var(--navy)}h3{font-size:1rem;margin:18px 0 8px;color:#333}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88rem;background:#fff}th,td{border:1px solid #d0d0d0;padding:7px 9px;vertical-align:top;text-align:left}th{background:var(--navy);color:#fff}th.owner{background:var(--owner)}.c{text-align:center}.b{font-weight:600}
+.chip{color:#fff;padding:2px 9px;border-radius:10px;font-size:.78rem;font-weight:600;display:inline-block}.chip-p1{background:var(--bad)}.chip-p2{background:var(--warn)}.chip-p3{background:var(--ok)}
+.box{border:1px solid #ddd;border-left:5px solid var(--navy);background:#f5f8fc;border-radius:5px;padding:12px 16px;margin:10px 0}.box-bad{border-left-color:var(--bad);background:#fdf6f5}.box-warn{border-left-color:var(--warn);background:#fff8e6}.box-owner{border-left-color:var(--owner);background:#f9f0ff}.box-plan{border-left-color:var(--ok);background:#f0f9f0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.kpi-card{flex:1;min-width:150px;border:1px solid #ddd;border-radius:6px;padding:10px 14px;text-align:center;background:#fff}.kpi-card .val{font-size:1.6rem;font-weight:700}.kpi-card .lbl{font-size:.78rem;color:#666}.kpi-card.ok{border-color:var(--ok)}.kpi-card.ok .val{color:var(--ok)}.kpi-card.warn{border-color:var(--warn)}.kpi-card.warn .val{color:var(--warn)}.kpi-card.bad{border-color:var(--bad)}.kpi-card.bad .val{color:var(--bad)}
+.note{color:#666;font-size:.85rem}.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0}.node{background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 12px;font-size:.85rem;min-width:120px}.node.bad{border-color:var(--bad);background:#fdf6f5}.node.warn{border-color:var(--warn);background:#fff8e6}.node.ok{border-color:var(--ok);background:#f0f9f0}.arrow{color:#888;font-weight:700}
+.badge{padding:3px 10px;border-radius:12px;font-size:.78rem;font-weight:600}.badge-pass{background:#e8f5e9;color:var(--ok)}.badge-fail{background:#ffebee;color:var(--bad)}
+.sidehdr td{background:#eaf0f6;font-weight:700;padding:8px 12px !important}a{color:var(--navy)}
+footer{border-top:2px solid #ccc;margin-top:26px;padding-top:12px;font-size:.82rem;color:#555}
+</style></head><body>
+
+<header><h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนอัสสัมชัญลำปาง (ACL) · ปีการศึกษา 2569</span></h1>
+<p class="note">ตรวจโดย PDCA9_INSPECTOR (Specialty Hub #1) · เกณฑ์ pdca9_foundation_guide_v2.md · pattern v1 · SL gold standard</p>
+<p><span class="badge badge-pass">✅ KPI norm ใช้ 89.67% (ดีสุดใน Phase 1) · Personnel 66.29%</span> <span class="badge badge-fail">🔴 Manual 100% ไม่มี · 25 dept no-plan · KPI 158 บาน · งบ 86% ใกล้เต็ม</span></p></header>
+
+<h2>บทสรุปผู้บริหาร</h2>
+<div class="kpi"><div class="kpi-card ok"><div class="val">34/59</div><div class="lbl">มีแผน</div></div><div class="kpi-card ok"><div class="val">33/34</div><div class="lbl">approved</div></div><div class="kpi-card bad"><div class="val">0/59</div><div class="lbl">คู่มือครบ 6</div></div><div class="kpi-card bad"><div class="val">59/59</div><div class="lbl">ไม่มีคู่มือ (100%)</div></div><div class="kpi-card warn"><div class="val">320</div><div class="lbl">overdue</div></div><div class="kpi-card ok"><div class="val">21.97%</div><div class="lbl">events done</div></div></div>
+<div class="box box-bad"><b>✅ ตอบตรง:</b> ACL 34/59 มีแผน · 33 approved · KPI norm ใช้ 89.67% (ดีสุด) · <b>ปัญหา 5 เรื่อง:</b><ol style="margin:6px 0 0 20px"><li>🔴 <b>Manual 0/59 ครบ · 100% ไม่มี</b> (แย่สุดใน Phase 1 เท่า ACS)</li><li>🔴 <b>25 dept ไม่มีแผน</b> (สูงสุด · 8 กลุ่มสาระ + 25 กลุ่มครูผู้สอน + ปฐมวัย + CEP)</li><li>🔴 <b>KPI 158 บาน (id_profile 3128 กลุ่มสาระ):</b> KPI overkill vs 9 spec (17.5×)</li><li>🔴 <b>งบใกล้เต็ม:</b> อาคารสถานที่ 86.02% · ปฐมวัยระดับชั้น 67.19% · หลักสูตรและการสอน 39.28%</li><li>🔴 <b>H3 SWIS bug:</b> "ภราดาดร.วิทยา" ขาด space · canonical=ภราดา ดร.วิทยา</li></ol></div>
+
+<h2>ส่วนที่ ๑ · Chain of Alignment</h2>
+<div class="flow">
+<span class="node ok">⓪ ยุทธ์มูลนิธิ 5 · 47 KPI</span><span class="arrow">→</span>
+<span class="node ok">① DP-ACL</span><span class="arrow">→</span>
+<span class="node bad">② คู่มือ · 100% ไม่มี</span><span class="arrow">→</span>
+<span class="node ok">③ PDCA9 · 33 approved</span><span class="arrow">→</span>
+<span class="node warn">④ Reality done 21.97%</span><span class="arrow">→</span>
+<span class="node bad">⑤ SAR sar_content=0</span>
+</div>
+
+<h2>ส่วนที่ ๒ · รายละเอียดแผน PDCA9</h2>
+<table>
+<tr><th>ตัวชี้วัด</th><th class="c">ค่า</th><th>สถานะ</th></tr>
+<tr><td>หน่วยงาน · มีแผน · ไม่มี</td><td class="c b">59 · 34 · 25</td><td>-</td></tr>
+<tr><td>plans list vs stats</td><td class="c b">34 vs 34</td><td>✅ ตรง (ไม่มี orphan)</td></tr>
+<tr><td>approved · ครบ 9 · with_kpi</td><td class="c b">33 · 34 · 34</td><td>97%</td></tr>
+<tr><td>plan_items · Evidence</td><td class="c b" style="color:var(--bad)">289 · 0</td><td>🔴</td></tr>
+</table>
+
+<h2>ส่วนที่ ๓ · คู่มือคุณภาพ</h2>
+<table>
+<tr><th>สถานะ</th><th class="c">จำนวน</th><th class="c">%</th><th>Priority</th></tr>
+<tr><td>ครบ 6 ส่วน</td><td class="c b" style="color:var(--bad)">0/59</td><td class="c">0%</td><td>🔴</td></tr>
+<tr><td>partial</td><td class="c b">0</td><td class="c">0%</td><td>-</td></tr>
+<tr><td>ยังไม่มี</td><td class="c b" style="color:var(--bad)">59</td><td class="c">100%</td><td>🔴 P1</td></tr>
+</table>
+
+<h2>ส่วนที่ ๔ · โครงสร้าง + Confirm Loop</h2>
+<table>
+<tr><th>รายการ</th><th class="c">ค่า</th><th>หมายเหตุ</th></tr>
+<tr><td>ผู้อำนวยการ</td><td class="c b">ภราดา ดร.วิทยา เทพกอม</td><td>canonical id_emp 1185</td></tr>
+<tr><td>ฝ่าย · หน่วยงาน</td><td class="c b">6 · 59</td><td>-</td></tr>
+<tr><td>Staffing in_structure</td><td class="c b">267</td><td>hr_baseline 357 · not_in 90</td></tr>
+<tr><td>Personnel confirm</td><td class="c b">66.29%</td><td>177/267</td></tr>
+<tr><td>Job Spec</td><td class="c b">193/267 (72%)</td><td>-</td></tr>
+</table>
+
+<h2>ส่วนที่ ๕ · Issues + Action Plan</h2>
+<h3>Issue A1 · <span class="chip chip-p1">P1</span> Manual 100% none — แย่สุดใน Phase 1</h3><p>77% partial manual (ACT) · 96% none (ACS) · 100% none (ACL) — <b>ต้นทาง:</b> Commission ICT+HRM (ภราดาศุภนันท์) + QMI · <b>ระดับโรง:</b> ผอ. + งานประกันคุณภาพ (นางดารณี ศรีสุข) + 34 หัวหน้าหน่วยงาน</p>
+<h3>Issue A2 · <span class="chip chip-p1">P1</span> KPI 158 บาน id_profile 3128 (dept 2248 งานกลุ่มสาระ)</h3><p>KPI 158 ตัว · Objectives 142 · Goals 8 — <b>KPI overkill 17.5× spec</b> (9 KPI/step) · <b>Owner:</b> id_emp งานกลุ่มสาระ · <b>Action:</b> แยกเป็น 8 กลุ่มสาระย่อย + ปรับ KPI 1 ตัว/step</p>
+<h3>Issue A3 · <span class="chip chip-p1">P1</span> 25 dept ไม่มีแผน (สูงสุดใน Phase 1)</h3><p>8 กลุ่มสาระ + 25 กลุ่มครูผู้สอน (ป.1-ม.6 · ปฐมวัย · CEP) + admin · <b>ต้องรวมเข้า dept แม่</b> (งานกลุ่มสาระ 2248) หรือทำแผนต่อระดับ · <b>Owner:</b> ผอ. + นายศุภเสฎฐ์ ตาอินทร (บริหารวิชาการ)</p>
+<h3>Issue A4 · <span class="chip chip-p1">P1</span> H3 SWIS bug ผอ.</h3><p>SWIS พ่นชื่อ "ภราดาดร.วิทยา" (ขาด space) · canonical=ภราดา ดร.วิทยา เทพกอม (id_emp 1185) · <b>Fix DB title</b> · escalate SWIS</p>
+<h3>Issue A5 · <span class="chip chip-p2">P2</span> Events done 21.97% + overdue 320</h3><p>ปฏิทิน 3,782 · done 831 · overdue 320 (ต่ำกว่าโรงอื่น) · Reality gap · <b>Coord:</b> นางศิริพร ปิยะตระกูล (บริหารสำนัก ผอ.) · Policy update event status</p>
+<h3>Issue A6 · <span class="chip chip-p2">P2</span> Executive App 4 · งบใกล้เต็ม 1 dept</h3><p>อาคารสถานที่ 86.02% (4.83M/5.61M) · ระดับชั้นปฐมวัย 67.19% · <b>Owner:</b> นายนิกร ระโพธิ์ + Finance verify · <b>ระงับ over-spend</b></p>
+
+<h2>ส่วนที่ ๖ · Owner Chain (⓪→⑤)</h2>
+<table>
+<tr><th class="c">Layer</th><th>งาน</th><th class="owner">ต้นทาง (มูลนิธิ)</th><th class="owner">ระดับโรง</th></tr>
+<tr><td class="c b">⓪</td><td>ยุทธ์มูลนิธิ</td><td>เจ้าคณะแขวง + Provincial Council</td><td>ผอ. ภราดา ดร.วิทยา เทพกอม</td></tr>
+<tr><td class="c b">①</td><td>DP-ACL</td><td>Board มูลนิธิฯ + Commission Education</td><td>ผอ. + งานนโยบายและแผน</td></tr>
+<tr><td class="c b">②</td><td>คู่มือคุณภาพ 2.2 goals</td><td>Commission ICT+HRM (ภราดาศุภนันท์) + QMI</td><td>งานประกันคุณภาพ + หัวหน้าหน่วยงาน</td></tr>
+<tr><td class="c b">③</td><td>PDCA9</td><td>PDCA9_INSPECTOR + Commission ICT+HRM</td><td>34 หัวหน้าหน่วยงาน + งานประกัน</td></tr>
+<tr><td class="c b">④</td><td>SWIS</td><td>ICT sub 2.2 (ภราดามานิต) + SWIS Plus</td><td>งานสารสนเทศ + งานเทคโนโลยี</td></tr>
+<tr><td class="c b">⑤</td><td>SAR + Cost</td><td>Commission Education + Board</td><td>งานประกัน + งานบัญชี/งบประมาณ</td></tr>
+</table>
+
+<h3>📌 HRM 7 อนุ canonical 2569-2570</h3>
+<div class="box box-owner"><b>1</b> ศุภนันท์ · <b>2</b> สยาม แก้วประสิทธิ์ · <b>3</b> ศราวุธ ยุชมภู · <b>4</b> กุลชาติ จันทะโชโต · <b>5</b> นนทชา ศรีวิไล · <b>6</b> ทักษบุตร ไกรประสิทธิ์ · <b>7</b> นนทชา ศรีวิไล (=5)</div>
+
+<h2>ส่วนที่ ๗ · Action Plan Priority</h2>
+<table><tr><th class="c">P</th><th>Action</th><th class="owner">Owner</th><th class="c">Deadline</th></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>Fix SWIS ชื่อ ผอ.</td><td>ผอ.+SWIS</td><td class="c">15 ส.ค.</td></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>สร้างคู่มือ 59 dept + main_topics</td><td>34 หัวหน้าหน่วยงาน + นางดารณี</td><td class="c">30 พ.ย.</td></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>ตัดสิน 25 dept ไม่มีแผน</td><td>ผอ.+นายศุภเสฎฐ์</td><td class="c">30 ก.ย.</td></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>แยก id_profile 3128 KPI 158 → 8 กลุ่มสาระย่อย + 9 KPI/step</td><td>เจ้าของแผน dept 2248</td><td class="c">30 ก.ย.</td></tr><tr><td class="c"><span class="chip chip-p1">P1</span></td><td>ระงับ over-spend อาคารสถานที่ (86%)</td><td>นายนิกร ระโพธิ์ + Finance</td><td class="c">31 ส.ค.</td></tr><tr><td class="c"><span class="chip chip-p2">P2</span></td><td>Policy update event status · done 21.97% → 40%+</td><td>ผอ.+นางศิริพร+34 หน.</td><td class="c">ต.ค.</td></tr><tr><td class="c"><span class="chip chip-p2">P2</span></td><td>Job Spec 72% → 90%+ · 74 คนขาด</td><td>ผอ.+น.ส.ศิรินธร มาชัยวงค์ (HR)</td><td class="c">30 พ.ย.</td></tr></table>
+
+<h2>ส่วนที่ ๘ · Recommendation</h2>
+<div class="box box-plan">ACL <b>เด่นที่ KPI norm ใช้ 89.67% (ดีสุด Phase 1) · Structure confirmed แล้ว · SAR 98.36% · Personnel 66%</b> · แต่ Manual 100% ไม่มี + 25 dept ไม่มีแผน + KPI 158 บาน = ต้อง cleanup ก่อนทำเฟส ๒</div>
+
+<h2>ส่วนที่ ๙ · [PRIMARY SCOPE] Per-dept</h2>
+<p class="note">34 dept มีแผน · 25 dept ไม่มีแผน · ดูรายละเอียดที่ <a href="https://swis.acl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank">SWIS ปฏิทินแผนงาน</a></p><p><b>25 dept no-plan:</b> ผู้อำนวยการ + รอง ผอ. + พนักงาน + อัตราจ้าง + เจ้าหน้าที่ + แม่ครัว + 8 กลุ่มสาระ (คณิต · ต่างประเทศ · ไทย · วิทย์ · ศิลปะ · สังคม · สุข-พละ · การงาน) + 25 กลุ่มครูผู้สอน (ป.1-ม.6 · เตรียมอนุบาล-อ.3 · CEP)</p><p><b>งบ Top-5:</b> อาคารสถานที่ 5.61M (86.02% 🔴) · กิจกรรมพัฒนาผู้เรียนเสริม 5.52M (15.72%) · เทคโนโลยี 5.08M · งานกลุ่มสาระ 4.26M · ทรัพยากรมนุษย์ 3.57M</p>
+
+<h2>ส่วนที่ ๑๐ · บทวิเคราะห์ 3 มุม</h2>
+<h3>🟢 ข้อดี</h3><div class="box box-plan"><ol><li>KPI norm ใช้ 89.67% · <b>ดีสุดใน Phase 1</b> (14 ชุดมาตรฐาน · 697 indicators · 1,971 links)</li><li>SAR filled 98.36% · rounds 1,623 · snapshot ปีนี้</li><li>Personnel confirm 66.29% · Structure confirmed แล้ว (เดียวในกลุ่ม)</li><li>Executive App 4 · Parent 2,405 (+272)</li><li>Approved 33/34 · ครบ 9 ขั้น + KPI 100%</li></ol></div>
+<h3>🟡 ข้อเสีย</h3><div class="box box-warn"><ol><li><b>Manual 0 ครบ · 100% ไม่มี</b> (แย่สุดใน Phase 1)</li><li><b>25 dept ไม่มีแผน</b> (สูงสุด)</li><li>KPI 158 บาน id_profile 3128 (17.5× spec)</li><li>Evidence 0/289</li><li>SWIS bug ชื่อ ผอ. ขาด space</li><li>Job Spec 72% (ต่ำ)</li><li>งบใกล้เต็ม 1 dept (อาคาร 86%)</li></ol></div>
+<h3>🔴 ความเสี่ยง</h3><div class="box box-bad"><ol><li>เฟส ๒ fail 34/34: 2.2 ไม่ trace ต้นน้ำ (Manual 100% none)</li><li>SAR ปีนี้ content=0 · SAR รอบใหม่เสี่ยงเนื้อว่าง</li><li>KPI 158 บานทำให้ system overload · report ไม่ meaningful</li><li>25 dept ไม่มีแผน · ครูผู้สอนแยกออกจากระบบ</li><li>Data quality: dept กลุ่มครูผู้สอน มีในผัง แต่ไม่มีแผน · ไม่ควบคุมงาน</li></ol></div>
+<h3>💡 สรุปเสนอ ผอ.</h3><div class="box box-owner"><ol><li>Cascade Manual 6 ส่วน + main_topics 59 dept (30 พ.ย.)</li><li>Cleanup KPI id_profile 3128 · แยกกลุ่มสาระ (30 ก.ย.)</li><li>ตัดสิน 25 dept ไม่มีแผน (30 ก.ย.)</li><li>ระงับ over-spend อาคารสถานที่ 86%</li><li>Fix SWIS ชื่อ ผอ.</li></ol></div>
+
+<h2>ส่วนที่ ๑๑ · Reality vs Plan · 4 Layer</h2>
+<h3>Layer 1 · Structure</h3><p>34 plans list = stats · <b>ไม่มี orphan</b> (ดีสุดใน Phase 1!) · 33 approved · 34 with_kpi · Evidence 0/289</p><h3>Layer 2 · KPI Linkage 697 · 14 ชุด · used 89.67%</h3><p>DP-ACL ระดับพื้นฐาน 112 · ปฐมวัย 66 · SP-FSG 104 · สพฐ พื้นฐาน+ปฐมวัย 113 · ACL 62+80 · FSG 20 · GGV 21 · IS 31 · Fi 10 · สมศ 19+21 · PP-FSG 38 · 1,971 links</p><h3>Layer 3 · Reality</h3><p>events 3,782 · done 831 (21.97%) · overdue 320 (8.5%) · อัลบั้ม 197 · อัลบั้ม↔ปฏิทิน 85 (43%) · ข่าว 31</p><h3>Layer 4 · SAR + Governance</h3><p>Snapshot 2026-08-03 (ปีนี้ ✓) · 98.36% filled · sar_content=0 · Structure confirmed ✓ · Personnel 66.29% · Executive 4 · Teacher 970 · Parent 2,405 · Student 6,978</p>
+
+<h2>ส่วนที่ ๑๒ · Per-plan Deep Audit (matrix)</h2>
+<div class="box box-warn"><b>Pilot findings:</b> จาก list_school_plans 34 · sample abnormal:<ul><li><a href="https://swis.acl.ac.th/admin/management/planning/plan_detail.php?id_profile=3128" target="_blank">id_profile 3128 · งานกลุ่มสาระการเรียนรู้</a> · <b>KPI=158 · Objectives=142 · Goals=8</b> — KPI overkill 17.5× spec (9/step)</li><li>id_profile 3138 งานทะเบียนวัดผล · <b>KPI=1</b> — น้อยผิดปกติ · ต่ำจนไม่ meaningful</li><li>id_profile 3131 ประชาสัมพันธ์ · KPI=3 · goals=4 · น้อย</li><li>id_profile 3133 งานทรัพยากรมนุษย์ · <b>draft (approved=false)</b> · KPI=23 · goals=5</li></ul><b>Pattern:</b> KPI distribution แปลก (1 ถึง 158) · ไม่ตรง spec 9/step</div>
+
+<footer><div><b>ที่มา:</b> MCP 8 modules (acl) · list_directors verify · date 2026-08-04</div><div><b>Scope:</b> PDCA9 · Finance ยกให้ SWIS_FINANCE_AUDIT</div><div><b>Compliance:</b> Rule #44 · #47 · CC ที่ central_feedback.md</div></footer>
+</body></html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<title>รายงาน Audit PDCA9 · โรงเรียนอัสสัมชัญลำปาง · ปีการศึกษา 2569</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap');
+:root{--navy:#1a3557;--ok:#2e7d32;--warn:#e08e0b;--bad:#c0392b;--owner:#7b1fa2}
+*{box-sizing:border-box}body{font-family:'Sarabun',sans-serif;color:#1a1a1a;line-height:1.55;max-width:1180px;margin:0 auto;padding:26px;background:#fafafa}
+h1{font-size:1.6rem;margin:0 0 6px;color:var(--navy)}
+h2{font-size:1.2rem;border-bottom:2px solid var(--navy);padding-bottom:5px;margin:26px 0 12px;color:var(--navy)}
+h3{font-size:1rem;margin:18px 0 8px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.9rem;background:#fff}
+th,td{border:1px solid #d0d0d0;padding:7px 9px;vertical-align:top;text-align:left}
+th{background:var(--navy);color:#fff}
+.c{text-align:center}.b{font-weight:600}
+.chip{color:#fff;padding:2px 9px;border-radius:10px;font-size:.78rem;font-weight:600;display:inline-block}
+.chip-p1{background:var(--bad)}.chip-p2{background:var(--warn)}.chip-p3{background:var(--ok)}
+.box{border:1px solid #ddd;border-left:5px solid var(--navy);background:#f5f8fc;border-radius:5px;padding:12px 16px;margin:10px 0}
+.box-bad{border-left-color:var(--bad);background:#fdf6f5}
+.box-warn{border-left-color:var(--warn);background:#fff8e6}
+.box-owner{border-left-color:var(--owner);background:#f9f0ff}
+.box-plan{border-left-color:var(--ok);background:#f0f9f0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.kpi-card{flex:1;min-width:150px;border:1px solid #ddd;border-radius:6px;padding:10px 14px;text-align:center;background:#fff}
+.kpi-card .val{font-size:1.7rem;font-weight:700}
+.kpi-card .lbl{font-size:.78rem;color:#666}
+.kpi-card.ok{border-color:var(--ok)}.kpi-card.ok .val{color:var(--ok)}
+.kpi-card.warn{border-color:var(--warn)}.kpi-card.warn .val{color:var(--warn)}
+.kpi-card.bad{border-color:var(--bad)}.kpi-card.bad .val{color:var(--bad)}
+.note{color:#666;font-size:.85rem}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0}
+.node{background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 12px;font-size:.85rem;min-width:120px}
+.node.bad{border-color:var(--bad);background:#fdf6f5}
+.node.warn{border-color:var(--warn);background:#fff8e6}
+.node.ok{border-color:var(--ok);background:#f0f9f0}
+.badge{padding:3px 10px;border-radius:12px;font-size:.78rem;font-weight:600}
+.badge-pass{background:#e8f5e9;color:var(--ok)}.badge-fail{background:#ffebee;color:var(--bad)}
+footer{border-top:2px solid #ccc;margin-top:26px;padding-top:12px;font-size:.82rem;color:#555}
+</style></head><body>
+
+<header>
+<h1>รายงาน Audit แผนงาน PDCA9<br><span style="font-size:.85em;font-weight:400">โรงเรียนอัสสัมชัญลำปาง · ปีการศึกษา 2569</span></h1>
+<p class="note">ตรวจโดยห้อง PDCA9_INSPECTOR (Specialty Hub #1) · เกณฑ์ <code>pdca9_foundation_guide_v2.md</code> · pattern v1 (approved #39)</p>
+<p><span class="badge badge-pass">✅ Structural: 34/59 มีแผน · 34/34 ครบ 9 ขั้น</span>
+<span class="badge badge-fail">🔴 Substance: 59/59 ไม่มีคู่มือคุณภาพ · overdue 320/3782</span></p>
+</header>
+
+<h2>สรุปผู้บริหาร</h2>
+<div class="kpi">
+<div class="kpi-card ok"><a href="https://swis.acl.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/59</div><div class="lbl">หน่วยงานมีแผน</div></a></div>
+<div class="kpi-card ok"><a href="https://swis.acl.ac.th/html_edu/cgi-bin/report/report_calendar.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">34/34</div><div class="lbl">แผนครบ 9 ขั้น</div></a></div>
+<div class="kpi-card bad"><a href="https://swis.acl.ac.th/swis_report/manual/report.php" target="_blank" style="text-decoration:none;color:inherit"><div class="val">0/59</div><div class="lbl">คู่มือครบ 6 ส่วน</div></a></div>
+<div class="kpi-card bad"><div class="val">59/59</div><div class="lbl">ไม่มีคู่มือ (100.0%)</div></div>
+<div class="kpi-card warn"><div class="val">320</div><div class="lbl">Overdue events</div></div>
+<div class="kpi-card bad"><div class="val">21.97%</div><div class="lbl">events เสร็จตามกำหนด</div></div>
+</div>
+
+<div class="box box-bad">
+<b>✅ ตอบตรงคำถาม:</b> โรงเรียนอัสสัมชัญลำปาง <b>มีแผน PDCA9 34/59 หน่วยงาน · 34/34 ครบ 9 ขั้น</b> เชิงจำนวน · <b>จุดอ่อน:</b>
+<ol style="margin:6px 0 0 20px">
+<li>🔴 <b>คู่มือคุณภาพ 100.0% ไม่มี</b> (59/59)</li>
+<li>🔴 <b>Events done 21.97% · overdue 320</b></li>
+<li>🔴 <b>Albums ref_cal 85/197 = 43.15%</b> ผูกปฏิทิน</li>
+<li>⚠️ <b>25 dept ไม่มีแผน</b></li>
+</ol>
+</div>
+
+<h2>ส่วนที่ 1 · Chain of Alignment</h2>
+<div class="flow">
+<span class="node ok">① ยุทธศาสตร์มูลนิธิ</span><span>→</span>
+<span class="node bad">② คู่มือคุณภาพ<br><span class="note" style="font-size:.7rem">100.0% ไม่มี</span></span><span>→</span>
+<span class="node ok">③ PDCA9<br><span class="note" style="font-size:.7rem">34 แผน</span></span><span>→</span>
+<span class="node bad">④ Reality<br><span class="note" style="font-size:.7rem">done 21.97%</span></span><span>→</span>
+<span class="node bad">⑤ SAR<br><span class="note" style="font-size:.7rem">evidence 0</span></span>
+</div>
+
+<h2>ส่วนที่ 2 · PDCA9 Structural Details</h2>
+<table>
+<tr><th>ตัวชี้วัด</th><th class="c">ตัวเลข</th><th class="c">%</th><th>สถานะ</th></tr>
+<tr><td>หน่วยงานมีแผน</td><td class="c b">34/59</td><td class="c">57.63%</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>แผน approved</td><td class="c b">34/34</td><td class="c">100.0%</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>ครบ 9 ขั้น</td><td class="c b">34/34</td><td class="c">100.0%</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>with_kpi</td><td class="c b">34/34</td><td class="c">-</td><td>-</td></tr>
+<tr><td>with_goal</td><td class="c b">34/34</td><td class="c">-</td><td>-</td></tr>
+<tr><td>Evidence files</td><td class="c b" style="color:var(--bad)">2/289</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">🔴 CRITICAL</span></td></tr>
+</table>
+
+<h2>ส่วนที่ 3 · คู่มือคุณภาพหน่วยงาน (Upstream 2.2)</h2>
+<table>
+<tr><th>สถานะคู่มือ</th><th class="c">ตัวเลข</th><th class="c">%</th><th>Priority</th></tr>
+<tr><td>ครบ 6 ส่วน</td><td class="c b" style="color:var(--bad)">0/59</td><td class="c">0.0%</td><td><span class="chip chip-p1">🔴</span></td></tr>
+<tr><td>partial</td><td class="c b" style="color:var(--warn)">0/59</td><td class="c">0.0%</td><td><span class="chip chip-p2">⚠️</span></td></tr>
+<tr><td>ยังไม่มี</td><td class="c b" style="color:var(--bad)">59/59</td><td class="c">100.0%</td><td><span class="chip chip-p1">🔴 P1</span></td></tr>
+</table>
+
+<h2>ส่วนที่ 4 · โครงสร้าง + Confirm Loop</h2>
+<table>
+<tr><th>รายการ</th><th class="c">ตัวเลข</th><th>หมายเหตุ</th></tr>
+<tr><td>ผู้อำนวยการ</td><td class="c b">ภราดา ดร.วิทยา เทพกอม</td><td>⚠️ SWIS พ่น "ภราดาดร.วิทยา" (ขาด space) · canonical=ภราดา ดร.วิทยา list_directors id_emp 1185</td></tr>
+<tr><td>ฝ่าย</td><td class="c b">6</td><td>-</td></tr>
+<tr><td>หน่วยงาน</td><td class="c b">59</td><td>-</td></tr>
+<tr><td>Staffing in_structure</td><td class="c b">267/357</td><td>not_in_structure: 90</td></tr>
+<tr><td>Confirm Loop not_started</td><td class="c b" style="color:var(--bad)">50/59</td><td>submitted: 5 · completed: 0</td></tr>
+<tr><td>Personnel confirmed</td><td class="c b">177/267</td><td>66.29%</td></tr>
+</table>
+
+<h2>ส่วนที่ 8 · Recommendation</h2>
+<div class="box box-owner">
+<b>Key Message:</b> โรงเรียนอัสสัมชัญลำปาง มีแผน PDCA9 <b>34 แผน · ครบ 9 ขั้นเชิงจำนวน</b> · แต่ต้องเร่งแก้:
+<ul style="margin:6px 0 0 20px">
+<li><b>คู่มือคุณภาพ 100.0% ไม่มี</b> — เร่ง cascade + main_topics</li>
+<li><b>25 dept ไม่มีแผน</b> — 🔴 25 dept · 8 กลุ่มสาระ + 25 กลุ่มครูผู้สอน (ป.1-ม.6 · ปฐมวัย · CEP) · gap สูงสุด</li>
+<li><b>Events done เพียง 21.97%</b> · overdue 320 — ต้องเร่ง update Do</li>
+</ul>
+</div>
+
+<h2>ส่วนที่ 10 · บทวิเคราะห์และสรุปภาพรวม</h2>
+<h3>🟢 ข้อดี</h3>
+<div class="box box-plan"><ol style="margin:0 0 0 20px;font-size:.88rem">
+<li>Structural 57.63% dept มีแผน · 34/34 ครบ 9 ขั้น</li>
+<li>Confirm Loop submitted 5/59 dept</li>
+<li>Personnel confirmed 66.29% (177/267)</li>
+</ol></div>
+<h3>🟡 ข้อเสีย</h3>
+<div class="box box-warn"><ol style="margin:0 0 0 20px;font-size:.88rem">
+<li>คู่มือคุณภาพ 100.0% ไม่มี (59/59 dept)</li>
+<li>25 dept ยังไม่มีแผน — 🔴 25 dept · 8 กลุ่มสาระ + 25 กลุ่มครูผู้สอน (ป.1-ม.6 · ปฐมวัย · CEP) · gap สูงสุด</li>
+<li>Events done 21.97% · overdue 320/3782</li>
+<li>Albums ref_cal 85/197 = 43.15%</li>
+<li>Evidence files 0/289</li>
+<li>Staffing not_in_structure 90 คน</li>
+</ol></div>
+<h3>🔴 ความเสี่ยง</h3>
+<div class="box box-bad"><ol style="margin:0 0 0 20px;font-size:.88rem">
+<li>เฟส 2 audit อาจ fail per plan · 2.2 goals ไม่ trace ต้นน้ำ (main_topics)</li>
+<li>SAR รอบ 2569 เสี่ยงไม่ผ่าน สมศ. · evidence 0%</li>
+<li>Governance gap · Confirm Loop not_started 50/59</li>
+<li>Data quality risk · junk/duplicate plans พบใน pattern SL+SG</li>
+</ol></div>
+
+<h2>ส่วนที่ 11 · Reality vs Plan Audit · 4 Layer</h2>
+<h3>Layer 1 · Plan Structure</h3>
+<table><tr><th>รายการ</th><th class="c">ตัวเลข</th><th>สถานะ</th></tr>
+<tr><td>Approved plans</td><td class="c b">34/34</td><td><span class="chip chip-p3">✅</span></td></tr>
+<tr><td>with_kpi</td><td class="c b">34</td><td>-</td></tr>
+<tr><td>Evidence 0/289</td><td class="c b" style="color:var(--bad)">0%</td><td><span class="chip chip-p1">🔴</span></td></tr></table>
+
+<h3>Layer 3 · Reality Check</h3>
+<div class="kpi">
+<div class="kpi-card">
+<div class="val">3782</div><div class="lbl">Events ปฏิทิน</div></div>
+<div class="kpi-card">
+<div class="val">197</div><div class="lbl">อัลบั้มจริง</div></div>
+<div class="kpi-card warn">
+<div class="val">85</div><div class="lbl">อัลบั้ม↔ปฏิทิน (43.15%)</div></div>
+<div class="kpi-card bad">
+<div class="val">320</div><div class="lbl">overdue (8.46%)</div></div>
+</div>
+
+<h3>Layer 4 · Governance</h3>
+<table><tr><th>รายการ</th><th class="c">ค่า</th></tr>
+<tr><td>Structure confirm</td><td class="c">confirmed</td></tr>
+<tr><td>Personnel confirm</td><td class="c">ยังไม่ยืนยัน (66.29%)</td></tr>
+<tr><td>Job Spec ครบ</td><td class="c">193/267</td></tr></table>
+
+<h2>ส่วนที่ 12 · Per-plan Deep Audit · <span style="color:var(--warn)">pending batch 2</span></h2>
+<div class="box box-warn">
+<b>Pending:</b> P3 sample per-plan deep audit (get_school_plan + get_plan_step_budget) · จะเสริมเมื่อบราเดอร์/ห้องกลาง approve
+</div>
+
+<footer>
+<div><b>ที่มา:</b> MCP tools 5 modules (acl) · date query 2026-08-04</div>
+<div><b>Scope:</b> PDCA9 audit เท่านั้น · Finance ยกให้ SWIS_FINANCE_AUDIT</div>
+<div><b>เกณฑ์:</b> <code>pdca9_foundation_guide_v2.md</code> · pattern v1 approved #39 · scope กฎ #44</div>
+<div><b>Cross-room verified:</b> ผอ. verbatim จาก <code>list_directors</code> · db_name canonical</div>
+</footer>
+</body></html>

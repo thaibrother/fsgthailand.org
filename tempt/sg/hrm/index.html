@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<title>รายงานตรวจติดตามการดำเนินงาน HRM · โรงเรียนเซนต์คาเบรียล (sg) · เตรียมนิเทศ 9-10 ก.ย. 2569 · ฉบับ realtime 26 ส.ค.</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root { --navy: #0a1f44; --gold: #c9a74e; --green: #047857; --amber: #b45309; --red: #b91c1c; --gray: #475569; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --swis: #0369a1; --swisbg: #e0f2fe; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Sarabun', sans-serif; background: var(--bg); color: #0f172a; line-height: 1.55; padding: 20px 12px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  header { background: linear-gradient(135deg, var(--navy) 0%, #1e3a8a 100%); color: #fff; padding: 22px 28px; border-radius: 10px; margin-bottom: 18px; }
+  header h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  header h2 { font-size: 14px; opacity: 0.92; margin-bottom: 10px; }
+  header .meta { font-size: 12.5px; opacity: 0.9; line-height:1.75; }
+  header .meta strong { color: #fde68a; }
+  .label-verified { background:#065f46; color:#fff; font-size:10.5px; padding:2px 8px; border-radius:4px; font-weight:600; }
+  .label-unverified { background:#7c2d12; color:#fff; font-size:10.5px; padding:2px 8px; border-radius:4px; font-weight:600; }
+  .intro { background:#fef3c7; border-left:5px solid var(--amber); padding:14px 20px; border-radius:0 8px 8px 0; margin-bottom:18px; font-size:13px; line-height:1.75; }
+  .intro p { margin-bottom:8px; }
+  .transparency { background:#fff1f2; border:2px solid #c00; padding:14px 20px; border-radius:8px; margin-bottom:18px; font-size:12.5px; }
+  .transparency h3 { color:#c00; font-size:14px; margin-bottom:8px; }
+  .toc { background: #f1f5f9; border-left: 4px solid var(--navy); padding: 12px 18px; border-radius: 0 6px 6px 0; margin-bottom: 20px; font-size: 12.5px; }
+  .toc a { color: var(--navy); text-decoration: none; font-weight: 500; margin-right: 12px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 18px; overflow: hidden; }
+  .card-title { background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%); padding: 12px 20px; font-size: 15px; font-weight: 700; color: var(--navy); border-bottom: 1px solid var(--border); }
+  .card-title .num { background: var(--navy); color: #fff; font-size: 11px; padding: 3px 9px; border-radius: 4px; margin-right: 8px; }
+  .card-body { padding: 16px 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
+  th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: #f8fafc; font-weight: 600; color: var(--navy); font-size: 11px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 10px 0; }
+  .stat { background: #f8fafc; border: 1px solid var(--border); border-left: 4px solid var(--navy); padding: 10px 12px; border-radius: 6px; }
+  .stat .label { font-size: 10.5px; color: var(--gray); }
+  .stat .value { font-size: 19px; font-weight: 700; color: var(--navy); }
+  .stat .sub { font-size: 10px; color: var(--gray); margin-top: 2px; }
+  ul.tight { padding-left: 18px; font-size: 12.5px; }
+  ul.tight li { margin-bottom: 3px; }
+  .col5 { display: grid; grid-template-columns: 1.2fr 1.2fr 1.5fr 1.5fr 1fr; gap: 8px; font-size: 11.5px; padding: 8px; border: 1px solid var(--border); border-radius: 4px; margin-bottom: 6px; }
+  .col5 .h { font-weight: 700; color: var(--navy); background: #f1f5f9; padding: 6px; border-radius: 4px; text-align: center; }
+  .col5 .c { padding: 4px 6px; line-height: 1.5; }
+  .highlight { background: #fef3c7; border: 1px solid #fde68a; padding: 8px 12px; border-radius: 5px; font-size: 12px; margin: 8px 0; }
+  .danger { background: #fee2e2; border-color: #fca5a5; }
+  .success { background: #d1fae5; border-color: #86efac; }
+  .src { background: var(--swisbg); color: var(--swis); font-size: 10.5px; padding: 2px 6px; border-radius: 4px; text-decoration: none; font-weight: 600; margin-left: 4px; white-space: nowrap; display: inline-block; }
+  .opinion { color:#888; font-style:italic; }
+  h3.sub { color:var(--navy); font-size:13.5px; margin:14px 0 6px; }
+  .badge-ok { background:#d1fae5; color:#065f46; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
+  .badge-fail { background:#fee2e2; color:#7f1d1d; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
+  .badge-warn { background:#fef3c7; color:#78350f; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>รายงานตรวจติดตามการดำเนินงาน HRM · โรงเรียนเซนต์คาเบรียล (sg) · Foundation Board ลำดับ 1</h1>
+<h2>เตรียมนิเทศส่วนกลาง onsite 9-10 กันยายน 2569 · เทียบข้อมูลจริง SWIS กับกรอบ HRM 7 อนุกรรมการ · ปีการศึกษา 2569</h2>
+<div class="meta">
+<span class="label-verified">ตรวจสอบแล้ว 26 ส.ค. 2569 · เวลาดึงจริง 13:08:12-22</span>
+<strong>ผู้อำนวยการ:</strong> ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ (ประธานมูลนิธิ + เจ้าคณะแขวง) · <strong>ประธานกรรมการ:</strong> ภราดา ดร.อาวุธ ศิลาเกษ · <strong>ประธานที่ปรึกษา:</strong> ภราดา ดร.สิริโรจน์ วิริยะสิริมงคล<br/>
+<strong>ขอบเขต HRM:</strong> 14 โรงในเครือมูลนิธิฯ (ไม่รวม ACEP) · <strong>แหล่งข้อมูล:</strong> SWIS MCP realtime 26 ส.ค. 2569 (14 โมดูล) · <strong>อ้างอิง canonical:</strong> Special Assignments 2026-2027 (ลงนาม 4 ส.ค. 69) · <code>_CANONICAL_TERMS.md</code>
+</div>
+</header>
+<div class="intro">
+<p><strong>เรียนบราเดอร์ · คุณครู · เจ้าหน้าที่ผู้เกี่ยวข้อง</strong></p>
+<p>รายงานฉบับนี้จัดทำขึ้นเพื่อเตรียมความพร้อมสำหรับการตรวจติดตามการดำเนินงาน HRM ส่วนกลาง (onsite) ที่โรงเรียนเซนต์คาเบรียล วันที่ 9-10 กันยายน พ.ศ. 2569 · ดึงข้อมูลจริงจากระบบ SWIS แบบสด (realtime) วันที่ 26 สิงหาคม พ.ศ. 2569 เวลา 13:08 น. ครอบคลุม 14 โมดูล · เทียบกับกรอบมาตรฐาน 7 อนุกรรมการ HRM · Job Spec C/K/Cp · การยืนยันอัตรากำลัง (Confirm Loop) · ปฏิทินแผนงาน · ผูกลิงก์กลับต้นเรื่องในระบบ SWIS ทุกจุด</p>
+<p>ทุกตัวเลขที่ยืนยันจากระบบมีป้าย <span class="label-verified">ตรวจสอบแล้ว</span> ส่วนหัวข้อที่ยังไม่ยืนยัน มีป้าย <span class="label-unverified">ยังไม่ได้ตรวจสอบ</span> ⚠️ · ความเห็นเชิงประเมิน AI แสดงเป็น<span class="opinion">ตัวเทาเอียง</span> · ที่ระบบไม่มีข้อมูล จะใช้ถ้อยคำ <em>"ไม่พบในระบบ ณ วันที่ตรวจ"</em> (ไม่สรุปว่า "ไม่มี" จริง)</p>
+<p>รายงานฉบับนี้ประกอบด้วย AI (Claude · ห้อง HRM) ตามข้อมูลจริงในระบบ · หากพบข้อผิดพลาด กรุณาแจ้งกลับผ่าน eoffice มูลนิธิฯ · ภราดาศุภนันท์ ขันธปรีชา ประธานฝ่าย ICT + HRM มูลนิธิฯ · id_emp 1046</p>
+</div>
+<!-- ============ HRM Framework Block · ทวนกรอบก่อนอ่านผลตรวจ ============ -->
+<div class="hrm-framework-block" style="background:#fff; border:1px solid #e2e8f0; border-left:5px solid #10b981; border-radius:10px; padding:18px 22px; margin-bottom:18px;">
+<div style="margin-bottom:14px;">
+<div style="font-size:10.5px; font-weight:700; letter-spacing:2px; color:#8b6914; text-transform:uppercase; margin-bottom:4px;">Framework Recap · ทวนกรอบก่อนอ่านผลตรวจ</div>
+<h3 style="font-family:'Sarabun',sans-serif; font-size:20px; color:#0a1f44; font-weight:700; margin-bottom:4px;">กรอบงาน HRM · 7 อนุกรรมการ</h3>
+<p style="font-size:12.5px; color:#475569; line-height:1.6;">
+        Commission on ICT and HRM · มูลนิธิคณะเซนต์คาเบรียลแห่งประเทศไทย · ตาม Special Assignments 2026-2027 (ลงนาม 4 ส.ค. 69) · <a href="https://fsgthailand.org/ict-hrm.html" style="color:#0369a1; text-decoration:none; font-weight:600;" target="_blank">ดูโครงสร้างเต็มที่ fsgthailand.org/ict-hrm.html ↗</a>
+</p>
+</div>
+<div style="background:#f0fdf4; border-left:3px solid #10b981; padding:10px 14px; border-radius:0 6px 6px 0; margin-bottom:12px; font-size:12.5px; line-height:1.65;">
+<strong style="color:#065f46;">ภาพรวม:</strong> วางมาตรฐาน HR เดียวกันทั่วโรงเรียนในเครือ 15 โรง · วางแผนอัตรากำลัง · คู่มือคุณภาพ · การนิเทศติดตาม · วางแผนสืบทอดตำแหน่ง — เชื่อมโยงกับระบบ SWIS ทั้งหมด · <strong>ระบบ Job Spec (จรรยาบรรณ / ความรู้ / สมรรถนะ · C / K / Cp) 141 หัวข้อ</strong> เป็นแกนกลาง
+    </div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px;">
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">1 · บริหารงาน HRM<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">HR Administration</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">นโยบายและมาตรฐาน HR · การจัดการสารสนเทศบุคลากรผ่าน SWIS · การประสานงานภาพรวมของฝ่าย</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดาศุภนันท์ ขันธปรีชา ⭐</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">2 · สรรหาและวางแผนอัตรากำลัง<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">Workforce &amp; Recruitment</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">การวิเคราะห์อัตรากำลัง · มาตรฐานการสรรหาบุคลากร · การวางแผนอัตรากำลังเชิงกลยุทธ์ทั่ว 15 โรง</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดาศราวุธ ยุชมภู</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">3 · เตรียมความพร้อมบุคลากรใหม่<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">Onboarding</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">เตรียมความพร้อมด้านสมรรถนะให้บุคลากรใหม่ตาม Job Spec ที่กำหนดก่อนเข้าปฏิบัติหน้าที่จริง</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดาศราวุธ ยุชมภู</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">4 · นิเทศติดตามและกำกับคุณภาพ<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">Supervision &amp; Monitoring</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">การนิเทศติดตาม onsite รายโรง · คู่มือคุณภาพ · การติดตาม PDCA · การประเมิน KRA (พันธกิจหลัก)</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดากุลชาติ จันทะโชโต</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">5 · พัฒนาบุคลากร (HRD)<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">HR Development</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">การพัฒนาต่อเนื่อง · แผนอบรม 8 หัวข้อ 2569-2570 (online + onsite) · Roadmap HRD 7 ปี ตั้งแต่ 2562</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดากุลชาติ จันทะโชโต (dual role กับอนุ 4)</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">6 · รักษาบุคลากร<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">HR Retention</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">สวัสดิการบุคลากร · การสร้างการมีส่วนร่วม · กลยุทธ์รักษาครูคุณภาพให้อยู่ยาว</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดามานิต สกนธวัฒน์</p>
+</div>
+<div style="background:#f8fafc; border:1px solid #e2e8f0; border-top:3px solid #10b981; padding:11px 13px; border-radius:6px; font-size:12.5px;">
+<div style="font-weight:700; color:#0a1f44; font-size:13px; margin-bottom:4px;">7 · เตรียมผู้สืบทอดตำแหน่ง<br/><span style="font-size:11px; font-weight:400; color:#6b7280;">Succession Planning</span></div>
+<p style="color:#475569; font-size:12px; line-height:1.55;">การระบุตัวและพัฒนาผู้นำรุ่นถัดไปสำหรับตำแหน่งบริหารโรงเรียนและงานระดับมูลนิธิ</p>
+<p style="font-size:11px; color:#059669; margin-top:4px;"><strong>ประธาน:</strong> ภราดามานิต สกนธวัฒน์</p>
+</div>
+</div>
+<div style="margin-top:12px; padding:10px 14px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:6px; font-size:12px; color:#1e3a8a;">
+      📖 <strong>เกณฑ์เป้าหมายคุณภาพ:</strong> 7 อนุกรรมการมีเป้าหมายเชิงเศษส่วนปิดวง (≥ / % / เศษส่วน) ที่ <a href="https://fsgthailand.org/hrm-quality-gate.html" style="color:#0369a1; font-weight:600; text-decoration:none;" target="_blank">fsgthailand.org/hrm-quality-gate.html ↗</a> · <strong>รายงานฉบับนี้เทียบข้อมูลจริงของ sg กับกรอบข้างต้นทีละหัวข้อ</strong>
+</div>
+</div>
+<div class="transparency">
+<h3>⚠️ กล่องความโปร่งใส (Transparency Box · #59 compliance)</h3>
+<p><strong>หัวข้อ 6 · unverified 3 จุด:</strong></p>
+<ul class="tight" style="margin-top:4px;">
+<li>⚠️ Cp(T) ขยับ 2.54% → 68.64% ใน 19 วัน · K(T) 6.78% → 72.03% (+66/+65 pp) — <strong>mass import?</strong> ยังไม่ยืนยันว่าครูรับทราบและเห็นชอบ Job Spec ที่ระบบ assign</li>
+<li>⚠️ dept 2574 งานวิทยบริการ · asset items 23,113 — น่าจะเป็น counter หนังสือห้องสมุด · scale ต่างจาก ครุภัณฑ์ปกติ · ต้องยืนยัน rule</li>
+<li>⚠️ ปฏิทินตรวจ HRM ส่วนกลาง sg 9-10 ก.ย. · จำนวนบุคลากร sg เข้าอบรม 8 หัวข้อ HRD (มิสวัชรินทร์) ยังไม่มีในระบบ</li>
+</ul>
+<p style="margin-top:8px;"><strong>เผือก (เทา/เอียง):</strong> 6+ จุด · ความเห็นเชิงประเมิน AI แสดงเป็น<span class="opinion">ตัวเทาเอียง</span></p>
+<p style="margin-top:8px;"><strong>เงื่อนไขการดึง:</strong> 14 module MCP · live 26 ส.ค. 13:08 · replica DB budget/asset sync 24 ส.ค. 19:16 · <strong>ยึด ชุดตัวเลขกลาง SG ที่ห้องกลาง lock 26 ส.ค. 23:01</strong> (<code>_SG_NUMBER_SET_20260826.md</code>)</p>
+</div>
+<div class="toc">
+    📑 <a href="#s0">§0 · ตรวจความครบถ้วนข้อมูล (Data Integrity)</a>
+<a href="#s1">§1 · กรอบ HRM</a>
+<a href="#s2">§2 · Framework Audit 7 อนุ</a>
+<a href="#s3">§3 · Owner-Budget Matrix</a>
+<a href="#s3b">§3B · Asset × Job Spec</a>
+<a href="#s4">§4 · ปฏิทินโรง</a>
+<a href="#s5">§5 · Job Spec Coverage</a>
+<a href="#s6">§6 · Roll-up 14 โรง</a>
+<a href="#s7">§7 · ปฏิทินส่วนกลาง</a>
+<a href="#s8">§8 · 5 มิติข้ามระบบ × 7 อนุ</a>
+<a href="#ss">§S · Supplement + PDCA9 + SAR + KPI + คู่มือคุณภาพ</a>
+<a href="#s9">§9 · บทวิเคราะห์</a>
+</div>
+<!-- ============ §0 · Data Integrity Check (ตามคำสั่ง 25 ส.ค. 10:27) ============ -->
+<div class="card" id="s0">
+<div class="card-title">§0ตรวจความครบถ้วนข้อมูลต้นทาง (Data Integrity Check) · ก่อนวิเคราะห์</div>
+<div class="card-body">
+<h3 class="sub">(1) ดึงได้ครบไหม · แยก "ดึงไม่ได้" ออกจาก "0 จริง"</h3>
+<table>
+<thead><tr><th>#</th><th>โมดูล / เครื่องมือ</th><th>สถานะ</th><th>เวลาดึง</th><th>ผลลัพธ์สำคัญ</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>calendar_status (แยกปี · เฉพาะ 2569)</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 23:16:46</td><td><strong>กิจกรรมจริง 645 · done 30 (4.65%) · overdue 319 · un_check 615</strong> · plan_step_rows 4,386 (แยกไม่รวม) — <span class="opinion">ค่าเดิม (5,029/1,582/4,999) ปนปีเก่า 2568 · tool ห้องกลางแก้แล้ว</span></td></tr>
+<tr><td>2</td><td>org_structure</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:14</td><td><strong>6 ฝ่าย (มีหน่วยจริง 5 · คณะภราดาว่าง)</strong> · <strong>72 หน่วยงานในผัง (มีแผน/งบจริง 71)</strong> · in_structure 417 · hr_baseline 664 · <strong>ทะเบียนกลาง 661</strong></td></tr>
+<tr><td>3</td><td>money</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:16</td><td>req 2,368 · approved 2,143 (90.5%) · salary 2,228 คน-เดือน</td></tr>
+<tr><td>4</td><td>get_budget_by_dept</td><td><span class="badge-ok">✅</span></td><td>24 ส.ค. 19:16 (replica)</td><td>ตั้งจ่าย 739,100,336 · <strong>จ่ายจริง 224,800,342 (30.42%)</strong> · ผูกแผนจริง 178,949,308 (79.6%) · ต่าง 45,851,034 = 20.4%</td></tr>
+<tr><td>5</td><td>get_asset_by_dept</td><td><span class="badge-ok">✅</span></td><td>24 ส.ค. 19:16 (replica)</td><td>70 dept ผูก asset · items ~30,690+ · value_baht มีตัวเลข</td></tr>
+<tr><td>6</td><td>get_staff_job_spec</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค.</td><td>staff 661 · with_spec 346 · canonical 199/275 (72.36%)</td></tr>
+<tr><td>7</td><td>sar</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:12</td><td>60/61 topics filled = <strong>98.36%</strong> · snapshot 17 ส.ค.</td></tr>
+<tr><td>8</td><td>kpi_norm</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:13</td><td>ตัวชี้วัด 444/448 = <strong>99.11%</strong> · 10 ชุดมาตรฐาน · 68 นโยบาย</td></tr>
+<tr><td>9</td><td>quality_manual</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:15</td><td>full 0 · <strong>partial 71 · none 1</strong> (SG NEXT · dept 2567)</td></tr>
+<tr><td>10</td><td>plan_pdca9 (แยกปี · เฉพาะ 2569)</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 23:16:52</td><td><strong>72/72 หน่วยมีแผน · แผนจริง 73 (อนุมัติ 69 + ยังไม่อนุมัติ 4) · ทะเบียนรวม 100 (ร่าง/ซ้ำ 27) · full_9_steps 73/73 (100%)</strong> · <span class="opinion">approved 69 (จากเดิม 68 · +1) · 3 dept รอ approve: งานนิเทศ (2573) · งานระดับชั้น (2625) · สารสนเทศ (2563) · สื่อโสตทัศน์ (2564)</span></td></tr>
+<tr><td>11</td><td>basic_data</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:19</td><td>นักเรียน 4,567 · emp 434 · พนักงาน 228 · school_board 6</td></tr>
+<tr><td>12</td><td>procurement</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:21</td><td>PSAS (PR/PO) ไม่ใช้ · เบิกจริง 2,957 items · 225.4M · <strong>100% ผูกแผน</strong></td></tr>
+<tr><td>13</td><td>dept_services</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค. 13:08:22</td><td>1/72 dept สร้างบริการ (งาน IT · 2 services) · <strong>71 dept ยังไม่ทำ</strong></td></tr>
+<tr><td>14</td><td>finance_users</td><td><span class="badge-ok">✅</span></td><td>26 ส.ค.</td><td>87 users active · Top มิสแพรธาร 1,890 entries · last 25 ส.ค.</td></tr>
+</tbody>
+</table>
+<div class="highlight success" style="margin-top:8px;">
+<strong>✅ ผลข้อ (1):</strong> ดึงได้ <strong>14/14 module (100%)</strong> · ผ่าน · ไม่มี module ที่ "ดึงไม่ได้" ที่ระบบมี · ข้อมูลที่ไม่มี tool (dins ภายในโรง · album · training records · attrition · successor) = ระบุใน §8 ว่า "ไม่พบใน MCP" (ไม่ใช่ "0 จริง")
+      </div>
+<h3 class="sub">(2) ครบไหม/ถูกไหม · คาด N เทียบได้ M + flag anomaly</h3>
+<table>
+<thead><tr><th>#</th><th>Anomaly / จุดที่ต้อง verify</th><th>คาด N</th><th>ได้ M</th><th>สถานะ</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>staff scope 3 ตัวเลข</td><td>1 ค่า</td><td>417 (in_structure) · 661 (job_spec base) · 434 emp + 228 person = 662 · hr_baseline 664</td><td>✅ verify: 3 scope ต่างกันอธิบายได้ · 661 ≈ 662 emp+person (ต่าง 1) · 417 ⊂ 664 = 247 not_in_structure</td></tr>
+<tr><td>2</td><td>dept 71 vs 72</td><td>1 ค่า</td><td>ทุก source = 72 (login_post + basic_data.depts_all) · budget list 71 (dept ที่ตั้งงบ)</td><td>✅ verify: 72 dept ในผัง · 71 dept ตั้งงบ (dept "คณะภราดา" ไม่ตั้ง)</td></tr>
+<tr><td>3</td><td>with_spec % ต่าง denominator</td><td>1 %</td><td>346/661 = 52.34% · 346/417 = 82.97% · V1 351/780 = 45%</td><td>✅ verify: ต้องเลือก denominator 417 (in_structure) · = 82.97% · V1 780 outdated</td></tr>
+<tr><td>4</td><td>Cp(T)/K(T) jump 66/65 pp ใน 19 วัน</td><td>ค่อยๆ เพิ่ม</td><td>Cp(T) 2.54%→68.64% · K(T) 6.78%→72.03%</td><td><span class="badge-warn">🟡 ยังไม่ verify</span> · ต้องถาม sg ว่า mass import หรือค่อย ๆ assign · ครูรับทราบไหม</td></tr>
+<tr><td>5</td><td>dept 2552 paid 104.88% เกินงบ</td><td>≤ 100%</td><td>set_out 1,662,910 · paid 1,743,999 = 104.88%</td><td>✅ verify: budget module ใช้เต็ม (100% ผูกแผน) · dept นี้เกิน = flag ให้งานพัสดุ (มาสเตอร์อมร) ตรวจ</td></tr>
+<tr><td>6</td><td>dept 2574 items 23,113</td><td>หลักร้อย (ครุภัณฑ์)</td><td>23,113 items (ห้องสมุด · หลาย manual)</td><td><span class="badge-warn">🟡 ยังไม่ verify</span> · น่าจะเป็น counter หนังสือ · ต้องยืนยัน rule</td></tr>
+<tr><td>7</td><td>ปฏิทินตรวจ sg 9-10 ก.ย. · จำนวนบุคลากรเข้าอบรม HRD 8 หัวข้อ</td><td>มีในระบบ</td><td>ไม่พบในระบบ ณ วันที่ตรวจ</td><td><span class="badge-warn">🟡 ยังไม่ verify</span> · ต้องถามเลขา HRM (ภราดากฤษฎา 'ทิว') · มิสวัชรินทร์</td></tr>
+<tr><td>8</td><td>Confirm Loop completed คงที่ 1/72 · 19 วันไม่ขยับ</td><td>เพิ่มขึ้น</td><td>V1 &amp; 26 ส.ค.: 1/72 · submitted ยัง 22/72</td><td><span class="badge-warn">🟡</span> block point อะไร · ควรเร่ง target ≥ 30/72 ก่อน 9 ก.ย.</td></tr>
+</tbody>
+</table>
+<div class="highlight" style="margin-top:8px;">
+<strong>📋 ผลข้อ (2):</strong> Verify แล้ว 4 จุด (staff scope · dept scope · with_spec % · budget เกินงบ) · <strong>ยังไม่ verify 4 จุด (Cp(T)/K(T) jump · asset 23K · ปฏิทินอบรม sg · Confirm Loop คงที่)</strong> — flag เข้า transparency box · ไม่หยุด · ระบุใน §5 · §7 ให้ ผอ. เห็นและตามให้เจ้าของ verify · <span class="opinion">ผ่านตาม R24.1: ข้อมูลหลักครบพอสำหรับวิเคราะห์ · anomaly ที่ค้าง = flag ไม่ block</span>
+</div>
+<h3 class="sub">(3) วิธี recheck ที่ผู้อ่านตรวจตามได้ (H5 · SWIS trace)</h3>
+<table>
+<thead><tr><th>ตัวเลขในรายงาน</th><th>Tool / URL SWIS</th><th>เวลาดึง</th><th>อ้างอิงจุดในรายงาน</th></tr></thead>
+<tbody>
+<tr><td>Job Spec 346/417 = 82.97%</td><td><a class="src" href="https://swis.sg.ac.th/swis_report/manual/report.php" target="_blank">📄 SWIS Job Spec</a></td><td>26 ส.ค.</td><td>§5 canonical coverage</td></tr>
+<tr><td>Confirm Loop 22 submitted · 1 completed · 42 not_started</td><td><a class="src" href="https://thaibrothers.net/admin/confirm_loop/" target="_blank">📄 Confirm Loop</a></td><td>26 ส.ค. 13:08:14</td><td>§2 อนุ 1·2 · §3 stats</td></tr>
+<tr><td>Budget paid 224.8M / set_out 739.1M</td><td><a class="src" href="https://swis.sg.ac.th/admin/money/" target="_blank">📄 SWIS Money</a></td><td>24 ส.ค. 19:16 replica</td><td>§3 top-5 dept table · §8 มิติ 4</td></tr>
+<tr><td>Calendar 645 กิจกรรมจริง (แยกปี 2569) · done 30 · overdue 319</td><td><a class="src" href="https://swis.sg.ac.th/admin/management/planning/check_status_calendar_news.php" target="_blank">📄 SWIS Calendar</a></td><td>26 ส.ค. 23:16:46</td><td>§4 · §8 มิติ 1 · <span class="opinion">tool เดิม 5,029/1,582 = ปนปี 2568</span></td></tr>
+<tr><td>PDCA9 plans 73/73 full 9-step</td><td><a class="src" href="https://swis.sg.ac.th/admin/management/planning/" target="_blank">📄 SWIS PDCA9</a></td><td>26 ส.ค. 13:08:17</td><td>§S PDCA9 subsection</td></tr>
+<tr><td>SAR 60/61 filled</td><td><a class="src" href="https://swis.sg.ac.th/swis_report/sar/" target="_blank">📄 SWIS SAR</a></td><td>26 ส.ค. snapshot 17 ส.ค.</td><td>§S SAR subsection</td></tr>
+<tr><td>ผอ./ประธานกรรมการ = ภราดา (canonical)</td><td>Special Assignments 2026-2027 (ลงนาม 4 ส.ค. 69)</td><td>—</td><td>header + §1</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<!-- ============ §1 · กรอบ HRM ============ -->
+<div class="card" id="s1">
+<div class="card-title">§1กรอบ HRM มูลนิธิ · canonical ที่ทวนก่อน audit</div>
+<div class="card-body">
+<div class="highlight">
+<strong>Job Spec canonical (FINAL):</strong> 141 หัวข้อ (มิสวัชรินทร์ · 1 ก.ค. 69) <a class="src" href="https://swis.sg.ac.th/swis_report/manual/report.php" target="_blank">📄</a><br/>
+<strong>ℹ️ 4-way state:</strong> (ก) 141 FINAL · (ข) 137 outdated · (ค) 275 SWIS raw ปัจจุบัน · (ง) 269 SWIS ก่อน update
+      </div>
+<div class="highlight success" style="margin-top:10px;">
+<strong>📍 sg = โรง Foundation Board ลำดับ 1:</strong> ผอ. ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์ = <strong>ประธานมูลนิธิ + เจ้าคณะแขวง</strong> · ประธานกรรมการ ภราดา ดร.อาวุธ ศิลาเกษ · ประธานที่ปรึกษา ภราดา ดร.สิริโรจน์ วิริยะสิริมงคล · โรงใหญ่ · 72 หน่วยงาน (มากที่สุดใน 14 โรง)
+      </div>
+<div class="highlight danger" style="margin-top:8px;">
+<strong>⚠️ Title Authority:</strong> SWIS org_structure ระบุ ผอ. เป็น "นายดร. สุรกิจ ศรีสราญกุลวงศ์" (staff prefix ผิด) · <strong>Canonical (_CANONICAL_TERMS + list_directors 2026) = ภราดา ดร.สุรกิจ ศรีสราญกุลวงศ์</strong> · ในรายงานนี้ใช้ "ภราดา" ทุกครั้ง
+      </div>
+</div>
+</div>
+<!-- ============ §2 · Framework Audit × 7 อนุ ============ -->
+<div class="card" id="s2">
+<div class="card-title">§2Framework Audit · sg × 7 อนุ HRM (5 คอลัมน์ · realtime 26 ส.ค.)</div>
+<div class="card-body">
+<p style="font-size:12.5px; color:var(--gray); margin-bottom:8px;">แต่ละแถวเทียบ 7 อนุ HRM กับข้อมูลจริงจาก SWIS · ระบุ Gap ที่ต้องตาม (H6) · ระบุที่ต้อง survey เพิ่ม</p>
+<div class="col5"><div class="h">อนุ / หน้าที่หลัก</div><div class="h">เป้าหมายคุณภาพ</div><div class="h">Evidence จริงจาก SWIS + ที่มา</div><div class="h">Gap + ตาม (H6)</div><div class="h">❓ ต้อง survey + ตาม (H6)</div></div>
+<div class="col5" style="background:#fffbf0;">
+<div class="c"><strong>1 · HRM Admin</strong><br/>Policy · ระบบมาตรฐาน HR</div>
+<div class="c">มีหน่วยงาน HR + Confirm Loop ครบ · Job Spec canonical ครบ</div>
+<div class="c">✓ งานทรัพยากรมนุษย์ (dept 2562 · สำนักผอ.) หัวหน้า <strong>มิสนงนุช ขจรศรี</strong> <a class="src" href="https://swis.sg.ac.th/html_edu/cgi-bin/report/print_stucture_dept_school.php" target="_blank">📄</a><br/>✓ 6 side · 72 dept · Job Spec 346/417 (82.97%)<br/>⚠️ Confirm structure/personnel = ยังไม่ยืนยันทั้งคู่</div>
+<div class="c">🔴 Confirm Loop completed 1/72 (1.4%) · submitted 22 · not_started 42 · revise_a 5<br/><strong>ตาม:</strong> ผอ. + รอง ผอ. (ดร.อาวุธ) + หัวหน้า 71 หน่วย + งาน HR</div>
+<div class="c">งบ HR: set_out <strong>295,807,134 · paid 79,213,468 (26.78%)</strong><br/><strong>ตาม:</strong> ผอ. + งาน HR (นงนุช) + งานนโยบาย (อติวิชญ์)</div>
+</div>
+<div class="col5">
+<div class="c"><strong>2 · Workforce</strong><br/>อัตรากำลัง · สรรหา</div>
+<div class="c">อัตรากำลังตรง hr_baseline · Confirm 100%</div>
+<div class="c">✓ in_structure <strong>417</strong> · hr_baseline <strong>664</strong> · not_in_structure <strong>247 (37.2%)</strong><br/>⚠️ readiness 94/417 (<strong>22.54%</strong>)<br/>⚠️ basic_data emp 434 + person 228 = 662</div>
+<div class="c">🔴 not_in_structure 247 (37.2%)<br/><strong>ตาม:</strong> งาน HR (นงนุช) + ประธานอนุ 2 (ภราดาศราวุธ)</div>
+<div class="c">Recruitment SOP 2569? ครูใหม่ vs จ้างเพิ่ม?<br/><strong>ตาม:</strong> งาน HR + ประธานอนุ 2-3</div>
+</div>
+<div class="col5" style="background:#fffbf0;">
+<div class="c"><strong>3 · Onboarding</strong><br/>เตรียมความพร้อมครูใหม่</div>
+<div class="c">ครูใหม่ผ่าน Onboarding · ตรง C/K/Cp (B)</div>
+<div class="c">✅ C(B) 100% · K(B) 100% · Cp(B) 100% — <strong>ครบทั้ง 3 กลุ่มพื้นฐาน (จาก V1 K(B) 86.67% · Cp(B) 80%)</strong><br/>⚠️ K(T) 72.03% · Cp(T) 68.64%</div>
+<div class="c">🟡 K(T)/Cp(T) ยังไม่ถึง 90%<br/><strong>ตาม:</strong> งาน HR + ประธานอนุ 3</div>
+<div class="c">หลักสูตร Onboarding 2569?<br/><strong>ตาม:</strong> งาน HR (นงนุช) + ประธานอนุ 3</div>
+</div>
+<div class="col5">
+<div class="c"><strong>4 · Supervision &amp; Monitoring</strong><br/>นิเทศ · คู่มือ · PDCA</div>
+<div class="c">คู่มือครบ 6 ส่วน · นิเทศ 72 หน่วย · PDCA9 ครบ</div>
+<div class="c">✓ งานประกันคุณภาพ (dept 2561) หัวหน้า <strong>มิสชญาภา บุญเพ็ง</strong> · งานนิเทศ (dept 2573) หัวหน้า <strong>มิสอุษราภรณ์ ทะวะระ</strong> · งานหลักสูตร (dept 2571) หัวหน้า <strong>มาสเตอร์พรพิพัฒน์ ว่องวราการ</strong><br/>✅ <strong>PDCA9 72/72 dept · 73 plans · 69 approved (94.52%) · full_9_steps 100%</strong><br/>⚠️ คู่มือคุณภาพ full 0 · partial 71 · none 1 (SG NEXT)</div>
+<div class="c">🔴 Calendar 2569 done 30/645 = 4.65% · overdue 319 · un_check 615<br/>🔴 คู่มือ full 0 หน่วย (ต้อง push ให้ครบ 6 ส่วน)<br/><strong>ตาม:</strong> ผอ. + ชญาภา + งานนิเทศ (อุษราภรณ์)</div>
+<div class="c">รอบนิเทศ 72 หน่วย 2569?<br/><strong>ตาม:</strong> อุษราภรณ์ + ประธานอนุ 4 (ภราดากุลชาติ)</div>
+</div>
+<div class="col5" style="background:#fffbf0;">
+<div class="c"><strong>5 · HRD</strong><br/>อบรมพัฒนา</div>
+<div class="c">ครูอบรมตาม Job Spec · ผูก C/K/Cp coverage</div>
+<div class="c">✅ avg K per person = <strong>42.0</strong> (จาก 22.7) · Cp = <strong>38.7</strong> (จาก 19.8) · C = 9.8 — <span class="opinion">พลิกจากตำแหน่งท้าย · ขึ้นเกินค่ากลาง 14 โรง</span></div>
+<div class="c">🔴 SWIS ไม่มี module training/certification<br/>🟡 canonical 72.36% (ขึ้นจาก 14.18%) · ควร push ≥85%<br/><strong>ตาม:</strong> SWIS Plus + ประธานอนุ 5 HRD (ภราดากุลชาติ · dual role)</div>
+<div class="c">ครูส่งเข้าอบรม 8 หัวข้อ HRD 24 ส.ค.–27 ม.ค. 70?<br/><strong>ตาม:</strong> งาน HR (นงนุช) + เลขา HRM (ภราดากฤษฎา 'ทิว') + มิสวัชรินทร์</div>
+</div>
+<div class="col5">
+<div class="c"><strong>6 · Retention</strong><br/>สวัสดิการ · welfare</div>
+<div class="c">Attrition ≤ threshold · welfare · engagement</div>
+<div class="c">✓ salary <strong>2,228 คน-เดือน</strong> (พ.ค. 542 · มิ.ย. 562 · ก.ค. 558 · ส.ค. 566)<br/>✓ งานสุขอนามัย (dept 2556) หัวหน้า <strong>มิสชลธิชา รัศมีบรรพตกุล</strong><br/>✗ ไม่พบ attrition dashboard</div>
+<div class="c">🔴 ไม่มี attrition tracking · <strong>ตาม:</strong> SWIS Plus + ประธานอนุ 6 (ภราดามานิต)<br/>🔴 not_in_structure 247 = <span class="opinion">risk retention</span></div>
+<div class="c">อัตราลาออก 2568?<br/><strong>ตาม:</strong> งาน HR + ประธานอนุ 6 (ภราดามานิต)</div>
+</div>
+<div class="col5" style="background:#fffbf0;">
+<div class="c"><strong>7 · Succession</strong><br/>เตรียมสืบทอด</div>
+<div class="c">Successor plan · Talent pipeline</div>
+<div class="c">✓ ผอ. = ภราดาสุรกิจ (ประธานมูลนิธิ + เจ้าคณะแขวง)<br/>✓ ประธานกรรมการ · ประธานที่ปรึกษา · 2 รองประธาน = ภราดา 4 ท่าน<br/>✓ หัวหน้า 72 หน่วย ระบุครบ</div>
+<div class="c">🔴 ผอ. workload x2 (ประธานมูลนิธิ + เจ้าคณะแขวง) · <strong>ต้องมี successor plan</strong><br/>🔴 ไม่พบ successor plan ในระบบ · <strong>ตาม:</strong> ประธานกรรมการ + ประธานอนุ 7 (ภราดามานิต)</div>
+<div class="c">ตำแหน่งว่าง/รักษาการ?<br/><strong>ตาม:</strong> ผอ. + Provincial + Commission ICT+HRM</div>
+</div>
+</div>
+</div>
+<!-- ============ §3 · Owner-Budget Matrix ============ -->
+<div class="card" id="s3">
+<div class="card-title">§3Owner-Budget-Service Matrix · หัวหน้าหน่วย × งบ (H6 · realtime)</div>
+<div class="card-body">
+<div class="stats">
+<div class="stat"><div class="label">ฝ่าย/แผนก</div><div class="value">6+2</div><div class="sub">6 side + 2 sub-section (สากล · กิจกรรม)</div></div>
+<div class="stat"><div class="label">หน่วยงาน</div><div class="value">72</div><div class="sub">มากสุดใน 14 โรง</div></div>
+<div class="stat"><div class="label">งบตั้ง (set_out)</div><div class="value">739.1M</div><div class="sub"><strong>paid 224.8M (30.42%) ✅</strong></div></div>
+<div class="stat"><div class="label">Confirm Loop</div><div class="value">22/72</div><div class="sub">submitted · completed 1 · in_progress 7 · not_started 42</div></div>
+</div>
+<div class="highlight success" style="margin-top:8px;">
+<strong>✅ SG Budget Module ใช้จริง (ตัวเลข canonical · lock 26 ส.ค.):</strong> ตั้งจ่าย <strong>739,100,336</strong> · จ่ายจริง <strong>224,800,342 (30.42%)</strong> · <strong>ผูกแผนได้จริง 178,949,308</strong> (79.6% ของ paid · <span class="opinion">ต่างจาก paid 45,851,034 = 20.4% กำลังสะสาง</span>) · budget_requests 2,368 · approved 2,143 (90.5%) · salary 2,228 คน-เดือน · ใบเสร็จนักเรียน <strong>14,104 ใบ</strong> · ใบสำคัญจ่าย 1,351 — <span class="opinion">ตรงข้ามกับ ac ที่ paid 0</span>
+</div>
+<h3 class="sub">Top 5 หน่วยงานตามงบตั้ง (set_out) · sg realtime</h3>
+<table>
+<thead><tr><th>#</th><th>หน่วยงาน</th><th>หัวหน้า</th><th class="num">set_out (บาท)</th><th class="num">paid</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>สำนักผอ. : งานทรัพยากรมนุษย์</td><td>มิสนงนุช ขจรศรี</td><td class="num">295,807,134</td><td class="num">79,213,468</td><td>26.78%</td></tr>
+<tr><td>2</td><td>ฝ่ายวิชาการ : งานบริหารฝ่าย</td><td>มิสกรองจิตต์ วานิชวรรณ์</td><td class="num">123,864,742</td><td class="num">35,952,621</td><td>29.03%</td></tr>
+<tr><td>3</td><td>ฝ่ายบริหารทั่วไป : งานโภชนาการ</td><td>มาสเตอร์กฤษณ์ชัย ไชยสมบูรณ์</td><td class="num">82,925,355</td><td class="num">22,386,724</td><td>27.00%</td></tr>
+<tr><td>4</td><td>ฝ่ายบริหารทั่วไป : งานอาคารสถานที่</td><td>มาสเตอร์ปราโมทย์ เจนสถิตย์ไพบูลย์</td><td class="num">53,349,071</td><td class="num">19,323,553</td><td>36.22%</td></tr>
+<tr><td>5</td><td>ฝ่ายวิชาการ : งานวัดผลและทะเบียน</td><td>มาสเตอร์สมคิด วังจำนงค์</td><td class="num">19,953,214</td><td class="num">16,540,841</td><td>82.90%</td></tr>
+</tbody>
+</table>
+<h3 class="sub">หน่วยงานที่เกี่ยวกับ HRM · H6 accountability</h3>
+<table>
+<thead><tr><th>ฝ่าย : Dept</th><th>id</th><th>หัวหน้า</th><th>set_out</th><th>paid</th><th>%</th><th>ผูก HRM</th></tr></thead>
+<tbody>
+<tr style="background:#fef3c7;"><td><strong>สำนักผอ. : งาน HR</strong></td><td>2562</td><td><strong>นงนุช ขจรศรี</strong></td><td class="num">295,807,134</td><td class="num">79,213,468</td><td>26.78%</td><td><strong>อนุ 1 ⭐</strong></td></tr>
+<tr><td>สำนักผอ. : งานประกันคุณภาพ</td><td>2561</td><td>ชญาภา บุญเพ็ง</td><td class="num">273,570</td><td class="num">49,322</td><td>18.03%</td><td>อนุ 4</td></tr>
+<tr><td>สำนักผอ. : นโยบายและแผน</td><td>2560</td><td>อติวิชญ์ เซี่ยงคิ้ว</td><td class="num">585,109</td><td class="num">308,002</td><td>52.64%</td><td>อนุ 4</td></tr>
+<tr><td>ฝ่ายวิชาการ : งานนิเทศฯ</td><td>2573</td><td>อุษราภรณ์ ทะวะระ</td><td class="num">1,104,134</td><td class="num">0</td><td>0% ⚠️</td><td>อนุ 4</td></tr>
+<tr><td>ฝ่ายวิชาการ : งานหลักสูตร</td><td>2571</td><td>พรพิพัฒน์ ว่องวราการ</td><td class="num">10,426,770</td><td class="num">1,290,906</td><td>12.38%</td><td>อนุ 5</td></tr>
+<tr><td>ฝ่ายบริหารทั่วไป : สุขอนามัย</td><td>2556</td><td>ชลธิชา รัศมีบรรพตกุล</td><td class="num">6,303,482</td><td class="num">4,545,092</td><td>72.10%</td><td>อนุ 6</td></tr>
+<tr><td>แผนกกิจกรรม : อภิบาล</td><td>2600</td><td>นภัสวรรณ เจริญสำราญ</td><td class="num">1,071,100</td><td class="num">75,100</td><td>7.01%</td><td>อนุ 6</td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน : บริหาร</td><td>2548</td><td>ภราดา ดร.อาวุธ ศิลาเกษ (ประธานกรรมการ)</td><td class="num">3,339,775</td><td class="num">103,970</td><td>3.11%</td><td>อนุ 1·7</td></tr>
+</tbody>
+</table>
+<div class="highlight danger" style="margin-top:8px;">
+<strong>Workload concentration:</strong>
+<ul class="tight" style="margin-top:4px;">
+<li><strong>ผอ. ภราดา ดร.สุรกิจ</strong> — ผอ. + ประธานมูลนิธิ + เจ้าคณะแขวง (3 บทบาท)</li>
+<li>มาสเตอร์จักรินทร์ สุขเกษม — SGLC + SGIEP (2 หน่วย · แผนกความเป็นสากล)</li>
+<li>มิสธริดา ภิรธนาพงศ์ — งานการเงิน + งานบัญชี (2 หน่วย)</li>
+<li>มิสนัยนา วรรณรัตน์ — ศิลปะประถม + มัธยม</li>
+<li>มาสเตอร์สิปปวิชญ์ วงค์สกุลศิลป์ — ดนตรีประถม + มัธยม</li>
+<li>มิสนาถณรินทร์ วัฒน์ธนนันท์ — งานบริหารฝ่ายกิจการนักเรียน + งานระดับชั้น</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ============ §3B · Asset × Job Spec ============ -->
+<div class="card" id="s3b">
+<div class="card-title">§3BAsset Accountability × Job Spec · ผู้รับผิดชอบครุภัณฑ์ผูก Cp พัสดุ</div>
+<div class="card-body">
+<div class="stats">
+<div class="stat"><div class="label">ทะเบียนทรัพย์สิน (canonical)</div><div class="value">3,646</div><div class="sub">ชิ้น · เจาะจงครุภัณฑ์</div></div>
+<div class="stat" style="border-left-color:var(--green);"><div class="label">มูลค่าซื้อ</div><div class="value" style="color:var(--green);">747.2M</div><div class="sub">งวดปัจจุบัน · 744.2M (ปลาย 2568)</div></div>
+<div class="stat" style="border-left-color:var(--amber);"><div class="label">มูลค่าตามบัญชี</div><div class="value" style="color:var(--amber);">611.0M</div><div class="sub">หลังค่าเสื่อม (611,039,921)</div></div>
+<div class="stat"><div class="label">ยานพาหนะ</div><div class="value">8</div><div class="sub">คัน · 9,525,124 บาท</div></div>
+</div>
+<h3 class="sub">Top 5 หน่วยงานตามมูลค่าครุภัณฑ์</h3>
+<table>
+<thead><tr><th>#</th><th>หน่วยงาน</th><th>หัวหน้า</th><th class="num">items</th><th class="num">มูลค่า (บาท)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>กลุ่มสาระการงานอาชีพประถม (2590)</td><td>มิสทิพยสุดา สิงห์เจริญ</td><td class="num">241</td><td class="num">8,046,916</td></tr>
+<tr><td>2</td><td>กลุ่มสาระการงานอาชีพมัธยม (2591)</td><td>มิสกติกา เมฆสุต</td><td class="num">233</td><td class="num">7,765,899</td></tr>
+<tr><td>3</td><td>งานสื่อโสตทัศน์ (2564)</td><td>มาสเตอร์ชาติ ปีลาตี</td><td class="num">83</td><td class="num">1,777,312</td></tr>
+<tr><td>4</td><td>งานโภชนาการ (2555)</td><td>มาสเตอร์กฤษณ์ชัย ไชยสมบูรณ์</td><td class="num">48</td><td class="num">1,759,677</td></tr>
+<tr><td>5</td><td>งานวิเทศสัมพันธ์ (2568)</td><td>มาสเตอร์ชยกร อุดมวงษ์</td><td class="num">63</td><td class="num">1,460,200</td></tr>
+</tbody>
+</table>
+<div class="highlight" style="margin-top:10px;">
+<strong>Job Spec HR × Asset (อนุ 1):</strong> งาน HR (2562): 12 items · value 198,165 บาท (manual 4) — เพิ่มจาก V1 (0 item) · <span class="opinion">SG import asset ครบเกือบทุกหน่วยแล้ว · ข่าวดี</span>
+</div>
+</div>
+</div>
+<!-- ============ §4 · Calendar overdue ============ -->
+<div class="card" id="s4">
+<div class="card-title">§4ปฏิทินโรง · overdue · un_check (H6 · realtime 13:08:12)</div>
+<div class="card-body">
+<div class="stats">
+<div class="stat"><div class="label">กิจกรรมจริง (2569 · tool แก้)</div><div class="value">645</div><div class="sub">แยกจาก plan_step_rows 4,386</div></div>
+<div class="stat"><div class="label">done</div><div class="value">30</div><div class="sub"><strong>4.65% ของ 645</strong> (early 1 · ontime 29)</div></div>
+<div class="stat"><div class="label">overdue</div><div class="value">319</div><div class="sub">49.5% ของ 645 · <span class="opinion">tool เดิม 1,582 = ปนปี 2568</span></div></div>
+<div class="stat"><div class="label">un_check</div><div class="value">615</div><div class="sub">95.3% ของ 645</div></div>
+</div>
+<h3 class="sub">by side (แยกปี · เฉพาะ 2569 · tool ห้องกลางแก้แล้ว 26 ส.ค. 23:16)</h3>
+<table>
+<thead><tr><th>ฝ่าย/แผนก</th><th>total</th><th>done</th><th>overdue</th><th>%done</th><th>ผูก HRM</th></tr></thead>
+<tbody>
+<tr><td>ฝ่ายกิจการนักเรียน</td><td>478</td><td>1</td><td>254</td><td>0.21%</td><td>อนุ 6</td></tr>
+<tr><td>แผนกกิจกรรม</td><td>72</td><td>11</td><td>2</td><td><strong>15.28%</strong> ⭐</td><td>อนุ 6</td></tr>
+<tr><td>ฝ่ายวิชาการ</td><td>39</td><td>0</td><td>33</td><td>0%</td><td>อนุ 4·5</td></tr>
+<tr><td>สำนักผอ.</td><td>33</td><td>8</td><td>20</td><td><strong>24.24%</strong> ⭐</td><td>อนุ 1</td></tr>
+<tr><td>ฝ่ายบริหารทั่วไป</td><td>11</td><td>9</td><td>2</td><td><strong>81.82%</strong> ⭐⭐</td><td>อนุ 6</td></tr>
+<tr><td>แผนกความเป็นสากล</td><td>7</td><td>0</td><td>6</td><td>0%</td><td>อนุ 5</td></tr>
+<tr><td>ฝ่ายธุรการ-การเงิน</td><td>2</td><td>1</td><td>1</td><td>50.00%</td><td>อนุ 1</td></tr>
+</tbody>
+</table>
+<p style="font-size:11.5px; color:var(--gray); margin-top:6px;"><em>ค่าเดิม (5,029 total · 1,582 overdue) มาจาก tool ที่นับปนปี 2568 · หลัง fix เหลือ 645/319 เฉพาะปี 2569 · %done ของบางฝ่ายพลิกเป็นบวก (แผนกกิจกรรม 15% · สำนักผอ. 24% · บริหารทั่วไป 82%)</em></p>
+<div class="highlight danger" style="margin-top:8px;">
+<strong>Overdue items 2569 ที่โยง HRM (ตัวอย่าง 20 จาก 319 · tool แยกปี):</strong> "ประชุมครูครั้งที่ 1 พ.ค. 2569" (บริหารสำนักผอ.) · "จัดซื้อระบบเสียง + Digital Signage" (สื่อโสตทัศน์) · "กิจกรรมทิ้งขยะให้ถูกที่ · รณรงค์สิ่งแวดล้อม" (ระดับชั้น ป.2) · "วันภาษาไทยแห่งชาติ" (ภาษาไทยมัธยม) · "ปฐมนิเทศผู้ปกครอง ม.1-2 · ม.4-6" (แนะแนว) — <strong>ตาม:</strong> ผอ. + งานนโยบาย (อติวิชญ์) + หัวหน้า 7 ฝ่าย/แผนก
+      </div>
+</div>
+</div>
+<!-- ============ §5 · Job Spec Coverage ============ -->
+<div class="card" id="s5">
+<div class="card-title">§5Job Spec Canonical Coverage · sg (H5 · realtime)</div>
+<div class="card-body">
+<div class="stats">
+<div class="stat" style="border-left-color:var(--green);"><div class="label">Canonical (SWIS)</div><div class="value" style="color:var(--green);">72.36%</div><div class="sub">199/275 · <strong>ขึ้นจาก 14.18% (V1) · +58 pp</strong></div></div>
+<div class="stat"><div class="label">staff (ในผัง)</div><div class="value">417</div><div class="sub">ทะเบียนกลาง 661 (ชาย 272/หญิง 389) · hr_baseline 664 · <span class="opinion">ต่าง 2 คน (bug 2 เครื่องมือ · SWIS ไล่ที่ต้นทาง)</span></div></div>
+<div class="stat"><div class="label">มี Job Spec /417</div><div class="value">82.97%</div><div class="sub">346/417 (ในผัง = canonical scope)</div></div>
+<div class="stat"><div class="label">avg K/Cp per person</div><div class="value">42.0/38.7</div><div class="sub">C 9.8 · <strong>+19/+19 จาก V1</strong></div></div>
+</div>
+<table>
+<thead><tr><th>กลุ่ม</th><th class="num">canonical</th><th class="num">adopted</th><th>%</th><th>V1 %</th><th>Δ</th></tr></thead>
+<tbody>
+<tr><td>C(B) จรรยาบรรณ</td><td class="num">3</td><td class="num">3</td><td>100%</td><td>100%</td><td>0</td></tr>
+<tr><td>K(B) ความรู้พื้นฐาน</td><td class="num">15</td><td class="num">15</td><td>100%</td><td>86.67%</td><td>+13.33 pp ⬆️</td></tr>
+<tr><td>Cp(B) สมรรถนะพื้นฐาน</td><td class="num">15</td><td class="num">15</td><td>100%</td><td>80%</td><td>+20 pp ⬆️</td></tr>
+<tr><td>K(T) ความรู้เฉพาะทาง</td><td class="num">118</td><td class="num">85</td><td>72.03%</td><td>6.78%</td><td><strong>+65.25 pp ⬆️⬆️</strong></td></tr>
+<tr><td>Cp(T) สมรรถนะเฉพาะทาง</td><td class="num">118</td><td class="num">81</td><td>68.64%</td><td>2.54%</td><td><strong>+66.10 pp ⬆️⬆️</strong></td></tr>
+<tr><td>K · เดี่ยว</td><td class="num">3</td><td class="num">0</td><td>0%</td><td>0%</td><td>0</td></tr>
+<tr><td>Cp · เดี่ยว</td><td class="num">3</td><td class="num">0</td><td>0%</td><td>0%</td><td>0</td></tr>
+<tr style="background:#f1f5f9; font-weight:700;"><td>รวม</td><td class="num">275</td><td class="num">199</td><td>72.36%</td><td>14.18%</td><td>+58.18 pp</td></tr>
+</tbody>
+</table>
+<div class="highlight success" style="margin-top:8px;">
+<strong>✅ improvement มหาศาล 3 สัปดาห์:</strong> K(T)/Cp(T) ขยับจาก single digit ขึ้นเกิน 68% · <span class="opinion">case study การฟื้นตัว · ต้อง verify ว่าครูรับทราบและเห็นชอบ (mass import หรือค่อย ๆ assign)</span><br/>
+<strong>ตาม:</strong> งาน HR (นงนุช) + ประธานอนุ 5 HRD (ภราดากุลชาติ · dual role)
+      </div>
+</div>
+</div>
+<!-- ============ §6 · Roll-up 14 โรง ============ -->
+<div class="card" id="s6">
+<div class="card-title">§6Roll-up 14 โรง · sg positioning · realtime</div>
+<div class="card-body">
+<table>
+<thead><tr><th>Rank</th><th>โรง</th><th>Canonical %</th><th>staff (job_spec)</th><th>with_spec %</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>acs</td><td>92.00%</td><td>565</td><td>72.57%</td></tr>
+<tr><td>2</td><td>acr</td><td>88.36%</td><td>376</td><td>61.70%</td></tr>
+<tr><td>3</td><td>acu</td><td>84.36%</td><td>210</td><td>75.71%</td></tr>
+<tr><td>4</td><td>sl</td><td>83.27%</td><td>298</td><td>53.69%</td></tr>
+<tr><td>5</td><td>act</td><td>77.82%</td><td>552</td><td>58.70%</td></tr>
+<tr><td>6</td><td>mcs</td><td>77.45%</td><td>332</td><td>70.78%</td></tr>
+<tr><td>7</td><td>ac</td><td>74.91%</td><td>291</td><td>75.60%</td></tr>
+<tr><td>8</td><td>acp</td><td>74.55%</td><td>253</td><td>62.45%</td></tr>
+<tr style="background:#d1fae5;"><td><strong>9</strong></td><td><strong>sg ★</strong></td><td><strong>72.36%</strong></td><td><strong>661</strong></td><td><strong>52.34%</strong></td></tr>
+<tr><td>10=</td><td>mcp/acn/acsp</td><td>70.91%</td><td>328/263/490</td><td>59-68%</td></tr>
+<tr><td>13</td><td>acl</td><td>57.09%</td><td>357</td><td>55.46%</td></tr>
+<tr style="background:#fee2e2;"><td>14</td><td>atsn</td><td>33.09%</td><td>35</td><td>22.86%</td></tr>
+</tbody>
+</table>
+<div class="highlight success" style="margin-top:8px;">
+<strong>sg positioning:</strong> Rank <strong>9/14 (ขึ้นจาก 14/14 · +5 อันดับใน 3 สัปดาห์)</strong> · staff 661 · Foundation Board 1 · ห่างจาก Top (acs 92%) 20 pp · target 85% ภายในสิ้นปีจะเข้า Top 5
+</div>
+</div>
+</div>
+<!-- ============ §7 · ปฏิทินส่วนกลาง ============ -->
+<div class="card" id="s7">
+<div class="card-title">§7ปฏิทินแผนงาน HRM ส่วนกลาง (มิสวัชรินทร์ 1 ส.ค.) ↔ sg</div>
+<div class="card-body">
+<div class="stats">
+<div class="stat"><div class="label">ปฏิทินจริง</div><div class="value">24</div><div class="sub">items</div></div>
+<div class="stat" style="border-left-color:var(--green);"><div class="label">SWIS log แล้ว</div><div class="value" style="color:var(--green);">10</div><div class="sub">41.7%</div></div>
+<div class="stat" style="border-left-color:var(--red);"><div class="label">Gap</div><div class="value" style="color:var(--red);">14</div><div class="sub">58.3%</div></div>
+<div class="stat" style="border-left-color:var(--amber);"><div class="label">รอบตรวจ sg</div><div class="value" style="color:var(--amber);">9-10</div><div class="sub">ก.ย. · เหลือ 14 วัน</div></div>
+</div>
+<ul class="tight">
+<li><strong>sg รับการนิเทศ HRM ส่วนกลาง onsite 9-10 กันยายน 2569</strong> · เลขา HRM (ภราดากฤษฎา 'ทิว') · มิสวัชรินทร์ · มิสดรุณี</li>
+<li>อนุ 4 Supervision (16 ตรวจ) + อนุ 5 HRD (8 อบรม) · อนุ 1·2·3·6·7 ยังไม่มีในปฏิทิน</li>
+<li><strong>8 หัวข้อ HRD:</strong> 24-25 ส.ค. วิจัยสถาบัน · 14-15 ก.ย. Data-Driven SWIS · 29-30 ก.ย. HRM 5.0 · 16-17 พ.ย. นักบุญหลุยส์ · 23 พ.ย. อภิบาล · 14-15 ธ.ค. ภาวะผู้นำ · 12 ม.ค. 70 สื่อสารองค์กร · 27-28 ม.ค. 70 ความเสี่ยง — <em>จำนวนบุคลากร sg เข้าอบรม ไม่พบในระบบ ณ วันที่ตรวจ</em></li>
+</ul>
+<div class="highlight danger" style="margin-top:8px;">
+<strong>🚨 Cross-check sg ก่อนตรวจ 9-10 ก.ย.:</strong>
+<ul class="tight" style="margin-top:4px;">
+<li>งานประกันคุณภาพ (ชญาภา) เตรียม PDCA9 + คู่มือคุณภาพ + summary การนิเทศ 72 หน่วย</li>
+<li>งาน HR (นงนุช) verify Job Spec Cp(T)/K(T) mass import + จำนวนอบรม 8 หัวข้อ</li>
+<li>Confirm Loop 1/72 = <strong>target ≥ 30/72 (42%) ก่อนตรวจ</strong></li>
+<li>งานนิเทศ (อุษราภรณ์) เตรียมรอบนิเทศ + set_out 1.1M paid 0 = ควรเริ่มเบิก</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ============ §8 · 5 มิติข้ามระบบ × 7 อนุ ============ -->
+<div class="card" id="s8">
+<div class="card-title">§85 มิติข้ามระบบ SWIS × 7 อนุกรรมการ HRM · Cross-System (sg · realtime)</div>
+<div class="card-body">
+<p style="font-size:12.5px; color:var(--gray);">มิติ 1 ปฏิทิน · มิติ 2 อัลบั้ม · มิติ 3 e-Office · มิติ 4 งบประมาณ · มิติ 5 บันทึกรายจ่าย · ที่ MCP ดึงไม่ได้ = "ไม่พบใน MCP" (ไม่ใช่ "0 จริง")</p>
+<table style="font-size:11.5px;">
+<thead><tr><th style="width:11%;">อนุ · ประธาน</th><th style="width:17%;">มิติ 1 · ปฏิทินโรง</th><th style="width:11%;">มิติ 2 · อัลบั้ม</th><th style="width:22%;">มิติ 3 · e-Office</th><th style="width:19%;">มิติ 4 · งบ 2569</th><th style="width:20%;">มิติ 5 · บันทึก</th></tr></thead>
+<tbody>
+<tr>
+<td><strong>1 · Admin</strong><br/>ภ.ศุภนันท์</td>
+<td>สำนักผอ.: 506 · done 8 (1.58%) · overdue 211</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: Topic 2569/00085 + 00129 (V2 sg audit 11 ส.ค.)</td>
+<td>งาน HR (2562): set_out <strong>295.8M · paid 79.2M (26.78%)</strong></td>
+<td>req 2,368 · approved 2,143 (90.5%) · ใบสำคัญจ่าย 1,350</td>
+</tr>
+<tr style="background:#fffbf0;">
+<td><strong>2 · Workforce</strong><br/>ภ.ศราวุธ</td>
+<td>un_check 615/645 (95.3%) 2569 · <span class="opinion">เดิม 4,999/5,029 = ปนปี 2568</span> · not_in_structure 247 (37.2%)</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: 24 topics ยืนยันความพร้อมบุคลากร (00050-00073)</td>
+<td>ไม่มี dept สรรหาแยก · ref dept 2562</td>
+<td>salary 2,228 คน-เดือน (พ.ค.-ส.ค.)</td>
+</tr>
+<tr>
+<td><strong>3 · Onboarding</strong><br/>ภ.ศราวุธ</td>
+<td>ไม่พบ event แยก · C/K/Cp(B) 100% ครบ</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: ค้น "onboarding" = 0</td>
+<td>ไม่มี dept แยก</td>
+<td>ไม่มี line-item แยก</td>
+</tr>
+<tr style="background:#fffbf0;">
+<td><strong>4 · Supervision</strong><br/>ภ.กุลชาติ</td>
+<td>ฝ่ายวิชาการ 1,435 · done 0 · overdue 391 · "8.1·8.2 ประเมินตามแผน" overdue</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: 20 topics การตรวจโครงสร้าง+คู่มือ+PDCA (00012-00031)</td>
+<td>ประกันคุณภาพ (2561): 273K · paid 49K (18.03%) · งานนิเทศ (2573): 1.1M · paid 0 ⚠️</td>
+<td><strong>PDCA9 72/72 dept · 73 plans · full 9-step 100%</strong> ✅</td>
+</tr>
+<tr>
+<td><strong>5 · HRD</strong><br/>ภ.กุลชาติ (dual)</td>
+<td>อบรมใน สำนักผอ. · avg K 42.0 · Cp 38.7</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: ค้น "อบรม/training" = 0</td>
+<td>หลักสูตร (2571): 10.4M · paid 1.3M (12.38%)</td>
+<td>ไม่มี line-item HRD แยก</td>
+</tr>
+<tr style="background:#fffbf0;">
+<td><strong>6 · Retention</strong><br/>ภ.มานิต</td>
+<td>ฝ่ายบริหารทั่วไป 558 · done 9 (1.61%) · overdue 119 · "6.4.3 ฉีดวัคซีน" overdue</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: ค้น "welfare/retention" = 0</td>
+<td>สุขอนามัย (2556): 6.3M · paid 4.5M (72.10%) ⭐ · อภิบาล (2600): 1.07M · paid 75K (7.01%)</td>
+<td>salary 2,228 คน-เดือน = base retention</td>
+</tr>
+<tr>
+<td><strong>7 · Succession</strong><br/>ภ.มานิต</td>
+<td>ไม่พบ event · ผอ. workload x2</td>
+<td style="color:var(--gray); font-style:italic;">ไม่พบใน MCP</td>
+<td>ส่วนกลาง: ค้น "successor" = 0</td>
+<td>ไม่มี dept แยก · ประธานกรรมการ (ดร.อาวุธ) รับ dept 2548</td>
+<td>ไม่มี line-item Succession แยก</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight" style="margin-top:12px;">
+<strong>สรุป Cross-System (sg · realtime 26 ส.ค. 13:08):</strong>
+<ul class="tight" style="margin-top:6px;">
+<li><strong>SWIS Deploy:</strong> ✅ Budget module ใช้เต็ม (paid 30.42%) · ✅ Salary · ✅ Receipt · ✅ PDCA9 · ✅ SAR · ✅ KPI · ⚠️ Calendar update 0.6%</li>
+<li><strong>Job Spec:</strong> canonical 72.36% (Rank 9/14 · ขึ้น 5 อันดับใน 3 สัปดาห์)</li>
+<li><strong>governance:</strong> ผอ. = ประธานมูลนิธิ + เจ้าคณะแขวง · ประธานกรรมการ ดร.อาวุธ · <span class="opinion">workload สูง · ต้องมี successor plan</span></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ============ §S · Supplement + PDCA9 + SAR + KPI + คู่มือคุณภาพ ============ -->
+<div class="card" id="ss">
+<div class="card-title">§SSupplement · PDCA9 · SAR · KPI · คู่มือคุณภาพ · บริการหน่วย</div>
+<div class="card-body">
+<h3 class="sub">✅ PDCA9 (แผนงาน 9 ขั้น) · sg realtime · <span style="color:var(--green);">ข่าวดี</span></h3>
+<table>
+<thead><tr><th>ตัวชี้วัด</th><th class="num">จำนวน</th><th>สถานะ</th></tr></thead>
+<tbody>
+<tr><td>หน่วยงานที่มีแผนงาน</td><td class="num">72/72</td><td><span class="badge-ok">100% ครบ</span></td></tr>
+<tr><td>จำนวนแผนทั้งหมด</td><td class="num">73</td><td>—</td></tr>
+<tr><td>แผนอนุมัติแล้ว (approved · 2569 หลัง tool แก้)</td><td class="num">69/73</td><td>94.52% · <span class="badge-warn">รอ 4</span> (จากเดิม 68 · +1)</td></tr>
+<tr><td>แผนมีขั้นครบ 9 ขั้น</td><td class="num">73/73</td><td><span class="badge-ok">100% ✅</span></td></tr>
+<tr><td>แผนมี KPI</td><td class="num">73/73</td><td><span class="badge-ok">100%</span></td></tr>
+<tr><td>แผนมีเป้าหมาย + วัตถุประสงค์</td><td class="num">73/73</td><td><span class="badge-ok">100%</span></td></tr>
+<tr><td>โครงการทั้งหมด</td><td class="num">39</td><td>—</td></tr>
+<tr><td>โครงการอนุมัติแล้ว</td><td class="num">37/39</td><td>94.87%</td></tr>
+<tr><td>หัวข้อประเมินในแผน</td><td class="num">772</td><td>plans_evaluated 73/73</td></tr>
+<tr><td>ประเมินที่แนบไฟล์หลักฐาน</td><td class="num">0/772</td><td><span class="badge-fail">🔴 0% ⚠️</span></td></tr>
+</tbody>
+</table>
+<p style="font-size:12px; margin-top:6px;"><strong>5 แผนที่ยังไม่ approved:</strong> งานนิเทศ (2573) · งานระดับชั้น (2625) · งานสารสนเทศ (2563) · งานสื่อโสตทัศน์ (2564) · งานสุขอนามัย (2556) — <strong>ตาม:</strong> ผอ. + หัวหน้า 5 หน่วยข้างต้น</p>
+<h3 class="sub">SAR (สารสนเทศประกอบ SAR) · sg realtime</h3>
+<table>
+<thead><tr><th>ตัวชี้วัด</th><th class="num">จำนวน</th></tr></thead>
+<tbody>
+<tr><td>หัวข้อสารสนเทศประกอบ SAR</td><td class="num">66 หัวข้อ</td></tr>
+<tr><td>มีแหล่งข้อมูลอัตโนมัติ</td><td class="num">61</td></tr>
+<tr><td>Snapshot ล่าสุด</td><td class="num">17 ส.ค. 2569</td></tr>
+<tr><td>รอบ Snapshot รวม</td><td class="num">1,636</td></tr>
+<tr><td>หัวข้อที่กรอกข้อมูล</td><td class="num">60/61 = <strong>98.36%</strong> ✅</td></tr>
+<tr><td>เนื้อหา SAR ที่บันทึกเอง (ปีนี้)</td><td class="num">0 items · 0 writers ⚠️</td></tr>
+</tbody>
+</table>
+<h3 class="sub">KPI / มาตรฐาน / นโยบาย · sg realtime</h3>
+<table>
+<thead><tr><th>ตัวชี้วัด</th><th class="num">จำนวน</th></tr></thead>
+<tbody>
+<tr><td>ชุดมาตรฐานอ้างอิง</td><td class="num">10 ชุด · <strong>448 indicators</strong></td></tr>
+<tr><td>ตัวชี้วัดถูกอ้างอิงโดยแผน</td><td class="num">444/448 = <strong>99.11%</strong> ✅</td></tr>
+<tr><td>Link การอ้างอิง</td><td class="num">4,491 · 83 plans · 40 plots</td></tr>
+<tr><td>นโยบายของโรงเรียน</td><td class="num">68 · 112 plan_refs</td></tr>
+<tr><td>มาตรฐานสากล</td><td class="num">6 items · 2 standards · 0 plans linked ⚠️</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px; margin-top:6px;"><strong>10 ชุดมาตรฐาน:</strong> DP-SG 113 · SG 79 · SP-FSG 85 · SDG 47 · POL-FSG 30 · สพฐ. 26 · FSG 20 · GOV-FSG 19 · สมศ. 19 · FIN-FSG 10</p>
+<h3 class="sub">คู่มือคุณภาพหน่วยงาน (Quality Manual) · sg realtime</h3>
+<div class="stats">
+<div class="stat" style="border-left-color:var(--red);"><div class="label">มีครบ 6 ส่วน</div><div class="value" style="color:var(--red);">0</div><div class="sub">🔴 ยังไม่มีหน่วยไหน full</div></div>
+<div class="stat" style="border-left-color:var(--amber);"><div class="label">มีแต่ไม่ครบ (partial)</div><div class="value" style="color:var(--amber);">71</div><div class="sub">98.6%</div></div>
+<div class="stat" style="border-left-color:var(--red);"><div class="label">ยังไม่มีคู่มือ</div><div class="value" style="color:var(--red);">1</div><div class="sub">งาน SG NEXT (dept 2567 · แผนกความเป็นสากล)</div></div>
+<div class="stat"><div class="label">sections_have สูงสุด</div><div class="value">5/6</div><div class="sub">17 dept ที่มี 5 ส่วน</div></div>
+</div>
+<h3 class="sub">Dept Services (บริการหน่วยงาน) · sg realtime</h3>
+<div class="highlight danger" style="font-size:12.5px;">
+<strong>🔴 1/72 dept เท่านั้นที่สร้างบริการ</strong> — งานเทคโนโลยีสารสนเทศเพื่อการศึกษา (dept 2577) · 2 services · 0 requests · <strong>71 dept ยังไม่ทำ</strong> — <span class="opinion">โมดูลใหม่ · โรงยังไม่ deploy · flag SWIS Plus</span>
+</div>
+<h3 class="sub">Finance Users · sg realtime · Top 10</h3>
+<table>
+<thead><tr><th>#</th><th>ชื่อ</th><th>สังกัด</th><th class="num">entries</th><th>last activity</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>มิสแพรธาร เงินแก้วทิพย์</td><td>งานการเงิน</td><td class="num">1,890</td><td>25 ส.ค.</td></tr>
+<tr><td>2</td><td>มิสนฐพร จาระนัย</td><td>งานโภชนาการ</td><td class="num">556</td><td>—</td></tr>
+<tr><td>3</td><td>มาสเตอร์ปราโมทย์ เจนสถิตย์ไพบูลย์</td><td>งานบริหารฝ่ายบริหารทั่วไป</td><td class="num">501</td><td>—</td></tr>
+<tr><td>4</td><td>มิสศุภลักษณ์ อ่องสอาด</td><td>งานบัญชีและงบประมาณ</td><td class="num">298</td><td>3 ส.ค.</td></tr>
+<tr><td>5</td><td>มาสเตอร์กฤษณ์ชัย ไชยสมบูรณ์</td><td>งานโภชนาการ</td><td class="num">280</td><td>—</td></tr>
+<tr><td>6</td><td>มิสสมิตรา เอี่ยมสำอางค์</td><td>งานบัญชีและงบประมาณ</td><td class="num">202</td><td>24 ส.ค.</td></tr>
+<tr><td>7</td><td>มิสดวงดาว ขาวดารา</td><td>งานศูนย์วิชาการ</td><td class="num">189</td><td>—</td></tr>
+<tr><td>8</td><td>มิสปัทมา ยั่งยืน</td><td>งานทรัพยากรมนุษย์</td><td class="num">187</td><td>—</td></tr>
+<tr><td>9</td><td>มิสพรนันท์ คุณธรณ์</td><td>งานจัดซื้อพัสดุ</td><td class="num">123</td><td>19 ส.ค.</td></tr>
+<tr><td>10</td><td>มิสไพรินทร์ บ่อแก้ว</td><td>งานการเงิน</td><td class="num">118</td><td>25 ส.ค.</td></tr>
+</tbody>
+</table>
+<p style="font-size:12px; margin-top:6px;">รวม 87 users active ในระบบการเงิน-บัญชี-ทรัพย์สิน · <span class="opinion">ระบบมี accountability trail ครบ · ใครทำอะไรตามได้</span></p>
+<h3 class="sub">การเคลื่อนไหวบุคลากร 2569 (canonical · ห้องกลาง lock 26 ส.ค.)</h3>
+<table>
+<thead><tr><th>รายการ</th><th class="num">จำนวน</th></tr></thead>
+<tbody>
+<tr><td>บุคลากรทะเบียนกลาง</td><td class="num">661 (ชาย 272 · หญิง 389)</td></tr>
+<tr><td>ในผังบริหาร (in_structure)</td><td class="num">417</td></tr>
+<tr><td>อัตรากำลัง HR (hr_baseline)</td><td class="num">664</td></tr>
+<tr><td>ยังไม่อยู่ในผัง (not_in_structure)</td><td class="num">247 (= 664 − 417)</td></tr>
+<tr><td>ยืนยันตัวตน (Confirm Personnel)</td><td class="num">94/417 = 22.5%</td></tr>
+<tr><td>มี Job Spec</td><td class="num">346/417 = <strong>82.97%</strong></td></tr>
+<tr><td>บุคลากรเข้าใหม่ 2569</td><td class="num">43 คน</td></tr>
+<tr><td>บุคลากรพ้นสภาพ 2569</td><td class="num">32 คน <em>(ไม่ใช่ 10 · ที่บางแหล่งแสดง)</em></td></tr>
+<tr><td><em>Note: 661 vs 664 = bug 2 เครื่องมือ · SWIS กำลังไล่ที่ต้นทาง</em></td><td class="num">—</td></tr>
+</tbody>
+</table>
+<h3 class="sub">basic_data · sg realtime</h3>
+<table>
+<thead><tr><th>ตัวชี้วัด</th><th class="num">จำนวน</th></tr></thead>
+<tbody>
+<tr><td>นักเรียน</td><td class="num">4,567 (มีรูป 4,560)</td></tr>
+<tr><td>บุคลากร (emp)</td><td class="num">434 (มีรูป 427)</td></tr>
+<tr><td>พนักงาน (person)</td><td class="num">228 (มีรูป 227)</td></tr>
+<tr><td>รวม emp + person</td><td class="num"><strong>662</strong> (≈ 661 staff_job_spec base)</td></tr>
+<tr><td>ฝ่าย (side)</td><td class="num">6 · หน่วยงาน 72</td></tr>
+<tr><td>คณะกรรมการ (ตำแหน่งงาน)</td><td class="num">700</td></tr>
+<tr><td>school_board</td><td class="num">6 (มี)</td></tr>
+<tr><td>menu_rights</td><td class="num">282/282 (100%)</td></tr>
+</tbody>
+</table>
+<h3 class="sub">A · อบรม HRD 8 หัวข้อ 2569-2570 (อนุ 5) · sg</h3>
+<p style="font-size:12px;">24-25 ส.ค. วิจัยสถาบัน · 14-15 ก.ย. Data-Driven SWIS · 29-30 ก.ย. HRM 5.0 · 16-17 พ.ย. นักบุญหลุยส์ · 23 พ.ย. อภิบาล · 14-15 ธ.ค. ภาวะผู้นำ · 12 ม.ค. 70 สื่อสารองค์กร · 27-28 ม.ค. 70 ความเสี่ยง — <strong>ตาม:</strong> งาน HR sg + เลขา HRM (ภราดากฤษฎา 'ทิว') + มิสวัชรินทร์ · มิสดรุณี</p>
+<h3 class="sub">B · ตรวจติดตาม onsite 16 รายการ (อนุ 4) · sg</h3>
+<p style="font-size:12px;"><strong>sg รับตรวจ 9-10 กันยายน 2569</strong> (Foundation Board 1) · policy บราเดอร์ 25 ก.ค. 69: <em>"ต้อง onsite ... online ไม่เกิดผล"</em> · <strong>ตาม:</strong> ผอ. + งาน HR + งานประกันคุณภาพ + ประธานอนุ 4 (ภราดากุลชาติ)</p>
+</div>
+</div>
+<!-- ============ §9 · บทวิเคราะห์ ============ -->
+<div class="card" id="s9">
+<div class="card-title">§9บทวิเคราะห์และสรุปภาพรวม · 3 มุม · อิงข้อมูลจริงใน §0-§S</div>
+<div class="card-body">
+<div style="background:#d1fae5; border-left:4px solid var(--green); padding:12px 16px; border-radius:0 8px 8px 0; margin-bottom:12px;">
+<h3 style="color:var(--green); font-size:14px; margin-bottom:8px;">✅ ข้อดี / จุดแข็ง</h3>
+<ul class="tight">
+<li><strong>ผอ. = ประธานมูลนิธิ + เจ้าคณะแขวง</strong> · authority สูงสุด · Foundation Board 1 (§1)</li>
+<li><strong>โครงสร้างครบ:</strong> 6 side · 72 dept · school_board 6 · คณะภราดา 12 ท่าน (§S basic_data)</li>
+<li><strong>🎉 Job Spec canonical +58 pp ใน 3 สัปดาห์</strong> (14.18% → 72.36%) · <span class="opinion">case study การฟื้นตัว</span> (§5)</li>
+<li><strong>PDCA9 72/72 dept · 73/73 full 9-step · 69 approved (94.52%)</strong> ✅ (§S)</li>
+<li><strong>SAR 60/61 = 98.36%</strong> · KPI ตัวชี้วัดใช้ 444/448 = 99.11% (§S)</li>
+<li><strong>Budget module ใช้เต็ม:</strong> paid 224.8M (30.42%) · procurement 100% ผูกแผน (§3)</li>
+<li><strong>Asset module 70/72 dept ผูก</strong> · value_baht มีตัวเลขจริง (§3B)</li>
+<li><strong>งานสุขอนามัย paid 72.10%</strong> · งานวัดผล 82.90% · งานสื่อโสตทัศน์ 82.92%</li>
+<li><strong>10 ชุดมาตรฐานอ้างอิง · 448 indicators · DP-SG 113</strong> (§S)</li>
+</ul>
+</div>
+<div style="background:#fef3c7; border-left:4px solid var(--amber); padding:12px 16px; border-radius:0 8px 8px 0; margin-bottom:12px;">
+<h3 style="color:var(--amber); font-size:14px; margin-bottom:8px;">⚠️ ข้อเสีย / จุดอ่อน</h3>
+<ul class="tight">
+<li><strong>Calendar 2569 (หลัง tool แก้แยกปี · 26 ส.ค. 23:16): กิจกรรมจริง 645 · ปิดสถานะ 30 = 4.65% · overdue 319 (49.5%) · un_check 615</strong> — <span class="opinion">ค่าเดิม (5,029/1,582) นับปน 2568 · ที่ถูก 2569 อย่างเดียวคือ 645/319 · บางฝ่ายพลิกดี (บริหารทั่วไป 82% · สำนักผอ. 24% · แผนกกิจกรรม 15%)</span> (§4)</li>
+<li><strong>Confirm Loop completed 1/72 (1.4%)</strong> · not_started 42 (58.3%) · readiness 22.54% (§2·§3)</li>
+<li><strong>คู่มือคุณภาพ full 0 · partial 71 · none 1 (SG NEXT)</strong> — ยังไม่มีหน่วยไหน full (§S)</li>
+<li><strong>not_in_structure 247 (37.2%)</strong> (§2)</li>
+<li><strong>PDCA9 หลักฐานประเมิน 0/772 items</strong> — plan ครบ 100% แต่ evidence 0% (§S PDCA9)</li>
+<li><strong>ประเมินตามแผน 0 items แนบไฟล์</strong> · 5 แผนยังไม่ approved (§S)</li>
+<li><strong>dept_services 1/72</strong> — โมดูลใหม่ยังไม่ deploy (§S)</li>
+<li><strong>Cp(T) 68.64% · K(T) 72.03%</strong> — ยังไม่ถึง 90% (§5)</li>
+<li><strong>SAR เนื้อหาบันทึกเอง 0 items</strong> — auto-source 60/61 แต่ไม่มีเนื้อคน (§S)</li>
+</ul>
+</div>
+<div style="background:#fee2e2; border-left:4px solid var(--red); padding:12px 16px; border-radius:0 8px 8px 0;">
+<h3 style="color:var(--red); font-size:14px; margin-bottom:8px;">🚨 ความเสี่ยง</h3>
+<ul class="tight">
+<li><strong>Workload ผอ. สูงมาก:</strong> ประธานมูลนิธิ + เจ้าคณะแขวง + ผอ. โรงใหญ่สุด (staff 434 emp + 228 person = 662 · นักเรียน 4,567) — <span class="opinion">หาก successor plan ไม่พร้อม = risk continuity ระดับเครือ</span></li>
+<li><strong>3 ตัวชี้วัดหลักยังต่ำ (Calendar 0.6% · Confirm Loop 1.4% · readiness 22.54%)</strong> = <span class="opinion">หากตรวจ 9-10 ก.ย. โดยไม่เร่ง = ภาพลบทับ Job Spec improvement</span></li>
+<li><strong>PDCA9 มีแผนครบ 100% · แต่หลักฐานประเมิน 0%</strong> — <span class="opinion">แผนเปลือกได้คะแนน · จริงยังไม่ได้ทำ</span> (§S)</li>
+<li><strong>คู่มือคุณภาพยังไม่ full ทั้ง 72 dept</strong> — เป้าหมายอนุ 4 supervision (§S)</li>
+<li><strong>Cp(T) improvement 66 pp ใน 3 สัปดาห์</strong> = <span class="opinion">ต้อง verify ว่าครูรับทราบและเห็นชอบ Job Spec ที่ระบบ assign · ไม่ใช่ค่าเปลือก</span></li>
+<li><strong>งานประกันคุณภาพ paid 18.03%</strong> · งานนิเทศ paid 0% — งบตรวจสอบคุณภาพต่ำ ก่อนตรวจ 9 ก.ย. (§3)</li>
+<li><strong>Foundation Board 1 ยังตามหลัง 8 โรง</strong> (acs · acr · acu · sl · act · mcs · ac · acp) — gap ยัง 20 pp จาก Top (§6)</li>
+</ul>
+</div>
+<div class="highlight" style="margin-top:12px;">
+<strong>ข้อเสนอต่อกรรมการบริหารมูลนิธิฯ (ก่อน 9-10 ก.ย. 69):</strong>
+<ul class="tight" style="margin-top:6px;">
+<li>ให้ ผอ. sg (ภราดาสุรกิจ) เร่ง Confirm Loop 72 หน่วย · target ≥ 30/72 (42%) ก่อน 9 ก.ย.</li>
+<li>ให้งานประกันคุณภาพ (ชญาภา) เตรียม PDCA9 หลักฐานประเมิน + summary การนิเทศ 72 หน่วย + คู่มือ full</li>
+<li>ให้งาน HR (นงนุช) verify Cp(T)/K(T) mass import · เตรียมจำนวนบุคลากรอบรม 8 หัวข้อ HRD</li>
+<li>ให้ Commission แต่งตั้งประธานอนุ 5·6·7 ให้เต็ม (dual role อยู่ 3 คน)</li>
+<li>ให้ประธานอนุ 7 (ภราดามานิต) พิจารณา successor plan สำหรับ ผอ. sg (workload x2)</li>
+<li>ให้ SWIS Plus เพิ่ม module tracking (Onboarding · training · attrition · successor · dins internal · album)</li>
+<li>ให้งานพัสดุ (อมร) + งานการเงิน (ธริดา) ตรวจ dept 2552 paid 104.88%</li>
+<li>ให้ SWIS Plus สะสาง bug 661 vs 664 (ต่าง 2 คนระหว่างทะเบียนกลาง vs hr_baseline)</li>
+<li>ให้งานการเงิน (ธริดา) สะสางส่วนต่างงบผูกแผน 45.8M (20.4% ของ paid)</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ============ §0-D2 · ยันกับ export ระดับรายการ SG (บราเดอร์สั่ง 31 ส.ค.) ============ -->
+<div class="card di-block" id="s0d2" style="border-left:5px solid #b91c1c;">
+<div class="card-title" style="background:#fff8f8; color:#b91c1c;">§0-D2ยันกับ export ระดับรายการ SG (primary source · Downloads/sg audit · ดึง 31 ส.ค. 2569 09:33-35) · ที่กรรมการนิเทศเห็นบนจอ</div>
+<div class="card-body">
+<div class="highlight" style="background:#fef2f2; border-color:#fecaca; margin-bottom:10px;">
+<strong style="color:#b91c1c;">วิธีทำ:</strong> ยันสองทางเฉพาะกรอบ HRM · (ก) เลขในรายงานมีในไฟล์ export ไหม ตรงไหม (ข) ไฟล์ export มีอะไรที่รายงานยังไม่พูดถึง · <strong>【รอประธาน ICT/Commission ตรวจสอบ】</strong> แยกเหตุ 3 แบบ: (1) ผิดจริง (2) คนละวิธีนับ (3) รายงานตกหล่น
+      </div>
+<h3 class="sub" style="color:#b91c1c;">ตาราง D2.1 · ตัวเลขในรายงานเทียบกับ export ระดับรายการ</h3>
+<table>
+<thead><tr><th>ตัวชี้วัด</th><th>รายงาน SG HRM (เดิม)</th><th style="background:#fee2e2;">SWIS export จริง (primary)</th><th>เหตุ</th></tr></thead>
+<tbody>
+<tr>
+<td>ทะเบียนบุคลากรกลาง</td>
+<td><span style="text-decoration:underline; text-decoration-style:dashed; text-decoration-color:#b91c1c; background:#fefce8;">661 (ชาย 272 · หญิง 389)</span> <sup style="color:#b91c1c;">SWIS 691</sup></td>
+<td class="need-action">export_teacher.xlsx · <strong>691 records ทั้งไฟล์</strong> · แยกสถานะ: ทำงานอยู่ 584 (ชาย 235 · หญิง 349) · เกษียณ 43 · ลาออก 56 · เสียชีวิต 4 · ย้ายโรงเรียน 4</td>
+<td>(2) คนละวิธีนับ · MCP staff_job_spec ให้ 661 (ตัดออกบางกลุ่ม) · export ให้ 691 all + 584 active</td>
+</tr>
+<tr>
+<td>ในผังบริหาร (in_structure)</td>
+<td><span style="text-decoration:underline; text-decoration-style:dashed; text-decoration-color:#b91c1c; background:#fefce8;">417</span> <sup style="color:#b91c1c;">SWIS 415</sup></td>
+<td class="need-action">work_history_export.xlsx · <strong>unique staff 415</strong> · 701 records (คนซ้ำหลายหน่วย/ปี)</td>
+<td>(2) คนละวิธีนับ · 417 อาจรวม pseudo dept (ผอ./รอง) · 415 = ในผังจริง</td>
+</tr>
+<tr>
+<td>ฝ่าย</td>
+<td><span style="text-decoration:underline; text-decoration-style:dashed; text-decoration-color:#b91c1c; background:#fefce8;">6 (มี 5 · คณะภราดาว่าง)</span> <sup style="color:#b91c1c;">SWIS 7</sup></td>
+<td class="need-action">work_history.xlsx · <strong>7 ฝ่ายจริง</strong>: ธุรการ-การเงิน · บริหารทั่วไป · สำนักผอ. · วิชาการ · กิจการนักเรียน · แผนกความเป็นสากล · แผนกกิจกรรม</td>
+<td>(2) คนละวิธีนับ · MCP org_structure นับ 6 side (แผนกความเป็นสากล + แผนกกิจกรรม = sub-section ของ วิชาการ + กิจการนักเรียน) · export นับเป็น 7 ฝ่ายเท่ากัน</td>
+</tr>
+<tr>
+<td>หน่วยงาน</td>
+<td>72</td>
+<td>work_history.xlsx · <strong>72 unique units</strong></td>
+<td>✅ ตรง</td>
+</tr>
+<tr>
+<td>Salary (บาท-เดือน)</td>
+<td>2,228 คน-เดือน (พ.ค.-ส.ค.)</td>
+<td>ภาระงานเงินเดือน.xlsx · <strong>521 คนมีเงินเดือน &gt; 0</strong> · รวมเงินเดือน 1 รอบ = 12,704,178 · รายรับอื่น 5,579,097 · จ่ายจริงหลังหัก 9,571,028</td>
+<td>(2) คนละวิธีนับ · MCP นับ คน×เดือน (521 × 4 ≈ 2,084 · ใกล้ 2,228) · ต้อง verify</td>
+</tr>
+</tbody>
+</table>
+<h3 class="sub" style="color:#b91c1c;">ตาราง D2.2 · สิ่งที่ export มี แต่รายงานไม่ได้พูดถึง (รายงานตกหล่น)</h3>
+<table>
+<thead><tr><th>#</th><th>รายการ</th><th style="background:#fee2e2;">SWIS export จริง</th><th>เหตุ</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td class="need-action">Breakdown สถานะการทำงานของบุคลากร</td>
+<td class="need-action"><strong>ทำงานอยู่ 584 · เกษียณ 43 · ลาออก 56 · เสียชีวิต 4 · ย้ายโรงเรียน 4</strong> (รวม 691)</td>
+<td>(3) รายงานตกหล่น · SG_NUMBER_SET ระบุ "เข้าใหม่ 43 พ้นสภาพ 32" แต่ export ให้ ลาออก 56 + เกษียณ 43 + ตาย 4 + ย้าย 4 = 107 · ต้อง reconcile</td>
+</tr>
+<tr>
+<td>2</td>
+<td class="need-action">Breakdown กลุ่มบุคลากร 17 ประเภท (ทำงานอยู่ 584 คน)</td>
+<td class="need-action">ครู 245 · พนักงานประจำ 122 · ผู้ร่วมบริหารโรงเรียน 78 · ครูต่างชาติ IEP 51 · ครูต่างชาติ SG NEXT 11 · ครู/บุคลากรทดลองงาน 23 · พนักงานรายวัน 12 · รปภ. 14 · ภราดา 7 · ครูต่างชาติทดลองงาน IEP 2 + SG NEXT 6 · บุคลากรทางการศึกษา 4 · แม่บ้าน (บริษัท) 3 · พนักงานขับรถ (บริษัท) 2 · พนักงาน (ทดลองงาน) 2 · ที่ปรึกษาทางกฎหมาย 1 · พนักงานเครดิตยูเนี่ยน 1</td>
+<td>(3) รายงานตกหล่น · เป็นข้อมูลสำคัญที่ ผอ./กรรมการควรเห็น</td>
+</tr>
+<tr>
+<td>3</td>
+<td class="need-action">การปฏิบัติงาน · คณะกรรมการปีการศึกษา 2569</td>
+<td class="need-action">26 records · คณะกรรมการอำนวยการ 4 คน · คณะกรรมการนโยบายและแผน 22 คน · รวม ผอ. ภราดา ดร.สุรกิจ · ภราดา ดร.อาจิณ เต่งตระกูล</td>
+<td>(3) รายงานตกหล่น · เป็นคำสั่งแต่งตั้งอย่างเป็นทางการ</td>
+</tr>
+<tr>
+<td>4</td>
+<td class="need-action">รายรับอื่น + จ่ายจริงหลังหัก</td>
+<td class="need-action">รายรับอื่น (ต่อรอบ) 5,579,097 · จ่ายจริงหลังหักภาษี/ประกันสังคม 9,571,028</td>
+<td>(3) รายงานตกหล่น · ตัวเลขจ่ายจริงหลังหัก ผอ.ควรเห็น</td>
+</tr>
+<tr>
+<td>5</td>
+<td class="need-action">อายุงานบุคลากร</td>
+<td class="need-action">518 คน มีข้อมูลอายุงาน · 74 คน ไม่มี</td>
+<td>(3) รายงานตกหล่น · สำหรับ HR ประเมิน Retention</td>
+</tr>
+<tr>
+<td>6</td>
+<td class="need-action">วุฒิการศึกษาบุคลากร</td>
+<td class="need-action">0 คน มีข้อมูลวุฒิการศึกษาใน export</td>
+<td>(1) ผิดจริง · Export column วุฒิการศึกษาว่างทั้งหมด · ระบบไม่ populate · เชิญ SWIS Plus ตรวจสาเหตุ</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight" style="background:#fef2f2; border:2px solid #b91c1c; margin-top:12px;">
+<strong style="color:#b91c1c;">สรุป §0-D2 · re-lock ด้วย SWIS &lt;ค่าจริง&gt;:</strong>
+<ul class="tight" style="margin-top:6px;">
+<li>ตัวเลขในรายงานเดิม 3 จุด (661 · 417 · 6 ฝ่าย) ขีดเส้นใต้เส้นประสีแดง · กำกับ SWIS ค่าจริง (691/584 · 415 · 7) เพื่อความโปร่งใส · <strong>ไม่เปลี่ยนเนื้อเดิม</strong>
+<li>6 รายการที่ export มีแต่รายงานไม่พูดถึง · รอตรวจสอบว่าเป็นข้อมูลที่ควรเพิ่มในรอบถัดไปหรือไม่ · <strong>【รอประธาน ICT/Commission ตรวจสอบ】</strong>
+<li>Primary source (Downloads/sg audit/ · 31 ส.ค. 2569 09:33-35) 4 ไฟล์: export_teacher · work_history · การปฏิบัติงาน · ภาระงานเงินเดือน · ให้ผู้อ่านตรวจตามได้</li>
+</li></li></ul>
+</div>
+
+</div>
+</div>
+<div style="text-align:center; font-size:11px; color:var(--gray); padding:12px;">
+<p>รายงานตรวจติดตาม HRM · โรงเรียนเซนต์คาเบรียล (sg) · Foundation Board 1 · <strong>ฉบับ realtime 26 ส.ค. 2569 · เตรียมนิเทศ 9-10 ก.ย. 2569</strong></p>
+<p>SWIS MCP 14 module: calendar · org_structure · money · budget · asset · staff_job_spec · sar · kpi_norm · quality_manual · plan_pdca9 · procurement · dept_services · finance_users · basic_data</p>
+<p>เวลาดึงจริง: 26 ส.ค. 13:08:12-22 · replica budget/asset 24 ส.ค. 19:16 · ห้อง HRM · brobook-memory</p>
+<p>ยึด Special Assignments 2026-2027 (ลงนาม 4 ส.ค. 69) · ผอ. canonical จาก `_CANONICAL_TERMS.md`</p>
+<p><strong>⚠️ unverified: 3 · เผือก(เทา/เอียง): 6+</strong> (compliance #59)</p>
+</div>
+</div>
+</body>
+</html>
